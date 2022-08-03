@@ -6,10 +6,13 @@
 <template>
     <div class="stage-container">
         <div class="stage-hint">
-            请从左侧选择一个组件，拖拽或双击添加至此处
+          请从左侧选择一个组件，拖拽或双击添加至此处
+        </div>
+        <div class="stage-toolbar">
+          工具栏
         </div>
         <div class="stage-form">
-          
+
         </div>
     </div>
 </template>
@@ -28,15 +31,30 @@ export default {
   &-container{
     width: 100%;
     height: 100%;
-    padding: 10px;
+    padding: 0 10px 0 10px;
     background: #f1f2f3;
     overflow-x: hidden;
     overflow-y: auto;
+    position: relative;
   }
   &-hint{
-    text-align: center;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
     color: #444;
-    margin-top:40%;
+  }
+  &-toolbar{
+    height:7%;
+    text-align: center;
+    line-height:50px;
+    background: #fff;
+  }
+  &-form{
+    width:100%;
+    height:90%;
+    margin-top:10px;
+    background:#fff
   }
 }
 </style>

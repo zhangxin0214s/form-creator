@@ -7,7 +7,7 @@
   <el-container class="main-container full-height">
     <el-header class="main-header">
       <div class="float-left main-title">
-        <img src="../../assets/logo.svg" @click="openHome">
+        <img src="@/assets/logo.svg" @click="openHome">
          <span class="bold">题目编辑器</span>
       </div>
     </el-header>
@@ -41,6 +41,7 @@ export default {
 }
  </script>
 <style lang="scss" scoped>
+  
   .el-container.main-container {
     background: #fff;
 
