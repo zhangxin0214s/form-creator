@@ -15,21 +15,23 @@
         <el-aside class="side-panel">
            <widget-panel :designer="designer" />
         </el-aside>
-         <el-container class="center-layout-container">
-          2333
-         </el-container>
-         <el-aside>
+        <el-container class="center-layout-container">
+          <stage-panel :designer="designer" />
+        </el-container>
+        <el-aside>
           33434
-         </el-aside>
+        </el-aside>
     </el-container>
   </el-container>
  </template>
  <script>
 import WidgetPanel from './widget-panel/index'
+import StagePanel from './stage-panel/index'
 export default {
   name: "SEditorDesigner",
   components: {
-    WidgetPanel
+    WidgetPanel,
+    StagePanel
   },
   data() {
       return {
