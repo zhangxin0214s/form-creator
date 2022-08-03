@@ -84,7 +84,7 @@ export default {
   name: "WidgetPanel",
   data(){
     return {
-      activeNames: ['1', '2'],
+      activeNames: ['1', '2', '3', '4'],
       containers: containers,
       basicWidgets: basicWidgets
     }
