@@ -19,7 +19,7 @@
           <stage-panel :designer="designer" />
         </el-container>
         <el-aside>
-          33434
+           <setting-panel :designer="designer" />
         </el-aside>
     </el-container>
   </el-container>
@@ -27,11 +27,13 @@
  <script>
 import WidgetPanel from './widget-panel/index'
 import StagePanel from './stage-panel/index'
+import SettingPanel from './setting-panel/index'
 export default {
   name: "SEditorDesigner",
   components: {
     WidgetPanel,
-    StagePanel
+    StagePanel,
+    SettingPanel
   },
   data() {
       return {
