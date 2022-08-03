@@ -3,7 +3,7 @@
  * email: zhangxin0214@tal.com
  * date: 2022.08.01
  */
- <template>
+<template>
 <el-scrollbar class="side-scroll-bar">
   <div class="widget-layout">
     <el-container>
@@ -16,32 +16,77 @@
        
       <el-main>
         <el-collapse v-model="activeNames" class="widget-collapse">
+
+          <!-- 容器 -->
           <el-collapse-item name="1" title="容器">
-             <draggable
-                class="list-group"
-                tag="ul"
-                v-model="containers"
-              >
-              </draggable>
+            <draggable
+              class="list-group"
+              :list="containers"
+              item-key="key"
+              :group="{name: 'dragGroup', pull: 'clone', put: false}"
+            >
+              <div v-for="(item,index) in containers" class="gild-container" :key="index">
+                <svg-icon icon-class="component-lib" /><span>{{ item.name }}</span>
+              </div>
+            </draggable>
+          </el-collapse-item>
+
+          <!-- 基础组件 -->
+          <el-collapse-item name="1" title="基础组件">
+            <draggable
+              class="list-group"
+              :list="containers"
+              item-key="key"
+              :group="{name: 'dragGroup', pull: 'clone', put: false}"
+            >
+              <div v-for="(item,index) in basicWidgets" class="gild-container" :key="index">
+                <svg-icon icon-class="component-lib" /><span>{{ item.name }}</span>
+              </div>
+            </draggable>
+          </el-collapse-item>
+
+          <!-- 高级组件 -->
+          <el-collapse-item name="1" title="高级组件">
+            <draggable
+              class="list-group"
+              :list="containers"
+              item-key="key"
+              :group="{name: 'dragGroup', pull: 'clone', put: false}"
+            >
+              <div v-for="(item,index) in basicWidgets" class="gild-container" :key="index">
+                <svg-icon icon-class="component-lib" /><span>{{ item.name }}</span>
+              </div>
+            </draggable>
+          </el-collapse-item>
+
+          <!-- 自定义组件 -->
+          <el-collapse-item name="1" title="自定义组件">
+            <draggable
+              class="list-group"
+              :list="containers"
+              item-key="key"
+              :group="{name: 'dragGroup', pull: 'clone', put: false}"
+            >
+              <div v-for="(item,index) in basicWidgets" class="gild-container" :key="index">
+                <svg-icon icon-class="component-lib" /><span>{{ item.name }}</span>
+              </div>
+            </draggable>
           </el-collapse-item>
         </el-collapse>
       </el-main>
     </el-container>
   </div>
 </el-scrollbar>
- </template>
- <script>
+</template>
+<script>
+import { containers,basicWidgets } from "./widgetsConfig"
 export default {
   name: "WidgetPanel",
   data(){
     return {
       activeNames: ['1', '2'],
-      containers:[{
-        name:123
-      },{
-        name:456
-      }
-      ]
+      containers: containers,
+      basicWidgets: basicWidgets
     }
   }
 }
@@ -118,5 +163,17 @@ export default {
         }
       }
     }
+  }
+  .gild-container {
+    display: inline-block;
+    height: 28px;
+    line-height: 28px;
+    width: 115px;
+    margin: 2px 6px 6px 8px;
+    cursor: move;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    background: #f1f2f3;
   }
 </style>
