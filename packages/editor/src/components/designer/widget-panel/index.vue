@@ -15,17 +15,15 @@
       </el-header>
        
       <el-main>
-        <el-collapse v-model="activeNames" class="widget-collapse">
+        <el-collapse v-model="state.activeNames" class="widget-collapse">
 
           <!-- 容器 -->
           <el-collapse-item name="1" title="容器">
             <draggable
               class="list-group"
-              :list="containers"
               item-key="key"
-              :group="{name: 'dragGroup', pull: 'clone', put: false}"
             >
-              <div v-for="(item,index) in containers" class="gild-container" :key="index">
+              <div v-for="(item,index) in state.containers" class="gild-container" :key="index">
                 <svg-icon icon-class="component-lib" /><span>{{ item.name }}</span>
               </div>
             </draggable>
@@ -34,14 +32,21 @@
           <!-- 基础组件 -->
           <el-collapse-item name="1" title="基础组件">
             <draggable
-              class="list-group"
-              :list="containers"
+              :list="state.basicWidgets"
+              sort="false"
               item-key="key"
-              :group="{name: 'dragGroup', pull: 'clone', put: false}"
+              @start="onStart" 
             >
-              <div v-for="(item,index) in basicWidgets" class="gild-container" :key="index">
-                <svg-icon icon-class="component-lib" /><span>{{ item.name }}</span>
-              </div>
+              <template #item="{ element }">
+                <div class="gild-container">
+                  {{ element.name }}
+                </div>
+              </template>
+              <!-- <transition-group>
+                <div v-for="(item,index) in basicWidgets" class="gild-container" :key="index">
+                  <svg-icon icon-class="component-lib" /><span>{{ item.name }}</span>
+                </div>
+              </transition-group> -->
             </draggable>
           </el-collapse-item>
 
@@ -49,11 +54,11 @@
           <el-collapse-item name="1" title="高级组件">
             <draggable
               class="list-group"
-              :list="containers"
+              :list="state.containers"
               item-key="key"
               :group="{name: 'dragGroup', pull: 'clone', put: false}"
             >
-              <div v-for="(item,index) in basicWidgets" class="gild-container" :key="index">
+              <div v-for="(item,index) in state.basicWidgets" class="gild-container" :key="index">
                 <svg-icon icon-class="component-lib" /><span>{{ item.name }}</span>
               </div>
             </draggable>
@@ -63,11 +68,11 @@
           <el-collapse-item name="1" title="自定义组件">
             <draggable
               class="list-group"
-              :list="containers"
+              :list="state.containers"
               item-key="key"
               :group="{name: 'dragGroup', pull: 'clone', put: false}"
             >
-              <div v-for="(item,index) in basicWidgets" class="gild-container" :key="index">
+              <div v-for="(item,index) in state.basicWidgets" class="gild-container" :key="index">
                 <svg-icon icon-class="component-lib" /><span>{{ item.name }}</span>
               </div>
             </draggable>
@@ -78,19 +83,21 @@
   </div>
 </el-scrollbar>
 </template>
-<script>
-import { containers,basicWidgets } from "./widgetsConfig"
-export default {
-  name: "WidgetPanel",
-  data(){
-    return {
-      activeNames: ['1', '2', '3', '4'],
-      containers: containers,
-      basicWidgets: basicWidgets
-    }
-  }
-}
- </script>
+<script setup>
+  import { containers,basicWidgets } from "./widgetsConfig"
+  import { ref, reactive } from "vue";
+      const activeNames = ref(['1', '2', '3', '4'])
+      const state = reactive({
+        activeNames: ['1', '2', '3', '4'],        containers: containers,
+        basicWidgets: basicWidgets
+      })
+      const onStart = () =>{
+        console.log("124")
+      }
+
+
+
+</script>
  <style lang="scss" scoped>
   .el-header{
     --el-header-padding: 0 0px;
