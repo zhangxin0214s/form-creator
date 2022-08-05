@@ -45,16 +45,18 @@ export default {
     color: #444;
   }
   &-toolbar{
-    height:7%;
+    height:50px;
     text-align: center;
     line-height:50px;
     background: #fff;
+    border-bottom: 1px solid #000;
   }
   &-form{
     width:100%;
     height:90%;
     margin-top:10px;
-    background:#fff
+    background:#fff;
+    border: 1px solid #000;
   }
 }
 </style>

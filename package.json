@@ -13,6 +13,7 @@
     "docs:build": "pnpm recursive run build --filter=docs"
   },
   "dependencies": {
+    "sortablejs": "1.14.0",
     "vitepress": "1.0.0-alpha.4",
     "vue": "^3.2.37"
   },

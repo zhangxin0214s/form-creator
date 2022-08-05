@@ -15,66 +15,40 @@
       </el-header>
        
       <el-main>
-        <el-collapse v-model="state.activeNames" class="widget-collapse">
+        <el-collapse v-model="activeNames" class="widget-collapse">
 
           <!-- 容器 -->
           <el-collapse-item name="1" title="容器">
             <draggable
+              tag="ul"
+              :list="state.containers"
               class="list-group"
+              sort="false"
               item-key="key"
             >
-              <div v-for="(item,index) in state.containers" class="gild-container" :key="index">
-                <svg-icon icon-class="component-lib" /><span>{{ item.name }}</span>
-              </div>
+              <template #item="{ element }">
+                <li class="gild-container" >
+                   <span><svg-icon icon-class="component-lib" />{{ element.name }}</span>
+                </li>
+              </template>
             </draggable>
           </el-collapse-item>
 
           <!-- 基础组件 -->
-          <el-collapse-item name="1" title="基础组件">
+          <el-collapse-item name="2" title="基础组件">
             <draggable
+              tag="ul"
               :list="state.basicWidgets"
+              ghost-class="ghost"
               sort="false"
               item-key="key"
               @start="onStart" 
             >
               <template #item="{ element }">
-                <div class="gild-container">
-                  {{ element.name }}
-                </div>
+                <li class="gild-container" >
+                   <span><svg-icon icon-class="component-lib" />{{ element.name }}</span>
+                </li>
               </template>
-              <!-- <transition-group>
-                <div v-for="(item,index) in basicWidgets" class="gild-container" :key="index">
-                  <svg-icon icon-class="component-lib" /><span>{{ item.name }}</span>
-                </div>
-              </transition-group> -->
-            </draggable>
-          </el-collapse-item>
-
-          <!-- 高级组件 -->
-          <el-collapse-item name="1" title="高级组件">
-            <draggable
-              class="list-group"
-              :list="state.containers"
-              item-key="key"
-              :group="{name: 'dragGroup', pull: 'clone', put: false}"
-            >
-              <div v-for="(item,index) in state.basicWidgets" class="gild-container" :key="index">
-                <svg-icon icon-class="component-lib" /><span>{{ item.name }}</span>
-              </div>
-            </draggable>
-          </el-collapse-item>
-
-          <!-- 自定义组件 -->
-          <el-collapse-item name="1" title="自定义组件">
-            <draggable
-              class="list-group"
-              :list="state.containers"
-              item-key="key"
-              :group="{name: 'dragGroup', pull: 'clone', put: false}"
-            >
-              <div v-for="(item,index) in state.basicWidgets" class="gild-container" :key="index">
-                <svg-icon icon-class="component-lib" /><span>{{ item.name }}</span>
-              </div>
             </draggable>
           </el-collapse-item>
         </el-collapse>
@@ -85,15 +59,16 @@
 </template>
 <script setup>
   import { containers,basicWidgets } from "./widgetsConfig"
-  import { ref, reactive } from "vue";
-      const activeNames = ref(['1', '2', '3', '4'])
-      const state = reactive({
-        activeNames: ['1', '2', '3', '4'],        containers: containers,
-        basicWidgets: basicWidgets
-      })
-      const onStart = () =>{
-        console.log("124")
-      }
+  import { ref, reactive } from "vue"
+  const activeNames = ref(['1', '2', '3', '4'])
+  const state = reactive({   
+    containers: containers,
+    basicWidgets: basicWidgets
+  })
+  
+  const onStart = () =>{
+    console.log("124")
+  }
 
 
 
@@ -176,7 +151,8 @@
     height: 28px;
     line-height: 28px;
     width: 115px;
-    margin: 2px 6px 6px 8px;
+    float: left;
+    margin: 2px 6px 6px 0;
     cursor: move;
     white-space: nowrap;
     text-overflow: ellipsis;

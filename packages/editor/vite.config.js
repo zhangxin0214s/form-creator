@@ -28,7 +28,21 @@ export default defineConfig({
     },
     extensions: [".js", ".vue", ".json", ".ts"], // 使用路径别名时想要省略的后缀名，可以自己 增减
   },
+  optimizeDeps: {
+    include: ['@/../lib/vuedraggable/dist/vuedraggable.umd.js']
+  },
   server: {
     port: 9000,
   },
+  build: {
+    //minify: false,
+    commonjsOptions: {
+      exclude: [
+        '/lib/vuedraggable/dist/vuedraggable.umd.js,',  //引号前的逗号不能删，不知何故？？
+        //'vue/dist/*.js'
+      ],
+      include: []
+      //requireReturnsDefault: true
+    }
+  }
 })
