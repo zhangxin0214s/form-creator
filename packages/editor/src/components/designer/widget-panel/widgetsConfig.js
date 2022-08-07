@@ -1,15 +1,18 @@
 export const containers = [
   {
+    id:1,
     name: "栅格",
-    type: "container",
+    type: "grid",
     icon: "grid",
     options: {
+      
       hidden: false,
     },
   },
   {
+    id:2,
     name: "标签页",
-    type: "container",
+    type: "tap",
     icon: "grid",
     options: {
       hidden: false,
@@ -19,6 +22,7 @@ export const containers = [
 
 export const basicWidgets = [
   {
+    id:3,
     name: "输入框",
     type: "input",
     icon: "grid",
@@ -27,6 +31,7 @@ export const basicWidgets = [
     },
   },
   {
+    id:4,
     name: "开关",
     type: "switch",
     icon: "grid",
@@ -35,6 +40,7 @@ export const basicWidgets = [
     },
   },
   {
+    id:5,
     name: "复选框",
     type: "checkbox",
     icon: "grid",

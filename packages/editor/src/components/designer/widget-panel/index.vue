@@ -22,6 +22,7 @@
             <draggable
               tag="ul"
               :list="state.containers"
+              :group="{name: 'dragGroup', pull: 'clone', put: false}"
               class="list-group"
               sort="false"
               item-key="key"
@@ -40,8 +41,9 @@
               tag="ul"
               :list="state.basicWidgets"
               ghost-class="ghost"
-              sort="false"
+              :sort="false"
               item-key="key"
+              :group="{name: 'dragGroup', pull: 'clone', put: false}"
               @start="onStart" 
             >
               <template #item="{ element }">
@@ -74,6 +76,7 @@
 
 </script>
  <style lang="scss" scoped>
+  @import "../../../styles/global.scss";
   .el-header{
     --el-header-padding: 0 0px;
   }

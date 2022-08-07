@@ -9,9 +9,9 @@ $--color-primary: #409EFF;
   background: rgba(64, 158, 255, 0.6);
 }
 
-.form-widget-list {
-
+.stage-form {
   .ghost{
+    width:100%;
     content: '';
     font-size: 0;
     height: 3px;

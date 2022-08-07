@@ -12,17 +12,37 @@
           工具栏
         </div>
         <div class="stage-form">
-
+          <draggable :list="widgetList" item-key="id" v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300}"
+                   tag="transition-group" :component-data="{name: 'fade'}">
+            <template #item="{ element: widget }">
+              <div class="transition-group-el">
+                <component :is="widget.type" :key="widget.id"></component>
+              </div>
+            </template>  
+          </draggable>
         </div>
     </div>
 </template>
 <script>
+import Grid from './components/container/grid.vue'
+import Tap from './components/container/tap.vue'
+import Input from './components/widget/input.vue'
+import Switch from './components/widget/switch.vue'
+import Checkbox from './components/widget/checkbox.vue'
 export default {
   name: "StagePanel",
   data(){
     return {
-        
+        widgetList:[],
+        currentView:'Input'
     }
+  },
+  components: {
+    Input,
+    Switch,
+    Checkbox,
+    Grid,
+    Tap
   }
 }
 </script>
