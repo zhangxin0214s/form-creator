@@ -38,7 +38,7 @@ const componentMap = {
 const widgetStore = useStore()
 const widgetList = ref([])
 
-const selected = widgetData =>{
+const selected = widgetData => {
   console.log("选中:",widgetData)
   widgetStore.selectedWidget = widgetData.name
 }
