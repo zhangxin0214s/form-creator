@@ -14,21 +14,16 @@
             </div>
           </el-header>
           <el-main>
-            属性列表
+            {{ widgetStore.selectedWidget }}
           </el-main>
         </el-container>
       </div>
     </el-scrollbar>
 </template>
-<script>
-export default {
-  name: "SettingPanel",
-  data(){
-    return {
-        
-    }
-  }
-}
+<script setup>
+import { useStore } from '@/store/index'
+const widgetStore = useStore()
+
 </script>
 <style lang="scss" scoped>
 .el-header{

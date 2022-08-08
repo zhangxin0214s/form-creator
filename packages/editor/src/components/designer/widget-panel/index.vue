@@ -44,7 +44,6 @@
               :sort="false"
               item-key="key"
               :group="{name: 'dragGroup', pull: 'clone', put: false}"
-              @start="onStart" 
             >
               <template #item="{ element }">
                 <li class="gild-container" >
@@ -67,13 +66,6 @@
     containers: containers,
     basicWidgets: basicWidgets
   })
-  
-  const onStart = () =>{
-  
-  }
-
-
-
 </script>
  <style lang="scss" scoped>
   @import "../../../styles/global.scss";

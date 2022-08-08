@@ -24,24 +24,15 @@
     </el-container>
   </el-container>
  </template>
- <script>
+ <script setup>
 import WidgetPanel from './widget-panel/index'
 import StagePanel from './stage-panel/index'
 import SettingPanel from './setting-panel/index'
-export default {
-  name: "SEditorDesigner",
-  components: {
-    WidgetPanel,
-    StagePanel,
-    SettingPanel
-  },
-  data() {
-      return {
-        designer:null
-      }
-  }
-}
- </script>
+import { ref } from "vue"
+
+const designer = ref('null');
+
+</script>
 <style lang="scss" scoped>
   
   .el-container.main-container {

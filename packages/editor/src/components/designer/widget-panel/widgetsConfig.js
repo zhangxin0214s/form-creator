@@ -33,7 +33,7 @@ export const basicWidgets = [
   {
     id:4,
     name: "开关",
-    type: "switch",
+    type: "Switch",
     icon: "grid",
     options: {
       hidden: false,
