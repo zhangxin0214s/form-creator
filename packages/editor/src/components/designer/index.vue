@@ -7,7 +7,7 @@
   <el-container class="main-container full-height">
     <el-header class="main-header">
       <div class="float-left main-title">
-        <img src="@/assets/logo.svg" @click="openHome">
+        <img :src="logo" @click="openHome" alt="logo">
          <span class="bold">题目编辑器</span>
       </div>
     </el-header>
@@ -31,7 +31,7 @@ import SettingPanel from './setting-panel/index'
 import { ref } from "vue"
 
 const designer = ref('null');
-
+const logo = ref('../src/assets/logo.svg');
 </script>
 <style lang="scss" scoped>
   
