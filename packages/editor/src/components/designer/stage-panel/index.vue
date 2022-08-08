@@ -5,8 +5,8 @@
  */
 <template>
     <div class="stage-container">
-        <div class="stage-hint">
-          请从左侧选择一个组件，拖拽或双击添加至此处
+        <div class="stage-hint" v-if="widgetList.length === 0">
+          请从左侧选择一个组件，拖拽添加至此处
         </div>
         <div class="stage-toolbar">
           工具栏
@@ -15,7 +15,7 @@
           <draggable :list="widgetList" item-key="id" v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300}"
                    tag="transition-group" :component-data="{name: 'fade'}">
             <template #item="{ element: widget }">
-              <div class="transition-group-el">
+              <div class="transition-group-el" @click="onDragAdd(widget)">
                 <component :is="widget.type" :key="widget.id"></component>
               </div>
             </template>  
@@ -43,6 +43,11 @@ export default {
     Checkbox,
     Grid,
     Tap
+  },
+  methods: {
+    onDragAdd(widget){
+      console.log("选中:",widget)
+    }
   }
 }
 </script>

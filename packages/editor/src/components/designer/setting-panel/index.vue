@@ -13,6 +13,9 @@
               <span class="setting-header-title">组件设置</span>
             </div>
           </el-header>
+          <el-main>
+            属性列表
+          </el-main>
         </el-container>
       </div>
     </el-scrollbar>
