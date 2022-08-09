@@ -14,15 +14,15 @@
             </div>
           </el-header>
           <el-main>
-            {{ widgetStore.selectedWidget }}
+            {{ _widgetStore.selectedWidget }}
           </el-main>
         </el-container>
       </div>
     </el-scrollbar>
 </template>
 <script setup>
-import { useStore } from '@/store/index'
-const widgetStore = useStore()
+import { widgetStore } from '@/store/index'
+const _widgetStore = widgetStore()
 
 </script>
 <style lang="scss" scoped>
