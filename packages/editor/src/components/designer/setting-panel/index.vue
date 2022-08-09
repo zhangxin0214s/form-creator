@@ -18,6 +18,7 @@
               :is="componentMap[selectedWidget?.type]" 
               :key="selectedWidget?.id"
               :selected-widget = "selectedWidget"
+              :basic-prop = "selectedWidget?.options.basic"
             >
             </component>
           </el-main>
@@ -32,6 +33,7 @@ import { storeToRefs } from 'pinia'
 import { ref } from "vue"
 const _widgetStore = widgetStore()
 const { selectedWidget } = storeToRefs(_widgetStore)
+
 const componentMap = {
   ...widget
 }

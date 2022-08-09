@@ -28,12 +28,12 @@ export const basicWidgets = [
     icon: "grid",
     options: {
       basic: {
-        name: "", // 唯一名称
-        label: "", // 标签
-        type: "text",// 类型
-        defaultValue: "",// 默认提示文本
+        name: "input", // 唯一名称
+        // label: "", // 标签
+        // type: "text",// 类型
+        // defaultValue: "",// 默认提示文本
       },
-      senior: {}
+      advanced: {}
     },
   },
   {
