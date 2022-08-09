@@ -5,8 +5,8 @@ export const containers = [
     type: "grid",
     icon: "grid",
     options: {
-      
-      hidden: false,
+      basic: {},
+      senior: {}
     },
   },
   {
@@ -27,7 +27,13 @@ export const basicWidgets = [
     type: "input",
     icon: "grid",
     options: {
-      hidden: false,
+      basic: {
+        name: "", // 唯一名称
+        label: "", // 标签
+        type: "text",// 类型
+        defaultValue: "",// 默认提示文本
+      },
+      senior: {}
     },
   },
   {

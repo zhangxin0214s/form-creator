@@ -5,14 +5,14 @@
  */
 <template>
     <div class="stage-container">
-        <div class="stage-hint" v-if="_widgetStore.widgetList.length === 0">
+        <div class="stage-hint" v-if="widgetList.length === 0">
           请从左侧选择一个组件，拖拽添加至此处
         </div>
         <div class="stage-toolbar">
           工具栏
         </div>
         <div class="stage-form">
-          <draggable :list="_widgetStore.widgetList" item-key="id" v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300}"
+          <draggable :list="widgetList" item-key="id" v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300}"
                    tag="transition-group" :component-data="{name: 'fade'}">
             <template #item="{ element: widget }">
               <div class="transition-group-el" @click="selected(widget)">
@@ -26,9 +26,10 @@
 <script setup>
 import * as container from './components/container'
 import * as widget from './components/widget'
-
+import { storeToRefs } from 'pinia'
 import { widgetStore } from '@/store/index'
 import { ref } from "vue"
+
 
 const componentMap = {
   ...container,
@@ -36,10 +37,11 @@ const componentMap = {
 }
 
 const _widgetStore = widgetStore();
+const { widgetList } = storeToRefs(_widgetStore)
 
 const selected = widgetData => {
   console.log("选中:",widgetData)
-  _widgetStore.selectedWidget = widgetData.name
+  _widgetStore.selectedWidget = widgetData
 }
 
 </script>

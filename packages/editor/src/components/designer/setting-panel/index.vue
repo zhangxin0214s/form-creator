@@ -14,15 +14,27 @@
             </div>
           </el-header>
           <el-main>
-            {{ _widgetStore.selectedWidget }}
+            <component 
+              :is="componentMap[selectedWidget?.type]" 
+              :key="selectedWidget?.id"
+              :selected-widget = "selectedWidget"
+            >
+            </component>
           </el-main>
         </el-container>
       </div>
     </el-scrollbar>
 </template>
 <script setup>
+import * as widget from './property-list/widget/index'
 import { widgetStore } from '@/store/index'
+import { storeToRefs } from 'pinia'
+import { ref } from "vue"
 const _widgetStore = widgetStore()
+const { selectedWidget } = storeToRefs(_widgetStore)
+const componentMap = {
+  ...widget
+}
 
 </script>
 <style lang="scss" scoped>
