@@ -12,7 +12,7 @@ export const containers = [
   {
     id:2,
     name: "标签页",
-    type: "tap",
+    type: "tabs",
     icon: "grid",
     options: {
       hidden: false,

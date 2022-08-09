@@ -1,6 +1,6 @@
 <template>
     <div class="input-container">
-        tap
+        tabs
     </div>
 </template>
 <script>

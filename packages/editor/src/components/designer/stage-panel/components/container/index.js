@@ -1,7 +1,7 @@
 import grid from './grid.vue'
-import tap from './tap.vue'
+import tabs from './tabs.vue'
 
 export {
     grid,
-    tap
+    tabs
 }
