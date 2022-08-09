@@ -2,7 +2,7 @@
     <div class="input-container">
         <el-collapse v-model="activeNames" class="input-collapse">
             <el-collapse-item name="1" title="基础属性">
-                <template v-for="{value,key,index} in a" :key="index">
+                <template v-for="{value,key,index} in selectedWidgetProp.basicProp" :key="index">
                     <component  
                         :is="componentMap[getPropCompName(key)]"
                     ></component>
@@ -30,7 +30,7 @@ const componentMap = {
   ...basicComponents
 }
 const activeNames = ref(['1', '2', '3'])
-const a = ref({'name':'input'})
+const a = ref({name:'input'})
 const getPropCompName = (key) =>{
     console.log('key:',key)
     return BASCI_COMPONENTS[BASIC_PROPERTIES[key]]
