@@ -1,6 +1,6 @@
 <template>
     <div class="basic-input">
-        <el-input v-model="input" placeholder="Please input" />
+        <el-input v-model="input" placeholder="" />
     </div>
 </template>
 <script setup>
