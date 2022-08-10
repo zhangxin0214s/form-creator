@@ -1,6 +1,6 @@
 // 基础控件组件列表
 const BASCI_COMPONENTS = {
-    '1' : 'inputBasic',
+    '1' : 'nameBasic',
     '2' : ''
 }
 

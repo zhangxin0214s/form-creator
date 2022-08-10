@@ -14,13 +14,15 @@
             </div>
           </el-header>
           <el-main>
-            <component 
-              :is="componentMap[selectedWidget?.type]" 
-              :key="selectedWidget?.id"
-              :selected-widget = "selectedWidget"
-              :basic-prop = "selectedWidget?.options.basic"
-            >
-            </component>
+            <div class="setting-main">
+              <component 
+                :is="componentMap[selectedWidget?.type]" 
+                :key="selectedWidget?.id"
+                :selected-widget = "selectedWidget"
+                :basic-prop = "selectedWidget?.options.basic"
+              >
+              </component>
+            </div> 
           </el-main>
         </el-container>
       </div>
@@ -56,6 +58,9 @@ const componentMap = {
       &-title{
         font-weight: bold;
       }
+    }
+    &-main{
+      padding:15px;
     }
   }
 </style>
