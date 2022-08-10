@@ -28,7 +28,7 @@ export const basicWidgets = [
     icon: "grid",
     options: {
       basic: {
-        name: "input", // 唯一名称
+        name: "标题", // 唯一名称
         // label: "", // 标签
         // type: "text",// 类型
         // defaultValue: "",// 默认提示文本

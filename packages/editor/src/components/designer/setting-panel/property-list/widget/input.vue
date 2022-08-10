@@ -5,6 +5,9 @@
                 <div v-for="(item,key,index) in selectedWidgetProp.basicProp" :key="index">
                     <component  
                         :is="componentMap[getPropCompName(key)]"
+                        :widget-prop="selectedWidgetProp.basicProp"
+                        :value = "item"
+                        :key = "key"
                     ></component>
                 </div>
             </el-collapse-item>
@@ -32,7 +35,6 @@ const componentMap = {
 const activeNames = ref(['1', '2', '3'])
 const a = ref({name:'input1'})
 const getPropCompName = (key) =>{
-    console.log('key:',key)
     return BASCI_COMPONENTS[BASIC_PROPERTIES[key]]
 }
 </script>
