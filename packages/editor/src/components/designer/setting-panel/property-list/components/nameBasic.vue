@@ -6,7 +6,7 @@
         style="max-width: 360px"
     >
         <el-form-item label="唯一名称:">
-        <el-input  v-model="widgetProp[key]" />
+            <el-input  v-model="widgetProp[key]" />
         </el-form-item>
     </el-form>
 </template>
