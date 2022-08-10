@@ -1,6 +1,6 @@
 <template>
     <div class="input-container">
-        input
+        <v-textarea @onChange="changeHandler" :value='文本域文本' />
     </div>
 </template>
 <script>
