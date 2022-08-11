@@ -1,6 +1,6 @@
 <template>
     <div class="input-container">
-        input
+        <el-input placeholder="Please input" />
     </div>
 </template>
 <script>

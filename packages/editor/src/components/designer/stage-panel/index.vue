@@ -17,6 +17,7 @@
             <template #item="{ element: widget }">
               <div class="transition-group-el" @click="selected(widget)">
                 <component :is="componentMap[widget.type]" :key="widget.id"></component>
+                <component :is="Mask" v-if="maskIsShow"></component>
               </div>
             </template>  
           </draggable>
@@ -24,13 +25,14 @@
     </div>
 </template>
 <script setup>
-import * as container from './components/container'
-import * as widget from './components/widget'
+import * as container from './components/element-ui/container'
+import * as widget from './components/element-ui/widget'
 import { storeToRefs } from 'pinia'
 import { widgetStore } from '@/store/index'
+import Mask from './components/element-ui/Mask'
 import { ref } from "vue"
 
-
+let maskIsShow = ref(false);
 const componentMap = {
   ...container,
   ...widget
@@ -41,6 +43,7 @@ const { widgetList } = storeToRefs(_widgetStore)
 
 const selected = widgetData => {
   console.log("选中:",widgetData)
+  maskIsShow.value = !maskIsShow.value
   _widgetStore.selectedWidget = widgetData
 }
 
