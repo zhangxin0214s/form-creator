@@ -79,8 +79,8 @@ export const basicWidgets = [
 	{
 		id:5,
 		name:"下拉框",
-		type:"Select ",
-		icon:"select ",
+		type:"Select",
+		icon:"select",
 		options:{
 			hidden:false,
 			basic:{},
@@ -127,7 +127,7 @@ export const advancedWidgets = [
 	{
 		id:1,
 		name:"新增按钮",
-		type:"Divider",
+		type:"button",
 		icon:"button",
 		options:{
 			hidden:false,

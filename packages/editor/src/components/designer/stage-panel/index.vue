@@ -18,7 +18,7 @@
               <div class="transition-group-el" @click="selected(widget)">
                 <component :is="componentMap[widget.type]" :key="widget.id"></component>
               </div>
-            </template>  
+            </template>
           </draggable>
         </div>
     </div>
@@ -26,6 +26,7 @@
 <script setup>
 import * as container from './components/container'
 import * as widget from './components/widget'
+import * as Advanced from './components/Advanced'
 import { storeToRefs } from 'pinia'
 import { widgetStore } from '@/store/index'
 import { ref } from "vue"
@@ -33,7 +34,8 @@ import { ref } from "vue"
 
 const componentMap = {
   ...container,
-  ...widget
+  ...widget,
+  ...Advanced
 }
 
 const _widgetStore = widgetStore();
