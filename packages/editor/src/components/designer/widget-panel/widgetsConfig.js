@@ -134,8 +134,8 @@ export const basicWidgets = [
 	{
 		id:5,
 		name:"下拉框",
-		type:"Select ",
-		icon:"select ",
+		type:"Select",
+		icon:"select",
 		options:{
 			basic:{
 				name:"标题", // 唯一名称
@@ -211,7 +211,7 @@ export const advancedWidgets = [
 	{
 		id:1,
 		name:"新增按钮",
-		type:"Divider",
+		type:"button",
 		icon:"button",
 		options:{
 			hidden:false,
