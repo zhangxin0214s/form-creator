@@ -7,6 +7,7 @@
 		</Mask>
 	</div>
 </template>
+
 <script setup>
 import Mask from '../Mask.vue';
 let props = defineProps(['widget']);
