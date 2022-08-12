@@ -16,24 +16,30 @@
                    tag="transition-group" :component-data="{name: 'fade'}">
             <template #item="{ element: widget }">
               <div class="transition-group-el" @click="selected(widget)">
-                <component :is="componentMap[widget.type]" :key="widget.id"></component>
+                <component 
+                  :is="componentMap[widget.type]" 
+                  :key="widget.id"
+                  :widget = widget
+                >
+                </component>
               </div>
-            </template>  
+            </template>
           </draggable>
         </div>
     </div>
 </template>
 <script setup>
-import * as container from './components/container'
-import * as widget from './components/widget'
+import * as container from './components/element-ui/container'
+import * as widget from './components/element-ui/widget'
+import * as Advanced from './components/element-ui/Advanced'
 import { storeToRefs } from 'pinia'
 import { widgetStore } from '@/store/index'
 import { ref } from "vue"
 
-
 const componentMap = {
   ...container,
-  ...widget
+  ...widget,
+  ...Advanced
 }
 
 const _widgetStore = widgetStore();
