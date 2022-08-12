@@ -121,8 +121,8 @@ export const basicWidgets = [
 		options:{
 			basic:{
 				name:"标题", // 唯一名称
-				label: "", // 标签
-				type:"",// 类型:success/warn/error参考element-ui button
+				label: "取消", // 标签
+				type:"success",// 类型:success/warn/error参考element-ui button
 				disabled: false,// 禁用
 
 			},

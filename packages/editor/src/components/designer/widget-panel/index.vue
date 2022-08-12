@@ -29,7 +29,7 @@
               >
                 <template #item="{ element }">
                   <li class="gild-container">
-                    <span><svg-icon :icon-class="element.icon"/>{{ element.name }}</span>
+                    <span><svg-icon :icon-class="element.icon" style="margin-right: 20px"/>{{ element.name }}</span>
                   </li>
                 </template>
               </draggable>
@@ -47,7 +47,7 @@
               >
                 <template #item="{ element }">
                   <li class="gild-container">
-                    <span><svg-icon :icon-class="element.icon"/>{{ element.name }}</span>
+                    <span><svg-icon :icon-class="element.icon" style="margin-right: 20px"/>{{ element.name }}</span>
                   </li>
                 </template>
               </draggable>
@@ -65,7 +65,7 @@
               >
                 <template #item="{ element }">
                   <li class="gild-container">
-                    <span><svg-icon :icon-class="element.icon"/>{{ element.name }}</span>
+                    <span><svg-icon :icon-class="element.icon" style="margin-right: 20px"/>{{ element.name }}</span>
                   </li>
                 </template>
               </draggable>
