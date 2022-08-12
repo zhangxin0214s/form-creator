@@ -31,7 +31,7 @@
 	</div>
 </template>
 <script setup>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted,defineProps } from 'vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 const _widgetStore = widgetStore();

@@ -2,7 +2,7 @@
 	<div class="input-container">
 		<Mask :widget="widget">
 			<el-input
-				:value="widget.options.basic.defaultValue"
+				:value="props.widget.options.basic.defaultValue"
 			/>
 		</Mask>
 	</div>
@@ -10,6 +10,7 @@
 
 <script setup>
 import Mask from '../Mask.vue';
+import { defineProps } from 'vue'
 let props = defineProps(['widget']);
 </script>
 <style scoped>

@@ -4,6 +4,7 @@ export const containers = [
 		id:1,
 		name:"栅格",
 		type:"grid",
+		widgetList:[],
 		icon:"lattice",
 		options:{
 			basic:{

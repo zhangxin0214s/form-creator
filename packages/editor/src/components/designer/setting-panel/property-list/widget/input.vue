@@ -19,8 +19,7 @@
     </div>
 </template>
 <script setup>
-import { ref } from "vue"
-import { defineProps } from 'vue'
+import { ref,defineProps } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES} from '../propertyRegister'
 import * as basicComponents from '../components/index';
 
@@ -28,7 +27,7 @@ const selectedWidgetProp = defineProps([
     'selectedWidget',
     'basicProp'
 ])
-console.log(selectedWidgetProp.basicProp,"====selectedWidgetProp===")
+
 const componentMap = {
   ...basicComponents
 }

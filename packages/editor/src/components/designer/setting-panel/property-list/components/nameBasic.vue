@@ -6,13 +6,13 @@
         style="max-width: 360px"
     >
         <el-form-item label="唯一名称:">
-            <el-input  v-model="widgetProp[key]" />
+            <el-input  v-model="props.widgetProp[key]" />
         </el-form-item>
     </el-form>
 </template>
 <script setup>
     import { defineProps } from 'vue'
-    defineProps([
+    const props = defineProps([
         'widgetProp',
         'key',
         'value'
