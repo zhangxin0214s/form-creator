@@ -79,7 +79,7 @@ export const basicWidgets = [
 				defaultValue:true,// 默认值:开 || 关
 				required: false,// 是否必填*
 				disabled: false,// 禁用
-				hint:"",// 提示语
+				hint:"提示语句",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
 			advanced: {
