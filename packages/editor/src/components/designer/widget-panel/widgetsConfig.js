@@ -50,15 +50,15 @@ export const basicWidgets = [
 				labelWidth:null,// 标签宽度
 				labelAlign:"",// 标签对齐方式
 				type: "text",// 类型
-				defaultValue: "",// 默认提示文本
+				defaultValue: "默认文本",// 默认提示文本
 				required: false,// 是否必填*
 				readonly: false,// 只读
 				disabled: false,// 禁用
-				hint:"",// 提示语
+				hint:"提示语句",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
 			advanced:{
-				width:null, // 输入框宽度
+				width:300, // 输入框宽度
 				validation:"",// 校验规则
 				validationHint:""//校验规则提示
 			}
@@ -110,6 +110,7 @@ export const basicWidgets = [
 					{ label: "check 2", value: 2, disabled: false },
 					{ label: "check 3", value: 3, disabled: false },
 				]
+				
 			}
 		},
 	},
