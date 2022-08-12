@@ -1,8 +1,5 @@
 <template>
-	<div
-		class="mask-container"
-		ref="maskContainer"
-	>
+	<div class="mask-container">
 		<div
 			class="mask-slot"
 			ref="maskSlot"
@@ -12,48 +9,92 @@
 		<div
 			class="mask-content"
 			ref="maskContent"
-			v-show="isShow"
+			@click="onClickMask"
 		>
-			<span>{{ props.widget.name }}</span>
+			<span>{{ widget.name }}</span>
+			<div
+				class="hint"
+				v-show="!widget.options.basic.hintHidden"
+			>{{ widget.options.basic.hint}}</div>
 			<svg-icon
 				icon-class="copy"
 				class="copyIcon"
+				@click="onClickCopy"
 			/>
 			<svg-icon
 				icon-class="delete"
 				class="deleteIcon"
+				@click="onClickDelete"
 			/>
+
 		</div>
 	</div>
 </template>
-
-
 <script setup>
 import { ref, onMounted } from 'vue';
-const props = defineProps(['widget', 'isShow']);
+import { storeToRefs } from 'pinia';
+import { widgetStore } from '@/store/index';
+const _widgetStore = widgetStore();
+const { widgetList, maskList } = storeToRefs(_widgetStore);
+const props = defineProps(['widget']);
 const maskSlot = ref(null);
 const maskContent = ref(null);
-const maskContainer = ref(null);
 onMounted(() => {
-  maskContainer.value.style.height = maskSlot.value.clientHeight + 'px';
-	maskContent.value.style.height = maskSlot.value.clientHeight-13 + 'px';
-	maskContent.value.style.top = -maskSlot.value.clientHeight+5 + 'px';
+	maskSlot.value.style.width = props.widget.options.advanced.width + 'px';
+	maskList.value.push(maskContent);
+	maskList.value.forEach((mask) => {
+		mask.value.style.opacity = 0;
+	});
+	maskContent.value.style.opacity = 1;
 });
+const onClickMask = () => {
+	maskList.value.forEach((mask) => {
+		mask.value.style.opacity = 0;
+	});
+	maskContent.value.style.opacity = 1;
+};
+const onClickCopy = () => {
+	console.log('复制',);
+	widgetList.value.push(props.widget);
+};
+const onClickDelete = () => {
+	console.log('删除');
+};
 </script>
 
-<style>
-.mask-content {
+<style scoped>
+.mask-container {
 	position: relative;
-	border: 2px solid firebrick;
+	padding: 25px;
+	margin-bottom: 5px;
 }
+.mask-content {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	border: 2px solid #1396da;
+	border-radius: 5px;
+}
+
 .copyIcon {
 	position: absolute;
 	right: 30px;
-	bottom: 0;
+	bottom: 5px;
 }
 .deleteIcon {
 	position: absolute;
 	right: 0;
-	bottom: 0;
+	bottom: 5px;
+}
+span {
+	font-size: 12px;
+}
+.hint {
+	position: absolute;
+	left: 5px;
+	bottom: 5px;
+	font-size: 12px;
 }
 </style>
