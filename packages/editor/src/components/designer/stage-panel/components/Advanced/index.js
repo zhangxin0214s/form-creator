@@ -1,7 +1,7 @@
-import button from './button'
+import addButton from './addButton'
 import Upload from  './upload'
 
 export {
-	button,
+	addButton,
 	Upload
 }

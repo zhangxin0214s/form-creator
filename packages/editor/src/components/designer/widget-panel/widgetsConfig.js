@@ -99,13 +99,13 @@ export const basicWidgets = [
 				labelHidden:false, // 标签是否隐藏
 				labelWidth:null,// 标签宽度
 				labelAlign:"",// 标签对齐方式
-				required: false,// 是否必填* 
+				required: false,// 是否必填*
 				hint:"",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
 			advanced: {
 				optionItems:  // 选项设置
-				[ 
+				[
 					{ label: "check 1", value: 1, disabled: false },
 					{ label: "check 2", value: 2, disabled: false },
 					{ label: "check 3", value: 3, disabled: false },
@@ -143,7 +143,7 @@ export const basicWidgets = [
 				labelHidden:false, // 标签是否隐藏
 				labelWidth:null,// 标签宽度
 				labelAlign:"",// 标签对齐方式
-				required: false,// 是否必填* 
+				required: false,// 是否必填*
 				hint:"",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
@@ -169,7 +169,7 @@ export const basicWidgets = [
 				labelHidden:false, // 标签是否隐藏
 				labelWidth:null,// 标签宽度
 				labelAlign:"",// 标签对齐方式
-				required: false,// 是否必填* 
+				required: false,// 是否必填*
 				hint:"",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
@@ -211,7 +211,7 @@ export const advancedWidgets = [
 	{
 		id:1,
 		name:"新增按钮",
-		type:"button",
+		type:"addButton",
 		icon:"button",
 		options:{
 			hidden:false,
