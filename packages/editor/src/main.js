@@ -1,7 +1,5 @@
 import { createApp } from "vue"
 import ElementPlus from "element-plus"
-import Vtmp from "vtmp-ui"
-import 'vtmp-ui/es/style.js'
 import { createPinia } from 'pinia'
 import "element-plus/dist/index.css"
 import { registerIcon } from "@/utils/el-icons"
@@ -17,7 +15,6 @@ seApp.component("draggable", Draggable)
 
 const pinia = createPinia();
 
-seApp.use(Vtmp)
 seApp.use(pinia)
 seApp.use(ElementPlus)
 seApp.mount("#app")
