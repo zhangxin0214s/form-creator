@@ -4,7 +4,6 @@ export const containers = [
 		id:1,
 		name:"栅格",
 		type:"grid",
-		widgetList:[],
 		icon:"lattice",
 		options:{
 			basic:{
@@ -12,7 +11,23 @@ export const containers = [
 				colHeight: "",// 栅格统一高度
 			},
 			advanced:{
-				gutter:12 // 格数
+				cols:[
+					{
+						id:1,
+						gutter:12,
+						widgetList:[]
+					},
+					{
+						id:2,
+						gutter:2,
+						widgetList:[]
+					},
+					{
+						id:3,
+						gutter:10,
+						widgetList:[]
+					}
+				]
 			}
 		},
 	},

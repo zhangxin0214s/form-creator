@@ -1,4 +1,4 @@
-import grid from './grid.vue'
+import grid from './grid/index.vue'
 import tabs from './tabs.vue'
 import Table from './table'
 export {
