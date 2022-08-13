@@ -32,7 +32,7 @@ const componentMap = {
   ...basicComponents
 }
 const activeNames = ref(['1', '2', '3'])
-
+const a = ref({name:'input1'})
 const getPropCompName = (key) =>{
     return BASCI_COMPONENTS[BASIC_PROPERTIES[key]]
 }

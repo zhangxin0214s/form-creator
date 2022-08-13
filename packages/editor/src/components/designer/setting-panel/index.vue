@@ -30,14 +30,15 @@
 </template>
 <script setup>
 import * as widget from './property-list/widget/index'
+import * as container from './property-list/container/index'
 import { widgetStore } from '@/store/index'
 import { storeToRefs } from 'pinia'
-import { ref } from "vue"
 const _widgetStore = widgetStore()
 const { selectedWidget } = storeToRefs(_widgetStore)
 
 const componentMap = {
-  ...widget
+  ...widget,
+  ...container
 }
 
 </script>

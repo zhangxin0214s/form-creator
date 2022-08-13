@@ -11,7 +11,9 @@ const BASIC_PROPERTIES = {
 }
 
 // 高级属性组件映射表
-const ADVANCED_PROPERTIES = {}
+const ADVANCED_PROPERTIES = {
+    
+}
 
 export {
     BASCI_COMPONENTS,
