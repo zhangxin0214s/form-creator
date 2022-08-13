@@ -1,8 +1,13 @@
 <template>
 	<div class="input-container">
 		<Mask :widget="widget">
-			<el-input
-				:value="widget.options.basic.defaultValue"
+			<Tag
+				:widget="widget"
+				v-if="!widget.options.basic.labelHidden"
+			></Tag>
+			<el-input 
+			:value="widget.options.basic.defaultValue" 
+			:disabled="widget.options.basic.disabled"
 			/>
 		</Mask>
 	</div>
@@ -10,7 +15,13 @@
 
 <script setup>
 import Mask from '../Mask.vue';
+import Tag from '../Tag.vue';
+import { onMounted, ref } from 'vue';
 let props = defineProps(['widget']);
+onMounted(() => {
+	const inputDom = document.getElementsByClassName('el-input')[0];
+	inputDom.style.width = props.widget.options.advanced.width + 'px';
+});
 </script>
 <style scoped>
 </style>

@@ -2,16 +2,15 @@
 	<div class="mask-container">
 		<div
 			class="mask-slot"
-			ref="maskSlot"
 		>
 			<slot></slot>
 		</div>
 		<div
 			class="mask-content"
 			ref="maskContent"
-			@click.stop="onClickMask"
+			@click="onClickMask"
 		>
-			<span>{{ widget.name }}</span>
+			<span>{{ widget.options.basic.name }}</span>
 			<div
 				class="hint"
 				v-show="!widget.options.basic.hintHidden"
@@ -37,11 +36,9 @@ import { widgetStore } from '@/store/index';
 const _widgetStore = widgetStore();
 const { widgetList, selectedMaskIndex } = storeToRefs(_widgetStore);
 const props = defineProps(['widget']);
-const maskSlot = ref(null);
 const maskContent = ref(null);
 let maskContentDom = null;
 onMounted(() => {
-	maskSlot.value.style.width = props.widget.options.advanced.width + 'px';
 	showMaskPublicFun();
 });
 watch(selectedMaskIndex, () => {
@@ -77,7 +74,9 @@ const showMaskPublicFun = () => {
 <style scoped>
 .mask-container {
 	position: relative;
-	padding: 25px;
+	padding-top: 25px;
+	padding-left: 10px;
+	padding-bottom: 25px;
 	margin-bottom: 5px;
 }
 .mask-content {
