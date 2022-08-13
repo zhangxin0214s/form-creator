@@ -1,5 +1,5 @@
-import nameBasic from './nameBasic.vue'
+import inputBasic from './inputBasic.vue'
 
 export {
-    nameBasic
+    inputBasic
 }

@@ -7,8 +7,14 @@ export const containers = [
 		icon:"lattice",
 		options:{
 			basic:{
-				name: "", // 唯一名称
-				colHeight: "",// 栅格统一高度
+				name: {
+					label: "唯一名称",
+					value: ""
+				}, // 唯一名称
+				colHeight: {
+					label: "统一高度",
+					value: ""
+				},// 栅格统一高度
 			},
 			advanced:{
 				cols:[
@@ -60,10 +66,19 @@ export const basicWidgets = [
 		icon:"input",
 		options:{
 			basic:{
-				name:"唯一标题名称（输入框）", // 唯一名称
-				label: "输入框标签：", // 标签
+				name:{
+					label: "唯一名称",
+					value: "唯一标题名称（输入框）"
+				}, // 唯一名称
+				label:{
+					label:"标签",
+					value: "工号:"
+				} , // 标签
 				labelHidden:false, // 标签是否隐藏
-				labelWidth:200,// 标签宽度
+				labelWidth:{
+					label:"标签宽度",
+					value:200
+				},// 标签宽度
 				labelAlign:"center",// 标签对齐方式
 				type: "text",// 类型
 				defaultValue: "这是默认文本",// 默认提示文本

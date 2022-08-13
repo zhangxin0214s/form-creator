@@ -10,7 +10,7 @@
 			ref="maskContent"
 			@click="onClickMask"
 		>
-			<span>{{ widget.options.basic.name }}</span>
+			<span>{{ widget.options.basic.name.value }}</span>
 			<div
 				class="hint"
 				v-show="!widget.options.basic.hintHidden"

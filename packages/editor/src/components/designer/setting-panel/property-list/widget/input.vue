@@ -7,7 +7,7 @@
                         :is="componentMap[getPropCompName(key)]"
                         :widget-prop="basicProp"
                         :value = "item"
-                        :key = "key"
+                        :key1 = "key"
                     ></component>
                 </div>
             </el-collapse-item>

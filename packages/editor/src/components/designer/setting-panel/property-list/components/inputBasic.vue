@@ -5,16 +5,16 @@
         :model="widgetProp"
         style="max-width: 360px"
     >
-        <el-form-item label="唯一名称:">
-            <el-input  v-model="props.widgetProp[key]" />
+        <el-form-item v-if="widgetProp[key1]?.label" :label="`${widgetProp[key1]?.label}:`">
+            <el-input  :model="widgetProp[key1]?.value" />
         </el-form-item>
     </el-form>
 </template>
 <script setup>
     import { defineProps } from 'vue'
-    const props = defineProps([
+    defineProps([
         'widgetProp',
-        'key',
+        'key1',
         'value'
     ])
 </script>

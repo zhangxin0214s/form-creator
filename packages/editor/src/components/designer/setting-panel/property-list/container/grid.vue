@@ -7,7 +7,7 @@
                         :is="componentMap[getPropCompName(key)]"
                         :widget-prop="basicProp"
                         :value = "item"
-                        :key = "key"
+                        :key1 = "key"
                     ></component>
                 </div>
             </el-collapse-item>
@@ -34,6 +34,7 @@ const componentMap = {
 const activeNames = ref(['1', '2', '3'])
 const a = ref({name:'input1'})
 const getPropCompName = (key) =>{
+    console.log(key,"===key===")
     return BASCI_COMPONENTS[BASIC_PROPERTIES[key]]
 }
 </script>
