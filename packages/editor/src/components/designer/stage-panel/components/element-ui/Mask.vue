@@ -2,7 +2,6 @@
 	<div class="mask-container">
 		<div
 			class="mask-slot"
-			ref="maskSlot"
 		>
 			<slot></slot>
 		</div>
@@ -11,7 +10,7 @@
 			ref="maskContent"
 			@click="onClickMask"
 		>
-			<span>{{ widget.name }}</span>
+			<span>{{ widget.options.basic.name }}</span>
 			<div
 				class="hint"
 				v-show="!widget.options.basic.hintHidden"
@@ -19,53 +18,65 @@
 			<svg-icon
 				icon-class="copy"
 				class="copyIcon"
-				@click="onClickCopy"
+				@click.stop="onClickCopy"
 			/>
 			<svg-icon
 				icon-class="delete"
 				class="deleteIcon"
-				@click="onClickDelete"
+				@click.stop="onClickDelete"
 			/>
 
 		</div>
 	</div>
 </template>
 <script setup>
-import { ref, onMounted,defineProps } from 'vue';
+import { ref, onMounted, watch, nextTick } from 'vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 const _widgetStore = widgetStore();
-const { widgetList, maskList } = storeToRefs(_widgetStore);
+const { widgetList, selectedMaskIndex } = storeToRefs(_widgetStore);
 const props = defineProps(['widget']);
-const maskSlot = ref(null);
 const maskContent = ref(null);
+let maskContentDom = null;
 onMounted(() => {
-	maskSlot.value.style.width = props.widget.options.advanced.width + 'px';
-	maskList.value.push(maskContent);
-	maskList.value.forEach((mask) => {
-		mask.value.style.opacity = 0;
-	});
-	maskContent.value.style.opacity = 1;
+	showMaskPublicFun();
+});
+watch(selectedMaskIndex, () => {
+	showMaskPublicFun();
 });
 const onClickMask = () => {
-	maskList.value.forEach((mask) => {
-		mask.value.style.opacity = 0;
-	});
+	maskContentDom.forEach((el) => (el.style.opacity = 0));
 	maskContent.value.style.opacity = 1;
+	selectedMaskIndex.value = Array.from(maskContentDom).findIndex(
+		(el) => el.style.opacity === '1'
+	);
 };
 const onClickCopy = () => {
-	console.log('复制',);
-	widgetList.value.push(props.widget);
+	widgetList.value.splice(selectedMaskIndex.value, 0, props.widget);
+	nextTick(() => {
+		selectedMaskIndex.value = selectedMaskIndex.value + 1;
+	});
 };
-const onClickDelete = () => {
-	console.log('删除');
+const onClickDelete = (e) => {
+	console.log('删除', e);
+	widgetList.value.splice(selectedMaskIndex.value,1);
+	nextTick(() => {
+		selectedMaskIndex.value = widgetList.value.length-1;
+	});
+};
+const showMaskPublicFun = () => {
+	maskContentDom = document.getElementsByClassName('mask-content');
+	maskContentDom.forEach((el) => (el.style.opacity = 0));
+	maskContentDom[selectedMaskIndex.value].style.opacity = 1;
 };
 </script>
 
 <style scoped>
 .mask-container {
 	position: relative;
-	padding: 25px;
+	padding-top: 25px;
+	padding-left: 10px;
+	padding-bottom: 25px;
 	margin-bottom: 5px;
 }
 .mask-content {

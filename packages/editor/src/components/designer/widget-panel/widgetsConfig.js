@@ -45,21 +45,21 @@ export const basicWidgets = [
 		icon:"input",
 		options:{
 			basic:{
-				name:"标题", // 唯一名称
-				label: "", // 标签
+				name:"唯一标题名称（输入框）", // 唯一名称
+				label: "输入框标签：", // 标签
 				labelHidden:false, // 标签是否隐藏
-				labelWidth:null,// 标签宽度
-				labelAlign:"",// 标签对齐方式
+				labelWidth:200,// 标签宽度
+				labelAlign:"center",// 标签对齐方式
 				type: "text",// 类型
-				defaultValue: "",// 默认提示文本
-				required: false,// 是否必填*
+				defaultValue: "这是默认文本",// 默认提示文本
+				required: true,// 是否必填*
 				readonly: false,// 只读
-				disabled: false,// 禁用
-				hint:"",// 提示语
+				disabled: true,// 禁用
+				hint:"这是输入框的提示语",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
 			advanced:{
-				width:null, // 输入框宽度
+				width:300, // 输入框宽度
 				validation:"",// 校验规则
 				validationHint:""//校验规则提示
 			}
@@ -72,15 +72,15 @@ export const basicWidgets = [
 		icon:"switch",
 		options:{
 			basic:{
-				name:"标题", // 唯一名称
-				label: "", // 标签
+				name:"唯一标题名称（开关）", // 唯一名称
+				label: "开关标签：", // 标签
 				labelHidden:false, // 标签是否隐藏
-				labelWidth:null,// 标签宽度
-				labelAlign:"",// 标签对齐方式
+				labelWidth:200,// 标签宽度
+				labelAlign:"center",// 标签对齐方式
 				defaultValue:true,// 默认值:开 || 关
 				required: false,// 是否必填*
 				disabled: false,// 禁用
-				hint:"",// 提示语
+				hint:"这是开关的提示语",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
 			advanced: {
