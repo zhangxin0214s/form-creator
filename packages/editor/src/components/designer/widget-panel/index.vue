@@ -44,6 +44,7 @@
                   :sort="false"
                   item-key="key"
                   :group="{name: 'dragGroup', pull: 'clone', put: false}"
+									@end="onEnd"
               >
                 <template #item="{ element }">
                   <li class="gild-container">
@@ -77,110 +78,119 @@
   </el-scrollbar>
 </template>
 <script setup>
-import { containers, basicWidgets, advancedWidgets } from "./widgetsConfig"
-import { ref, reactive } from "vue"
-
-const activeNames = ref(['1', '2', '3', '4'])
+import { containers, basicWidgets, advancedWidgets } from './widgetsConfig';
+import { ref, reactive } from 'vue';
+import { storeToRefs } from 'pinia';
+import { widgetStore } from '@/store/index';
+const _widgetStore = widgetStore();
+const { widgetList,selectedMaskIndex } = storeToRefs(_widgetStore);
+const activeNames = ref(['1', '2', '3', '4']);
 const state = reactive({
-  containers:containers,
-  basicWidgets:basicWidgets,
-  advancedWidgets:advancedWidgets
-})
+	containers: containers,
+	basicWidgets: basicWidgets,
+	advancedWidgets: advancedWidgets,
+});
+
+const onEnd = (e)=>{
+	selectedMaskIndex.value = e.newIndex
+}
 </script>
 <style lang="scss" scoped>
-@import "../../../styles/global.scss";
+@import '../../../styles/global.scss';
 
 .el-header {
-  --el-header-padding: 0 0px;
+	--el-header-padding: 0 0px;
 }
 
 .el-main {
-  --el-main-padding: 0 0px;
+	--el-main-padding: 0 0px;
 }
 
 .widget {
-  &-header {
-    width: 100%;
-    height: 50px;
-    line-height: 50px;
-    text-align: center;
-    border-bottom: 1px solid #000;
+	&-header {
+		width: 100%;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+		border-bottom: 1px solid #000;
 
-    &-title {
-      font-weight: bold;
-    }
-  }
+		&-title {
+			font-weight: bold;
+		}
+	}
 }
 
 .widget-collapse {
-  border-top-width: 0;
+	border-top-width: 0;
 
-  :deep(.el-collapse-item__header) {
-    margin-left: 8px;
-    font-style: italic;
-    font-weight: bold;
-  }
+	:deep(.el-collapse-item__header) {
+		margin-left: 8px;
+		font-style: italic;
+		font-weight: bold;
+	}
 
-  :deep(.el-collapse-item__content) {
-    padding-bottom: 6px;
+	:deep(.el-collapse-item__content) {
+		padding-bottom: 6px;
 
-    ul {
-      padding-left: 10px; /* 重置IE11默认样式 */
-      margin: 0; /* 重置IE11默认样式 */
-      margin-block-start: 0;
-      margin-block-end: 0.25em;
-      padding-inline-start: 10px;
+		ul {
+			padding-left: 10px; /* 重置IE11默认样式 */
+			margin: 0; /* 重置IE11默认样式 */
+			margin-block-start: 0;
+			margin-block-end: 0.25em;
+			padding-inline-start: 10px;
 
-      &:after {
-        content: "";
-        display: block;
-        clear: both;
-      }
+			&:after {
+				content: '';
+				display: block;
+				clear: both;
+			}
 
-      .container-widget-item, .field-widget-item {
-        display: inline-block;
-        height: 28px;
-        line-height: 28px;
-        width: 115px;
-        float: left;
-        margin: 2px 6px 6px 0;
-        cursor: move;
-        white-space: nowrap;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        background: #f1f2f3;
-      }
+			.container-widget-item,
+			.field-widget-item {
+				display: inline-block;
+				height: 28px;
+				line-height: 28px;
+				width: 115px;
+				float: left;
+				margin: 2px 6px 6px 0;
+				cursor: move;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				background: #f1f2f3;
+			}
 
-      .container-widget-item:hover, .field-widget-item:hover {
-        background: #EBEEF5;
-        outline: 1px solid $--color-primary;
-      }
+			.container-widget-item:hover,
+			.field-widget-item:hover {
+				background: #ebeef5;
+				outline: 1px solid $--color-primary;
+			}
 
-      .drag-handler {
-        position: absolute;
-        top: 0;
-        left: 160px;
-        background-color: #dddddd;
-        border-radius: 5px;
-        padding-right: 5px;
-        font-size: 11px;
-        color: #666666;
-      }
-    }
-  }
+			.drag-handler {
+				position: absolute;
+				top: 0;
+				left: 160px;
+				background-color: #dddddd;
+				border-radius: 5px;
+				padding-right: 5px;
+				font-size: 11px;
+				color: #666666;
+			}
+		}
+	}
 }
 
 .gild-container {
-  display: inline-block;
-  height: 28px;
-  line-height: 28px;
-  width: 115px;
-  float: left;
-  margin: 2px 6px 6px 0;
-  cursor: move;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  background: #f1f2f3;
+	display: inline-block;
+	height: 28px;
+	line-height: 28px;
+	width: 115px;
+	float: left;
+	margin: 2px 6px 6px 0;
+	cursor: move;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	background: #f1f2f3;
 }
 </style>
