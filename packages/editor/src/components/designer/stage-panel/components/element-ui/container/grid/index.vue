@@ -10,7 +10,6 @@
 </template>
 <script setup>
     import Col from "./grid-col.vue"
-    import { defineProps } from 'vue'
     defineProps([
         'widget'
     ])

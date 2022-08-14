@@ -46,7 +46,7 @@ import * as widget from './components/element-ui/widget';
 import * as Advanced from './components/element-ui/Advanced';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
-import { ref } from 'vue';
+
 const componentMap = {
 	...container,
 	...widget,
