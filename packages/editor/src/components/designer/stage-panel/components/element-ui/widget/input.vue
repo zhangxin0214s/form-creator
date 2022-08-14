@@ -23,8 +23,10 @@ import Hint from '../Hint.vue';
 import { onMounted, ref } from 'vue';
 let props = defineProps(['widget']);
 onMounted(() => {
-	const inputDom = document.getElementsByClassName('el-input')[0];
-	inputDom.style.width = props.widget.options.advanced.width + 'px';
+	const inputDom = document.getElementsByClassName('el-input');
+	inputDom.forEach((dom) => {
+		dom.style.width = props.widget.options.advanced.width + 'px';
+	});
 });
 </script>
 <style scoped>

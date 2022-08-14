@@ -7,11 +7,33 @@ export const containers = [
 		icon:"lattice",
 		options:{
 			basic:{
-				name: "", // 唯一名称
-				colHeight: "",// 栅格统一高度
+				name: {
+					label: "唯一名称",
+					value: ""
+				}, // 唯一名称
+				colHeight: {
+					label: "统一高度",
+					value: ""
+				},// 栅格统一高度
 			},
 			advanced:{
-				gutter:12 // 格数
+				cols:[
+					{
+						id:1,
+						gutter:12,
+						widgetList:[]
+					},
+					{
+						id:2,
+						gutter:2,
+						widgetList:[]
+					},
+					{
+						id:3,
+						gutter:10,
+						widgetList:[]
+					}
+				]
 			}
 		},
 	},
@@ -44,11 +66,20 @@ export const basicWidgets = [
 		icon:"input",
 		options:{
 			basic:{
-				name:"唯一标题名称（输入框）", // 唯一名称
-				label: "输入框标签：", // 标签
+				name:{
+					label: "唯一名称",
+					value: "唯一标题名称（输入框）"
+				}, // 唯一名称
+				label:{
+					label:"标签",
+					value: "工号:"
+				} , // 标签
 				labelHidden:false, // 标签是否隐藏
-				labelWidth:120,// 标签宽度
-				labelAlign:"left",// 标签对齐方式
+				labelWidth:{
+					label:"标签宽度",
+					value:100
+				},// 标签宽度
+				labelAlign:"center",// 标签对齐方式
 				type: "text",// 类型
 				defaultValue: "这是默认文本",// 默认提示文本
 				required: true,// 是否必填*
@@ -71,10 +102,19 @@ export const basicWidgets = [
 		icon:"switch",
 		options:{
 			basic:{
-				name:"唯一标题名称（开关）", // 唯一名称
-				label: "开关标签：", // 标签
+				name:{
+					label: "唯一名称",
+					value: "唯一标题名称（开关）"
+				}, // 唯一名称
+				label:{
+					label:"标签",
+					value: "开关:"
+				} , // 标签
 				labelHidden:false, // 标签是否隐藏
-				labelWidth:200,// 标签宽度
+				labelWidth:{
+					label:"标签宽度",
+					value:100
+				},// 标签宽度
 				labelAlign:"center",// 标签对齐方式
 				defaultValue:true,// 默认值:开 || 关
 				required: false,// 是否必填*

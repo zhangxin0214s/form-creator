@@ -1,29 +1,35 @@
 <template>
-	<div class="mask-container">
-		<div class="mask-slot">
-			<slot></slot>
-		</div>
+	<div
+		class="mask-container"
+		ref="maskContainer"
+	>
 		<div
-			class="mask-content"
-			ref="maskContent"
-			@click="onClickMask"
+			class="mask-slot"
+			ref="maskSlot"
 		>
-			<div class="title">
-				{{ widget.options.basic.name }}
+			<slot></slot>
+			<div
+				class="mask-content"
+				ref="maskContent"
+				@click="onClickMask"
+			>
+				<div class="title">
+					{{ widget.options.basic.name.value }}
+				</div>
+				<svg-icon
+					icon-class="copy"
+					class="copyIcon"
+					@click.stop="onClickCopy"
+				/>
+				<svg-icon
+					icon-class="delete"
+					class="deleteIcon"
+					@click.stop="onClickDelete"
+				/>
 
 			</div>
-			<svg-icon
-				icon-class="copy"
-				class="copyIcon"
-				@click.stop="onClickCopy"
-			/>
-			<svg-icon
-				icon-class="delete"
-				class="deleteIcon"
-				@click.stop="onClickDelete"
-			/>
-
 		</div>
+
 	</div>
 </template>
 <script setup>
@@ -34,6 +40,8 @@ const _widgetStore = widgetStore();
 const { widgetList, selectedMaskIndex } = storeToRefs(_widgetStore);
 const props = defineProps(['widget']);
 const maskContent = ref(null);
+const maskSlot = ref(null);
+const maskContainer = ref(null);
 let maskContentDom = null;
 onMounted(() => {
 	showMaskPublicFun();
@@ -55,25 +63,29 @@ const onClickCopy = () => {
 	});
 };
 const onClickDelete = (e) => {
-	console.log('删除', e);
 	widgetList.value.splice(selectedMaskIndex.value, 1);
 	nextTick(() => {
 		selectedMaskIndex.value = widgetList.value.length - 1;
 	});
 };
 const showMaskPublicFun = () => {
-	maskContentDom = document.getElementsByClassName('mask-content');
-	maskContentDom.forEach((el) => (el.style.opacity = 0));
-	maskContentDom[selectedMaskIndex.value].style.opacity = 1;
+	nextTick(() => {
+		maskContentDom = document.getElementsByClassName('mask-content');
+		maskContentDom.forEach((el) => (el.style.opacity = 0));
+		maskContentDom[selectedMaskIndex.value].style.opacity = 1;
+		maskContainer.value.style.height = maskSlot.value.offsetHeight + 'px';
+	});
 };
 </script>
 
 <style scoped>
 .mask-container {
-	position: relative;
-	padding-top: 5px;
-	padding-bottom: 25px;
+	/* position: relative; */
 	margin-bottom: 5px;
+}
+.mask-slot {
+	position: absolute;
+	display: flex;
 }
 .mask-content {
 	width: 100%;
@@ -89,12 +101,12 @@ const showMaskPublicFun = () => {
 .copyIcon {
 	position: absolute;
 	right: 30px;
-	bottom: 5px;
+	bottom: 0;
 }
 .deleteIcon {
 	position: absolute;
 	right: 0;
-	bottom: 5px;
+	bottom: 0;
 }
 .title {
 	position: absolute;
