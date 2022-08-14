@@ -5,10 +5,13 @@
 				:widget="widget"
 				v-if="!widget.options.basic.labelHidden"
 			></Tag>
-			<el-input 
-			:value="widget.options.basic.defaultValue" 
-			:disabled="widget.options.basic.disabled"
-			/>
+			<div>
+				<el-input
+					:value="widget.options.basic.defaultValue"
+					:disabled="widget.options.basic.disabled"
+				/>
+				<Hint :widget="widget"></Hint>
+			</div>
 		</Mask>
 	</div>
 </template>
@@ -16,6 +19,7 @@
 <script setup>
 import Mask from '../Mask.vue';
 import Tag from '../Tag.vue';
+import Hint from '../Hint.vue';
 import { onMounted, ref } from 'vue';
 let props = defineProps(['widget']);
 onMounted(() => {

@@ -5,13 +5,17 @@
 				:widget="widget"
 				v-if="!widget.options.basic.labelHidden"
 			></Tag>
-			<el-switch />
+			<div>
+				<el-switch />
+				<Hint :widget="widget"></Hint>
+			</div>
 		</Mask>
 	</div>
 </template>
 <script setup>
 import Mask from '../Mask.vue';
 import Tag from '../Tag.vue';
+import Hint from '../Hint.vue';
 let props = defineProps(['widget']);
 </script>
 <style lang="scss" scoped>

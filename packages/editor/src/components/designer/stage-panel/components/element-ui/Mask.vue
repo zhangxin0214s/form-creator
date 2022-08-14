@@ -1,8 +1,6 @@
 <template>
 	<div class="mask-container">
-		<div
-			class="mask-slot"
-		>
+		<div class="mask-slot">
 			<slot></slot>
 		</div>
 		<div
@@ -10,11 +8,10 @@
 			ref="maskContent"
 			@click="onClickMask"
 		>
-			<span>{{ widget.options.basic.name }}</span>
-			<div
-				class="hint"
-				v-show="!widget.options.basic.hintHidden"
-			>{{ widget.options.basic.hint}}</div>
+			<div class="title">
+				{{ widget.options.basic.name }}
+
+			</div>
 			<svg-icon
 				icon-class="copy"
 				class="copyIcon"
@@ -59,9 +56,9 @@ const onClickCopy = () => {
 };
 const onClickDelete = (e) => {
 	console.log('删除', e);
-	widgetList.value.splice(selectedMaskIndex.value,1);
+	widgetList.value.splice(selectedMaskIndex.value, 1);
 	nextTick(() => {
-		selectedMaskIndex.value = widgetList.value.length-1;
+		selectedMaskIndex.value = widgetList.value.length - 1;
 	});
 };
 const showMaskPublicFun = () => {
@@ -74,8 +71,7 @@ const showMaskPublicFun = () => {
 <style scoped>
 .mask-container {
 	position: relative;
-	padding-top: 25px;
-	padding-left: 10px;
+	padding-top: 5px;
 	padding-bottom: 25px;
 	margin-bottom: 5px;
 }
@@ -87,6 +83,7 @@ const showMaskPublicFun = () => {
 	left: 0;
 	border: 2px solid #1396da;
 	border-radius: 5px;
+	box-sizing: border-box;
 }
 
 .copyIcon {
@@ -99,13 +96,12 @@ const showMaskPublicFun = () => {
 	right: 0;
 	bottom: 5px;
 }
-span {
-	font-size: 12px;
-}
-.hint {
+.title {
 	position: absolute;
-	left: 5px;
-	bottom: 5px;
+	background-color: rgba(40, 173, 214, 0.7);
+	left: 0;
+	top: 0;
+	color: white;
 	font-size: 12px;
 }
 </style>

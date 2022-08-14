@@ -1,6 +1,5 @@
 <template>
 	<div class="tag-container">
-
 		<div
 			class="tag-content"
 			ref="tagContent"
@@ -18,10 +17,13 @@ const tagContent = ref(null);
 onMounted(() => {
 	tagContent.value.style.width = props.widget.options.basic.labelWidth + 'px';
 	tagContent.value.style.textAlign = props.widget.options.basic.labelAlign;
+	const maskSlot = document.getElementsByClassName('mask-slot')[0];
+	tagContent.value.style.height = maskSlot.offsetHeight+'px';
+	
 });
 </script>
 <style scoped>
-.tag-content {
+.tag-container {
 	float: left;
 }
 </style>

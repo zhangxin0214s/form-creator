@@ -47,8 +47,8 @@ export const basicWidgets = [
 				name:"唯一标题名称（输入框）", // 唯一名称
 				label: "输入框标签：", // 标签
 				labelHidden:false, // 标签是否隐藏
-				labelWidth:200,// 标签宽度
-				labelAlign:"center",// 标签对齐方式
+				labelWidth:120,// 标签宽度
+				labelAlign:"left",// 标签对齐方式
 				type: "text",// 类型
 				defaultValue: "这是默认文本",// 默认提示文本
 				required: true,// 是否必填*
