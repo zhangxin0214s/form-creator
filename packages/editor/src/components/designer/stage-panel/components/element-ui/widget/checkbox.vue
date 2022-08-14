@@ -1,37 +1,26 @@
 <template>
   <div class="input-container">
-    <el-checkbox-group>
-      <el-checkbox>
-
-      </el-checkbox>
-    </el-checkbox-group>
+    <Mask :widget="widget">
+      <Tag
+          :widget="widget"
+          v-if="!widget.options.basic.labelHidden"/>
+      <el-checkbox-group v-for="ite in widget.options.advanced">
+        <el-checkbox
+            v-for="item in ite"
+            :label="item.label"
+            :disabled="item.disabled"
+            :key="item.value">
+        </el-checkbox>
+      </el-checkbox-group>
+    </Mask>
   </div>
 </template>
-<script>
-// import { basicWidgets } from "../../../../widget-panel/widgetsConfig"
-// import { reactive } from "vue"
-//
-// const state = reactive({
-//   basicWidgets:basicWidgets,
-// })
+<script setup>
+import Mask from '../Mask'
+import Tag from '../Tag'
+import { onMounted } from 'vue'
 
-export default {
-  data() {
-    return {
-      checked:[]
-    }
-  }
-}
+let props = defineProps(['widget'])
 </script>
 <style lang="scss" scoped>
-.input-container {
-  .asterisk {
-    color: red;
-    margin-right: 5px;
-  }
-
-  .label {
-    font-size: 14px;
-  }
-}
 </style>

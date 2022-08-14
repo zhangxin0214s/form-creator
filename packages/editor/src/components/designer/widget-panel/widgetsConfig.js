@@ -7,13 +7,13 @@ export const containers = [
 		icon:"lattice",
 		options:{
 			basic:{
-				name: {
-					label: "唯一名称",
-					value: ""
+				name:{
+					label:"唯一名称",
+					value:""
 				}, // 唯一名称
-				colHeight: {
-					label: "统一高度",
-					value: ""
+				colHeight:{
+					label:"统一高度",
+					value:""
 				},// 栅格统一高度
 			},
 			advanced:{
@@ -67,24 +67,24 @@ export const basicWidgets = [
 		options:{
 			basic:{
 				name:{
-					label: "唯一名称",
-					value: "唯一标题名称（输入框）"
+					label:"唯一名称",
+					value:"唯一标题名称（输入框）"
 				}, // 唯一名称
 				label:{
 					label:"标签",
-					value: "工号:"
-				} , // 标签
+					value:"工号:"
+				}, // 标签
 				labelHidden:false, // 标签是否隐藏
 				labelWidth:{
 					label:"标签宽度",
 					value:200
 				},// 标签宽度
 				labelAlign:"center",// 标签对齐方式
-				type: "text",// 类型
-				defaultValue: "这是默认文本",// 默认提示文本
-				required: true,// 是否必填*
-				readonly: false,// 只读
-				disabled: true,// 禁用
+				type:"text",// 类型
+				defaultValue:"这是默认文本",// 默认提示文本
+				required:true,// 是否必填*
+				readonly:false,// 只读
+				disabled:true,// 禁用
 				hint:"这是输入框的提示语",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
@@ -103,19 +103,17 @@ export const basicWidgets = [
 		options:{
 			basic:{
 				name:"唯一标题名称（开关）", // 唯一名称
-				label: "开关标签：", // 标签
+				label:"开关标签：", // 标签
 				labelHidden:false, // 标签是否隐藏
 				labelWidth:200,// 标签宽度
 				labelAlign:"center",// 标签对齐方式
 				defaultValue:true,// 默认值:开 || 关
-				required: false,// 是否必填*
-				disabled: false,// 禁用
+				required:false,// 是否必填*
+				disabled:false,// 禁用
 				hint:"这是开关的提示语",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
-			advanced: {
-
-			}
+			advanced:{}
 		},
 	},
 	{
@@ -124,23 +122,44 @@ export const basicWidgets = [
 		type:"checkbox",
 		icon:"check",
 		options:{
-			basic: {
-				name:"标题", // 唯一名称
-				label: "", // 标签
+			basic:{
+				name:{
+					label:"唯一名称",
+					value:"唯一标题名称"
+				}, // 唯一名称
+				label:{
+					label:"标签",
+					value:"复选框:"
+				}, // 标签
 				labelHidden:false, // 标签是否隐藏
-				labelWidth:null,// 标签宽度
+				labelWidth:{
+					label:"标签宽度",
+					value:200
+				},// 标签宽度
 				labelAlign:"",// 标签对齐方式
-				required: false,// 是否必填*
-				hint:"",// 提示语
+				required:true,// 是否必填*
+				hint:"复选框提示语（用于表单校验）",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
-			advanced: {
-				optionItems:  // 选项设置
-				[
-					{ label: "check 1", value: 1, disabled: false },
-					{ label: "check 2", value: 2, disabled: false },
-					{ label: "check 3", value: 3, disabled: false },
-				]
+			advanced:{
+
+				optionItems: // 选项设置
+					[
+						{label:"check 1", value:1, disabled:false},
+						{label:"check 2", value:2, disabled:true},
+						{label:"check 3", value:3, disabled:false},
+						{label:"check 3", value:3, disabled:false},
+						{label:"check 3", value:3, disabled:false},
+						{label:"check 3", value:3, disabled:false},
+						{label:"check 3", value:3, disabled:false},
+						{label:"check 3", value:3, disabled:false},
+						{label:"check 3", value:3, disabled:false},
+						{label:"check 3", value:3, disabled:false},
+						{label:"check 3", value:3, disabled:false},
+						{label:"check 3", value:3, disabled:false},
+						{label:"check 3", value:3, disabled:false},
+						{label:"check 3", value:3, disabled:false},
+					],
 			}
 		},
 	},
@@ -152,14 +171,12 @@ export const basicWidgets = [
 		options:{
 			basic:{
 				name:"标题", // 唯一名称
-				label: "取消", // 标签
+				label:"取消", // 标签
 				type:"success",// 类型:success/warn/error参考element-ui button
-				disabled: false,// 禁用
+				disabled:false,// 禁用
 
 			},
-			advanced:{
-
-			}
+			advanced:{}
 		}
 	},
 	{
@@ -170,21 +187,21 @@ export const basicWidgets = [
 		options:{
 			basic:{
 				name:"标题", // 唯一名称
-				label: "", // 标签
+				label:"", // 标签
 				labelHidden:false, // 标签是否隐藏
 				labelWidth:null,// 标签宽度
 				labelAlign:"",// 标签对齐方式
-				required: false,// 是否必填*
+				required:false,// 是否必填*
 				hint:"",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
 			advanced:{
 				optionItems: // 选项设置
-				[
-					{label: "select 1",value: 1 },
-					{ label: "select 2", value: 2 },
-					{ label: "select 3", value: 3 },
-				]
+					[
+						{label:"select 1", value:1},
+						{label:"select 2", value:2},
+						{label:"select 3", value:3},
+					]
 			}
 		}
 	},
@@ -196,19 +213,19 @@ export const basicWidgets = [
 		options:{
 			basic:{
 				name:"标题", // 唯一名称
-				label: "", // 标签
+				label:"", // 标签
 				labelHidden:false, // 标签是否隐藏
 				labelWidth:null,// 标签宽度
 				labelAlign:"",// 标签对齐方式
-				required: false,// 是否必填*
+				required:false,// 是否必填*
 				hint:"",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
 			advanced:{
-				optionItems: [
-					{ label: "radio 1", value: 1 },
-					{ label: "radio 2", value: 2 },
-					{ label: "radio 3", value: 3 },
+				optionItems:[
+					{label:"radio 1", value:1},
+					{label:"radio 2", value:2},
+					{label:"radio 3", value:3},
 				]
 			}
 		}
