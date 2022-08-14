@@ -77,7 +77,7 @@ export const basicWidgets = [
 				labelHidden:false, // 标签是否隐藏
 				labelWidth:{
 					label:"标签宽度",
-					value:100
+					value:200
 				},// 标签宽度
 				labelAlign:"center",// 标签对齐方式
 				type: "text",// 类型
@@ -102,19 +102,10 @@ export const basicWidgets = [
 		icon:"switch",
 		options:{
 			basic:{
-				name:{
-					label: "唯一名称",
-					value: "唯一标题名称（开关）"
-				}, // 唯一名称
-				label:{
-					label:"标签",
-					value: "开关:"
-				} , // 标签
+				name:"唯一标题名称（开关）", // 唯一名称
+				label: "开关标签：", // 标签
 				labelHidden:false, // 标签是否隐藏
-				labelWidth:{
-					label:"标签宽度",
-					value:100
-				},// 标签宽度
+				labelWidth:200,// 标签宽度
 				labelAlign:"center",// 标签对齐方式
 				defaultValue:true,// 默认值:开 || 关
 				required: false,// 是否必填*

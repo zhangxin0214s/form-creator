@@ -1,43 +1,21 @@
 <template>
-  <div>
-    <el-button :type=btnInfo.type
-        :disabled=btnInfo.disabled
-    >{{ btnInfo.label }}
-    </el-button>
+  <div class="input-container">
+    <Mask :widget="widget">
+      <el-button
+          :type="widget.options.basic.type"
+          :disabled="widget.options.basic.disabled"
+      >{{ widget.options.basic.label }}
+      </el-button>
+    </Mask>
+
   </div>
 </template>
 
-<script>
-import { basicWidgets } from "../../../../widget-panel/widgetsConfig"
-import { reactive } from "vue"
+<script setup>
+import Mask from '../Mask'
 
-const state = reactive({
-  basicWidgets:basicWidgets,
-})
-export default {
-  name:"button",
-  data() {
-    return {
-      list:state.basicWidgets,
-      btnInfo:{
-        name:'',
-        label:'',
-        type:'',
-        disabled:'',
-      },
-    }
-  },
-  created() {
-    let button = {}
-    button = this.list.find(item => {
-      return item.id === 4
-    })
-    this.btnInfo.name = button.options.basic.name
-    this.btnInfo.label = button.options.basic.label
-    this.btnInfo.type = button.options.basic.type
-    this.btnInfo.disabled = button.options.basic.disabled
-  }
-}
+let props = defineProps(['widget']);
+console.log(props)
 </script>
 
 <style scoped>
