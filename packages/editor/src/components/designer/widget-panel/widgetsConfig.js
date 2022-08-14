@@ -125,13 +125,22 @@ export const basicWidgets = [
 		icon:"check",
 		options:{
 			basic: {
-				name:"标题", // 唯一名称
-				label: "", // 标签
+				name:{
+					label: "唯一名称",
+					value: "唯一标题名称"
+				}, // 唯一名称
+				label:{
+					label:"标签",
+					value: "复选框:"
+				} , // 标签
 				labelHidden:false, // 标签是否隐藏
-				labelWidth:null,// 标签宽度
+				labelWidth:{
+					label:"标签宽度",
+					value:200
+				},// 标签宽度
 				labelAlign:"",// 标签对齐方式
-				required: false,// 是否必填*
-				hint:"",// 提示语
+				required: true,// 是否必填*
+				hint:"提示语",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
 			advanced: {
@@ -155,7 +164,6 @@ export const basicWidgets = [
 				label: "取消", // 标签
 				type:"success",// 类型:success/warn/error参考element-ui button
 				disabled: false,// 禁用
-
 			},
 			advanced:{
 
