@@ -2632,7 +2632,7 @@ packages:
       '@types/web-bluetooth': 0.0.14
       '@vueuse/metadata': 8.9.4
       '@vueuse/shared': 8.9.4_vue@3.2.37
-      vue: 3.2.37
+      vue: registry.npmmirror.com/vue/3.2.37
       vue-demi: 0.13.6_vue@3.2.37
 
   /@vueuse/metadata/8.9.4:
@@ -2649,7 +2649,7 @@ packages:
       vue:
         optional: true
     dependencies:
-      vue: 3.2.37
+      vue: registry.npmmirror.com/vue/3.2.37
       vue-demi: 0.13.6_vue@3.2.37
 
   /@webassemblyjs/ast/1.9.0:

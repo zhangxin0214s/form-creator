@@ -25,12 +25,7 @@ export const containers = [
 					},
 					{
 						id:2,
-						gutter:2,
-						widgetList:[]
-					},
-					{
-						id:3,
-						gutter:10,
+						gutter:12,
 						widgetList:[]
 					}
 				]
