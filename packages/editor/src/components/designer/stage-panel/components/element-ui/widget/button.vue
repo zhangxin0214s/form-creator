@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import Mask from '../common/Mask'
+import Mask from '../common/Mask.vue'
 
 let props = defineProps(['widget']);
 console.log(props)

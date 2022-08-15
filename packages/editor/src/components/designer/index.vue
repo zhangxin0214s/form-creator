@@ -25,9 +25,9 @@
   </el-container>
 </template>
 <script setup>
-import WidgetPanel from './widget-panel/index'
-import StagePanel from './stage-panel/index'
-import SettingPanel from './setting-panel/index'
+import WidgetPanel from './widget-panel/index.vue'
+import StagePanel from './stage-panel/index.vue'
+import SettingPanel from './setting-panel/index.vue'
 import { ref } from "vue"
 
 const designer = ref('null');
