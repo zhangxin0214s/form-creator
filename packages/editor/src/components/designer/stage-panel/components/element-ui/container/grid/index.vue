@@ -31,9 +31,6 @@
  .select {
     outline:1px dashed $--color-primary;
  }
- .el-row {
-  margin-bottom: 20px;
-}
 .el-row:last-child {
   margin-bottom: 0;
 }

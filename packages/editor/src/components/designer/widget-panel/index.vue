@@ -26,6 +26,7 @@
                   class="list-group"
                   sort="false"
                   item-key="key"
+				  :clone="onClone"
               >
                 <template #item="{ element }">
                   <li class="gild-container">
@@ -63,6 +64,7 @@
                   :sort="false"
                   item-key="key"
                   :group="{name: 'dragGroup', pull: 'clone', put: false}"
+				  :clone="onClone"
               >
                 <template #item="{ element }">
                   <li class="gild-container">

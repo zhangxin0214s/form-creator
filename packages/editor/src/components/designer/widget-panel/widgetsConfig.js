@@ -9,7 +9,7 @@ export const containers = [
 			basic:{
 				name:{
 					label:"唯一名称",
-					value:""
+					value:"栅格1"
 				}, // 唯一名称
 				colHeight:{
 					label:"统一高度",

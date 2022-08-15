@@ -17,6 +17,7 @@
 		<div class="stage-form">
 			
 			<draggable
+				v-if="widgetList"
 				:list="widgetList"
 				item-key="id"
 				v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300,}"

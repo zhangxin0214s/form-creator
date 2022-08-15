@@ -29,14 +29,11 @@
     const { widgetList,selectedWidget} = storeToRefs(_widgetStore);
 
     const copy = () =>{
-        let newOrigin = deepClone(props.widget);
-        newOrigin.id = generateId();
-        _widgetStore.widgetList.push(newOrigin)
+        _widgetStore.copyWidget(props.widget)
     }
 
     const delete1 = () =>{
-         _widgetStore.widgetList.splice(selectedWidget,1);
-       
+         _widgetStore.removeWidget(selectedWidget.value)
     }
 
 </script>
