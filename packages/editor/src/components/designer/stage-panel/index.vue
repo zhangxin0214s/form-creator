@@ -43,7 +43,7 @@
 <script setup>
 import * as container from './components/element-ui/container';
 import * as widget from './components/element-ui/widget';
-import * as Advanced from './components/element-ui/Advanced';
+import * as Advanced from './components/element-ui/advanced';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 

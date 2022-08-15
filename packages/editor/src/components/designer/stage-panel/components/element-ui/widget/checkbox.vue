@@ -19,9 +19,9 @@
   </div>
 </template>
 <script setup>
-import Mask from '../Mask'
-import Tag from '../Tag'
-import Hint from '../Hint'
+import Mask from '../common/Mask'
+import Tag from '../common/Tag'
+import Hint from '../common/Hint'
 
 let props = defineProps(['widget'])
 </script>
