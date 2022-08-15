@@ -3,7 +3,7 @@
     <Mask :widget="widget">
       <Tag
           :widget="widget"
-          v-if="!widget.options.basic.labelHidden"/>
+          v-if="!widget.options.basic.labelHidden.value"/>
       <div>
         <el-checkbox-group v-for="ite in widget.options.advanced">
           <el-checkbox

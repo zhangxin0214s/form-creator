@@ -2,8 +2,8 @@
 	<div class="hint-container">
 		<span
 			class="hint"
-			v-show="!widget.options.basic.hintHidden"
-		>{{ widget.options.basic.hint.value}}</span>
+			v-show="!widget.options.basic.hintHidden.isHidden"
+		>{{ widget.options.basic.hint.label}}</span>
 	</div>
 </template>
 

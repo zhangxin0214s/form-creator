@@ -5,7 +5,7 @@
 			ref="tagContent"
 		>
 			<span
-				v-show="widget.options.basic.required"
+				v-show="widget.options.basic.required.value"
 				style="color:red"
 			>*</span>
 			{{widget.options.basic.label.value}}

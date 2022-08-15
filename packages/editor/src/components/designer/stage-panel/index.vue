@@ -55,6 +55,7 @@ const selected = (widgetData) => {
 	console.log('选中:', widgetData);
 	_widgetStore.selectedWidget = widgetData;
 };
+
 const onEnd = (e)=>{
 	selectedMaskIndex.value = e.newIndex
 }
