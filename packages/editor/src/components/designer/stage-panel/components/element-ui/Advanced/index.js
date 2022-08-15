@@ -1,5 +1,5 @@
-import addButton from './addButton'
-import Upload from  './upload'
+import addButton from './addButton.vue'
+import Upload from  './upload.vue'
 
 export {
 	addButton,
