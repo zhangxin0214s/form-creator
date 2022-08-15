@@ -21,6 +21,7 @@
             <svg-icon
                 icon-class="delete"
                 class="deleteIcon"
+                @click.stop="delete1"
                
             />
         </div>
@@ -30,16 +31,22 @@
     import { widgetStore } from '@/store/index';
     import { storeToRefs } from 'pinia';
     import { generateId,deepClone } from '@/utils/util'
-    defineProps([
+    const props = defineProps([
         'widget',
         'basicProp'
     ]);
     const _widgetStore = widgetStore();
     const { widgetList,selectedWidget} = storeToRefs(_widgetStore);
+
     const copy = () =>{
-        let newOrigin = deepClone(selectedWidget);
+        let newOrigin = deepClone(props.widget);
         newOrigin.id = generateId();
         _widgetStore.widgetList.push(newOrigin)
+    }
+
+    const delete1 = () =>{
+         _widgetStore.widgetList.pop();
+       
     }
 </script>
 <style lang="scss" scoped>
