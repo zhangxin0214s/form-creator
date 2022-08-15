@@ -38,7 +38,14 @@ export const containers = [
 		type:"tabs",
 		icon:"tag",
 		options:{
-			hidden:false,
+			advanced:{
+				cols:[
+					{
+						id:1,
+						widgetList:[]
+					}
+				]
+			}
 		},
 	},
 	{
