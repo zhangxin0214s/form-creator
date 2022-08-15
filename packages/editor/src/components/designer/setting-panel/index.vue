@@ -20,6 +20,7 @@
                 :key="selectedWidget?.id"
                 :selected-widget = "selectedWidget"
                 :basic-prop = "selectedWidget?.options.basic"
+                :advanced-prop = "selectedWidget?.options.advanced"
               >
               </component>
             </div> 

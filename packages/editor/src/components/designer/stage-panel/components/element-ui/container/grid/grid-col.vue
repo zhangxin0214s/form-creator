@@ -16,7 +16,6 @@
     </el-col>
 </template>
 <script setup>
-    import { defineProps } from 'vue'
     import * as widgets from '../../widget'
     import * as Advanced from '../../Advanced'
     defineProps([

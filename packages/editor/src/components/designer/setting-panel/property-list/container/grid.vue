@@ -5,7 +5,8 @@
                 <div v-for="(item,key,index) in basicProp" :key="index">
                     <component  
                         :is="componentMap[getPropCompName(key)]"
-                        :widget-prop="basicProp"
+                        :basic-prop="basicProp"
+                        :advanced-prop="advancedProp"
                         :value = "item"
                         :key1 = "key"
                     ></component>
@@ -13,7 +14,10 @@
             </el-collapse-item>
 
             <el-collapse-item name="2" title="高级属性">
-
+                <el-divider content-position="center">栅格设置</el-divider>
+                <gutter-items
+                    :advanced-prop="advancedProp"
+                ></gutter-items>
             </el-collapse-item>
         </el-collapse>
     </div>
@@ -22,10 +26,12 @@
 import { ref,defineProps } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES} from '../propertyRegister'
 import * as basicComponents from '../components/index';
+import { gutterItems } from "../components/index.js"
 
 defineProps([
     'selectedWidget',
-    'basicProp'
+    'basicProp',
+    'advancedProp'
 ])
 
 const componentMap = {

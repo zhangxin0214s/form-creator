@@ -2,23 +2,20 @@
 	<el-form
 		label-position="left"
 		label-width="100px"
-		:model="widgetProp"
+		:model="basicProp"
 		style="max-width: 360px"
 	>
 		<el-form-item
-			v-if="widgetProp[key1]?.label"
-			:label="`${widgetProp[key1]?.label}:`"
+			v-if="basicProp && basicProp[key1]?.label"
+			:label="`${basicProp[key1]?.label}:`"
 		>
-			<el-input
-				v-model="inputValue"
-			/>
+			<el-input v-model="basicProp[props.key1].value" />
 		</el-form-item>
 	</el-form>
 </template>
 <script setup>
-import { defineProps,ref } from 'vue';
-const props = defineProps(['widgetProp', 'key1', 'value']);
-let inputValue = ref(props.widgetProp[props.key1]?.value);
+import { defineProps, ref ,reactive} from 'vue';
+const props = defineProps(['basicProp', 'key1', 'value']);
 </script>
 <style lang="scss" scoped>
 </style>

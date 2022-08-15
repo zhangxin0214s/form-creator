@@ -26,6 +26,7 @@
                   class="list-group"
                   sort="false"
                   item-key="key"
+				  @end="onEnd"
               >
                 <template #item="{ element }">
                   <li class="gild-container">
@@ -44,7 +45,7 @@
                   :sort="false"
                   item-key="key"
                   :group="{name: 'dragGroup', pull: 'clone', put: false}"
-									@end="onEnd"
+				  @end="onEnd"
               >
                 <template #item="{ element }">
                   <li class="gild-container">
@@ -63,6 +64,7 @@
                   :sort="false"
                   item-key="key"
                   :group="{name: 'dragGroup', pull: 'clone', put: false}"
+				  @end="onEnd"
               >
                 <template #item="{ element }">
                   <li class="gild-container">
@@ -91,8 +93,8 @@ const state = reactive({
 	advancedWidgets: advancedWidgets,
 });
 
-const onEnd = (e)=>{
-	selectedMaskIndex.value = e.newIndex
+const onEnd = ()=>{
+	
 }
 </script>
 <style lang="scss" scoped>

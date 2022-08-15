@@ -17,15 +17,15 @@
 import { ref, onMounted, nextTick } from 'vue';
 let props = defineProps(['widget']);
 const tagContent = ref(null);
-onMounted(() => {
-	tagContent.value.style.width =
-		props.widget.options.basic.labelWidth.value + 'px';
-	tagContent.value.style.textAlign = props.widget.options.basic.labelAlign;
-	const maskSlot = document.getElementsByClassName('mask-slot')[0];
-	nextTick(() => {
-		tagContent.value.style.height = maskSlot.offsetHeight + 'px';
-	});
-});
+// onMounted(() => {
+// 	tagContent.value.style.width =
+// 		props.widget.options.basic.labelWidth.value + 'px';
+// 	tagContent.value.style.textAlign = props.widget.options.basic.labelAlign;
+// 	const maskSlot = document.getElementsByClassName('mask-slot')[0];
+// 	nextTick(() => {
+// 		tagContent.value.style.height = maskSlot?.offsetHeight + 'px';
+// 	});
+// });
 </script>
 <style scoped>
 .tag-container {

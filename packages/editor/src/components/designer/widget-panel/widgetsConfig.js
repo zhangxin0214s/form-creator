@@ -9,7 +9,7 @@ export const containers = [
 			basic:{
 				name: {
 					label: "唯一名称",
-					value: ""
+					value: "栅格1"
 				}, // 唯一名称
 				colHeight: {
 					label: "统一高度",
@@ -25,12 +25,7 @@ export const containers = [
 					},
 					{
 						id:2,
-						gutter:2,
-						widgetList:[]
-					},
-					{
-						id:3,
-						gutter:10,
+						gutter:12,
 						widgetList:[]
 					}
 				]
@@ -68,7 +63,7 @@ export const basicWidgets = [
 			basic:{
 				name:{
 					label: "唯一名称",
-					value: "唯一标题名称（输入框）"
+					value: "唯一标题名称（输入框）:"
 				}, // 唯一名称
 				label:{
 					label:"标签",
@@ -80,7 +75,7 @@ export const basicWidgets = [
 				}, // 标签是否隐藏
 				labelWidth:{
 					label:"标签宽度",
-					value:100
+					value:200
 				},// 标签宽度
 				labelAlign:"center",// 标签对齐方式
 				type: "text",// 类型
@@ -111,19 +106,10 @@ export const basicWidgets = [
 		icon:"switch",
 		options:{
 			basic:{
-				name:{
-					label: "唯一名称",
-					value: "唯一标题名称（开关）"
-				}, // 唯一名称
-				label:{
-					label:"标签",
-					value: "开关:"
-				} , // 标签
+				name:"唯一标题名称（开关）", // 唯一名称
+				label: "开关标签：", // 标签
 				labelHidden:false, // 标签是否隐藏
-				labelWidth:{
-					label:"标签宽度",
-					value:100
-				},// 标签宽度
+				labelWidth:200,// 标签宽度
 				labelAlign:"center",// 标签对齐方式
 				defaultValue:true,// 默认值:开 || 关
 				required: false,// 是否必填*
@@ -143,13 +129,22 @@ export const basicWidgets = [
 		icon:"check",
 		options:{
 			basic: {
-				name:"标题", // 唯一名称
-				label: "", // 标签
+				name:{
+					label: "唯一名称",
+					value: "唯一标题名称"
+				}, // 唯一名称
+				label:{
+					label:"标签",
+					value: "复选框:"
+				} , // 标签
 				labelHidden:false, // 标签是否隐藏
-				labelWidth:null,// 标签宽度
+				labelWidth:{
+					label:"标签宽度",
+					value:90
+				},// 标签宽度
 				labelAlign:"",// 标签对齐方式
-				required: false,// 是否必填*
-				hint:"",// 提示语
+				required: true,// 是否必填*
+				hint:"提示语",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
 			advanced: {
@@ -173,7 +168,6 @@ export const basicWidgets = [
 				label: "取消", // 标签
 				type:"success",// 类型:success/warn/error参考element-ui button
 				disabled: false,// 禁用
-
 			},
 			advanced:{
 

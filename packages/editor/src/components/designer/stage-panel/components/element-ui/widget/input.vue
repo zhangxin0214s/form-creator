@@ -1,31 +1,25 @@
 <template>
-	<div class="input-container">
-		<Mask :widget="widget">
-			<Tag
-				:widget="widget"
-				v-if="!widget.options.basic.labelHidden.value"
-			></Tag>
-			<div class="input-content">
-				<el-input
-					:value="defaultValue"
-					:disabled="widget.options.basic.disabled"
-				/>
-				<Hint :widget="widget"></Hint>
-			</div>
-		</Mask>
-	</div>
+	<widget-mask 
+		:widget="widget"
+		:basicProp="widget.options.basic"
+		:advancedProp="widget.options.advanced">
+		<el-input
+			:disabled="widget.options.basic.disabled"
+			v-model="widget.options.basic.defaultValue.value"
+		/>
+	</widget-mask>
 </template>
 
 <script setup>
-import Mask from '../Mask.vue';
-import Tag from '../Tag.vue';
-import Hint from '../Hint.vue';
-import { onMounted, ref } from 'vue';
-let props = defineProps(['widget']);
-let defaultValue = ref(props.widget.options.basic.defaultValue.value)
+import {ref} from 'vue';
+import widgetMask from '../common/widgetMask.vue'
+let props = defineProps([
+	'widget'
+]);
 </script>
 <style scoped>
-.input-content{
-	width: 100%;
-}
+	.input-container {
+		float:left;
+		width:100%;
+	}
 </style>
