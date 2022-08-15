@@ -29,6 +29,7 @@
 <script setup>
     import { widgetStore } from '@/store/index';
     import { storeToRefs } from 'pinia';
+    import { generateId,deepClone } from '@/utils/util'
     defineProps([
         'widget',
         'basicProp'
@@ -36,7 +37,9 @@
     const _widgetStore = widgetStore();
     const { widgetList,selectedWidget} = storeToRefs(_widgetStore);
     const copy = () =>{
-        _widgetStore.widgetList.push(selectedWidget)
+        let newOrigin = deepClone(selectedWidget);
+        newOrigin.id = generateId();
+        _widgetStore.widgetList.push(newOrigin)
     }
 </script>
 <style lang="scss" scoped>

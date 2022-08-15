@@ -26,7 +26,6 @@
                   class="list-group"
                   sort="false"
                   item-key="key"
-				  @end="onEnd"
               >
                 <template #item="{ element }">
                   <li class="gild-container">
@@ -45,7 +44,7 @@
                   :sort="false"
                   item-key="key"
                   :group="{name: 'dragGroup', pull: 'clone', put: false}"
-				  @end="onEnd"
+				  :clone="onClone"
               >
                 <template #item="{ element }">
                   <li class="gild-container">
@@ -64,7 +63,6 @@
                   :sort="false"
                   item-key="key"
                   :group="{name: 'dragGroup', pull: 'clone', put: false}"
-				  @end="onEnd"
               >
                 <template #item="{ element }">
                   <li class="gild-container">
@@ -84,6 +82,7 @@ import { containers, basicWidgets, advancedWidgets } from './widgetsConfig';
 import { ref, reactive } from 'vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
+import { generateId,deepClone } from '@/utils/util'
 const _widgetStore = widgetStore();
 const { widgetList,selectedMaskIndex } = storeToRefs(_widgetStore);
 const activeNames = ref(['1', '2', '3', '4']);
@@ -93,8 +92,11 @@ const state = reactive({
 	advancedWidgets: advancedWidgets,
 });
 
-const onEnd = ()=>{
-	
+
+const onClone = (origin)=>{
+	let newOrigin = deepClone(origin);
+	newOrigin.id = generateId();
+	return newOrigin
 }
 </script>
 <style lang="scss" scoped>

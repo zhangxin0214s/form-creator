@@ -15,6 +15,7 @@
     "@element-plus/icons-vue": "^2.0.6",
     "element-plus": "2.2.12",
     "sass": "1.54.0",
+    "uuid": "8.3.2",
     "vite-plugin-svg-icons": "1.0.5",
     "vue-draggable-next": "2.1.1"
   }
