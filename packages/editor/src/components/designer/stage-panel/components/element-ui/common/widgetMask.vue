@@ -1,17 +1,17 @@
 <template>
-    <div class="container-mask">
+    <div class="container-mask" @click.stop="selected(widget)">
         <el-form-item 
             :class="[selectedWidget?.id === widget?.id?'select':'']"
             :label="basicProp?.label.value"
-            
+            :required="basicProp?.required.value"
         >
             <slot></slot>
         </el-form-item>
-        <div class="container-mask-title" v-if="selectedWidget?.id === widget?.id">
+        <!-- <div class="container-mask-title" v-if="selectedWidget?.id === widget?.id">
             <span class="text">
                 {{ widget.options.basic.name.value }}
 			</span>
-        </div>
+        </div> -->
         <div class="container-mask-action" v-if="selectedWidget?.id === widget?.id">
             <svg-icon
                 icon-class="copy"
@@ -38,12 +38,17 @@
     const _widgetStore = widgetStore();
     const { widgetList,selectedWidget} = storeToRefs(_widgetStore);
 
+    const selected = (widgetData) => {
+        console.log('选中:', widgetData);
+        _widgetStore.selectedWidget = widgetData;
+    };
+
     const copy = () =>{
         _widgetStore.copyWidget(props.widget)
     }
 
     const delete1 = () =>{
-         _widgetStore.removeWidget(selectedWidget.value)
+         _widgetStore.removeWidget(props.widget)
     }
 </script>
 <style lang="scss" scoped>

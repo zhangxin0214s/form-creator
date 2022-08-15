@@ -1,11 +1,11 @@
 <template>
     <div class="container-mask">
         <slot></slot>
-        <div class="container-mask-title" v-if="selectedWidget?.id === widget?.id">
+        <!-- <div class="container-mask-title" v-if="selectedWidget?.id === widget?.id">
             <span class="text">
                 {{ widget.options.basic.name.value }}
 			</span>
-        </div>
+        </div> -->
         <div class="container-mask-action" v-if="selectedWidget?.id === widget?.id">
             <svg-icon
                 icon-class="copy"

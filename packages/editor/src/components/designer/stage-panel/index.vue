@@ -27,12 +27,13 @@
 				<template #item="{ element: widget }">
 					<div
 						class="transition-group-el"
-						@click.stop="selected(widget)"
+						
 					>
 						<component
 							:is="componentMap[widget.type]"
 							:key="widget.id"
 							:widget=widget
+							@click.stop="selected(widget)"
 						>
 						</component>
 					</div>

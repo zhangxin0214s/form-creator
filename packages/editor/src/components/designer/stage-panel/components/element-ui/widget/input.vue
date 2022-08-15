@@ -16,6 +16,7 @@ import widgetMask from '../common/widgetMask.vue'
 let props = defineProps([
 	'widget'
 ]);
+
 </script>
 <style scoped>
 	.input-container {

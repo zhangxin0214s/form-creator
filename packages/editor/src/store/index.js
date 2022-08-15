@@ -23,7 +23,7 @@ export const widgetStore = defineStore('widget', {
          * @param {*} target 
          */
         removeWidget(target){
-            this.widgetList = this.widgetList.filter(item => item.id != target.id)
+            this.widgetList = this.widgetList.filter(item => item.id != target.id)  
         }
     },
     getters: {}
