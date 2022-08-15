@@ -41,16 +41,12 @@
 	</div>
 </template>
 <script setup>
-import * as container from './components/element-ui/container';
-import * as widget from './components/element-ui/widget';
-import * as Advanced from './components/element-ui/advanced';
+import eleComponents from './components/element-ui';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 
 const componentMap = {
-	...container,
-	...widget,
-	...Advanced,
+	...eleComponents
 };
 const _widgetStore = widgetStore();
 const { widgetList ,selectedMaskIndex} = storeToRefs(_widgetStore);
