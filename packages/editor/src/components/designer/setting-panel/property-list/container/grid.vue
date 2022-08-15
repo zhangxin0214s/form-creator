@@ -26,7 +26,7 @@
 import { ref,defineProps } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES} from '../propertyRegister'
 import * as basicComponents from '../components/index';
-import gutterItems from "../components/gutterItems.vue"
+import { gutterItems } from "../components/index.js"
 
 defineProps([
     'selectedWidget',
