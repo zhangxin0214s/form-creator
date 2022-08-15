@@ -3,14 +3,13 @@
 		<span
 			class="hint"
 			v-show="!widget.options.basic.hintHidden"
-		>{{ widget.options.basic.hint}}</span>
+		>{{ widget.options.basic.hint.value}}</span>
 	</div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue';
 let props = defineProps(['widget']);
-
 </script>
 <style scoped>
 .hint {

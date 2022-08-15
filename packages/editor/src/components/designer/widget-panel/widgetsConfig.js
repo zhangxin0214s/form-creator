@@ -74,18 +74,27 @@ export const basicWidgets = [
 					label:"标签",
 					value: "工号:"
 				} , // 标签
-				labelHidden:false, // 标签是否隐藏
+				labelHidden:{
+					label:"标签是否隐藏",
+					value:false
+				}, // 标签是否隐藏
 				labelWidth:{
 					label:"标签宽度",
 					value:100
 				},// 标签宽度
 				labelAlign:"center",// 标签对齐方式
 				type: "text",// 类型
-				defaultValue: "这是默认文本",// 默认提示文本
+				defaultValue: {
+					label:"默认文本",
+					value:"这是默认文本"
+				},// 默认提示文本
 				required: true,// 是否必填*
 				readonly: false,// 只读
 				disabled: true,// 禁用
-				hint:"这是输入框的提示语",// 提示语
+				hint:{
+					label:"提示语",
+					value:"这是输入框的提示语"
+				},// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
 			advanced:{

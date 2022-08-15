@@ -23,11 +23,11 @@ import { ref,defineProps } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES} from '../propertyRegister'
 import * as basicComponents from '../components/index';
 
-defineProps([
+const props = defineProps([
     'selectedWidget',
     'basicProp'
 ])
-
+console.log(props)
 const componentMap = {
   ...basicComponents
 }

@@ -3,11 +3,11 @@
 		<Mask :widget="widget">
 			<Tag
 				:widget="widget"
-				v-if="!widget.options.basic.labelHidden"
+				v-if="!widget.options.basic.labelHidden.value"
 			></Tag>
-			<div>
+			<div class="input-content">
 				<el-input
-					:value="widget.options.basic.defaultValue"
+					:value="defaultValue"
 					:disabled="widget.options.basic.disabled"
 				/>
 				<Hint :widget="widget"></Hint>
@@ -22,12 +22,10 @@ import Tag from '../Tag.vue';
 import Hint from '../Hint.vue';
 import { onMounted, ref } from 'vue';
 let props = defineProps(['widget']);
-onMounted(() => {
-	const inputDom = document.getElementsByClassName('el-input');
-	inputDom.forEach((dom) => {
-		dom.style.width = props.widget.options.advanced.width + 'px';
-	});
-});
+let defaultValue = ref(props.widget.options.basic.defaultValue.value)
 </script>
 <style scoped>
+.input-content{
+	width: 100%;
+}
 </style>
