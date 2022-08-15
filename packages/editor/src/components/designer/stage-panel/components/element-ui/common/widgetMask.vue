@@ -48,7 +48,7 @@
 </script>
 <style lang="scss" scoped>
     .select {
-        outline:1px dashed $--color-primary;
+        outline:1px solid $--color-primary;
     }
     .container-mask{
         position:relative;

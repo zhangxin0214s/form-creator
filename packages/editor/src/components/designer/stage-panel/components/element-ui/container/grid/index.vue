@@ -4,6 +4,7 @@
       <template v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
         <Col 
           :colWidget="colWidget"
+          :widget="widget"
         >
         </Col>
     </template>  
@@ -29,7 +30,7 @@
     outline:1px dashed #444;
  }
  .select {
-    outline:1px dashed $--color-primary;
+    outline:1px solid $--color-primary;
  }
 .el-row:last-child {
   margin-bottom: 0;

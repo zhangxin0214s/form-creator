@@ -2,7 +2,7 @@
     <div class="gutter" v-for="(col,index) in advancedProp?.cols" :key="index">
         <div class="gutter-label">
             <div class="gutter-label-text">第{{index+1}}列</div>
-            <el-icon class="gutter-label-sub" :size="21" color="var(--el-text-color-secondary)" @click="subCol">
+            <el-icon class="gutter-label-sub" :size="21" color="var(--el-text-color-secondary)" @click="subCol(col)">
                 <RemoveFilled />
             </el-icon>
         </div>
@@ -25,9 +25,9 @@
 const props = defineProps([
     'advancedProp'
 ])
-const subCol = () =>{
+const subCol = (col) =>{
     console.log("删除",props.advancedProp.cols)
-    props.advancedProp.cols.pop();
+    props.advancedProp.cols = props.advancedProp.cols.filter(item=>item.id != col.id);
 }
 const addCol = () =>{
     console.log("增加列")

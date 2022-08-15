@@ -27,7 +27,7 @@
 				<template #item="{ element: widget }">
 					<div
 						class="transition-group-el"
-						@click="selected(widget)"
+						@click.stop="selected(widget)"
 					>
 						<component
 							:is="componentMap[widget.type]"
