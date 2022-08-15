@@ -1,16 +1,18 @@
 <template>
-  <div class="input-container">
+  <widget-mask 
+		:widget="widget"
+		:basicProp="widget.options.basic"
+		:advancedProp="widget.options.advanced">
         <el-button
             :type="widget.options.basic.type"
             :disabled="widget.options.basic.disabled"
-        >{{ widget.options.basic.label }}
+        >{{ widget.options.basic.text.value }}
         </el-button>
-  </div>
+  </widget-mask>
 </template>
 
 <script setup>
-import Mask from '../common/Mask.vue'
-
+import widgetMask from '../common/widgetMask.vue'
 let props = defineProps(['widget']);
 console.log(props)
 </script>

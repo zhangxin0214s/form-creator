@@ -1,26 +1,19 @@
 <template>
-  <div class="input-container">
-    <Mask :widget="widget">
-      <Tag
-          :widget="widget"
-          v-if="!widget.options.basic.labelHidden.value"/>
-      <div>
-        <el-checkbox-group v-for="ite in widget.options.advanced">
+  <widget-mask 
+		:widget="widget"
+		:basicProp="widget.options.basic"
+		:advancedProp="widget.options.advanced">
+        <el-checkbox-group>
           <el-checkbox
-              v-for="item in ite"
+              v-for="(item,index) in widget.options.advanced.optionItems" :key="index"
               :label="item.label"
-              :disabled="item.disabled"
-              :key="item.value">
+              >
           </el-checkbox>
         </el-checkbox-group>
-        <Hint :widget="widget"/>
-      </div>
-    </Mask>
-  </div>
+  </widget-mask>
 </template>
 <script setup>
-import Mask from '../common/Mask.vue'
-import Tag from '../common/Tag.vue'
+import widgetMask from '../common/widgetMask.vue'
 import Hint from '../common/Hint.vue'
 
 let props = defineProps(['widget'])

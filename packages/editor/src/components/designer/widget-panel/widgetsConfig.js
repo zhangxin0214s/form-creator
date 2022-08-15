@@ -59,6 +59,7 @@ export const basicWidgets = [
 		name:"输入框",
 		type:"input",
 		icon:"input",
+		value:null,
 		options:{
 			basic:{
 				name:{
@@ -69,15 +70,13 @@ export const basicWidgets = [
 					label:"标签",
 					value:"工号:"
 				}, // 标签
-				labelHidden:false, // 标签是否隐藏
-				labelWidth:{
-					label:"标签宽度",
-					value:200
-				},// 标签宽度
 				labelAlign:"center",// 标签对齐方式
 				type:"text",// 类型
 				defaultValue:"这是默认文本",// 默认提示文本
-				required:true,// 是否必填*
+				required:{
+					label:'是否必填',
+					value:true
+				},
 				readonly:false,// 只读
 				disabled:true,// 禁用
 				hint:"这是输入框的提示语",// 提示语
@@ -95,12 +94,17 @@ export const basicWidgets = [
 		name:"开关",
 		type:"Switch",
 		icon:"switch",
+		value:null,
 		options:{
 			basic:{
-				name:"唯一标题名称（开关）", // 唯一名称
-				label:"开关标签：", // 标签
-				labelHidden:false, // 标签是否隐藏
-				labelWidth:200,// 标签宽度
+				name: {
+					label:"唯一名称",
+					value:"开关1"
+				}, // 唯一名称
+				label:{
+					label:"标签",
+					value:"是否启用:"
+				}, // 标签
 				labelAlign:"center",// 标签对齐方式
 				defaultValue:true,// 默认值:开 || 关
 				required:false,// 是否必填*
@@ -116,11 +120,12 @@ export const basicWidgets = [
 		name:"复选框",
 		type:"checkbox",
 		icon:"check",
+		value:null,
 		options:{
 			basic:{
 				name:{
 					label:"唯一名称",
-					value:"唯一标题名称",
+					value:"复选框1",
 					placeholder:'表单标题，唯一名称'
 				}, // 唯一名称
 				label:{
@@ -169,8 +174,25 @@ export const basicWidgets = [
 		icon:"button",
 		options:{
 			basic:{
-				name:"标题", // 唯一名称
-				label:"取消", // 标签
+				name:{
+					label:"唯一名称",
+					value:"按钮1",
+					placeholder:'表单标题，唯一名称'
+				}, // 唯一名称
+				label:{
+					label:"",
+					value:"",
+					placeholder:''
+				}, // 唯一名称
+				text:{
+					label:"按钮名称",
+					value:"提交",
+					placeholder:''
+				},
+				required:{
+					label:'是否必填',
+					value:true
+				},
 				type:"success",// 类型:success/warn/error参考element-ui button
 				disabled:false,// 禁用
 			},

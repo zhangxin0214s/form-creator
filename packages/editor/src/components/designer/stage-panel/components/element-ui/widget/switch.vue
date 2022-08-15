@@ -1,20 +1,13 @@
 <template>
-	<div class="input-container">
-		<Mask :widget="widget">
-			<Tag
-				:widget="widget"
-				v-if="!widget.options.basic.labelHidden"
-			></Tag>
-			<div>
-				<el-switch />
-				<Hint :widget="widget"></Hint>
-			</div>
-		</Mask>
-	</div>
+	<widget-mask 
+		:widget="widget"
+		:basicProp="widget.options.basic"
+		:advancedProp="widget.options.advanced">
+			<el-switch v-model="widget.value"/>
+	</widget-mask>
 </template>
 <script setup>
-import Mask from '../common/Mask.vue';
-import Tag from '../common/Tag.vue';
+import widgetMask from '../common/widgetMask.vue'
 import Hint from '../common/Hint.vue';
 let props = defineProps(['widget']);
 </script>
