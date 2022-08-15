@@ -5,7 +5,7 @@
                 <div v-for="(item,key,index) in basicProp" :key="index">
                     <component  
                         :is="componentMap[getPropCompName(key)]"
-                        :widget-prop="basicProp"
+                        :basic-prop="basicProp"
                         :value = "item"
                         :key1 = "key"
                     ></component>
@@ -19,7 +19,7 @@
     </div>
 </template>
 <script setup>
-import { ref,defineProps } from "vue"
+import { ref } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES} from '../propertyRegister'
 import * as basicComponents from '../components/index';
 
@@ -31,6 +31,7 @@ defineProps([
 const componentMap = {
   ...basicComponents
 }
+
 const activeNames = ref(['1', '2', '3'])
 
 const getPropCompName = (key) =>{
