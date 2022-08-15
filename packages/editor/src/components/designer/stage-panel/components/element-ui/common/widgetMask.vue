@@ -2,7 +2,7 @@
     <div class="container-mask">
         <el-form-item 
             :class="[selectedWidget?.id === widget?.id?'select':'']"
-            :label="basicProp.name.value"
+            :label="basicProp.label.value"
             :required="basicProp.required"
         >
             <slot></slot>

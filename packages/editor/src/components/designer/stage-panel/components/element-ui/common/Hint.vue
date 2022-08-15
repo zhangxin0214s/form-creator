@@ -10,7 +10,6 @@
 <script setup>
 import { ref, onMounted } from 'vue';
 let props = defineProps(['widget']);
-
 </script>
 <style scoped>
 .hint {
