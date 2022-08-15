@@ -120,7 +120,7 @@ export const basicWidgets = [
 			basic:{
 				name:{
 					label:"唯一名称",
-					value:"唯一标题名称",
+					value:"唯一标题名称(复选框)",
 					placeholder:'表单标题，唯一名称'
 				}, // 唯一名称
 				label:{
@@ -155,9 +155,12 @@ export const basicWidgets = [
 			advanced:{
 				optionItems:  // 选项设置
 					[
-						{label:"check 1", value:1, disabled:false},
+						{label:"check 1", value:1, disabled:true},
 						{label:"check 2", value:2, disabled:false},
 						{label:"check 3", value:3, disabled:false},
+						{label:"check 4", value:4, disabled:false},
+						{label:"check 5", value:5, disabled:false},
+						{label:"check 6", value:6, disabled:true},
 					]
 			}
 		},

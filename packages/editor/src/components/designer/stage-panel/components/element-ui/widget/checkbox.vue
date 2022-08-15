@@ -1,9 +1,10 @@
 <template>
   <div class="input-container">
-    <Mask :widget="widget">
-      <Tag
-          :widget="widget"
-          v-if="!widget.options.basic.labelHidden.value"/>
+    <widget-mask
+        :widget="widget"
+        :basicProp="widget.options.basic"
+        :advancedProp="widget.options.advanced">
+
       <div>
         <el-checkbox-group v-for="ite in widget.options.advanced">
           <el-checkbox
@@ -13,15 +14,17 @@
               :key="item.value">
           </el-checkbox>
         </el-checkbox-group>
-        <Hint :widget="widget"/>
       </div>
-    </Mask>
+    </widget-mask>
   </div>
 </template>
 <script setup>
 import Mask from '../common/Mask.vue'
 import Tag from '../common/Tag.vue'
 import Hint from '../common/Hint.vue'
+
+import widgetMask from '../common/widgetMask.vue'
+import WidgetMask from '../common/widgetMask'
 
 let props = defineProps(['widget'])
 </script>
