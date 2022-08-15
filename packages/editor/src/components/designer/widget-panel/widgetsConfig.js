@@ -63,7 +63,7 @@ export const basicWidgets = [
 			basic:{
 				name:{
 					label: "唯一名称",
-					value: "唯一标题名称（输入框）"
+					value: "唯一标题名称（输入框）:"
 				}, // 唯一名称
 				label:{
 					label:"标签",
@@ -131,7 +131,7 @@ export const basicWidgets = [
 				labelHidden:false, // 标签是否隐藏
 				labelWidth:{
 					label:"标签宽度",
-					value:200
+					value:90
 				},// 标签宽度
 				labelAlign:"",// 标签对齐方式
 				required: true,// 是否必填*

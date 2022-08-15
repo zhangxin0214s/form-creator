@@ -1,33 +1,24 @@
 <template>
-	<div class="input-container">
-		<Mask :widget="widget">
-			<Tag
-				:widget="widget"
-				v-if="!widget.options.basic.labelHidden"
-			></Tag>
-			<div>
-				<el-input
-					:value="widget.options.basic.defaultValue"
-					:disabled="widget.options.basic.disabled"
-				/>
-				<Hint :widget="widget"></Hint>
-			</div>
-		</Mask>
-	</div>
+	<widget-mask 
+		:widget="widget"
+		:basicProp="widget.options.basic"
+		:advancedProp="widget.options.advanced">
+		<el-input
+			:value="widget.options.basic.defaultValue"
+			:disabled="widget.options.basic.disabled"
+		/>
+	</widget-mask>
 </template>
 
 <script setup>
-import Mask from '../common/Mask.vue';
-import Tag from '../common/Tag.vue';
-import Hint from '../common/Hint.vue';
-import { onMounted, ref } from 'vue';
-let props = defineProps(['widget']);
-onMounted(() => {
-	const inputDom = document.getElementsByClassName('el-input');
-	inputDom.forEach((dom) => {
-		dom.style.width = props.widget.options.advanced.width + 'px';
-	});
-});
+import widgetMask from '../common/widgetMask.vue'
+let props = defineProps([
+	'widget'
+]);
 </script>
 <style scoped>
+	.input-container {
+		float:left;
+		width:100%;
+	}
 </style>

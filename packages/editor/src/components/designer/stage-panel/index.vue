@@ -21,7 +21,7 @@
 				item-key="id"
 				v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300,}"
 				tag="transition-group"
-				@end="onEnd"
+				@add="onEnd"
 			>
 				<template #item="{ element: widget }">
 					<div

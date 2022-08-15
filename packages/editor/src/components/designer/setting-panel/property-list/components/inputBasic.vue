@@ -5,9 +5,9 @@
         :model="basicProp"
         style="max-width: 360px"
     >
-        <el-form-item v-if="basicProp[key1]?.label" :label="`${basicProp[key1]?.label}:`">
-            <el-input  :model="basicProp[key1]?.value" />
-        </el-form-item>
+    <el-form-item v-if="basicProp && basicProp[key1]?.label" :label="`${basicProp[key1]?.label}:`">
+        <el-input  :model="basicProp[key1]?.value" />
+    </el-form-item>
     </el-form>
 </template>
 <script setup>

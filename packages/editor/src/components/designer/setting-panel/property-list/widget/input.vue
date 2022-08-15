@@ -5,7 +5,7 @@
                 <div v-for="(item,key,index) in basicProp" :key="index">
                     <component  
                         :is="componentMap[getPropCompName(key)]"
-                        :widget-prop="basicProp"
+                        :basic-prop="basicProp"
                         :value = "item"
                         :key1 = "key"
                     ></component>
