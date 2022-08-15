@@ -10,12 +10,12 @@
             <svg-icon
                 icon-class="copy"
                 class="copyIcon"
-            
+                @click.stop="copy"
             />
             <svg-icon
                 icon-class="delete"
                 class="deleteIcon"
-               
+                @click.stop="delete1"
             />
         </div>
     </div>
@@ -23,9 +23,22 @@
 <script setup>
     import { widgetStore } from '@/store/index';
     import { storeToRefs } from 'pinia';
-    defineProps(['widget']);
+    import { generateId,deepClone } from '@/utils/util'
+    const props = defineProps(['widget']);
     const _widgetStore = widgetStore();
-    const { selectedWidget} = storeToRefs(_widgetStore);
+    const { widgetList,selectedWidget} = storeToRefs(_widgetStore);
+
+    const copy = () =>{
+        let newOrigin = deepClone(props.widget);
+        newOrigin.id = generateId();
+        _widgetStore.widgetList.push(newOrigin)
+    }
+
+    const delete1 = () =>{
+         _widgetStore.widgetList.splice(selectedWidget,1);
+       
+    }
+
 </script>
 <style lang="scss" scoped>
     .container-mask{

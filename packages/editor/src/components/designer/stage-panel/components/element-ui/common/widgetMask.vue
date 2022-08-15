@@ -45,7 +45,7 @@
     }
 
     const delete1 = () =>{
-         _widgetStore.widgetList.pop();
+         _widgetStore.widgetList.splice(selectedWidget,1);
        
     }
 </script>
