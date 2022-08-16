@@ -1,7 +1,7 @@
 <template>
   <container-mask :widget="widget">
-    <el-tabs type="card">
-      <el-tab-pane :label="colWidget.name" :addable="true" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
+    <el-tabs :addable="widget.addable" :closable="widget.closable" type="card" @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
+      <el-tab-pane :label="colWidget.name" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
         <tabs-content 
           :colWidget="colWidget"
         ></tabs-content>
@@ -16,9 +16,26 @@
   import tabsContent from "./content.vue"
   const _widgetStore = widgetStore();
   const { selectedWidget} = storeToRefs(_widgetStore);
-  defineProps([
+  const props=defineProps([
       'widget'
   ])
+  const addTabsHandler=()=>{
+    props.widget.options.advanced.cols.push({
+      id:guid(),
+      name:"名称",
+      widgetList:[]
+    })
+  }
+  const removeTabsHandler1=(a)=>{
+    console.log(1111)
+  }
+  const guid=()=>{
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+          var r = Math.random() * 16 | 0,
+              v = c == 'x' ? r : (r & 0x3 | 0x8);
+          return v.toString(16);
+      });
+  }
 
 </script>
  <style lang="scss" scoped>
