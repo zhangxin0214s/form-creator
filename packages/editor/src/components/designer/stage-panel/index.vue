@@ -24,17 +24,13 @@
 				tag="transition-group"
 				@add="onEnd">
 				<template #item="{ element: widget }">
-					<div
-						class="transition-group-el"
-						
-					>
+					<div class="transition-group-el">
 						<component
 							:is="componentMap[widget.type]"
 							:key="widget.id"
 							:widget=widget
 							:parent-widget="widgetList"
-							@click.stop="selected(widget)"
-						>
+							@click.stop="selected(widget)">
 						</component>
 					</div>
 				</template>
