@@ -12,7 +12,7 @@
 			请从左侧选择一个组件，拖拽添加至此处
 		</div>
 		<div class="stage-toolbar">
-			工具栏
+			<tool-bar/>
 		</div>
 		
 		<div class="stage-form">
@@ -48,6 +48,7 @@
 </template>
 <script setup>
 import eleComponents from './components/element-ui';
+import toolBar from '../toolbar-panel/index.vue'
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 
