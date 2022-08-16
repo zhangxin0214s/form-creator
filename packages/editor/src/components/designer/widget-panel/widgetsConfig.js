@@ -328,23 +328,23 @@ export const basicWidgets = [
 				label:{
 					label: '下拉框属性',
 					value: '选择框：'
-				}, // 标签
-				labelHidden: {
-					label: '标签是否隐藏',
-					value: false
 				},
 				required: {
 					label: '是否必填*',
+					value: false
+				},
+				labelHidden: {
+					label: '标签是否隐藏',
 					value: false
 				},
 				placeholder: {
 					label:"placeholder",
 					value:"展开选择"
 				},
-				content: {
-					default: '展开选择', // 默认选中第几个
+				list: {
 					label: '选择项',
-					options: [], // id+label+value
+					options: [], // label+value+checked+disabled
+					showList: [], // 默认选中第几个
 				},
 				hint:"",// 提示语
 				hintHidden:false,// 提示语是否隐藏
