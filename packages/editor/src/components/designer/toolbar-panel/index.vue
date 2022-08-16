@@ -16,6 +16,14 @@
         {
             name:'预览',
             icon:'tool-preview'
+        },
+        {
+            name:'导出',
+            icon:'tool-export'
+        },
+        {
+            name:'导入',
+            icon:'tool-import'
         }
     ])
 </script>
