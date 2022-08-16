@@ -105,28 +105,6 @@ export const basicWidgets = [
 					label: "标签",
 					value: "工号:"
 				}, // 标签
-				labelWidth: {
-					label: "标签宽度",
-					value: 100
-				},// 标签宽度
-				labelAlign: {
-					label: "标签对齐方式",
-					options: [
-						{
-							label: "左对齐",
-							value: "left"
-						},
-						{
-							label: "顶部对齐",
-							value: "top"
-						},
-						{
-							label: "右对齐",
-							value: "right"
-						}
-					],
-					value: "right"
-				},// 标签对齐方式
 				type: "text",// 类型
 				defaultValue: {
 					label: "默认文本",
@@ -204,28 +182,6 @@ export const basicWidgets = [
 					label: "标签",
 					value: "是否启用开关:"
 				}, // 标签, // 标签
-				labelWidth: {
-					label: "标签宽度",
-					value: 100
-				},
-				labelAlign: {
-					label: "标签对齐方式",
-					options: [
-						{
-							label: "左对齐",
-							value: "left"
-						},
-						{
-							label: "顶部对齐",
-							value: "top"
-						},
-						{
-							label: "右对齐",
-							value: "right"
-						}
-					],
-					value: "right"
-				},// 标签对齐方式
 				switchDefaultValue: {
 					label: '默认值',
 					value: true
@@ -260,34 +216,11 @@ export const basicWidgets = [
 					value: "复选框:",
 					placeholder: '标签名称'
 				}, // 标签
-				labelWidth:{
-					label:"标签宽度",
-					value:100,
-					placeholder:'用于设置标签宽度'
-				},// 标签宽度
 				hint: {
 					label: '提示语',
 					value: '',
 					placeholder: '提示语，用于表单校验' // 输入框占位文本
 				},
-				labelAlign:{
-					label:"标签对齐方式",
-					options:[
-						{
-							label: "左对齐",
-							value: "left"
-						},
-						{
-							label: "顶部对齐",
-							value: "top"
-						},
-						{
-							label: "右对齐",
-							value: "right"
-						}
-					],
-					value: "right"
-				},// 标签对齐方式
 				hintHidden:{
 					label:'提示语隐藏',
 					value:false
@@ -329,28 +262,6 @@ export const basicWidgets = [
 					label:"按钮名称",
 					value:"提交",
 				},
-				labelWidth:{
-					label:"标签宽度",
-					value:100,
-				},// 标签宽度
-				labelAlign:{
-					label:"标签对齐方式",
-					options:[
-						{
-							label:"左对齐",
-							value:"left"
-						},
-						{
-							label:"顶部对齐",
-							value:"top"
-						},
-						{
-							label:"右对齐",
-							value:"right"
-						}
-					],
-					value:"right"
-				},// 标签对齐方式
 				type:{
 					label:"按钮类型",
 					options:[
@@ -421,28 +332,6 @@ export const basicWidgets = [
 				labelHidden: {
 					label: '标签是否隐藏',
 					value: false
-				},
-				labelWidth: {
-					label: '标签宽度',
-					value: 100
-				},
-				labelAlign:{
-					label:"标签对齐方式",
-					options:[
-						{
-							label:"左对齐",
-							value:"left"
-						},
-						{
-							label:"顶部对齐",
-							value:"top"
-						},
-						{
-							label:"右对齐",
-							value:"right"
-						}
-					],
-					value:"right"
 				},
 				required: {
 					label: '是否必填*',
