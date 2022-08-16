@@ -16,6 +16,18 @@ export const widgetStore = defineStore('widget', {
         copyWidget(target){
             let newOrigin = deepClone(target);
             newOrigin.id = generateId();
+
+            // 处理栅格 && 标签页内组件
+            if(newOrigin.type === 'grid' || newOrigin.type === 'tabs'){
+                const cols = newOrigin.options.advanced.cols;
+                cols.forEach(col =>{
+                    col.widgetList.forEach(widget =>{
+                        if(widget){
+                            widget.id = generateId();
+                        }
+                    })
+                })
+            }
             this.widgetList.push(newOrigin);
         },
         /**
