@@ -20,13 +20,17 @@
       'widget'
   ])
   const addTabsHandler=()=>{
-    props.widget.options.advanced.cols.push({
-      id:guid(),
-      name:"名称",
-      widgetList:[]
-    })
+    let maxCount=props.widget.maxCount
+    if(maxCount<=0 || props.widget.options.advanced.cols.length<maxCount){
+        props.widget.options.advanced.cols.push({
+          id:guid(),
+          name:"名称",
+          widgetList:[]
+        })
+    }
   }
   const removeTabsHandler1=(name)=>{
+    console.log(name)
     let cols=props.widget.options.advanced.cols
     if(cols.length===1){
       return 

@@ -8,6 +8,9 @@
                 <div>
                     <div class="title">允许删除标签</div><el-switch v-model="selectedWidget.closable" />
                 </div>
+                <div>
+                    <div class="title">标签最多数量</div><el-input style="display:inline-block;width: 100px;" v-model="selectedWidget.maxCount"/>
+                </div>
                 <el-divider content-position="center">标签设置</el-divider>
                 <tabs-items
                     :advanced-prop="advancedProp"

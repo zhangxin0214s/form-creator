@@ -39,6 +39,7 @@ export const containers = [
 		icon:"tag",
 		addable:true,
 		closable:true,
+		maxCount:10,
 		options:{
 			advanced:{
 				cols:[
