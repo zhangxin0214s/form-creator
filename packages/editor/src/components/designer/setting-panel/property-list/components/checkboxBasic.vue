@@ -7,8 +7,16 @@
           :disabled="ite.disabled"
           v-model="ite.isSelect"
       />
-      <el-input style="width: 150px;margin-right: 20px" v-model="ite.label"/>
+      <el-input style="width: 150px;margin-right: 10px" v-model="ite.label"/>
       <span style="margin-top: 10px; display: inline-block">{{ ite.text }}复选框{{ index + 1 }}：</span>
+      <el-button
+          circle
+          size="small"
+          style="float: right; margin-top: 10px; margin-right: 20px"
+          type="primary"
+          icon="el-icon-minus"
+          @click="delCheckbox(ite)"
+      />
       <el-switch
           active-color="#ff4949"
           inactive-color="#13ce66"
@@ -16,10 +24,13 @@
       />
     </div>
   </div>
-  <div>
-    <el-button type="text" @click="addCheckbox">增加选项</el-button>
-    <el-button style="float: right" type="text" @click="delCheckbox()">删除选项</el-button>
-  </div>
+  <el-button
+      circle
+      type="primary"
+      size="small"
+      icon="el-icon-plus"
+      @click="addCheckbox"
+  />
 </template>
 <script setup>
 
@@ -37,8 +48,8 @@ const addCheckbox = () => {
       })
 }
 
-const delCheckbox = () => {
-  props.advancedProp.optionItems.splice(props.advancedProp.optionItems.length - 1, 1)
+const delCheckbox = (ite) => {
+  props.advancedProp.optionItems = props.advancedProp.optionItems.filter(item=>item.value != ite.value)
 }
 </script>
 <style lang="scss" scoped>
