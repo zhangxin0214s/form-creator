@@ -120,31 +120,43 @@ export const basicWidgets = [
 			},
 			advanced:{
 				validation:{
-					label:"正则校验规则",
+					label:"正则校验",
 					options:[
 						{
 							label:"无校验",
-							value:"",
+							value:"提示不是最优正则，请按需在下方自定义输入",
 						},
 						{
-							label:"手机号码（国内）",
-							value:"/0?(13|14|15|17|18|19)[0-9]{9}/"
+							label:'中文字符',
+							value:"[\\u4e00-\\u9fa5]"
 						},
 						{
-							label:"固定电话（国内）",
-							value:"[0-9-()（）]{7,18}"
+							label:'正整数',
+							value:'[1-9]\d*'
+						},
+						{
+							label:"手机号码",
+							value:"0?(13|14|15|17|18|19)[0-9]{9}"
+						},
+						{
+							label:"身份证号",
+							value:"\d{17}[\d|x]|\d{15}"
 						},
 						{
 							label:"Email地址",
 							value:"\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}"
 						},
 						{
-							label:"身份证号",
-							value:"\d{17}[\d|x]|\d{15}"
+							label:"网址",
+							value:"[a-zA-z]+:\/\/[^\s]*"
 						},
 					],
-					value:"无校验"
+					value:"提示不是最优正则，请按需在下方自定义输入"
 				},// 校验规则
+				validationCustom:{
+					label:"自定义",
+					value:""
+				}
 				// validationHint:""//校验规则提示
 			}
 		},
