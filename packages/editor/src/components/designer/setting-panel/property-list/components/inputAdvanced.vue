@@ -9,27 +9,17 @@
 			v-if="advancedProp[key1]?.label"
 			:label="`${advancedProp[key1]?.label}:`"
 		>
-			<el-select
+			<el-input
 				v-model="advancedProp[key1].value"
-				class="m-2"
-			>
-				<el-option
-					v-for="item in advancedProp[key1].options"
-					:key="item.value"
-					:label="item.label"
-					:value="item.value"
-				/>
-			</el-select>
+				:placeholder="advancedProp[key1]?.placeholder"
+			/>
 		</el-form-item>
-		<span style="font-size:12px">{{advancedProp[key1].value}}</span>
 	</el-form>
 </template>
 <script setup>
 import { defineProps } from 'vue';
 
 defineProps(['advancedProp', 'key1', 'value']);
-
-
 </script>
 <style lang="scss" scoped>
 </style>

@@ -3,7 +3,8 @@ const BASCI_COMPONENTS = {
 	'1':'inputBasic',
 	'2':'switchBasic',
 	'3':'selectBasic',
-	'4':'selectAdvanced'
+	'4':'selectAdvanced',
+	'5':'inputAdvanced'
 }
 
 // 基础属性组件映射表
@@ -24,7 +25,8 @@ const BASIC_PROPERTIES = {
 
 // 高级属性组件映射表
 const ADVANCED_PROPERTIES = {
-	'validation':'4'
+	'validation':'4',
+	'validationCustom':'5',
 }
 
 export {
