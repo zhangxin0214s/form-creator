@@ -2,7 +2,9 @@
 	<widget-mask 
 		:widget="widget"
 		:basicProp="widget.options.basic"
-		:advancedProp="widget.options.advanced">
+		:advancedProp="widget.options.advanced"
+		:inputKey="'defaultValue'"
+		>
 		<el-input
 			:disabled="widget.options.basic.disabled.value"
 			v-model="widget.options.basic.defaultValue.value"

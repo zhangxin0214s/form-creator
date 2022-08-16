@@ -72,7 +72,7 @@ export const basicWidgets = [
 			basic:{
 				name:{
 					label:"唯一名称",
-					value:"唯一标题名称（输入框）"
+					value:"输入框"
 				}, // 唯一名称
 				label:{
 					label:"标签",
@@ -109,16 +109,43 @@ export const basicWidgets = [
 					label:"是否必填",
 					value:true
 				},// 是否必填*
-				readonly:false,// 只读
+				readonly:{
+					label:"是否只读",
+					value:false
+				},// 只读
 				disabled:{
 					label:"是否禁用",
 					value:true
 				},// 禁用
 			},
 			advanced:{
-				width:300, // 输入框宽度
-				validation:"",// 校验规则
-				validationHint:""//校验规则提示
+				validation:{
+					label:"正则校验规则",
+					options:[
+						{
+							label:"无校验",
+							value:"",
+						},
+						{
+							label:"手机号码（国内）",
+							value:"/0?(13|14|15|17|18|19)[0-9]{9}/"
+						},
+						{
+							label:"固定电话（国内）",
+							value:"[0-9-()（）]{7,18}"
+						},
+						{
+							label:"Email地址",
+							value:"\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}"
+						},
+						{
+							label:"身份证号",
+							value:"\d{17}[\d|x]|\d{15}"
+						},
+					],
+					value:"无校验"
+				},// 校验规则
+				// validationHint:""//校验规则提示
 			}
 		},
 	},
