@@ -25,12 +25,14 @@
 
     <!-- 预览面板 -->
     <el-dialog v-model="dialogFormVisible" title="表单预览">
+        <form-renderer/>
     </el-dialog>
 </template>
 <script setup>
     import { ref } from 'vue';
     import { storeToRefs } from 'pinia';
     import { widgetStore } from '@/store/index';
+    import formRenderer from '../../renderer/index.vue'
     import { ElMessage } from 'element-plus'
     const _widgetStore = widgetStore();
     const dialogFormVisible = ref(false)
