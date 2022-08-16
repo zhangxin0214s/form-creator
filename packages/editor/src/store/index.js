@@ -12,6 +12,12 @@ export const widgetStore = defineStore('widget', {
     },
     actions: {
         /**
+         * 清空舞台
+         */
+        clearWidget(){
+            this.widgetList = [];
+        },
+        /**
          * 复制组件
          * @param {*} target 
          */
