@@ -9,11 +9,14 @@ const BASCI_COMPONENTS = {
 const BASIC_PROPERTIES = {
 	'name':'1',
 	'label':'1',
+	'hint':'1',
 	'labelWidth':'1',
 	'labelAlign':'3',
 	'defaultValue':'1',
 	'disabled':'2',
 	'required':'2',
+	'hintHidden':'2',
+	'labelHidden':'2',
 	'colHeight':'1',
 }
 
