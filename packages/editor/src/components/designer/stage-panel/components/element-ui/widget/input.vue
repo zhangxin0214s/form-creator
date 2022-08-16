@@ -4,16 +4,15 @@
 		:basicProp="widget.options.basic"
 		:advancedProp="widget.options.advanced">
 		<el-input
-			:disabled="widget.options.basic.disabled"
+			:disabled="widget.options.basic.disabled.value"
 			v-model="widget.options.basic.defaultValue.value"
 		/>
 	</widget-mask>
 </template>
 
 <script setup>
-import {ref} from 'vue';
 import widgetMask from '../common/widgetMask.vue'
-let props = defineProps([
+defineProps([
 	'widget'
 ]);
 
