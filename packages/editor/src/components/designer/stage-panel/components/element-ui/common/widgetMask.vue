@@ -6,19 +6,10 @@
 		<el-form
 			:label-position="basicProp.labelAlign.value"
 			:label-width="basicProp.labelWidth.value+'px'"
-			:model="widget.options.basic[inputKey]"
-			:rules="{
-				value:[
-					{
-						required:props.basicProp.required.value
-					}
-				]
-			}"
 		>
 			<el-form-item
 				:class="[selectedWidget?.id === widget?.id?'select':'']"
 				:label="basicProp.label.value"
-				prop="value"
 			>
 				<slot></slot>
 			</el-form-item>

@@ -174,22 +174,46 @@ export const basicWidgets = [
 			basic:{
 				name: {
 					label:"唯一名称",
-					value:"开关1"
+					value:"开关"
 				}, // 唯一名称
 				label:{
 					label:"标签",
-					value:"是否启用:"
+					value:"是否启用开关:"
 				}, // 标签, // 标签
 				labelWidth:{
 					label:"标签宽度",
 					value:100
 				},
-				labelAlign:"center",// 标签对齐方式
-				defaultValue:true,// 默认值:开 || 关
-				required:false,// 是否必填*
-				disabled:false,// 禁用
-				hint:"这是开关的提示语",// 提示语
-				hintHidden:false,// 提示语是否隐藏
+				labelAlign:{
+					label:"标签对齐方式",
+					options:[
+						{
+							label:"左对齐",
+							value:"left"
+						},
+						{
+							label:"顶部对齐",
+							value:"top"
+						},
+						{
+							label:"右对齐",
+							value:"right"
+						}
+					],
+					value:"right"
+				},// 标签对齐方式
+				switchDefaultValue:{
+					label:'默认值',
+					value:true
+				},// 默认值:开 || 关
+				required:{
+					label:'是否必填',
+					value:false
+				},// 是否必填*
+				disabled:{
+					label:'是否禁用',
+					value:false
+				},// 禁用
 			},
 			advanced:{}
 		},
