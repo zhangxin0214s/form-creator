@@ -22,6 +22,8 @@ const BASIC_PROPERTIES = {
 	'labelHidden':'2',
 	'readonly':'2',
 	'colHeight':'1',
+	'label-width':'1',
+	'label-position':'3'
 }
 
 // 高级属性组件映射表

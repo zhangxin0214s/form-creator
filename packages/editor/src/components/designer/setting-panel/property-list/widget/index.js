@@ -6,5 +6,5 @@ export {
     input,
     Switch,
     textarea,
-    checkbox
+    checkbox,
 }

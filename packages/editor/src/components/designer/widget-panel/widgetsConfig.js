@@ -1,7 +1,25 @@
 // 表单设置
 export const formConfig = {
-	"label-position":"left", // 标签位置
-	"label-width":'auto',// 标签宽度
+	"label-position":{
+		'value':'left',
+		'label':'标签对齐方式:',
+		"options":[
+			{
+				label:'左对齐',
+				value:'left'
+			},{
+				label:'向上对齐',
+				value:'top'
+			},{
+				label:'右对齐',
+				value:'right'
+			}
+		]
+	}, // 标签位置
+	"label-width":{
+		label:'标签宽度',
+		value:""
+	},// 标签宽度
 	"rules":{}// 校验规则
 }
 // 容器
