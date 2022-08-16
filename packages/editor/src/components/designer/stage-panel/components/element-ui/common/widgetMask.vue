@@ -3,18 +3,14 @@
 		class="container-mask"
 		@click.stop="selected(widget)"
 	>
-		<el-form
-			:label-position="basicProp.labelAlign.value"
-			:label-width="basicProp.labelWidth.value+'px'"
+		<el-form-item
+			:class="[selectedWidget?.id === widget?.id?'select':'']"
+			:label="basicProp.label.value"
+			prop="value"
 		>
-			<el-form-item
-				:class="[selectedWidget?.id === widget?.id?'select':'']"
-				:label="basicProp.label.value"
-				:required="basicProp.required.value"
-			>
-				<slot></slot>
-			</el-form-item>
-		</el-form>
+			<slot></slot>
+		</el-form-item>
+		
 		<!-- <div class="container-mask-title" v-if="selectedWidget?.id === widget?.id">
             <span class="text">
                 {{ widget.options.basic.name.value }}
@@ -41,9 +37,10 @@
 import { widgetStore } from '@/store/index';
 import { storeToRefs } from 'pinia';
 import { generateId, deepClone } from '@/utils/util';
-const props = defineProps(['widget', 'basicProp']);
+const props = defineProps(['widget', 'basicProp', 'inputKey', 'parentWidget']);
 const _widgetStore = widgetStore();
 const { widgetList, selectedWidget } = storeToRefs(_widgetStore);
+
 
 const selected = (widgetData) => {
 	console.log('选中:', widgetData);
@@ -55,7 +52,8 @@ const copy = () => {
 };
 
 const delete1 = () => {
-	_widgetStore.removeWidget(props.widget);
+	console.log(props.parentWidget, '===parentWidget===');
+	_widgetStore.removeWidget(props.widget, props.parentWidget);
 };
 </script>
 <style lang="scss" scoped>

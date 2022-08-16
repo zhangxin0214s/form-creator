@@ -1,8 +1,8 @@
 <template>
-	<div class="input-container">
+	<div class="switch-container">
 		<el-collapse
 			v-model="activeNames"
-			class="input-collapse"
+			class="switch-collapse"
 		>
 			<el-collapse-item
 				name="1"

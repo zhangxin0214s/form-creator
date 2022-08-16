@@ -18,7 +18,10 @@
 import widgetMask from '../common/widgetMask.vue'
 import { onMounted, ref } from 'vue'
 
-let props = defineProps(['widget'])
+let props = defineProps([
+  'widget',
+	'parentWidget'
+])
 let checkedList = ref([])
 </script>
 <style lang="scss" scoped>

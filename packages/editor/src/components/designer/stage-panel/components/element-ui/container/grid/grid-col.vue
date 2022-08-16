@@ -12,6 +12,7 @@
                         :is="componentMap[element.type]" 
                         :key="element.id"
                         :widget = element
+                        :parent-widget=colWidget.widgetList
                         >
                         </component>
                     </div>

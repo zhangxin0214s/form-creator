@@ -1,3 +1,9 @@
+// 表单设置
+export const formConfig = {
+	"label-position":"left", // 标签位置
+	"label-width":'auto',// 标签宽度
+	"rules":{}// 校验规则
+}
 // 容器
 export const containers = [
 	{
@@ -37,6 +43,9 @@ export const containers = [
 		name:"标签页",
 		type:"tabs",
 		icon:"tag",
+		addable:true,
+		closable:true,
+		maxCount:10,
 		options:{
 			advanced:{
 				cols:[
@@ -72,7 +81,7 @@ export const basicWidgets = [
 			basic:{
 				name:{
 					label:"唯一名称",
-					value:"唯一标题名称（输入框）"
+					value:"输入框"
 				}, // 唯一名称
 				label:{
 					label:"标签",
@@ -109,16 +118,55 @@ export const basicWidgets = [
 					label:"是否必填",
 					value:true
 				},// 是否必填*
-				readonly:false,// 只读
+				readonly:{
+					label:"是否只读",
+					value:false
+				},// 只读
 				disabled:{
 					label:"是否禁用",
 					value:true
 				},// 禁用
 			},
 			advanced:{
-				width:300, // 输入框宽度
-				validation:"",// 校验规则
-				validationHint:""//校验规则提示
+				validation:{
+					label:"正则校验",
+					options:[
+						{
+							label:"无校验",
+							value:"提示不是最优正则，请按需在下方自定义输入",
+						},
+						{
+							label:'中文字符',
+							value:"[\\u4e00-\\u9fa5]"
+						},
+						{
+							label:'正整数',
+							value:'[1-9]\d*'
+						},
+						{
+							label:"手机号码",
+							value:"0?(13|14|15|17|18|19)[0-9]{9}"
+						},
+						{
+							label:"身份证号",
+							value:"\d{17}[\d|x]|\d{15}"
+						},
+						{
+							label:"Email地址",
+							value:"\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}"
+						},
+						{
+							label:"网址",
+							value:"[a-zA-z]+:\/\/[^\s]*"
+						},
+					],
+					value:"提示不是最优正则，请按需在下方自定义输入"
+				},// 校验规则
+				validationCustom:{
+					label:"自定义",
+					value:""
+				}
+				// validationHint:""//校验规则提示
 			}
 		},
 	},
@@ -132,18 +180,46 @@ export const basicWidgets = [
 			basic:{
 				name:{
 					label:"唯一名称",
-					value:"开关1"
+					value:"开关"
 				}, // 唯一名称
 				label:{
 					label:"标签",
-					value:"是否启用:"
-				}, // 标签
-				labelAlign:"center",// 标签对齐方式
-				defaultValue:true,// 默认值:开 || 关
-				required:false,// 是否必填*
-				disabled:false,// 禁用
-				hint:"这是开关的提示语",// 提示语
-				hintHidden:false,// 提示语是否隐藏
+					value:"是否启用开关:"
+				}, // 标签, // 标签
+				labelWidth:{
+					label:"标签宽度",
+					value:100
+				},
+				labelAlign:{
+					label:"标签对齐方式",
+					options:[
+						{
+							label:"左对齐",
+							value:"left"
+						},
+						{
+							label:"顶部对齐",
+							value:"top"
+						},
+						{
+							label:"右对齐",
+							value:"right"
+						}
+					],
+					value:"right"
+				},// 标签对齐方式
+				switchDefaultValue:{
+					label:'默认值',
+					value:true
+				},// 默认值:开 || 关
+				required:{
+					label:'是否必填',
+					value:false
+				},// 是否必填*
+				disabled:{
+					label:'是否禁用',
+					value:false
+				},// 禁用
 			},
 			advanced:{}
 		},
@@ -231,7 +307,7 @@ export const basicWidgets = [
 				label:{
 					label:"标签",
 					value:"按钮:",
-				}, // 唯一名称
+				},
 				text:{
 					label:"按钮名称",
 					value:"提交",
