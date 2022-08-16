@@ -130,7 +130,7 @@ export const basicWidgets = [
 		value:null,
 		options:{
 			basic:{
-				name: {
+				name:{
 					label:"唯一名称",
 					value:"开关1"
 				}, // 唯一名称
@@ -168,7 +168,7 @@ export const basicWidgets = [
 				}, // 标签
 				labelWidth:{
 					label:"标签宽度",
-					value:200,
+					value:100,
 					placeholder:'用于设置标签宽度'
 				},// 标签宽度
 				hint:{
@@ -210,9 +210,9 @@ export const basicWidgets = [
 			advanced:{
 				optionItems:  // 选项设置
 					[
-						{label:"check 1", value:1, disabled:false},
-						{label:"check 2", value:2, disabled:false},
-						{label:"check 3", value:3, disabled:false},
+						{label:"check 1", value:1, disabled:true, text:'是否禁用', isSelect:true},
+						{label:"check 2", value:2, disabled:false, text:'是否禁用', isSelect:false},
+						{label:"check 3", value:3, disabled:false, text:'是否禁用', isSelect:false},
 					]
 			}
 		},
@@ -227,24 +227,71 @@ export const basicWidgets = [
 				name:{
 					label:"唯一名称",
 					value:"按钮1",
-					placeholder:'表单标题，唯一名称'
 				}, // 唯一名称
 				label:{
-					label:"",
-					value:"",
-					placeholder:''
+					label:"标签",
+					value:"按钮:",
 				}, // 唯一名称
 				text:{
 					label:"按钮名称",
 					value:"提交",
-					placeholder:''
 				},
 				required:{
 					label:'是否必填',
 					value:true
-				},
-				type:"success",// 类型:success/warn/error参考element-ui button
-				disabled:false,// 禁用
+				},// 是否必填*
+				labelWidth:{
+					label:"标签宽度",
+					value:100,
+				},// 标签宽度
+				labelAlign:{
+					label:"标签对齐方式",
+					options:[
+						{
+							label:"左对齐",
+							value:"left"
+						},
+						{
+							label:"顶部对齐",
+							value:"top"
+						},
+						{
+							label:"右对齐",
+							value:"right"
+						}
+					],
+					value:"right"
+				},// 标签对齐方式
+				type:{
+					label:"按钮类型",
+					options:[
+						{
+							label:'主要按钮',
+							value:'primary'
+						},
+						{
+							label:'成功按钮',
+							value:'success'
+						},
+						{
+							label:'信息按钮',
+							value:'info'
+						},
+						{
+							label:'警告按钮',
+							value:'warning'
+						},
+						{
+							label:'危险按钮',
+							value:'danger'
+						},
+					],
+					value:'primary'
+				},// 类型:success/warn/error参考element-ui button
+				disabled:{
+					label:"是否禁用",
+					value:true
+				},// 禁用
 			},
 			advanced:{}
 		}

@@ -12,7 +12,6 @@
 			<el-select
 				v-model="basicProp[key1].value"
 				class="m-2"
-				placeholder="对齐选择"
 			>
 				<el-option
 					v-for="item in basicProp[key1].options"

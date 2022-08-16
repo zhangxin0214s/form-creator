@@ -4,8 +4,8 @@
 		:basicProp="widget.options.basic"
 		:advancedProp="widget.options.advanced">
         <el-button
-            :type="widget.options.basic.type"
-            :disabled="widget.options.basic.disabled"
+            :type="widget.options.basic.type.value"
+            :disabled="widget.options.basic.disabled.value"
         >{{ widget.options.basic.text.value }}
         </el-button>
   </widget-mask>

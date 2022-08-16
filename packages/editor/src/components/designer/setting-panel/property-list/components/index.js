@@ -8,5 +8,5 @@ export {
 	switchBasic,
 	gutterItems,
 	selectBasic,
-    tabsItems
+    tabsItems,
 }
