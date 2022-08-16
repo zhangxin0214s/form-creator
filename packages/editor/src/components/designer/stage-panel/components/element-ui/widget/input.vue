@@ -1,8 +1,10 @@
 <template>
-	<widget-mask 
+	<widget-mask
 		:widget="widget"
-		:basicProp="widget.options.basic"
-		:advancedProp="widget.options.advanced">
+		:basic-prop="widget.options.basic"
+		:advanced-prop="widget.options.advanced"
+		:parent-widget="parentWidget"
+	>
 		<el-input
 			:disabled="widget.options.basic.disabled.value"
 			v-model="widget.options.basic.defaultValue.value"
@@ -11,15 +13,12 @@
 </template>
 
 <script setup>
-import widgetMask from '../common/widgetMask.vue'
-defineProps([
-	'widget'
-]);
-
+import widgetMask from '../common/widgetMask.vue';
+defineProps(['widget', 'parentWidget']);
 </script>
 <style scoped>
-	.input-container {
-		float:left;
-		width:100%;
-	}
+.input-container {
+	float: left;
+	width: 100%;
+}
 </style>

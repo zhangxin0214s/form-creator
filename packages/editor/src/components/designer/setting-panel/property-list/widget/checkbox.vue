@@ -1,6 +1,8 @@
 <template>
   <div class="input-container">
     <el-collapse v-model="activeNames" class="input-collapse">
+
+      <!--基础属性-->
       <el-collapse-item name="1" title="基础属性">
         <div v-for="(item,key,index) in basicProp" :key="index">
           <component
@@ -12,6 +14,14 @@
           />
         </div>
       </el-collapse-item>
+
+      <!--高级属性-->
+      <el-collapse-item name="2" title="高级属性">
+        <el-divider content-position="center">复选框设置</el-divider>
+        <checkbox-basic
+            :advanced-prop="advancedProp"
+        />
+      </el-collapse-item>
     </el-collapse>
   </div>
 </template>
@@ -20,6 +30,7 @@
 import { ref, defineProps } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES } from '../propertyRegister'
 import * as basicComponents from '../components/index';
+import CheckboxBasic from '../components/checkboxBasic'
 
 defineProps([
   'selectedWidget',
@@ -29,7 +40,6 @@ defineProps([
 const componentMap = {
   ...basicComponents
 }
-console.log(componentMap)
 const activeNames = ref(['1', '2', '3'])
 const getPropCompName = (key) => {
   return BASCI_COMPONENTS[BASIC_PROPERTIES[key]]

@@ -1,7 +1,7 @@
 <template>
   <container-mask :widget="widget">
-    <el-tabs type="card">
-      <el-tab-pane :label="colWidget.name" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
+    <el-tabs type="card" :class="[selectedWidget?.id === widget?.id?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
+      <el-tab-pane :label="colWidget.name" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
         <tabs-content 
           :colWidget="colWidget"
         ></tabs-content>
@@ -16,18 +16,51 @@
   import tabsContent from "./content.vue"
   const _widgetStore = widgetStore();
   const { selectedWidget} = storeToRefs(_widgetStore);
-  defineProps([
+  const props=defineProps([
       'widget'
   ])
+  const addTabsHandler=()=>{
+    let maxCount=props.widget.maxCount
+    if(maxCount<=0 || props.widget.options.advanced.cols.length<maxCount){
+        props.widget.options.advanced.cols.push({
+          id:guid(),
+          name:"名称",
+          widgetList:[]
+        })
+    }
+  }
+  const removeTabsHandler1=(name)=>{
+    console.log(name)
+    let cols=props.widget.options.advanced.cols
+    if(cols.length===1){
+      return 
+    }
+    for(let i=0;i<cols.length;i++){
+      if(cols[i].id===name){
+        cols.splice(i,1)
+        return 
+      }
+    }
+  }
+  const guid=()=>{
+      return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+          var r = Math.random() * 16 | 0,
+              v = c == 'x' ? r : (r & 0x3 | 0x8);
+          return v.toString(16);
+      });
+  }
 
 </script>
  <style lang="scss" scoped>
+  .select {
+    outline:1px solid $--color-primary;
+ }
  .grid-container{
     padding:1px;
     outline:1px dashed #444;
  }
  .select {
-    outline:1px dashed $--color-primary;
+    outline:1px solid $--color-primary;
  }
  .el-row {
   margin-bottom: 20px;
