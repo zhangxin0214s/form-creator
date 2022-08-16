@@ -252,18 +252,6 @@ export const basicWidgets = [
 					value:'',
 					placeholder:'提示语，用于表单校验' // 输入框占位文本
 				},
-				hintHidden:{
-					label:'提示语隐藏',
-					value:false
-				},// 提示语是否隐藏
-				labelHidden:{
-					label:'标签是否隐藏',
-					value:false
-				}, // 标签是否隐藏
-				required:{
-					label:'是否必填',
-					value:true
-				},// 是否必填*
 				labelAlign:{
 					label:"标签对齐方式",
 					options:[
@@ -282,6 +270,19 @@ export const basicWidgets = [
 					],
 					value:"right"
 				},// 标签对齐方式
+				hintHidden:{
+					label:'提示语隐藏',
+					value:false
+				},// 提示语是否隐藏
+				labelHidden:{
+					label:'标签是否隐藏',
+					value:false
+				}, // 标签是否隐藏
+				required:{
+					label:'是否必填',
+					value:true
+				},// 是否必填*
+
 			},
 			advanced:{
 				optionItems:  // 选项设置
@@ -312,10 +313,6 @@ export const basicWidgets = [
 					label:"按钮名称",
 					value:"提交",
 				},
-				required:{
-					label:'是否必填',
-					value:true
-				},// 是否必填*
 				labelWidth:{
 					label:"标签宽度",
 					value:100,
@@ -368,6 +365,10 @@ export const basicWidgets = [
 					label:"是否禁用",
 					value:true
 				},// 禁用
+				required:{
+					label:'是否必填',
+					value:true
+				},// 是否必填*
 			},
 			advanced:{}
 		}
