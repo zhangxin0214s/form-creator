@@ -1,7 +1,7 @@
 <template>
   <container-mask :widget="widget">
     <el-tabs type="card">
-      <el-tab-pane label="tab 1" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
+      <el-tab-pane :label="colWidget.name" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
         <tabs-content 
           :colWidget="colWidget"
         ></tabs-content>

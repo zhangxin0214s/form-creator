@@ -42,6 +42,7 @@ export const containers = [
 				cols:[
 					{
 						id:1,
+						name:'名称',
 						widgetList:[]
 					}
 				]
