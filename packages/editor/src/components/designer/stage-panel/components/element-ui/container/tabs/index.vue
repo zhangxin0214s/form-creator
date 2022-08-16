@@ -1,6 +1,6 @@
 <template>
   <container-mask :widget="widget">
-    <el-tabs :addable="widget.addable" :closable="widget.closable" type="card" @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
+    <el-tabs type="card" :class="[selectedWidget?.id === widget?.id?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
       <el-tab-pane :label="colWidget.name" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
         <tabs-content 
           :colWidget="colWidget"
@@ -39,12 +39,15 @@
 
 </script>
  <style lang="scss" scoped>
+  .select {
+    outline:1px solid $--color-primary;
+ }
  .grid-container{
     padding:1px;
     outline:1px dashed #444;
  }
  .select {
-    outline:1px dashed $--color-primary;
+    outline:1px solid $--color-primary;
  }
  .el-row {
   margin-bottom: 20px;
