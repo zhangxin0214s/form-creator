@@ -10,6 +10,4 @@ export {
     Switch,
     checkbox,
     select,
-    textarea,
-    checkbox,
-}
+    textarea, }
