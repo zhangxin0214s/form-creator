@@ -3,17 +3,14 @@
 		class="container-mask"
 		@click.stop="selected(widget)"
 	>
-		<el-form
-			:label-position="basicProp.labelAlign.value"
-			:label-width="basicProp.labelWidth.value+'px'"
+		<el-form-item
+			:class="[selectedWidget?.id === widget?.id?'select':'']"
+			:label="basicProp.label.value"
+			prop="value"
 		>
-			<el-form-item
-				:class="[selectedWidget?.id === widget?.id?'select':'']"
-				:label="basicProp.label.value"
-			>
-				<slot></slot>
-			</el-form-item>
-		</el-form>
+			<slot></slot>
+		</el-form-item>
+		
 		<!-- <div class="container-mask-title" v-if="selectedWidget?.id === widget?.id">
             <span class="text">
                 {{ widget.options.basic.name.value }}

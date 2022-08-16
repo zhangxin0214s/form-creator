@@ -14,27 +14,35 @@
 		<div class="stage-toolbar">
 			工具栏
 		</div>
+		
 		<div class="stage-form">
-			
-			<draggable
-				v-if="widgetList"
-				:list="widgetList"
-				item-key="id"
-				v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300,}"
-				tag="transition-group"
-				@add="onEnd">
-				<template #item="{ element: widget }">
-					<div class="transition-group-el">
-						<component
-							:is="componentMap[widget.type]"
-							:key="widget.id"
-							:widget=widget
-							:parent-widget="widgetList"
-							@click.stop="selected(widget)">
-						</component>
-					</div>
-				</template>
-			</draggable>
+			<el-form 
+				class="widget-form"
+				:label-width="formConfig['label-width']"
+				:label-position="formConfig['label-position']"
+				:rules="formConfig.rules"
+				>
+				<draggable
+					v-if="widgetList"
+					:list="widgetList"
+					item-key="id"
+					v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300,}"
+					tag="transition-group"
+					@add="onEnd">
+					<template #item="{ element: widget }">
+						<div class="transition-group-el">
+							<component
+								:is="componentMap[widget.type]"
+								:key="widget.id"
+								:widget=widget
+								:parent-widget="widgetList"
+								@click.stop="selected(widget)">
+							</component>
+						</div>
+					</template>
+				</draggable>
+			</el-form>
+				
 		</div>
 	</div>
 </template>
@@ -48,7 +56,7 @@ const componentMap = {
 };
 
 const _widgetStore = widgetStore();
-const { widgetList } = storeToRefs(_widgetStore);
+const { widgetList,formConfig } = storeToRefs(_widgetStore);
 
 const selected = (widgetData) => {
 	console.log('选中:', widgetData);
@@ -83,14 +91,15 @@ const onEnd = (origin)=>{
 		text-align: center;
 		line-height: 50px;
 		background: #fff;
-		// border-bottom: 1px solid #000;
 	}
 	&-form {
 		width: 100%;
 		height: 90%;
 		margin-top: 10px;
 		background: #fff;
-		// border: 1px solid #000;
 	}
+}
+.widget-form{
+	height:100%;
 }
 </style>

@@ -1,3 +1,9 @@
+// 表单设置
+export const formConfig = {
+	"label-position":"left", // 标签位置
+	"label-width":'auto',// 标签宽度
+	"rules":{}// 校验规则
+}
 // 容器
 export const containers = [
 	{
@@ -512,3 +518,4 @@ export const advancedWidgets = [
 		}
 	},
 ]
+
