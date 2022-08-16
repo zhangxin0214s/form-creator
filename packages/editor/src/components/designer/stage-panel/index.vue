@@ -15,7 +15,6 @@
 			工具栏
 		</div>
 		<div class="stage-form">
-			
 			<draggable
 				v-if="widgetList"
 				:list="widgetList"
@@ -27,7 +26,7 @@
 				<template #item="{ element: widget }">
 					<div
 						class="transition-group-el"
-						
+
 					>
 						<component
 							:is="componentMap[widget.type]"
@@ -52,7 +51,6 @@ const componentMap = {
 };
 const _widgetStore = widgetStore();
 const { widgetList ,selectedMaskIndex} = storeToRefs(_widgetStore);
-
 const selected = (widgetData) => {
 	console.log('选中:', widgetData);
 	_widgetStore.selectedWidget = widgetData;
