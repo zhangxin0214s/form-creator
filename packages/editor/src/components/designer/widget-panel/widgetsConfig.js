@@ -69,19 +69,42 @@ export const basicWidgets = [
 					label:"标签",
 					value:"工号:"
 				}, // 标签
-				labelHidden:false, // 标签是否隐藏
 				labelWidth:{
 					label:"标签宽度",
-					value:200
+					value:100
 				},// 标签宽度
-				labelAlign:"center",// 标签对齐方式
+				labelAlign:{
+					label:"标签对齐方式",
+					options:[
+						{
+							label:"左对齐",
+							value:"left"
+						},
+						{
+							label:"顶部对齐",
+							value:"top"
+						},
+						{
+							label:"右对齐",
+							value:"right"
+						}
+					],
+					value:"right"
+				},// 标签对齐方式
 				type:"text",// 类型
-				defaultValue:"这是默认文本",// 默认提示文本
-				required:true,// 是否必填*
+				defaultValue:{
+					label:"默认文本",
+					value:"这是默认文本"
+				},// 默认提示文本
+				required:{
+					label:"是否必填",
+					value:true
+				},// 是否必填*
 				readonly:false,// 只读
-				disabled:true,// 禁用
-				hint:"这是输入框的提示语",// 提示语
-				hintHidden:false,// 提示语是否隐藏
+				disabled:{
+					label:"是否禁用",
+					value:true
+				},// 禁用
 			},
 			advanced:{
 				width:300, // 输入框宽度
@@ -99,7 +122,6 @@ export const basicWidgets = [
 			basic:{
 				name:"唯一标题名称（开关）", // 唯一名称
 				label:"开关标签：", // 标签
-				labelHidden:false, // 标签是否隐藏
 				labelWidth:200,// 标签宽度
 				labelAlign:"center",// 标签对齐方式
 				defaultValue:true,// 默认值:开 || 关
