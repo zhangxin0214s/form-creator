@@ -376,26 +376,63 @@ export const basicWidgets = [
 	{
 		id:5,
 		name:"下拉框",
-		type:"Select",
+		type:"select",
 		icon:"select",
 		options:{
 			basic:{
-				name:"标题", // 唯一名称
-				label:"", // 标签
-				labelHidden:false, // 标签是否隐藏
-				labelWidth:null,// 标签宽度
-				labelAlign:"",// 标签对齐方式
-				required:false,// 是否必填*
+				label:{
+					label: '下拉框属性',
+					value: '选择框：'
+				}, // 标签
+				labelHidden: {
+					label: '标签是否隐藏',
+					value: false
+				},
+				labelWidth: {
+					label: '标签宽度',
+					value: 100
+				},
+				labelAlign:{
+					label:"标签对齐方式",
+					options:[
+						{
+							label:"左对齐",
+							value:"left"
+						},
+						{
+							label:"顶部对齐",
+							value:"top"
+						},
+						{
+							label:"右对齐",
+							value:"right"
+						}
+					],
+					value:"right"
+				},
+				required: {
+					label: '是否必填*',
+					value: false
+				},
+				placeholder: {
+					label:"placeholder",
+					value:"展开选择"
+				},
+				content: {
+					default: '展开选择', // 默认选中第几个
+					label: '选择项',
+					options: [], // id+label+value
+				},
 				hint:"",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
 			advanced:{
-				optionItems: // 选项设置
-					[
-						{label:"select 1", value:1},
-						{label:"select 2", value:2},
-						{label:"select 3", value:3},
-					]
+				// optionItems: // 选项设置
+				// 	[
+				// 		{label:"select 1", value:1},
+				// 		{label:"select 2", value:2},
+				// 		{label:"select 3", value:3},
+				// 	]
 			}
 		}
 	},

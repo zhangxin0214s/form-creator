@@ -14,7 +14,7 @@
 		<div class="stage-toolbar">
 			工具栏
 		</div>
-		
+
 		<div class="stage-form">
 			<el-form 
 				class="widget-form"
@@ -42,7 +42,7 @@
 					</template>
 				</draggable>
 			</el-form>
-				
+
 		</div>
 	</div>
 </template>

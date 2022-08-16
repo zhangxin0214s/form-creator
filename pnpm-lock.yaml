@@ -17,7 +17,7 @@ importers:
       esbuild: registry.npmmirror.com/esbuild/0.14.54
       pinia: 2.0.17_vue@3.2.37
       sortablejs: registry.npmmirror.com/sortablejs/1.14.0
-      vitepress: 1.0.0-alpha.4
+      vitepress: 1.0.0-alpha.4_rffayjtpljlgiggpouh2oetqji
       vue: registry.npmmirror.com/vue/3.2.37
     devDependencies:
       '@vitejs/plugin-vue': 2.0.0_vite@2.7.3+vue@3.2.37
@@ -28,7 +28,7 @@ importers:
       vitepress: 1.0.0-alpha.4
       vitepress-theme-demoblock: 1.4.2
     devDependencies:
-      vitepress: 1.0.0-alpha.4_rffayjtpljlgiggpouh2oetqji
+      vitepress: 1.0.0-alpha.4_wcqkhtmu7mswc6yz4uyexck3ty
       vitepress-theme-demoblock: 1.4.2_wcqkhtmu7mswc6yz4uyexck3ty
 
   packages/editor:
@@ -128,7 +128,7 @@ packages:
     dependencies:
       '@algolia/autocomplete-shared': 1.7.1
       algoliasearch: 4.14.2
-    dev: false
+    dev: true
 
   /@algolia/autocomplete-preset-algolia/1.7.1_qs6lk5nhygj2o3hj4sf6xnr724:
     resolution: {integrity: sha512-pJwmIxeJCymU1M6cGujnaIYcY3QPOVYZOXhFkWVM7IxKzy272BwCvMFMyc5NpG/QmiObBxjo7myd060OeTNJXg==}
@@ -139,7 +139,7 @@ packages:
       '@algolia/autocomplete-shared': 1.7.1
       '@algolia/client-search': 4.14.2
       algoliasearch: 4.14.2
-    dev: true
+    dev: false
 
   /@algolia/autocomplete-shared/1.7.1:
     resolution: {integrity: sha512-eTmGVqY3GeyBTT8IWiB2K5EuURAqhnumfktAEoHxfDY2o7vg2rSnO16ZtIG0fMgt3py28Vwgq42/bVEuaQV7pg==}
@@ -1467,10 +1467,10 @@ packages:
       - react-dom
     dev: true
 
-  /@docsearch/js/3.1.1:
+  /@docsearch/js/3.1.1_rffayjtpljlgiggpouh2oetqji:
     resolution: {integrity: sha512-bt7l2aKRoSnLUuX+s4LVQ1a7AF2c9myiZNv5uvQCePG5tpvVGpwrnMwqVXOUJn9q6FwVVhOrQMO/t+QmnnAEUw==}
     dependencies:
-      '@docsearch/react': 3.1.1
+      '@docsearch/react': 3.1.1_rffayjtpljlgiggpouh2oetqji
       preact: 10.10.0
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -1479,10 +1479,10 @@ packages:
       - react-dom
     dev: false
 
-  /@docsearch/js/3.1.1_rffayjtpljlgiggpouh2oetqji:
+  /@docsearch/js/3.1.1_wcqkhtmu7mswc6yz4uyexck3ty:
     resolution: {integrity: sha512-bt7l2aKRoSnLUuX+s4LVQ1a7AF2c9myiZNv5uvQCePG5tpvVGpwrnMwqVXOUJn9q6FwVVhOrQMO/t+QmnnAEUw==}
     dependencies:
-      '@docsearch/react': 3.1.1_rffayjtpljlgiggpouh2oetqji
+      '@docsearch/react': 3.1.1_wcqkhtmu7mswc6yz4uyexck3ty
       preact: 10.10.0
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -1505,21 +1505,6 @@ packages:
       react-dom: 16.14.0_react@16.14.0
     dev: true
 
-  /@docsearch/react/3.1.1:
-    resolution: {integrity: sha512-cfoql4qvtsVRqBMYxhlGNpvyy/KlCoPqjIsJSZYqYf9AplZncKjLBTcwBu6RXFMVCe30cIFljniI4OjqAU67pQ==}
-    peerDependencies:
-      '@types/react': '>= 16.8.0 < 19.0.0'
-      react: '>= 16.8.0 < 19.0.0'
-      react-dom: '>= 16.8.0 < 19.0.0'
-    dependencies:
-      '@algolia/autocomplete-core': 1.7.1
-      '@algolia/autocomplete-preset-algolia': 1.7.1_algoliasearch@4.14.2
-      '@docsearch/css': 3.1.1
-      algoliasearch: 4.14.2
-    transitivePeerDependencies:
-      - '@algolia/client-search'
-    dev: false
-
   /@docsearch/react/3.1.1_rffayjtpljlgiggpouh2oetqji:
     resolution: {integrity: sha512-cfoql4qvtsVRqBMYxhlGNpvyy/KlCoPqjIsJSZYqYf9AplZncKjLBTcwBu6RXFMVCe30cIFljniI4OjqAU67pQ==}
     peerDependencies:
@@ -1531,6 +1516,23 @@ packages:
       '@algolia/autocomplete-preset-algolia': 1.7.1_qs6lk5nhygj2o3hj4sf6xnr724
       '@docsearch/css': 3.1.1
       '@types/react': 18.0.17
+      algoliasearch: 4.14.2
+      react: registry.npmmirror.com/react/16.14.0
+      react-dom: registry.npmmirror.com/react-dom/16.14.0_react@16.14.0
+    transitivePeerDependencies:
+      - '@algolia/client-search'
+    dev: false
+
+  /@docsearch/react/3.1.1_wcqkhtmu7mswc6yz4uyexck3ty:
+    resolution: {integrity: sha512-cfoql4qvtsVRqBMYxhlGNpvyy/KlCoPqjIsJSZYqYf9AplZncKjLBTcwBu6RXFMVCe30cIFljniI4OjqAU67pQ==}
+    peerDependencies:
+      '@types/react': '>= 16.8.0 < 19.0.0'
+      react: '>= 16.8.0 < 19.0.0'
+      react-dom: '>= 16.8.0 < 19.0.0'
+    dependencies:
+      '@algolia/autocomplete-core': 1.7.1
+      '@algolia/autocomplete-preset-algolia': 1.7.1_algoliasearch@4.14.2
+      '@docsearch/css': 3.1.1
       algoliasearch: 4.14.2
       react: 16.14.0
       react-dom: 16.14.0_react@16.14.0
@@ -2051,7 +2053,7 @@ packages:
 
   /@types/prop-types/15.7.5:
     resolution: {integrity: sha512-JCB8C6SnDoQf0cNycqd/35A7MjcnK+ZTqE7judS6o7utxUCg6imJg3QK2qzHKszlTjcj2cn+NwMB2i96ubpj7w==}
-    dev: true
+    dev: false
 
   /@types/q/1.5.5:
     resolution: {integrity: sha512-L28j2FcJfSZOnL1WBjDYp2vUHCeIFlyYI/53EwD/rKUBQ7MtUUfbQWiyKJGpcnv4/WgrhWsFKrcPstcAt/J0tQ==}
@@ -13885,7 +13887,6 @@ packages:
     resolution: {integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/js-tokens/-/js-tokens-4.0.0.tgz}
     name: js-tokens
     version: 4.0.0
-    dev: true
 
   registry.npmmirror.com/js-yaml/3.14.1:
     resolution: {integrity: sha512-okMH7OXXJ7YrN9Ok3/SXrnu4iX9yOk+25nqX4imS2npuvTYDmo/QEZoqwZkYaIDk3jVvBOTOIEgEhaLOynBS9g==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/js-yaml/-/js-yaml-3.14.1.tgz}
@@ -14318,7 +14319,6 @@ packages:
     hasBin: true
     dependencies:
       js-tokens: registry.npmmirror.com/js-tokens/4.0.0
-    dev: true
 
   registry.npmmirror.com/lower-case/1.1.4:
     resolution: {integrity: sha512-2Fgx1Ycm599x+WGpIYwJOvsjmXFzTSc34IwDWALRA/8AopUKAVPwfJ+h5+f85BCp0PWmmJcWzEpxOpoXycMpdA==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/lower-case/-/lower-case-1.1.4.tgz}
@@ -15074,7 +15074,6 @@ packages:
     name: object-assign
     version: 4.1.1
     engines: {node: '>=0.10.0'}
-    dev: true
 
   registry.npmmirror.com/object-copy/0.1.0:
     resolution: {integrity: sha512-79LYn6VAb63zgtmAteVOWo9Vdj71ZVBy3Pbse+VqxDpEP83XuujMrGqHIwAXJ5I/aM0zU7dIyIAhifVTPrNItQ==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/object-copy/-/object-copy-0.1.0.tgz}
@@ -16428,7 +16427,6 @@ packages:
     resolution: {integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/react-is/-/react-is-16.13.1.tgz}
     name: react-is
     version: 16.13.1
-    dev: true
 
   registry.npmmirror.com/read-pkg-up/4.0.0:
     resolution: {integrity: sha512-6etQSH7nJGsK0RbG/2TeDzZFa8shjQ1um+SwQQ5cwKy0dhSXdOncEhb1CPpvQG4h7FyOV6EB6YlV0yJvZQNAkA==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/read-pkg-up/-/read-pkg-up-4.0.0.tgz}
