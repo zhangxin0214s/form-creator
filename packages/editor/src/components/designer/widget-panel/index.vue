@@ -65,6 +65,7 @@
                   item-key="key"
                   :group="{name: 'dragGroup', pull: 'clone', put: false}"
 				  :clone="onClone"
+				  @end="onDragEnd"
               >
                 <template #item="{ element }">
                   <li class="gild-container">
@@ -86,7 +87,7 @@ import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 import { generateId,deepClone } from '@/utils/util'
 const _widgetStore = widgetStore();
-const { widgetList,selectedMaskIndex } = storeToRefs(_widgetStore);
+const { widgetList,cloneWidget } = storeToRefs(_widgetStore);
 const activeNames = ref(['1', '2', '3', '4']);
 const state = reactive({
 	containers: containers,
@@ -94,11 +95,18 @@ const state = reactive({
 	advancedWidgets: advancedWidgets,
 });
 
-
-const onClone = (origin)=>{
+/**
+ * 克隆
+ */
+const onClone = (origin) =>{
 	let newOrigin = deepClone(origin);
 	newOrigin.id = generateId();
+	_widgetStore.cloneWidget = newOrigin;
 	return newOrigin
+}
+
+const onDragEnd = () =>{
+	console.log("结束")
 }
 </script>
 <style lang="scss" scoped>

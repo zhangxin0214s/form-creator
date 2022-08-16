@@ -22,8 +22,7 @@
 				item-key="id"
 				v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300,}"
 				tag="transition-group"
-				@add="onEnd"
-			>
+				@add="onEnd">
 				<template #item="{ element: widget }">
 					<div
 						class="transition-group-el"
@@ -51,17 +50,19 @@ import { widgetStore } from '@/store/index';
 const componentMap = {
 	...eleComponents
 };
+
 const _widgetStore = widgetStore();
-const { widgetList ,selectedMaskIndex} = storeToRefs(_widgetStore);
+const { widgetList } = storeToRefs(_widgetStore);
 
 const selected = (widgetData) => {
 	console.log('选中:', widgetData);
 	_widgetStore.selectedWidget = widgetData;
 };
 
-const onEnd = (e)=>{
-	selectedMaskIndex.value = e.newIndex
+const onEnd = (origin)=>{
+	_widgetStore.selectedWidget = _widgetStore.cloneWidget;
 }
+
 </script>
 <style lang="scss" scoped>
 .stage {
