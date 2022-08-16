@@ -33,6 +33,7 @@
 							:is="componentMap[widget.type]"
 							:key="widget.id"
 							:widget=widget
+							:parent-widget="widgetList"
 							@click.stop="selected(widget)"
 						>
 						</component>

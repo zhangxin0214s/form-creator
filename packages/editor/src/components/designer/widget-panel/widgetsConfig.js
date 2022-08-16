@@ -137,7 +137,11 @@ export const basicWidgets = [
 				label:{
 					label:"标签",
 					value:"是否启用:"
-				}, // 标签
+				}, // 标签, // 标签
+				labelWidth:{
+					label:"标签宽度",
+					value:100
+				},
 				labelAlign:"center",// 标签对齐方式
 				defaultValue:true,// 默认值:开 || 关
 				required:false,// 是否必填*
@@ -221,11 +225,16 @@ export const basicWidgets = [
 					label:"按钮名称",
 					value:"提交",
 					placeholder:''
+				}, // 标签
+				labelWidth:{
+					label:"标签宽度",
+					value:100
 				},
 				required:{
 					label:'是否必填',
 					value:true
 				},
+				labelAlign:"",// 标签对齐方式
 				type:"success",// 类型:success/warn/error参考element-ui button
 				disabled:false,// 禁用
 			},

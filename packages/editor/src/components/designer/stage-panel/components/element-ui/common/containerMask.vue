@@ -24,7 +24,10 @@
     import { widgetStore } from '@/store/index';
     import { storeToRefs } from 'pinia';
     import { generateId,deepClone } from '@/utils/util'
-    const props = defineProps(['widget']);
+    const props = defineProps([
+        'widget',
+        'parentWidget'
+    ]);
     const _widgetStore = widgetStore();
     const { widgetList,selectedWidget} = storeToRefs(_widgetStore);
 
@@ -33,7 +36,7 @@
     }
 
     const delete1 = () =>{
-         _widgetStore.removeWidget(selectedWidget.value)
+         _widgetStore.removeWidget(selectedWidget.value,props.parentWidget)
     }
 
 </script>

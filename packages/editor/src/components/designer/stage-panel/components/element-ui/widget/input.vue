@@ -1,8 +1,9 @@
 <template>
 	<widget-mask 
 		:widget="widget"
-		:basicProp="widget.options.basic"
-		:advancedProp="widget.options.advanced">
+		:basic-prop="widget.options.basic"
+		:advanced-prop="widget.options.advanced"
+		:parent-widget="parentWidget">
 		<el-input
 			:disabled="widget.options.basic.disabled.value"
 			v-model="widget.options.basic.defaultValue.value"
@@ -13,7 +14,8 @@
 <script setup>
 import widgetMask from '../common/widgetMask.vue'
 defineProps([
-	'widget'
+	'widget',
+	'parentWidget'
 ]);
 
 </script>

@@ -22,8 +22,12 @@ export const widgetStore = defineStore('widget', {
          * 删除组件
          * @param {*} target 
          */
-        removeWidget(target){
-            this.widgetList = this.widgetList.filter(item => item.id != target.id)  
+        removeWidget(target,parentWidget){
+            parentWidget.forEach((widget,index) =>{
+                if(widget.id === target.id){
+                    parentWidget.splice(index,1)
+                }
+            })
         }
     },
     getters: {}
