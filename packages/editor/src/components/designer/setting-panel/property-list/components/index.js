@@ -1,8 +1,10 @@
 import inputBasic from './inputBasic.vue'
-import switchBasic from './switchBasic'
-import gutterItems from './gutterItems'
+import switchBasic from './switchBasic.vue'
+import gutterItems from './gutterItems.vue'
+import tabsItems from './tabsItems.vue'
 export {
 	inputBasic,
 	switchBasic,
-	gutterItems
+	gutterItems,
+    tabsItems
 }

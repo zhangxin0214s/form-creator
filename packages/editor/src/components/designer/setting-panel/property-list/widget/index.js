@@ -1,5 +1,5 @@
 import input from './input.vue';
-import checkbox  from './checkbox'
+import checkbox  from './checkbox.vue'
 
 export {
     input,
