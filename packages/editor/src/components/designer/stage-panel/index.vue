@@ -18,8 +18,8 @@
 		<div class="stage-form">
 			<el-form 
 				class="widget-form"
-				:label-width="formConfig['label-width']"
-				:label-position="formConfig['label-position']"
+				:label-width="formConfig['label-width'].value"
+				:label-position="formConfig['label-position'].value"
 				:rules="formConfig.rules"
 				>
 				<draggable

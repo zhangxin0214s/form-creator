@@ -17,8 +17,4 @@ import widgetMask from '../common/widgetMask.vue';
 defineProps(['widget', 'parentWidget']);
 </script>
 <style scoped>
-.input-container {
-	float: left;
-	width: 100%;
-}
 </style>
