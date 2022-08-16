@@ -15,6 +15,7 @@ const BASIC_PROPERTIES = {
 	'labelWidth':'1',
 	'labelAlign':'3',
 	'defaultValue':'1',
+	'switchDefaultValue':'2',
 	'disabled':'2',
 	'required':'2',
 	'hintHidden':'2',
