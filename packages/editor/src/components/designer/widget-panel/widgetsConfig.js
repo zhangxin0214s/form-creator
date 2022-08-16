@@ -37,6 +37,8 @@ export const containers = [
 		name:"标签页",
 		type:"tabs",
 		icon:"tag",
+		addable:true,
+		closable:true,
 		options:{
 			advanced:{
 				cols:[
