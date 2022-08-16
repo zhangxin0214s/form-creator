@@ -5,8 +5,8 @@
 		:advancedProp="widget.options.advanced"
     :parent-widget="parentWidget">
         <el-button
-            :type="widget.options.basic.type"
-            :disabled="widget.options.basic.disabled"
+            :type="widget.options.basic.type.value"
+            :disabled="widget.options.basic.disabled.value"
         >{{ widget.options.basic.text.value }}
         </el-button>
   </widget-mask>

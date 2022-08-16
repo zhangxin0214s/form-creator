@@ -14,7 +14,7 @@
 		<div class="stage-toolbar">
 			<tool-bar/>
 		</div>
-		
+
 		<div class="stage-form">
 			<el-form 
 				class="widget-form"
@@ -42,7 +42,7 @@
 					</template>
 				</draggable>
 			</el-form>
-				
+
 		</div>
 	</div>
 </template>

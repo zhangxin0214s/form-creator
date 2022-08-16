@@ -178,7 +178,7 @@ export const basicWidgets = [
 		value:null,
 		options:{
 			basic:{
-				name: {
+				name:{
 					label:"唯一名称",
 					value:"开关"
 				}, // 唯一名称
@@ -244,7 +244,7 @@ export const basicWidgets = [
 				}, // 标签
 				labelWidth:{
 					label:"标签宽度",
-					value:200,
+					value:100,
 					placeholder:'用于设置标签宽度'
 				},// 标签宽度
 				hint:{
@@ -252,18 +252,6 @@ export const basicWidgets = [
 					value:'',
 					placeholder:'提示语，用于表单校验' // 输入框占位文本
 				},
-				hintHidden:{
-					label:'提示语隐藏',
-					value:false
-				},// 提示语是否隐藏
-				labelHidden:{
-					label:'标签是否隐藏',
-					value:false
-				}, // 标签是否隐藏
-				required:{
-					label:'是否必填',
-					value:true
-				},// 是否必填*
 				labelAlign:{
 					label:"标签对齐方式",
 					options:[
@@ -282,13 +270,26 @@ export const basicWidgets = [
 					],
 					value:"right"
 				},// 标签对齐方式
+				hintHidden:{
+					label:'提示语隐藏',
+					value:false
+				},// 提示语是否隐藏
+				labelHidden:{
+					label:'标签是否隐藏',
+					value:false
+				}, // 标签是否隐藏
+				required:{
+					label:'是否必填',
+					value:true
+				},// 是否必填*
+
 			},
 			advanced:{
 				optionItems:  // 选项设置
 					[
-						{label:"check 1", value:1, disabled:false},
-						{label:"check 2", value:2, disabled:false},
-						{label:"check 3", value:3, disabled:false},
+						{label:"check 1", value:1, disabled:true, text:'是否禁用', isSelect:true},
+						{label:"check 2", value:2, disabled:false, text:'是否禁用', isSelect:false},
+						{label:"check 3", value:3, disabled:false, text:'是否禁用', isSelect:false},
 					]
 			}
 		},
@@ -303,29 +304,71 @@ export const basicWidgets = [
 				name:{
 					label:"唯一名称",
 					value:"按钮1",
-					placeholder:'表单标题，唯一名称'
 				}, // 唯一名称
 				label:{
-					label:"",
-					value:"",
-					placeholder:''
-				}, // 唯一名称
+					label:"标签",
+					value:"按钮:",
+				},
 				text:{
 					label:"按钮名称",
 					value:"提交",
-					placeholder:''
-				}, // 标签
+				},
 				labelWidth:{
 					label:"标签宽度",
-					value:100
-				},
+					value:100,
+				},// 标签宽度
+				labelAlign:{
+					label:"标签对齐方式",
+					options:[
+						{
+							label:"左对齐",
+							value:"left"
+						},
+						{
+							label:"顶部对齐",
+							value:"top"
+						},
+						{
+							label:"右对齐",
+							value:"right"
+						}
+					],
+					value:"right"
+				},// 标签对齐方式
+				type:{
+					label:"按钮类型",
+					options:[
+						{
+							label:'主要按钮',
+							value:'primary'
+						},
+						{
+							label:'成功按钮',
+							value:'success'
+						},
+						{
+							label:'信息按钮',
+							value:'info'
+						},
+						{
+							label:'警告按钮',
+							value:'warning'
+						},
+						{
+							label:'危险按钮',
+							value:'danger'
+						},
+					],
+					value:'primary'
+				},// 类型:success/warn/error参考element-ui button
+				disabled:{
+					label:"是否禁用",
+					value:true
+				},// 禁用
 				required:{
 					label:'是否必填',
 					value:true
-				},
-				labelAlign:"",// 标签对齐方式
-				type:"success",// 类型:success/warn/error参考element-ui button
-				disabled:false,// 禁用
+				},// 是否必填*
 			},
 			advanced:{}
 		}
@@ -333,26 +376,63 @@ export const basicWidgets = [
 	{
 		id:5,
 		name:"下拉框",
-		type:"Select",
+		type:"select",
 		icon:"select",
 		options:{
 			basic:{
-				name:"标题", // 唯一名称
-				label:"", // 标签
-				labelHidden:false, // 标签是否隐藏
-				labelWidth:null,// 标签宽度
-				labelAlign:"",// 标签对齐方式
-				required:false,// 是否必填*
+				label:{
+					label: '下拉框属性',
+					value: '选择框：'
+				}, // 标签
+				labelHidden: {
+					label: '标签是否隐藏',
+					value: false
+				},
+				labelWidth: {
+					label: '标签宽度',
+					value: 100
+				},
+				labelAlign:{
+					label:"标签对齐方式",
+					options:[
+						{
+							label:"左对齐",
+							value:"left"
+						},
+						{
+							label:"顶部对齐",
+							value:"top"
+						},
+						{
+							label:"右对齐",
+							value:"right"
+						}
+					],
+					value:"right"
+				},
+				required: {
+					label: '是否必填*',
+					value: false
+				},
+				placeholder: {
+					label:"placeholder",
+					value:"展开选择"
+				},
+				content: {
+					default: '展开选择', // 默认选中第几个
+					label: '选择项',
+					options: [], // id+label+value
+				},
 				hint:"",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
 			advanced:{
-				optionItems: // 选项设置
-					[
-						{label:"select 1", value:1},
-						{label:"select 2", value:2},
-						{label:"select 3", value:3},
-					]
+				// optionItems: // 选项设置
+				// 	[
+				// 		{label:"select 1", value:1},
+				// 		{label:"select 2", value:2},
+				// 		{label:"select 3", value:3},
+				// 	]
 			}
 		}
 	},
@@ -430,4 +510,3 @@ export const advancedWidgets = [
 		}
 	},
 ]
-
