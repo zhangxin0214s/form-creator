@@ -1,7 +1,7 @@
 <template>
   <container-mask :widget="widget">
     <el-tabs type="card" :class="[selectedWidget?.id === widget?.id?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
-      <el-tab-pane :label="colWidget.name" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
+      <el-tab-pane :label="colWidget.name" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
         <tabs-content 
           :colWidget="colWidget"
         ></tabs-content>
@@ -26,8 +26,17 @@
       widgetList:[]
     })
   }
-  const removeTabsHandler1=(a)=>{
-    console.log(1111)
+  const removeTabsHandler1=(name)=>{
+    let cols=props.widget.options.advanced.cols
+    if(cols.length===1){
+      return 
+    }
+    for(let i=0;i<cols.length;i++){
+      if(cols[i].id===name){
+        cols.splice(i,1)
+        return 
+      }
+    }
   }
   const guid=()=>{
       return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
