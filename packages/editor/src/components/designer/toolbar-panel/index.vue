@@ -1,10 +1,11 @@
 <template>
+    <!-- 工具栏 -->
     <ul class="tool">
         <li class="tool-btn" @click="clear">
             <svg-icon :icon-class="tools[0].icon" />
             <el-button link type="primary">{{ tools[0].name }}</el-button>
         </li>
-        <li class="tool-btn">
+        <li class="tool-btn" @click="preview">
             <svg-icon :icon-class="tools[1].icon" />
             <el-button link type="primary">{{ tools[1].name }}</el-button>
         </li>
@@ -21,6 +22,10 @@
             <el-button link type="primary">{{ tools[4].name }}</el-button>
         </li>
     </ul>
+
+    <!-- 预览面板 -->
+    <el-dialog v-model="dialogFormVisible" title="表单预览">
+    </el-dialog>
 </template>
 <script setup>
     import { ref } from 'vue';
@@ -28,6 +33,7 @@
     import { widgetStore } from '@/store/index';
     import { ElMessage } from 'element-plus'
     const _widgetStore = widgetStore();
+    const dialogFormVisible = ref(false)
     const tools = ref([
         {
             name:'清空',
@@ -61,6 +67,13 @@
             duration:1000
         })
         _widgetStore.clearWidget();
+    }
+
+    /**
+     * 预览
+     */
+    const preview = () =>{
+        dialogFormVisible.value = true;
     }
 </script>
 <style lang="scss" scoped>
