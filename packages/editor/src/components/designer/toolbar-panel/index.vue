@@ -24,6 +24,10 @@
         {
             name:'导入',
             icon:'tool-import'
+        },
+        {
+            name:'商城',
+            icon:'tool-mall'
         }
     ])
 </script>
