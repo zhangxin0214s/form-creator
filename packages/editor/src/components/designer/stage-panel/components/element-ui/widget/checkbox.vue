@@ -3,15 +3,14 @@
       :widget="widget"
       :basicProp="widget.options.basic"
       :advancedProp="widget.options.advanced">
-    <el-checkbox-group v-model="checkedList">
       <el-checkbox
           v-for="(item,index) in widget.options.advanced.optionItems"
           :key="index"
           :label="item.label"
           :disabled="item.disabled"
+          v-model="item.isSelect"
       >
       </el-checkbox>
-    </el-checkbox-group>
   </widget-mask>
 </template>
 <script setup>
@@ -20,9 +19,9 @@ import { onMounted, ref } from 'vue'
 
 let props = defineProps([
   'widget',
-	'parentWidget'
+  'parentWidget',
+  'advancedProp'
 ])
-let checkedList = ref([])
 </script>
 <style lang="scss" scoped>
 </style>

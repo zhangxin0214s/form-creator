@@ -287,9 +287,7 @@ export const basicWidgets = [
 			advanced:{
 				optionItems:  // 选项设置
 					[
-						{label:"check 1", value:1, disabled:true, text:'是否禁用', isSelect:true},
-						{label:"check 2", value:2, disabled:false, text:'是否禁用', isSelect:false},
-						{label:"check 3", value:3, disabled:false, text:'是否禁用', isSelect:false},
+						{label:"check 1", value:1, disabled:false, text:'是否禁用', isSelect:true},
 					]
 			}
 		},
@@ -358,9 +356,27 @@ export const basicWidgets = [
 							label:'危险按钮',
 							value:'danger'
 						},
+						{
+							label:'文字按钮',
+							value:'text'
+						},
 					],
 					value:'primary'
 				},// 类型:success/warn/error参考element-ui button
+				btnSize:{
+					label:"按钮尺寸",
+					options:[
+						{
+							label:'中等按钮',
+							value:'medium'
+						},
+						{
+							label:'小型按钮',
+							value:'small'
+						},
+					],
+					value:'medium'
+				},
 				disabled:{
 					label:"是否禁用",
 					value:true
