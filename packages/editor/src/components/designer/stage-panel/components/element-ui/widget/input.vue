@@ -3,7 +3,9 @@
 		:widget="widget"
 		:basic-prop="widget.options.basic"
 		:advanced-prop="widget.options.advanced"
-		:parent-widget="parentWidget">
+		:parent-widget="parentWidget"
+		:inputKey="'defaultValue'"
+		>
 		<el-input
 			:disabled="widget.options.basic.disabled.value"
 			v-model="widget.options.basic.defaultValue.value"
