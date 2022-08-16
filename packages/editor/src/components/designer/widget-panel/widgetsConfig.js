@@ -192,7 +192,24 @@ export const basicWidgets = [
 					label:'是否必填',
 					value:true
 				},// 是否必填*
-				labelAlign:"",// 标签对齐方式
+				labelAlign:{
+					label:"标签对齐方式",
+					options:[
+						{
+							label:"左对齐",
+							value:"left"
+						},
+						{
+							label:"顶部对齐",
+							value:"top"
+						},
+						{
+							label:"右对齐",
+							value:"right"
+						}
+					],
+					value:"right"
+				},// 标签对齐方式
 			},
 			advanced:{
 				optionItems:  // 选项设置

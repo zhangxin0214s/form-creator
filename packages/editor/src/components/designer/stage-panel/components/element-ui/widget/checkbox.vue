@@ -1,5 +1,5 @@
 <template>
-  <widget-mask 
+  <widget-mask
 		:widget="widget"
 		:basicProp="widget.options.basic"
 		:advancedProp="widget.options.advanced"

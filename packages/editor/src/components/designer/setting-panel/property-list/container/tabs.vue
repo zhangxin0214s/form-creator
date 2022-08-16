@@ -1,9 +1,13 @@
 <template>
     <div class="input-container">
-        <el-divider content-position="center">tabs设置</el-divider>
-        <tabs-items
-            :advanced-prop="advancedProp"
-        ></tabs-items>
+        <el-collapse v-model="activeNames" class="input-collapse">
+            <el-collapse-item name="1" title="基础属性">
+                <el-divider content-position="center">标签设置</el-divider>
+                <tabs-items
+                    :advanced-prop="advancedProp"
+                ></tabs-items>
+            </el-collapse-item>
+        </el-collapse>
     </div>
 </template>
 <script setup>
@@ -21,12 +25,7 @@ defineProps([
 const componentMap = {
   ...basicComponents
 }
-const activeNames = ref(['1', '2', '3'])
-const a = ref({name:'input1'})
-const getPropCompName = (key) =>{
-    console.log(key,"===key===")
-    return BASCI_COMPONENTS[BASIC_PROPERTIES[key]]
-}
+const activeNames = ref(['1'])
 </script>
 <style lang="scss" scoped>
 </style>
