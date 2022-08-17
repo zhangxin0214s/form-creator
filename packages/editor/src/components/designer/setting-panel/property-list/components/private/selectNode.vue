@@ -27,7 +27,7 @@
   const addChild = (parentMsg) => {
     parentMsg.children.push({
       id: `${parentMsg.id}-${parentMsg.children.length}`,
-      label: `新选项${parentMsg.children.length}`,
+      label: `新选项${parentMsg.id}-${parentMsg.children.length}`,
       children: []
     })
   }
