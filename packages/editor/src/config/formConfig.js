@@ -22,6 +22,7 @@ export const formConfig = {
 	},// 标签宽度
 	"rules":{}// 校验规则
 }
+
 // 容器
 export const containers = [
 	{
