@@ -1,6 +1,6 @@
 <template>
   <container-mask :widget="widget">
-    <el-tabs type="card" :class="[selectedWidget?.id === widget?.id?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
+    <el-tabs v-model="activeName" type="card" :class="[selectedWidget?.id === widget?.id?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
       <el-tab-pane :label="colWidget.name" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
         <tabs-content 
           :colWidget="colWidget"
@@ -19,6 +19,7 @@
   const props=defineProps([
       'widget'
   ])
+  let activeName=props.widget.options.advanced.cols[0].id
   const addTabsHandler=()=>{
     let maxCount=props.widget.maxCount
     if(maxCount<=0 || props.widget.options.advanced.cols.length<maxCount){
