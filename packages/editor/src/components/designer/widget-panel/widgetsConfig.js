@@ -351,7 +351,7 @@ export const basicWidgets = [
 			advanced:{
 				selectConfig: {
 					label: '选项设置',
-					lists: [], // label+value+checked+disabled
+					children: [], // label+value+checked+disabled
 				},
 			}
 		}
