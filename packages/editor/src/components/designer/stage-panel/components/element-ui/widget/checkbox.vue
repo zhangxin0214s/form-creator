@@ -2,7 +2,8 @@
   <widget-mask
       :widget="widget"
       :basicProp="widget.options.basic"
-      :advancedProp="widget.options.advanced">
+      :advancedProp="widget.options.advanced"
+      :parent-widget="parentWidget">
       <el-checkbox
           v-for="(item,index) in widget.options.advanced.optionItems"
           :key="index"
