@@ -1,11 +1,14 @@
 <template>
   <widget-mask :widget="widget" :basicProp="BASIC">
-    <el-select v-model="BASIC.content.default" :placeholder="BASIC.placeholder.value">
+    <el-select v-model="BASIC.list.showList" :placeholder="BASIC.placeholder.value">
       <el-option
-        v-for="item in BASIC.content.options"
+        v-for="item in BASIC.list.options"
+        v-show="item?.checked"
         :key="item.value"
         :label="item.label"
-        :value="item.value">
+        :value="item.value"
+        :disabled="item.disabled"
+        >
       </el-option>
     </el-select>
   </widget-mask>

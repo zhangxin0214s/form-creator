@@ -5,6 +5,8 @@ import selectBasic from './selectBasic'
 import tabsItems from './tabsItems.vue'
 import selectAdvanced from './selectAdvanced.vue'
 import inputAdvanced from './inputAdvanced.vue'
+import addSelectList from './private/addSelectList.vue'
+
 export {
 	inputBasic,
 	switchBasic,
@@ -12,5 +14,6 @@ export {
 	selectBasic,
 	tabsItems,
 	selectAdvanced,
-	inputAdvanced
+	inputAdvanced,
+	addSelectList,
 }

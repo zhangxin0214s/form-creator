@@ -1,13 +1,41 @@
 <template>
+    <!-- 工具栏 -->
     <ul class="tool">
-        <li class="tool-btn" v-for="(tool,index) in tools" :key="index">
-            <svg-icon :icon-class="tool.icon" />
-            <el-button link type="primary">{{ tool.name }}</el-button>
+        <li class="tool-btn" @click="clear">
+            <svg-icon :icon-class="tools[0].icon" />
+            <el-button link type="primary">{{ tools[0].name }}</el-button>
+        </li>
+        <li class="tool-btn" @click="preview">
+            <svg-icon :icon-class="tools[1].icon" />
+            <el-button link type="primary">{{ tools[1].name }}</el-button>
+        </li>
+        <li class="tool-btn">
+            <svg-icon :icon-class="tools[2].icon" />
+            <el-button link type="primary">{{ tools[2].name }}</el-button>
+        </li>
+        <li class="tool-btn">
+            <svg-icon :icon-class="tools[3].icon" />
+            <el-button link type="primary">{{ tools[3].name }}</el-button>
+        </li>
+        <li class="tool-btn">
+            <svg-icon :icon-class="tools[4].icon" />
+            <el-button link type="primary">{{ tools[4].name }}</el-button>
         </li>
     </ul>
+
+    <!-- 预览面板 -->
+    <el-dialog v-model="dialogFormVisible" title="表单预览">
+        <form-renderer/>
+    </el-dialog>
 </template>
 <script setup>
     import { ref } from 'vue';
+    import { storeToRefs } from 'pinia';
+    import { widgetStore } from '@/store/index';
+    import formRenderer from '../../renderer/index.vue'
+    import { ElMessage } from 'element-plus'
+    const _widgetStore = widgetStore();
+    const dialogFormVisible = ref(false)
     const tools = ref([
         {
             name:'清空',
@@ -30,6 +58,25 @@
             icon:'tool-mall'
         }
     ])
+
+    /**
+     * 清空
+     */
+    const clear = () =>{
+        ElMessage({
+            message: '清除成功',
+            type: 'success',
+            duration:1000
+        })
+        _widgetStore.clearWidget();
+    }
+
+    /**
+     * 预览
+     */
+    const preview = () =>{
+        dialogFormVisible.value = true;
+    }
 </script>
 <style lang="scss" scoped>
     li{

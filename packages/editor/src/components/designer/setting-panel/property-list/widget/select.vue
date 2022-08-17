@@ -6,7 +6,7 @@
                     <component
                         :is="componentMap[getPropCompName(key)]"
                         :basic-prop="basicProp"
-                        :value = "item"
+                        :value = "item.value"
                         :key1 = "key"
                     >
                     </component>
@@ -27,7 +27,6 @@
   const props = defineProps([
     'basicProp'
   ])
-  console.log(BASCI_COMPONENTS)
   const componentMap = {
     ...basicComponents
   }
