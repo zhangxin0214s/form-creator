@@ -17,6 +17,7 @@ export const widgetStore = defineStore('widget', {
          */
         clearWidget(){
             this.widgetList = [];
+            this.selectedWidget = null
         },
         /**
          * 复制组件
