@@ -33,7 +33,8 @@ const BASIC_PROPERTIES = {
 	'textareaDefaultValue':'7',
 	'divider-direction':'3',
 	'divider-style':'3',
-	'divider-position':'3'
+	'divider-position':'3',
+	'divider-content':'1',
 }
 
 // 高级属性组件映射表
