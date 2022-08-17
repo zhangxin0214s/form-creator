@@ -546,6 +546,100 @@ export const basicWidgets = [
 			advanced: {}
 		}
 	},
+	{
+		id: 9,
+		name: "手机号",
+		type: "cellPhone",
+		category: "widget",
+		icon: "cellPhone",
+		options: {
+			basic: {
+				name: {
+					label: "唯一名称",
+					value: "手机号"
+				}, // 唯一名称
+				label: {
+					label: "标签",
+					value: "联系电话:"
+				}, // 标签
+				prefix:{
+					options:[
+						{
+							label:"86",
+							value:'大陆'
+						},
+						{
+							label:"852",
+							value:'香港'
+						},
+						{
+							label:"853",
+							value:'澳门'
+						},
+					],
+					value:'86'
+				},
+				type: "number",// 类型
+				defaultValue: {
+					label: "默认文本",
+					value: ""
+				},// 默认提示文本
+				required: {
+					label: "是否必填",
+					value: true
+				},// 是否必填*
+				readonly: {
+					label: "是否只读",
+					value: false
+				},// 只读
+				disabled: {
+					label: "是否禁用",
+					value: false
+				},// 禁用
+			},
+			advanced: {
+				validation: {
+					label: "正则校验",
+					options: [
+						{
+							label: "无校验",
+							value: "提示不是最优正则，请按需在下方自定义输入",
+						},
+						{
+							label: '中文字符',
+							value: "[\\u4e00-\\u9fa5]"
+						},
+						{
+							label: '正整数',
+							value: '[1-9]\d*'
+						},
+						{
+							label: "手机号码",
+							value: "0?(13|14|15|17|18|19)[0-9]{9}"
+						},
+						{
+							label: "身份证号",
+							value: "\d{17}[\d|x]|\d{15}"
+						},
+						{
+							label: "Email地址",
+							value: "\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}"
+						},
+						{
+							label: "网址",
+							value: "[a-zA-z]+:\/\/[^\s]*"
+						},
+					],
+					value: "提示不是最优正则，请按需在下方自定义输入"
+				},// 校验规则
+				validationCustom: {
+					label: "自定义",
+					value: ""
+				}
+				// validationHint:""//校验规则提示
+			}
+		},
+	},
 ]
 
 // 高级组件
@@ -574,4 +668,5 @@ export const advancedWidgets = [
 			advanced: {}
 		}
 	},
+	
 ]

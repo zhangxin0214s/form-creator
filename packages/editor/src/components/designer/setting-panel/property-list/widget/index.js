@@ -5,6 +5,7 @@ import Switch from './switch.vue';
 import select from './select.vue'
 import textarea from './textarea.vue';
 import divider from './divider.vue';
+import cellPhone from './cellPhone.vue';
 export {
     input,
     button,
@@ -12,5 +13,6 @@ export {
     checkbox,
     select,
     textarea,
-    divider
+    divider,
+    cellPhone
 }

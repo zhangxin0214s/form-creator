@@ -6,7 +6,7 @@ import select from './select.vue'
 import Radio from './radio.vue'
 import textarea from './textarea.vue'
 import divider from './divider.vue'
-
+import cellPhone from './cellPhone.vue'
 export {
 	input,
 	checkbox,
@@ -15,5 +15,6 @@ export {
 	select,
 	Radio,
 	textarea,
-	divider
+	divider,
+	cellPhone
 }
