@@ -263,7 +263,7 @@ export const basicWidgets = [
 				}, // 唯一名称
 				label:{
 					label:"标签",
-					value:"按钮:",
+					value:"",
 				},
 				text:{
 					label:"按钮名称",
@@ -315,12 +315,9 @@ export const basicWidgets = [
 				},
 				disabled:{
 					label:"是否禁用",
-					value:true
+					value:false
 				},// 禁用
-				required:{
-					label:'是否必填',
-					value:true
-				},// 是否必填*
+
 			},
 			advanced:{}
 		}
