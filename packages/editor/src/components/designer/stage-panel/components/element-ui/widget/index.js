@@ -5,7 +5,7 @@ import button from './button.vue'
 import select from './select.vue'
 import Radio from './radio.vue'
 import textarea from './textarea.vue'
-import Divider from './divider.vue'
+import divider from './divider.vue'
 
 export {
 	input,
@@ -15,5 +15,5 @@ export {
 	select,
 	Radio,
 	textarea,
-	Divider
+	divider
 }

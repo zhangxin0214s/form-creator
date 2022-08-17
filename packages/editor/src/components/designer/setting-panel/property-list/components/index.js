@@ -6,7 +6,7 @@ import tabsItems from './tabsItems.vue'
 import selectAdvanced from './selectAdvanced.vue'
 import inputAdvanced from './inputAdvanced.vue'
 import addSelectList from './private/addSelectList.vue'
-
+import textareaBasic from './textareaBasic.vue'
 export {
 	inputBasic,
 	switchBasic,
@@ -16,4 +16,5 @@ export {
 	selectAdvanced,
 	inputAdvanced,
 	addSelectList,
+	textareaBasic
 }

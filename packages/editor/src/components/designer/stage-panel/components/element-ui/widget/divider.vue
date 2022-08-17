@@ -1,15 +1,24 @@
 <template>
-  <span>分割线</span>
-  <el-divider>我是分割线</el-divider>
-  <span>分割线</span>
+	<widget-mask
+		:widget="widget"
+		:basic-prop="widget.options.basic"
+		:advanced-prop="widget.options.advanced"
+		:parent-widget="parentWidget"
+	>
+		<el-divider
+			:direction="widget.options.basic['divider-direction'].value"
+			:border-style="widget.options.basic['divider-style'].value"
+			:content-position="widget.options.basic['divider-position'].value"
+		>
+			<span v-if="widget.options.basic['divider-direction'].value ==='horizontal'">内容</span>
+		</el-divider>
+	</widget-mask>
 </template>
 
-<script>
-export default {
-  name:"divider"
-}
+<script setup>
+import widgetMask from '../common/widgetMask.vue';
+defineProps(['widget', 'parentWidget']);
 </script>
 
 <style scoped>
-
 </style>

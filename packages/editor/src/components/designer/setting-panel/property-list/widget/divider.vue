@@ -1,8 +1,8 @@
 <template>
-	<!-- <div class="form-container">
+	<div class="divider-container">
 		<el-collapse
 			v-model="activeNames"
-			class="form-collapse"
+			class="divider-collapse"
 		>
 			<el-collapse-item
 				name="1"
@@ -38,18 +38,17 @@
 				</div>
 			</el-collapse-item>
 		</el-collapse>
-	</div> -->
+	</div>
 </template>
 <script setup>
 import { ref } from 'vue';
 import { BASCI_COMPONENTS, BASIC_PROPERTIES,ADVANCED_PROPERTIES } from '../propertyRegister';
 import * as basicComponents from '../components/index';
-console.log('111111111')
+
 const props = defineProps(['selectedWidget', 'basicProp','advancedProp']);
 const componentMap = {
 	...basicComponents,
 };
-
 const activeNames = ref(['1', '2', '3']);
 
 const getPropCompName = (key) => {

@@ -8,7 +8,7 @@
 		<el-input
 			type="textarea"
 			:disabled="widget.options.basic.disabled.value"
-			v-model="widget.options.basic.defaultValue.value"
+			v-model="widget.options.basic.textareaDefaultValue.value"
 		/>
 	</widget-mask>
 </template>

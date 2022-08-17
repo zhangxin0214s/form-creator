@@ -1,5 +1,5 @@
 <template>
-  <el-button @click="drawer = true">Default</el-button>
+  <el-button @click="drawer = true">公共属性配置</el-button>
   <el-drawer v-model="drawer">
     <template #header="{ close, titleId, titleClass }">
       <el-divider content-position="center">表单属性配置</el-divider>
