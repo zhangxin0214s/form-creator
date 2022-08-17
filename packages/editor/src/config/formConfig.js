@@ -29,6 +29,7 @@ export const containers = [
 		id: 1,
 		name: "栅格",
 		type: "grid",
+		category: "container",
 		icon: "lattice",
 		options: {
 			basic: {
@@ -61,6 +62,7 @@ export const containers = [
 		id: 2,
 		name: "标签页",
 		type: "tabs",
+		category: "container",
 		icon: "tag",
 		addable: true,
 		closable: true,
@@ -94,6 +96,7 @@ export const basicWidgets = [
 		id: 1,
 		name: "输入框",
 		type: "input",
+		category: "widget",
 		icon: "input",
 		value: null,
 		options: {
@@ -171,6 +174,7 @@ export const basicWidgets = [
 		id: 2,
 		name: "开关",
 		type: "Switch",
+		category: "widget",
 		icon: "switch",
 		value: null,
 		options: {
@@ -203,6 +207,7 @@ export const basicWidgets = [
 		id: 3,
 		name: "复选框",
 		type: "checkbox",
+		category: "widget",
 		icon: "check",
 		value: null,
 		options: {
@@ -248,6 +253,7 @@ export const basicWidgets = [
 		id:4,
 		name:"按钮",
 		type:"button",
+		category: "widget",
 		icon:"button",
 		options:{
 			basic:{
@@ -323,6 +329,7 @@ export const basicWidgets = [
 		id:5,
 		name:"下拉框",
 		type:"select",
+		category: "widget",
 		icon:"select",
 		options:{
 			basic:{
@@ -364,6 +371,7 @@ export const basicWidgets = [
 		id: 6,
 		name: "单选框",
 		type: "Radio",
+		category: "widget",
 		icon: "Radio",
 		options: {
 			basic: {
@@ -389,6 +397,7 @@ export const basicWidgets = [
 		id: 7,
 		name: "文本域",
 		type: "textarea",
+		category: "widget",
 		icon: "textField",
 		value: null,
 		options: {
@@ -466,6 +475,7 @@ export const basicWidgets = [
 		id: 8,
 		name: "分割线",
 		type: "divider",
+		category: "widget",
 		icon: "split",
 		options: {
 			basic: {
@@ -544,6 +554,7 @@ export const advancedWidgets = [
 		id: 1,
 		name: "新增按钮",
 		type: "addButton",
+		category: "widget",
 		icon: "button",
 		options: {
 			hidden: false,
@@ -555,6 +566,7 @@ export const advancedWidgets = [
 		id: 2,
 		name: "上传",
 		type: "Upload",
+		category: "widget",
 		icon: "upload",
 		options: {
 			hidden: false,
