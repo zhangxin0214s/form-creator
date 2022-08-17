@@ -1,6 +1,8 @@
 <template>
   <container-mask :widget="widget">
-    <el-row class="grid-container" :class="[selectedWidget?.id === widget?.id?'select':'']">
+    <el-row class="grid-container" :class="[
+        selectedWidget?.id === widget?.id && isEditor?'select':'',
+    ]">
       <template v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
         <Col 
           :colWidget="colWidget"
@@ -18,7 +20,7 @@
   import containerMask from "../../common/containerMask.vue"
   import Col from "./grid-col.vue"
   const _widgetStore = widgetStore();
-  const { selectedWidget} = storeToRefs(_widgetStore);
+  const { selectedWidget,isEditor} = storeToRefs(_widgetStore);
   defineProps([
       'widget'
   ])
@@ -27,6 +29,8 @@
  <style lang="scss" scoped>
  .grid-container{
     padding:1px;
+ }
+ .grid-line{
     outline:1px dashed #444;
  }
  .select {

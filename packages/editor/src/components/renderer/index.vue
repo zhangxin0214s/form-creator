@@ -7,17 +7,12 @@
             :rules="formConfig.rules"
             >
             <template v-for="(widget, index) in widgetList" :key="index">
-                <template v-if="'container' === widget.category">
-                    
-                </template>
-                <template v-else>
-                    <component
-                        :is="componentMap[widget.type]"
-                        :key="widget.id"
-                        :widget=widget
-                        :parent-widget="widgetList">
-                    </component>
-                </template>
+                <component
+                    :is="componentMap[widget.type]"
+                    :key1="widget.id"
+                    :widget=widget
+                    :parent-widget="widgetList">
+                </component>
             </template>
         </el-form>
     </div>

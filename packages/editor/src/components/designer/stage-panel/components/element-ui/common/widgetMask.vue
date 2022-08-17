@@ -37,7 +37,7 @@
 import { widgetStore } from '@/store/index';
 import { storeToRefs } from 'pinia';
 import { generateId, deepClone } from '@/utils/util';
-const props = defineProps(['widget', 'basicProp', 'inputKey', 'parentWidget']);
+const props = defineProps(['widget', 'basicProp', 'parentWidget']);
 const _widgetStore = widgetStore();
 const { widgetList, selectedWidget,isEditor } = storeToRefs(_widgetStore);
 

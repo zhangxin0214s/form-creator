@@ -1,11 +1,13 @@
 <template>
     <el-col 
         :span="colWidget.gutter" 
-        class="grid-content ep-bg-purple" 
+        class="grid-content1 ep-bg-purple" 
+        :class="[isEditor?'gird-line':'']"
         >
             <draggable :list="colWidget.widgetList" item-key="id" v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300}"
                 tag="transition-group" :component-data="{name: 'fade'}"
-                @end="onEnd">
+                @end="onEnd"
+                :sort="isEditor">
                 <template #item="{ element }">
                     <div class="transition-group-el">
                         <component 
@@ -35,7 +37,7 @@
         ...Advanced
     }
     const _widgetStore = widgetStore();
-    const { selectedWidget,widgetList} = storeToRefs(_widgetStore);
+    const { selectedWidget,widgetList,isEditor} = storeToRefs(_widgetStore);
     const selected = (widgetData) => {
         console.log('选中:', widgetData);
         _widgetStore.selectedWidget = widgetData;
@@ -45,4 +47,11 @@
     }
 </script>
  <style lang="scss" scoped>
+    .grid-content1{
+        border-radius: 4px;
+        min-height: 36px;
+    }
+    .gird-line{
+        border:1px dashed #000;
+    }
  </style>

@@ -6,7 +6,7 @@
                 {{ widget.options.basic.name.value }}
 			</span>
         </div> -->
-        <div class="container-mask-action" v-if="selectedWidget?.id === widget?.id">
+        <div class="container-mask-action" v-if="selectedWidget?.id === widget?.id && isEditor">
             <svg-icon
                 icon-class="copy"
                 class="copyIcon"
@@ -28,7 +28,7 @@
         'parentWidget'
     ]);
     const _widgetStore = widgetStore();
-    const { widgetList,selectedWidget} = storeToRefs(_widgetStore);
+    const { widgetList,selectedWidget,isEditor} = storeToRefs(_widgetStore);
 
     const copy = () =>{
         _widgetStore.copyWidget(props.widget)
