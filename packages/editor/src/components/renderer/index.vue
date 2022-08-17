@@ -23,7 +23,6 @@
         ...eleComponents
     };
     defineProps(['widgetList', 'formConfig']);
-
 </script>
 <style lang="scss" scoped>
     .form{
