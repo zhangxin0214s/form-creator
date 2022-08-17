@@ -2,7 +2,7 @@
 export const formConfig = {
 	"label-position":{
 		'value':'left',
-		'label':'标签对齐方式:',
+		'label':'标签对齐方式',
 		"options":[
 			{
 				label:'左对齐',
@@ -394,36 +394,14 @@ export const basicWidgets = [
 			basic: {
 				name: {
 					label: "唯一名称",
-					value: "输入框"
+					value: "文本域"
 				}, // 唯一名称
 				label: {
 					label: "标签",
-					value: "工号:"
+					value: "内容:"
 				}, // 标签
-				labelWidth: {
-					label: "标签宽度",
-					value: 100
-				},// 标签宽度
-				labelAlign: {
-					label: "标签对齐方式",
-					options: [
-						{
-							label: "左对齐",
-							value: "left"
-						},
-						{
-							label: "顶部对齐",
-							value: "top"
-						},
-						{
-							label: "右对齐",
-							value: "right"
-						}
-					],
-					value: "right"
-				},// 标签对齐方式
-				type: "text",// 类型
-				textureDefaultValue: {
+				type: "textarea",// 类型
+				textareaDefaultValue: {
 					label: "默认文本",
 					value: "这是默认文本"
 				},// 默认提示文本

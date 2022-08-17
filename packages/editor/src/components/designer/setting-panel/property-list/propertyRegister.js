@@ -6,6 +6,7 @@ const BASCI_COMPONENTS = {
 	'4':'selectAdvanced',
 	'5':'inputAdvanced',
 	'6':'addSelectList',
+	'7':'textareaBasic'
 }
 
 // 基础属性组件映射表
@@ -29,6 +30,7 @@ const BASIC_PROPERTIES = {
 	'label-width':'1',
 	'label-position':'3',
 	'list':'6',
+	'textareaDefaultValue':'7'
 }
 
 // 高级属性组件映射表
