@@ -30,7 +30,10 @@ const BASIC_PROPERTIES = {
 	'label-width':'1',
 	'label-position':'3',
 	'list':'6',
-	'textareaDefaultValue':'7'
+	'textareaDefaultValue':'7',
+	'divider-direction':'3',
+	'divider-style':'3',
+	'divider-position':'3'
 }
 
 // 高级属性组件映射表

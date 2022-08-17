@@ -464,11 +464,70 @@ export const basicWidgets = [
 	{
 		id: 8,
 		name: "分割线",
-		type: "Divider",
+		type: "divider",
 		icon: "split",
 		options: {
-			hidden: false,
-			basic: {},
+			basic: {
+				name: {
+					label: "唯一名称",
+					value: "分割线"
+				}, // 唯一名称
+				label: {
+					label: "",
+					value: ""
+				}, // 标签
+				"divider-direction":{
+					label:"方向",
+					options:[
+						{
+							label:"横向分割线",
+							value:"horizontal"
+						},
+						{
+							label:"纵向分割线",
+							value:"vertical"
+						},
+					],
+					value:'horizontal'
+				},
+				"divider-style":{
+					label:"样式",
+					options:[
+						{
+							label:"实线",
+							value:"solid"
+						},
+						{
+							label:"方格虚线",
+							value:"dashed"
+						},
+						{
+							label:"圆点虚线",
+							value:"dotted"
+						},
+					],
+					value:'solid'
+				},
+				"divider-position":{
+					label:"内容位置",
+					options:[
+						{
+							label:"居左",
+							value:"left"
+						},
+						{
+							label:"居中",
+							value:"center"
+						},
+						{
+							label:"居右",
+							value:"right"
+						},
+					],
+					value:'center'
+				}
+				
+			},
 			advanced: {}
 		}
 	},
