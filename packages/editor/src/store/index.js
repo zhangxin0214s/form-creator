@@ -48,6 +48,7 @@ export const widgetStore = defineStore('widget', {
                     parentWidget.splice(index,1)
                 }
             })
+            this.selectedWidget = null
         }
     },
     getters: {}
