@@ -52,6 +52,8 @@ const componentMap = {
 }
 .el-main {
 	--el-main-padding: 0 0px;
+	overflow: auto;
+	height: calc( 100vh - 170px);
 }
 .setting {
 	&-header {
