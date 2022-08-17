@@ -43,6 +43,7 @@ export const widgetStore = defineStore('widget', {
          * @param {*} target 
          */
         removeWidget(target,parentWidget){
+            if(!parentWidget) return;
             parentWidget.forEach((widget,index) =>{
                 if(widget.id === target.id){
                     parentWidget.splice(index,1)
