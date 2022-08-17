@@ -8,8 +8,12 @@
 		<div class="phone-content">
 			<el-select
 				v-model="widget.options.basic.prefix.value"
+				:disabled="widget.options.basic.disabled.value"
 				class="prefix-select"
 			>
+				<template v-slot:prefix>
+					<span>+</span>
+				</template>
 				<el-option
 					v-for="item in widget.options.basic.prefix.options"
 					:key="item.value"
@@ -28,7 +32,7 @@
 				oninput="value=value.replace(/[^\d]/g,'')"
 				maxLength="11"
 				:disabled="widget.options.basic.disabled.value"
-				v-model="widget.options.basic.defaultValue.value"
+				:placeholder="widget.options.basic.defaultValue.value"
 			/>
 		</div>
 	</widget-mask>

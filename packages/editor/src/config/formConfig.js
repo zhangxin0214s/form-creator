@@ -112,7 +112,7 @@ export const basicWidgets = [
 				type: "text",// 类型
 				defaultValue: {
 					label: "默认文本",
-					value: "这是默认文本"
+					value: "请输入输入框内容"
 				},// 默认提示文本
 				required: {
 					label: "是否必填",
@@ -124,12 +124,12 @@ export const basicWidgets = [
 				},// 只读
 				disabled: {
 					label: "是否禁用",
-					value: true
+					value: false
 				},// 禁用
 			},
 			advanced: {
 				validation: {
-					label: "正则校验",
+					label: "正则校验提示",
 					options: [
 						{
 							label: "无校验",
@@ -413,7 +413,7 @@ export const basicWidgets = [
 				type: "textarea",// 类型
 				textareaDefaultValue: {
 					label: "默认文本",
-					value: "这是默认文本"
+					value: "请输入文本域内容"
 				},// 默认提示文本
 				required: {
 					label: "是否必填",
@@ -425,12 +425,12 @@ export const basicWidgets = [
 				},// 只读
 				disabled: {
 					label: "是否禁用",
-					value: true
+					value: false
 				},// 禁用
 			},
 			advanced: {
 				validation: {
-					label: "正则校验",
+					label: "正则校验提示",
 					options: [
 						{
 							label: "无校验",
@@ -582,7 +582,7 @@ export const basicWidgets = [
 				type: "number",// 类型
 				defaultValue: {
 					label: "默认文本",
-					value: ""
+					value: "请填写正确的手机号"
 				},// 默认提示文本
 				required: {
 					label: "是否必填",
@@ -599,7 +599,7 @@ export const basicWidgets = [
 			},
 			advanced: {
 				validation: {
-					label: "正则校验",
+					label: "正则校验提示",
 					options: [
 						{
 							label: "无校验",
