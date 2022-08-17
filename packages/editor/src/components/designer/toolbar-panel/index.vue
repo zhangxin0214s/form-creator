@@ -24,18 +24,24 @@
     </ul>
 
     <!-- 预览面板 -->
-    <el-dialog v-model="dialogFormVisible" title="表单预览">
-        <form-renderer/>
+    <el-dialog v-model="dialogFormVisible" title="表单预览" @close="closePreview">
+        <form-renderer
+            :widgetList="_widgetList"
+            :formConfig="_formConfig"
+        ></form-renderer>
     </el-dialog>
 </template>
 <script setup>
     import { ref } from 'vue';
-    import { storeToRefs } from 'pinia';
     import { widgetStore } from '@/store/index';
     import formRenderer from '../../renderer/index.vue'
     import { ElMessage } from 'element-plus'
+    import { deepClone } from '@/utils/util'
+    import { toRaw } from '@vue/reactivity'
     const _widgetStore = widgetStore();
     const dialogFormVisible = ref(false)
+    const _widgetList = ref(deepClone(toRaw(_widgetStore.widgetList)))
+    const _formConfig = ref(deepClone(toRaw(_widgetStore.formConfig)));
     const tools = ref([
         {
             name:'清空',
@@ -76,6 +82,16 @@
      */
     const preview = () =>{
         dialogFormVisible.value = true;
+        _widgetStore.isEditor = false;
+        _widgetList.value = deepClone(toRaw(_widgetStore.widgetList));
+        _formConfig.value = deepClone(toRaw(_widgetStore.formConfig));
+    }
+
+    /**
+     * 关闭预览
+     */
+    const closePreview = () =>{
+        _widgetStore.isEditor = true;
     }
 </script>
 <style lang="scss" scoped>

@@ -6,14 +6,29 @@
             :label-position="formConfig['label-position'].value"
             :rules="formConfig.rules"
             >
+            <template v-for="(widget, index) in widgetList" :key="index">
+                <template v-if="'container' === widget.category">
+                    
+                </template>
+                <template v-else>
+                    <component
+                        :is="componentMap[widget.type]"
+                        :key="widget.id"
+                        :widget=widget
+                        :parent-widget="widgetList">
+                    </component>
+                </template>
+            </template>
         </el-form>
     </div>
 </template>
 <script setup>
-    import { storeToRefs } from 'pinia';
-    import { widgetStore } from '@/store/index';
-    const _widgetStore = widgetStore();
-    const { widgetList,formConfig } = storeToRefs(_widgetStore);
+    import eleComponents from '@/components/designer/stage-panel/components/element-ui';
+    const componentMap = {
+        ...eleComponents
+    };
+    defineProps(['widgetList', 'formConfig']);
+
 </script>
 <style lang="scss" scoped>
     .form{

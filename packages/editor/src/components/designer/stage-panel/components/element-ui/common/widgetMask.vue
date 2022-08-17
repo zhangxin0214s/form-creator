@@ -4,7 +4,7 @@
 		@click.stop="selected(widget)"
 	>
 		<el-form-item
-			:class="[selectedWidget?.id === widget?.id?'select':'']"
+			:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
 			:label="basicProp.label.value"
 			:required="basicProp.required?.value"
 		>
@@ -18,7 +18,7 @@
         </div> -->
 		<div
 			class="container-mask-action"
-			v-if="selectedWidget?.id === widget?.id"
+			v-if="selectedWidget?.id === widget?.id && isEditor"
 		>
 			<svg-icon
 				icon-class="copy"
@@ -39,7 +39,7 @@ import { storeToRefs } from 'pinia';
 import { generateId, deepClone } from '@/utils/util';
 const props = defineProps(['widget', 'basicProp', 'inputKey', 'parentWidget']);
 const _widgetStore = widgetStore();
-const { widgetList, selectedWidget } = storeToRefs(_widgetStore);
+const { widgetList, selectedWidget,isEditor } = storeToRefs(_widgetStore);
 
 
 const selected = (widgetData) => {
