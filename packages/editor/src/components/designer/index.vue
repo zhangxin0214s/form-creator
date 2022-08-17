@@ -8,7 +8,7 @@
     <el-header class="main-header">
       <div class="float-left main-title">
         <img :src="logo" @click="openHome" alt="logo">
-        <span class="bold">题目编辑器</span>
+        <span class="bold">表单编辑器</span>
       </div>
     </el-header>
     <el-container>
