@@ -10,7 +10,7 @@
 		>
 			<slot></slot>
 		</el-form-item>
-		
+
 		<!-- <div class="container-mask-title" v-if="selectedWidget?.id === widget?.id">
             <span class="text">
                 {{ widget.options.basic.name.value }}
@@ -41,7 +41,6 @@ const props = defineProps(['widget', 'basicProp', 'parentWidget']);
 const _widgetStore = widgetStore();
 const { widgetList, selectedWidget,isEditor } = storeToRefs(_widgetStore);
 
-
 const selected = (widgetData) => {
 	console.log('选中:', widgetData);
 	_widgetStore.selectedWidget = widgetData;
@@ -60,6 +59,7 @@ const delete1 = () => {
 .select {
 	outline: 1px solid $--color-primary;
 }
+
 .container-mask {
 	position: relative;
 	margin-bottom: 2px;

@@ -10,6 +10,7 @@ import staticText from './staticText'
 import date from './date'
 import datetimerange from './datetimerange'
 import hierarchy from './hierarchy'
+import cellPhone from './cellPhone.vue'
 export {
 	input,
 	checkbox,
@@ -22,5 +23,6 @@ export {
 	staticText,
 	date,
 	datetimerange,
-	hierarchy
+	hierarchy,
+	cellPhone
 }

@@ -7,7 +7,7 @@
 	>
 		<el-input
 			:disabled="widget.options.basic.disabled.value"
-			v-model="widget.options.basic.defaultValue.value"
+			:placeholder="widget.options.basic.defaultValue.value"
 		/>
 	</widget-mask>
 </template>
