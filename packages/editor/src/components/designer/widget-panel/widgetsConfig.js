@@ -476,6 +476,10 @@ export const basicWidgets = [
 					label: "",
 					value: ""
 				}, // 标签
+				"divider-content":{
+					label:"内容",
+					value:"",
+				},
 				"divider-direction":{
 					label:"方向",
 					options:[

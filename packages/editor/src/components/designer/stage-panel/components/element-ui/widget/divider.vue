@@ -10,7 +10,9 @@
 			:border-style="widget.options.basic['divider-style'].value"
 			:content-position="widget.options.basic['divider-position'].value"
 		>
-			<span v-if="widget.options.basic['divider-direction'].value ==='horizontal'">内容</span>
+			<span v-if="widget.options.basic['divider-direction'].value ==='horizontal'">
+				{{widget.options.basic['divider-content'].value}}
+			</span>
 		</el-divider>
 	</widget-mask>
 </template>
