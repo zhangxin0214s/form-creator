@@ -6,7 +6,10 @@ import select from './select.vue'
 import Radio from './radio.vue'
 import textarea from './textarea.vue'
 import divider from './divider.vue'
-
+import staticText from './staticText'
+import date from './date'
+import datetimerange from './datetimerange'
+import hierarchy from './hierarchy'
 export {
 	input,
 	checkbox,
@@ -15,5 +18,9 @@ export {
 	select,
 	Radio,
 	textarea,
-	divider
+	divider,
+	staticText,
+	date,
+	datetimerange,
+	hierarchy
 }
