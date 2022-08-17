@@ -10,7 +10,10 @@
 			:label="`${basicProp[key1]?.label}:`"
 		>
 			<el-input
+				oninput="value=value.replace(/[^\d]/g,'')"
+				maxLength="11"
 				v-model="basicProp[key1].value"
+				:placeholder="basicProp[key1]?.placeholder"
 			/>
 		</el-form-item>
 	</el-form>
