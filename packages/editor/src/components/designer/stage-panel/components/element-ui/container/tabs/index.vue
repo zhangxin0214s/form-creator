@@ -19,6 +19,7 @@
   const props=defineProps([
       'widget'
   ])
+  let activeName=props.widget.options.advanced.cols[0].id
   const addTabsHandler=()=>{
     let maxCount=props.widget.maxCount
     if(maxCount<=0 || props.widget.options.advanced.cols.length<maxCount){
