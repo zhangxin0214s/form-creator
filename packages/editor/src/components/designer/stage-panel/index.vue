@@ -92,6 +92,7 @@ const onEnd = (origin)=>{
 		text-align: center;
 		line-height: 50px;
 		background: #fff;
+		margin-top:-20px;
 	}
 	&-form {
 		width: 100%;
