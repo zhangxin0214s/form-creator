@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 import { generateId,deepClone } from '@/utils/util'
-import { formConfig } from '@/components/designer/widget-panel/widgetsConfig.js'
+import { formConfig } from '@/config/formConfig.js'
 export const widgetStore = defineStore('widget', {
     state: () =>{
         return {

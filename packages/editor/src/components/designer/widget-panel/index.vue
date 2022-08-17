@@ -81,7 +81,7 @@
   </el-scrollbar>
 </template>
 <script setup>
-import { containers, basicWidgets, advancedWidgets } from './widgetsConfig';
+import { containers, basicWidgets, advancedWidgets } from '@/config/formConfig.js';
 import { ref, reactive } from 'vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
