@@ -93,8 +93,12 @@ export const containers = [
 		name:"卡片",
 		type:"card",
 		icon:"card ",
+		title:'卡片名称',
 		options:{
 			hidden:false,
+			advanced:{
+				widgetList:[]
+			}
 		},
 	},
 ]
