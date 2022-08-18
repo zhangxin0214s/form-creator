@@ -30,7 +30,7 @@
 import { ref, defineProps } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES } from '../propertyRegister'
 import * as basicComponents from '../components/index';
-import RadioBasic from '../components/radioBasic'
+import RadioBasic from '../components/radioItems'
 
 defineProps([
   'selectedWidget',
