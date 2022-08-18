@@ -5,8 +5,7 @@ const BASCI_COMPONENTS = {
 	'3':'selectBasic',
 	'4':'selectAdvanced',
 	'5':'inputAdvanced',
-	'6':'addSelectList',
-	'7':'textareaBasic'
+	'7':'textareaBasic',
 }
 
 // 基础属性组件映射表
@@ -29,7 +28,6 @@ const BASIC_PROPERTIES = {
 	'colHeight':'1',
 	'label-width':'1',
 	'label-position':'3',
-	'list':'6',
 	'textareaDefaultValue':'7',
 	'divider-direction':'3',
 	'divider-style':'3',
@@ -37,14 +35,21 @@ const BASIC_PROPERTIES = {
 	'divider-content':'1',
 }
 
+// 高级属性组件列表
+const ADVANCED_COMPONENTS = {
+	'6':'addSelectList',
+}
+
 // 高级属性组件映射表
 const ADVANCED_PROPERTIES = {
 	'validation':'4',
 	'validationCustom':'5',
+	'selectConfig':'6',
 }
 
 export {
 	BASCI_COMPONENTS,
 	BASIC_PROPERTIES,
-	ADVANCED_PROPERTIES
+	ADVANCED_COMPONENTS,
+	ADVANCED_PROPERTIES,
 }
