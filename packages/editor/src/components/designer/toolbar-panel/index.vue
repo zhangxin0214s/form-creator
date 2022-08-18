@@ -32,7 +32,7 @@
     </el-dialog>
 
     <!-- 代码编辑器面板 -->
-    <el-dialog class="code-editor" v-model="dialogCodeVisible" title="代码编辑器">
+    <el-dialog  v-model="dialogCodeVisible" title="代码编辑器">
         <el-tabs v-model="activeName" class="code-editor-tabs" @tab-click="handleClick">
             <el-tab-pane label="JSON" name="first">
                 <code-editor></code-editor>
