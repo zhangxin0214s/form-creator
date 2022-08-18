@@ -1,19 +1,28 @@
 <template>
-  <el-radio v-model="radio" label="1">备选项</el-radio>
-  <el-radio v-model="radio" label="2">备选项</el-radio>
+  <widget-mask
+      :widget="widget"
+      :basicProp="widget.options.basic"
+      :advancedProp="widget.options.advanced"
+      :parent-widget="parentWidget">
+    <el-radio
+        v-for="(item,index) in widget.options.advanced.optionItems"
+        :key="index"
+        :label="item.label"
+        :disabled="item.disabled"
+        v-model="item.isSelect"
+    >
+    </el-radio>
+  </widget-mask>
 </template>
+<script setup>
+import widgetMask from '../common/widgetMask.vue'
+import { onMounted, ref } from 'vue'
 
-<script>
-export default {
-  name:"radio",
-  data() {
-    return {
-      radio:'1'
-    }
-  }
-}
+let props = defineProps([
+  'widget',
+  'parentWidget',
+  'advancedProp'
+])
 </script>
-
-<style scoped>
-
+<style lang="scss" scoped>
 </style>

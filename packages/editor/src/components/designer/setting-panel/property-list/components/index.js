@@ -16,5 +16,5 @@ export {
 	selectAdvanced,
 	inputAdvanced,
 	addSelectList,
-	textareaBasic
+	textareaBasic,
 }
