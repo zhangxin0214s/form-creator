@@ -18,7 +18,9 @@
       <!--高级属性-->
       <el-collapse-item name="2" title="高级属性">
         <el-divider content-position="center">按钮设置</el-divider>
-
+        <button-basic
+            :advanced-prop="advancedProp"
+        />
       </el-collapse-item>
     </el-collapse>
   </div>
@@ -28,6 +30,7 @@
 import { ref, defineProps } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES } from '../propertyRegister'
 import * as basicComponents from '../components/index';
+import ButtonBasic from '../components/buttonBasic'
 
 defineProps([
   'selectedWidget',

@@ -273,7 +273,7 @@ export const basicWidgets = [
 				},
 				text:{
 					label:"按钮名称",
-					value:"提交",
+					value:"",
 				},
 				type:{
 					label:"按钮类型",
@@ -325,7 +325,40 @@ export const basicWidgets = [
 				},// 禁用
 
 			},
-			advanced:{}
+			advanced:{
+				label:'按钮图标',
+				btnIcon:[
+					{
+						label:'确定',
+						value:'Check'
+					},
+					{
+						label:'删除',
+						value:'Delete'
+					},
+					{
+						label:'搜索',
+						value:'Search'
+					},
+					{
+						label:'上传',
+						value:'Upload'
+					},
+					{
+						label:'下载',
+						value:'Download'
+					},
+					{
+						label:'编辑',
+						value:'Edit'
+					},
+					{
+						label:'分享',
+						value:'Share'
+					},
+				],
+				value:'请选择按钮图标'
+			}
 		}
 	},
 	{
