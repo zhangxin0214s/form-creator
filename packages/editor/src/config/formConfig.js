@@ -818,42 +818,42 @@ export const basicWidgets = [
 			advanced:{}
 		}
 	},
-	{
-		id:13,
-		name:"级联选择",
-		type:"hierarchy",
-		category:"widget",
-		icon:"hierarchy",
-		options:{
-			basic:{
-				name:{
-					label:"唯一名称",
-					value:"级联选择"
-				}, // 唯一名称
-				label:{
-					label:"标题",
-					value:""
-				}, // 标签
-				hint:{
-					label:'提示语',
-					value:'',
-				}, // 提示语
-				hintHidden:{
-					label:'提示语隐藏',
-					value:false
-				},// 提示语是否隐藏
-				labelHidden:{
-					label:'标签是否隐藏',
-					value:false
-				}, // 标签是否隐藏
-				required:{
-					label:'是否必填*',
-					value:false
-				}, // 是否必填
-			},
-			advanced:{}
-		}
-	},
+	// {
+	// 	id:13,
+	// 	name:"级联选择",
+	// 	type:"hierarchy",
+	// 	category:"widget",
+	// 	icon:"hierarchy",
+	// 	options:{
+	// 		basic:{
+	// 			name:{
+	// 				label:"唯一名称",
+	// 				value:"级联选择"
+	// 			}, // 唯一名称
+	// 			label:{
+	// 				label:"标题",
+	// 				value:""
+	// 			}, // 标签
+	// 			hint:{
+	// 				label:'提示语',
+	// 				value:'',
+	// 			}, // 提示语
+	// 			hintHidden:{
+	// 				label:'提示语隐藏',
+	// 				value:false
+	// 			},// 提示语是否隐藏
+	// 			labelHidden:{
+	// 				label:'标签是否隐藏',
+	// 				value:false
+	// 			}, // 标签是否隐藏
+	// 			required:{
+	// 				label:'是否必填*',
+	// 				value:false
+	// 			}, // 是否必填
+	// 		},
+	// 		advanced:{}
+	// 	}
+	// },
 
 ]
 
