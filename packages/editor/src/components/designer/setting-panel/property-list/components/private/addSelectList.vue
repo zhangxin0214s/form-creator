@@ -1,7 +1,8 @@
 <template>
   <el-form>
-		<!-- <select-node></select-node> -->
-    <component v-if="children.length>0" :is="selectNode" :list="children"></component>
+    <el-form-item v-if="children.length>0">
+      <component :is="selectNode" :list="children"></component>
+    </el-form-item>
     <el-form-item @click.native="addList">
       <el-icon><Plus /></el-icon>
       <span>添加选项</span>
@@ -19,7 +20,8 @@
   const addList = () => {
     children.push({
       id: children.length,
-      label: `新选项${children.length}`,
+      label: '选项',
+      // label: `新选项${children.length}`,
       children: []
     })
   }

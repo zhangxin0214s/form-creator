@@ -1,21 +1,16 @@
 <template>
-  <el-form-item v-for="item in PROPS.list">
-    <el-collapse-item>
-      <template #title>
-        <el-input
-          v-model="item.label"
-          :placeholder="item.label">
-          <template #prepend>
-            <el-button :icon="Plus" @click.native="addChild(item)" />
-          </template>
-          <template #append>
-            <el-button :icon="Delete" @click.native="deleteList(item)" />
-          </template>
-        </el-input>
-      </template>
-      <component v-if="item.children.length>0" :is="selectNode" :list="item.children"></component>
-    </el-collapse-item>
-  </el-form-item>
+  <el-tree :data="PROPS.list" default-expand-all :expand-on-click-node="false">
+    <template #default="{ node, data }">
+      <el-input class="custom-tree-node" v-model="data.label" :placeholder="data.label">
+        <template #prepend>
+          <el-button :icon="Plus" @click.native="append(data)" />
+        </template>
+        <template #append>
+          <el-button :icon="Delete" @click.native="remove(node, data)" />
+        </template>
+      </el-input>
+     </template>
+   </el-tree>
 </template>
 
 <script setup>
@@ -24,21 +19,33 @@
   import selectNode from './selectNode';
 
   const PROPS = defineProps(['list'])
-  const addChild = (parentMsg) => {
-    parentMsg.children.push({
-      id: `${parentMsg.id}-${parentMsg.children.length}`,
-      label: `新选项${parentMsg.id}-${parentMsg.children.length}`,
+  const append = (data) => {
+    const newChild = {
+      id: `${data.id}-${data.children.length}`,
+      label: '选项',
+      // label: `新选项${data.id}-${data.children.length}`,
       children: []
-    })
+    }
+    if (!data.children) data.children = [];
+    data.children.push(newChild)
   }
-  const deleteList = (parentMsg) => {
-    let delIndex = PROPS.list.findIndex(option=>option.id===parentMsg.id);
-    PROPS.list.splice(delIndex, 1);
-    PROPS.list.forEach((child,index) => {
-      child.id = `${parentMsg.id}-${index}`
+
+  const remove = (node, data) => {
+    let parent = node.parent,
+        children = parent.data.children || parent.data,
+        delIndex = children.findIndex(child=>child.id===data.id);
+    children.splice(delIndex, 1);
+    children.forEach((child,index) => {
+      child.id = `${parent.data.id}-${index}`
     })
   }
 </script>
 
-<style lang="css" scoped>
+<style lang="scss">
+  .el-tree>.el-tree-node {
+    margin-bottom: 10px;
+  }
+  .el-tree-node__content {
+    height: auto;
+  }
 </style>
