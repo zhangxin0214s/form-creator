@@ -9,7 +9,7 @@
             <svg-icon :icon-class="tools[1].icon" />
             <el-button link type="primary">{{ tools[1].name }}</el-button>
         </li>
-        <li class="tool-btn">
+        <li class="tool-btn" @click="exportCode">
             <svg-icon :icon-class="tools[2].icon" />
             <el-button link type="primary">{{ tools[2].name }}</el-button>
         </li>
@@ -30,6 +30,16 @@
             :formConfig="_formConfig"
         ></form-renderer>
     </el-dialog>
+
+    <!-- 代码编辑器面板 -->
+    <el-dialog class="code-editor" v-model="dialogCodeVisible" title="代码编辑器">
+        <el-tabs v-model="activeName" class="code-editor-tabs" @tab-click="handleClick">
+            <el-tab-pane label="JSON" name="first">
+                <code-editor></code-editor>
+            </el-tab-pane>
+            <el-tab-pane label="vue" name="second">vue</el-tab-pane>
+        </el-tabs>
+    </el-dialog>
 </template>
 <script setup>
     import { ref } from 'vue';
@@ -38,9 +48,12 @@
     import { ElMessage } from 'element-plus'
     import { deepClone } from '@/utils/util'
     import { toRaw } from '@vue/reactivity'
+    import codeEditor from '../code-editor'
+
     const _widgetStore = widgetStore();
-    const dialogFormVisible = ref(false)
-    const _widgetList = ref(deepClone(toRaw(_widgetStore.widgetList)))
+    const dialogFormVisible = ref(false);
+    const dialogCodeVisible = ref(false);
+    const _widgetList = ref(deepClone(toRaw(_widgetStore.widgetList)));
     const _formConfig = ref(deepClone(toRaw(_widgetStore.formConfig)));
     const tools = ref([
         {
@@ -93,11 +106,25 @@
     const closePreview = () =>{
         _widgetStore.isEditor = true;
     }
+
+    /**
+     * 代码编辑器
+     */
+    const exportCode = () =>{
+        dialogCodeVisible.value = true;
+    }
+
+    const activeName = ref('first')
+
+    const handleClick = () => {
+        console.log()
+    }
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
     li{
         list-style-type: none;
     }
+
     .tool {
         display: -webkit-flex;
         display: flex;
@@ -105,5 +132,23 @@
         &-btn{
            margin-right:15px;
         }
+    }
+
+    .code-editor-tabs>.el-tabs__content {
+        color: #6b778c;
+        font-size: 32px;
+        font-weight: 600;
+    }
+    .el-dialog{
+        width:1200px;
+    }
+    
+    .code-editor{
+        &-tabs{
+            margin-top:-40px;
+        }
+    }
+    .el-dialog__body{
+        padding:0px 20px 20px 20px;
     }
 </style>
