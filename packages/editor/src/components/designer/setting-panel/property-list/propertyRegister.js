@@ -7,7 +7,10 @@ const BASCI_COMPONENTS = {
 	'5':'inputAdvanced',
 	'6':'addSelectList',
 	'7':'textareaBasic',
-	'8':'buttonGroup'
+	'8':'buttonGroup',
+	'9':'inputNumberBasic',
+	'10':'colorBasic',
+	'11':'checkboxBasic1'
 }
 
 // 基础属性组件映射表
@@ -15,6 +18,10 @@ const BASIC_PROPERTIES = {
 	'name':'1',
 	'label':'1',
 	'hint':'1',
+	'alignment':'8',
+	'font-color':'10',
+	'font-size':'9',
+	'font-style':'11',
 	'labelWidth':'1',
 	'labelAlign':'3',
 	'type':'3',
@@ -36,6 +43,7 @@ const BASIC_PROPERTIES = {
 	'divider-style':'8',
 	'divider-position':'8',
 	'divider-content':'1',
+	'static-text-line-height':'9'
 }
 
 // 高级属性组件映射表

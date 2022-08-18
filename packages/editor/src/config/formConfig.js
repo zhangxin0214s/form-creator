@@ -408,7 +408,7 @@ export const basicWidgets = [
 					value: "内容:"
 				}, // 标签
 				type: "textarea",// 类型
-				textareaDefaultValue: {
+				defaultValue: {
 					label: "默认文本",
 					value: "请输入文本域内容"
 				},// 默认提示文本
@@ -657,6 +657,51 @@ export const basicWidgets = [
 					label: '默认文本',
 					value: '这是一段静态文本',
 				}, // 默认文本
+				"static-text-line-height":{
+					label:'行高',
+					value:3
+				},
+				"font-size":{
+					label:'字体大小',
+					value:16
+				},
+				"font-color":{
+					label:'字体颜色',
+					value:'#000000'
+				},
+				"font-style":{
+					label:'字体样式',
+					options:[
+						{
+							label:'加粗',
+							value:false
+						},
+						{
+							label:'斜体',
+							value:false
+						},
+						{
+							label:'下划线',
+							value:false
+						}
+					]
+				},
+				alignment: {
+					'value': 'left',
+					'label': '对齐方式',
+					"options": [
+						{
+							label: '左对齐',
+							value: 'left'
+						}, {
+							label: '居中对齐',
+							value: 'center'
+						}, {
+							label: '右对齐',
+							value: 'right'
+						}
+					]
+				},
 			},
 			advanced: {}
 		}
