@@ -47,4 +47,7 @@ const getPropCompName = (key) => {
 const drawer = ref(false);
 </script>
 <style lang="scss" scoped>
+.form-config{
+	display: flex;
+}
 </style>

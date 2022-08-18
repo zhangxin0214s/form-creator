@@ -9,11 +9,11 @@
 			v-if="basicProp[key1]?.label"
 			:label="`${basicProp[key1]?.label}:`"
 		>
-			<el-input
-				oninput="value=value.replace(/[^\d]/g,'')"
-				maxLength="11"
-				v-model="basicProp[key1].value"
-				:placeholder="basicProp[key1]?.placeholder"
+			<el-checkbox
+				v-for="(item,index) in basicProp[key1].options"
+        :key="index"
+				v-model="item.value"
+				:label="item.label"
 			/>
 		</el-form-item>
 	</el-form>
