@@ -2,7 +2,7 @@
 export const formConfig = {
 	"label-position": {
 		'value': 'left',
-		'label': '标签对齐方式',
+		'label': '标签对齐方式:',
 		"options": [
 			{
 				label: '左对齐',

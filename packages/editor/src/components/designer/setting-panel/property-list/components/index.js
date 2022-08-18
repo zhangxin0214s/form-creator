@@ -7,6 +7,7 @@ import selectAdvanced from './selectAdvanced.vue'
 import inputAdvanced from './inputAdvanced.vue'
 import addSelectList from './private/addSelectList.vue'
 import textareaBasic from './textareaBasic.vue'
+import buttonGroup from './buttonGroup.vue'
 export {
 	inputBasic,
 	switchBasic,
@@ -16,5 +17,6 @@ export {
 	selectAdvanced,
 	inputAdvanced,
 	addSelectList,
-	textareaBasic
+	textareaBasic,
+	buttonGroup
 }

@@ -6,7 +6,8 @@ const BASCI_COMPONENTS = {
 	'4':'selectAdvanced',
 	'5':'inputAdvanced',
 	'6':'addSelectList',
-	'7':'textareaBasic'
+	'7':'textareaBasic',
+	'8':'buttonGroup'
 }
 
 // 基础属性组件映射表
@@ -28,12 +29,12 @@ const BASIC_PROPERTIES = {
 	'readonly':'2',
 	'colHeight':'1',
 	'label-width':'1',
-	'label-position':'3',
+	'label-position':'8',
 	'list':'6',
 	'textareaDefaultValue':'7',
-	'divider-direction':'3',
-	'divider-style':'3',
-	'divider-position':'3',
+	'divider-direction':'8',
+	'divider-style':'8',
+	'divider-position':'8',
 	'divider-content':'1',
 }
 
