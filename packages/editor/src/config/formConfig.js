@@ -413,7 +413,6 @@ export const basicWidgets = [
 		type:"Radio",
 		category:"widget",
 		icon:"Radio",
-		value:null,
 		options:{
 			basic:{
 				name:{
@@ -443,12 +442,11 @@ export const basicWidgets = [
 
 			},
 			advanced:{
-				optionItems:// 选项设置
-					[
-						{label:"radio 1", value:1, disabled:false, text:'是否禁用', isSelect:true},
-						{label:"radio 2", value:2, disabled:false, text:'是否禁用', isSelect:true},
-					]
 
+				optionItems:  // 选项设置
+					[
+						{label:"radio 1", value:"1", disabled:false, text:'是否禁用'},
+					]
 			}
 		},
 	},
