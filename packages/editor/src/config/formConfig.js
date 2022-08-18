@@ -277,7 +277,7 @@ export const basicWidgets = [
 				},
 				text:{
 					label:"按钮名称",
-					value:"",
+					value:"确定",
 				},
 				type:{
 					label:"按钮类型",
@@ -313,15 +313,19 @@ export const basicWidgets = [
 					label:"按钮尺寸",
 					options:[
 						{
+							label:'大型按钮',
+							value:'large'
+						},
+						{
 							label:'中等按钮',
-							value:'medium'
+							value:'default'
 						},
 						{
 							label:'小型按钮',
 							value:'small'
 						},
 					],
-					value:'medium'
+					value:'default'
 				},
 				disabled:{
 					label:"是否禁用",
@@ -330,6 +334,7 @@ export const basicWidgets = [
 
 			},
 			advanced:{
+				value:'Check',
 				label:'按钮图标',
 				btnIcon:[
 					{
@@ -360,8 +365,23 @@ export const basicWidgets = [
 						label:'分享',
 						value:'Share'
 					},
+					{
+						label:'加号',
+						value:'Plus'
+					},
+					{
+						label:'减号',
+						value:'Minus'
+					},
 				],
-				value:'请选择按钮图标'
+				btnRound:{
+					label:'是否为圆角按钮',
+					value:false
+				},
+				btnCircle:{
+					label:'是否为圆行按钮',
+					value:false
+				}
 			}
 		}
 	},
