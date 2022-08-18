@@ -275,9 +275,9 @@ export const basicWidgets = [
 					label: "标签",
 					value: "",
 				},
-				text: {
-					label: "按钮名称",
-					value: "",
+				text:{
+					label:"按钮名称",
+					value:"确定",
 				},
 				type: {
 					label: "按钮类型",
@@ -313,15 +313,19 @@ export const basicWidgets = [
 					label: "按钮尺寸",
 					options: [
 						{
-							label: '中等按钮',
-							value: 'medium'
+							label:'大型按钮',
+							value:'large'
 						},
 						{
-							label: '小型按钮',
-							value: 'small'
+							label:'中等按钮',
+							value:'default'
+						},
+						{
+							label:'小型按钮',
+							value:'small'
 						},
 					],
-					value: 'medium'
+					value:'default'
 				},
 				disabled: {
 					label: "是否禁用",
@@ -329,9 +333,10 @@ export const basicWidgets = [
 				},// 禁用
 
 			},
-			advanced: {
-				label: '按钮图标',
-				btnIcon: [
+			advanced:{
+				value:'Check',
+				label:'按钮图标',
+				btnIcon:[
 					{
 						label: '确定',
 						value: 'Check'
@@ -360,8 +365,23 @@ export const basicWidgets = [
 						label: '分享',
 						value: 'Share'
 					},
+					{
+						label:'加号',
+						value:'Plus'
+					},
+					{
+						label:'减号',
+						value:'Minus'
+					},
 				],
-				value: '请选择按钮图标'
+				btnRound:{
+					label:'是否为圆角按钮',
+					value:false
+				},
+				btnCircle:{
+					label:'是否为圆行按钮',
+					value:false
+				}
 			}
 		}
 	},
@@ -831,42 +851,42 @@ export const basicWidgets = [
 			advanced: {}
 		}
 	},
-	{
-		id: 13,
-		name: "级联选择",
-		type: "hierarchy",
-		category: "widget",
-		icon: "hierarchy",
-		options: {
-			basic: {
-				name: {
-					label: "唯一名称",
-					value: "级联选择"
-				}, // 唯一名称
-				label: {
-					label: "标题",
-					value: ""
-				}, // 标签
-				hint: {
-					label: '提示语',
-					value: '',
-				}, // 提示语
-				hintHidden: {
-					label: '提示语隐藏',
-					value: false
-				},// 提示语是否隐藏
-				labelHidden: {
-					label: '标签是否隐藏',
-					value: false
-				}, // 标签是否隐藏
-				required: {
-					label: '是否必填*',
-					value: false
-				}, // 是否必填
-			},
-			advanced: {}
-		}
-	},
+	// {
+	// 	id:13,
+	// 	name:"级联选择",
+	// 	type:"hierarchy",
+	// 	category:"widget",
+	// 	icon:"hierarchy",
+	// 	options:{
+	// 		basic:{
+	// 			name:{
+	// 				label:"唯一名称",
+	// 				value:"级联选择"
+	// 			}, // 唯一名称
+	// 			label:{
+	// 				label:"标题",
+	// 				value:""
+	// 			}, // 标签
+	// 			hint:{
+	// 				label:'提示语',
+	// 				value:'',
+	// 			}, // 提示语
+	// 			hintHidden:{
+	// 				label:'提示语隐藏',
+	// 				value:false
+	// 			},// 提示语是否隐藏
+	// 			labelHidden:{
+	// 				label:'标签是否隐藏',
+	// 				value:false
+	// 			}, // 标签是否隐藏
+	// 			required:{
+	// 				label:'是否必填*',
+	// 				value:false
+	// 			}, // 是否必填
+	// 		},
+	// 		advanced:{}
+	// 	}
+	// },
 
 ]
 
