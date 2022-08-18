@@ -1,5 +1,6 @@
 import { defineConfig } from "vite"
 import vue from "@vitejs/plugin-vue"
+import eslintPlugin from 'vite-plugin-eslint'
 import viteSvgIcons from "vite-plugin-svg-icons"
 import { resolve } from "path"
 
@@ -7,6 +8,9 @@ import { resolve } from "path"
 export default defineConfig({
   plugins: [
     vue(),
+    // eslintPlugin({
+    //   include: ['src/**/*.js', 'src/**/*.vue', 'src/**/*.ts']
+    // }),
     viteSvgIcons({
       // Specify the icon folder to be cached
       iconDirs: [resolve(process.cwd(), "src/icons/svg")],
