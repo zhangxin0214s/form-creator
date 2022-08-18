@@ -35,10 +35,14 @@
     <el-dialog  v-model="dialogCodeVisible" title="代码编辑器">
         <el-tabs v-model="activeName" class="code-editor-tabs" @tab-click="handleClick">
             <el-tab-pane label="JSON" name="first">
-                <code-editor></code-editor>
+                <code-editor
+                    :formConfig = _formConfig
+                ></code-editor>
             </el-tab-pane>
             <el-tab-pane label="vue" name="second">vue</el-tab-pane>
         </el-tabs>
+
+        
     </el-dialog>
 </template>
 <script setup>
