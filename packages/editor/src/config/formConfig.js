@@ -373,37 +373,30 @@ export const basicWidgets = [
 		icon:"select",
 		options:{
 			basic:{
+				name: {
+					label: "唯一名称",
+					value: 1
+				},
 				label:{
-					label:'下拉框属性',
-					value:'选择框：'
+					label: '下拉框属性',
+					value: '选择框：'
 				},
-				required:{
-					label:'是否必填*',
-					value:false
+				required: {
+					label: '是否必填*',
+					value: false
 				},
-				labelHidden:{
-					label:'标签是否隐藏',
-					value:false
-				},
-				placeholder:{
-					label:"placeholder",
-					value:"展开选择"
-				},
-				list:{
-					label:'选择项',
-					options:[], // label+value+checked+disabled
-					showList:[], // 默认选中第几个
+				labelHidden: {
+					label: '标签是否隐藏',
+					value: false
 				},
 				hint:"",// 提示语
 				hintHidden:false,// 提示语是否隐藏
 			},
 			advanced:{
-				// optionItems: // 选项设置
-				// 	[
-				// 		{label:"select 1", value:1},
-				// 		{label:"select 2", value:2},
-				// 		{label:"select 3", value:3},
-				// 	]
+				selectConfig: {
+					label: '选项设置',
+					children: [],
+				},
 			}
 		}
 	},
