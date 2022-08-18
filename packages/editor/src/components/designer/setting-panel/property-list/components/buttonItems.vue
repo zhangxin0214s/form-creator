@@ -1,7 +1,7 @@
 <template>
   <div>
     <span style="margin-right: 20px">{{advancedProp.label}}:</span>
-    <el-select v-model="advancedProp.value">
+    <el-select v-model="advancedProp.value" clearable>
       <el-option
           v-for="(ite,index) in advancedProp?.btnIcon"
           :label="ite.label"

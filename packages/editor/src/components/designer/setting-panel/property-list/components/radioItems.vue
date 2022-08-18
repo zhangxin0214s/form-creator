@@ -2,11 +2,14 @@
   <div v-for="(ite,index) in advancedProp?.optionItems">
     <div style="margin-bottom: 10px;">
       <span class="gutter-label-text">单选框{{ index + 1 }}：</span>
-      <el-radio
-          style="margin-right: 10px"
-          :disabled="ite.disabled"
-          v-model="ite.isSelect"
-      />
+      <!--<el-radio-group v-model="radio">-->
+      <!--  <el-radio-->
+      <!--      style="margin-right: 10px"-->
+      <!--      :disabled="ite.disabled"-->
+      <!--      :label="ite.value"-->
+      <!--  >{{}}-->
+      <!--  </el-radio>-->
+      <!--</el-radio-group>-->
       <el-input style="width: 150px;margin-right: 10px" v-model="ite.label"/>
       <span style="margin-top: 10px; display: inline-block">{{ ite.text }}单选框{{ index + 1 }}：</span>
       <el-button
@@ -37,6 +40,7 @@
 const props = defineProps([
   'advancedProp'
 ])
+
 const addCheckbox = () => {
   props.advancedProp.optionItems.push(
       {
@@ -44,12 +48,11 @@ const addCheckbox = () => {
         value:props.advancedProp.optionItems.length + 1,
         disabled:false,
         text:'是否禁用',
-        isSelect:false
       })
 }
 
 const delCheckbox = (ite) => {
-  props.advancedProp.optionItems = props.advancedProp.optionItems.filter(item=>item.value != ite.value)
+  props.advancedProp.optionItems = props.advancedProp.optionItems.filter(item => item.value != ite.value)
 }
 </script>
 <style lang="scss" scoped>
