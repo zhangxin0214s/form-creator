@@ -34,8 +34,10 @@ onMounted(() => {
   instance = monaco.editor.create(dom.value, {
     model: jsonModel,
     tabSize: 2,
-    automaticLayout: true,
+    language: 'html',
+    automaticLayout: false,
     scrollBeyondLastLine: false,
+    theme: 'vs-dark'
   });
 
   instance.onDidChangeModelContent(() => {
