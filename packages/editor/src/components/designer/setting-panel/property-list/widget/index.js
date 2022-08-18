@@ -6,6 +6,7 @@ import select from './select.vue'
 import textarea from './textarea.vue';
 import divider from './divider.vue';
 import cellPhone from './cellPhone.vue';
+import staticText from './staticText.vue';
 export {
     input,
     button,
@@ -14,5 +15,6 @@ export {
     select,
     textarea,
     divider,
-    cellPhone
+    cellPhone,
+    staticText,
 }

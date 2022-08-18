@@ -650,25 +650,13 @@ export const basicWidgets = [
 					value: "静态文本"
 				}, // 唯一名称
 				label: {
-					label: "标题",
+					label: "",
 					value: ""
 				}, // 标签
-				hint: {
-					label: '提示语',
-					value: '',
-				}, // 提示语
-				hintHidden: {
-					label: '提示语隐藏',
-					value: false
-				},// 提示语是否隐藏
-				labelHidden: {
-					label: '标签是否隐藏',
-					value: false
-				}, // 标签是否隐藏
-				required: {
-					label: '是否必填*',
-					value: false
-				}, // 是否必填
+				textareaDefaultValue: {
+					label: '默认文本',
+					value: '这是一段静态文本',
+				}, // 默认文本
 			},
 			advanced: {}
 		}
