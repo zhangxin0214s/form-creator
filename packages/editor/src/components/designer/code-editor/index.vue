@@ -3,6 +3,7 @@
     <tool-bar
       @changeFont="changeFont"
       @prettifyCode="prettifyCode"
+      @copyCode="copyCode"
     ></tool-bar>
     <div id="codeBox"></div>
   </div>
@@ -13,8 +14,10 @@ import { onMounted, reactive, ref, toRaw } from 'vue'
 import toolBar from './code-editor-toolbar.vue'
 import { widgetStore } from '@/store/index';
 import { defineProps,defineEmits } from 'vue';
-import * as monaco from "monaco-editor"
-
+import * as monaco from "monaco-editor";
+import { ElMessage } from 'element-plus'
+import Clipboard from 'clipboard'
+import useClipboard from 'vue-clipboard3';
 const _widgetStore = widgetStore();
 const props = defineProps(['formConfig'])
 let monacoEditor = null;
@@ -66,6 +69,29 @@ const changeFont = (e) =>{
  */
 const prettifyCode = () =>{
   monacoEditor.trigger('anyString', 'editor.action.formatDocument')
+}
+
+/**
+ * 复制代码
+ */
+const { toClipboard } = useClipboard();
+const copyCode = async () =>{
+  try {
+    await toClipboard(JSON.stringify(props.formConfig));
+    ElMessage({
+        message: '复制成功',
+        type: 'success',
+        duration:1000
+    })
+  } catch (e) {
+    console.error(e);
+    ElMessage({
+      message: '复制失败',
+      type: 'error',
+      duration:1000
+    })
+  }
+  
 }
 onMounted(() => {
     initEditor()

@@ -38,6 +38,15 @@
         <li class="toolbar-btn1" @click="prettify">
             <svg-icon class="toolbar-icon1" :icon-class="tools[2].icon" />
         </li>
+
+        <li class="toolbar-btn1" @click="handleCopyCommand">
+            <svg-icon class="toolbar-icon1" :icon-class="tools[3].icon" />
+        </li>
+
+        <li class="toolbar-btn1" @click="downloadCode">
+            <svg-icon class="toolbar-icon1" :icon-class="tools[4].icon" />
+        </li>
+
     </ul>
 </template>
 <script setup>
@@ -67,10 +76,16 @@
         },{
             name:'格式化',
             icon:'prettify'
+        },{
+            name:'复制',
+            icon:'tool-copy'
+        },{
+            name:'下载',
+            icon:'tool-download'
         }
     ])  
 
-    const emit = defineEmits(['changeFont','prettifyCode']);
+    const emit = defineEmits(['changeFont','prettifyCode','copyCode']);
 
     /**
      * 修改字号
@@ -80,18 +95,18 @@
     }
 
     /**
-     * 修改语言
-     */
-    const handleLanCommand = (command) =>{
-        emit('changeLanguage',command)
-    }
-
-    /**
      * 格式化代码
      */
     const prettify = () =>{
         console.log("美化")
         emit('prettifyCode')
+    }
+
+    /**
+     * 复制代码
+     */
+    const handleCopyCommand = (e) =>{
+        emit('copyCode',e)
     }
 </script>
 <style lang="scss" scoped>
