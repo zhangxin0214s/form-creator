@@ -2,8 +2,8 @@
     <ul class="toolbar">
 
         <!-- 字号 -->
-        <li class="toolbar-btn" @click="clear">
-            <el-dropdown>
+        <li class="toolbar-btn">
+            <el-dropdown @command="handleFontCommand">
                 <span class="el-dropdown-link">
                     <svg-icon class="toolbar-icon" :icon-class="tools[0].icon" />
                     <el-icon class="el-icon--right">
@@ -12,15 +12,15 @@
                 </span>
                 <template #dropdown>
                 <el-dropdown-menu>
-                    <el-dropdown-item v-for="(font,index) in tools[0].options" :key="index">{{ font }}</el-dropdown-item>
+                    <el-dropdown-item :command="font" v-for="(font,index) in tools[0].options" :key="index">{{ font }}</el-dropdown-item>
                 </el-dropdown-menu>
                 </template>
             </el-dropdown>
         </li>
 
         <!-- 语言 -->
-        <li class="toolbar-btn" @click="clear">
-            <el-dropdown>
+        <!-- <li class="toolbar-btn">
+            <el-dropdown @command="handleLanCommand">
                 <span class="el-dropdown-link">
                     <svg-icon class="toolbar-icon" :icon-class="tools[1].icon" />
                     <el-icon class="el-icon--right">
@@ -29,11 +29,11 @@
                 </span>
                 <template #dropdown>
                 <el-dropdown-menu>
-                    <el-dropdown-item v-for="(font,index) in tools[1].options" :key="index">{{ font }}</el-dropdown-item>
+                    <el-dropdown-item :command="language" v-for="(language,index) in tools[1].options" :key="index">{{ language }}</el-dropdown-item>
                 </el-dropdown-menu>
                 </template>
             </el-dropdown>
-        </li>
+        </li> -->
 
         <li class="toolbar-btn1" @click="prettify">
             <svg-icon class="toolbar-icon1" :icon-class="tools[2].icon" />
@@ -42,8 +42,9 @@
 </template>
 <script setup>
     import { ref  } from 'vue';
-    import { defineProps } from 'vue';
+    import { defineProps,defineEmits } from 'vue';
     const props = defineProps(['monacoEditor']);
+
     const tools = ref([
         {
             name:'字号',
@@ -67,14 +68,30 @@
             name:'格式化',
             icon:'prettify'
         }
-    ])
+    ])  
+
+    const emit = defineEmits(['changeFont','prettifyCode']);
+
+    /**
+     * 修改字号
+     */
+    const handleFontCommand = (command) =>{
+        emit('changeFont',command)
+    }
+
+    /**
+     * 修改语言
+     */
+    const handleLanCommand = (command) =>{
+        emit('changeLanguage',command)
+    }
 
     /**
      * 格式化代码
      */
     const prettify = () =>{
-        console.log("美化",props.monacoEditor)
-        props.monacoEditor.trigger("anyString", "editor.action.formatDocument");
+        console.log("美化")
+        emit('prettifyCode')
     }
 </script>
 <style lang="scss" scoped>

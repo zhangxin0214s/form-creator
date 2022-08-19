@@ -48,6 +48,7 @@
 <script setup>
     import { ref } from 'vue';
     import { widgetStore } from '@/store/index';
+    import { storeToRefs } from 'pinia';
     import formRenderer from '../../renderer/index.vue'
     import { ElMessage } from 'element-plus'
     import { deepClone } from '@/utils/util'
@@ -55,10 +56,13 @@
     import codeEditor from '../code-editor'
 
     const _widgetStore = widgetStore();
+    const { widgetList,formConfig } = storeToRefs(_widgetStore);
     const dialogFormVisible = ref(false);
-    const dialogCodeVisible = ref(true);
-    const _widgetList = ref(deepClone(toRaw(_widgetStore.widgetList)));
-    const _formConfig = ref(deepClone(toRaw(_widgetStore.formConfig)));
+    const dialogCodeVisible = ref(false);
+
+    const _formConfig = {formConfig:formConfig.value,widgetList:widgetList.value}
+
+    console.log(formConfig,"=====")
     const tools = ref([
         {
             name:'清空',
