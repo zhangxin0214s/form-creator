@@ -379,7 +379,7 @@ export const basicWidgets = [
 					value:false
 				},
 				btnCircle:{
-					label:'是否为圆行按钮',
+					label:'是否为圆形按钮',
 					value:false
 				}
 			}

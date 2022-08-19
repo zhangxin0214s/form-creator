@@ -19,8 +19,8 @@
       <span>{{ advancedProp.btnRound.label }}:</span>
       <el-switch
           style="margin-left: 20px"
-          active-color="#ff4949"
-          inactive-color="#13ce66"
+          active-color="#13ce66"
+          inactive-color="#ff4949"
           v-model="advancedProp.btnRound.value"
       />
     </div>
@@ -29,8 +29,8 @@
       <span>{{ advancedProp.btnCircle.label }}:</span>
       <el-switch
           style="margin-left: 20px"
-          active-color="#ff4949"
-          inactive-color="#13ce66"
+          active-color="#13ce66"
+          inactive-color="#ff4949"
           v-model="advancedProp.btnCircle.value"
       />
     </div>
