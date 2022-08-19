@@ -49,7 +49,7 @@ const initEditor = () => {
     
     setTimeout(()=>{
        monacoEditor.trigger('anyString', 'editor.action.formatDocument')
-    },1000)
+    },100)
 }
 
 /**
