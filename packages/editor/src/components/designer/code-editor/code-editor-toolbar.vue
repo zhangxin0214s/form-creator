@@ -35,13 +35,15 @@
             </el-dropdown>
         </li>
 
-        <li class="toolbar-btn1" @click="clear">
+        <li class="toolbar-btn1" @click="prettify">
             <svg-icon class="toolbar-icon1" :icon-class="tools[2].icon" />
         </li>
     </ul>
 </template>
 <script setup>
     import { ref  } from 'vue';
+    import { defineProps } from 'vue';
+    const props = defineProps(['monacoEditor']);
     const tools = ref([
         {
             name:'字号',
@@ -66,12 +68,22 @@
             icon:'prettify'
         }
     ])
+
+    /**
+     * 格式化代码
+     */
+    const prettify = () =>{
+        console.log("美化",props.monacoEditor)
+        props.monacoEditor.trigger("anyString", "editor.action.formatDocument");
+    }
 </script>
 <style lang="scss" scoped>
     li{
         list-style-type: none;
     }
-
+    li:hover{
+        cursor: pointer;
+    }
     .toolbar{
         width:100%;
         height:40px;

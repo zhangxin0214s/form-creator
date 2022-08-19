@@ -1,6 +1,6 @@
 <template>
   <div class="code-editor">
-    <tool-bar/>
+    <tool-bar></tool-bar>
     <div id="codeBox"></div>
   </div>
 </template>
@@ -9,25 +9,12 @@
 import { onMounted, reactive, ref, toRaw } from 'vue'
 import toolBar from './code-editor-toolbar.vue'
 import { widgetStore } from '@/store/index';
-import * as monaco from "monaco-editor/esm/vs/editor/editor.api"
-import EditorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker';
-import JsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker'
+import * as monaco from "monaco-editor"
+
 const _widgetStore = widgetStore();
 
-self.MonacoEnvironment = {
-  getWorker(workerId, label) {
-    if (label === 'json') {
-      return new JsonWorker();
-    }
-    return new EditorWorker();
-  },
-};
-
-const editor = ref(null)
-
 const initEditor = () => {
-    // 初始化编辑器，确保dom已经渲染
-    editor.value = monaco.editor.create(document.getElementById('codeBox'), {
+    const monacoEditor = monaco.editor.create(document.getElementById('codeBox'), {
         theme: 'vs-dark', //官方自带三种主题vs, hc-black, or vs-dark
         value: JSON.stringify(_widgetStore.formConfig), //编辑器初始显示文字
         readOnly: false,
@@ -48,31 +35,12 @@ const initEditor = () => {
     });
 
     // 监听值的变化
-    editor.value.onDidChangeModelContent((val) => {
-        console.log(val.changes[0].text)
-        console.log(toRaw(editor.value).getValue());    //获取输入的值
+    monacoEditor.onDidChangeModelContent((val) => {
+      console.log(val.changes[0].text)
+      console.log(toRaw(monacoEditor).getValue());    //获取输入的值
     })
 
-    // 创建代码提醒
-    monaco.languages.registerCompletionItemProvider('javascript', {
-        provideCompletionItems: function(model, position) {
-            var textUntilPosition = model.getValueInRange({
-                startLineNumber: 1,
-                startColumn: 1, 
-                endLineNumber: position.lineNumber, 
-                endColumn: position.column
-            });
-            var suggestions = [];
-            var word = model.getWordUntilPosition(position);
-            var range = {
-                startLineNumber: position.lineNumber,
-                endLineNumber: position.lineNumber,
-                startColumn: word.startColumn,
-                endColumn: word.endColumn
-            };
-            return {suggestions: suggestions};
-        }
-    });
+    console.log(monacoEditor)
 }
 
 
