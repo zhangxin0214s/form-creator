@@ -39,7 +39,7 @@
                     :formConfig = _formConfig
                 ></code-editor>
             </el-tab-pane>
-            <el-tab-pane label="vue" name="second">vue</el-tab-pane>
+            <el-tab-pane label="VUE" name="second">vue</el-tab-pane>
         </el-tabs>
 
         
@@ -56,7 +56,7 @@
 
     const _widgetStore = widgetStore();
     const dialogFormVisible = ref(false);
-    const dialogCodeVisible = ref(false);
+    const dialogCodeVisible = ref(true);
     const _widgetList = ref(deepClone(toRaw(_widgetStore.widgetList)));
     const _formConfig = ref(deepClone(toRaw(_widgetStore.formConfig)));
     const tools = ref([
@@ -154,5 +154,8 @@
     }
     .el-dialog__body{
         padding:0px 20px 20px 20px;
+    }
+    .el-tabs__content{
+        margin-top:-10px;
     }
 </style>

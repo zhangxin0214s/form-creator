@@ -1,14 +1,19 @@
 <template>
-  <div id="codeBox"></div>
+  <div class="code-editor">
+    <tool-bar/>
+    <div id="codeBox"></div>
+  </div>
 </template>
 
 <script setup>
- 
-import * as monaco from "monaco-editor/esm/vs/editor/editor.api"
 import { onMounted, reactive, ref, toRaw } from 'vue'
+import toolBar from './code-editor-toolbar.vue'
 import { widgetStore } from '@/store/index';
+import * as monaco from "monaco-editor/esm/vs/editor/editor.api"
 import EditorWorker from 'monaco-editor/esm/vs/editor/editor.worker?worker';
 import JsonWorker from 'monaco-editor/esm/vs/language/json/json.worker?worker'
+const _widgetStore = widgetStore();
+
 self.MonacoEnvironment = {
   getWorker(workerId, label) {
     if (label === 'json') {
@@ -18,20 +23,7 @@ self.MonacoEnvironment = {
   },
 };
 
-const _widgetStore = widgetStore();
-const dataList = reactive({
-    data: [],
-    js: '',
-    languageOption: [],
-    javascriptVlaue: '',
-    contentValue: ''
-})
 const editor = ref(null)
-
-const defaultProps = {
-    children: 'children',
-    label: 'label',
-}
 
 const initEditor = () => {
     // 初始化编辑器，确保dom已经渲染
@@ -58,14 +50,12 @@ const initEditor = () => {
     // 监听值的变化
     editor.value.onDidChangeModelContent((val) => {
         console.log(val.changes[0].text)
-        dataList.javascriptVlaue = toRaw(editor.value).getValue()
         console.log(toRaw(editor.value).getValue());    //获取输入的值
     })
 
     // 创建代码提醒
     monaco.languages.registerCompletionItemProvider('javascript', {
         provideCompletionItems: function(model, position) {
-        // find out if we are completing a property in the 'dependencies' object.
             var textUntilPosition = model.getValueInRange({
                 startLineNumber: 1,
                 startColumn: 1, 
@@ -85,18 +75,18 @@ const initEditor = () => {
     });
 }
 
-function languageChange (val) {
-    monaco.editor.setModelLanguage(this.monacoEditor.getModel(), val)
-}
 
 onMounted(() => {
-    // getData()
     initEditor()
-    dataList.languageOption = monaco.languages.getLanguages()
 })
 </script>
 
 <style scoped>
+.code-editor{
+    width:100%;
+    height:100%;
+    background:red;
+}
 #codeBox {
   height: 600px;
   text-align: left;
