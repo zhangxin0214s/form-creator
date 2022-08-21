@@ -61,7 +61,7 @@
     const dialogCodeVisible = ref(false);
     const _widgetList = ref([]);
     const _formConfig = ref(null);
-    const formData = ref(null)
+    const formData = ref({formConfig:toRaw(_widgetStore.formConfig),widgetList:toRaw(_widgetStore.widgetList)})
 
     console.log(formConfig,"=====")
     const tools = ref([
@@ -122,8 +122,6 @@
      */
     const exportCode = () =>{
         dialogCodeVisible.value = true;
-        console.log(widgetList,"===widgetList===")
-        formData.value = {formConfig:toRaw(_widgetStore.formConfig),widgetList:toRaw(_widgetStore.widgetList)}
     }
 
     /**
