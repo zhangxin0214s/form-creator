@@ -4,6 +4,7 @@
       @changeFont="changeFont"
       @prettifyCode="prettifyCode"
       @copyCode="copyCode"
+      @downloadJson="downloadJson"
     ></tool-bar>
     <div id="codeBox"></div>
   </div>
@@ -15,9 +16,10 @@ import toolBar from './code-editor-toolbar.vue'
 import { widgetStore } from '@/store/index';
 import { defineProps,defineEmits } from 'vue';
 import * as monaco from "monaco-editor";
-import { ElMessage } from 'element-plus'
-import Clipboard from 'clipboard'
+import { ElMessage,ElMessageBox } from 'element-plus'
 import useClipboard from 'vue-clipboard3';
+import { saveAs } from 'file-saver'
+import { generateId } from '@/utils/util'
 const _widgetStore = widgetStore();
 const props = defineProps(['formConfig'])
 let monacoEditor = null;
@@ -90,8 +92,24 @@ const copyCode = async () =>{
       type: 'error',
       duration:1000
     })
-  }
-  
+  } 
+}
+
+/**
+ * 下载Json文件
+ */
+const downloadJson = () =>{
+  ElMessageBox.prompt('请输入文件名','下载文件',{
+    confirmButtonText:'确定',
+    cancelButtonText:'取消',
+    closeOnClickModal:false,
+    inputValue:`${generateId()}.json`,
+    inputPlaceholder:'请输入文件名'
+  }).then(({value}) =>{
+    let jsonContent = JSON.stringify(props.formConfig, null, '  ')
+    const fileBlob = new Blob([jsonContent], { type: 'text/plain;charset=utf-8' })
+    saveAs(fileBlob ,value)
+  })
 }
 onMounted(() => {
     initEditor()

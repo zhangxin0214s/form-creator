@@ -43,7 +43,7 @@
             <svg-icon class="toolbar-icon1" :icon-class="tools[3].icon" />
         </li>
 
-        <li class="toolbar-btn1" @click="downloadCode">
+        <li class="toolbar-btn1" @click="handleDownloadJsonCommand">
             <svg-icon class="toolbar-icon1" :icon-class="tools[4].icon" />
         </li>
 
@@ -85,7 +85,7 @@
         }
     ])  
 
-    const emit = defineEmits(['changeFont','prettifyCode','copyCode']);
+    const emit = defineEmits(['changeFont','prettifyCode','copyCode','downloadJson']);
 
     /**
      * 修改字号
@@ -107,6 +107,13 @@
      */
     const handleCopyCommand = (e) =>{
         emit('copyCode',e)
+    }
+
+    /**
+     * 下载文件
+     */
+    const handleDownloadJsonCommand = (e) =>{
+        emit('downloadJson',e)
     }
 </script>
 <style lang="scss" scoped>
