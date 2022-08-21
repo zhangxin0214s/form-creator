@@ -24,7 +24,7 @@
     </ul>
 
     <!-- 预览面板 -->
-    <el-dialog v-model="dialogFormVisible" title="表单预览" @close="closePreview">
+    <el-dialog v-model="dialogFormVisible" title="表单预览" @close="closePreview" destroy-on-close draggable>
         <form-renderer
             :widgetList="_widgetList"
             :formConfig="_formConfig"
@@ -32,11 +32,11 @@
     </el-dialog>
 
     <!-- 代码编辑器面板 -->
-    <el-dialog  v-model="dialogCodeVisible" title="代码编辑器">
+    <el-dialog  v-model="dialogCodeVisible" title="代码编辑器"  @close="closeCodeEditor" destroy-on-close draggable>
         <el-tabs v-model="activeName" class="code-editor-tabs" @tab-click="handleClick">
             <el-tab-pane label="JSON" name="first">
                 <code-editor
-                    :formConfig = _formConfig
+                    :formData = formData
                 ></code-editor>
             </el-tab-pane>
             <el-tab-pane label="VUE" name="second">vue</el-tab-pane>
@@ -59,8 +59,9 @@
     const { widgetList,formConfig } = storeToRefs(_widgetStore);
     const dialogFormVisible = ref(false);
     const dialogCodeVisible = ref(false);
-
-    const _formConfig = {formConfig:formConfig.value,widgetList:widgetList.value}
+    const _widgetList = ref([]);
+    const _formConfig = ref(null);
+    const formData = ref(null)
 
     console.log(formConfig,"=====")
     const tools = ref([
@@ -113,6 +114,7 @@
      */
     const closePreview = () =>{
         _widgetStore.isEditor = true;
+        dialogFormVisible.value = false;
     }
 
     /**
@@ -120,6 +122,15 @@
      */
     const exportCode = () =>{
         dialogCodeVisible.value = true;
+        console.log(widgetList,"===widgetList===")
+        formData.value = {formConfig:toRaw(_widgetStore.formConfig),widgetList:toRaw(_widgetStore.widgetList)}
+    }
+
+    /**
+     * 关闭代码编辑器
+     */
+    const closeCodeEditor = () =>{
+        dialogCodeVisible.value = false;
     }
 
     const activeName = ref('first')

@@ -14,22 +14,23 @@
 import { onMounted, reactive, ref, toRaw } from 'vue'
 import toolBar from './code-editor-toolbar.vue'
 import { widgetStore } from '@/store/index';
-import { defineProps,defineEmits } from 'vue';
+import { computed } from 'vue';
 import * as monaco from "monaco-editor";
 import { ElMessage,ElMessageBox } from 'element-plus'
 import useClipboard from 'vue-clipboard3';
 import { saveAs } from 'file-saver'
 import { generateId } from '@/utils/util'
 const _widgetStore = widgetStore();
-const props = defineProps(['formConfig'])
+const props = defineProps(['formData'])
 let monacoEditor = null;
 /**
  * 初始化monaco editor
  */
+
 const initEditor = () => {
       monacoEditor = monaco.editor.create(document.getElementById('codeBox'), {
         theme: 'vs-dark', //官方自带三种主题vs, hc-black, or vs-dark
-        value: JSON.stringify(props.formConfig), //编辑器初始显示文字
+        value: JSON.stringify(props.formData), //编辑器初始显示文字
         readOnly: false,
         automaticLayout: true,
         language: "json",
@@ -84,7 +85,7 @@ const prettifyCode = () =>{
 const { toClipboard } = useClipboard();
 const copyCode = async () =>{
   try {
-    await toClipboard(JSON.stringify(props.formConfig));
+    await toClipboard(JSON.stringify(props.formData));
     ElMessage({
         message: '复制成功',
         type: 'success',
@@ -111,13 +112,14 @@ const downloadJson = () =>{
     inputValue:`${generateId()}.json`,
     inputPlaceholder:'请输入文件名'
   }).then(({value}) =>{
-    let jsonContent = JSON.stringify(props.formConfig, null, '  ')
+    let jsonContent = JSON.stringify(props.formData, null, '  ')
     const fileBlob = new Blob([jsonContent], { type: 'text/plain;charset=utf-8' })
     saveAs(fileBlob ,value)
   })
 }
 onMounted(() => {
     initEditor()
+    console.log(props.formData,"===props.formData==")
 })
 </script>
 
