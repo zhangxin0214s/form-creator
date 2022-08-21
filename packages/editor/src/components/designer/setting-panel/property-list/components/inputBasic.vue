@@ -18,7 +18,7 @@
 <script setup>
 import { defineProps } from 'vue';
 
-defineProps(['basicProp', 'key1', 'value']);
+defineProps(['basicProp', 'key1']);
 </script>
 <style lang="scss" scoped>
 </style>

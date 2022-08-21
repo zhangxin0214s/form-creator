@@ -15,12 +15,14 @@
 				</el-header>
 				<el-main>
 					<div class="setting-main">
+						{{ selectedWidget?.options.events1 }}
 						<component
 							:is="componentMap[selectedWidget?.type]"
 							:key="selectedWidget?.id"
 							:selected-widget="selectedWidget"
 							:basic-prop="selectedWidget?.options.basic"
 							:advanced-prop="selectedWidget?.options.advanced"
+							:events-prop="selectedWidget?.options.events"
 						>
 						</component>
 					</div>

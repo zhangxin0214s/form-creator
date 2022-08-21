@@ -315,7 +315,8 @@ export const basicWidgets = [
 					value:true
 				},// 是否必填*
 			},
-			advanced: {}
+			advanced: {},
+			events:{}
 		}
 	},
 	{

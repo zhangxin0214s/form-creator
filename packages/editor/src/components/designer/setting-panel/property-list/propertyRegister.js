@@ -10,7 +10,8 @@ const BASCI_COMPONENTS = {
 	'8':'buttonGroup',
 	'9':'inputNumberBasic',
 	'10':'colorBasic',
-	'11':'checkboxBasic1'
+	'11':'checkboxBasic1',
+	'12':'eventBasic'
 }
 
 // 基础属性组件映射表
@@ -46,10 +47,6 @@ const BASIC_PROPERTIES = {
 	'static-text-line-height':'9'
 }
 
-// 高级属性组件列表
-const ADVANCED_COMPONENTS = {
-	'6':'addSelectList',
-}
 
 // 高级属性组件映射表
 const ADVANCED_PROPERTIES = {
@@ -58,9 +55,14 @@ const ADVANCED_PROPERTIES = {
 	'selectConfig':'6',
 }
 
+
+// 事件属性组件映射表
+const EVENTS_PROPERTIES = {
+	'onClick':'12'
+}
 export {
 	BASCI_COMPONENTS,
 	BASIC_PROPERTIES,
-	ADVANCED_COMPONENTS,
 	ADVANCED_PROPERTIES,
+	EVENTS_PROPERTIES
 }

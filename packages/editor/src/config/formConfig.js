@@ -382,6 +382,12 @@ export const basicWidgets = [
 					label:'是否为圆形按钮',
 					value:false
 				}
+			},
+			events:{
+				onClick:{
+					label:"点击事件",
+					value:""
+				}
 			}
 		}
 	},

@@ -5,7 +5,7 @@
   </div>
 </template>
 <script>
-import SEditorDesigner from './components/designer/index.vue'
+import SEditorDesigner from './view/index.vue'
 export default {
   name: 'App',
   components: {

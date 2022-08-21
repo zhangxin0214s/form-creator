@@ -28,7 +28,7 @@
 </template>
 <script setup>
   import { ref } from "vue"
-  import { BASCI_COMPONENTS, BASIC_PROPERTIES, ADVANCED_COMPONENTS, ADVANCED_PROPERTIES} from '../propertyRegister'
+  import { BASCI_COMPONENTS, BASIC_PROPERTIES, ADVANCED_PROPERTIES} from '../propertyRegister'
   import * as components from '../components/index';
 
   const props = defineProps([
@@ -45,7 +45,7 @@
   }
 
   const getAdvancedCompName = (key)=>{
-    return ADVANCED_COMPONENTS[ADVANCED_PROPERTIES[key]]
+    return BASCI_COMPONENTS[ADVANCED_PROPERTIES[key]]
   }
 </script>
 <style lang="scss" scoped>

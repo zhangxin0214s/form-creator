@@ -11,6 +11,7 @@ import buttonGroup from './buttonGroup.vue'
 import inputNumberBasic from './inputNumberBasic.vue'
 import colorBasic from './colorBasic.vue'
 import checkboxBasic1 from './checkboxBasic1.vue'
+import eventBasic from './eventBasic.vue'
 export {
 	inputBasic,
 	switchBasic,
@@ -24,5 +25,6 @@ export {
 	buttonGroup,
 	inputNumberBasic,
 	colorBasic,
-	checkboxBasic1
+	checkboxBasic1,
+	eventBasic
 }
