@@ -71,6 +71,11 @@ const changeFont = (e) =>{
  */
 const prettifyCode = () =>{
   monacoEditor.trigger('anyString', 'editor.action.formatDocument')
+  ElMessage({
+        message: '格式化成功',
+        type: 'success',
+        duration:1000
+  })
 }
 
 /**
