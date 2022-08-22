@@ -33,6 +33,8 @@
 			</el-container>
 		</div>
 	</el-scrollbar>
+	
+	
 </template>
 <script setup>
 import formBase from './property-list/components/formBasic.vue';
@@ -42,7 +44,7 @@ import { widgetStore } from '@/store/index';
 import { storeToRefs } from 'pinia';
 import { ref } from 'vue';
 const _widgetStore = widgetStore();
-const { selectedWidget } = storeToRefs(_widgetStore);
+const { selectedWidget ,dialogCodeVisible} = storeToRefs(_widgetStore);
 const componentMap = {
 	...widget,
 	...container,

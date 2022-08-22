@@ -9,6 +9,7 @@ export const widgetStore = defineStore('widget', {
             selectedWidget:null, // 当前选中组件
             cloneWidget:null,// 克隆的组件
             isEditor:true,
+            dialogCodeVisible:false // 属性面板代码编辑器
         }
     },
     actions: {
