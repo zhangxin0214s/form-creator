@@ -316,7 +316,12 @@ export const basicWidgets = [
 				},// 是否必填*
 			},
 			advanced: {},
-			events:{}
+			events:{
+				onClick: {
+					label: '点击',
+					value: 'alert(1)'
+				}
+			}
 		}
 	},
 	{

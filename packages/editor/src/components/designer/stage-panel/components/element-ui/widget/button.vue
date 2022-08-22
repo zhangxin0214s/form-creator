@@ -11,6 +11,7 @@
           :size="widget.options.basic.btnSize.value"
           :round="widget.options.advanced.btnRound.value"
           :circle="widget.options.advanced.btnCircle.value"
+          @click="handleClick"
       >{{ widget.options.basic.text.value }}
       </el-button>
   </widget-mask>
@@ -23,7 +24,11 @@ let props = defineProps([
   'widget',
   'parentWidget'
 ]);
-console.log(props)
+
+const handleClick = () =>{
+  let changeFn = new Function(props.widget.options.events.onClick.value)
+  changeFn();
+}
 </script>
 
 <style scoped>
