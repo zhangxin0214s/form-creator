@@ -386,7 +386,7 @@ export const basicWidgets = [
 			events:{
 				onClick:{
 					label:"点击事件",
-					value:"alert(1)"
+					value:"alert(this.test)"
 				}
 			}
 		}

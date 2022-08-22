@@ -19,15 +19,14 @@
 
 <script setup>
 import widgetMask from '../common/widgetMask.vue'
-
+import { getCurrentInstance,ref } from 'vue'
 let props = defineProps([
   'widget',
   'parentWidget'
 ]);
-
 const handleClick = () =>{
   let changeFn = new Function(props.widget.options.events.onClick.value)
-  changeFn();
+  changeFn.call(ctx);
 }
 </script>
 
