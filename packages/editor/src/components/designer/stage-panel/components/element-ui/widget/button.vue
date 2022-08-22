@@ -11,23 +11,38 @@
           :size="widget.options.basic.btnSize.value"
           :round="widget.options.advanced.btnRound.value"
           :circle="widget.options.advanced.btnCircle.value"
-          @click="handleClick"
+          @click="handleOnClick(widget)"
       >{{ widget.options.basic.text.value }}
       </el-button>
   </widget-mask>
 </template>
 
 <script setup>
+import {onMounted,onBeforeMount } from 'vue'
 import widgetMask from '../common/widgetMask.vue'
-import { getCurrentInstance,ref } from 'vue'
+import useRegisterEvent from '../hooks/useRegisterEvent'
 let props = defineProps([
   'widget',
   'parentWidget'
 ]);
-const handleClick = () =>{
-  let changeFn = new Function(props.widget.options.events.onClick.value)
-  changeFn.call(ctx);
-}
+
+const { handleOnClick,handleOnBeforeMount,handleOnMounted} = useRegisterEvent();
+
+/**
+ * 渲染前
+ */
+onBeforeMount(() =>{
+  console.log(1);
+  handleOnBeforeMount(props.widget)
+})
+
+/**
+ * 渲染后
+ */
+onMounted(() =>{
+  console.log(2);
+  handleOnMounted(props.widget)
+})
 </script>
 
 <style scoped>
