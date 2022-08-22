@@ -119,7 +119,6 @@ const downloadJson = () =>{
 }
 onMounted(() => {
     initEditor()
-    console.log(props.formData,"===props.formData==")
 })
 </script>
 

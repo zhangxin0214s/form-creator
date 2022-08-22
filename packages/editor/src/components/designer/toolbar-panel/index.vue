@@ -41,8 +41,6 @@
             </el-tab-pane>
             <el-tab-pane label="VUE" name="second">vue</el-tab-pane>
         </el-tabs>
-
-        
     </el-dialog>
 </template>
 <script setup>
