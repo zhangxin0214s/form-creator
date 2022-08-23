@@ -20,7 +20,15 @@ export const formConfig = {
 		label: '标签宽度',
 		value: ""
 	},// 标签宽度
-	"rules": {}// 校验规则
+	"rules": {
+		name: [
+            { required: true, message: '请输入名称', trigger: 'blur' },
+            { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
+          ],
+	},// 校验规则
+	"ruleForm": {
+		name : null
+	} // 提交数据
 }
 
 // 容器
@@ -112,6 +120,7 @@ export const basicWidgets = [
 		category: "widget",
 		icon: "input",
 		value: null,
+		ruleFormKey: 'name',
 		options: {
 			basic: {
 				name: {
@@ -129,7 +138,7 @@ export const basicWidgets = [
 				},// 默认提示文本
 				required: {
 					label: "是否必填",
-					value: true
+					value: false
 				},// 是否必填*
 				readonly: {
 					label: "是否只读",

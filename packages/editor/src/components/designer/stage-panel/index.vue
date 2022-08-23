@@ -21,6 +21,7 @@
 				:label-width="formConfig['label-width'].value+'px'"
 				:label-position="formConfig['label-position'].value"
 				:rules="formConfig.rules"
+				:model="formConfig.ruleForm"
 				>
 				<draggable
 					v-if="widgetList"
