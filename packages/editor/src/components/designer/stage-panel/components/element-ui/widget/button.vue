@@ -32,7 +32,6 @@ const { handleOnClick,handleOnBeforeMount,handleOnMounted} = useRegisterEvent();
  * 渲染前
  */
 onBeforeMount(() =>{
-  console.log(1);
   handleOnBeforeMount(props.widget)
 })
 
@@ -40,7 +39,6 @@ onBeforeMount(() =>{
  * 渲染后
  */
 onMounted(() =>{
-  console.log(2);
   handleOnMounted(props.widget)
 })
 </script>

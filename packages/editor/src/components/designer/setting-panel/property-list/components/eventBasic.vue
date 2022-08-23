@@ -17,6 +17,7 @@
 			<code-editor
 				:formData="eventsProp[key1].value"
 				:language="`javascript`"
+				@changeCode="changeCode"
 			/>
 		</el-dialog>
 	</el-form>
@@ -25,11 +26,14 @@
 import { defineProps } from 'vue';
 import { ref } from 'vue';
 import codeEditor from '../../../code-editor/index.vue'
-defineProps(['eventsProp', 'key1']);
+const props = defineProps(['eventsProp', 'key1']);
 const dialogCodeVisible = ref(false);
 
 const handleCode = () =>{
 	dialogCodeVisible.value= true;
+}
+const changeCode = (code) =>{
+	props.eventsProp[props.key1].value = code
 }
 </script>
 <style lang="scss" scoped>
