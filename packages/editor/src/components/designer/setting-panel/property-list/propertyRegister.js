@@ -60,7 +60,9 @@ const ADVANCED_PROPERTIES = {
 
 // 事件属性组件映射表
 const EVENTS_PROPERTIES = {
-	'onClick':'12'
+	'onClick':'12',
+	'onMounted':'12',
+	'onBeforeMount': '12'
 }
 export {
 	BASCI_COMPONENTS,

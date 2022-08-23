@@ -384,6 +384,14 @@ export const basicWidgets = [
 				}
 			},
 			events:{
+				onBeforeMount:{
+					label:"渲染前",
+					value:""
+				},
+				onMounted:{
+					label:"渲染完成",
+					value:""
+				},
 				onClick:{
 					label:"点击事件",
 					value:"console.log(this.name)"

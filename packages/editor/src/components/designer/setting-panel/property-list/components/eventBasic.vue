@@ -9,8 +9,8 @@
 			v-if="eventsProp[key1]?.label"
 			:label="`${eventsProp[key1]?.label}:`"
 		>
-			<span v-if="eventsProp[key1].value">已绑定</span>
 			<svg-icon class="icon" icon-class="code-edit" @click="handleCode"/>
+			<span v-if="eventsProp[key1].value">已绑定</span>
 		</el-form-item> 
 
 		<!-- 代码编辑器面板 -->
@@ -41,6 +41,7 @@ const changeCode = (code) =>{
 	.icon{
 		width:25px;
 		height:25px;
+		margin-left:-20px;
 	}
 	.icon:hover {
 		cursor:pointer;
