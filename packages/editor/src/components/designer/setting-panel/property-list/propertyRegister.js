@@ -19,6 +19,7 @@ const BASIC_PROPERTIES = {
 	'name':'1',
 	'label':'1',
 	'hint':'1',
+	'editable':'2',
 	'alignment':'8',
 	'font-color':'10',
 	'font-size':'9',
