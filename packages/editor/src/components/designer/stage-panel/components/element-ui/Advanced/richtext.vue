@@ -1,90 +1,77 @@
 <template>
-  <div>
-    <quill-editor/>
+  <div class="local-quill-editor">
+    <QuillEditor theme="snow" :options="editorOption"/>
   </div>
 </template>
 
 <script>
-  import 'quill/dist/quill.core.css'
-  import 'quill/dist/quill.snow.css'
-  import 'quill/dist/quill.bubble.css'
-  import { quillEditor, Quill } from 'vue-quill-editor'
+ import {QuillEditor,Quill} from '@vueup/vue-quill'
+import '@vueup/vue-quill/dist/vue-quill.snow.css';
+
+// 设置字体大小
+const fontSize = ['12px', '14px', '16px', '20px', '24px', '36px']
+Quill.imports['attributors/style/size'].whitelist = fontSize
+Quill.register(Quill.imports['attributors/style/size'])
+
+// 设置字体样式
+const Font = Quill.import('attributors/style/font') // 引入这个后会把样式写在style上
+const fonts = [
+  'SimSun',
+  'SimHei',
+  'Microsoft-YaHei',
+  'KaiTi',
+  'FangSong'
+]
+Font.whitelist = fonts // 将字体加入到白名单
+Quill.register(Font, true)
+
   export default {
     components: {
-      quillEditor,
+      QuillEditor
     },
     data() {
       return {
-        editorOption:{}
+        editorOption: {
+          // 编辑器配置
+          placeholder: '请在这里输入',
+          modules: {
+            toolbar: [
+              // 加粗 斜体 下划线 删除线 -----['bold', 'italic', 'underline', 'strike']
+              ['bold', 'italic', 'underline', 'strike'],
+              // 引用  代码块-----['blockquote', 'code-block']
+              ['blockquote', 'code-block'],
+              // 1、2 级标题-----[{ header: 1 }, { header: 2 }]
+              [{ header: 1 }, { header: 2 }],
+              // 有序、无序列表-----[{ list: 'ordered' }, { list: 'bullet' }]
+              [{ list: 'ordered' }, { list: 'bullet' }],
+              // 上标/下标-----[{ script: 'sub' }, { script: 'super' }]
+              [{ script: 'sub' }, { script: 'super' }],
+              // 缩进-----[{ indent: '-1' }, { indent: '+1' }]
+              [{ indent: '-1' }, { indent: '+1' }],
+              // 文本方向-----[{'direction': 'rtl'}]
+              [{ direction: 'rtl' }],
+              // 字体大小-----[{ size: ['small', false, 'large', 'huge'] }]
+              [{ size: fontSize }],
+              // 标题-----[{ header: [1, 2, 3, 4, 5, 6, false] }]
+              [{ header: [1, 2, 3, 4, 5, 6, false] }],
+              // 字体颜色、字体背景颜色-----[{ color: [] }, { background: [] }]
+              [{ color: [] }, { background: [] }],
+              // 字体种类-----[{ font: [] }]
+              [{ font: fonts }],
+              // 对齐方式-----[{ align: [] }]
+              [{ align: [] }],
+              // 清除文本格式-----['clean']
+              ['clean'],
+              // 链接、图片、视频-----['link', 'image', 'video']
+              ['image']
+            ],
+          },
+        }
       }
     },
     created(){
-      // 设置字体大小
-      const fontSize = ['12px', '14px', '16px', '20px', '24px', '36px']
-      Quill.imports['attributors/style/size'].whitelist = fontSize
-      Quill.register(Quill.imports['attributors/style/size'])
-
-      // 设置字体样式
-      const Font = Quill.import('attributors/style/font') // 引入这个后会把样式写在style上
-      const fonts = [
-        'SimSun',
-        'SimHei',
-        'Microsoft-YaHei',
-        'KaiTi',
-        'FangSong'
-      ]
-      Font.whitelist = fonts // 将字体加入到白名单
-      Quill.register(Font, true)
-
-      // 工具栏配置项
-      const toolbarOptions = [
-        // 加粗 斜体 下划线 删除线 -----['bold', 'italic', 'underline', 'strike']
-        ['bold', 'italic', 'underline', 'strike'],
-        // 引用  代码块-----['blockquote', 'code-block']
-        ['blockquote', 'code-block'],
-        // 1、2 级标题-----[{ header: 1 }, { header: 2 }]
-        [{ header: 1 }, { header: 2 }],
-        // 有序、无序列表-----[{ list: 'ordered' }, { list: 'bullet' }]
-        [{ list: 'ordered' }, { list: 'bullet' }],
-        // 上标/下标-----[{ script: 'sub' }, { script: 'super' }]
-        [{ script: 'sub' }, { script: 'super' }],
-        // 缩进-----[{ indent: '-1' }, { indent: '+1' }]
-        [{ indent: '-1' }, { indent: '+1' }],
-        // 文本方向-----[{'direction': 'rtl'}]
-        [{ direction: 'rtl' }],
-        // 字体大小-----[{ size: ['small', false, 'large', 'huge'] }]
-        [{ size: fontSize }],
-        // 标题-----[{ header: [1, 2, 3, 4, 5, 6, false] }]
-        [{ header: [1, 2, 3, 4, 5, 6, false] }],
-        // 字体颜色、字体背景颜色-----[{ color: [] }, { background: [] }]
-        [{ color: [] }, { background: [] }],
-        // 字体种类-----[{ font: [] }]
-        [{ font: fonts }],
-        // 对齐方式-----[{ align: [] }]
-        [{ align: [] }],
-        // 清除文本格式-----['clean']
-        ['clean'],
-        // 链接、图片、视频-----['link', 'image', 'video']
-        ['image']
-      ]
-      this.editorOption={
-              modules: {
-                toolbar: {
-                  container: toolbarOptions,
-                  handlers: {
-                    'image': (value) => {
-                      const input = document.getElementById('editorFileInput')
-                      input.click()
-                    }
-                  }
-                }
-              },
-              theme: 'snow',
-              placeholder: '请输入正文'
-              // Some Quill optiosn...
-            }
-          }
-        }
+    }
+  }
 </script>
 
 <style scoped>
@@ -93,7 +80,6 @@
 
 <style lang="scss">
 .local-quill-editor {
-  .quill-editor{
     .ql-snow {
         .ql-picker.ql-size {
             .ql-picker-label[data-value="12px"]::before,
@@ -200,6 +186,5 @@
     .ql-align-left{
       text-align: left;
     }
-  }
   }
 </style>
