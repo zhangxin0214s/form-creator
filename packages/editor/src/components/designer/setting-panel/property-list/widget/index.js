@@ -9,6 +9,7 @@ import cellPhone from './cellPhone.vue';
 import Radio from './radio'
 import staticText from './staticText.vue';
 import date from './date'
+import datetimerange from './dateTimerange'
 export {
     input,
     button,
@@ -20,5 +21,6 @@ export {
     cellPhone,
     Radio,
     staticText,
-    date
+    date,
+    datetimerange
 }
