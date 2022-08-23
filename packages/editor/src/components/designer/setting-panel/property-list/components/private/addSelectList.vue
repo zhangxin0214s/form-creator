@@ -13,7 +13,7 @@
 <script setup>
   import { Delete, Plus, CirclePlusFilled } from '@element-plus/icons-vue'
   import { ref } from 'vue';
-  import selectNode from './selectNode';
+  import selectNode from './selectNode.vue';
 
   const PROPS = defineProps(['advancedProp'])
   const {children} = PROPS.advancedProp.selectConfig;
