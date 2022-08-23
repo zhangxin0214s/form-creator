@@ -45,7 +45,7 @@
 import { ref, defineProps } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES, EVENTS_PROPERTIES } from '../propertyRegister'
 import * as basicComponents from '../components/index';
-import ButtonBasic from '../components/buttonItems'
+import ButtonBasic from '../components/buttonItems.vue'
 
 const props = defineProps([
   'selectedWidget',

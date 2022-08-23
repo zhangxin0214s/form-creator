@@ -48,7 +48,7 @@
     import { ElMessage } from 'element-plus'
     import { deepClone } from '@/utils/util'
     import { toRaw } from '@vue/reactivity'
-    import codeEditor from '../code-editor'
+    import codeEditor from '../code-editor/index.vue'
 
     const _widgetStore = widgetStore();
     const { widgetList,formConfig } = storeToRefs(_widgetStore);
