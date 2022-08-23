@@ -26,6 +26,7 @@ const BASIC_PROPERTIES = {
 	'labelAlign':'3',
 	'type':'3',
 	'btnSize':'3',
+	'dateSize':'3',
 	'defaultValue':'1',
 	'text':'1',
 	'switchDefaultValue':'2',

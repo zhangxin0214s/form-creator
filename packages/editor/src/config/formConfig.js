@@ -787,18 +787,37 @@ export const basicWidgets = [
 		icon: "date",
 		options: {
 			basic: {
+				value:"",
 				name: {
 					label: "唯一名称",
 					value: "时间选择"
 				}, // 唯一名称
 				label: {
 					label: "标题",
-					value: ""
+					value: "时间"
 				}, // 标签
 				hint: {
 					label: '提示语',
 					value: '',
 				}, // 提示语
+				dateSize: {
+					label: "输入框尺寸",
+					options: [
+						{
+							label:'大型输入框',
+							value:'large'
+						},
+						{
+							label:'中等输入框',
+							value:'default'
+						},
+						{
+							label:'小型输入框',
+							value:'small'
+						},
+					],
+					value:'default'
+				},
 				hintHidden: {
 					label: '提示语隐藏',
 					value: false
@@ -808,7 +827,11 @@ export const basicWidgets = [
 					value: false
 				}, // 标签是否隐藏
 				required: {
-					label: '是否必填*',
+					label: '是否必填',
+					value: true
+				}, // 是否必填
+				disabled: {
+					label: '是否禁用',
 					value: false
 				}, // 是否必填
 			},
