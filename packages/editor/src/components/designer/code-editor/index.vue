@@ -22,12 +22,12 @@ import { saveAs } from 'file-saver'
 import { generateId } from '@/utils/util'
 const _widgetStore = widgetStore();
 const props = defineProps(['formData','language'])
+const emit = defineEmits(['changeCode'])
 const defaultContent = props.language === 'javascript' ? props.formData:JSON.stringify(props.formData)
 let monacoEditor = null;
 /**
  * 初始化monaco editor
  */
-
 const initEditor = () => {
       monacoEditor = monaco.editor.create(document.getElementById('codeBox'), {
         theme: 'vs-dark', //官方自带三种主题vs, hc-black, or vs-dark
@@ -51,7 +51,8 @@ const initEditor = () => {
 
     // 监听值的变化
     monacoEditor.onDidChangeModelContent((val) => {
-      // console.log(toRaw(monacoEditor).getValue());    //获取输入的值
+      // console.log(monacoEditor.getValue());    //获取输入的值
+      emit('changeCode', monacoEditor.getValue())
     })
     
     setTimeout(()=>{

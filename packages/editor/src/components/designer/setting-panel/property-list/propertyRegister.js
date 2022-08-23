@@ -19,6 +19,7 @@ const BASIC_PROPERTIES = {
 	'name':'1',
 	'label':'1',
 	'hint':'1',
+	'editable':'2',
 	'alignment':'8',
 	'font-color':'10',
 	'font-size':'9',
@@ -59,7 +60,9 @@ const ADVANCED_PROPERTIES = {
 
 // 事件属性组件映射表
 const EVENTS_PROPERTIES = {
-	'onClick':'12'
+	'onClick':'12',
+	'onMounted':'12',
+	'onBeforeMount': '12'
 }
 export {
 	BASCI_COMPONENTS,

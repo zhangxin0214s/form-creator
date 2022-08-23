@@ -1,19 +1,22 @@
 <template>
   <div>
-    <span style="margin-right: 20px">{{ advancedProp.label }}:</span>
-    <el-select
-        v-model="advancedProp.value"
-        clearable
-        filterable
-        placeholder="请输入关键词"
-    >
-      <el-option
-          v-for="(ite,index) in advancedProp?.btnIcon"
-          :label="ite.label"
-          :value="ite.value"
-          :key="index"
-      />
-    </el-select>
+    <div class="contents">
+      <span style="display: inline-block;width: 100px">{{ advancedProp.label }}:</span>
+      <el-select
+          style="width:170px"
+          v-model="advancedProp.value"
+          clearable
+          filterable
+          placeholder="请输入关键词"
+      >
+        <el-option
+            v-for="(ite,index) in advancedProp?.btnIcon"
+            :label="ite.label"
+            :value="ite.value"
+            :key="index"
+        />
+      </el-select>
+    </div>
 
     <div style="margin-top: 15px">
       <span>{{ advancedProp.btnRound.label }}:</span>
@@ -46,5 +49,12 @@ const props = defineProps([
 <style lang="scss" scoped>
 .gutter-label-text {
   margin-right: 10px;
+}
+
+.contents {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 </style>

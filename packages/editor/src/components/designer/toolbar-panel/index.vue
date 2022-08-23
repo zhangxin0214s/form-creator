@@ -77,7 +77,7 @@
             icon:'tool-import'
         },
         {
-            name:'商城',
+            name:'模板库',
             icon:'tool-mall'
         }
     ])
