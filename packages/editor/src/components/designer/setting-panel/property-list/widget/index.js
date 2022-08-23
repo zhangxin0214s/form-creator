@@ -8,6 +8,7 @@ import divider from './divider.vue';
 import cellPhone from './cellPhone.vue';
 import Radio from './radio'
 import staticText from './staticText.vue';
+import date from './date'
 export {
     input,
     button,
@@ -19,4 +20,5 @@ export {
     cellPhone,
     Radio,
     staticText,
+    date
 }
