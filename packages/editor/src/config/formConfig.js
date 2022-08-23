@@ -394,7 +394,7 @@ export const basicWidgets = [
 				},
 				onClick:{
 					label:"点击事件",
-					value:"console.log(this.name)"
+					value:"alert(this.name)"
 				}
 			}
 		}
