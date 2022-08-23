@@ -21,10 +21,6 @@ export const formConfig = {
 		value: ""
 	},// 标签宽度
 	"rules": {
-		name: [
-            { required: true, message: '请输入名称', trigger: 'blur' },
-            { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
-          ],
 	},// 校验规则
 	"ruleForm": {
 		name : null
@@ -136,9 +132,14 @@ export const basicWidgets = [
 					label: "默认文本",
 					value: "请输入输入框内容"
 				},// 默认提示文本
+				ruleFormKey: {
+					label: "参数key",
+					value:''
+				},
 				required: {
 					label: "是否必填",
-					value: false
+					value: false,
+					message:""
 				},// 是否必填*
 				readonly: {
 					label: "是否只读",
