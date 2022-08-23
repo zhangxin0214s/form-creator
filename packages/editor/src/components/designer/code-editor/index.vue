@@ -21,7 +21,8 @@ import useClipboard from 'vue-clipboard3';
 import { saveAs } from 'file-saver'
 import { generateId } from '@/utils/util'
 const _widgetStore = widgetStore();
-const props = defineProps(['formData'])
+const props = defineProps(['formData','language'])
+const defaultContent = props.language === 'javascript' ? props.formData:JSON.stringify(props.formData)
 let monacoEditor = null;
 /**
  * 初始化monaco editor
@@ -30,10 +31,10 @@ let monacoEditor = null;
 const initEditor = () => {
       monacoEditor = monaco.editor.create(document.getElementById('codeBox'), {
         theme: 'vs-dark', //官方自带三种主题vs, hc-black, or vs-dark
-        value: JSON.stringify(props.formData), //编辑器初始显示文字
+        value: defaultContent, //编辑器初始显示文字
         readOnly: false,
         automaticLayout: true,
-        language: "json",
+        language: props.language,
         folding: true,  //代码折叠
         roundedSelection: false, // 右侧不显示编辑器预览框
         autoIndent: true, // 自动缩进

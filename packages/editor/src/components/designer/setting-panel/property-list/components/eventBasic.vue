@@ -13,10 +13,11 @@
 		</el-form-item> 
 
 		<!-- 代码编辑器面板 -->
-		<el-dialog  v-model="dialogCodeVisible" title="代码编辑器" destroy-on-close draggable>
+		<el-dialog v-model="dialogCodeVisible" title="代码编辑器" width="1200px" center draggable destroy-on-close>
 			<code-editor
-				:formData = eventsProp[key1].value
-			></code-editor>
+				:formData="eventsProp[key1].value"
+				:language="`javascript`"
+			/>
 		</el-dialog>
 	</el-form>
 </template>
