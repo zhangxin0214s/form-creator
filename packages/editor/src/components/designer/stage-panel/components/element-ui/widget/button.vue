@@ -11,7 +11,7 @@
           :size="widget.options.basic.btnSize.value"
           :round="widget.options.advanced.btnRound.value"
           :circle="widget.options.advanced.btnCircle.value"
-          @click="handleOnClick(widget)"
+          @click="handleOnClick(widget,ruleFormRef)"
       >{{ widget.options.basic.text.value }}
       </el-button>
   </widget-mask>
@@ -21,11 +21,12 @@
 import {onMounted,onBeforeMount } from 'vue'
 import widgetMask from '../common/widgetMask.vue'
 import useRegisterEvent from '../hooks/useRegisterEvent'
+import { ref } from 'vue'
 let props = defineProps([
   'widget',
-  'parentWidget'
+  'parentWidget',
+  'ruleFormRef'
 ]);
-
 const { handleOnClick,handleOnBeforeMount,handleOnMounted} = useRegisterEvent();
 
 /**

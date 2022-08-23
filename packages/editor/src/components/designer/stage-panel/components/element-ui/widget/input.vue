@@ -8,7 +8,7 @@
 		<el-input
 			:disabled="widget.options.basic.disabled.value"
 			:placeholder="widget.options.basic.defaultValue.value"
-			v-model="formConfig.ruleForm[widget.ruleFormKey]"
+			v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]"
 		/>
 	</widget-mask>
 </template>

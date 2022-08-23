@@ -6,11 +6,11 @@ const useRegisterEvent = () =>{
      * @param {*} widget 
      * @returns 
      */
-    const handleOnClick = (widget) =>{
-        const EVENTS = widget.options.events;
-        if(!EVENTS?.onClick) return;
-        let onClickFunc = new Function(EVENTS?.onClick.value)
-        onClickFunc.call(widget)
+    const handleOnClick = (widget,ruleFormRef) =>{
+    const EVENTS = widget.options.events;
+    if(!EVENTS?.onClick) return;
+    let onClickFunc = new Function(EVENTS?.onClick.value)
+    onClickFunc.call(widget,ruleFormRef)
     }
 
     /**

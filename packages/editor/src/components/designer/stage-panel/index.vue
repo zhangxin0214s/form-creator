@@ -20,6 +20,7 @@
 				class="widget-form"
 				:label-width="formConfig['label-width'].value+'px'"
 				:label-position="formConfig['label-position'].value"
+				ref="ruleFormRef"
 				:rules="formConfig.rules"
 				:model="formConfig.ruleForm"
 				>
@@ -36,6 +37,7 @@
 								:is="componentMap[widget.type]"
 								:key="widget.id"
 								:widget=widget
+								:rule-form-ref="ruleFormRef"
 								:parent-widget="widgetList"
 								@click.stop="selected(widget)">
 							</component>
@@ -52,13 +54,15 @@ import eleComponents from './components/element-ui';
 import toolBar from '../toolbar-panel/index.vue'
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
-
+import { ref } from 'vue'
 const componentMap = {
 	...eleComponents
 };
 
 const _widgetStore = widgetStore();
 const { widgetList,formConfig } = storeToRefs(_widgetStore);
+
+const ruleFormRef = ref(null);
 
 const selected = (widgetData) => {
 	console.log('选中:', widgetData);

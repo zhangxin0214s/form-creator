@@ -23,7 +23,6 @@ export const formConfig = {
 	"rules": {
 	},// 校验规则
 	"ruleForm": {
-		name : null
 	} // 提交数据
 }
 
@@ -116,7 +115,6 @@ export const basicWidgets = [
 		category: "widget",
 		icon: "input",
 		value: null,
-		ruleFormKey: 'name',
 		options: {
 			basic: {
 				name: {
@@ -404,7 +402,7 @@ export const basicWidgets = [
 				},
 				onClick:{
 					label:"点击事件",
-					value:"alert(this.name)"
+					value:"const submitForm = async (formEl) => {\n    console.log(formEl, \"===formEl===\")\n    if (!formEl) return\n    await formEl.validate(((valid, fields) => {\n        if (valid) {\n            alert('submit!')\n        } else {\n            alert('error submit!', fields)\n        }\n    }))\n}\nsubmitForm(ruleFormRef)"
 				}
 			}
 		}
