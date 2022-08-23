@@ -3,7 +3,7 @@
 
         <!-- 字号 -->
         <li class="toolbar-btn">
-            <el-dropdown @command="handleFontCommand">
+            <el-dropdown class="el-dropdown" @command="handleFontCommand">
                 <span class="el-dropdown-link">
                     <svg-icon class="toolbar-icon" :icon-class="tools[0].icon" />
                     <el-icon class="el-icon--right">
@@ -117,6 +117,10 @@
     }
 </script>
 <style lang="scss" scoped>
+    ul{
+        padding:0;
+        margin:0;
+    }
     li{
         list-style-type: none;
     }
@@ -130,23 +134,11 @@
         margin:0px;
         display: flex;
         justify-content:left;
-        border-bottom:1px solide #000
+        align-items:center;
     }
-    .example-showcase .el-dropdown-link {
-        cursor: pointer;
-        color: var(--el-color-primary);
-        display: flex;
-        justify-content:center;
-    }
-    .el-dropdown-link {
-        margin-top:10px;
-    }
+    
     .toolbar-icon,.toolbar-icon1 {
         width:30px;
         height:20px;
-    }
-
-    .toolbar-btn1 {
-        margin-top:-12px;
     }
 </style>

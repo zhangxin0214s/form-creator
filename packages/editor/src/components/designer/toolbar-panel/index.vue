@@ -32,16 +32,13 @@
     </el-dialog>
 
     <!-- 代码编辑器面板 -->
-    <el-dialog  v-model="dialogCodeVisible" title="代码编辑器"  @close="closeCodeEditor" destroy-on-close draggable>
-        <el-tabs v-model="activeName" class="code-editor-tabs" @tab-click="handleClick">
-            <el-tab-pane label="JSON" name="first">
-                <code-editor
-                    :formData = formData
-                ></code-editor>
-            </el-tab-pane>
-            <el-tab-pane label="VUE" name="second">vue</el-tab-pane>
-        </el-tabs>
-    </el-dialog>
+    <el-dialog v-model="dialogCodeVisible" title="代码编辑器" width="1200px" center draggable destroy-on-close>
+        <code-editor
+            class="codeEditor"
+            :formData="formData"
+            :language="`json`"
+        />
+	</el-dialog>
 </template>
 <script setup>
     import { ref } from 'vue';
@@ -135,7 +132,7 @@
         console.log()
     }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
     li{
         list-style-type: none;
     }
@@ -144,29 +141,13 @@
         display: -webkit-flex;
         display: flex;
         justify-content:center;
-        &-btn{
-           margin-right:15px;
-        }
+        align-items: center; 
     }
-
-    .code-editor-tabs>.el-tabs__content {
-        color: #6b778c;
-        font-size: 32px;
-        font-weight: 600;
-    }
-    .el-dialog{
-        width:1200px;
+    .codeEditor{
+        margin-top:-30px;
     }
     
-    .code-editor{
-        &-tabs{
-            margin-top:-40px;
-        }
-    }
-    .el-dialog__body{
-        padding:0px 20px 20px 20px;
-    }
-    .el-tabs__content{
-        margin-top:-10px;
+    :deep(.el-dropdown){
+        margin-top:10px;
     }
 </style>
