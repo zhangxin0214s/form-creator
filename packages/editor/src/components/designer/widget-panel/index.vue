@@ -85,12 +85,9 @@ import { containers, basicWidgets, advancedWidgets } from '@/config/formConfig.j
 import { ref, reactive } from 'vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
-import { historyStore } from '@/store/history';
 import { generateId,deepClone } from '@/utils/util'
 const _widgetStore = widgetStore();
-const _historyStore = historyStore();
-const { widgetList,cloneWidget } = storeToRefs(_widgetStore);
-const { record } = storeToRefs(_historyStore);
+const { widgetList,cloneWidget,recordHistory } = storeToRefs(_widgetStore);
 const activeNames = ref(['1', '2', '3', '4']);
 const state = reactive({
 	containers: containers,
@@ -105,7 +102,6 @@ const onClone = (origin) =>{
 	let newOrigin = deepClone(origin);
 	newOrigin.id = generateId();
 	_widgetStore.cloneWidget = newOrigin;
-  _historyStore.record({command: 'ADD_COMPONENT', ...newOrigin});
 	return newOrigin
 }
 
