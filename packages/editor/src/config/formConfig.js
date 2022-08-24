@@ -20,7 +20,10 @@ export const formConfig = {
 		label: '标签宽度',
 		value: ""
 	},// 标签宽度
-	"rules": {}// 校验规则
+	"rules": {
+	},// 校验规则
+	"ruleForm": {
+	} // 提交数据
 }
 
 // 容器
@@ -127,9 +130,14 @@ export const basicWidgets = [
 					label: "默认文本",
 					value: "请输入输入框内容"
 				},// 默认提示文本
+				ruleFormKey: {
+					label: "参数key",
+					value:''
+				},
 				required: {
 					label: "是否必填",
-					value: true
+					value: false,
+					message:""
 				},// 是否必填*
 				readonly: {
 					label: "是否只读",
@@ -384,9 +392,17 @@ export const basicWidgets = [
 				}
 			},
 			events:{
+				onBeforeMount:{
+					label:"渲染前",
+					value:""
+				},
+				onMounted:{
+					label:"渲染完成",
+					value:""
+				},
 				onClick:{
 					label:"点击事件",
-					value:"console.log(this.name)"
+					value:"const submitForm = async (formEl) => {\n    console.log(formEl, \"===formEl===\")\n    if (!formEl) return\n    await formEl.validate(((valid, fields) => {\n        if (valid) {\n            alert('submit!')\n        } else {\n            alert('error submit!', fields)\n        }\n    }))\n}\nsubmitForm(ruleFormRef)"
 				}
 			}
 		}
@@ -840,8 +856,37 @@ export const basicWidgets = [
 					label: '是否禁用',
 					value: false
 				}, // 是否必填
+				readonly:{
+					label:'是否只读',
+					value:false
+				},
+				editable:{
+					label:'文本框可输入',
+					value:false
+				}
 			},
-			advanced: {}
+			advanced:{
+				value:'date',
+				label:'显示类型',
+				dateType:[
+					{
+						value:'year',
+						label:'年'
+					},
+					{
+						value:'month',
+						label:'月'
+					},
+					{
+						value:'date',
+						label:'日'
+					},
+					{
+						value:'datetime',
+						label:'日期和时间点'
+					},
+				]
+			}
 		}
 	},
 	{
@@ -852,18 +897,37 @@ export const basicWidgets = [
 		icon: "datetimerange",
 		options: {
 			basic: {
+				value:"",
 				name: {
 					label: "唯一名称",
-					value: "时间范围选择"
+					value: "时间选择"
 				}, // 唯一名称
 				label: {
 					label: "标题",
-					value: ""
+					value: "时间范围"
 				}, // 标签
 				hint: {
 					label: '提示语',
 					value: '',
 				}, // 提示语
+				dateSize: {
+					label: "输入框尺寸",
+					options: [
+						{
+							label:'大型输入框',
+							value:'large'
+						},
+						{
+							label:'中等输入框',
+							value:'default'
+						},
+						{
+							label:'小型输入框',
+							value:'small'
+						},
+					],
+					value:'default'
+				},
 				hintHidden: {
 					label: '提示语隐藏',
 					value: false
@@ -873,11 +937,36 @@ export const basicWidgets = [
 					value: false
 				}, // 标签是否隐藏
 				required: {
-					label: '是否必填*',
+					label: '是否必填',
+					value: true
+				}, // 是否必填
+				disabled: {
+					label: '是否禁用',
 					value: false
 				}, // 是否必填
+				readonly:{
+					label:'是否只读',
+					value:false
+				},
+				editable:{
+					label:'文本框可输入',
+					value:false
+				}
 			},
-			advanced: {}
+			advanced:{
+				// value:'datetimerange',
+				// label:'显示类型',
+				// dateType:[
+				// 	{
+				// 		value:'datetimerange',
+				// 		label:'datetimerange'
+				// 	},
+				// 	{
+				// 		value:'daterange',
+				// 		label:'daterange'
+				// 	},
+				// ]
+			}
 		}
 	},
 	// {

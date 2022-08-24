@@ -8,7 +8,7 @@ import textarea from './textarea.vue'
 import divider from './divider.vue'
 import staticText from './staticText.vue'
 import date from './date.vue'
-import datetimerange from './datetimerange.vue'
+import datetimerange from './dateTimerange.vue'
 import hierarchy from './hierarchy.vue'
 import cellPhone from './cellPhone.vue'
 export {
