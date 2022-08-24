@@ -11,6 +11,7 @@
           :size="widget.options.basic.btnSize.value"
           :round="widget.options.advanced.btnRound.value"
           :circle="widget.options.advanced.btnCircle.value"
+          :plain="widget.options.basic.plain.value"
           @click="handleOnClick(widget,ruleFormRef)"
       >{{ widget.options.basic.text.value }}
       </el-button>
