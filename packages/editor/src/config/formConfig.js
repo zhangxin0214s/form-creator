@@ -208,14 +208,19 @@ export const basicWidgets = [
 					label: "标签",
 					value: "是否启用开关:"
 				}, // 标签, // 标签
+				ruleFormKey: {
+					label: "参数key",
+					value:''
+				},
+				required: {
+					label: "是否必填",
+					value: false,
+					message:""
+				},// 是否必填
 				switchDefaultValue: {
 					label: '默认值',
 					value: true
 				},// 默认值:开 || 关
-				required: {
-					label: '是否必填',
-					value: false
-				},// 是否必填*
 				disabled: {
 					label: '是否禁用',
 					value: false
@@ -245,6 +250,15 @@ export const basicWidgets = [
 					label: '提示语',
 					value: '',
 				},
+				ruleFormKey: {
+					label: "参数key",
+					value:''
+				},
+				required: {
+					label: "是否必填",
+					value: false,
+					message:""
+				},// 是否必填
 				hintHidden: {
 					label: '提示语隐藏',
 					value: false
@@ -253,10 +267,6 @@ export const basicWidgets = [
 					label: '标签是否隐藏',
 					value: false
 				}, // 标签是否隐藏
-				required: {
-					label: '是否必填',
-					value: true
-				},// 是否必填*
 
 			},
 			advanced: {
@@ -423,10 +433,15 @@ export const basicWidgets = [
 					label: '下拉框属性',
 					value: '选择框：'
 				},
-				required: {
-					label: '是否必填*',
-					value: false
+				ruleFormKey: {
+					label: "参数key",
+					value:''
 				},
+				required: {
+					label: "是否必填",
+					value: false,
+					message:""
+				},// 是否必填
 				labelHidden: {
 					label: '标签是否隐藏',
 					value: false
@@ -462,6 +477,15 @@ export const basicWidgets = [
 					label: '提示语',
 					value: '',
 				},
+				ruleFormKey: {
+					label: "参数key",
+					value:''
+				},
+				required: {
+					label: "是否必填",
+					value: false,
+					message:""
+				},// 是否必填
 				hintHidden: {
 					label: '提示语隐藏',
 					value: false
@@ -470,10 +494,6 @@ export const basicWidgets = [
 					label: '标签是否隐藏',
 					value: false
 				}, // 标签是否隐藏
-				required: {
-					label: '是否必填',
-					value: true
-				},// 是否必填*
 
 			},
 			advanced: {
@@ -507,10 +527,15 @@ export const basicWidgets = [
 					label: "默认文本",
 					value: "请输入文本域内容"
 				},// 默认提示文本
+				ruleFormKey: {
+					label: "参数key",
+					value:''
+				},
 				required: {
 					label: "是否必填",
-					value: true
-				},// 是否必填*
+					value: false,
+					message:""
+				},// 是否必填
 				readonly: {
 					label: "是否只读",
 					value: false
@@ -676,10 +701,15 @@ export const basicWidgets = [
 					label: "默认文本",
 					value: "请填写正确的手机号"
 				},// 默认提示文本
+				ruleFormKey: {
+					label: "参数key",
+					value:''
+				},
 				required: {
 					label: "是否必填",
-					value: true
-				},// 是否必填*
+					value: false,
+					message:""
+				},// 是否必填
 				readonly: {
 					label: "是否只读",
 					value: false
@@ -840,6 +870,15 @@ export const basicWidgets = [
 					],
 					value:'default'
 				},
+				ruleFormKey: {
+					label: "参数key",
+					value:''
+				},
+				required: {
+					label: "是否必填",
+					value: false,
+					message:""
+				},// 是否必填
 				hintHidden: {
 					label: '提示语隐藏',
 					value: false
@@ -848,10 +887,6 @@ export const basicWidgets = [
 					label: '标签是否隐藏',
 					value: false
 				}, // 标签是否隐藏
-				required: {
-					label: '是否必填',
-					value: true
-				}, // 是否必填
 				disabled: {
 					label: '是否禁用',
 					value: false
@@ -928,6 +963,15 @@ export const basicWidgets = [
 					],
 					value:'default'
 				},
+				ruleFormKey: {
+					label: "参数key",
+					value:''
+				},
+				required: {
+					label: "是否必填",
+					value: false,
+					message:""
+				},// 是否必填
 				hintHidden: {
 					label: '提示语隐藏',
 					value: false
@@ -936,10 +980,6 @@ export const basicWidgets = [
 					label: '标签是否隐藏',
 					value: false
 				}, // 标签是否隐藏
-				required: {
-					label: '是否必填',
-					value: true
-				}, // 是否必填
 				disabled: {
 					label: '是否禁用',
 					value: false
@@ -998,7 +1038,7 @@ export const basicWidgets = [
 	// 				value:false
 	// 			}, // 标签是否隐藏
 	// 			required:{
-	// 				label:'是否必填*',
+	// 				label:'是否必填',
 	// 				value:false
 	// 			}, // 是否必填
 	// 		},
@@ -1063,7 +1103,7 @@ export const advancedWidgets = [
 					value: false
 				}, // 标签是否隐藏
 				required: {
-					label: '是否必填*',
+					label: '是否必填',
 					value: false
 				}, // 是否必填
 			},
