@@ -87,7 +87,7 @@ import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 import { generateId,deepClone } from '@/utils/util'
 const _widgetStore = widgetStore();
-const { widgetList,cloneWidget } = storeToRefs(_widgetStore);
+const { widgetList,cloneWidget,recordHistory } = storeToRefs(_widgetStore);
 const activeNames = ref(['1', '2', '3', '4']);
 const state = reactive({
 	containers: containers,

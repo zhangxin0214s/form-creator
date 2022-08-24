@@ -16,7 +16,7 @@
 		</div>
 
 		<div class="stage-form">
-			<el-form 
+			<el-form
 				class="widget-form"
 				:label-width="formConfig['label-width'].value+'px'"
 				:label-position="formConfig['label-position'].value"
@@ -47,7 +47,11 @@
 			</el-form>
 
 		</div>
-	</div>
+    <div class="stage-button">
+      <el-button class="button_undo" type="primary" @click="_widgetStore.undo">撤销</el-button>
+      <el-button class="button_redo" type="primary" @click="_widgetStore.redo">反撤销</el-button>
+    </div>
+  </div>
 </template>
 <script setup>
 import eleComponents from './components/element-ui';
@@ -71,6 +75,7 @@ const selected = (widgetData) => {
 
 const onEnd = (origin)=>{
 	_widgetStore.selectedWidget = _widgetStore.cloneWidget;
+  _widgetStore.recordHistory();
 }
 
 </script>
@@ -105,6 +110,21 @@ const onEnd = (origin)=>{
 		margin-top: 10px;
 		background: #fff;
 	}
+  &-button {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    >.el-button {
+      width: 100px;
+      height: 40px;
+      cursor: pointer;
+    }
+    >.el-button:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
 }
 .widget-form{
 	height:100%;
