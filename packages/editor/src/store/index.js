@@ -22,7 +22,7 @@ export const widgetStore = defineStore('widget', {
         },
         /**
          * 复制组件
-         * @param {*} target 
+         * @param {*} target
          */
         copyWidget(target){
             let newOrigin = deepClone(target);
@@ -43,7 +43,7 @@ export const widgetStore = defineStore('widget', {
         },
         /**
          * 删除组件
-         * @param {*} target 
+         * @param {*} target
          */
         removeWidget(target,parentWidget){
             if(!parentWidget) return;
