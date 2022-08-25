@@ -76,9 +76,9 @@ export const widgetStore = defineStore('widget', {
         },
 
         undo () {
-          if (this.pointer <= 0) return;
+          if (this.pointer-1 < 0) return;
           this.pointer--;
-          this.widgetList = this.pointer-1<0?[]:[...this.historyList[this.pointer-1]];
+          this.widgetList = this.pointer===0?[]:[...this.historyList[this.pointer-1]];
           // let delComp = this.widgetList.pop();
           // this.historyList.push(delComp);
           // if (this.historyList.length > this.max) {
@@ -88,9 +88,9 @@ export const widgetStore = defineStore('widget', {
 
         redo () {
           // TODO: 未完成
-          if (this.pointer < 0) return;
+          if (this.historyList.length<=0 || this.pointer+1>this.historyList.length) return;
           this.pointer++;
-          this.widgetList = this.pointer-1<0?[]:[...this.historyList[this.pointer-1]];
+          this.widgetList = [...this.historyList[this.pointer-1]];
           // let addComp = this.historyList.pop();
           // this.widgetList.push(addComp);
         },
