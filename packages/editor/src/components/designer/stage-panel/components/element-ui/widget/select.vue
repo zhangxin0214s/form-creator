@@ -1,6 +1,9 @@
 <template>
   <widget-mask :widget="widget" :basic-prop="basic" :advanced-prop="advanced">
-    <el-cascader :options="advanced.selectConfig.children" />
+    <el-cascader
+        :options="advanced.selectConfig.children"
+        :disabled="basic.disabled.value"
+    />
   </widget-mask>
 
 </template>

@@ -7,7 +7,7 @@
           v-model="advancedProp.value"
           clearable
           filterable
-          placeholder="请输入关键词"
+          placeholder="请选择按钮图标"
       >
         <el-option
             v-for="(ite,index) in advancedProp?.btnIcon"

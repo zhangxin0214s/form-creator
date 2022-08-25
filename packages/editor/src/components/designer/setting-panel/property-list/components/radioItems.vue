@@ -2,14 +2,6 @@
   <div v-for="(ite,index) in advancedProp?.optionItems">
     <div style="margin-bottom: 10px;">
       <span class="gutter-label-text">单选框{{ index + 1 }}：</span>
-      <!--<el-radio-group v-model="radio">-->
-      <!--  <el-radio-->
-      <!--      style="margin-right: 10px"-->
-      <!--      :disabled="ite.disabled"-->
-      <!--      :label="ite.value"-->
-      <!--  >{{}}-->
-      <!--  </el-radio>-->
-      <!--</el-radio-group>-->
       <el-input style="width: 150px;margin-right: 10px" v-model="ite.label"/>
       <span style="margin-top: 10px; display: inline-block">{{ ite.text }}单选框{{ index + 1 }}：</span>
       <el-button

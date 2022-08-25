@@ -8,8 +8,8 @@ import divider from './divider.vue';
 import cellPhone from './cellPhone.vue';
 import Radio from './radio.vue'
 import staticText from './staticText.vue';
-import date from './date.vue'
-import datetimerange from './dateTimerange.vue'
+import date from './time.vue'
+import datetimerange from './date.vue'
 export {
     input,
     button,
