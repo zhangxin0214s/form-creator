@@ -12,7 +12,8 @@ const BASCI_COMPONENTS = {
 	'10':'colorBasic',
 	'11':'checkboxBasic1',
 	'12':'eventBasic',
-	'13':'required'
+	'13':'required',
+	'14':'inputBtn'
 }
 
 // 基础属性组件映射表
@@ -27,6 +28,7 @@ const BASIC_PROPERTIES = {
 	'font-style':'11',
 	'labelWidth':'1',
 	'labelAlign':'3',
+	'maxlength':'9',
 	'type':'3',
 	'btnSize':'3',
 	'dateSize':'3',
@@ -34,6 +36,7 @@ const BASIC_PROPERTIES = {
 	'text':'1',
 	'switchDefaultValue':'2',
 	'disabled':'2',
+	'plain':'2',
 	'required':'13',
 	'hintHidden':'2',
 	'labelHidden':'2',

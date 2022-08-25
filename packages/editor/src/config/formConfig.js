@@ -130,6 +130,10 @@ export const basicWidgets = [
 					label: "默认文本",
 					value: "请输入输入框内容"
 				},// 默认提示文本
+				maxlength:{
+					label:'最大输入长度',
+					value:null,
+				},
 				ruleFormKey: {
 					label: "参数key",
 					value:''
@@ -349,6 +353,10 @@ export const basicWidgets = [
 					label: "是否禁用",
 					value: false
 				},// 禁用
+				plain:{
+					label:"是否朴素按钮",
+					value:false
+				}
 
 			},
 			advanced:{
