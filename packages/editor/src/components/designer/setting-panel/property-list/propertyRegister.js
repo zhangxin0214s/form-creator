@@ -19,6 +19,7 @@ const BASCI_COMPONENTS = {
 // 基础属性组件映射表
 const BASIC_PROPERTIES = {
 	'name':'1',
+	'placeholder':'1',
 	'label':'1',
 	'hint':'1',
 	'editable':'2',
@@ -37,6 +38,7 @@ const BASIC_PROPERTIES = {
 	'switchDefaultValue':'2',
 	'disabled':'2',
 	'plain':'2',
+	'space':'2',
 	'required':'13',
 	'hintHidden':'2',
 	'labelHidden':'2',
@@ -67,7 +69,7 @@ const ADVANCED_PROPERTIES = {
 const EVENTS_PROPERTIES = {
 	'onClick':'12',
 	'onMounted':'12',
-	'onBeforeMount': '12'
+	'onBeforeMount': '12',
 }
 export {
 	BASCI_COMPONENTS,

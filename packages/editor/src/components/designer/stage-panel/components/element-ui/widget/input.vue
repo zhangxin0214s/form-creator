@@ -9,9 +9,10 @@
 			:disabled="widget.options.basic.disabled.value"
 			:placeholder="widget.options.basic.defaultValue.value"
       :maxlength="widget.options.basic.maxlength.value"
-      show-word-limit
+      :type="widget.options.basic.type.value"
 			v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]"
-		/>
+      show-word-limit
+    />
 	</widget-mask>
 </template>
 

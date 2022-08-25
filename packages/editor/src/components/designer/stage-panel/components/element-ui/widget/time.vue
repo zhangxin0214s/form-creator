@@ -5,12 +5,11 @@
       :advancedProp="widget.options.advanced"
       :parent-widget="parentWidget">
     <el-config-provider :locale="locale">
-      <el-date-picker
+      <el-time-picker
           clearable
-          range-separator="至"
-          start-placeholder="开始日期"
-          end-placeholder="结束日期"
-          type="datetimerange"
+          format="HH:mm:ss"
+          :validate-event="false"
+          :placeholder="widget.options.basic.placeholder.value"
           :disabled="widget.options.basic.disabled.value"
           :readonly="widget.options.basic.readonly.value"
           :editable="widget.options.basic.editable.value"
@@ -25,6 +24,7 @@
 import widgetMask from '../common/widgetMask.vue'
 // 将时间控件修改为中文
 import zhCn from 'element-plus/lib/locale/lang/zh-cn'
+
 const locale = zhCn
 let props = defineProps([
   'widget',
