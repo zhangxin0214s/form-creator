@@ -58,7 +58,7 @@ export const widgetStore = defineStore('widget', {
                 }
             })
             this.selectedWidget = null
-            // this.recordHistory({action: 'DELETE_COMPONENT', ...target});
+            this.recordHistory();
         },
 
         /**
