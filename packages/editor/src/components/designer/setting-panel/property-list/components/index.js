@@ -1,5 +1,4 @@
 import inputBasic from './inputBasic.vue'
-import inputBtn from './inputBtn'
 import switchBasic from './switchBasic.vue'
 import gutterItems from './gutterItems.vue'
 import selectBasic from './selectBasic.vue'
@@ -16,7 +15,6 @@ import eventBasic from './eventBasic.vue'
 import required from './required.vue'
 export {
 	inputBasic,
-	inputBtn,
 	switchBasic,
 	gutterItems,
 	selectBasic,

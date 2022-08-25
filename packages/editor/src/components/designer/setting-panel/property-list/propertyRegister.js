@@ -28,7 +28,7 @@ const BASIC_PROPERTIES = {
 	'font-style':'11',
 	'labelWidth':'1',
 	'labelAlign':'3',
-	'maxlength':'14',
+	'maxlength':'9',
 	'type':'3',
 	'btnSize':'3',
 	'dateSize':'3',
