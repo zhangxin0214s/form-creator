@@ -132,7 +132,7 @@ export const basicWidgets = [
 				},// 默认提示文本
 				maxlength:{
 					label:'最大输入长度',
-					value:null,
+					value:'50',
 				},
 				ruleFormKey: {
 					label: "参数key",
