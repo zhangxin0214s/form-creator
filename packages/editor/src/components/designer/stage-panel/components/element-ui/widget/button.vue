@@ -23,7 +23,7 @@
 import FormInstance  from 'element-plus';
 import {onMounted,onBeforeMount } from 'vue'
 import widgetMask from '../common/widgetMask.vue'
-import useRegisterEvent from '../hooks/useRegisterEvent copy'
+import useRegisterEvent from '../hooks/useRegisterEvent'
 import { defineProps,defineEmits } from 'vue';
 import { ref } from 'vue'
 let props = defineProps([
