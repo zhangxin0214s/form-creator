@@ -11,6 +11,8 @@
           :size="widget.options.basic.btnSize.value"
           :round="widget.options.advanced.btnRound.value"
           :circle="widget.options.advanced.btnCircle.value"
+          :plain="widget.options.basic.plain.value"
+          :auto-insert-space="widget.options.basic.space.value"
           @click="handleOnClick(props,emit)"
       >{{ widget.options.basic.text.value }}
       </el-button>
@@ -32,18 +34,6 @@ let props = defineProps([
 const { handleOnClick,handleOnBeforeMount,handleOnMounted} = useRegisterEvent();
 
 const emit = defineEmits(['submitForm'])
-const submitForm = async () => {
-  emit('submitForm')
-  // if (!props.ruleFormRef) return
-  // await props.ruleFormRef.validate((valid, fields) => {
-  //   console.log(valid,"===valid===")
-  //   if (valid) {
-  //     console.log('submit!')
-  //   } else {
-  //     console.log('error submit!', fields)
-  //   }
-  // })
-}
 
 /**
  * 渲染前

@@ -8,8 +8,11 @@
 		<el-input
 			:disabled="widget.options.basic.disabled.value"
 			:placeholder="widget.options.basic.defaultValue.value"
+      :maxlength="widget.options.basic.maxlength.value"
+      :type="widget.options.basic.type.value"
 			v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]"
-		/>
+      show-word-limit
+    />
 	</widget-mask>
 </template>
 
@@ -19,7 +22,6 @@ import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 const _widgetStore = widgetStore();
 const { formConfig } = storeToRefs(_widgetStore);
-
 defineProps(['widget', 'parentWidget']);
 </script>
 <style scoped>

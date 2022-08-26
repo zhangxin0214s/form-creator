@@ -7,8 +7,10 @@
     <el-config-provider :locale="locale">
       <el-date-picker
           clearable
-          :validate-event="false"
-          placeholder="请选择时间"
+          :placeholder="widget.options.basic.placeholder.value"
+          :range-separator="widget.options.advanced.rangeSeparator.value"
+          :start-placeholder="widget.options.advanced.startPlaceholder.value"
+          :end-placeholder="widget.options.advanced.endPlaceholder.value"
           :type="widget.options.advanced.value"
           :disabled="widget.options.basic.disabled.value"
           :readonly="widget.options.basic.readonly.value"

@@ -127,11 +127,28 @@ export const basicWidgets = [
 					label: "标签",
 					value: "工号:"
 				}, // 标签
-				type: "text",// 类型
 				defaultValue: {
 					label: "默认文本",
 					value: "请输入输入框内容"
 				},// 默认提示文本
+				maxlength:{
+					label:'最大输入长度',
+					value:50,
+				},
+				type:{
+					label:'输入框类型',
+					value:'text',
+					options:[
+						{
+							label:'文本框',
+							value:'text'
+						},
+						{
+							label:'密码框',
+							value:'password'
+						}
+					]
+				},
 				ruleFormKey: {
 					label: "参数key",
 					value:''
@@ -351,6 +368,14 @@ export const basicWidgets = [
 					label: "是否禁用",
 					value: false
 				},// 禁用
+				plain:{
+					label:"是否朴素按钮",
+					value:false
+				},
+				space:{
+					label:'是否插入空格',
+					value:false
+				}
 
 			},
 			advanced:{
@@ -432,7 +457,7 @@ export const basicWidgets = [
 					value: 1
 				},
 				label: {
-					label: '下拉框属性',
+					label: '标签',
 					value: '选择框：'
 				},
 				ruleFormKey: {
@@ -448,8 +473,14 @@ export const basicWidgets = [
 					label: '标签是否隐藏',
 					value: false
 				},
-				hint: "",// 提示语
-				hintHidden: false,// 提示语是否隐藏
+				hintHidden: {
+					label: '提示语隐藏',
+					value: false
+				},// 提示语是否隐藏
+				disabled: {
+					label: "是否禁用",
+					value: false
+				},// 禁用
 			},
 			advanced: {
 				selectConfig: {
@@ -496,7 +527,10 @@ export const basicWidgets = [
 					label: '标签是否隐藏',
 					value: false
 				}, // 标签是否隐藏
-
+				// disabled: {
+				// 	label: "是否禁用",
+				// 	value: false
+				// },// 禁用
 			},
 			advanced: {
 
@@ -835,10 +869,10 @@ export const basicWidgets = [
 	},
 	{
 		id: 11,
-		name: "时间",
+		name: "时间选择器",
 		type: "date",
 		category: "widget",
-		icon: "date",
+		icon: "time",
 		options: {
 			basic: {
 				value:"",
@@ -848,7 +882,7 @@ export const basicWidgets = [
 				}, // 唯一名称
 				label: {
 					label: "标题",
-					value: "时间"
+					value: "时间:"
 				}, // 标签
 				hint: {
 					label: '提示语',
@@ -872,6 +906,10 @@ export const basicWidgets = [
 					],
 					value:'default'
 				},
+				placeholder:{
+					label:'占位内容',
+					value:'请选择时间'
+				},
 				ruleFormKey: {
 					label: "参数key",
 					value:''
@@ -881,14 +919,90 @@ export const basicWidgets = [
 					value: false,
 					message:""
 				},// 是否必填
-				hintHidden: {
-					label: '提示语隐藏',
+				// hintHidden: {
+				// 	label: '提示语隐藏',
+				// 	value: false
+				// },// 提示语是否隐藏
+				// labelHidden: {
+				// 	label: '标签是否隐藏',
+				// 	value: false
+				// }, // 标签是否隐藏
+				disabled: {
+					label: '是否禁用',
 					value: false
-				},// 提示语是否隐藏
-				labelHidden: {
-					label: '标签是否隐藏',
-					value: false
-				}, // 标签是否隐藏
+				}, // 是否必填
+				readonly:{
+					label:'是否只读',
+					value:false
+				},
+				editable:{
+					label:'文本框可输入',
+					value:false
+				}
+			},
+			advanced:{}
+		}
+	},
+	{
+		id: 12,
+		name: "日期选择器",
+		type: "datetimerange",
+		category: "widget",
+		icon: "date",
+		options: {
+			basic: {
+				value:"",
+				name: {
+					label: "唯一名称",
+					value: "时间选择"
+				}, // 唯一名称
+				label: {
+					label: "标题",
+					value: "日期:"
+				}, // 标签
+				hint: {
+					label: '提示语',
+					value: '',
+				}, // 提示语
+				dateSize: {
+					label: "输入框尺寸",
+					options: [
+						{
+							label:'大型输入框',
+							value:'large'
+						},
+						{
+							label:'中等输入框',
+							value:'default'
+						},
+						{
+							label:'小型输入框',
+							value:'small'
+						},
+					],
+					value:'default'
+				},
+				placeholder:{
+					label:'非范围占位值',
+					value:'请选择日期'
+				},
+				ruleFormKey: {
+					label: "参数key",
+					value:''
+				},
+				required: {
+					label: "是否必填",
+					value: false,
+					message:""
+				},// 是否必填
+				// hintHidden: {
+				// 	label: '提示语隐藏',
+				// 	value: false
+				// },// 提示语是否隐藏
+				// labelHidden: {
+				// 	label: '标签是否隐藏',
+				// 	value: false
+				// }, // 标签是否隐藏
 				disabled: {
 					label: '是否禁用',
 					value: false
@@ -919,95 +1033,38 @@ export const basicWidgets = [
 						label:'日'
 					},
 					{
+						value:'week',
+						label:'周'
+					},
+					{
 						value:'datetime',
 						label:'日期和时间点'
 					},
-				]
-			}
-		}
-	},
-	{
-		id: 12,
-		name: "时间范围",
-		type: "datetimerange",
-		category: "widget",
-		icon: "datetimerange",
-		options: {
-			basic: {
-				value:"",
-				name: {
-					label: "唯一名称",
-					value: "时间选择"
-				}, // 唯一名称
-				label: {
-					label: "标题",
-					value: "时间范围"
-				}, // 标签
-				hint: {
-					label: '提示语',
-					value: '',
-				}, // 提示语
-				dateSize: {
-					label: "输入框尺寸",
-					options: [
-						{
-							label:'大型输入框',
-							value:'large'
-						},
-						{
-							label:'中等输入框',
-							value:'default'
-						},
-						{
-							label:'小型输入框',
-							value:'small'
-						},
-					],
-					value:'default'
+					{
+						value:'datetimerange',
+						label:'日期和时间范围'
+					},
+					{
+						value:'monthrange',
+						label:'月份范围'
+					},
+					{
+						value:'daterange',
+						label:'日期范围'
+					}
+				],
+				startPlaceholder:{
+					label:'开始占位内容',
+					value:'开始日期'
 				},
-				ruleFormKey: {
-					label: "参数key",
-					value:''
+				endPlaceholder:{
+					label:'结束占位内容',
+					value:'结束日期'
 				},
-				required: {
-					label: "是否必填",
-					value: false,
-					message:""
-				},// 是否必填
-				hintHidden: {
-					label: '提示语隐藏',
-					value: false
-				},// 提示语是否隐藏
-				labelHidden: {
-					label: '标签是否隐藏',
-					value: false
-				}, // 标签是否隐藏
-				disabled: {
-					label: '是否禁用',
-					value: false
-				}, // 是否必填
-				readonly:{
-					label:'是否只读',
-					value:false
+				rangeSeparator:{
+					label:'范围选择分隔符',
+					value:'至'
 				},
-				editable:{
-					label:'文本框可输入',
-					value:false
-				}
-			},
-			advanced:{
-				// value:'datetimerange',
-				// label:'显示类型',
-				// dateType:[
-				// 	{
-				// 		value:'datetimerange',
-				// 		label:'datetimerange'
-				// 	},
-				// 	{
-				// 		value:'daterange',
-				// 		label:'daterange'
-				// 	},
-				// ]
 			}
 		}
 	},

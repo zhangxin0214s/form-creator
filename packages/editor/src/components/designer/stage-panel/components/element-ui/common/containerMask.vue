@@ -35,7 +35,7 @@
     }
 
     const delete1 = () =>{
-         _widgetStore.removeWidget(selectedWidget.value,props.parentWidget)
+      _widgetStore.removeWidget(selectedWidget.value,props.parentWidget);
     }
 
 </script>
@@ -70,6 +70,6 @@
             background: $--color-primary;
             z-index: 999;
         }
-        
+
     }
 </style>

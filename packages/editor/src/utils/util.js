@@ -8,8 +8,8 @@ export function generateId(){
 
 /**
  * 对象深克隆
- * @param {*} obj 
- * @returns 
+ * @param {*} obj
+ * @returns
  */
 export function deepClone(obj){
     let result;
@@ -33,5 +33,5 @@ export function deepClone(obj){
         result = obj;
     }
     return result;
-      
+
 }

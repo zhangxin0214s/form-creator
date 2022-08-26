@@ -17,8 +17,8 @@
 
       <!--高级属性-->
       <el-collapse-item name="2" title="高级属性">
-        <!--<el-divider content-position="center">时间设置</el-divider>-->
-        <!--<date-timerange-items-->
+        <el-divider content-position="center">时间设置</el-divider>
+        <!--<time-itmes-->
         <!--    :advanced-prop="advancedProp"-->
         <!--/>-->
       </el-collapse-item>
@@ -30,8 +30,7 @@
 import { ref, defineProps } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES } from '../propertyRegister'
 import * as basicComponents from '../components/index';
-import DateItmes from '../components/dateItmes'
-import DateTimerangeItems from '../components/dateTimerangeItems'
+import TimeItmes from '../components/timeItmes'
 
 defineProps([
   'selectedWidget',
