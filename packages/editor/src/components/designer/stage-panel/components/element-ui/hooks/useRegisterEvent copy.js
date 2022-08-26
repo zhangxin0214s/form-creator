@@ -1,4 +1,5 @@
-import { defineEmits } from 'vue';
+
+
 const useRegisterEvent = () =>{
     
     /**
@@ -6,14 +7,10 @@ const useRegisterEvent = () =>{
      * @param {*} widget 
      * @returns 
      */
-    const handleOnClick = () =>{
-        console.log(defineEmits,"===this===")
-        const emit = defineEmits(['submitForm'])
-        emit('submitForm')
-        // const EVENTS = widget.options.events;
-        // if(!EVENTS?.onClick) return;
-        // let onClickFunc = new Function(EVENTS?.onClick.value)
-        // onClickFunc.call(vue)
+    const handleOnClick = (props,emit) =>{
+        const EVENTS = props.widget.options.events;
+        if(!EVENTS?.onClick) return;
+        new Function('props','emit',EVENTS?.onClick.value)(props,emit)
     }
 
     /**

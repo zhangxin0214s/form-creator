@@ -24,6 +24,17 @@
 				:rules="formConfig.rules"
 				:model="formConfig.ruleForm"
 				>
+				<!-- <el-form-item
+					prop="name"
+				>
+					<el-input v-model="formConfig.ruleForm.name"></el-input>
+				</el-form-item> -->
+				<!-- <el-form-item
+					prop=""
+				>
+					<el-button @click="submitF"></el-button>
+				</el-form-item> -->
+				
 				<draggable
 					v-if="widgetList"
 					:list="widgetList"
@@ -37,9 +48,11 @@
 								:is="componentMap[widget.type]"
 								:key="widget.id"
 								:widget=widget
-								:rule-form-ref="ruleFormRef"
 								:parent-widget="widgetList"
-								@click.stop="selected(widget)">
+								:rule-form-ref="ruleFormRef"
+								@click.stop="selected(widget)"
+								@submitForm="submitForm"
+								>
 							</component>
 						</div>
 					</template>
@@ -54,11 +67,20 @@ import eleComponents from './components/element-ui';
 import toolBar from '../toolbar-panel/index.vue'
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
-import { ref } from 'vue'
+import FormInstance  from 'element-plus';
+import { reactive, ref } from 'vue'
 const componentMap = {
 	...eleComponents
 };
+const testdata = reactive({
+	name:''
+})
 
+const rules = ref({
+	name: [
+		 { required: true, message: 'Please input Activity name', trigger: 'blur' }
+	]
+})
 const _widgetStore = widgetStore();
 const { widgetList,formConfig } = storeToRefs(_widgetStore);
 
@@ -73,6 +95,17 @@ const onEnd = (origin)=>{
 	_widgetStore.selectedWidget = _widgetStore.cloneWidget;
 }
 
+const submitForm = async () =>{
+  if (!ruleFormRef) return
+  await ruleFormRef.value.validate((valid, fields) => {
+    console.log(valid,"===valid===")
+    if (valid) {
+      console.log('submit!')
+    } else {
+      console.log('error submit!', fields)
+    }
+  })
+}
 </script>
 <style lang="scss" scoped>
 .stage {

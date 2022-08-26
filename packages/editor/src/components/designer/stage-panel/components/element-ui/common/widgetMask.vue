@@ -7,6 +7,7 @@
 			:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
 			:label="basicProp.label.value"
 			:prop="basicProp?.ruleFormKey?.value"
+			:key="basicProp?.ruleFormKey?.value"
 		>
 			<slot></slot>
 		</el-form-item>
