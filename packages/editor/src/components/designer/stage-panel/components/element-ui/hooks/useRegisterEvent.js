@@ -1,5 +1,5 @@
 
-
+ import { ElMessage } from 'element-plus'
 const useRegisterEvent = () =>{
     
     /**
@@ -13,9 +13,11 @@ const useRegisterEvent = () =>{
         new Function(
             'props',
             'emit',
+            'ElMessage',
             EVENTS?.onClick.value)
             (props,
-            emit)
+            emit,
+            ElMessage)
     }
 
     /**

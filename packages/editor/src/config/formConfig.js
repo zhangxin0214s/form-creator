@@ -439,7 +439,7 @@ export const basicWidgets = [
 				},
 				onClick:{
 					label:"点击事件",
-					value:"if (!props.ruleFormRef) return\nprops.ruleFormRef.validate((valid, fields) => {\n  console.log(valid, \"===valid===\")\n  if (valid) {\n    console.log('submit!')\n  } else {\n    console.log('error submit!', fields)\n  }\n})"
+					value:"if (!props.ruleFormRef) return\nprops.ruleFormRef.validate((valid, fields) => {\n  console.log(valid, \"===valid===\")\n  if (valid) {\n    console.log('submit!')\n    ElMessage({\n      message: '提交成功',\n      type: 'success',\n      duration: 1000\n    })\n  } else {\n    console.log('error submit!', fields)\n    ElMessage({\n      message: '有必填项未填写，或填写错误，请检查',\n      type: 'error',\n      duration: 1000\n    })\n  }\n})"
 				}
 			}
 		}
