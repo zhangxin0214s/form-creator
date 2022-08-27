@@ -24,7 +24,6 @@ export const formConfig = {
 		
 	},// 校验规则
 	"ruleForm": {
-		name:''
 	} // 提交数据
 }
 
