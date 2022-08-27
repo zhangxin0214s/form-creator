@@ -7,6 +7,7 @@
         <Col 
           :colWidget="colWidget"
           :widget="widget"
+          :rule-form-ref="ruleFormRef"
         >
         </Col>
     </template>  
@@ -22,7 +23,8 @@
   const _widgetStore = widgetStore();
   const { selectedWidget,isEditor} = storeToRefs(_widgetStore);
   defineProps([
-      'widget'
+      'widget',
+      'ruleFormRef'
   ])
 
 </script>

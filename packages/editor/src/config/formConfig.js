@@ -439,7 +439,7 @@ export const basicWidgets = [
 				},
 				onClick:{
 					label:"点击事件",
-					value:"emit('submitForm')"
+					value:"if (!props.ruleFormRef) return\nprops.ruleFormRef.validate((valid, fields) => {\n  console.log(valid, \"===valid===\")\n  if (valid) {\n    console.log('submit!')\n  } else {\n    console.log('error submit!', fields)\n  }\n})"
 				}
 			}
 		}

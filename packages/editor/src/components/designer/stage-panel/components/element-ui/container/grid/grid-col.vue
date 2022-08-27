@@ -11,11 +11,12 @@
                 <template #item="{ element }">
                     <div class="transition-group-el">
                         <component 
-                        :is="componentMap[element.type]" 
-                        :key="element.id"
-                        :widget = element
-                        :parent-widget=colWidget.widgetList
-                        >
+                            :is="componentMap[element.type]" 
+                            :key="element.id"
+                            :widget = element
+                            :parent-widget=colWidget.widgetList
+                            :rule-form-ref="ruleFormRef"
+                            @submitForm="submitForm">
                         </component>
                     </div>
                 </template>
@@ -28,9 +29,12 @@
     import * as Advanced from '../../Advanced'
     import { widgetStore } from '@/store/index';
     import { storeToRefs } from 'pinia';
-    defineProps([
+    import { ref } from 'vue'
+
+    const props = defineProps([
         'colWidget',
-        'widget'
+        'widget',
+        'ruleFormRef'
     ])
     const componentMap = {
         ...widgets,
@@ -44,6 +48,18 @@
     };
     const onEnd = () =>{
         console.log("结束")
+    }
+
+    const submitForm = async () =>{
+        if (!props.ruleFormRef) return
+        await props.ruleFormRef.validate((valid, fields) => {
+            console.log(valid,"===valid===")
+            if (valid) {
+            console.log('submit!')
+            } else {
+            console.log('error submit!', fields)
+            }
+        })
     }
 </script>
  <style lang="scss" scoped>
