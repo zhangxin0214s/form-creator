@@ -4,6 +4,7 @@
             class="form-renderer"
             :label-width="formConfig['label-width'].value"
             :label-position="formConfig['label-position'].value"
+            ref="ruleFormRef"
             :rules="formConfig.rules"
             :model="formConfig.ruleForm"
             >
@@ -12,7 +13,9 @@
                     :is="componentMap[widget.type]"
                     :key1="widget.id"
                     :widget=widget
-                    :parent-widget="widgetList">
+                    :parent-widget="widgetList"
+                    :rule-form-ref="ruleFormRef"
+                    @submitForm="submitForm">
                 </component>
             </template>
         </el-form>
@@ -20,10 +23,23 @@
 </template>
 <script setup>
     import eleComponents from '@/components/designer/stage-panel/components/element-ui';
+    import { ref } from 'vue'
     const componentMap = {
         ...eleComponents
     };
     defineProps(['widgetList', 'formConfig']);
+    const ruleFormRef = ref(null);
+    const submitForm = async () =>{
+        if (!ruleFormRef) return
+        await ruleFormRef.value.validate((valid, fields) => {
+            console.log(valid,"===valid===")
+            if (valid) {
+            console.log('submit!')
+            } else {
+            console.log('error submit!', fields)
+            }
+        })
+    }
 </script>
 <style lang="scss" scoped>
     .form{

@@ -24,17 +24,6 @@
 				:rules="formConfig.rules"
 				:model="formConfig.ruleForm"
 				>
-				<!-- <el-form-item
-					prop="name"
-				>
-					<el-input v-model="formConfig.ruleForm.name"></el-input>
-				</el-form-item> -->
-				<!-- <el-form-item
-					prop=""
-				>
-					<el-button @click="submitF"></el-button>
-				</el-form-item> -->
-				
 				<draggable
 					v-if="widgetList"
 					:list="widgetList"

@@ -26,8 +26,8 @@
     <!-- 预览面板 -->
     <el-dialog v-model="dialogFormVisible" title="表单预览" @close="closePreview" destroy-on-close draggable>
         <form-renderer
-            :widgetList="_widgetList"
-            :formConfig="_formConfig"
+            :widgetList="widgetList"
+            :formConfig="formConfig"
         ></form-renderer>
     </el-dialog>
 
@@ -54,8 +54,7 @@
     const { widgetList,formConfig } = storeToRefs(_widgetStore);
     const dialogFormVisible = ref(false);
     const dialogCodeVisible = ref(false);
-    const _widgetList = ref([]);
-    const _formConfig = ref(null);
+
     const formData = ref({formConfig:toRaw(_widgetStore.formConfig),widgetList:toRaw(_widgetStore.widgetList)})
 
     console.log(formConfig,"=====")
@@ -100,8 +99,6 @@
     const preview = () =>{
         dialogFormVisible.value = true;
         _widgetStore.isEditor = false;
-        _widgetList.value = deepClone(toRaw(_widgetStore.widgetList));
-        _formConfig.value = deepClone(toRaw(_widgetStore.formConfig));
     }
 
     /**

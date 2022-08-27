@@ -10,7 +10,12 @@ const useRegisterEvent = () =>{
     const handleOnClick = (props,emit) =>{
         const EVENTS = props.widget.options.events;
         if(!EVENTS?.onClick) return;
-        new Function('props','emit',EVENTS?.onClick.value)(props,emit)
+        new Function(
+            'props',
+            'emit',
+            EVENTS?.onClick.value)
+            (props,
+            emit)
     }
 
     /**
