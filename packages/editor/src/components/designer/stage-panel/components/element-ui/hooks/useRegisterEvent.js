@@ -16,8 +16,8 @@ const useRegisterEvent = () =>{
             'ElMessage',
             EVENTS?.onClick.value)
             (props,
-            emit,
-            ElMessage)
+             emit,
+             ElMessage)
     }
 
     /**
