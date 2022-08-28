@@ -12,24 +12,67 @@
 			<el-select
 				v-model="advancedProp[key1].value"
 				class="m-2"
+				@change="setRules"
 			>
 				<el-option
 					v-for="item in advancedProp[key1].options"
-					:key="item.value"
+					:key="item.label"
 					:label="item.label"
 					:value="item.value"
 				/>
 			</el-select>
 		</el-form-item>
-		<span style="font-size:12px">{{advancedProp[key1].value}}</span>
+		<p style="font-size:12px" v-if="advancedProp[key1].value">{{advancedProp[key1].value}}</p>
+		<p style="font-size:12px" v-else>"不是最优正则，请按需在下方自定义输入"</p>
+		<el-form-item
+			v-if="!advancedProp[key1].value"
+			label="自定义:"
+		>
+			<el-input
+				v-model="advancedProp[key1].customValue"
+				@blur="setRules('custom')"
+			/>
+		</el-form-item>
 	</el-form>
 </template>
 <script setup>
 import { defineProps } from 'vue';
+import { ElMessage } from 'element-plus'
+import { widgetStore } from '@/store/index';
+import { storeToRefs } from 'pinia';
+const _widgetStore = widgetStore();
+const props = defineProps(['advancedProp', 'basicProp', 'key1', 'value']);
 
-defineProps(['advancedProp', 'key1', 'value']);
 
 
+const setRules = (type) =>{
+	const _ruleFormKey = props.basicProp.ruleFormKey.value;
+	const _rules = _widgetStore.formConfig.rules;
+	console.log("切换",_ruleFormKey)
+	if(!_ruleFormKey){
+		ElMessage({
+            message: '请先设置参数key',
+            type: 'error',
+            duration:1000
+        })
+	}else {
+		
+		// 查找出必填的rule
+		const requireRule = _rules[_ruleFormKey]?.filter(rule =>{
+			return Object.keys(rule).indexOf('required')>-1
+		})[0]
+
+		// 每次切换清空_rules[_ruleFormKey] & customValue
+		_rules[_ruleFormKey] = []
+		if(type !== "custom") props.advancedProp[props.key1].customValue = ""
+		requireRule && _rules[_ruleFormKey].push(requireRule);
+
+		props.advancedProp[props.key1].value && _rules[_ruleFormKey].push(JSON.parse(props.advancedProp[props.key1].value))
+
+		props.advancedProp[props.key1].customValue && _rules[_ruleFormKey].push(JSON.parse(props.advancedProp[props.key1].customValue))
+	}
+		
+}
 </script>
 <style lang="scss" scoped>
 </style>

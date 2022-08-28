@@ -31,6 +31,7 @@
         >
           <component
               :is="componentMap[getAdvancedCompName(key)]"
+              :basic-prop="basicProp"
               :advanced-prop="advancedProp"
               :value="item"
               :key1="key"

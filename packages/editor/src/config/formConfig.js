@@ -172,7 +172,7 @@ export const basicWidgets = [
 					options: [
 						{
 							label: "无校验",
-							value: "提示不是最优正则，请按需在下方自定义输入",
+							value: "",
 						},
 						{
 							label: '中文字符',
@@ -192,20 +192,16 @@ export const basicWidgets = [
 						},
 						{
 							label: "Email地址",
-							value: "\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}"
+							value: '{"type":"email", "message":"请输入正确的邮箱", "trigger":"blur"}'
 						},
 						{
 							label: "网址",
 							value: "[a-zA-z]+:\/\/[^\s]*"
 						},
 					],
-					value: "提示不是最优正则，请按需在下方自定义输入"
-				},// 校验规则
-				validationCustom: {
-					label: "自定义",
-					value: ""
+					value: "",
+					customValue: ""
 				}
-				// validationHint:""//校验规则提示
 			}
 		},
 	},
