@@ -6,13 +6,17 @@
 		:parent-widget="parentWidget"
 	>
 		<el-switch
-			v-model="widget.options.basic.switchDefaultValue.value"
+			v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]"
 			:disabled="widget.options.basic.disabled.value"
 		/>
 	</widget-mask>
 </template>
 <script setup>
 import widgetMask from '../common/widgetMask.vue';
+import { storeToRefs } from 'pinia';
+import { widgetStore } from '@/store/index';
+const _widgetStore = widgetStore();
+const { formConfig } = storeToRefs(_widgetStore);
 let props = defineProps(['widget', 'parentWidget']);
 </script>
 <style lang="scss" scoped>
