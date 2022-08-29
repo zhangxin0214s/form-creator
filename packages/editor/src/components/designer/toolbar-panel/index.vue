@@ -93,6 +93,16 @@
 
     const tools = ref([
         {
+            name:'撤销',
+            icon:'tool-undo',
+            fun: _widgetStore.undo,
+        },
+        {
+            name:'反撤销',
+            icon:'tool-redo',
+            fun: _widgetStore.redo,
+        },
+        {
             name:'清空',
             icon:'tool-clear',
             fun: clear,
@@ -114,16 +124,6 @@
         {
             name:'模板库',
             icon:'tool-mall'
-        },
-        {
-            name:'撤销',
-            icon:'tool-undo',
-            fun: _widgetStore.undo,
-        },
-        {
-            name:'反撤销',
-            icon:'tool-redo',
-            fun: _widgetStore.redo,
         },
     ])
 </script>
