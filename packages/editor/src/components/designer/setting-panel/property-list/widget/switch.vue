@@ -14,6 +14,7 @@
 				>
 					<component
 						:is="componentMap[getPropCompName(key)]"
+						:selectd-widget="selectedWidget"
 						:basic-prop="basicProp"
 						:value="item"
 						:key1="key"
@@ -31,6 +32,7 @@
 				>
 					<component
 						:is="componentMap[getAdvancedCompName(key)]"
+						:selectd-widget="selectedWidget"
 						:advanced-prop="advancedProp"
 						:value="item"
 						:key1="key"

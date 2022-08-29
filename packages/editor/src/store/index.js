@@ -63,13 +63,11 @@ export const widgetStore = defineStore('widget', {
 
         /**
          * 记录用户操作数据
-         * @param {action} 用户指令/动作
-         * @param {id} 舞台id
-         * @param {options} 组件设置
+         * @param {String} action 用户指令/动作
+         * @param {uuid}   id 舞台id
+         * @param {Object} options 组件设置
          */
         recordHistory () {
-          // this.historyList.length = 0;
-          // command[action](id, options);
           this.historyList.splice(this.pointer, this.historyList.length-1);
           this.historyList.push([...this.widgetList]);
           this.pointer++;
@@ -79,20 +77,12 @@ export const widgetStore = defineStore('widget', {
           if (this.pointer-1 < 0) return;
           this.pointer--;
           this.widgetList = this.pointer===0?[]:[...this.historyList[this.pointer-1]];
-          // let delComp = this.widgetList.pop();
-          // this.historyList.push(delComp);
-          // if (this.historyList.length > this.max) {
-          //   this.historyList.shift();
-          // }
         },
 
         redo () {
-          // TODO: 未完成
           if (this.historyList.length<=0 || this.pointer+1>this.historyList.length) return;
           this.pointer++;
           this.widgetList = [...this.historyList[this.pointer-1]];
-          // let addComp = this.historyList.pop();
-          // this.widgetList.push(addComp);
         },
     },
     getters: {}

@@ -204,7 +204,7 @@ export const basicWidgets = [
 		type: "Switch",
 		category: "widget",
 		icon: "switch",
-		value: null,
+		value: false,
 		options: {
 			basic: {
 				name: {
@@ -224,10 +224,6 @@ export const basicWidgets = [
 					value: false,
 					message:""
 				},// 是否必填
-				switchDefaultValue: {
-					label: '默认值',
-					value: true
-				},// 默认值:开 || 关
 				disabled: {
 					label: '是否禁用',
 					value: false
