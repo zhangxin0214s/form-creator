@@ -21,7 +21,7 @@ export const formConfig = {
 		value: ""
 	},// 标签宽度
 	"rules": {
-		
+
 	},// 校验规则
 	"ruleForm": {
 	} // 提交数据
@@ -134,7 +134,7 @@ export const basicWidgets = [
 					label:'最大输入长度',
 					value:50,
 				},
-				type:{
+				inputType:{
 					label:'输入框类型',
 					value:'text',
 					options:[
@@ -311,7 +311,7 @@ export const basicWidgets = [
 					label:"按钮名称",
 					value:"确定",
 				},
-				type: {
+				btnType: {
 					label: "按钮类型",
 					options: [
 						{
@@ -345,15 +345,15 @@ export const basicWidgets = [
 					label: "按钮尺寸",
 					options: [
 						{
-							label:'大型按钮',
+							label:'大',
 							value:'large'
 						},
 						{
-							label:'中等按钮',
+							label:'中',
 							value:'default'
 						},
 						{
-							label:'小型按钮',
+							label:'小',
 							value:'small'
 						},
 					],
@@ -887,15 +887,15 @@ export const basicWidgets = [
 					label: "输入框尺寸",
 					options: [
 						{
-							label:'大型输入框',
+							label:'大',
 							value:'large'
 						},
 						{
-							label:'中等输入框',
+							label:'中',
 							value:'default'
 						},
 						{
-							label:'小型输入框',
+							label:'小',
 							value:'small'
 						},
 					],
@@ -963,15 +963,15 @@ export const basicWidgets = [
 					label: "输入框尺寸",
 					options: [
 						{
-							label:'大型输入框',
+							label:'大',
 							value:'large'
 						},
 						{
-							label:'中等输入框',
+							label:'中',
 							value:'default'
 						},
 						{
-							label:'小型输入框',
+							label:'小',
 							value:'small'
 						},
 					],

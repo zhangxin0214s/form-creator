@@ -6,7 +6,7 @@
       :parent-widget="parentWidget">
       <el-button
           :icon="widget.options.advanced.value"
-          :type="widget.options.basic.type.value"
+          :type="widget.options.basic.btnType.value"
           :disabled="widget.options.basic.disabled.value"
           :size="widget.options.basic.btnSize.value"
           :round="widget.options.advanced.btnRound.value"

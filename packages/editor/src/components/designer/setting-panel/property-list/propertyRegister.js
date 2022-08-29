@@ -13,7 +13,8 @@ const BASCI_COMPONENTS = {
 	'11':'checkboxBasic1',
 	'12':'eventBasic',
 	'13':'required',
-	'14':'inputBtn'
+	'14':'inputBtn',
+	'15':'radioButtonBasic',
 }
 
 // 基础属性组件映射表
@@ -29,10 +30,11 @@ const BASIC_PROPERTIES = {
 	'font-style':'11',
 	'labelWidth':'1',
 	'labelAlign':'3',
+	'btnType':'3',
 	'maxlength':'9',
-	'type':'3',
-	'btnSize':'3',
-	'dateSize':'3',
+	'inputType':'15',
+	'btnSize':'15',
+	'dateSize':'15',
 	'defaultValue':'1',
 	'text':'1',
 	'switchDefaultValue':'2',

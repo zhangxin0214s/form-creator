@@ -13,6 +13,7 @@ import colorBasic from './colorBasic.vue'
 import checkboxBasic1 from './checkboxBasic1.vue'
 import eventBasic from './eventBasic.vue'
 import required from './required.vue'
+import radioButtonBasic from './radioButtonBasic'
 export {
 	inputBasic,
 	switchBasic,
@@ -28,5 +29,6 @@ export {
 	colorBasic,
 	checkboxBasic1,
 	eventBasic,
-	required
+	required,
+	radioButtonBasic
 }
