@@ -1,19 +1,43 @@
 <template>
   <div>
     <div class="contents">
-      <span style="display: inline-block;width: 100px">{{ advancedProp.label }}:</span>
-      <el-select
-          style="width:170px"
-          v-model="advancedProp.value"
-          placeholder="请输入关键词"
-      >
-        <el-option
-            v-for="(ite,index) in advancedProp?.dateType"
-            :label="ite.label"
-            :value="ite.value"
-            :key="index"
+      <div style="margin-top: 15px">
+        <span>{{ advancedProp.isRange.label }}:</span>
+        <el-switch
+            style="margin-left: 20px"
+            active-color="#13ce66"
+            inactive-color="#ff4949"
+            v-model="advancedProp.isRange.value"
         />
-      </el-select>
+      </div>
+    </div>
+    <div v-if="advancedProp.isRange.value == true">
+      <div class="contents">
+        <span style="display:block; width: 120px">{{ advancedProp.startPlaceholder.label }}:</span>
+        <el-input
+            clearable
+            style="width: 200px"
+            v-model="advancedProp.startPlaceholder.value"
+        />
+      </div>
+
+      <div class="contents">
+        <span style="display:block; width: 120px">{{ advancedProp.endPlaceholder.label }}:</span>
+        <el-input
+            clearable
+            style="width: 200px"
+            v-model="advancedProp.endPlaceholder.value"
+        />
+      </div>
+
+      <div class="contents">
+        <span style="display:block; width: 120px">{{ advancedProp.rangeSeparator.label }}:</span>
+        <el-input
+            clearable
+            style="width: 200px"
+            v-model="advancedProp.rangeSeparator.value"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -31,5 +55,6 @@ const props = defineProps([
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 15px;
 }
 </style>

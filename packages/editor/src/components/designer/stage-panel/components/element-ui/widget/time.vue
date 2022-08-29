@@ -7,13 +7,16 @@
     <el-config-provider :locale="locale">
       <el-time-picker
           clearable
-          format="HH:mm:ss"
-          :validate-event="false"
+          arrow-control
           :placeholder="widget.options.basic.placeholder.value"
           :disabled="widget.options.basic.attribute.options[0].value"
           :readonly="widget.options.basic.attribute.options[1].value"
           :editable="widget.options.basic.attribute.options[2].value"
           :size="widget.options.basic.dateSize.value"
+          :is-range="widget.options.advanced.isRange.value"
+          :start-placeholder="widget.options.advanced.startPlaceholder.value"
+          :end-placeholder="widget.options.advanced.endPlaceholder.value"
+          :range-separator="widget.options.advanced.rangeSeparator.value"
           v-model="widget.options.basic.value"
       />
     </el-config-provider>

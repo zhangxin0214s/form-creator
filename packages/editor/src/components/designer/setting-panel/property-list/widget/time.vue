@@ -18,9 +18,9 @@
       <!--高级属性-->
       <el-collapse-item name="2" title="高级属性">
         <el-divider content-position="center">时间设置</el-divider>
-        <!--<time-itmes-->
-        <!--    :advanced-prop="advancedProp"-->
-        <!--/>-->
+        <time-itmes
+            :advanced-prop="advancedProp"
+        />
       </el-collapse-item>
     </el-collapse>
   </div>
