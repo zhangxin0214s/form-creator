@@ -4,7 +4,8 @@
     {"key": ["Meta", "Z"], "commandExplain": "撤销", "command": "undo"},
     {"key": ["Control", "Y"], "commandExplain": "反撤销", "command": "redo"},
     {"key": ["Meta", "Y"], "commandExplain": "反撤销", "command": "redo"},
-    {"key": ["Control", "Backspace"], "commandExplain": "删除", "command": ""},
+    {"key": ["Control", "Backspace"], "commandExplain": "删除", "command": "removeWidget"},
+    {"key": ["Meta", "Backspace"], "commandExplain": "删除", "command": "removeWidget"},
     {"key": ["Control", "X"], "commandExplain": "剪切", "command": ""},
     {"key": ["Control", "C"], "commandExplain": "复制", "command": ""},
     {"key": ["Control", "V"], "commandExplain": "粘贴", "command": ""}
