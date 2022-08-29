@@ -922,17 +922,22 @@ export const basicWidgets = [
 				// 	label: '标签是否隐藏',
 				// 	value: false
 				// }, // 标签是否隐藏
-				disabled: {
-					label: '是否禁用',
-					value: false
-				}, // 是否必填
-				readonly:{
-					label:'是否只读',
-					value:false
-				},
-				editable:{
-					label:'文本框可输入',
-					value:false
+				attribute:{
+					label:'操作属性',
+					options:[
+						{
+							label:'禁用',
+							value:false
+						},
+						{
+							label:'只读',
+							value:false
+						},
+						{
+							label:'可输入',
+							value:false
+						}
+					]
 				}
 			},
 			advanced:{}
@@ -998,17 +1003,22 @@ export const basicWidgets = [
 				// 	label: '标签是否隐藏',
 				// 	value: false
 				// }, // 标签是否隐藏
-				disabled: {
-					label: '是否禁用',
-					value: false
-				}, // 是否必填
-				readonly:{
-					label:'是否只读',
-					value:false
-				},
-				editable:{
-					label:'文本框可输入',
-					value:false
+				attribute:{
+					label:'操作属性',
+					options:[
+						{
+							label:'禁用',
+							value:false
+						},
+						{
+							label:'只读',
+							value:false
+						},
+						{
+							label:'可输入',
+							value:false
+						}
+					]
 				}
 			},
 			advanced:{

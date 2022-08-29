@@ -12,9 +12,9 @@
           :start-placeholder="widget.options.advanced.startPlaceholder.value"
           :end-placeholder="widget.options.advanced.endPlaceholder.value"
           :type="widget.options.advanced.value"
-          :disabled="widget.options.basic.disabled.value"
-          :readonly="widget.options.basic.readonly.value"
-          :editable="widget.options.basic.editable.value"
+          :disabled="widget.options.basic.attribute.options[0].value"
+          :readonly="widget.options.basic.attribute.options[1].value"
+          :editable="widget.options.basic.attribute.options[2].value"
           :size="widget.options.basic.dateSize.value"
           v-model="widget.options.basic.value"
       />

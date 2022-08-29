@@ -28,6 +28,7 @@ const BASIC_PROPERTIES = {
 	'font-color':'10',
 	'font-size':'9',
 	'font-style':'11',
+	'attribute':'11',
 	'labelWidth':'1',
 	'labelAlign':'3',
 	'btnType':'3',
