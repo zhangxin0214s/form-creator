@@ -4,6 +4,7 @@ import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { createPinia } from 'pinia'
 import "element-plus/dist/index.css"
 import { registerIcon } from "@/utils/el-icons"
+import {documentEventBind} from '@/config/keyEvent/keyEventBind.js';
 import  Draggable  from "@/../lib/vuedraggable/dist/vuedraggable.umd.js"
 import SvgIcon from "@/components/svg-icon"
 import "virtual:svg-icons-register"
@@ -23,3 +24,4 @@ const pinia = createPinia();
 seApp.use(pinia)
 seApp.use(ElementPlus)
 seApp.mount("#app")
+documentEventBind();
