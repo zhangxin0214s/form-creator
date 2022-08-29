@@ -168,40 +168,33 @@ export const basicWidgets = [
 			},
 			advanced: {
 				validation: {
-					label: "正则校验提示",
+					label: "校验规则",
 					options: [
 						{
 							label: "无校验",
-							value: "",
+							value: '',
 						},
 						{
-							label: '中文字符',
-							value: "[\\u4e00-\\u9fa5]"
-						},
-						{
-							label: '正整数',
-							value: '[1-9]\d*'
-						},
-						{
-							label: "手机号码",
-							value: "0?(13|14|15|17|18|19)[0-9]{9}"
-						},
-						{
-							label: "身份证号",
-							value: "\d{17}[\d|x]|\d{15}"
+							label: "网址",
+							value: '{"type":"url", "message":"请输入正确的网址", "trigger":"blur"}'
 						},
 						{
 							label: "Email地址",
 							value: '{"type":"email", "message":"请输入正确的邮箱", "trigger":"blur"}'
 						},
 						{
-							label: "网址",
-							value: "[a-zA-z]+:\/\/[^\s]*"
+							label: "日期时间",
+							value: '{"type":"date", "message":"请选择正确日期时间", "trigger":"blur"}'
 						},
 					],
 					value: "",
-					customValue: ""
-				}
+					customValue: "",
+					hintText:"注：请先填写参数key，再次选择校验规则，当前选择校验没有生效"
+				},
+				customWrongMessage:{
+					label:'校验错误提示',
+					value:""
+				},
 			}
 		},
 	},

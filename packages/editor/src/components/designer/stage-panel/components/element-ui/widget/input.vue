@@ -11,8 +11,8 @@
 			:maxlength="widget.options.basic.maxlength.value"
 			:type="widget.options.basic.inputType.value"
 			v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]"
-      show-word-limit
-    />
+			show-word-limit
+		/>
 	</widget-mask>
 </template>
 
@@ -22,7 +22,7 @@ import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 const _widgetStore = widgetStore();
 const { formConfig } = storeToRefs(_widgetStore);
-defineProps(['widget', 'parentWidget']);
+let props = defineProps(['widget', 'parentWidget']);
 </script>
 <style scoped>
 </style>
