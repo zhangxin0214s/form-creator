@@ -49,10 +49,6 @@
 			</el-form>
 
 		</div>
-    <div class="stage-button">
-      <el-button class="button_undo" type="primary" @click="_widgetStore.undo">撤销</el-button>
-      <el-button class="button_redo" type="primary" @click="_widgetStore.redo">反撤销</el-button>
-    </div>
   </div>
 </template>
 <script setup>
