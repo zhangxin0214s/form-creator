@@ -111,6 +111,8 @@ const submitForm = async () =>{
 		overflow-x: hidden;
 		overflow-y: auto;
 		position: relative;
+    display: flex;
+    flex-direction: column;
 	}
 	&-hint {
 		position: absolute;
@@ -122,28 +124,23 @@ const submitForm = async () =>{
 	&-toolbar {
 		height: 50px;
 		text-align: center;
-		line-height: 50px;
 		background: #fff;
-		margin-top:-20px;
 	}
 	&-form {
 		width: 100%;
-		height: 90%;
+    height: 90%;
+    flex: 1;
 		margin-top: 10px;
 		background: #fff;
 	}
   &-button {
     position: absolute;
-    right: 0;
-    top: 50%;
+    right: 10px;
+    bottom: 0;
     display: flex;
-    flex-direction: column;
     >.el-button {
       width: 100px;
       height: 40px;
-      cursor: pointer;
-    }
-    >.el-button:not(:last-child) {
       margin-bottom: 10px;
     }
   }
