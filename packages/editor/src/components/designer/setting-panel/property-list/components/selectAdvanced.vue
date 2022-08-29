@@ -22,8 +22,14 @@
 				/>
 			</el-select>
 		</el-form-item>
-		<p style="font-size:12px" v-if="advancedProp[key1].value">{{advancedProp[key1].value}}</p>
-		<p style="font-size:12px" v-else>"不是最优正则，请按需在下方自定义输入"</p>
+		<p
+			style="font-size:12px"
+			v-if="advancedProp[key1].value"
+		>{{isHint?advancedProp[key1].hintText:""}}</p>
+		<p
+			style="font-size:12px"
+			v-else
+		>"不是最优正则，请按需在下方自定义输入"</p>
 		<el-form-item
 			v-if="!advancedProp[key1].value"
 			label="自定义:"
@@ -36,43 +42,49 @@
 	</el-form>
 </template>
 <script setup>
-import { defineProps } from 'vue';
-import { ElMessage } from 'element-plus'
+import { defineProps, ref } from 'vue';
+import { ElMessage } from 'element-plus';
 import { widgetStore } from '@/store/index';
 import { storeToRefs } from 'pinia';
 const _widgetStore = widgetStore();
 const props = defineProps(['advancedProp', 'basicProp', 'key1', 'value']);
-
-
-
-const setRules = (type) =>{
+const isHint = ref(false);
+const setRules = (type) => {
 	const _ruleFormKey = props.basicProp.ruleFormKey.value;
 	const _rules = _widgetStore.formConfig.rules;
-	console.log("切换",_ruleFormKey)
-	if(!_ruleFormKey){
+	console.log('切换', _ruleFormKey, type);
+	isHint.value = !_ruleFormKey;
+	if (!_ruleFormKey) {
 		ElMessage({
-            message: '请先设置参数key',
-            type: 'error',
-            duration:1000
-        })
-	}else {
-		
+			message: '请先设置参数key',
+			type: 'error',
+			duration: 1000,
+		});
+	} else {
 		// 查找出必填的rule
-		const requireRule = _rules[_ruleFormKey]?.filter(rule =>{
-			return Object.keys(rule).indexOf('required')>-1
-		})[0]
-
+		const requireRule = _rules[_ruleFormKey]?.filter((rule) => {
+			return Object.keys(rule).indexOf('required') > -1;
+		})[0];
 		// 每次切换清空_rules[_ruleFormKey] & customValue
-		_rules[_ruleFormKey] = []
-		if(type !== "custom") props.advancedProp[props.key1].customValue = ""
+		_rules[_ruleFormKey] = [];
+		if (type !== 'custom') props.advancedProp[props.key1].customValue = '';
 		requireRule && _rules[_ruleFormKey].push(requireRule);
 
-		props.advancedProp[props.key1].value && _rules[_ruleFormKey].push(JSON.parse(props.advancedProp[props.key1].value))
-
-		props.advancedProp[props.key1].customValue && _rules[_ruleFormKey].push(JSON.parse(props.advancedProp[props.key1].customValue))
+		let val = props.advancedProp[props.key1].value;
+		if (val) {
+			let objVal = JSON.parse(val);
+			objVal.message = props.advancedProp.customWrongMessage.value;
+			_rules[_ruleFormKey].push(objVal);
+		}
+		let customVal = props.advancedProp[props.key1].customValue;
+		if(customVal){
+			_rules[_ruleFormKey].push({
+				message: props.advancedProp.customWrongMessage.value,
+				pattern: customVal,
+			});
+		}
 	}
-		
-}
+};
 </script>
 <style lang="scss" scoped>
 </style>
