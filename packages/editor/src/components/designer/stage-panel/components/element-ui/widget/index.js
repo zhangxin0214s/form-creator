@@ -11,6 +11,7 @@ import date from './time.vue'
 import datetimerange from './date.vue'
 import hierarchy from './hierarchy.vue'
 import cellPhone from './cellPhone.vue'
+import upload from './upload.vue'
 export {
 	input,
 	checkbox,
@@ -24,5 +25,6 @@ export {
 	date,
 	datetimerange,
 	hierarchy,
-	cellPhone
+	cellPhone,
+	upload
 }

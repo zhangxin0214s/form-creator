@@ -57,6 +57,12 @@ const BASIC_PROPERTIES = {
 	'divider-content':'1',
 	'static-text-line-height':'9',
 	'ruleFormKey':'1',
+	'upLoadBtnText':'1',
+	'maxUpLoadNumber':'9',
+	'fileListType':'3',
+	'multiple':'2',
+	'drag':'2',
+	'url':'1',
 }
 
 

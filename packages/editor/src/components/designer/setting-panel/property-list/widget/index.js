@@ -10,6 +10,7 @@ import Radio from './radio.vue'
 import staticText from './staticText.vue';
 import date from './time.vue'
 import datetimerange from './date.vue'
+import upload from './upload.vue';
 export {
     input,
     button,
@@ -22,5 +23,6 @@ export {
     Radio,
     staticText,
     date,
-    datetimerange
+    datetimerange,
+    upload
 }

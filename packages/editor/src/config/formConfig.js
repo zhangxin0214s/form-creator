@@ -1191,14 +1191,68 @@ export const advancedWidgets = [
 	{
 		id: 2,
 		name: "上传",
-		type: "Upload",
+		type: "upload",
 		category: "widget",
 		icon: "upload",
 		options: {
-			hidden: false,
-			basic: {},
+			basic: {
+				name: {
+					label: "唯一名称",
+					value: "上传"
+				}, // 唯一名称
+				label: {
+					label: "标签",
+					value: ""
+				}, // 标签
+				upLoadBtnText: {
+					label: "按钮文本",
+					value: "点击上传文件"
+				},//上传按钮文本
+				maxUpLoadNumber: {
+					label: '最大上传数量',
+					value: 1,
+				},// 最大上传数量
+				url: {
+					label: '请求URL',
+					value: 'https://run.mocky.io/v3/9d059bf9-4660-45f2-925d-ce80ad6c4d15',
+				},//上传的地址
+				upLoadList: {
+					label: '上传绑定的数组',
+					value: [],
+				},// 最大上传数量
+				fileListType: {
+					label: '文件列表类型',
+					options: [
+						{
+							label: '文本',
+							value: 'text'
+						},
+						{
+							label: '相片',
+							value: 'picture'
+						},
+						{
+							label: '图片卡',
+							value: 'picture-card'
+						}
+					],
+					value: 'text'
+				},// 文件列表类型
+				multiple: {
+					label: "是否批量选择",
+					value: false
+				},// 批量选择
+				drag: {
+					label: "是否拖拽",
+					value: false
+				},// 是否拖拽
+				disabled: {
+					label: '是否禁止上传',
+					value: false
+				}, // 是否必填
+			},
 			advanced: {}
-		}
+		},
 	},
 	{
 		id: 3,
