@@ -38,7 +38,12 @@
                     placeholder="value"
                     @blur="setValue1(parameter.key1,parameter.value1)"
                 />
-                <el-select v-model="parameterType" class="parameter-type" placeholder="Select">
+                <el-select 
+                    v-model="parameterType" 
+                    class="parameter-type" 
+                    placeholder="Select"
+                    @change="setValue1(parameter.key1,parameter.value1)"
+                >
                     <el-option
                     v-for="item in parameterTypes"
                     :key="item.value"
@@ -53,7 +58,7 @@
                     style="float: right; margin-top: 5px;"
                     type="primary"
                     icon="el-icon-minus"
-                    @click="delParameter(index)"
+                    @click="delParameter(index,parameter.key1)"
                 />
             </div>
             <el-button
@@ -136,7 +141,9 @@ const datas = ref([
 /**
  * 删除参数
  */
-const delParameter = (index) =>{
+const delParameter = (index,key1) =>{
+    const _parameter = props.advancedProp.dataSource.parameter;
+    delete _parameter[key1]
     parameters.value.splice(index,1)
 }
 
@@ -155,6 +162,7 @@ const addParameter = () =>{
  */
  const delData = (index) =>{
     datas.value.splice(index,1)
+   
 }
 
 /**
@@ -192,14 +200,14 @@ const setKey1 = (key1) =>{
  * 设置value1
 */
 const setValue1 = (key1,value1) =>{
-    if(!key1) return 
+    if(!key1 || !value1) return 
     const _parameter = props.advancedProp.dataSource.parameter;
     if(parameterType.value === 'String'){
         _parameter[key1]=value1
     }else if(parameterType.value === 'Number'){
         _parameter[key1]=value1*1
     }else if(parameterType.value === 'Boolen'){
-        value1 === 'true' ? _parameter[key1] = true : _parameter[key1] = false;
+        _parameter[key1] = value1 === 'true'
     }
     
 }
