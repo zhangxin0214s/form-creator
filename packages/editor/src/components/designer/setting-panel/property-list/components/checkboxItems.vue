@@ -1,6 +1,6 @@
 <template>
   <div class="setOptions">
-    <span>使用数据源:</span>
+    <span>动态数据:</span>
     <el-switch class="optionsType" v-model="optionsType"/>
   </div>
 
