@@ -5,6 +5,6 @@
     {"key": ["Control", "Backspace"], "commandExplain": "删除", "command": "removeWidget"},
     {"key": ["Control", "C"], "commandExplain": "复制", "command": ""},
     {"key": ["Control", "X"], "commandExplain": "剪切", "command": ""},
-    {"key": ["Control", "V"], "commandExplain": "粘贴", "command": ""}
+    {"key": ["Control", "V"], "commandExplain": "粘贴", "command": "copyWidget"}
   ]
 }

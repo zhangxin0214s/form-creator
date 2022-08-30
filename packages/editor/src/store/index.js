@@ -12,7 +12,7 @@ export const widgetStore = defineStore('widget', {
             cloneWidget:null,// 克隆的组件
             isEditor:true,
             dialogCodeVisible:false, // 属性面板代码编辑器
-            historyList: [], // 撤销使用的历史列表
+            historyList: [[]], // 撤销使用的历史列表
             pointer: 0, // 指针
             max: 100, // 最多存储历史数据
         }
@@ -29,22 +29,23 @@ export const widgetStore = defineStore('widget', {
          * 复制组件
          * @param {*} target
          */
-        copyWidget(target){
-            let newOrigin = deepClone(target);
-            newOrigin.id = generateId();
-
-            // 处理栅格 && 标签页内组件
-            if(newOrigin.type === 'grid' || newOrigin.type === 'tabs'){
-                const cols = newOrigin.options.advanced.cols;
-                cols.forEach(col =>{
-                    col.widgetList.forEach(widget =>{
-                        if(widget){
-                            widget.id = generateId();
-                        }
-                    })
-                })
-            }
-            this.widgetList.push(newOrigin);
+        copyWidget(){
+          if (!this.selectedWidget) return;
+          let newOrigin = deepClone(this.selectedWidget);
+          newOrigin.id = generateId();
+          // 处理栅格 && 标签页内组件
+          if(newOrigin.type === 'grid' || newOrigin.type === 'tabs'){
+              const cols = newOrigin.options.advanced.cols;
+              cols.forEach(col =>{
+                  col.widgetList.forEach(widget =>{
+                      if(widget){
+                          widget.id = generateId();
+                      }
+                  })
+              })
+          }
+          this.widgetList.push(newOrigin);
+          this.recordHistory();
         },
         // /**
         //  * 删除组件
@@ -80,21 +81,27 @@ export const widgetStore = defineStore('widget', {
          * @param {Object} options 组件设置
          */
         recordHistory () {
-          this.historyList.splice(this.pointer, this.historyList.length-1);
+          if (this.pointer!==this.historyList.length-1) {
+            this.historyList.splice(this.pointer+1, this.historyList.length);
+          }
           this.historyList.push([...this.widgetList]);
           this.pointer++;
+          if (this.historyList.length-1>this.max) {
+            this.historyList.shift();
+            this.pointer--;
+          }
         },
 
         undo () {
           if (this.pointer-1 < 0) return;
           this.pointer--;
-          this.widgetList = this.pointer===0?[]:[...this.historyList[this.pointer-1]];
+          this.widgetList = [...this.historyList[this.pointer]];
         },
 
         redo () {
-          if (this.historyList.length<=0 || this.pointer+1>this.historyList.length) return;
+          if (this.pointer+1>=this.historyList.length) return;
           this.pointer++;
-          this.widgetList = [...this.historyList[this.pointer-1]];
+          this.widgetList = [...this.historyList[this.pointer]];
         },
     },
     getters: {}

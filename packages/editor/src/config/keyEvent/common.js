@@ -6,8 +6,8 @@ const getCommand = (e) => {
   if (e.type === 'keyup') {
     if (keyList.length>0 && keyList[0] === e.key) {
       keyList.length=0;
-      return;
     }
+    return;
   }
   keyList.push(e.key);
   let key = `${keyList[0]}${keyList[keyList.length-1]}`.toLowerCase(),
