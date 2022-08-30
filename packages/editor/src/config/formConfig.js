@@ -130,32 +130,32 @@ export const basicWidgets = [
 					label: "默认文本",
 					value: "请输入输入框内容"
 				},// 默认提示文本
-				maxlength:{
-					label:'最大输入长度',
-					value:50,
+				maxlength: {
+					label: '最大输入长度',
+					value: 50,
 				},
-				inputType:{
-					label:'输入框类型',
-					value:'text',
-					options:[
+				inputType: {
+					label: '输入框类型',
+					value: 'text',
+					options: [
 						{
-							label:'文本框',
-							value:'text'
+							label: '文本框',
+							value: 'text'
 						},
 						{
-							label:'密码框',
-							value:'password'
+							label: '密码框',
+							value: 'password'
 						}
 					]
 				},
 				ruleFormKey: {
 					label: "参数key",
-					value:''
+					value: ''
 				},
 				required: {
 					label: "是否必填",
 					value: false,
-					message:""
+					message: ""
 				},// 是否必填*
 				readonly: {
 					label: "是否只读",
@@ -175,8 +175,28 @@ export const basicWidgets = [
 							value: '',
 						},
 						{
+							label: "中文",
+							value: '{"message":"请正确输入中文", "pattern":"^[\\\\u4e00-\\\\u9fa5]+$"}'
+						},
+						{
+							label: "英文",
+							value: '{"message":"请正确输入英文", "pattern":"^[A-Za-z]+$"}'
+						},
+						{
+							label: "数字",
+							value: '{"message":"请正确输入数字", "pattern":"^([0-9]+)$"}'
+						},
+						{
 							label: "网址",
 							value: '{"type":"url", "message":"请输入正确的网址", "trigger":"blur"}'
+						},
+						{
+							label: "手机号",
+							value: '{"message":"请输入正确的手机号", "pattern":"^1[3456789]\\\\d{9}$"}'
+						},
+						{
+							label: "车牌号",
+							value: '{"message":"请输入正确的车牌号","pattern":"^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$"}'
 						},
 						{
 							label: "Email地址",
@@ -186,14 +206,23 @@ export const basicWidgets = [
 							label: "日期时间",
 							value: '{"type":"date", "message":"请选择正确日期时间", "trigger":"blur"}'
 						},
+						{
+							label: "岗位编码",
+							value: '{"message":"只能输入数字英文", "pattern":"^[A-Za-z0-9]+$"}'
+						},
+						{
+							label: "营业执照",
+							value: '{"message":"请输入正确的营业执照", "pattern":"^[A-Z0-9]{8}-[A-Z0-9]$|^[A-Z0-9]{8}-[A-Z0-9]-[0-9]{2}$"}'
+						},
+						{
+							label: "身份证号码",
+							value: '{"message":"请正确输入您的身份证号码", "pattern":"^[1-9]\\\\d{5}[1-9]\\\\d{3}((0\\\\d)|(1[0-2]))(([0|1|2]\\\\d)|3[0-1])\\\\d{3}([0-9]|X|x)$"}'
+						},
 					],
 					value: "",
 					customValue: "",
-					hintText:"注：请先填写参数key，再次选择校验规则，当前选择校验没有生效"
-				},
-				customWrongMessage:{
-					label:'校验错误提示',
-					value:""
+					hintText: "注：请先填写参数key，再次选择校验规则，当前选择校验没有生效",
+					customWrongMessage: ""
 				},
 			}
 		},
@@ -217,12 +246,12 @@ export const basicWidgets = [
 				}, // 标签, // 标签
 				ruleFormKey: {
 					label: "参数key",
-					value:''
+					value: ''
 				},
 				required: {
 					label: "是否必填",
 					value: false,
-					message:""
+					message: ""
 				},// 是否必填
 				disabled: {
 					label: '是否禁用',
@@ -255,12 +284,12 @@ export const basicWidgets = [
 				},
 				ruleFormKey: {
 					label: "参数key",
-					value:''
+					value: ''
 				},
 				required: {
 					label: "是否必填",
 					value: false,
-					message:""
+					message: ""
 				},// 是否必填
 				hintHidden: {
 					label: '提示语隐藏',
@@ -296,9 +325,9 @@ export const basicWidgets = [
 					label: "标签",
 					value: "",
 				},
-				text:{
-					label:"按钮名称",
-					value:"确定",
+				text: {
+					label: "按钮名称",
+					value: "确定",
 				},
 				btnType: {
 					label: "按钮类型",
@@ -334,38 +363,38 @@ export const basicWidgets = [
 					label: "按钮尺寸",
 					options: [
 						{
-							label:'大',
-							value:'large'
+							label: '大',
+							value: 'large'
 						},
 						{
-							label:'中',
-							value:'default'
+							label: '中',
+							value: 'default'
 						},
 						{
-							label:'小',
-							value:'small'
+							label: '小',
+							value: 'small'
 						},
 					],
-					value:'default'
+					value: 'default'
 				},
 				disabled: {
 					label: "是否禁用",
 					value: false
 				},// 禁用
-				plain:{
-					label:"是否朴素按钮",
-					value:false
+				plain: {
+					label: "是否朴素按钮",
+					value: false
 				},
-				space:{
-					label:'是否插入空格',
-					value:false
+				space: {
+					label: '是否插入空格',
+					value: false
 				}
 
 			},
-			advanced:{
-				value:'Check',
-				label:'按钮图标',
-				btnIcon:[
+			advanced: {
+				value: 'Check',
+				label: '按钮图标',
+				btnIcon: [
 					{
 						label: '确定',
 						value: 'Check'
@@ -395,35 +424,35 @@ export const basicWidgets = [
 						value: 'Share'
 					},
 					{
-						label:'加号',
-						value:'Plus'
+						label: '加号',
+						value: 'Plus'
 					},
 					{
-						label:'减号',
-						value:'Minus'
+						label: '减号',
+						value: 'Minus'
 					},
 				],
-				btnRound:{
-					label:'是否为圆角按钮',
-					value:false
+				btnRound: {
+					label: '是否为圆角按钮',
+					value: false
 				},
-				btnCircle:{
-					label:'是否为圆形按钮',
-					value:false
+				btnCircle: {
+					label: '是否为圆形按钮',
+					value: false
 				}
 			},
-			events:{
-				onBeforeMount:{
-					label:"渲染前",
-					value:""
+			events: {
+				onBeforeMount: {
+					label: "渲染前",
+					value: ""
 				},
-				onMounted:{
-					label:"渲染完成",
-					value:""
+				onMounted: {
+					label: "渲染完成",
+					value: ""
 				},
-				onClick:{
-					label:"点击事件",
-					value:"if (!props.ruleFormRef) return\nprops.ruleFormRef.validate((valid, fields) => {\n  console.log(valid, \"===valid===\")\n  if (valid) {\n    console.log('submit!')\n    ElMessage({\n      message: '提交成功',\n      type: 'success',\n      duration: 1000\n    })\n  } else {\n    console.log('error submit!', fields)\n    ElMessage({\n      message: '有必填项未填写，或填写错误，请检查',\n      type: 'error',\n      duration: 1000\n    })\n  }\n})"
+				onClick: {
+					label: "点击事件",
+					value: "if (!props.ruleFormRef) return\nprops.ruleFormRef.validate((valid, fields) => {\n  console.log(valid, \"===valid===\")\n  if (valid) {\n    console.log('submit!')\n    ElMessage({\n      message: '提交成功',\n      type: 'success',\n      duration: 1000\n    })\n  } else {\n    console.log('error submit!', fields)\n    ElMessage({\n      message: '有必填项未填写，或填写错误，请检查',\n      type: 'error',\n      duration: 1000\n    })\n  }\n})"
 				}
 			}
 		}
@@ -446,12 +475,12 @@ export const basicWidgets = [
 				},
 				ruleFormKey: {
 					label: "参数key",
-					value:''
+					value: ''
 				},
 				required: {
 					label: "是否必填",
 					value: false,
-					message:""
+					message: ""
 				},// 是否必填
 				labelHidden: {
 					label: '标签是否隐藏',
@@ -496,12 +525,12 @@ export const basicWidgets = [
 				},
 				ruleFormKey: {
 					label: "参数key",
-					value:''
+					value: ''
 				},
 				required: {
 					label: "是否必填",
 					value: false,
-					message:""
+					message: ""
 				},// 是否必填
 				hintHidden: {
 					label: '提示语隐藏',
@@ -549,12 +578,12 @@ export const basicWidgets = [
 				},// 默认提示文本
 				ruleFormKey: {
 					label: "参数key",
-					value:''
+					value: ''
 				},
 				required: {
 					label: "是否必填",
 					value: false,
-					message:""
+					message: ""
 				},// 是否必填
 				readonly: {
 					label: "是否只读",
@@ -723,12 +752,12 @@ export const basicWidgets = [
 				},// 默认提示文本
 				ruleFormKey: {
 					label: "参数key",
-					value:''
+					value: ''
 				},
 				required: {
 					label: "是否必填",
 					value: false,
-					message:""
+					message: ""
 				},// 是否必填
 				readonly: {
 					label: "是否只读",
@@ -802,32 +831,32 @@ export const basicWidgets = [
 					label: '默认文本',
 					value: '这是一段静态文本',
 				}, // 默认文本
-				"static-text-line-height":{
-					label:'行高',
-					value:3
+				"static-text-line-height": {
+					label: '行高',
+					value: 3
 				},
-				"font-size":{
-					label:'字体大小',
-					value:16
+				"font-size": {
+					label: '字体大小',
+					value: 16
 				},
-				"font-color":{
-					label:'字体颜色',
-					value:'#000000'
+				"font-color": {
+					label: '字体颜色',
+					value: '#000000'
 				},
-				"font-style":{
-					label:'字体样式',
-					options:[
+				"font-style": {
+					label: '字体样式',
+					options: [
 						{
-							label:'加粗',
-							value:false
+							label: '加粗',
+							value: false
 						},
 						{
-							label:'斜体',
-							value:false
+							label: '斜体',
+							value: false
 						},
 						{
-							label:'下划线',
-							value:false
+							label: '下划线',
+							value: false
 						}
 					]
 				},
@@ -859,7 +888,7 @@ export const basicWidgets = [
 		icon: "time",
 		options: {
 			basic: {
-				value:"",
+				value: "",
 				name: {
 					label: "唯一名称",
 					value: "时间选择"
@@ -876,32 +905,32 @@ export const basicWidgets = [
 					label: "输入框尺寸",
 					options: [
 						{
-							label:'大',
-							value:'large'
+							label: '大',
+							value: 'large'
 						},
 						{
-							label:'中',
-							value:'default'
+							label: '中',
+							value: 'default'
 						},
 						{
-							label:'小',
-							value:'small'
+							label: '小',
+							value: 'small'
 						},
 					],
-					value:'default'
+					value: 'default'
 				},
-				placeholder:{
-					label:'占位内容',
-					value:'请选择时间'
+				placeholder: {
+					label: '占位内容',
+					value: '请选择时间'
 				},
 				ruleFormKey: {
 					label: "参数key",
-					value:''
+					value: ''
 				},
 				required: {
 					label: "是否必填",
 					value: false,
-					message:""
+					message: ""
 				},// 是否必填
 				// hintHidden: {
 				// 	label: '提示语隐藏',
@@ -915,16 +944,16 @@ export const basicWidgets = [
 					label: '是否禁用',
 					value: false
 				}, // 是否必填
-				readonly:{
-					label:'是否只读',
-					value:false
+				readonly: {
+					label: '是否只读',
+					value: false
 				},
-				editable:{
-					label:'文本框可输入',
-					value:false
+				editable: {
+					label: '文本框可输入',
+					value: false
 				}
 			},
-			advanced:{}
+			advanced: {}
 		}
 	},
 	{
@@ -935,7 +964,7 @@ export const basicWidgets = [
 		icon: "date",
 		options: {
 			basic: {
-				value:"",
+				value: "",
 				name: {
 					label: "唯一名称",
 					value: "时间选择"
@@ -952,32 +981,32 @@ export const basicWidgets = [
 					label: "输入框尺寸",
 					options: [
 						{
-							label:'大',
-							value:'large'
+							label: '大',
+							value: 'large'
 						},
 						{
-							label:'中',
-							value:'default'
+							label: '中',
+							value: 'default'
 						},
 						{
-							label:'小',
-							value:'small'
+							label: '小',
+							value: 'small'
 						},
 					],
-					value:'default'
+					value: 'default'
 				},
-				placeholder:{
-					label:'非范围占位值',
-					value:'请选择日期'
+				placeholder: {
+					label: '非范围占位值',
+					value: '请选择日期'
 				},
 				ruleFormKey: {
 					label: "参数key",
-					value:''
+					value: ''
 				},
 				required: {
 					label: "是否必填",
 					value: false,
-					message:""
+					message: ""
 				},// 是否必填
 				// hintHidden: {
 				// 	label: '提示语隐藏',
@@ -991,63 +1020,63 @@ export const basicWidgets = [
 					label: '是否禁用',
 					value: false
 				}, // 是否必填
-				readonly:{
-					label:'是否只读',
-					value:false
+				readonly: {
+					label: '是否只读',
+					value: false
 				},
-				editable:{
-					label:'文本框可输入',
-					value:false
+				editable: {
+					label: '文本框可输入',
+					value: false
 				}
 			},
-			advanced:{
-				value:'date',
-				label:'显示类型',
-				dateType:[
+			advanced: {
+				value: 'date',
+				label: '显示类型',
+				dateType: [
 					{
-						value:'year',
-						label:'年'
+						value: 'year',
+						label: '年'
 					},
 					{
-						value:'month',
-						label:'月'
+						value: 'month',
+						label: '月'
 					},
 					{
-						value:'date',
-						label:'日'
+						value: 'date',
+						label: '日'
 					},
 					{
-						value:'week',
-						label:'周'
+						value: 'week',
+						label: '周'
 					},
 					{
-						value:'datetime',
-						label:'日期和时间点'
+						value: 'datetime',
+						label: '日期和时间点'
 					},
 					{
-						value:'datetimerange',
-						label:'日期和时间范围'
+						value: 'datetimerange',
+						label: '日期和时间范围'
 					},
 					{
-						value:'monthrange',
-						label:'月份范围'
+						value: 'monthrange',
+						label: '月份范围'
 					},
 					{
-						value:'daterange',
-						label:'日期范围'
+						value: 'daterange',
+						label: '日期范围'
 					}
 				],
-				startPlaceholder:{
-					label:'开始占位内容',
-					value:'开始日期'
+				startPlaceholder: {
+					label: '开始占位内容',
+					value: '开始日期'
 				},
-				endPlaceholder:{
-					label:'结束占位内容',
-					value:'结束日期'
+				endPlaceholder: {
+					label: '结束占位内容',
+					value: '结束日期'
 				},
-				rangeSeparator:{
-					label:'范围选择分隔符',
-					value:'至'
+				rangeSeparator: {
+					label: '范围选择分隔符',
+					value: '至'
 				},
 			}
 		}

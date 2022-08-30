@@ -64,7 +64,6 @@ const ADVANCED_PROPERTIES = {
 	'validation':'4',
 	'validationCustom':'5',
 	'selectConfig':'6',
-	'customWrongMessage':'5'
 }
 
 
