@@ -299,10 +299,15 @@ export const basicWidgets = [
 
 			},
 			advanced: {
-				optionItems:  // 选项设置
-					[
-						{ label: "check 1", value: 1, disabled: false, text: '是否禁用', isSelect: true },
-					]
+				optionItems:[  // 选项设置
+					{ label: "check 1", value: 1, disabled: false, text: '是否禁用', isSelect: true }
+				],
+				dataSource:{
+					address:'', // 请求地址
+					type:'post',// 请求方式
+					parameter:{},// 请求参数
+					data:{}// 发送数据
+				}
 			}
 		},
 	},

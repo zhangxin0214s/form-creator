@@ -6,7 +6,10 @@
 
   <!-- 动态数据 -->
   <div v-if="optionsType">
-    使用动态数据
+    <el-divider content-position="center">数据源设置</el-divider>
+    <dataSource
+      :advanced-prop="advancedProp"
+    />
   </div>
 
   <!-- 静态数据 -->
@@ -48,7 +51,7 @@
 </template>
 <script setup>
 import { ref } from 'vue'
-
+import dataSource from './dataSource.vue'
 const optionsType = ref(false)
 const props = defineProps([
   'advancedProp'
