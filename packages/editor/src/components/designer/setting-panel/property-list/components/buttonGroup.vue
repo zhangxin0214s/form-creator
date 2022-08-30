@@ -1,8 +1,8 @@
 <template>
 	<div class="button-group-container">
-		<div style="text-align:left">
+		<span style="text-align:left;margin-bottom:10px; margin-right:10px;">
 			{{basicProp[key1].label}}
-		</div>
+		</span>
 		<el-button-group class="ml-4">
 			<el-button
 				v-for="(item,index) in basicProp[key1].options"
