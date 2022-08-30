@@ -39,6 +39,15 @@
 				@blur="setRules('custom')"
 			/>
 		</el-form-item>
+		<el-form-item
+			v-if="!advancedProp[key1].value"
+			label="校验错误提示:"
+		>
+			<el-input
+				v-model="advancedProp[key1].customWrongMessage"
+				@blur="setRules('custom')"
+			/>
+		</el-form-item>
 	</el-form>
 </template>
 <script setup>
@@ -73,13 +82,12 @@ const setRules = (type) => {
 		let val = props.advancedProp[props.key1].value;
 		if (val) {
 			let objVal = JSON.parse(val);
-			objVal.message = props.advancedProp.customWrongMessage.value;
 			_rules[_ruleFormKey].push(objVal);
 		}
 		let customVal = props.advancedProp[props.key1].customValue;
 		if(customVal){
 			_rules[_ruleFormKey].push({
-				message: props.advancedProp.customWrongMessage.value,
+				message: props.advancedProp[props.key1].customWrongMessage,
 				pattern: customVal,
 			});
 		}
