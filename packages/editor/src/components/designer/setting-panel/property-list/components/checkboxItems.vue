@@ -6,7 +6,6 @@
 
   <!-- 动态数据 -->
   <div v-if="optionsType">
-    <el-divider content-position="center">数据源设置</el-divider>
     <dataSource
       :advanced-prop="advancedProp"
     />
@@ -16,19 +15,15 @@
   <div v-else>
     <div v-for="(ite,index) in advancedProp?.optionItems">
       <span class="gutter-label-text">复选框 {{ index + 1 }}</span>
-      <!--<el-checkbox-->
-      <!--    style="margin-right: 10px"-->
-      <!--    :disabled="ite.disabled"-->
-      <!--    v-model="ite.isSelect"-->
-      <!--/>-->
       <div>
-        <span class="gutter-label-text">value值:</span>
-        <el-input style="width: 150px;margin-right: 10px" v-model="ite.value"/>
-      </div>
-      <div>
-        <span class="gutter-label-text">label值:</span>
+        <span class="gutter-label-text">label:</span>
         <el-input style="width: 150px;margin-right: 10px" v-model="ite.label"/>
       </div>
+      <div>
+        <span class="gutter-label-text">value:</span>
+        <el-input style="width: 150px;margin-right: 10px" v-model="ite.value"/>
+      </div>
+      
       <span style="margin-top: 10px; display: inline-block">{{ ite.text }}复选框{{ index + 1 }}：</span>
       <el-button
           circle
