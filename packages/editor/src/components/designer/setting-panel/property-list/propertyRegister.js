@@ -36,6 +36,8 @@ const BASIC_PROPERTIES = {
 	'inputType':'15',
 	'btnSize':'15',
 	'dateSize':'15',
+	'radioSize':'15',
+	'checkSize':'15',
 	'defaultValue':'1',
 	'text':'1',
 	'switchDefaultValue':'2',

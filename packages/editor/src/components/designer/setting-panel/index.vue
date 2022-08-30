@@ -33,8 +33,8 @@
 			</el-container>
 		</div>
 	</el-scrollbar>
-	
-	
+
+
 </template>
 <script setup>
 import formBase from './property-list/components/formBasic.vue';
@@ -72,6 +72,7 @@ const componentMap = {
 	}
 	&-main {
 		padding: 15px;
+    height: 100%;
 	}
 	&-footer {
 		width: 100%;

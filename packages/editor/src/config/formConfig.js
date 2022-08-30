@@ -172,28 +172,8 @@ export const basicWidgets = [
 							value: '',
 						},
 						{
-							label: "中文",
-							value: '{"message":"请正确输入中文", "pattern":"^[\\\\u4e00-\\\\u9fa5]+$"}'
-						},
-						{
-							label: "英文",
-							value: '{"message":"请正确输入英文", "pattern":"^[A-Za-z]+$"}'
-						},
-						{
-							label: "数字",
-							value: '{"message":"请正确输入数字", "pattern":"^([0-9]+)$"}'
-						},
-						{
 							label: "网址",
 							value: '{"type":"url", "message":"请输入正确的网址", "trigger":"blur"}'
-						},
-						{
-							label: "手机号",
-							value: '{"message":"请输入正确的手机号", "pattern":"^1[3456789]\\\\d{9}$"}'
-						},
-						{
-							label: "车牌号",
-							value: '{"message":"请输入正确的车牌号","pattern":"^[京津沪渝冀豫云辽黑湘皖鲁新苏浙赣鄂桂甘晋蒙陕吉闽贵粤青藏川宁琼使领A-Z]{1}[A-Z]{1}[A-Z0-9]{4}[A-Z0-9挂学警港澳]{1}$"}'
 						},
 						{
 							label: "Email地址",
@@ -218,8 +198,11 @@ export const basicWidgets = [
 					],
 					value: "",
 					customValue: "",
-					hintText: "注：请先填写参数key，再次选择校验规则，当前选择校验没有生效",
-					customWrongMessage: ""
+					hintText: "注：请先填写参数key，再次选择校验规则，当前选择校验没有生效"
+				},
+				customWrongMessage: {
+					label: '校验错误提示',
+					value: ""
 				},
 			}
 		},
@@ -264,7 +247,7 @@ export const basicWidgets = [
 		type: "checkbox",
 		category: "widget",
 		icon: "check",
-		value: null,
+		value: [],
 		options: {
 			basic: {
 				name: {
@@ -278,6 +261,24 @@ export const basicWidgets = [
 				hint: {
 					label: '提示语',
 					value: '',
+				},
+				checkSize: {
+					label: '复选框尺寸',
+					options: [
+						{
+							label: '大',
+							value: 'large'
+						},
+						{
+							label: '中',
+							value: 'default'
+						},
+						{
+							label: '小',
+							value: 'small'
+						},
+					],
+					value: 'default'
 				},
 				ruleFormKey: {
 					label: "参数key",
@@ -299,10 +300,15 @@ export const basicWidgets = [
 
 			},
 			advanced: {
-				optionItems:  // 选项设置
-					[
-						{ label: "check 1", value: 1, disabled: false, text: '是否禁用', isSelect: true },
-					]
+				optionItems: [  // 选项设置
+					{ label: "check 1", value: 1, disabled: false, text: '是否禁用', isSelect: true }
+				],
+				dataSource: {
+					address: '', // 请求地址
+					type: 'post',// 请求方式
+					parameter: {},// 请求参数
+					data: {}// 发送数据
+				}
 			}
 		},
 	},
@@ -520,6 +526,24 @@ export const basicWidgets = [
 					label: '提示语',
 					value: '',
 				},
+				radioSize: {
+					label: '单选框尺寸',
+					options: [
+						{
+							label: '大',
+							value: 'large'
+						},
+						{
+							label: '中',
+							value: 'default'
+						},
+						{
+							label: '小',
+							value: 'small'
+						},
+					],
+					value: 'default'
+				},
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
@@ -546,7 +570,7 @@ export const basicWidgets = [
 
 				optionItems:  // 选项设置
 					[
-						{ label: "radio 1", value: "1", disabled: false, text: '是否禁用' },
+						{ label: "label值1", value: "value值1", disabled: false, text: '是否禁用' },
 					]
 			}
 		},
@@ -889,7 +913,6 @@ export const basicWidgets = [
 				name: {
 					label: "唯一名称",
 					value: "时间选择"
-
 				}, // 唯一名称
 				label: {
 					label: "标题",
@@ -974,35 +997,6 @@ export const basicWidgets = [
 					value: '至'
 				},
 			}
-		}
-	},
-	{
-		id: 12,
-		name: "日期选择器",
-		type: "datetimerange",
-		category: "widget",
-		icon: "date",
-		options: {
-			basic: {
-				value: "",
-				name: {
-					label: "唯一名称",
-					value: "时间选择"
-				},
-				disabled: {
-					label: '是否禁用',
-					value: false
-				}, // 是否必填
-				readonly: {
-					label: '是否只读',
-					value: false
-				},
-				editable: {
-					label: '文本框可输入',
-					value: false
-				}
-			},
-			advanced: {}
 		}
 	},
 	{
@@ -1253,6 +1247,7 @@ export const advancedWidgets = [
 			},
 			advanced: {}
 		},
+
 	},
 	{
 		id: 3,
