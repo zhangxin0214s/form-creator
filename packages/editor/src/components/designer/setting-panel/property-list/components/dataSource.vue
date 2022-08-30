@@ -1,5 +1,4 @@
 <template>
-        <el-divider content-position="center">数据源设置</el-divider>
         <!-- 请求地址 -->
         <div class="address">
             <span class="address-text">请求地址:</span>
