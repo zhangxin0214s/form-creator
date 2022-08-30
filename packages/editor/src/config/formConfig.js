@@ -235,7 +235,7 @@ export const basicWidgets = [
 		type:"checkbox",
 		category:"widget",
 		icon:"check",
-		value:null,
+		value:[],
 		options:{
 			basic:{
 				name:{
@@ -249,6 +249,24 @@ export const basicWidgets = [
 				hint:{
 					label:'提示语',
 					value:'',
+				},
+				checkSize:{
+					label:'复选框尺寸',
+					options:[
+						{
+							label:'大',
+							value:'large'
+						},
+						{
+							label:'中',
+							value:'default'
+						},
+						{
+							label:'小',
+							value:'small'
+						},
+					],
+					value:'default'
 				},
 				ruleFormKey:{
 					label:"参数key",
@@ -272,7 +290,7 @@ export const basicWidgets = [
 			advanced:{
 				optionItems:  // 选项设置
 					[
-						{label:"check 1", value:1, disabled:false, text:'是否禁用', isSelect:true},
+						{label:"label值1", value:'value值1', disabled:false, text:'是否禁用', isSelect:false},
 					]
 			}
 		},
@@ -491,6 +509,24 @@ export const basicWidgets = [
 					label:'提示语',
 					value:'',
 				},
+				radioSize:{
+					label:'单选框尺寸',
+					options:[
+						{
+							label:'大',
+							value:'large'
+						},
+						{
+							label:'中',
+							value:'default'
+						},
+						{
+							label:'小',
+							value:'small'
+						},
+					],
+					value:'default'
+				},
 				ruleFormKey:{
 					label:"参数key",
 					value:''
@@ -517,7 +553,7 @@ export const basicWidgets = [
 
 				optionItems:  // 选项设置
 					[
-						{label:"radio 1", value:"1", disabled:false, text:'是否禁用'},
+						{label:"label值1", value:"value值1", disabled:false, text:'是否禁用'},
 					]
 			}
 		},

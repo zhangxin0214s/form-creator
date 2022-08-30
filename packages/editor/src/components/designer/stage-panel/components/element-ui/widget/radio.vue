@@ -4,13 +4,14 @@
       :basicProp="widget.options.basic"
       :advancedProp="widget.options.advanced"
       :parent-widget="parentWidget">
-    <el-radio-group v-model="radio">
+    <el-radio-group v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]">
       <el-radio
           v-for="(item,index) in widget.options.advanced.optionItems"
           :key="index"
-          :label="item.value"
+          :label="item.label"
+          :value="item.value"
           :disabled="item.disabled"
-          v-model="item.value"
+          :size="widget.options.basic.radioSize.value"
       >
         {{ item.label }}
       </el-radio>
@@ -18,10 +19,15 @@
   </widget-mask>
 </template>
 <script setup>
-import widgetMask from '../common/widgetMask.vue'
+import widgetMask from '../common/widgetMask.vue';
+import { storeToRefs } from 'pinia';
+import { widgetStore } from '@/store/index';
 import { onMounted, ref } from 'vue'
 
-const radio = ref("1")
+
+const _widgetStore = widgetStore();
+const {formConfig} = storeToRefs(_widgetStore);
+// const radio = ref("value值1")
 let props = defineProps([
   'widget',
   'parentWidget',
