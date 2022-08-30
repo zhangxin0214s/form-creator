@@ -96,12 +96,14 @@ export const widgetStore = defineStore('widget', {
           if (this.pointer-1 < 0) return;
           this.pointer--;
           this.widgetList = [...this.historyList[this.pointer]];
+          this.selectedWidget = null
         },
 
         redo () {
           if (this.pointer+1>=this.historyList.length) return;
           this.pointer++;
           this.widgetList = [...this.historyList[this.pointer]];
+          this.selectedWidget = null
         },
     },
     getters: {}

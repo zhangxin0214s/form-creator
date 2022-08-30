@@ -49,4 +49,7 @@
   }
 </script>
 <style lang="scss" scoped>
+  .select-container {
+    height: 100%;
+  }
 </style>
