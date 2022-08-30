@@ -1,5 +1,17 @@
 <template>
-  <div v-for="(ite,index) in advancedProp?.optionItems">
+  <div class="setOptions">
+    <span>使用数据源:</span>
+    <el-switch  class="optionsType" v-model="optionsType" />
+  </div>
+
+  <!-- 动态数据 -->
+  <div v-if="optionsType">
+    使用动态数据
+  </div>
+
+  <!-- 静态数据 -->
+  <div v-else>
+    <div v-for="(ite,index) in advancedProp?.optionItems">
     <div style="margin-bottom: 10px;">
       <span class="gutter-label-text">复选框{{ index + 1 }}：</span>
       <el-checkbox
@@ -23,17 +35,21 @@
           v-model="ite.disabled"
       />
     </div>
+    </div>
+    <el-button
+        circle
+        type="primary"
+        size="small"
+        icon="el-icon-plus"
+        @click="addCheckbox"
+    />
   </div>
-  <el-button
-      circle
-      type="primary"
-      size="small"
-      icon="el-icon-plus"
-      @click="addCheckbox"
-  />
+  
 </template>
 <script setup>
+import { ref } from 'vue'
 
+const optionsType = ref(false)
 const props = defineProps([
   'advancedProp'
 ])
@@ -55,5 +71,8 @@ const delCheckbox = (ite) => {
 <style lang="scss" scoped>
 .gutter-label-text {
   margin-right: 10px;
+}
+.optionsType {
+  margin-left:10px;
 }
 </style>

@@ -163,57 +163,50 @@ export const basicWidgets = [
 					value:false
 				},// 禁用
 			},
-			advanced:{
-				validation:{
-					label:"正则校验提示",
-					options:[
+			advanced: {
+				validation: {
+					label: "校验规则",
+					options: [
 						{
-							label:"无校验",
-							value:"",
+							label: "无校验",
+							value: '',
 						},
 						{
-							label:'中文字符',
-							value:"[\\u4e00-\\u9fa5]"
-						},
-						{
-							label:'正整数',
-							value:'[1-9]\d*'
-						},
-						{
-							label:"手机号码",
-							value:"0?(13|14|15|17|18|19)[0-9]{9}"
-						},
-						{
-							label:"身份证号",
-							value:"\d{17}[\d|x]|\d{15}"
+							label: "网址",
+							value: '{"type":"url", "message":"请输入正确的网址", "trigger":"blur"}'
 						},
 						{
 							label:"Email地址",
 							value:'{"type":"email", "message":"请输入正确的邮箱", "trigger":"blur"}'
 						},
 						{
-							label:"网址",
-							value:"[a-zA-z]+:\/\/[^\s]*"
+							label: "日期时间",
+							value: '{"type":"date", "message":"请选择正确日期时间", "trigger":"blur"}'
 						},
 					],
-					value:"",
-					customValue:""
-				}
+					value: "",
+					customValue: "",
+					hintText:"注：请先填写参数key，再次选择校验规则，当前选择校验没有生效"
+				},
+				customWrongMessage:{
+					label:'校验错误提示',
+					value:""
+				},
 			}
 		},
 	},
 	{
-		id:2,
-		name:"开关",
-		type:"Switch",
-		category:"widget",
-		icon:"switch",
-		value:null,
-		options:{
-			basic:{
-				name:{
-					label:"唯一名称",
-					value:"开关"
+		id: 2,
+		name: "开关",
+		type: "Switch",
+		category: "widget",
+		icon: "switch",
+		value: false,
+		options: {
+			basic: {
+				name: {
+					label: "唯一名称",
+					value: "开关"
 				}, // 唯一名称
 				label:{
 					label:"标签",
@@ -228,13 +221,9 @@ export const basicWidgets = [
 					value:false,
 					message:""
 				},// 是否必填
-				switchDefaultValue:{
-					label:'默认值',
-					value:true
-				},// 默认值:开 || 关
-				disabled:{
-					label:'是否禁用',
-					value:false
+				disabled: {
+					label: '是否禁用',
+					value: false
 				},// 禁用
 			},
 			advanced:{}

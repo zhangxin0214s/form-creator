@@ -1,25 +1,9 @@
 <template>
     <!-- 工具栏 -->
     <ul class="tool">
-        <li class="tool-btn" @click="clear">
-            <svg-icon :icon-class="tools[0].icon" />
-            <el-button link type="primary">{{ tools[0].name }}</el-button>
-        </li>
-        <li class="tool-btn" @click="preview">
-            <svg-icon :icon-class="tools[1].icon" />
-            <el-button link type="primary">{{ tools[1].name }}</el-button>
-        </li>
-        <li class="tool-btn" @click="exportCode">
-            <svg-icon :icon-class="tools[2].icon" />
-            <el-button link type="primary">{{ tools[2].name }}</el-button>
-        </li>
-        <li class="tool-btn">
-            <svg-icon :icon-class="tools[3].icon" />
-            <el-button link type="primary">{{ tools[3].name }}</el-button>
-        </li>
-        <li class="tool-btn">
-            <svg-icon :icon-class="tools[4].icon" />
-            <el-button link type="primary">{{ tools[4].name }}</el-button>
+        <li class="tool-btn" v-for="item in tools" @click="item.fun()">
+          <svg-icon :icon-class="item.icon" />
+          <el-button link type="primary">{{ item.name }}</el-button>
         </li>
     </ul>
 
@@ -58,28 +42,6 @@
     const formData = ref({formConfig:toRaw(_widgetStore.formConfig),widgetList:toRaw(_widgetStore.widgetList)})
 
     console.log(formConfig,"=====")
-    const tools = ref([
-        {
-            name:'清空',
-            icon:'tool-clear'
-        },
-        {
-            name:'预览',
-            icon:'tool-preview'
-        },
-        {
-            name:'导出',
-            icon:'tool-export'
-        },
-        {
-            name:'导入',
-            icon:'tool-import'
-        },
-        {
-            name:'模板库',
-            icon:'tool-mall'
-        }
-    ])
 
     /**
      * 清空
@@ -128,6 +90,42 @@
     const handleClick = () => {
         console.log()
     }
+
+    const tools = ref([
+        {
+            name:'撤销',
+            icon:'tool-undo',
+            fun: _widgetStore.undo,
+        },
+        {
+            name:'反撤销',
+            icon:'tool-redo',
+            fun: _widgetStore.redo,
+        },
+        {
+            name:'清空',
+            icon:'tool-clear',
+            fun: clear,
+        },
+        {
+            name:'预览',
+            icon:'tool-preview',
+            fun: preview,
+        },
+        {
+            name:'导出',
+            icon:'tool-export',
+            fun: exportCode,
+        },
+        {
+            name:'导入',
+            icon:'tool-import'
+        },
+        {
+            name:'模板库',
+            icon:'tool-mall'
+        },
+    ])
 </script>
 <style lang="scss" scoped>
     li{
@@ -138,12 +136,12 @@
         display: -webkit-flex;
         display: flex;
         justify-content:center;
-        align-items: center; 
+        align-items: center;
     }
     .codeEditor{
         margin-top:-30px;
     }
-    
+
     :deep(.el-dropdown){
         margin-top:10px;
     }

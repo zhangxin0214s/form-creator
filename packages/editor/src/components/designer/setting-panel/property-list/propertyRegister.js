@@ -56,7 +56,7 @@ const BASIC_PROPERTIES = {
 	'divider-position':'8',
 	'divider-content':'1',
 	'static-text-line-height':'9',
-	'ruleFormKey':'1'
+	'ruleFormKey':'1',
 }
 
 
@@ -65,6 +65,7 @@ const ADVANCED_PROPERTIES = {
 	'validation':'4',
 	'validationCustom':'5',
 	'selectConfig':'6',
+	'customWrongMessage':'5'
 }
 
 
