@@ -18,7 +18,7 @@
 		</el-form-item>
 		<el-form-item
 			v-if="basicProp[key1].value"
-			:label="`必填校验提示`"
+			:label="`必填校验提示:`"
 		>
 			<el-input
 				v-model="basicProp[key1].message"
@@ -71,7 +71,7 @@ const changeRequired = () =>{
 		_rules[_ruleFormKey].push({
 			required: props.basicProp[props.key1].value,
 			message:props.basicProp[props.key1].message,
-			trigger:'blur'
+			trigger:'change'
 		})
 	}
 }
