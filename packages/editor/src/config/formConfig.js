@@ -32,6 +32,7 @@ export const containers = [
 		type: "grid",
 		category: "container",
 		icon: "lattice",
+		value: null,
 		options: {
 			basic: {
 				name: {
@@ -41,7 +42,11 @@ export const containers = [
 				colHeight: {
 					label: "统一高度",
 					value: ""
-				},// 栅格统一高度
+				},// 栅格统一高度'
+				ruleFormKey: {
+					label: "参数key",
+					value: ''
+				},
 			},
 			advanced: {
 				cols: [
