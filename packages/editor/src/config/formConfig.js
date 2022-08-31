@@ -572,11 +572,17 @@ export const basicWidgets = [
 				// },// 禁用
 			},
 			advanced: {
-
-				optionItems:  // 选项设置
-					[
-						{ label: "label值1", value: "value值1", disabled: false, text: '是否禁用' },
-					]
+				// 选项设置
+				optionItems:[
+					{ label: "label值1", value: "value值1", disabled: false, text: '是否禁用' },
+				],
+				// 请求方式
+				dataSource: {
+					address: '', // 请求地址
+					type: 'post',// 请求方式
+					parameter: {},// 请求参数
+					data: {}// 发送数据
+				}
 			}
 		},
 	},
