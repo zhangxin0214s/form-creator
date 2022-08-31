@@ -4,30 +4,29 @@
       :basicProp="widget.options.basic"
       :advancedProp="widget.options.advanced"
       :parent-widget="parentWidget">
-    <el-radio-group v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]">
-      <el-radio
+    <el-checkbox-group
+        :size="widget.options.basic.checkSize.value"
+        v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]"
+    >
+      <el-checkbox-button
           v-for="(item,index) in widget.options.advanced.optionItems"
           :key="index"
-          :label="item.value"
+          :label="item.label"
           :disabled="item.disabled"
-          :size="widget.options.basic.radioSize.value"
-          :border="widget.options.basic.attribute.options[2].value"
       >
         {{ item.label }}
-      </el-radio>
-    </el-radio-group>
+      </el-checkbox-button>
+    </el-checkbox-group>
   </widget-mask>
 </template>
 <script setup>
 import widgetMask from '../common/widgetMask.vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
-import { onMounted, ref } from 'vue'
-
 
 const _widgetStore = widgetStore();
 const {formConfig} = storeToRefs(_widgetStore);
-// const radio = ref("value值1")
+
 let props = defineProps([
   'widget',
   'parentWidget',

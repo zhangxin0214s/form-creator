@@ -8,9 +8,11 @@
       <el-checkbox
           v-for="(item,index) in widget.options.advanced.optionItems"
           :key="index"
-          :label="item.value"
+          :label="item.label"
+          :value="item.value"
           :disabled="item.disabled"
           :size="widget.options.basic.checkSize.value"
+          :border="widget.options.basic.attribute.options[2].value"
       >
         {{ item.label }}
       </el-checkbox>
