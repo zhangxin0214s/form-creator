@@ -11,6 +11,8 @@ import staticText from './staticText.vue';
 import date from './time.vue'
 import datetimerange from './date.vue'
 import upload from './upload.vue';
+import repeatButton from  './repeatButton.vue'
+import onlyButton from './onlyButton.vue'
 export {
     input,
     button,
@@ -24,5 +26,7 @@ export {
     staticText,
     date,
     datetimerange,
-    upload
+    upload,
+    repeatButton,
+    onlyButton
 }

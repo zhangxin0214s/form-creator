@@ -4,18 +4,18 @@
       :basicProp="widget.options.basic"
       :advancedProp="widget.options.advanced"
       :parent-widget="parentWidget">
-    <el-checkbox-group v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]">
-      <el-checkbox
+    <el-checkbox-group
+        :size="widget.options.basic.checkSize.value"
+        v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]"
+    >
+      <el-checkbox-button
           v-for="(item,index) in widget.options.advanced.optionItems"
           :key="index"
           :label="item.label"
-          :value="item.value"
           :disabled="item.disabled"
-          :size="widget.options.basic.checkSize.value"
-          :border="widget.options.basic.attribute.options[2].value"
       >
         {{ item.label }}
-      </el-checkbox>
+      </el-checkbox-button>
     </el-checkbox-group>
   </widget-mask>
 </template>

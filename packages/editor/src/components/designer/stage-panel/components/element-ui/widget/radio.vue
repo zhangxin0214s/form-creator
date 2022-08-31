@@ -12,6 +12,7 @@
           :value="item.value"
           :disabled="item.disabled"
           :size="widget.options.basic.radioSize.value"
+          :border="widget.options.basic.attribute.options[2].value"
       >
         {{ item.label }}
       </el-radio>

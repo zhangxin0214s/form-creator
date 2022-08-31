@@ -12,6 +12,8 @@ import datetimerange from './date.vue'
 import hierarchy from './hierarchy.vue'
 import cellPhone from './cellPhone.vue'
 import upload from './upload.vue'
+import repeatButton from './repeatButton.vue'
+import onlyButton from './onlyButton.vue'
 export {
 	input,
 	checkbox,
@@ -26,5 +28,7 @@ export {
 	datetimerange,
 	hierarchy,
 	cellPhone,
-	upload
+	upload,
+	repeatButton,
+	onlyButton
 }

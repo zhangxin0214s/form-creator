@@ -294,19 +294,35 @@ export const basicWidgets = [
 					value: false,
 					message: ""
 				},// 是否必填
-				hintHidden: {
-					label: '提示语隐藏',
-					value: false
-				},// 提示语是否隐藏
-				labelHidden: {
-					label: '标签是否隐藏',
-					value: false
-				}, // 标签是否隐藏
-
+				// hintHidden: {
+				// 	label: '提示语隐藏',
+				// 	value: false
+				// },// 提示语是否隐藏
+				// labelHidden: {
+				// 	label: '标签是否隐藏',
+				// 	value: false
+				// }, // 标签是否隐藏
+				attribute: {
+					label: '操作属性',
+					options: [
+						{
+							label: '提示语隐藏',
+							value: false
+						},
+						{
+							label: '标签是否隐藏',
+							value: false
+						},
+						{
+							label: '是否有边框',
+							value: false
+						}
+					]
+				}
 			},
 			advanced: {
 				optionItems: [  // 选项设置
-					{ label: "check1", value: "value1", disabled: false, text: '是否禁用', isSelect: true }
+					{ label: "label值1", value: "value值1", disabled: false, text: '是否禁用', isSelect: true }
 				],
 				dataSource: {
 					address: '', // 请求地址
@@ -517,6 +533,7 @@ export const basicWidgets = [
 		type: "Radio",
 		category: "widget",
 		icon: "Radio",
+		value: '',
 		options: {
 			basic: {
 				name: {
@@ -558,18 +575,31 @@ export const basicWidgets = [
 					value: false,
 					message: ""
 				},// 是否必填
-				hintHidden: {
-					label: '提示语隐藏',
-					value: false
-				},// 提示语是否隐藏
-				labelHidden: {
-					label: '标签是否隐藏',
-					value: false
-				}, // 标签是否隐藏
-				// disabled: {
-				// 	label: "是否禁用",
+				// hintHidden: {
+				// 	label: '提示语隐藏',
 				// 	value: false
-				// },// 禁用
+				// },// 提示语是否隐藏
+				// labelHidden: {
+				// 	label: '标签是否隐藏',
+				// 	value: false
+				// }, // 标签是否隐藏
+				attribute: {
+					label: '操作属性',
+					options: [
+						{
+							label: '提示语隐藏',
+							value: false
+						},
+						{
+							label: '标签是否隐藏',
+							value: false
+						},
+						{
+							label: '是否有边框',
+							value: false
+						}
+					]
+				}
 			},
 			advanced: {
 				// 选项设置
@@ -976,15 +1006,15 @@ export const basicWidgets = [
 					label: '操作属性',
 					options: [
 						{
-							label: '禁用',
+							label: '是否禁用',
 							value: false
 						},
 						{
-							label: '只读',
+							label: '是否只读',
 							value: false
 						},
 						{
-							label: '可输入',
+							label: '输入框是否可输入',
 							value: false
 						},
 					]
@@ -1074,15 +1104,15 @@ export const basicWidgets = [
 					label: '操作属性',
 					options: [
 						{
-							label: '禁用',
+							label: '是否禁用',
 							value: false
 						},
 						{
-							label: '只读',
+							label: '完全只读',
 							value: false
 						},
 						{
-							label: '可输入',
+							label: '输入框是否可输入',
 							value: false
 						}
 					]
@@ -1140,61 +1170,157 @@ export const basicWidgets = [
 			}
 		}
 	},
-	// {
-	// 	id:13,
-	// 	name:"级联选择",
-	// 	type:"hierarchy",
-	// 	category:"widget",
-	// 	icon:"hierarchy",
-	// 	options:{
-	// 		basic:{
-	// 			name:{
-	// 				label:"唯一名称",
-	// 				value:"级联选择"
-	// 			}, // 唯一名称
-	// 			label:{
-	// 				label:"标题",
-	// 				value:""
-	// 			}, // 标签
-	// 			hint:{
-	// 				label:'提示语',
-	// 				value:'',
-	// 			}, // 提示语
-	// 			hintHidden:{
-	// 				label:'提示语隐藏',
-	// 				value:false
-	// 			},// 提示语是否隐藏
-	// 			labelHidden:{
-	// 				label:'标签是否隐藏',
-	// 				value:false
-	// 			}, // 标签是否隐藏
-	// 			required:{
-	// 				label:'是否必填',
-	// 				value:false
-	// 			}, // 是否必填
-	// 		},
-	// 		advanced:{}
-	// 	}
-	// },
-
 ]
 
 // 高级组件
 export const advancedWidgets = [
 	{
 		id: 1,
-		name: "新增按钮",
-		type: "addButton",
+		name: "复选框按钮组",
+		type: "repeatButton",
 		category: "widget",
-		icon: "button",
+		icon: "repeatButton",
+		value: [],
 		options: {
-			hidden: false,
-			basic: {},
-			advanced: {}
-		}
+			basic: {
+				name: {
+					label: "唯一名称",
+					value: "复选框按钮组",
+				}, // 唯一名称
+				label: {
+					label: "标签",
+					value: "复选框按钮组:",
+				}, // 标签
+				hint: {
+					label: '提示语',
+					value: '',
+				},
+				checkSize: {
+					label: '按钮组尺寸',
+					options: [
+						{
+							label: '大',
+							value: 'large'
+						},
+						{
+							label: '中',
+							value: 'default'
+						},
+						{
+							label: '小',
+							value: 'small'
+						},
+					],
+					value: 'default'
+				},
+				ruleFormKey: {
+					label: "参数key",
+					value: ''
+				},
+				required: {
+					label: "是否必填",
+					value: false,
+					message: ""
+				},// 是否必填
+				hintHidden: {
+					label: '提示语隐藏',
+					value: false
+				},// 提示语是否隐藏
+				labelHidden: {
+					label: '标签是否隐藏',
+					value: false
+				}, // 标签是否隐藏
+			},
+			advanced: {
+				optionItems: [  // 选项设置
+					{ label: "label值1", value: "value值1", disabled: false, text: '是否禁用', isSelect: true }
+				],
+				dataSource: {
+					address: '', // 请求地址
+					type: 'post',// 请求方式
+					parameter: {},// 请求参数
+					data: {}// 发送数据
+				}
+			}
+		},
 	},
 	{
 		id: 2,
+		name: "单选框按钮组",
+		type: "onlyButton",
+		category: "widget",
+		icon: "onlyButton",
+		options: {
+			basic: {
+				name: {
+					label: "唯一名称",
+					value: "单选框按钮组",
+				}, // 唯一名称
+				label: {
+					label: "标签",
+					value: "单选框按钮组:",
+				}, // 标签
+				hint: {
+					label: '提示语',
+					value: '',
+				},
+				radioSize: {
+					label: '按钮组尺寸',
+					options: [
+						{
+							label: '大',
+							value: 'large'
+						},
+						{
+							label: '中',
+							value: 'default'
+						},
+						{
+							label: '小',
+							value: 'small'
+						},
+					],
+					value: 'default'
+				},
+				ruleFormKey: {
+					label: "参数key",
+					value: ''
+				},
+				required: {
+					label: "是否必填",
+					value: false,
+					message: ""
+				},// 是否必填
+				hintHidden: {
+					label: '提示语隐藏',
+					value: false
+				},// 提示语是否隐藏
+				labelHidden: {
+					label: '标签是否隐藏',
+					value: false
+				}, // 标签是否隐藏
+				// disabled: {
+				// 	label: "是否禁用",
+				// 	value: false
+				// },// 禁用
+			},
+			advanced: {
+				// 选项设置
+				optionItems:[
+					{ label: "label值1", value: "value值1", disabled: false, text: '是否禁用' },
+				],
+				// 请求方式
+				dataSource: {
+					address: '', // 请求地址
+					type: 'post',// 请求方式
+					parameter: {},// 请求参数
+					data: {}// 发送数据
+				}
+			}
+		},
+	},
+	{
+		id: 3,
 		name: "上传",
 		type: "upload",
 		category: "widget",
@@ -1261,7 +1387,7 @@ export const advancedWidgets = [
 
 	},
 	{
-		id: 3,
+		id: 4,
 		name: "富文本",
 		type: "richtext",
 		category: "widget",
@@ -1296,5 +1422,4 @@ export const advancedWidgets = [
 			advanced: {}
 		}
 	},
-
 ]
