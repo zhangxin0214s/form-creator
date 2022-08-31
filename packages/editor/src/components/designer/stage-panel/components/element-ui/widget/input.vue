@@ -8,7 +8,6 @@
 		<el-input
 			:disabled="widget.options.basic.disabled.value"
 			:placeholder="widget.options.basic.defaultValue.value"
-			:maxlength="widget.options.basic.maxlength.value"
 			:type="widget.options.basic.inputType.value"
 			v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]"
 			show-word-limit

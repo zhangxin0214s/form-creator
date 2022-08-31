@@ -132,10 +132,7 @@ export const basicWidgets = [
 					label: "默认文本",
 					value: "请输入输入框内容"
 				},// 默认提示文本
-				maxlength: {
-					label: '最大输入长度',
-					value: 50,
-				},
+
 				inputType: {
 					label: '输入框类型',
 					value: 'text',
@@ -183,10 +180,6 @@ export const basicWidgets = [
 						{
 							label: "Email地址",
 							value: '{"type":"email", "message":"请输入正确的邮箱", "trigger":"blur"}'
-						},
-						{
-							label: "日期时间",
-							value: '{"type":"date", "message":"请选择正确日期时间", "trigger":"blur"}'
 						},
 						{
 							label: "岗位编码",
@@ -602,6 +595,10 @@ export const basicWidgets = [
 					label: "默认文本",
 					value: "请输入文本域内容"
 				},// 默认提示文本
+				maxlength: {
+					label: '最大输入长度',
+					value: 50,
+				},
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
@@ -622,44 +619,41 @@ export const basicWidgets = [
 			},
 			advanced: {
 				validation: {
-					label: "正则校验提示",
+					label: "校验规则",
 					options: [
 						{
 							label: "无校验",
-							value: "提示不是最优正则，请按需在下方自定义输入",
-						},
-						{
-							label: '中文字符',
-							value: "[\\u4e00-\\u9fa5]"
-						},
-						{
-							label: '正整数',
-							value: '[1-9]\d*'
-						},
-						{
-							label: "手机号码",
-							value: "0?(13|14|15|17|18|19)[0-9]{9}"
-						},
-						{
-							label: "身份证号",
-							value: "\d{17}[\d|x]|\d{15}"
-						},
-						{
-							label: "Email地址",
-							value: "\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}"
+							value: '',
 						},
 						{
 							label: "网址",
-							value: "[a-zA-z]+:\/\/[^\s]*"
+							value: '{"type":"url", "message":"请输入正确的网址", "trigger":"blur"}'
+						},
+						{
+							label: "Email地址",
+							value: '{"type":"email", "message":"请输入正确的邮箱", "trigger":"blur"}'
+						},
+						{
+							label: "岗位编码",
+							value: '{"message":"只能输入数字英文", "pattern":"^[A-Za-z0-9]+$"}'
+						},
+						{
+							label: "营业执照",
+							value: '{"message":"请输入正确的营业执照", "pattern":"^[A-Z0-9]{8}-[A-Z0-9]$|^[A-Z0-9]{8}-[A-Z0-9]-[0-9]{2}$"}'
+						},
+						{
+							label: "身份证号码",
+							value: '{"message":"请正确输入您的身份证号码", "pattern":"^[1-9]\\\\d{5}[1-9]\\\\d{3}((0\\\\d)|(1[0-2]))(([0|1|2]\\\\d)|3[0-1])\\\\d{3}([0-9]|X|x)$"}'
 						},
 					],
-					value: "提示不是最优正则，请按需在下方自定义输入"
-				},// 校验规则
-				validationCustom: {
-					label: "自定义",
+					value: "",
+					customValue: "",
+					hintText: "注：请先填写参数key，再次选择校验规则，当前选择校验没有生效"
+				},
+				customWrongMessage: {
+					label: '校验错误提示',
 					value: ""
-				}
-				// validationHint:""//校验规则提示
+				},
 			}
 		},
 	},
@@ -758,15 +752,18 @@ export const basicWidgets = [
 					options: [
 						{
 							label: "86",
-							value: '大陆'
+							valueText:"大陆",
+							value: '86'
 						},
 						{
 							label: "852",
-							value: '香港'
+							valueText:"香港",
+							value: '852'
 						},
 						{
 							label: "853",
-							value: '澳门'
+							valueText:"澳门",
+							value: '853'
 						},
 					],
 					value: '86'
@@ -794,47 +791,7 @@ export const basicWidgets = [
 					value: false
 				},// 禁用
 			},
-			advanced: {
-				validation: {
-					label: "正则校验提示",
-					options: [
-						{
-							label: "无校验",
-							value: "提示不是最优正则，请按需在下方自定义输入",
-						},
-						{
-							label: '中文字符',
-							value: "[\\u4e00-\\u9fa5]"
-						},
-						{
-							label: '正整数',
-							value: '[1-9]\d*'
-						},
-						{
-							label: "手机号码",
-							value: "0?(13|14|15|17|18|19)[0-9]{9}"
-						},
-						{
-							label: "身份证号",
-							value: "\d{17}[\d|x]|\d{15}"
-						},
-						{
-							label: "Email地址",
-							value: "\w[-\w.+]*@([A-Za-z0-9][-A-Za-z0-9]+\.)+[A-Za-z]{2,14}"
-						},
-						{
-							label: "网址",
-							value: "[a-zA-z]+:\/\/[^\s]*"
-						},
-					],
-					value: "提示不是最优正则，请按需在下方自定义输入"
-				},// 校验规则
-				validationCustom: {
-					label: "自定义",
-					value: ""
-				}
-				// validationHint:""//校验规则提示
-			}
+			advanced: {}
 		},
 	},
 	{
