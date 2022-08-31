@@ -3,7 +3,7 @@
         <draggable :list="colWidget.widgetList" item-key="id" v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300}"
             tag="transition-group" :component-data="{name: 'fade'}">
             <template #item="{ element }">
-                <div class="transition-group-el" @click="selected(widget)">
+                <div class="transition-group-el">
                     <component 
                     :is="componentMap[element.type]" 
                     :key="element.id"
@@ -16,14 +16,12 @@
     </el-col>
 </template>
 <script setup>
-    import * as widgets from '../../widget'
-    import * as Advanced from '../../Advanced'
+    import eleComponents from '../../index.js';
     defineProps([
         'colWidget'
     ])
     const componentMap = {
-        ...widgets,
-        ...Advanced
+        ...eleComponents
     }
 </script>
  <style lang="scss" scoped>

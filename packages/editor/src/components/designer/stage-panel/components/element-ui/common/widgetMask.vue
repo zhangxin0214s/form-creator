@@ -92,8 +92,7 @@ const delete1 = () => {
 		z-index: 999;
 	}
 }
-.copyIcon:hover,
-.deleteIcon:hover {
+.copyIcon:hover,.deleteIcon:hover {
 	cursor: pointer;
 }
 </style>
