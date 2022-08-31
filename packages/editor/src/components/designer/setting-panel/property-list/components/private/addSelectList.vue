@@ -10,14 +10,15 @@
         <dataSource :advanced-prop="advancedProp"/>
       </div>
       <!-- 静态数据 -->
-      <el-form>
+      <el-form class="form">
         <el-form-item v-if="children.length>0">
           <select-node :list="children"></select-node>
         </el-form-item>
     	</el-form>
     </div>
     <div class="addBtn" @click.native="addList">
-      <el-icon :size="30" color="#1296db"><CirclePlusFilled /></el-icon>
+      <el-button type="primary">添加选项</el-button>
+      <!-- <el-icon :size="30" color="#1296db"><CirclePlusFilled /></el-icon> -->
     </div>
   </div>
 </template>
@@ -50,6 +51,12 @@
     .operation {
       flex: 1;
       overflow-y: scroll;
+      .form {
+        margin-top: 10px;
+      }
+    }
+    .operation::-webkit-scrollbar {
+      display: none;
     }
     .addBtn {
       height: 50px;

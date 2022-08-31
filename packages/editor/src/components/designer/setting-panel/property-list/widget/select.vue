@@ -50,18 +50,18 @@
 </script>
 <style lang="scss">
   .selectAdvance {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
+    // max-height: 92%;
+    // display: flex;
+    // flex-direction: column;
     >div:first-child {
-      height: 50px;
+      // height: 40px;
     }
     >div:last-child {
-      flex: 1;
+      // flex: 1;
       // display: flex;
       // flex-direction: column;
       >div {
-        height: 100%;
+        // height: 100%;
         // display: flex;
         // flex-direction: column;
       }
@@ -71,27 +71,25 @@
 <style lang="scss" scoped>
   .select-container {
     height: 100%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    // overflow: hidden;
+    // display: flex;
+    // flex-direction: column;
     .input-collapse {
-      flex: 1;
-      overflow: hidden;
+      // flex: 1;
+      // overflow: hidden;
       // display: flex;
       // flex-direction: column;
       >div {
-        height: 50%;
-        display: flex;
-        flex-direction: column;
+        // height: 45%;
+        // display: flex;
+        // flex-direction: column;
       }
       >div:last-child {
-        >div {
-          background: red;
-        }
+        // height: 55%;
       }
     }
     >div {
-      height: 100%;
+      // height: 100%;
     }
   }
 </style>
