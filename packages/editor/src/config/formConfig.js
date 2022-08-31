@@ -301,7 +301,7 @@ export const basicWidgets = [
 			},
 			advanced: {
 				optionItems: [  // 选项设置
-					{ label: "check 1", value: 1, disabled: false, text: '是否禁用', isSelect: true }
+					{ label: "check1", value: "value1", disabled: false, text: '是否禁用', isSelect: true }
 				],
 				dataSource: {
 					address: '', // 请求地址
