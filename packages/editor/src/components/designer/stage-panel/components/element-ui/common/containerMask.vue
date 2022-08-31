@@ -1,5 +1,7 @@
 <template>
-    <div class="container-mask">
+    <div 
+        class="container-mask"
+        @click.stop="selected(widget)">
         <slot></slot>
         <!-- <div class="container-mask-title" v-if="selectedWidget?.id === widget?.id">
             <span class="text">
@@ -38,6 +40,11 @@
       _widgetStore.removeWidget(selectedWidget.value,props.parentWidget);
     }
 
+    const selected = (widgetData) => {
+        console.log('选中:', widgetData);
+        _widgetStore.selectedWidget = widgetData;
+    };
+
 </script>
 <style lang="scss" scoped>
     .container-mask{
@@ -71,5 +78,8 @@
             z-index: 999;
         }
 
+    }
+    .copyIcon:hover,.deleteIcon:hover {
+        cursor: pointer;
     }
 </style>

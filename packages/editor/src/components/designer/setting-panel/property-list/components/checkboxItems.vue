@@ -7,7 +7,7 @@
   <!-- 动态数据 -->
   <div v-if="optionsType">
     <dataSource
-      :advanced-prop="advancedProp"
+        :advanced-prop="advancedProp"
     />
   </div>
 
@@ -23,7 +23,7 @@
         <span class="gutter-label-text">value:</span>
         <el-input style="width: 150px;margin-right: 10px" v-model="ite.value"/>
       </div>
-      
+
       <span style="margin-top: 10px; display: inline-block">{{ ite.text }}复选框{{ index + 1 }}：</span>
       <el-button
           circle
@@ -52,6 +52,7 @@
 <script setup>
 import { ref } from 'vue'
 import dataSource from './dataSource.vue'
+
 const optionsType = ref(false)
 const props = defineProps([
   'advancedProp'

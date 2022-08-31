@@ -8,8 +8,7 @@
       <el-radio
           v-for="(item,index) in widget.options.advanced.optionItems"
           :key="index"
-          :label="item.label"
-          :value="item.value"
+          :label="item.value"
           :disabled="item.disabled"
           :size="widget.options.basic.radioSize.value"
       >

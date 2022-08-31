@@ -21,7 +21,7 @@ import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 const _widgetStore = widgetStore();
 const { formConfig } = storeToRefs(_widgetStore);
-let props = defineProps(['widget', 'parentWidget']);
+defineProps(['widget', 'parent' ,'parentWidget']);
 </script>
 <style scoped>
 </style>

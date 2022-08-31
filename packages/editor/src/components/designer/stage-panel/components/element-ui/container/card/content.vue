@@ -16,14 +16,12 @@
     </el-col>
 </template>
 <script setup>
-    import * as widgets from '../../widget'
-    import * as Advanced from '../../Advanced'
+    import eleComponents from '../../index.js';
     defineProps([
         'widgetList'
     ])
     const componentMap = {
-        ...widgets,
-        ...Advanced
+        ...eleComponents
     }
 </script>
  <style lang="scss" scoped>

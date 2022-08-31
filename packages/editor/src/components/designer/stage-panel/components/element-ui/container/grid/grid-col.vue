@@ -16,6 +16,7 @@
                             :widget = element
                             :parent-widget=colWidget.widgetList
                             :rule-form-ref="ruleFormRef"
+                            :parent = widget
                             @submitForm="submitForm">
                         </component>
                     </div>
@@ -25,8 +26,7 @@
     </el-col>
 </template>
 <script setup>
-    import * as widgets from '../../widget'
-    import * as Advanced from '../../Advanced'
+    import eleComponents from '../../index.js';
     import { widgetStore } from '@/store/index';
     import { storeToRefs } from 'pinia';
     import { ref } from 'vue'
@@ -37,8 +37,7 @@
         'ruleFormRef'
     ])
     const componentMap = {
-        ...widgets,
-        ...Advanced
+        ...eleComponents
     }
     const _widgetStore = widgetStore();
     const { selectedWidget,widgetList,isEditor} = storeToRefs(_widgetStore);
