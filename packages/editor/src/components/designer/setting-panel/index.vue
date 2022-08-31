@@ -15,6 +15,7 @@
 				</el-header>
 				<el-main>
 					<div class="setting-main">
+            <div class="hint" v-if="!selectedWidget">选择要配置的组件</div>
 						{{ selectedWidget?.options.events1 }}
 						<component
 							:is="componentMap[selectedWidget?.type]"
@@ -73,6 +74,14 @@ const componentMap = {
 	&-main {
 		padding: 15px;
     height: 100%;
+    position: relative;
+    .hint {
+      color: #444;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%);
+    }
 	}
 	&-footer {
 		width: 100%;

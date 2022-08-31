@@ -513,9 +513,21 @@ export const basicWidgets = [
 				},// 禁用
 			},
 			advanced: {
+				dataSource: {
+					address: '', // 请求地址
+					type: 'post',// 请求方式
+					parameter: {},// 请求参数
+					data: {}// 发送数据
+				},
 				selectConfig: {
 					label: '选项设置',
-					children: [],
+					children: [
+						{
+							id: 0,
+				      label: '选项',
+				      children: []
+						}
+					],
 				},
 			}
 		}
