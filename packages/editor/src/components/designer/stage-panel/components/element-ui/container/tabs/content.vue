@@ -7,6 +7,7 @@
                     <component 
                     :is="componentMap[element.type]" 
                     :key="element.id"
+                    :parent-widget=colWidget.widgetList
                     :widget = element
                     >
                     </component>
