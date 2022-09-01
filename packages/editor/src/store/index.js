@@ -47,32 +47,32 @@ export const widgetStore = defineStore('widget', {
           this.widgetList.push(newOrigin);
           this.recordHistory();
         },
-        // /**
-        //  * 删除组件
-        //  * @param {*} target
-        //  */
-        // removeWidget(target,parentWidget){
-        //     if(!parentWidget) return;
-        //     parentWidget.forEach((widget,index) =>{
-        //         if(widget.id === target.id){
-        //             parentWidget.splice(index,1)
-        //         }
-        //     })
-        //     this.selectedWidget = null
-        //     this.recordHistory();
-        // },
-
-        removeWidget () {
-          if (!this.selectedWidget) return;
-          this.widgetList.some((list, index) => {
-            if (list.category === this.selectedWidget.category && list.id === this.selectedWidget.id) {
-              this.widgetList.splice(index,1)
-              this.selectedWidget = null
-              this.recordHistory();
-              return true;
-            }
-          })
+        /**
+         * 删除组件
+         * @param {*} target
+         */
+        removeWidget(target,parentWidget){
+            if(!parentWidget) return;
+            parentWidget.forEach((widget,index) =>{
+                if(widget.id === target.id){
+                    parentWidget.splice(index,1)
+                }
+            })
+            this.selectedWidget = null
+            this.recordHistory();
         },
+
+        // removeWidget () {
+        //   if (!this.selectedWidget) return;
+        //   this.widgetList.some((list, index) => {
+        //     if (list.category === this.selectedWidget.category && list.id === this.selectedWidget.id) {
+        //       this.widgetList.splice(index,1)
+        //       this.selectedWidget = null
+        //       this.recordHistory();
+        //       return true;
+        //     }
+        //   })
+        // },
 
         /**
          * 记录用户操作数据
