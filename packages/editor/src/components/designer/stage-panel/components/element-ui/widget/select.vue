@@ -3,6 +3,7 @@
     <el-cascader
         :options="advanced.selectConfig.children"
         :disabled="basic.disabled.value"
+        :placeholder="basic.defaultValue.value"
     />
   </widget-mask>
 

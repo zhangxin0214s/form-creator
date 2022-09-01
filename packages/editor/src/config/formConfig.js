@@ -144,7 +144,10 @@ export const basicWidgets = [
 					label: "默认文本",
 					value: "请输入输入框内容"
 				},// 默认提示文本
-
+				hint: {
+					label: "输入内容提示",
+					value: ""
+				},
 				inputType: {
 					label: '输入框类型',
 					value: 'text',
@@ -501,6 +504,10 @@ export const basicWidgets = [
 				label: {
 					label: '标签',
 					value: '选择框：'
+				},
+				defaultValue: {
+					label: "选择提示",
+					value: "请选择"
 				},
 				ruleFormKey: {
 					label: "参数key",

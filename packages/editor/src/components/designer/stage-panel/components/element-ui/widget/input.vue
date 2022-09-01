@@ -12,6 +12,7 @@
 			v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]"
 			show-word-limit
 		/>
+		<div class="hint">{{widget.options.basic.hint.value}}</div>
 	</widget-mask>
 </template>
 
@@ -24,4 +25,8 @@ const { formConfig } = storeToRefs(_widgetStore);
 defineProps(['widget', 'parent' ,'parentWidget']);
 </script>
 <style scoped>
+	.hint {
+		font-size: 12px;
+		color: #9b9b9b;
+	}
 </style>
