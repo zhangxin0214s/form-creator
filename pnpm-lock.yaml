@@ -11,6 +11,7 @@ importers:
       '@vue/eslint-config-standard': ^8.0.1
       '@vue/reactivity': 3.2.37
       babel-eslint: ^10.1.0
+      element-china-area-data: ^5.0.2
       esbuild: |-
         0.14.54 -w
         pnpm install esbuild@0.14.54
@@ -29,10 +30,11 @@ importers:
       vue: ^3.2.37
     dependencies:
       '@vue/reactivity': 3.2.37
+      element-china-area-data: registry.npmmirror.com/element-china-area-data/5.0.2
       esbuild: registry.npmmirror.com/esbuild/0.14.54
       pinia: registry.npmmirror.com/pinia/2.0.20_j6bzmzd4ujpabbp5objtwxyjp4
       sortablejs: registry.npmmirror.com/sortablejs/1.14.0
-      vitepress: registry.npmmirror.com/vitepress/1.0.0-alpha.4
+      vitepress: registry.npmmirror.com/vitepress/1.0.0-alpha.4_tbpndr44ulefs3hehwpi2mkf2y
       vue: registry.npmmirror.com/vue/3.2.37
     devDependencies:
       '@typescript-eslint/eslint-plugin': 5.33.1_vsoshirnpb7xw6mr7xomgfas2i
@@ -178,16 +180,6 @@ packages:
     dependencies:
       '@algolia/autocomplete-shared': 1.7.1
 
-  /@algolia/autocomplete-preset-algolia/1.7.1_algoliasearch@4.14.2:
-    resolution: {integrity: sha512-pJwmIxeJCymU1M6cGujnaIYcY3QPOVYZOXhFkWVM7IxKzy272BwCvMFMyc5NpG/QmiObBxjo7myd060OeTNJXg==}
-    peerDependencies:
-      '@algolia/client-search': ^4.9.1
-      algoliasearch: ^4.9.1
-    dependencies:
-      '@algolia/autocomplete-shared': 1.7.1
-      algoliasearch: registry.npmmirror.com/algoliasearch/4.14.2
-    dev: false
-
   /@algolia/autocomplete-preset-algolia/1.7.1_qs6lk5nhygj2o3hj4sf6xnr724:
     resolution: {integrity: sha512-pJwmIxeJCymU1M6cGujnaIYcY3QPOVYZOXhFkWVM7IxKzy272BwCvMFMyc5NpG/QmiObBxjo7myd060OeTNJXg==}
     peerDependencies:
@@ -197,7 +189,6 @@ packages:
       '@algolia/autocomplete-shared': 1.7.1
       '@algolia/client-search': 4.14.2
       algoliasearch: registry.npmmirror.com/algoliasearch/4.14.2
-    dev: true
 
   /@algolia/autocomplete-shared/1.7.1:
     resolution: {integrity: sha512-eTmGVqY3GeyBTT8IWiB2K5EuURAqhnumfktAEoHxfDY2o7vg2rSnO16ZtIG0fMgt3py28Vwgq42/bVEuaQV7pg==}
@@ -1510,18 +1501,6 @@ packages:
       - react-dom
     dev: true
 
-  /@docsearch/js/3.2.1:
-    resolution: {integrity: sha512-H1PekEtSeS0msetR2YGGey2w7jQ2wAKfGODJvQTygSwMgUZ+2DHpzUgeDyEBIXRIfaBcoQneqrzsljM62pm6Xg==}
-    dependencies:
-      '@docsearch/react': 3.2.1
-      preact: registry.npmmirror.com/preact/10.10.6
-    transitivePeerDependencies:
-      - '@algolia/client-search'
-      - '@types/react'
-      - react
-      - react-dom
-    dev: false
-
   /@docsearch/js/3.2.1_hoyvfk3ab7nzsjkhptt6ai7rzq:
     resolution: {integrity: sha512-H1PekEtSeS0msetR2YGGey2w7jQ2wAKfGODJvQTygSwMgUZ+2DHpzUgeDyEBIXRIfaBcoQneqrzsljM62pm6Xg==}
     dependencies:
@@ -1533,6 +1512,18 @@ packages:
       - react
       - react-dom
     dev: true
+
+  /@docsearch/js/3.2.1_tbpndr44ulefs3hehwpi2mkf2y:
+    resolution: {integrity: sha512-H1PekEtSeS0msetR2YGGey2w7jQ2wAKfGODJvQTygSwMgUZ+2DHpzUgeDyEBIXRIfaBcoQneqrzsljM62pm6Xg==}
+    dependencies:
+      '@docsearch/react': 3.2.1_tbpndr44ulefs3hehwpi2mkf2y
+      preact: registry.npmmirror.com/preact/10.10.6
+    transitivePeerDependencies:
+      - '@algolia/client-search'
+      - '@types/react'
+      - react
+      - react-dom
+    dev: false
 
   /@docsearch/react/1.0.0-alpha.28_wcqkhtmu7mswc6yz4uyexck3ty:
     resolution: {integrity: sha1-TwOe15+LMzKxmldneyGa68UBDp0=}
@@ -1547,28 +1538,6 @@ packages:
       react: registry.npmmirror.com/react/16.14.0
       react-dom: registry.npmmirror.com/react-dom/16.14.0_react@16.14.0
     dev: true
-
-  /@docsearch/react/3.2.1:
-    resolution: {integrity: sha512-EzTQ/y82s14IQC5XVestiK/kFFMe2aagoYFuTAIfIb/e+4FU7kSMKonRtLwsCiLQHmjvNQq+HO+33giJ5YVtaQ==}
-    peerDependencies:
-      '@types/react': '>= 16.8.0 < 19.0.0'
-      react: '>= 16.8.0 < 19.0.0'
-      react-dom: '>= 16.8.0 < 19.0.0'
-    peerDependenciesMeta:
-      '@types/react':
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
-    dependencies:
-      '@algolia/autocomplete-core': 1.7.1
-      '@algolia/autocomplete-preset-algolia': 1.7.1_algoliasearch@4.14.2
-      '@docsearch/css': 3.2.1
-      algoliasearch: registry.npmmirror.com/algoliasearch/4.14.2
-    transitivePeerDependencies:
-      - '@algolia/client-search'
-    dev: false
 
   /@docsearch/react/3.2.1_hoyvfk3ab7nzsjkhptt6ai7rzq:
     resolution: {integrity: sha512-EzTQ/y82s14IQC5XVestiK/kFFMe2aagoYFuTAIfIb/e+4FU7kSMKonRtLwsCiLQHmjvNQq+HO+33giJ5YVtaQ==}
@@ -1593,6 +1562,28 @@ packages:
     transitivePeerDependencies:
       - '@algolia/client-search'
     dev: true
+
+  /@docsearch/react/3.2.1_tbpndr44ulefs3hehwpi2mkf2y:
+    resolution: {integrity: sha512-EzTQ/y82s14IQC5XVestiK/kFFMe2aagoYFuTAIfIb/e+4FU7kSMKonRtLwsCiLQHmjvNQq+HO+33giJ5YVtaQ==}
+    peerDependencies:
+      '@types/react': '>= 16.8.0 < 19.0.0'
+      react: '>= 16.8.0 < 19.0.0'
+      react-dom: '>= 16.8.0 < 19.0.0'
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+    dependencies:
+      '@algolia/autocomplete-core': 1.7.1
+      '@algolia/autocomplete-preset-algolia': 1.7.1_qs6lk5nhygj2o3hj4sf6xnr724
+      '@docsearch/css': 3.2.1
+      algoliasearch: registry.npmmirror.com/algoliasearch/4.14.2
+    transitivePeerDependencies:
+      - '@algolia/client-search'
+    dev: false
 
   /@element-plus/icons-vue/2.0.9_vue@3.2.37:
     resolution: {integrity: sha512-okdrwiVeKBmW41Hkl0eMrXDjzJwhQMuKiBOu17rOszqM+LS/yBYpNQNV5Jvoh06Wc+89fMmb/uhzf8NZuDuUaQ==}
@@ -5343,6 +5334,12 @@ packages:
     version: 8.0.3
     dev: true
 
+  registry.npmmirror.com/china-area-data/5.0.1:
+    resolution: {integrity: sha512-BQDPpiv5Nn+018ekcJK2oSD9PAD+E1bvXB0wgabc//dFVS/KvRqCgg0QOEUt3vBkx9XzB5a9BmkJCEZDBxVjVw==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/china-area-data/-/china-area-data-5.0.1.tgz}
+    name: china-area-data
+    version: 5.0.1
+    dev: false
+
   registry.npmmirror.com/chokidar/2.1.8:
     resolution: {integrity: sha512-ZmZUazfOzf0Nve7duiCKD23PFSCs4JPoYyccjUFF3aQkQadqBhfzhjkwBH2mNOG9cTBwhamM37EIsIkZw3nRgg==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/chokidar/-/chokidar-2.1.8.tgz}
     name: chokidar
@@ -7205,6 +7202,15 @@ packages:
     resolution: {integrity: sha512-ICHvGaCIQR3P88uK8aRtx8gmejbVJyC6bB4LEC3anzBrIzdzC7aiZHY4iFfXhN4st6I7lMO0x4sgBHf/7kBvRw==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.225.tgz}
     name: electron-to-chromium
     version: 1.4.225
+
+  registry.npmmirror.com/element-china-area-data/5.0.2:
+    resolution: {integrity: sha512-vLQuvOKJy/uiX7MRHEk3x/j09hipuIl6DJ/C4XFUG7D7Pj3O47sy+Y6aAArM6k9v8cD9UX6e+yz2S4J+IPnZ8g==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/element-china-area-data/-/element-china-area-data-5.0.2.tgz}
+    name: element-china-area-data
+    version: 5.0.2
+    dependencies:
+      china-area-data: registry.npmmirror.com/china-area-data/5.0.1
+      lodash-es: registry.npmmirror.com/lodash-es/4.17.21
+    dev: false
 
   registry.npmmirror.com/element-plus/1.0.1-beta.27_vue@3.2.37:
     resolution: {integrity: sha512-/73TA3lTiRCBPBTlcXivHEjxhrdJB8jVHUxtfgrnBui3gSGeWhE+7gqEsmCmMWqZHXjE4FeLpGcnqCV55xl1fQ==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/element-plus/-/element-plus-1.0.1-beta.27.tgz}
@@ -17177,33 +17183,6 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmmirror.com/vitepress/1.0.0-alpha.4:
-    resolution: {integrity: sha512-bOAA4KW6vYGlkbcrPLZLTKWTgXVroObU+o9xj9EENyEl6yg26WWvfN7DGA4BftjdM5O8nR93Z5khPQ3W/tFE7Q==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/vitepress/-/vitepress-1.0.0-alpha.4.tgz}
-    name: vitepress
-    version: 1.0.0-alpha.4
-    engines: {node: '>=14.6.0'}
-    hasBin: true
-    dependencies:
-      '@docsearch/css': 3.2.1
-      '@docsearch/js': 3.2.1
-      '@vitejs/plugin-vue': 2.3.4_vite@2.9.15+vue@3.2.37
-      '@vue/devtools-api': 6.2.1
-      '@vueuse/core': 8.9.4_vue@3.2.37
-      body-scroll-lock: registry.npmmirror.com/body-scroll-lock/4.0.0-beta.0
-      shiki: registry.npmmirror.com/shiki/0.10.1
-      vite: registry.npmmirror.com/vite/2.9.15
-      vue: registry.npmmirror.com/vue/3.2.37
-    transitivePeerDependencies:
-      - '@algolia/client-search'
-      - '@types/react'
-      - '@vue/composition-api'
-      - less
-      - react
-      - react-dom
-      - sass
-      - stylus
-    dev: false
-
   registry.npmmirror.com/vitepress/1.0.0-alpha.4_hoyvfk3ab7nzsjkhptt6ai7rzq:
     resolution: {integrity: sha512-bOAA4KW6vYGlkbcrPLZLTKWTgXVroObU+o9xj9EENyEl6yg26WWvfN7DGA4BftjdM5O8nR93Z5khPQ3W/tFE7Q==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/vitepress/-/vitepress-1.0.0-alpha.4.tgz}
     id: registry.npmmirror.com/vitepress/1.0.0-alpha.4
@@ -17231,6 +17210,33 @@ packages:
       - sass
       - stylus
     dev: true
+
+  registry.npmmirror.com/vitepress/1.0.0-alpha.4_tbpndr44ulefs3hehwpi2mkf2y:
+    resolution: {integrity: sha512-bOAA4KW6vYGlkbcrPLZLTKWTgXVroObU+o9xj9EENyEl6yg26WWvfN7DGA4BftjdM5O8nR93Z5khPQ3W/tFE7Q==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/vitepress/-/vitepress-1.0.0-alpha.4.tgz}
+    id: registry.npmmirror.com/vitepress/1.0.0-alpha.4
+    name: vitepress
+    version: 1.0.0-alpha.4
+    engines: {node: '>=14.6.0'}
+    hasBin: true
+    dependencies:
+      '@docsearch/css': 3.2.1
+      '@docsearch/js': 3.2.1_tbpndr44ulefs3hehwpi2mkf2y
+      '@vitejs/plugin-vue': 2.3.4_vite@2.9.15+vue@3.2.37
+      '@vue/devtools-api': 6.2.1
+      '@vueuse/core': 8.9.4_vue@3.2.37
+      body-scroll-lock: registry.npmmirror.com/body-scroll-lock/4.0.0-beta.0
+      shiki: registry.npmmirror.com/shiki/0.10.1
+      vite: registry.npmmirror.com/vite/2.9.15
+      vue: registry.npmmirror.com/vue/3.2.37
+    transitivePeerDependencies:
+      - '@algolia/client-search'
+      - '@types/react'
+      - '@vue/composition-api'
+      - less
+      - react
+      - react-dom
+      - sass
+      - stylus
 
   registry.npmmirror.com/vm-browserify/1.1.2:
     resolution: {integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/vm-browserify/-/vm-browserify-1.1.2.tgz}

@@ -49,7 +49,7 @@ const BASIC_PROPERTIES = {
 	'hintHidden':'2',
 	'labelHidden':'2',
 	'readonly':'2',
-	'colHeight':'1',
+	'colHeight':'9',
 	'label-width':'1',
 	'label-position':'8',
 	'list':'6',
