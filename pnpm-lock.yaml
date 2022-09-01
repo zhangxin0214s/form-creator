@@ -11,6 +11,7 @@ importers:
       '@vue/eslint-config-standard': ^8.0.1
       '@vue/reactivity': 3.2.37
       babel-eslint: ^10.1.0
+      element-china-area-data: ^5.0.2
       esbuild: |-
         0.14.54 -w
         pnpm install esbuild@0.14.54
@@ -29,6 +30,7 @@ importers:
       vue: ^3.2.37
     dependencies:
       '@vue/reactivity': 3.2.37
+      element-china-area-data: registry.npmmirror.com/element-china-area-data/5.0.2
       esbuild: registry.npmmirror.com/esbuild/0.14.54
       pinia: registry.npmmirror.com/pinia/2.0.20_j6bzmzd4ujpabbp5objtwxyjp4
       sortablejs: registry.npmmirror.com/sortablejs/1.14.0
@@ -5343,6 +5345,12 @@ packages:
     version: 8.0.3
     dev: true
 
+  registry.npmmirror.com/china-area-data/5.0.1:
+    resolution: {integrity: sha512-BQDPpiv5Nn+018ekcJK2oSD9PAD+E1bvXB0wgabc//dFVS/KvRqCgg0QOEUt3vBkx9XzB5a9BmkJCEZDBxVjVw==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/china-area-data/-/china-area-data-5.0.1.tgz}
+    name: china-area-data
+    version: 5.0.1
+    dev: false
+
   registry.npmmirror.com/chokidar/2.1.8:
     resolution: {integrity: sha512-ZmZUazfOzf0Nve7duiCKD23PFSCs4JPoYyccjUFF3aQkQadqBhfzhjkwBH2mNOG9cTBwhamM37EIsIkZw3nRgg==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/chokidar/-/chokidar-2.1.8.tgz}
     name: chokidar
@@ -7205,6 +7213,15 @@ packages:
     resolution: {integrity: sha512-ICHvGaCIQR3P88uK8aRtx8gmejbVJyC6bB4LEC3anzBrIzdzC7aiZHY4iFfXhN4st6I7lMO0x4sgBHf/7kBvRw==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/electron-to-chromium/-/electron-to-chromium-1.4.225.tgz}
     name: electron-to-chromium
     version: 1.4.225
+
+  registry.npmmirror.com/element-china-area-data/5.0.2:
+    resolution: {integrity: sha512-vLQuvOKJy/uiX7MRHEk3x/j09hipuIl6DJ/C4XFUG7D7Pj3O47sy+Y6aAArM6k9v8cD9UX6e+yz2S4J+IPnZ8g==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/element-china-area-data/-/element-china-area-data-5.0.2.tgz}
+    name: element-china-area-data
+    version: 5.0.2
+    dependencies:
+      china-area-data: registry.npmmirror.com/china-area-data/5.0.1
+      lodash-es: registry.npmmirror.com/lodash-es/4.17.21
+    dev: false
 
   registry.npmmirror.com/element-plus/1.0.1-beta.27_vue@3.2.37:
     resolution: {integrity: sha512-/73TA3lTiRCBPBTlcXivHEjxhrdJB8jVHUxtfgrnBui3gSGeWhE+7gqEsmCmMWqZHXjE4FeLpGcnqCV55xl1fQ==, registry: https://npm.100tal.com/, tarball: https://registry.npmmirror.com/element-plus/-/element-plus-1.0.1-beta.27.tgz}

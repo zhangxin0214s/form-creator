@@ -9,7 +9,7 @@
 			v-if="basicProp[key1]?.label"
 			:label="`${basicProp[key1]?.label}:`"
 		>
-			<el-input-number v-model="basicProp[key1].value" :min="1" :max="99"/>
+			<el-input-number v-model="basicProp[key1].value"/>
 		</el-form-item>
 	</el-form>
 </template>

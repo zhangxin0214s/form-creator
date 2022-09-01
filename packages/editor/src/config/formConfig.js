@@ -51,6 +51,14 @@ export const containers = [
 					label: "参数key",
 					value: ''
 				},
+				"isMoveDivider":{
+					label: "是否上下移动",
+					value: false,
+				},
+				"moveDistance":{
+					label: "移动距离",
+					value: 0,
+				}
 			},
 			advanced: {
 				cols: [
@@ -775,18 +783,16 @@ export const basicWidgets = [
 					],
 					value: 'center'
 				},
-				"divider-css-style": {
-					label: "分割线Css样式",
-					value: ""
+				"isMoveDivider":{
+					label: "是否上下移动",
+					value: false,
 				},
-				"divider-text-style": {
-					label: "分割线内容文本Css样式",
-					value: ""
+				"moveDistance":{
+					label: "移动距离",
+					value: 0,
 				}
 			},
-			advanced: {
-
-			}
+			advanced: {}
 		}
 	},
 	{

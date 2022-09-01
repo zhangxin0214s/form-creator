@@ -66,8 +66,8 @@ const BASIC_PROPERTIES = {
 	'multiple':'2',
 	'drag':'2',
 	'url':'1',
-	'divider-css-style':'7',
-	'divider-text-style':'7',
+	'isMoveDivider':'2',
+	'moveDistance':'9',
 }
 
 

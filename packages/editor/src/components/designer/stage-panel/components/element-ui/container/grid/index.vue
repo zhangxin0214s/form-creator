@@ -5,7 +5,11 @@
 			:class="[
         selectedWidget?.id === widget?.id && isEditor?'select':'',
     ]"
-    :style="`background-color:${widget.options.basic.rowBackground.value}`"
+    :style="
+		`background-color:${widget.options.basic.rowBackground.value};
+		${widget.options.basic.isMoveDivider.value ? `position:relative;top:${widget.options.basic.moveDistance.value}px`:''}
+		`
+		"
 		>
 			<template
 				v-for="(colWidget, colIdx) in widget.options.advanced.cols"
