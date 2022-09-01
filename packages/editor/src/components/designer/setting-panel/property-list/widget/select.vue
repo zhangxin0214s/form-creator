@@ -15,12 +15,7 @@
       </el-collapse-item>
       <el-collapse-item name="2" title="高级属性" class="selectAdvance">
         <el-divider class="title" content-position="center">选项设置</el-divider>
-        <add-select-list
-          :advanced-prop="advancedProp"
-          :value = "item"
-          :key1 = "key"
-          >
-        </add-select-list>
+        <add-select-list :advanced-prop="advancedProp"></add-select-list>
       </el-collapse-item>
     </el-collapse>
   </div>

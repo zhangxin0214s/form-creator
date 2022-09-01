@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@vue/reactivity": "3.2.37",
+    "element-china-area-data": "^5.0.2",
     "esbuild": "0.14.54 -w\npnpm install esbuild@0.14.54",
     "pinia": "^2.0.17",
     "sortablejs": "1.14.0",
@@ -29,6 +30,7 @@
     "@vue/cli-plugin-eslint": "^5.0.8",
     "@vue/eslint-config-standard": "^8.0.1",
     "babel-eslint": "^10.1.0",
+    "element-china-area-data": "^5.0.2",
     "eslint": "^8.22.0",
     "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-import": "^2.26.0",
