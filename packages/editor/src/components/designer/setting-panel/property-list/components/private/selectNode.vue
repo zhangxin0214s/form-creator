@@ -10,7 +10,7 @@
         </template>
       </el-input>
      </template>
-   </el-tree>
+  </el-tree>
 </template>
 
 <script setup>
@@ -18,7 +18,7 @@
   import { ref } from 'vue';
   import selectNode from './selectNode.vue';
 
-  const PROPS = defineProps(['list'])
+  const PROPS = defineProps(['list']);
   const append = (data) => {
     const newChild = {
       id: `${data.id}-${data.children.length}`,
