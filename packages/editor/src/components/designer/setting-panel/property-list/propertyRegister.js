@@ -26,6 +26,7 @@ const BASIC_PROPERTIES = {
 	'editable':'2',
 	'alignment':'8',
 	'font-color':'10',
+	'rowBackground':'10',
 	'font-size':'9',
 	'font-style':'11',
 	'attribute':'11',
@@ -65,6 +66,8 @@ const BASIC_PROPERTIES = {
 	'multiple':'2',
 	'drag':'2',
 	'url':'1',
+	'divider-css-style':'7',
+	'divider-text-style':'7',
 }
 
 

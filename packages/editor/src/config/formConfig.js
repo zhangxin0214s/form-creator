@@ -41,8 +41,12 @@ export const containers = [
 				}, // 唯一名称
 				colHeight: {
 					label: "统一高度",
-					value: ""
+					value: "36"
 				},// 栅格统一高度'
+				rowBackground: {
+					label: "背景颜色",
+					value: "#FFFFFF"
+				},
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
@@ -524,8 +528,8 @@ export const basicWidgets = [
 					children: [
 						{
 							id: 0,
-				      label: '选项',
-				      children: []
+							label: '选项',
+							children: []
 						}
 					],
 				},
@@ -608,7 +612,7 @@ export const basicWidgets = [
 			},
 			advanced: {
 				// 选项设置
-				optionItems:[
+				optionItems: [
 					{ label: "label值1", value: "value值1", disabled: false, text: '是否禁用' },
 				],
 				// 请求方式
@@ -770,10 +774,19 @@ export const basicWidgets = [
 						},
 					],
 					value: 'center'
+				},
+				"divider-css-style": {
+					label: "分割线Css样式",
+					value: ""
+				},
+				"divider-text-style": {
+					label: "分割线内容文本Css样式",
+					value: ""
 				}
-
 			},
-			advanced: {}
+			advanced: {
+
+			}
 		}
 	},
 	{
@@ -796,17 +809,17 @@ export const basicWidgets = [
 					options: [
 						{
 							label: "86",
-							valueText:"大陆",
+							valueText: "大陆",
 							value: '86'
 						},
 						{
 							label: "852",
-							valueText:"香港",
+							valueText: "香港",
 							value: '852'
 						},
 						{
 							label: "853",
-							valueText:"澳门",
+							valueText: "澳门",
 							value: '853'
 						},
 					],
@@ -1271,7 +1284,7 @@ export const advancedWidgets = [
 			},
 			advanced: {
 				// 选项设置
-				optionItems:[
+				optionItems: [
 					{ label: "label值1", value: "value值1", disabled: false, text: '是否禁用' },
 				],
 				// 请求方式

@@ -27,5 +27,6 @@
  <style lang="scss" scoped>
  .grid-content1{
     min-height:34px;
+    padding-bottom: 20px;
  }
  </style>
