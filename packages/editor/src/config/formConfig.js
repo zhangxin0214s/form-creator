@@ -41,7 +41,7 @@ export const containers = [
 				}, // 唯一名称
 				colHeight: {
 					label: "统一高度",
-					value: "36"
+					value: 36
 				},// 栅格统一高度'
 				rowBackground: {
 					label: "背景颜色",
