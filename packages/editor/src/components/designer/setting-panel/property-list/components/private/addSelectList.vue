@@ -40,7 +40,7 @@
 
   const PROPS = defineProps(['advancedProp'])
   let {children} = PROPS.advancedProp.selectConfig;
-  let switchData = ref([false, false, true]);
+  let switchData = ref([false, false, false]);
   const addList = () => {
     children.push({
       id: children.length,
