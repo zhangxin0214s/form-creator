@@ -643,10 +643,6 @@ export const basicWidgets = [
 					label: "默认文本",
 					value: "请输入文本域内容"
 				},// 默认提示文本
-				maxlength: {
-					label: '最大输入长度',
-					value: 50,
-				},
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
