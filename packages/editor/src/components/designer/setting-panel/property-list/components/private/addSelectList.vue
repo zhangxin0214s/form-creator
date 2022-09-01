@@ -1,27 +1,31 @@
 <template>
   <div class="advanced">
     <div class="operation">
-      <div class="setOptions" v-if="!selectType">
-        <span>动态数据：</span>
-        <el-switch class="optionsType" v-model="optionsType"/>
-      </div>
       <!-- 动态数据 -->
-      <div v-if="optionsType">
+      <div class="setOptions">
+        <span>动态数据：</span>
+        <el-switch class="optionsType" v-model="switchData[0]" @change="changeData(0)"/>
+      </div>
+      <div v-if="switchData[0]">
         <dataSource :advanced-prop="advancedProp"/>
       </div>
       <!-- 城市数据 -->
-      <div class="setOptions" v-if="!optionsType">
+      <div class="setOptions">
         <span>城市数据：</span>
-        <el-switch v-model="selectType" @change="useOption" />
+        <el-switch v-model="switchData[1]" @change="changeData(1)" />
       </div>
-      <!-- 静态数据 -->
-      <el-form class="form" v-if="!selectType&&!optionsType">
+      <!-- 静态数据 自定义 -->
+      <div class="customData">
+        <span>静态数据：</span>
+        <el-switch v-model="switchData[2]" @change="changeData(2)" />
+      </div>
+      <el-form class="form" v-if="switchData[2]">
         <el-form-item v-if="children.length>0">
-          <select-node :list="children" :selectType="selectType"></select-node>
+          <select-node :list="children"></select-node>
         </el-form-item>
     	</el-form>
     </div>
-    <div class="addBtn" @click.native="addList" v-if="!selectType&&!optionsType">
+    <div class="addBtn" @click.native="addList" v-if="switchData[2]">
       <el-button type="primary">添加选项</el-button>
     </div>
   </div>
@@ -35,9 +39,8 @@
   import selectNode from './selectNode.vue';
 
   const PROPS = defineProps(['advancedProp'])
-  const optionsType = ref(false);
-  const selectType = ref(false);
   let {children} = PROPS.advancedProp.selectConfig;
+  let switchData = ref([false, false, true]);
   const addList = () => {
     children.push({
       id: children.length,
@@ -46,9 +49,18 @@
       children: []
     })
   };
-  const useOption = (bool) => {
+  const changeData = (num) => {
     children.length=0;
-    bool?children.push(...regionData):addList();
+    switchData.value.forEach((bool,index) => {
+      if (index === num) {
+        if (bool) {
+          if (index===1) children.push(...regionData);
+          if (index===2) addList();
+        }
+        return;
+      }
+      switchData.value[index] = false;
+    })
   }
 
 </script>
