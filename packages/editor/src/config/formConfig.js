@@ -493,6 +493,10 @@ export const basicWidgets = [
 					label: '标签',
 					value: '选择框：'
 				},
+				defaultValue: {
+					label: "选择提示",
+					value: "请选择"
+				},
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
