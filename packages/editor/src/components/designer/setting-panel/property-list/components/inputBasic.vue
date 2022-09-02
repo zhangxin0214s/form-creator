@@ -11,7 +11,8 @@
 		>
 			<el-input
 				v-model="basicProp[key1].value"
-				@blur="initRuleForm"
+				@change="initRuleForm"
+        clearable
 			/>
 		</el-form-item>
 	</el-form>

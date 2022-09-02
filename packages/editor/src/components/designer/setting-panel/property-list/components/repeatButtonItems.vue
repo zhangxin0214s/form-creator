@@ -70,10 +70,6 @@ const addCheckbox = () => {
 
 const delCheckbox = (ite, index) => {
   props.advancedProp.optionItems.splice(index, 1)
-  props.advancedProp.optionItems.forEach((item, i) => {
-    item.label = 'check' + (i + 1);
-    item.value = 'value' + (i + 1)
-  })
 }
 </script>
 <style lang="scss" scoped>

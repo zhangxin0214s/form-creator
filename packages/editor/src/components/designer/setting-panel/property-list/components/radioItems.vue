@@ -70,10 +70,6 @@ const addCheckbox = () => {
 
 const delCheckbox = (ite, index) => {
   props.advancedProp.optionItems.splice(index, 1)
-  props.advancedProp.optionItems.forEach((item, i) => {
-    item.label = 'label值' + (i + 1);
-    item.value = 'value值' + (i + 1)
-  })
   // props.advancedProp.optionItems = props.advancedProp.optionItems.filter(item => item.value != ite.value)
 }
 </script>

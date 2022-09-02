@@ -60,8 +60,8 @@ const props = defineProps([
 const addCheckbox = () => {
   props.advancedProp.optionItems.push(
       {
-        label:`check${props.advancedProp.optionItems.length + 1}`,
-        value:`value${props.advancedProp.optionItems.length + 1}`,
+        label:`label值${props.advancedProp.optionItems.length + 1}`,
+        value:`value值${props.advancedProp.optionItems.length + 1}`,
         disabled:false,
         text:'是否禁用',
         isSelect:false
@@ -70,10 +70,6 @@ const addCheckbox = () => {
 
 const delCheckbox = (ite, index) => {
   props.advancedProp.optionItems.splice(index, 1)
-  props.advancedProp.optionItems.forEach((item, i) => {
-    item.label = 'check' + (i + 1);
-    item.value = 'value' + (i + 1)
-  })
 }
 </script>
 <style lang="scss" scoped>
