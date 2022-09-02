@@ -1,14 +1,15 @@
 <template>
-	<container-mask :widget="widget">
+	<container-mask
+		:widget="widget"
+		:style="`${widget.options.basic.isMoveDivider.value ? `top:${widget.options.basic.moveDistance.value}px`:''}`"
+	>
 		<el-row
 			class="grid-container"
 			:class="[
         selectedWidget?.id === widget?.id && isEditor?'select':'',
     ]"
-    :style="
-		`background-color:${widget.options.basic.rowBackground.value};
-		${widget.options.basic.isMoveDivider.value ? `position:relative;top:${widget.options.basic.moveDistance.value}px`:''}
-		`
+			:style="
+		`background-color:${widget.options.basic.rowBackground.value}`
 		"
 		>
 			<template

@@ -4,12 +4,13 @@
 		:basic-prop="widget.options.basic"
 		:advanced-prop="widget.options.advanced"
 		:parent-widget="parentWidget"
+		:style="`top:${widget.options.basic.moveDistance.value}px`"
 	>
 		<el-divider
 			:direction="widget.options.basic['divider-direction'].value"
 			:border-style="widget.options.basic['divider-style'].value"
 			:content-position="widget.options.basic['divider-position'].value"
-			:style="widget.options.basic.isMoveDivider.value ? `margin:0;position:absolute;top:${widget.options.basic.moveDistance.value}px`:''"
+			:style="widget.options.basic.isMoveDivider.value ? `margin:0`:``"
 		>
 			<span v-if="widget.options.basic['divider-direction'].value ==='horizontal'">
 				{{widget.options.basic['divider-content'].value}}
