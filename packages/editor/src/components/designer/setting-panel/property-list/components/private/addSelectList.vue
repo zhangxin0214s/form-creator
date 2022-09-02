@@ -1,32 +1,23 @@
 <template>
   <div class="advanced">
     <div class="operation">
-      <!-- 动态数据 -->
-      <div class="setOptions">
-        <span>动态数据：</span>
-        <el-switch class="optionsType" v-model="switchData[0]" @change="changeData(0)"/>
+      <div class="" v-for="(key,index) in dataListType">
+        <span>{{PROPS.advancedProp[key]['label']}}：</span>
+        <el-switch class="optionsType" v-model="PROPS.advancedProp[key]['check']" @change="changeDataType(key)"/>
       </div>
-      <div v-if="switchData[0]">
+      <!-- 动态数据 -->
+      <div v-if="PROPS.advancedProp['dataSource'].check">
         <dataSource :advanced-prop="advancedProp"/>
       </div>
-      <!-- 城市数据 -->
-      <div class="setOptions">
-        <span>城市数据：</span>
-        <el-switch v-model="switchData[1]" @change="changeData(1)" />
-      </div>
-      <!-- 静态数据 自定义 -->
-      <div class="customData">
-        <span>静态数据：</span>
-        <el-switch v-model="switchData[2]" @change="changeData(2)" />
-      </div>
-      <el-form class="form" v-if="switchData[2]">
-        <el-form-item v-if="children.length>0">
-          <select-node :list="children"></select-node>
+      <!-- 静态数据 -->
+      <el-form class="form" v-if="PROPS.advancedProp['staticData'].check">
+        <el-form-item v-if="data.length>0">
+          <select-node :data="data"></select-node>
         </el-form-item>
-    	</el-form>
-    </div>
-    <div class="addBtn" @click.native="addList" v-if="switchData[2]">
-      <el-button type="primary">添加选项</el-button>
+      </el-form>
+      <div class="addBtn" @click.native="addList" v-if="PROPS.advancedProp['staticData'].check">
+        <el-button type="primary">添加选项</el-button>
+      </div>
     </div>
   </div>
 </template>
@@ -38,28 +29,29 @@
   import dataSource from '../dataSource.vue'
   import selectNode from './selectNode.vue';
 
-  const PROPS = defineProps(['advancedProp'])
-  let {children} = PROPS.advancedProp.selectConfig;
-  let switchData = ref([false, false, false]);
+  const PROPS = defineProps(['advancedProp']);
+  const dataListType = ['dataSource', 'cityData', 'staticData'];
+  const {data} = PROPS.advancedProp;
+
   const addList = () => {
-    children.push({
-      id: children.length,
+    data.push({
+      id: data.length,
       label: '选项',
-      // label: `新选项${children.length}`,
-      children: []
+      // label: `新选项${data.length}`,
+      data: []
     })
   };
-  const changeData = (num) => {
-    children.length=0;
-    switchData.value.forEach((bool,index) => {
-      if (index === num) {
-        if (bool) {
-          if (index===1) children.push(...regionData);
-          if (index===2) addList();
+  const changeDataType = (key) => {
+    data.length=0;
+    dataListType.forEach(item => {
+      if (item === key) {
+        if (PROPS.advancedProp[item].check) {
+          if (key==='cityData') data.push(...regionData);
+          if (key==='staticData') addList();
         }
         return;
       }
-      switchData.value[index] = false;
+      PROPS.advancedProp[item].check = false;
     })
   }
 

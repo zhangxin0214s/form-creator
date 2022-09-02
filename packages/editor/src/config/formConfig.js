@@ -533,21 +533,24 @@ export const basicWidgets = [
 			},
 			advanced: {
 				dataSource: {
+					label: '动态数据',
+					check: false,
 					address: '', // 请求地址
 					type: 'post',// 请求方式
 					parameter: {},// 请求参数
-					data: {}// 发送数据
+					data: [],
 				},
-				selectConfig: {
-					label: '选项设置',
-					children: [
-						{
-							id: 0,
-							label: '选项',
-							children: []
-						}
-					],
+				cityData: {
+					label: '城市数据',
+					check: false,
+					data: [],
 				},
+				staticData: {
+					label: '静态数据',
+					check: false,
+					data: [],
+				},
+				data: [],
 			}
 		}
 	},
