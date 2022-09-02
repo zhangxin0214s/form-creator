@@ -86,6 +86,7 @@
      * 代码编辑器
      */
     const exportCode = () =>{
+      console.log(formData);
         dialogCodeVisible.value = true;
     }
 
@@ -96,7 +97,7 @@
       reader.onload = e => {
         readText = JSON.parse(e.currentTarget.result);
         // _widgetStore.clearWidget();
-        widgetList.value.push(...readText.widgetList);
+        _widgetStore.widgetList.push(...readText.widgetList);
       }
     }
 
