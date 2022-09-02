@@ -49,6 +49,7 @@
           if (key==='cityData') data.push(...regionData);
           if (key==='staticData') addList();
         }
+        PROPS.advancedProp[item].data = PROPS.advancedProp[item].check?data:[];
         return;
       }
       PROPS.advancedProp[item].check = false;
