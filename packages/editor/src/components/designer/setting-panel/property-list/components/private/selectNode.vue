@@ -1,5 +1,5 @@
 <template>
-  <el-tree :data="PROPS.list" default-expand-all :expand-on-click-node="false">
+  <el-tree :data="PROPS.data" default-expand-all :expand-on-click-node="false">
     <template #default="{ node, data }">
       <el-input class="custom-tree-node" v-model="data.label" :placeholder="data.label">
         <template #prepend>
@@ -18,10 +18,11 @@
   import { ref } from 'vue';
   import selectNode from './selectNode.vue';
 
-  const PROPS = defineProps(['list']);
+  const PROPS = defineProps(['data']);
+  console.log(PROPS.data);
   const append = (data) => {
     const newChild = {
-      id: `${data.id}-${data.children.length}`,
+      id: `${data.id}-${data.data.length}`,
       label: '选项',
       // label: `新选项${data.id}-${data.children.length}`,
       children: []

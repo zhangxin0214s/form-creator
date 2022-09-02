@@ -1,9 +1,21 @@
 <template>
     <!-- 工具栏 -->
     <ul class="tool">
-        <li class="tool-btn" v-for="item in tools" @click="item.fun()">
-          <svg-icon :icon-class="item.icon" />
-          <el-button link type="primary">{{ item.name }}</el-button>
+        <li class="tool-btn" v-for="item in tools">
+          <div class="" v-if="!item.otherTag"  @click="item.fun()">
+            <svg-icon :icon-class="item.icon" />
+            <el-button link type="primary">{{ item.name }}</el-button>
+          </div>
+          <el-upload  v-else class="upload_file"
+            :limit="1"
+            :show-file-list="false"
+            method="GET"
+            accept=".json"
+            @success="uploadFile"
+            action="">
+            <svg-icon :icon-class="item.icon" />
+            <el-button link type="primary">{{item.name}}</el-button>
+          </el-upload>
         </li>
     </ul>
 
@@ -30,6 +42,7 @@
     import { storeToRefs } from 'pinia';
     import formRenderer from '../../renderer/index.vue'
     import { ElMessage } from 'element-plus'
+    import UploadInstance from 'element-plus'
     import { deepClone } from '@/utils/util'
     import { toRaw } from '@vue/reactivity'
     import codeEditor from '../code-editor/index.vue'
@@ -40,8 +53,6 @@
     const dialogCodeVisible = ref(false);
 
     const formData = ref({formConfig:toRaw(_widgetStore.formConfig),widgetList:toRaw(_widgetStore.widgetList)})
-
-    console.log(formConfig,"=====")
 
     /**
      * 清空
@@ -76,6 +87,17 @@
      */
     const exportCode = () =>{
         dialogCodeVisible.value = true;
+    }
+
+    const uploadFile = (file, files) => {
+      let reader = new FileReader(),
+          readText;
+      reader.readAsText(files.raw);
+      reader.onload = e => {
+        readText = JSON.parse(e.currentTarget.result);
+        // _widgetStore.clearWidget();
+        widgetList.value.push(...readText.widgetList);
+      }
     }
 
     /**
@@ -119,7 +141,8 @@
         },
         {
             name:'导入',
-            icon:'tool-import'
+            icon:'tool-import',
+            otherTag: true,
         },
         {
             name:'模板库',
@@ -129,20 +152,19 @@
 </script>
 <style lang="scss" scoped>
     li{
-        list-style-type: none;
+      list-style-type: none;
     }
-
     .tool {
-        display: -webkit-flex;
-        display: flex;
-        justify-content:center;
-        align-items: center;
+      display: -webkit-flex;
+      display: flex;
+      justify-content:center;
+      align-items: center;
     }
     .codeEditor{
-        margin-top:-30px;
+      margin-top:-30px;
     }
 
     :deep(.el-dropdown){
-        margin-top:10px;
+      margin-top:10px;
     }
 </style>
