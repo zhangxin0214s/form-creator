@@ -951,6 +951,10 @@ export const basicWidgets = [
 						}
 					]
 				},
+				addRequired: {
+					label: "添加必填符号",
+					value: false,
+				},
 			},
 			advanced: {}
 		}

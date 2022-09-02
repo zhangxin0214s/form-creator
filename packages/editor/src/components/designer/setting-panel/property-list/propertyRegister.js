@@ -46,6 +46,7 @@ const BASIC_PROPERTIES = {
 	'plain':'2',
 	'space':'2',
 	'required':'13',
+	'addRequired':'2',
 	'hintHidden':'2',
 	'labelHidden':'2',
 	'readonly':'2',

@@ -16,7 +16,7 @@
 			'font-weight':`${widget.options.basic['font-style'].options[0].value ? 'bold' : 'normal'}`,
 			'text-decoration':`${widget.options.basic['font-style'].options[2].value ? 'underline' : 'none'}`,
 		}
-		"><span>{{widget.options.basic.textareaDefaultValue.value}}</span></pre>
+		"><span v-show="widget.options.basic.addRequired.value" style="color:red">*</span><span>{{widget.options.basic.textareaDefaultValue.value}}</span></pre>
 	</widget-mask>
 </template>
 
