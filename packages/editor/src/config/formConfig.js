@@ -662,6 +662,28 @@ export const basicWidgets = [
 					label: "默认文本",
 					value: "请输入文本域内容"
 				},// 默认提示文本
+				maxlength:{
+					label:"最大输入长度",
+					value:50
+				},
+				resizeDirection: {
+					label: '缩放方向',
+					options: [
+						{
+							label: '横向缩放',
+							value: 'horizontal'
+						},
+						{
+							label: '纵向缩放',
+							value: 'vertical'
+						},
+						{
+							label: '横纵双缩放',
+							value: 'both'
+						}
+					],
+					value:"both"
+				},
 				ruleFormKey: {
 					label: "参数key",
 					value: ''

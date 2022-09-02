@@ -68,6 +68,7 @@ const BASIC_PROPERTIES = {
 	'url':'1',
 	'isMoveDivider':'2',
 	'moveDistance':'9',
+	'resizeDirection':'3'
 }
 
 
