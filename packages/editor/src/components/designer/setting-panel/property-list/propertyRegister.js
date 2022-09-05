@@ -29,6 +29,7 @@ const BASIC_PROPERTIES = {
 	'font-color':'10',
 	'rowBackground':'10',
 	'font-size':'9',
+	'margin-left-right':'9',
 	'font-style':'11',
 	'attribute':'11',
 	'labelWidth':'1',

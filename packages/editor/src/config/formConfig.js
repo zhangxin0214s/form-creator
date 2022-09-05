@@ -325,6 +325,11 @@ export const basicWidgets = [
 					value: false,
 					message: ""
 				},// 是否必填
+				"margin-left-right": {
+					label: "左右内边距",
+					value: 0
+				},
+
 				// hintHidden: {
 				// 	label: '提示语隐藏',
 				// 	value: false
