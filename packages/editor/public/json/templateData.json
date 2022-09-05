@@ -1,14 +1,14 @@
 [
   {
-      "name": "题目编辑页",
-      "path": "",
-      "image": "../src/image/timubianjiye.jpeg"
+    "name": "题目编辑页",
+    "path": "",
+    "image": "../src/image/timubianjiye.jpeg"
   },
-    {
-        "name": "表单数据",
-        "path": "",
-        "image": "../src/image/biaodan.jpeg"
-    },
+  {
+    "name": "表单数据",
+    "path": "",
+    "image": "../src/image/biaodan.jpeg"
+  },
   {
     "name": "表单数据",
     "path": "",

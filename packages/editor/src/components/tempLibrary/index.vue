@@ -1,17 +1,12 @@
 <template>
   <div class="from">
     <el-card class="box-card">
-      <template #header>
-        <div class="card-header">
-          <span>模板缩略图</span>
-        </div>
-      </template>
-      <div>
-        <ul v-for="(item, index) in templateData">
-          <li @click="clickRender">
-            <span>{{ item.name }}</span>
-            <img :src="item.image" style="width: 100px; height: 100px">
+      <div v-for="(item, index) in templateData">
+        <ul>
+          <li>
+            <img :src="item.image" style="width: 120px; height: 120px">
           </li>
+          <div style="margin-top: 15px">{{ item.name }}</div>
         </ul>
       </div>
     </el-card>
@@ -20,10 +15,12 @@
 
 <script setup>
 import templateData from '../../../public/json/templateData.json'
+import { storeToRefs } from 'pinia'
+import { widgetStore } from '@/store/index';
 
-const clickRender = () => {
-  alert('我被点击了')
-}
+const _widgetStore = widgetStore();
+const {widgetList, formConfig} = storeToRefs(_widgetStore);
+
 </script>
 
 <style scoped>
@@ -35,19 +32,21 @@ const clickRender = () => {
 .box-card {
   width: 100%;
 }
-/deep/.el-card__body {
-  padding: 0px 0px 0px 20px;
+/deep/ .el-card__body {
+  padding: 0px 0px 0px 30px;
 }
 ul {
   float: left;
-  height: 100px;
-  width: 100px;
+  height: 190px;
+  width: 170px;
   margin-right: 30px;
-  padding: 0px 0px 20px 0px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  padding: 0px;
 }
 li {
   display: inline-block;
+  margin-top: 10px;
   list-style: none;
-  border: 1px solid red;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 </style>
