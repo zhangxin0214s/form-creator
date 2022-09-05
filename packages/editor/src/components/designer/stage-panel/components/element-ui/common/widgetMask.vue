@@ -6,7 +6,8 @@
 		<el-form-item
 			:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
 			:label="basicProp.label.value"
-			:prop="basicProp?.ruleFormKey?.value"
+			:rules="widget.rules"
+			:prop="propKey"
 			:key="basicProp?.ruleFormKey?.value"
 		>
 			<slot></slot>
@@ -17,6 +18,7 @@
                 {{ widget.options.basic.name.value }}
 			</span>
         </div> -->
+		
 		<div
 			class="container-mask-action"
 			v-if="selectedWidget?.id === widget?.id && isEditor"
@@ -38,7 +40,7 @@
 import { widgetStore } from '@/store/index';
 import { storeToRefs } from 'pinia';
 import { generateId, deepClone } from '@/utils/util';
-const props = defineProps(['widget', 'basicProp', 'parentWidget']);
+const props = defineProps(['widget', 'basicProp', 'propKey','parentWidget']);
 const _widgetStore = widgetStore();
 const { widgetList, selectedWidget,isEditor } = storeToRefs(_widgetStore);
 
@@ -52,9 +54,12 @@ const copy = () => {
 };
 
 const delete1 = () => {
-	console.log(props.parentWidget, '===parentWidget===');
 	_widgetStore.removeWidget(props.widget, props.parentWidget);
 };
+
+const getPropName = () => {
+	return props.basicProp?.ruleFormKey?.value
+}
 </script>
 <style lang="scss" scoped>
 .select {

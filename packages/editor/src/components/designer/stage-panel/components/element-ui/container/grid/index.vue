@@ -19,6 +19,7 @@
 				<Col
 					:colWidget="colWidget"
 					:widget="widget"
+					:prop-key="propKey"
 					:rule-form-ref="ruleFormRef"
 					:style="`height:${widget.options.basic.colHeight.value}px;`"
 				>
@@ -35,7 +36,7 @@ import containerMask from '../../common/containerMask.vue';
 import Col from './grid-col.vue';
 const _widgetStore = widgetStore();
 const { selectedWidget, isEditor } = storeToRefs(_widgetStore);
-defineProps(['widget', 'ruleFormRef']);
+defineProps(['widget', 'propKey', 'ruleFormRef']);
 </script>
  <style lang="scss" scoped>
 .grid-container {

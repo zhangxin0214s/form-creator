@@ -130,6 +130,7 @@ export const basicWidgets = [
 		category: "widget",
 		icon: "input",
 		value: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				name: {

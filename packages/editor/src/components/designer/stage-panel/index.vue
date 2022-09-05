@@ -21,7 +21,6 @@
 				:label-width="formConfig['label-width'].value+'px'"
 				:label-position="formConfig['label-position'].value"
 				ref="ruleFormRef"
-				:rules="formConfig.rules"
 				:model="formConfig.ruleForm"
 				>
 				<draggable
@@ -38,6 +37,8 @@
 								:key="widget.id"
 								:widget=widget
 								:parent-widget="widgetList"
+								:widget-type="`widget`"
+								:prop-key="widget.options.basic.ruleFormKey.value"
 								:rule-form-ref="ruleFormRef"
 								@click.stop="selected(widget)"
 								@submitForm="submitForm"
@@ -81,7 +82,7 @@ const selected = (widgetData) => {
 };
 
 const onEnd = (origin)=>{
-	_widgetStore.selectedWidget = _widgetStore.cloneWidget;
+  _widgetStore.selectedWidget = _widgetStore.cloneWidget;
   _widgetStore.recordHistory();
 }
 

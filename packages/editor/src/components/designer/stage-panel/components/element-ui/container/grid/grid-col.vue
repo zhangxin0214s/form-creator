@@ -10,10 +10,12 @@
                 :sort="isEditor">
                 <template #item="{ element }">
                     <div class="transition-group-el">
+                        {{ `${propKey}.${element.options.basic.ruleFormKey.value}` }}
                         <component 
                             :is="componentMap[element.type]" 
                             :key="element.id"
                             :widget = element
+                            :propKey = "`${propKey}.${element.options.basic.ruleFormKey.value}`"
                             :parent-widget=colWidget.widgetList
                             :rule-form-ref="ruleFormRef"
                             :parent = widget
@@ -34,6 +36,7 @@
     const props = defineProps([
         'colWidget',
         'widget',
+        'propKey',
         'ruleFormRef'
     ])
     const componentMap = {
