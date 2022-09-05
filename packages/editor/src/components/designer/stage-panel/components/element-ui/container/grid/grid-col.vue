@@ -10,14 +10,14 @@
                 :sort="isEditor">
                 <template #item="{ element }">
                     <div class="transition-group-el">
-                        {{ `${propKey}.${element.options.basic.ruleFormKey.value}` }}
                         <component 
                             :is="componentMap[element.type]" 
                             :key="element.id"
                             :widget = element
-                            :propKey = "`${propKey}.${element.options.basic.ruleFormKey.value}`"
+                            :propKey = "getPropKey(element)"
                             :parent-widget=colWidget.widgetList
                             :rule-form-ref="ruleFormRef"
+                            :rule-form="ruleForm"
                             :parent = widget
                             @submitForm="submitForm">
                         </component>
@@ -37,6 +37,7 @@
         'colWidget',
         'widget',
         'propKey',
+        'ruleForm',
         'ruleFormRef'
     ])
     const componentMap = {
@@ -62,6 +63,13 @@
             console.log('error submit!', fields)
             }
         })
+    }
+    const getPropKey = (element) =>{
+        if(props.propKey) {
+            return `${props.propKey}.${element.options.basic.ruleFormKey.value}`
+        }else{
+            return `${element.options.basic.ruleFormKey.value}`
+        }
     }
 </script>
  <style lang="scss" scoped>

@@ -21,6 +21,7 @@
 					:widget="widget"
 					:prop-key="propKey"
 					:rule-form-ref="ruleFormRef"
+					:rule-form="ruleForm[widget.options.basic.ruleFormKey.value]"
 					:style="`height:${widget.options.basic.colHeight.value}px;`"
 				>
 				</Col>
@@ -32,11 +33,28 @@
 <script setup>
 import { widgetStore } from '@/store/index';
 import { storeToRefs } from 'pinia';
+import { onMounted,watch } from 'vue';
 import containerMask from '../../common/containerMask.vue';
 import Col from './grid-col.vue';
 const _widgetStore = widgetStore();
 const { selectedWidget, isEditor } = storeToRefs(_widgetStore);
-defineProps(['widget', 'propKey', 'ruleFormRef']);
+const props = defineProps(['widget', 'propKey', 'ruleForm', 'ruleFormRef']);
+
+watch(
+	() => props.propKey,
+	(value) => {
+		const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+		if(ruleFormKey && !props.ruleForm[ruleFormKey]){
+			console.log("监听到数据变化",ruleFormKey)
+			props.ruleForm[ruleFormKey] = {}
+		}
+	},
+	{
+		deep: true,
+		immediate: true
+	}
+)
+
 </script>
  <style lang="scss" scoped>
 .grid-container {

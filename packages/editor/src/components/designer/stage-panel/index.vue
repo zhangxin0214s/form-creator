@@ -39,6 +39,7 @@
 								:parent-widget="widgetList"
 								:widget-type="`widget`"
 								:prop-key="widget.options.basic.ruleFormKey.value"
+								:rule-form="formConfig.ruleForm"
 								:rule-form-ref="ruleFormRef"
 								@click.stop="selected(widget)"
 								@submitForm="submitForm"
