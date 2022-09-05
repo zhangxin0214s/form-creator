@@ -17,11 +17,11 @@
       <span class="gutter-label-text">复选框 {{ index + 1 }}</span>
       <div>
         <span class="gutter-label-text">label:</span>
-        <el-input style="width: 150px;margin-right: 10px" v-model="ite.label"/>
+        <el-input style="width: 150px;margin-right: 10px" clearable v-model="ite.label"/>
       </div>
       <div>
         <span class="gutter-label-text">value:</span>
-        <el-input style="width: 150px;margin-right: 10px" v-model="ite.value"/>
+        <el-input style="width: 150px;margin-right: 10px" clearable v-model="ite.value"/>
       </div>
 
       <span style="margin-top: 10px; display: inline-block">{{ ite.text }}复选框{{ index + 1 }}：</span>
