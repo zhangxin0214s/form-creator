@@ -31,7 +31,11 @@ const initRuleForm = () =>{
 
 	if(props.basicProp[props.key1].value){
 		_widgetStore.formConfig.ruleForm[props.basicProp[props.key1].value] = _widgetStore.selectedWidget.value
-	}
+	} else {
+    _widgetStore.selectedWidget.options.basic.required.value = false
+    _widgetStore.selectedWidget.options.basic.required.message = ''
+
+  }
 }
 </script>
 <style lang="scss" scoped>
