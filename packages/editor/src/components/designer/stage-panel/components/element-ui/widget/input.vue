@@ -34,6 +34,7 @@ onMounted(()=>{
 })
 const handleChangeEvent = () =>{
 	const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+	console.log()
 	props.ruleForm[ruleFormKey] = props.widget.value;
 	// // if(props.widgetType === 'widget'){
 	// 	const propKeys = props.propKey.split(".");

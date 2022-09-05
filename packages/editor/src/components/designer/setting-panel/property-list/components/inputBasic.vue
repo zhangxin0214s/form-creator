@@ -10,7 +10,7 @@
 			:label="`${basicProp[key1]?.label}:`"
 		>
 			<el-input
-				v-model="basicPropKey"
+				v-model="basicProp[props.key1].value"
 				@blur="initRuleForm"
         		clearable
 			/>
@@ -21,17 +21,15 @@
 import { defineProps } from 'vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
-import { ref } from 'vue'
+
 const _widgetStore = widgetStore();
 const { formConfig,selectedWidget } = storeToRefs(_widgetStore);
 
 const props = defineProps(['basicProp', 'key1']);
 
-const basicPropKey = ref(null);
-
 const initRuleForm = () =>{
 	if(props.key1 !== 'ruleFormKey') return
-	props.basicProp[props.key1].value = basicPropKey;
+	_widgetStore.selectedWidget.ruleFormKey = props.basicProp[props.key1].value;
 	if(props.basicProp[props.key1].value){
 		// _widgetStore.formConfig.ruleForm[props.basicProp[props.key1].value] = _widgetStore.selectedWidget.value
 	} else {
