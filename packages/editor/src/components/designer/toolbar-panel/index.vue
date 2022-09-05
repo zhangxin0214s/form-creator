@@ -86,8 +86,8 @@
      * 代码编辑器
      */
     const exportCode = () =>{
-      console.log(formData);
-        dialogCodeVisible.value = true;
+        // dialogCodeVisible.value = true;
+        console.log(formData);
     }
 
     const uploadFile = (file, files) => {

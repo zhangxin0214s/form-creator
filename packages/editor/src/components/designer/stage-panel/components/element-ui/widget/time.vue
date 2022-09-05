@@ -17,7 +17,7 @@
           :start-placeholder="widget.options.advanced.startPlaceholder.value"
           :end-placeholder="widget.options.advanced.endPlaceholder.value"
           :range-separator="widget.options.advanced.rangeSeparator.value"
-          v-model="widget.options.basic.value"
+          v-model="widget.value"
       />
     </el-config-provider>
   </widget-mask>
@@ -39,4 +39,3 @@ let props = defineProps([
 <style scoped>
 
 </style>
-

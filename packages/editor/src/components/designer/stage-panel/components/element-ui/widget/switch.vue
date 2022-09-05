@@ -6,7 +6,7 @@
 		:parent-widget="parentWidget"
 	>
 		<el-switch
-			v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]"
+			v-model="widget.value"
 			:disabled="widget.options.basic.disabled.value"
 		/>
 	</widget-mask>

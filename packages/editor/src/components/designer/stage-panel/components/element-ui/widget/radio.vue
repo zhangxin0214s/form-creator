@@ -4,7 +4,7 @@
       :basicProp="widget.options.basic"
       :advancedProp="widget.options.advanced"
       :parent-widget="parentWidget">
-    <el-radio-group v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]">
+    <el-radio-group v-model="widget.value">
       <el-radio
           v-for="(item,index) in widget.options.advanced.optionItems"
           :key="index"

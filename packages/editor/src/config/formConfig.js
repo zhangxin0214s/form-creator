@@ -86,11 +86,21 @@ export const containers = [
 		closable: true,
 		maxCount: 10,
 		options: {
+			basic: {
+				ruleFormKey: {
+					label: "参数key",
+					value: ''
+				},
+			},
 			advanced: {
 				cols: [
 					{
 						id: 1,
 						name: '名称',
+						ruleFormKey: {
+							label: "参数key",
+							value: ''
+						},
 						widgetList: []
 					}
 				]
@@ -116,7 +126,7 @@ export const containers = [
 			hidden: false,
 			basic: {
 				label: {
-					label: "卡片名称:",
+					label: "卡片名称",
 					value: "卡片1"
 				},
 				ruleFormKey: {
@@ -505,6 +515,7 @@ export const basicWidgets = [
 		type: "select",
 		category: "widget",
 		icon: "select",
+		value: [],
 		options: {
 			basic: {
 				name: {
@@ -843,6 +854,7 @@ export const basicWidgets = [
 		type: "cellPhone",
 		category: "widget",
 		icon: "cellPhone",
+		value: null,
 		options: {
 			basic: {
 				name: {

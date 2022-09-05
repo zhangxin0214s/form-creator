@@ -16,9 +16,10 @@
           :readonly="widget.options.basic.attribute.options[1].value"
           :editable="widget.options.basic.attribute.options[2].value"
           :size="widget.options.basic.dateSize.value"
-          v-model="widget.options.basic.value"
+          v-model="widget.value"
       />
     </el-config-provider>
+    <span>{{widget.value}}</span>
   </widget-mask>
 </template>
 
@@ -37,4 +38,3 @@ let props = defineProps([
 <style scoped>
 
 </style>
-

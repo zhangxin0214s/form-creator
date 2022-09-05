@@ -1,6 +1,7 @@
 <template>
   <widget-mask :widget="widget" :basic-prop="basic" :advanced-prop="advanced">
     <el-cascader
+        v-model="widget.value"
         :options="advanced.data"
         :disabled="basic.disabled.value"
         :placeholder="basic.defaultValue.value"
