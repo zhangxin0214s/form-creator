@@ -34,6 +34,7 @@ export const containers = [
 		icon: "lattice",
 		value: null,
 		ruleFormKey: null,
+		ruleFormKeyType: 'object',
 		options: {
 			basic: {
 				name: {
@@ -132,6 +133,7 @@ export const basicWidgets = [
 		icon: "input",
 		value: null,
 		ruleFormKey: null,
+		ruleFormKeyType: 'object',
 		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
