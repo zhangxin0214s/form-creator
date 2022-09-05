@@ -3,7 +3,7 @@
     <el-card type="border-card" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" >
       <template #header>
       <div class="card-header">
-        <span>{{widget.title}}</span>
+        <span>{{widget.options.basic.label.value}}</span>
       </div>
     </template>
     <card-content :widgetList="widget.options.advanced.widgetList"></card-content>

@@ -114,6 +114,16 @@ export const containers = [
 		title: '卡片名称',
 		options: {
 			hidden: false,
+			basic: {
+				label: {
+					label: "卡片名称:",
+					value: "卡片1"
+				},
+				ruleFormKey: {
+					label: "参数key",
+					value: ''
+				},
+			},
 			advanced: {
 				widgetList: []
 			}
