@@ -51,11 +51,11 @@ export const containers = [
 					label: "参数key",
 					value: ''
 				},
-				"isMoveDivider":{
+				"isMoveDivider": {
 					label: "是否上下移动",
 					value: false,
 				},
-				"moveDistance":{
+				"moveDistance": {
 					label: "移动距离",
 					value: 0,
 				}
@@ -129,7 +129,7 @@ export const basicWidgets = [
 		type: "input",
 		category: "widget",
 		icon: "input",
-		value: null,
+		value: '',
 		options: {
 			basic: {
 				name: {
@@ -217,6 +217,17 @@ export const basicWidgets = [
 					label: '校验错误提示',
 					value: ""
 				},
+				linkage: {
+					label: '联动对象',
+					options: [],
+					value: '请选择'
+				},
+			},
+			events: {
+				linkageCode: {
+					label: '联动代码',
+					value: "//编辑输入框，请在高级配置中设置联动对象"
+				}
 			}
 		},
 	},
@@ -251,7 +262,19 @@ export const basicWidgets = [
 					value: false
 				},// 禁用
 			},
-			advanced: {}
+			advanced: {
+				linkage: {
+					label: '联动对象',
+					options: [],
+					value: '请选择'
+				},
+			},
+			events: {
+				linkageCode: {
+					label: '联动代码',
+					value: "//编辑开关组件，请在高级配置中设置联动对象"
+				}
+			}
 		},
 	},
 	{
@@ -421,7 +444,6 @@ export const basicWidgets = [
 					label: '是否插入空格',
 					value: false
 				}
-
 			},
 			advanced: {
 				value: 'Check',
@@ -662,9 +684,9 @@ export const basicWidgets = [
 					label: "默认文本",
 					value: "请输入文本域内容"
 				},// 默认提示文本
-				maxlength:{
-					label:"最大输入长度",
-					value:50
+				maxlength: {
+					label: "最大输入长度",
+					value: 50
 				},
 				resizeDirection: {
 					label: '缩放方向',
@@ -682,7 +704,7 @@ export const basicWidgets = [
 							value: 'both'
 						}
 					],
-					value:"both"
+					value: "both"
 				},
 				ruleFormKey: {
 					label: "参数key",
@@ -812,11 +834,11 @@ export const basicWidgets = [
 					],
 					value: 'center'
 				},
-				"isMoveDivider":{
+				"isMoveDivider": {
 					label: "是否上下移动",
 					value: false,
 				},
-				"moveDistance":{
+				"moveDistance": {
 					label: "移动距离",
 					value: 0,
 				}

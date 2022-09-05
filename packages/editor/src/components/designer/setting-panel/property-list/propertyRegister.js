@@ -15,6 +15,7 @@ const BASCI_COMPONENTS = {
 	'13':'required',
 	'14':'inputBtn',
 	'15':'radioButtonBasic',
+	'16':'selectLinkage',
 }
 
 // 基础属性组件映射表
@@ -69,7 +70,7 @@ const BASIC_PROPERTIES = {
 	'url':'1',
 	'isMoveDivider':'2',
 	'moveDistance':'9',
-	'resizeDirection':'3'
+	'resizeDirection':'3',
 }
 
 
@@ -78,6 +79,7 @@ const ADVANCED_PROPERTIES = {
 	'validation':'4',
 	'validationCustom':'5',
 	'selectConfig':'6',
+	'linkage':'16'
 }
 
 
@@ -86,6 +88,7 @@ const EVENTS_PROPERTIES = {
 	'onClick':'12',
 	'onMounted':'12',
 	'onBeforeMount': '12',
+	'linkageCode':'12'
 }
 export {
 	BASCI_COMPONENTS,
