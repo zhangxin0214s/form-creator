@@ -11,7 +11,7 @@
                         :widget = "element"
                         :parent="widget"
                         :prop-key = "getPropKey(element,colIdx)"
-                        :rule-form = "ruleForm"
+                        :rule-form = "ruleForm[colIdx]"
                     >
                     </component>
                 </div>
@@ -33,6 +33,7 @@
     }
     const getPropKey = (element,index) =>{
         if(props.propKey) {
+   
             return `${props.propKey}.${index}.${element.ruleFormKey}`
         }else{
             return `${element.ruleFormKey}`

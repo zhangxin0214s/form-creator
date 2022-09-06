@@ -7,7 +7,7 @@
       <el-tab-pane :label="colWidget.name" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
         <tabs-content 
           :colWidget="colWidget"
-          :rule-form="ruleForm[widget.ruleFormKey][colIdx]"
+          :rule-form="ruleForm[widget.ruleFormKey]"
           :widget="widget"
           :prop-key="propKey"
           :colIdx="colIdx"
