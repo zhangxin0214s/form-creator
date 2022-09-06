@@ -7,10 +7,11 @@
                     <component 
                         :is="componentMap[element.type]" 
                         :key="element.id"
-                        :parent-widget=colWidget.widgetList
-                        :widget = element
-                        :prop-key = "getPropKey(element,index)"
-                        :rule-form = ruleForm[index]
+                        :parent-widget="colWidget.widgetList"
+                        :widget = "element"
+                        :parent="widget"
+                        :prop-key = "getPropKey(element,colIdx)"
+                        :rule-form = "ruleForm"
                     >
                     </component>
                 </div>
@@ -24,19 +25,15 @@
         'colWidget',
         'ruleForm',
         'widget',
-        'propKey'
+        'propKey',
+        'colIdx'
     ])
     const componentMap = {
         ...eleComponents
     }
     const getPropKey = (element,index) =>{
         if(props.propKey) {
-            if(props.widget.ruleFormKeyType === 'object'){
-                return `${props.propKey}.${element.ruleFormKey}`
-            }
-            if(props.widget.ruleFormKeyType === 'array'){
-                return `${props.propKey}.${index}.${element.ruleFormKey}`
-            }
+            return `${props.propKey}.${index}.${element.ruleFormKey}`
         }else{
             return `${element.ruleFormKey}`
         }

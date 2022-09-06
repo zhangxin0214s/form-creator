@@ -1,12 +1,16 @@
 <template>
-  <container-mask :widget="widget">
+  <container-mask 
+    :widget="widget"
+    :rule-form="ruleForm"
+		:parent="parent">
     <el-tabs type="border-card" v-model="activeName" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
       <el-tab-pane :label="colWidget.name" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
         <tabs-content 
           :colWidget="colWidget"
-          :rule-form="ruleForm[widget.ruleFormKey]"
+          :rule-form="ruleForm[widget.ruleFormKey][colIdx]"
           :widget="widget"
           :prop-key="propKey"
+          :colIdx="colIdx"
         ></tabs-content>
       </el-tab-pane>
     </el-tabs>
@@ -48,7 +52,7 @@
           widgetList:[]
         })
         const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
-        props.ruleForm[ruleFormKey].push({})
+        ruleFormKey && props.ruleForm[ruleFormKey].push({})
     }
   }
   const removeTabsHandler1=(name)=>{

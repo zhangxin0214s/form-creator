@@ -102,7 +102,7 @@ export const containers = [
 		closable: true,
 		maxCount: 10,
 		ruleFormKey: null,
-		ruleFormKeyType: 'array',
+		ruleFormKeyType: 'object',
 		options: {
 			basic: {
 				ruleFormKey: {
