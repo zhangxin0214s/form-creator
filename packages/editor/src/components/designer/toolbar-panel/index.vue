@@ -103,23 +103,34 @@ const closePreview = () => {
 const linkAgeDeep = (widget, obj) => {
   const {category} = widget;
   let key = widget.options.basic.ruleFormKey.value;
-  if (category === 'container') {
-    obj[key] = {};
-    widget.options.advanced.cols.forEach(list => {
-      if (list.ruleFormKey) {
-        // 针对标签页面
-        obj[key][list.ruleFormKey.value] = {};
-      }
-      if (list.widgetList.length>0) {
-        list.widgetList.forEach(item => {
-          linkAgeDeep(item, list.ruleFormKey?obj[key][list.ruleFormKey.value]:obj[key]);
-        })
-      } else {
-        // 空容器列表
-      }
+  // key不可为空
+  if (key.trim() === "") {
+    // key为空
+    ElMessage({
+      showClose: true,
+      message: '该组件参数key为空',
+      center: true,
     })
+    _widgetStore.selectedWidget = widget;
   } else {
-    obj[key] = widget.value;
+    if (category === 'container') {
+      obj[key] = {};
+      widget.options.advanced.cols.forEach(list => {
+        if (list.ruleFormKey) {
+          // 针对标签页面
+          obj[key][list.ruleFormKey.value] = {};
+        }
+        if (list.widgetList.length>0) {
+          list.widgetList.forEach(item => {
+            linkAgeDeep(item, list.ruleFormKey?obj[key][list.ruleFormKey.value]:obj[key]);
+          })
+        } else {
+          // 空容器列表
+        }
+      })
+    } else {
+      obj[key] = widget.value;
+    }
   }
 }
 
