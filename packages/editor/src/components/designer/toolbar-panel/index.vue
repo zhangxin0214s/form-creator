@@ -108,16 +108,16 @@ const closePreview = () => {
   dialogFormVisible.value = false;
 }
 
-const judgeSameKey = (lists, keyArray=[]) => {
+const judgeSameKey = (lists, keyArray = []) => {
   // 同级key不可相同
   let same = false;
   lists.some(list => {
     const key = list.options.basic.ruleFormKey.value;
-    if (keyArray.indexOf(key) > -1) {
+    if (keyArray.indexOf(key) > - 1) {
       ElMessage({
-        showClose: true,
-        message: `参数${key}有多个`,
-        center: true,
+        showClose:true,
+        message:`参数${key}有多个`,
+        center:true,
       })
       same = true;
       _widgetStore.selectedWidget = list;
@@ -136,9 +136,9 @@ const linkAgeDeep = (widget, linkAge) => {
   if (key.trim() === "") {
     // key为空
     ElMessage({
-      showClose: true,
-      message: '该组件参数key为空',
-      center: true,
+      showClose:true,
+      message:'该组件参数key为空',
+      center:true,
     })
     _widgetStore.selectedWidget = widget;
   } else {
@@ -149,10 +149,10 @@ const linkAgeDeep = (widget, linkAge) => {
           // 针对标签页面
           linkAge[key][list.ruleFormKey.value] = {};
         }
-        if (list.widgetList.length>0) {
+        if (list.widgetList.length > 0) {
           let sameKey = judgeSameKey(list.widgetList);
           !sameKey && list.widgetList.forEach(item => {
-            linkAgeDeep(item, list.ruleFormKey?linkAge[key][list.ruleFormKey.value]:linkAge[key]);
+            linkAgeDeep(item, list.ruleFormKey ? linkAge[key][list.ruleFormKey.value] : linkAge[key]);
           })
         } else {
           // 空容器列表
@@ -186,6 +186,7 @@ const uploadFile = (file, files) => {
     _widgetStore.widgetList.push(...readText.widgetList);
     console.log(...readText.widgetList)
   }
+  _widgetStore.clearWidget();
 }
 
 /**
