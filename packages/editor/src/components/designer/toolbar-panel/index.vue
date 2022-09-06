@@ -37,13 +37,13 @@
   </el-dialog>
 
   <!-- 模板库 -->
-  <el-dialog v-model="dialogTemplateVisible" title="模板库" width="1070px" destroy-on-close draggable>
-    <temp-Library/>
+  <el-dialog v-model="dialogTemplateVisible" title="模板库" width="1080px" destroy-on-close draggable>
+    <temp-Library @triggerDialog="triggerDialog"/>
   </el-dialog>
 
 </template>
 <script setup>
-import { ref } from 'vue';
+import { ref, reactive } from 'vue';
 import { widgetStore } from '@/store/index';
 import { storeToRefs } from 'pinia';
 import formRenderer from '../../renderer/index.vue'
@@ -58,18 +58,26 @@ const _widgetStore = widgetStore();
 const {widgetList, formConfig} = storeToRefs(_widgetStore);
 const dialogFormVisible = ref(false);
 const dialogCodeVisible = ref(false);
-const dialogTemplateVisible = ref(false)
-
+const dialogTemplateVisible = ref(false);
 const formData = ref({
   formConfig:toRaw(_widgetStore.formConfig),
   widgetList:toRaw(_widgetStore.widgetList),
 })
+const data = ref({});
 
 /**
  * 模板库
  */
 const library = () => {
   dialogTemplateVisible.value = true
+}
+
+/**
+ * 关闭或打开的方法
+ * isShow {Boolean} 是否显示弹窗
+ */
+const triggerDialog = (isShow) => {
+  dialogTemplateVisible.value = isShow
 }
 
 /**
@@ -100,12 +108,72 @@ const closePreview = () => {
   dialogFormVisible.value = false;
 }
 
+const judgeSameKey = (lists, keyArray = []) => {
+  // 同级key不可相同
+  let same = false;
+  lists.some(list => {
+    const key = list.options.basic.ruleFormKey.value;
+    if (keyArray.indexOf(key) > - 1) {
+      ElMessage({
+        showClose:true,
+        message:`参数${key}有多个`,
+        center:true,
+      })
+      same = true;
+      _widgetStore.selectedWidget = list;
+      return true;
+    } else {
+      keyArray.push(key);
+    }
+  })
+  return same;
+}
+
+const linkAgeDeep = (widget, linkAge) => {
+  const {category} = widget;
+  const key = widget.options.basic.ruleFormKey.value;
+  // key不可为空
+  if (key.trim() === "") {
+    // key为空
+    ElMessage({
+      showClose:true,
+      message:'该组件参数key为空',
+      center:true,
+    })
+    _widgetStore.selectedWidget = widget;
+  } else {
+    if (category === 'container') {
+      linkAge[key] = {};
+      widget.options.advanced.cols.forEach(list => {
+        if (list.ruleFormKey) {
+          // 针对标签页面
+          linkAge[key][list.ruleFormKey.value] = {};
+        }
+        if (list.widgetList.length > 0) {
+          let sameKey = judgeSameKey(list.widgetList);
+          !sameKey && list.widgetList.forEach(item => {
+            linkAgeDeep(item, list.ruleFormKey ? linkAge[key][list.ruleFormKey.value] : linkAge[key]);
+          })
+        } else {
+          // 空容器列表
+        }
+      })
+    } else {
+      linkAge[key] = widget.value;
+    }
+  }
+}
+
 /**
  * 代码编辑器
  */
 const exportCode = () => {
-  console.log(formData);
-  dialogCodeVisible.value = true;
+  let sameKey = judgeSameKey(widgetList.value);
+  !sameKey && widgetList.value.forEach(widget => {
+    linkAgeDeep(widget, data.value);
+  })
+  console.log(data);
+  // dialogCodeVisible.value = true;
 }
 
 const uploadFile = (file, files) => {
@@ -116,7 +184,9 @@ const uploadFile = (file, files) => {
     readText = JSON.parse(e.currentTarget.result);
     // _widgetStore.clearWidget();
     _widgetStore.widgetList.push(...readText.widgetList);
+    console.log(...readText.widgetList)
   }
+  _widgetStore.clearWidget();
 }
 
 /**

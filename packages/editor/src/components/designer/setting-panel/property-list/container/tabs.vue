@@ -2,6 +2,16 @@
     <div class="input-container">
         <el-collapse v-model="activeNames" class="input-collapse">
             <el-collapse-item name="1" title="基础属性">
+              <div v-for="(item,key,index) in basicProp" :key="index">
+                <component
+                    :is="componentMap[getPropCompName(key)]"
+                    :basic-prop="basicProp"
+                    :advanced-prop="advancedProp"
+                    :value = "item"
+                    :key1 = "key"
+                ></component>
+              </div>
+
                 <div>
                     <div class="title">允许添加标签</div><el-switch v-model="selectedWidget.addable" />
                 </div>
@@ -35,7 +45,13 @@ const componentMap = {
   ...basicComponents
 }
 const activeNames = ref(['1'])
+const getPropCompName = (key) =>{
+    console.log(key,"===key===")
+    return BASCI_COMPONENTS[BASIC_PROPERTIES[key]]
+}
+
 </script>
+
 <style lang="scss" scoped>
 .title{
     display: inline-block;

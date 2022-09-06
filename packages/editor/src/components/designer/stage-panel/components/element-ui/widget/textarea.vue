@@ -11,7 +11,7 @@
 			:placeholder="widget.options.basic.defaultValue.value"
 			:maxlength="widget.options.basic.maxlength.value"
 			:resize="widget.options.basic.resizeDirection.value"
-			v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]"
+			v-model="widget.value"
 			show-word-limit
 		/>
 	</widget-mask>

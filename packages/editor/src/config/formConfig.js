@@ -86,11 +86,21 @@ export const containers = [
 		closable: true,
 		maxCount: 10,
 		options: {
+			basic: {
+				ruleFormKey: {
+					label: "参数key",
+					value: ''
+				},
+			},
 			advanced: {
 				cols: [
 					{
 						id: 1,
 						name: '名称',
+						ruleFormKey: {
+							label: "参数key",
+							value: ''
+						},
 						widgetList: []
 					}
 				]
@@ -110,12 +120,25 @@ export const containers = [
 		id: 4,
 		name: "卡片",
 		type: "card",
+		category: "container",
 		icon: "card ",
 		title: '卡片名称',
 		options: {
 			hidden: false,
+			basic: {
+				label: {
+					label: "卡片名称",
+					value: "卡片1"
+				},
+				ruleFormKey: {
+					label: "参数key",
+					value: ''
+				},
+			},
 			advanced: {
-				widgetList: []
+				cols: [
+					{widgetList: []}
+				]
 			}
 		},
 	},
@@ -326,7 +349,7 @@ export const basicWidgets = [
 					message: ""
 				},// 是否必填
 				"margin-left-right": {
-					label: "左右内边距",
+					label: "左右移动",
 					value: 0
 				},
 
@@ -539,7 +562,11 @@ export const basicWidgets = [
 		type: "select",
 		category: "widget",
 		icon: "select",
+<<<<<<< HEAD
 		value: '',
+=======
+		value: [],
+>>>>>>> dev
 		options: {
 			basic: {
 				name: {
@@ -878,6 +905,7 @@ export const basicWidgets = [
 		type: "cellPhone",
 		category: "widget",
 		icon: "cellPhone",
+		value: null,
 		options: {
 			basic: {
 				name: {

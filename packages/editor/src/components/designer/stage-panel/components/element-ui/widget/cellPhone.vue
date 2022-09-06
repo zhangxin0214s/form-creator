@@ -33,7 +33,7 @@
 				maxLength="11"
 				:disabled="widget.options.basic.disabled.value"
 				:placeholder="widget.options.basic.defaultValue.value"
-				v-model="tempVal"
+				v-model="widget.value"
 				@blur="setRules()"
 			/>
 		</div>

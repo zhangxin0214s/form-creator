@@ -1,0 +1,1872 @@
+{
+  "formConfig": {
+    "label-position": {
+      "value": "left",
+      "label": "标签对齐方式:",
+      "options": [
+        {
+          "label": "左对齐",
+          "value": "left"
+        },
+        {
+          "label": "向上对齐",
+          "value": "top"
+        },
+        {
+          "label": "右对齐",
+          "value": "right"
+        }
+      ]
+    },
+    "label-width": {
+      "label": "标签宽度",
+      "value": ""
+    },
+    "rules": {},
+    "ruleForm": {}
+  },
+  "widgetList": [
+    {
+      "id": "d9fe1ae3c1884358be4e436278199830",
+      "name": "标签页",
+      "type": "tabs",
+      "category": "container",
+      "icon": "tag",
+      "addable": true,
+      "closable": true,
+      "maxCount": 10,
+      "options": {
+        "advanced": {
+          "cols": [
+            {
+              "id": 1,
+              "name": "题目1",
+              "widgetList": [
+                {
+                  "id": "b4d5276c16d742b39324f8d71a8ce54b",
+                  "name": "静态文本",
+                  "type": "staticText",
+                  "category": "widget",
+                  "icon": "staticText",
+                  "options": {
+                    "basic": {
+                      "name": {
+                        "label": "唯一名称",
+                        "value": "静态文本"
+                      },
+                      "label": {
+                        "label": "",
+                        "value": ""
+                      },
+                      "textareaDefaultValue": {
+                        "label": "默认文本",
+                        "value": "题干"
+                      },
+                      "static-text-line-height": {
+                        "label": "行高",
+                        "value": 1
+                      },
+                      "font-size": {
+                        "label": "字体大小",
+                        "value": 14
+                      },
+                      "font-color": {
+                        "label": "字体颜色",
+                        "value": "#000000"
+                      },
+                      "font-style": {
+                        "label": "字体样式",
+                        "options": [
+                          {
+                            "label": "加粗",
+                            "value": false
+                          },
+                          {
+                            "label": "斜体",
+                            "value": false
+                          },
+                          {
+                            "label": "下划线",
+                            "value": false
+                          }
+                        ]
+                      },
+                      "alignment": {
+                        "value": "left",
+                        "label": "对齐方式",
+                        "options": [
+                          {
+                            "label": "左对齐",
+                            "value": "left"
+                          },
+                          {
+                            "label": "居中对齐",
+                            "value": "center"
+                          },
+                          {
+                            "label": "右对齐",
+                            "value": "right"
+                          }
+                        ]
+                      },
+                      "addRequired": {
+                        "label": "添加必填符号",
+                        "value": false
+                      }
+                    },
+                    "advanced": {}
+                  }
+                },
+                {
+                  "id": "baa7b72b8ea94561baa567ab00f3ecce",
+                  "name": "文本域",
+                  "type": "textarea",
+                  "category": "widget",
+                  "icon": "textField",
+                  "value": null,
+                  "options": {
+                    "basic": {
+                      "name": {
+                        "label": "唯一名称",
+                        "value": "文本域"
+                      },
+                      "label": {
+                        "label": "标签",
+                        "value": ""
+                      },
+                      "type": "textarea",
+                      "defaultValue": {
+                        "label": "默认文本",
+                        "value": "请输入文本域内容"
+                      },
+                      "maxlength": {
+                        "label": "最大输入长度",
+                        "value": 50
+                      },
+                      "resizeDirection": {
+                        "label": "缩放方向",
+                        "options": [
+                          {
+                            "label": "横向缩放",
+                            "value": "horizontal"
+                          },
+                          {
+                            "label": "纵向缩放",
+                            "value": "vertical"
+                          },
+                          {
+                            "label": "横纵双缩放",
+                            "value": "both"
+                          }
+                        ],
+                        "value": "both"
+                      },
+                      "ruleFormKey": {
+                        "label": "参数key",
+                        "value": ""
+                      },
+                      "required": {
+                        "label": "是否必填",
+                        "value": false,
+                        "message": ""
+                      },
+                      "readonly": {
+                        "label": "是否只读",
+                        "value": false
+                      },
+                      "disabled": {
+                        "label": "是否禁用",
+                        "value": false
+                      }
+                    },
+                    "advanced": {
+                      "validation": {
+                        "label": "校验规则",
+                        "options": [
+                          {
+                            "label": "无校验",
+                            "value": ""
+                          },
+                          {
+                            "label": "网址",
+                            "value": "{\"type\":\"url\", \"message\":\"请输入正确的网址\", \"trigger\":\"blur\"}"
+                          },
+                          {
+                            "label": "Email地址",
+                            "value": "{\"type\":\"email\", \"message\":\"请输入正确的邮箱\", \"trigger\":\"blur\"}"
+                          },
+                          {
+                            "label": "岗位编码",
+                            "value": "{\"message\":\"只能输入数字英文\", \"pattern\":\"^[A-Za-z0-9]+$\"}"
+                          },
+                          {
+                            "label": "营业执照",
+                            "value": "{\"message\":\"请输入正确的营业执照\", \"pattern\":\"^[A-Z0-9]{8}-[A-Z0-9]$|^[A-Z0-9]{8}-[A-Z0-9]-[0-9]{2}$\"}"
+                          },
+                          {
+                            "label": "身份证号码",
+                            "value": "{\"message\":\"请正确输入您的身份证号码\", \"pattern\":\"^[1-9]\\\\d{5}[1-9]\\\\d{3}((0\\\\d)|(1[0-2]))(([0|1|2]\\\\d)|3[0-1])\\\\d{3}([0-9]|X|x)$\"}"
+                          }
+                        ],
+                        "value": "",
+                        "customValue": "",
+                        "hintText": "注：请先填写参数key，再次选择校验规则，当前选择校验没有生效"
+                      },
+                      "customWrongMessage": {
+                        "label": "校验错误提示",
+                        "value": ""
+                      }
+                    }
+                  }
+                },
+                {
+                  "id": "80a0383dcf194c7fb1de81981d53f6c9",
+                  "name": "静态文本",
+                  "type": "staticText",
+                  "category": "widget",
+                  "icon": "staticText",
+                  "options": {
+                    "basic": {
+                      "name": {
+                        "label": "唯一名称",
+                        "value": "静态文本"
+                      },
+                      "label": {
+                        "label": "",
+                        "value": ""
+                      },
+                      "textareaDefaultValue": {
+                        "label": "默认文本",
+                        "value": "答案"
+                      },
+                      "static-text-line-height": {
+                        "label": "行高",
+                        "value": 1
+                      },
+                      "font-size": {
+                        "label": "字体大小",
+                        "value": 14
+                      },
+                      "font-color": {
+                        "label": "字体颜色",
+                        "value": "#000000"
+                      },
+                      "font-style": {
+                        "label": "字体样式",
+                        "options": [
+                          {
+                            "label": "加粗",
+                            "value": false
+                          },
+                          {
+                            "label": "斜体",
+                            "value": false
+                          },
+                          {
+                            "label": "下划线",
+                            "value": false
+                          }
+                        ]
+                      },
+                      "alignment": {
+                        "value": "left",
+                        "label": "对齐方式",
+                        "options": [
+                          {
+                            "label": "左对齐",
+                            "value": "left"
+                          },
+                          {
+                            "label": "居中对齐",
+                            "value": "center"
+                          },
+                          {
+                            "label": "右对齐",
+                            "value": "right"
+                          }
+                        ]
+                      },
+                      "addRequired": {
+                        "label": "添加必填符号",
+                        "value": false
+                      }
+                    },
+                    "advanced": {}
+                  }
+                },
+                {
+                  "id": "4f421108853847618594a74e696fecce",
+                  "name": "栅格",
+                  "type": "grid",
+                  "category": "container",
+                  "icon": "lattice",
+                  "value": null,
+                  "options": {
+                    "basic": {
+                      "name": {
+                        "label": "唯一名称",
+                        "value": "栅格1"
+                      },
+                      "colHeight": {
+                        "label": "统一高度",
+                        "value": 36
+                      },
+                      "rowBackground": {
+                        "label": "背景颜色",
+                        "value": "rgba(249, 250, 251, 1)"
+                      },
+                      "ruleFormKey": {
+                        "label": "参数key",
+                        "value": ""
+                      },
+                      "isMoveDivider": {
+                        "label": "是否上下移动",
+                        "value": true
+                      },
+                      "moveDistance": {
+                        "label": "移动距离",
+                        "value": -10
+                      }
+                    },
+                    "advanced": {
+                      "cols": [
+                        {
+                          "id": 1,
+                          "gutter": 4,
+                          "widgetList": [
+                            {
+                              "id": "0198b38195cd47faa225a974b15bd6b7",
+                              "name": "静态文本",
+                              "type": "staticText",
+                              "category": "widget",
+                              "icon": "staticText",
+                              "options": {
+                                "basic": {
+                                  "name": {
+                                    "label": "唯一名称",
+                                    "value": "静态文本"
+                                  },
+                                  "label": {
+                                    "label": "",
+                                    "value": ""
+                                  },
+                                  "textareaDefaultValue": {
+                                    "label": "默认文本",
+                                    "value": "正确答案"
+                                  },
+                                  "static-text-line-height": {
+                                    "label": "行高",
+                                    "value": 3
+                                  },
+                                  "font-size": {
+                                    "label": "字体大小",
+                                    "value": 12
+                                  },
+                                  "font-color": {
+                                    "label": "字体颜色",
+                                    "value": "rgba(0, 0, 0, 0.6)"
+                                  },
+                                  "font-style": {
+                                    "label": "字体样式",
+                                    "options": [
+                                      {
+                                        "label": "加粗",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "斜体",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "下划线",
+                                        "value": false
+                                      }
+                                    ]
+                                  },
+                                  "alignment": {
+                                    "value": "center",
+                                    "label": "对齐方式",
+                                    "options": [
+                                      {
+                                        "label": "左对齐",
+                                        "value": "left"
+                                      },
+                                      {
+                                        "label": "居中对齐",
+                                        "value": "center"
+                                      },
+                                      {
+                                        "label": "右对齐",
+                                        "value": "right"
+                                      }
+                                    ]
+                                  },
+                                  "addRequired": {
+                                    "label": "添加必填符号",
+                                    "value": true
+                                  }
+                                },
+                                "advanced": {}
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": 2,
+                          "gutter": 4,
+                          "widgetList": [
+                            {
+                              "id": "b18a4636bfd74c9a8eb49bcfb4d334c9",
+                              "name": "静态文本",
+                              "type": "staticText",
+                              "category": "widget",
+                              "icon": "staticText",
+                              "options": {
+                                "basic": {
+                                  "name": {
+                                    "label": "唯一名称",
+                                    "value": "静态文本"
+                                  },
+                                  "label": {
+                                    "label": "",
+                                    "value": ""
+                                  },
+                                  "textareaDefaultValue": {
+                                    "label": "默认文本",
+                                    "value": "序号"
+                                  },
+                                  "static-text-line-height": {
+                                    "label": "行高",
+                                    "value": 3
+                                  },
+                                  "font-size": {
+                                    "label": "字体大小",
+                                    "value": 12
+                                  },
+                                  "font-color": {
+                                    "label": "字体颜色",
+                                    "value": "rgba(0, 0, 0, 0.6)"
+                                  },
+                                  "font-style": {
+                                    "label": "字体样式",
+                                    "options": [
+                                      {
+                                        "label": "加粗",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "斜体",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "下划线",
+                                        "value": false
+                                      }
+                                    ]
+                                  },
+                                  "alignment": {
+                                    "value": "center",
+                                    "label": "对齐方式",
+                                    "options": [
+                                      {
+                                        "label": "左对齐",
+                                        "value": "left"
+                                      },
+                                      {
+                                        "label": "居中对齐",
+                                        "value": "center"
+                                      },
+                                      {
+                                        "label": "右对齐",
+                                        "value": "right"
+                                      }
+                                    ]
+                                  },
+                                  "addRequired": {
+                                    "label": "添加必填符号",
+                                    "value": false
+                                  }
+                                },
+                                "advanced": {}
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": 2,
+                          "gutter": 16,
+                          "widgetList": [
+                            {
+                              "id": "c0f9ad5b56dd428f849d2b09c5445155",
+                              "name": "静态文本",
+                              "type": "staticText",
+                              "category": "widget",
+                              "icon": "staticText",
+                              "options": {
+                                "basic": {
+                                  "name": {
+                                    "label": "唯一名称",
+                                    "value": "静态文本"
+                                  },
+                                  "label": {
+                                    "label": "",
+                                    "value": ""
+                                  },
+                                  "textareaDefaultValue": {
+                                    "label": "默认文本",
+                                    "value": "选项内容"
+                                  },
+                                  "static-text-line-height": {
+                                    "label": "行高",
+                                    "value": 3
+                                  },
+                                  "font-size": {
+                                    "label": "字体大小",
+                                    "value": 12
+                                  },
+                                  "font-color": {
+                                    "label": "字体颜色",
+                                    "value": "rgba(0, 0, 0, 0.6)"
+                                  },
+                                  "font-style": {
+                                    "label": "字体样式",
+                                    "options": [
+                                      {
+                                        "label": "加粗",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "斜体",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "下划线",
+                                        "value": false
+                                      }
+                                    ]
+                                  },
+                                  "alignment": {
+                                    "value": "left",
+                                    "label": "对齐方式",
+                                    "options": [
+                                      {
+                                        "label": "左对齐",
+                                        "value": "left"
+                                      },
+                                      {
+                                        "label": "居中对齐",
+                                        "value": "center"
+                                      },
+                                      {
+                                        "label": "右对齐",
+                                        "value": "right"
+                                      }
+                                    ]
+                                  },
+                                  "addRequired": {
+                                    "label": "添加必填符号",
+                                    "value": false
+                                  }
+                                },
+                                "advanced": {}
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "42eea6bae1994f4183dd1c867fdfc37c",
+                  "name": "分割线",
+                  "type": "divider",
+                  "category": "widget",
+                  "icon": "split",
+                  "options": {
+                    "basic": {
+                      "name": {
+                        "label": "唯一名称",
+                        "value": "分割线"
+                      },
+                      "label": {
+                        "label": "",
+                        "value": ""
+                      },
+                      "divider-content": {
+                        "label": "内容",
+                        "value": ""
+                      },
+                      "divider-direction": {
+                        "label": "方向",
+                        "options": [
+                          {
+                            "label": "横向分割线",
+                            "value": "horizontal"
+                          },
+                          {
+                            "label": "纵向分割线",
+                            "value": "vertical"
+                          }
+                        ],
+                        "value": "horizontal"
+                      },
+                      "divider-style": {
+                        "label": "样式",
+                        "options": [
+                          {
+                            "label": "实线",
+                            "value": "solid"
+                          },
+                          {
+                            "label": "方格虚线",
+                            "value": "dashed"
+                          },
+                          {
+                            "label": "圆点虚线",
+                            "value": "dotted"
+                          }
+                        ],
+                        "value": "solid"
+                      },
+                      "divider-position": {
+                        "label": "内容位置",
+                        "options": [
+                          {
+                            "label": "居左",
+                            "value": "left"
+                          },
+                          {
+                            "label": "居中",
+                            "value": "center"
+                          },
+                          {
+                            "label": "居右",
+                            "value": "right"
+                          }
+                        ],
+                        "value": "center"
+                      },
+                      "isMoveDivider": {
+                        "label": "是否上下移动",
+                        "value": true
+                      },
+                      "moveDistance": {
+                        "label": "移动距离",
+                        "value": -14
+                      }
+                    },
+                    "advanced": {}
+                  }
+                },
+                {
+                  "id": "04bcc7c992364026bfbe17c1bb8e0fb9",
+                  "name": "栅格",
+                  "type": "grid",
+                  "category": "container",
+                  "icon": "lattice",
+                  "value": null,
+                  "options": {
+                    "basic": {
+                      "name": {
+                        "label": "唯一名称",
+                        "value": "栅格1"
+                      },
+                      "colHeight": {
+                        "label": "统一高度",
+                        "value": 36
+                      },
+                      "rowBackground": {
+                        "label": "背景颜色",
+                        "value": "#FFFFFF"
+                      },
+                      "ruleFormKey": {
+                        "label": "参数key",
+                        "value": ""
+                      },
+                      "isMoveDivider": {
+                        "label": "是否上下移动",
+                        "value": true
+                      },
+                      "moveDistance": {
+                        "label": "移动距离",
+                        "value": -28
+                      }
+                    },
+                    "advanced": {
+                      "cols": [
+                        {
+                          "id": 1,
+                          "gutter": 4,
+                          "widgetList": [
+                            {
+                              "id": "ed028683649d4bd5a10881df44ffd894",
+                              "name": "复选框",
+                              "type": "checkbox",
+                              "category": "widget",
+                              "icon": "check",
+                              "value": [],
+                              "options": {
+                                "basic": {
+                                  "name": {
+                                    "label": "唯一名称",
+                                    "value": "复选框1"
+                                  },
+                                  "label": {
+                                    "label": "标签",
+                                    "value": ""
+                                  },
+                                  "hint": {
+                                    "label": "提示语",
+                                    "value": ""
+                                  },
+                                  "checkSize": {
+                                    "label": "复选框尺寸",
+                                    "options": [
+                                      {
+                                        "label": "大",
+                                        "value": "large"
+                                      },
+                                      {
+                                        "label": "中",
+                                        "value": "default"
+                                      },
+                                      {
+                                        "label": "小",
+                                        "value": "small"
+                                      }
+                                    ],
+                                    "value": "default"
+                                  },
+                                  "ruleFormKey": {
+                                    "label": "参数key",
+                                    "value": ""
+                                  },
+                                  "required": {
+                                    "label": "是否必填",
+                                    "value": false,
+                                    "message": ""
+                                  },
+                                  "margin-left-right": {
+                                    "label": "左右移动",
+                                    "value": 30
+                                  },
+                                  "attribute": {
+                                    "label": "操作属性",
+                                    "options": [
+                                      {
+                                        "label": "提示语隐藏",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "标签是否隐藏",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "是否有边框",
+                                        "value": false
+                                      }
+                                    ]
+                                  }
+                                },
+                                "advanced": {
+                                  "optionItems": [
+                                    {
+                                      "label": "",
+                                      "value": "value值1",
+                                      "disabled": false,
+                                      "text": "是否禁用",
+                                      "isSelect": true
+                                    }
+                                  ],
+                                  "dataSource": {
+                                    "address": "",
+                                    "type": "post",
+                                    "parameter": {},
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": 2,
+                          "gutter": 4,
+                          "widgetList": [
+                            {
+                              "id": "3fe5d31fd68641edaedd464193036bc7",
+                              "name": "静态文本",
+                              "type": "staticText",
+                              "category": "widget",
+                              "icon": "staticText",
+                              "options": {
+                                "basic": {
+                                  "name": {
+                                    "label": "唯一名称",
+                                    "value": "静态文本"
+                                  },
+                                  "label": {
+                                    "label": "",
+                                    "value": ""
+                                  },
+                                  "textareaDefaultValue": {
+                                    "label": "默认文本",
+                                    "value": "1"
+                                  },
+                                  "static-text-line-height": {
+                                    "label": "行高",
+                                    "value": 3
+                                  },
+                                  "font-size": {
+                                    "label": "字体大小",
+                                    "value": 12
+                                  },
+                                  "font-color": {
+                                    "label": "字体颜色",
+                                    "value": "#000000"
+                                  },
+                                  "font-style": {
+                                    "label": "字体样式",
+                                    "options": [
+                                      {
+                                        "label": "加粗",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "斜体",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "下划线",
+                                        "value": false
+                                      }
+                                    ]
+                                  },
+                                  "alignment": {
+                                    "value": "center",
+                                    "label": "对齐方式",
+                                    "options": [
+                                      {
+                                        "label": "左对齐",
+                                        "value": "left"
+                                      },
+                                      {
+                                        "label": "居中对齐",
+                                        "value": "center"
+                                      },
+                                      {
+                                        "label": "右对齐",
+                                        "value": "right"
+                                      }
+                                    ]
+                                  },
+                                  "addRequired": {
+                                    "label": "添加必填符号",
+                                    "value": false
+                                  }
+                                },
+                                "advanced": {}
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": 2,
+                          "gutter": 16,
+                          "widgetList": [
+                            {
+                              "id": "93d8d754ec764ca68d2de267bae896d7",
+                              "name": "输入框",
+                              "type": "input",
+                              "category": "widget",
+                              "icon": "input",
+                              "value": null,
+                              "options": {
+                                "basic": {
+                                  "name": {
+                                    "label": "唯一名称",
+                                    "value": "输入框"
+                                  },
+                                  "label": {
+                                    "label": "标签",
+                                    "value": ""
+                                  },
+                                  "defaultValue": {
+                                    "label": "默认文本",
+                                    "value": "请输入输入框内容"
+                                  },
+                                  "hint": {
+                                    "label": "输入内容提示",
+                                    "value": ""
+                                  },
+                                  "inputType": {
+                                    "label": "输入框类型",
+                                    "value": "text",
+                                    "options": [
+                                      {
+                                        "label": "文本框",
+                                        "value": "text"
+                                      },
+                                      {
+                                        "label": "密码框",
+                                        "value": "password"
+                                      }
+                                    ]
+                                  },
+                                  "ruleFormKey": {
+                                    "label": "参数key",
+                                    "value": ""
+                                  },
+                                  "required": {
+                                    "label": "是否必填",
+                                    "value": false,
+                                    "message": ""
+                                  },
+                                  "readonly": {
+                                    "label": "是否只读",
+                                    "value": false
+                                  },
+                                  "disabled": {
+                                    "label": "是否禁用",
+                                    "value": false
+                                  }
+                                },
+                                "advanced": {
+                                  "validation": {
+                                    "label": "校验规则",
+                                    "options": [
+                                      {
+                                        "label": "无校验",
+                                        "value": ""
+                                      },
+                                      {
+                                        "label": "网址",
+                                        "value": "{\"type\":\"url\", \"message\":\"请输入正确的网址\", \"trigger\":\"blur\"}"
+                                      },
+                                      {
+                                        "label": "Email地址",
+                                        "value": "{\"type\":\"email\", \"message\":\"请输入正确的邮箱\", \"trigger\":\"blur\"}"
+                                      },
+                                      {
+                                        "label": "岗位编码",
+                                        "value": "{\"message\":\"只能输入数字英文\", \"pattern\":\"^[A-Za-z0-9]+$\"}"
+                                      },
+                                      {
+                                        "label": "营业执照",
+                                        "value": "{\"message\":\"请输入正确的营业执照\", \"pattern\":\"^[A-Z0-9]{8}-[A-Z0-9]$|^[A-Z0-9]{8}-[A-Z0-9]-[0-9]{2}$\"}"
+                                      },
+                                      {
+                                        "label": "身份证号码",
+                                        "value": "{\"message\":\"请正确输入您的身份证号码\", \"pattern\":\"^[1-9]\\\\d{5}[1-9]\\\\d{3}((0\\\\d)|(1[0-2]))(([0|1|2]\\\\d)|3[0-1])\\\\d{3}([0-9]|X|x)$\"}"
+                                      }
+                                    ],
+                                    "value": "",
+                                    "customValue": "",
+                                    "hintText": "注：请先填写参数key，再次选择校验规则，当前选择校验没有生效"
+                                  },
+                                  "customWrongMessage": {
+                                    "label": "校验错误提示",
+                                    "value": ""
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "db615f4440224ec3878517e820ff3841",
+                  "name": "分割线",
+                  "type": "divider",
+                  "category": "widget",
+                  "icon": "split",
+                  "options": {
+                    "basic": {
+                      "name": {
+                        "label": "唯一名称",
+                        "value": "分割线"
+                      },
+                      "label": {
+                        "label": "",
+                        "value": ""
+                      },
+                      "divider-content": {
+                        "label": "内容",
+                        "value": ""
+                      },
+                      "divider-direction": {
+                        "label": "方向",
+                        "options": [
+                          {
+                            "label": "横向分割线",
+                            "value": "horizontal"
+                          },
+                          {
+                            "label": "纵向分割线",
+                            "value": "vertical"
+                          }
+                        ],
+                        "value": "horizontal"
+                      },
+                      "divider-style": {
+                        "label": "样式",
+                        "options": [
+                          {
+                            "label": "实线",
+                            "value": "solid"
+                          },
+                          {
+                            "label": "方格虚线",
+                            "value": "dashed"
+                          },
+                          {
+                            "label": "圆点虚线",
+                            "value": "dotted"
+                          }
+                        ],
+                        "value": "solid"
+                      },
+                      "divider-position": {
+                        "label": "内容位置",
+                        "options": [
+                          {
+                            "label": "居左",
+                            "value": "left"
+                          },
+                          {
+                            "label": "居中",
+                            "value": "center"
+                          },
+                          {
+                            "label": "居右",
+                            "value": "right"
+                          }
+                        ],
+                        "value": "center"
+                      },
+                      "isMoveDivider": {
+                        "label": "是否上下移动",
+                        "value": true
+                      },
+                      "moveDistance": {
+                        "label": "移动距离",
+                        "value": -30
+                      }
+                    },
+                    "advanced": {}
+                  }
+                },
+                {
+                  "id": "f58eb1fd174d4a25bf88c1d32ab13913",
+                  "name": "栅格",
+                  "type": "grid",
+                  "category": "container",
+                  "icon": "lattice",
+                  "value": null,
+                  "options": {
+                    "basic": {
+                      "name": {
+                        "label": "唯一名称",
+                        "value": "栅格1"
+                      },
+                      "colHeight": {
+                        "label": "统一高度",
+                        "value": 36
+                      },
+                      "rowBackground": {
+                        "label": "背景颜色",
+                        "value": "#FFFFFF"
+                      },
+                      "ruleFormKey": {
+                        "label": "参数key",
+                        "value": ""
+                      },
+                      "isMoveDivider": {
+                        "label": "是否上下移动",
+                        "value": true
+                      },
+                      "moveDistance": {
+                        "label": "移动距离",
+                        "value": -43
+                      }
+                    },
+                    "advanced": {
+                      "cols": [
+                        {
+                          "id": 1,
+                          "gutter": 4,
+                          "widgetList": [
+                            {
+                              "id": "b5c7dd029ef9432092a73e12bd767370",
+                              "name": "复选框",
+                              "type": "checkbox",
+                              "category": "widget",
+                              "icon": "check",
+                              "value": [],
+                              "options": {
+                                "basic": {
+                                  "name": {
+                                    "label": "唯一名称",
+                                    "value": "复选框1"
+                                  },
+                                  "label": {
+                                    "label": "标签",
+                                    "value": ""
+                                  },
+                                  "hint": {
+                                    "label": "提示语",
+                                    "value": ""
+                                  },
+                                  "checkSize": {
+                                    "label": "复选框尺寸",
+                                    "options": [
+                                      {
+                                        "label": "大",
+                                        "value": "large"
+                                      },
+                                      {
+                                        "label": "中",
+                                        "value": "default"
+                                      },
+                                      {
+                                        "label": "小",
+                                        "value": "small"
+                                      }
+                                    ],
+                                    "value": "default"
+                                  },
+                                  "ruleFormKey": {
+                                    "label": "参数key",
+                                    "value": ""
+                                  },
+                                  "required": {
+                                    "label": "是否必填",
+                                    "value": false,
+                                    "message": ""
+                                  },
+                                  "margin-left-right": {
+                                    "label": "左右移动",
+                                    "value": 30
+                                  },
+                                  "attribute": {
+                                    "label": "操作属性",
+                                    "options": [
+                                      {
+                                        "label": "提示语隐藏",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "标签是否隐藏",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "是否有边框",
+                                        "value": false
+                                      }
+                                    ]
+                                  }
+                                },
+                                "advanced": {
+                                  "optionItems": [
+                                    {
+                                      "label": "",
+                                      "value": "value值1",
+                                      "disabled": false,
+                                      "text": "是否禁用",
+                                      "isSelect": true
+                                    }
+                                  ],
+                                  "dataSource": {
+                                    "address": "",
+                                    "type": "post",
+                                    "parameter": {},
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": 2,
+                          "gutter": 4,
+                          "widgetList": [
+                            {
+                              "id": "13ea9ed1f4ec4d9dac0c6210f462e906",
+                              "name": "静态文本",
+                              "type": "staticText",
+                              "category": "widget",
+                              "icon": "staticText",
+                              "options": {
+                                "basic": {
+                                  "name": {
+                                    "label": "唯一名称",
+                                    "value": "静态文本"
+                                  },
+                                  "label": {
+                                    "label": "",
+                                    "value": ""
+                                  },
+                                  "textareaDefaultValue": {
+                                    "label": "默认文本",
+                                    "value": "2"
+                                  },
+                                  "static-text-line-height": {
+                                    "label": "行高",
+                                    "value": 3
+                                  },
+                                  "font-size": {
+                                    "label": "字体大小",
+                                    "value": 12
+                                  },
+                                  "font-color": {
+                                    "label": "字体颜色",
+                                    "value": "#000000"
+                                  },
+                                  "font-style": {
+                                    "label": "字体样式",
+                                    "options": [
+                                      {
+                                        "label": "加粗",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "斜体",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "下划线",
+                                        "value": false
+                                      }
+                                    ]
+                                  },
+                                  "alignment": {
+                                    "value": "center",
+                                    "label": "对齐方式",
+                                    "options": [
+                                      {
+                                        "label": "左对齐",
+                                        "value": "left"
+                                      },
+                                      {
+                                        "label": "居中对齐",
+                                        "value": "center"
+                                      },
+                                      {
+                                        "label": "右对齐",
+                                        "value": "right"
+                                      }
+                                    ]
+                                  },
+                                  "addRequired": {
+                                    "label": "添加必填符号",
+                                    "value": false
+                                  }
+                                },
+                                "advanced": {}
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": 2,
+                          "gutter": 16,
+                          "widgetList": [
+                            {
+                              "id": "a093b0b95f0445fca28da203115c7270",
+                              "name": "输入框",
+                              "type": "input",
+                              "category": "widget",
+                              "icon": "input",
+                              "value": null,
+                              "options": {
+                                "basic": {
+                                  "name": {
+                                    "label": "唯一名称",
+                                    "value": "输入框"
+                                  },
+                                  "label": {
+                                    "label": "标签",
+                                    "value": ""
+                                  },
+                                  "defaultValue": {
+                                    "label": "默认文本",
+                                    "value": "请输入输入框内容"
+                                  },
+                                  "hint": {
+                                    "label": "输入内容提示",
+                                    "value": ""
+                                  },
+                                  "inputType": {
+                                    "label": "输入框类型",
+                                    "value": "text",
+                                    "options": [
+                                      {
+                                        "label": "文本框",
+                                        "value": "text"
+                                      },
+                                      {
+                                        "label": "密码框",
+                                        "value": "password"
+                                      }
+                                    ]
+                                  },
+                                  "ruleFormKey": {
+                                    "label": "参数key",
+                                    "value": ""
+                                  },
+                                  "required": {
+                                    "label": "是否必填",
+                                    "value": false,
+                                    "message": ""
+                                  },
+                                  "readonly": {
+                                    "label": "是否只读",
+                                    "value": false
+                                  },
+                                  "disabled": {
+                                    "label": "是否禁用",
+                                    "value": false
+                                  }
+                                },
+                                "advanced": {
+                                  "validation": {
+                                    "label": "校验规则",
+                                    "options": [
+                                      {
+                                        "label": "无校验",
+                                        "value": ""
+                                      },
+                                      {
+                                        "label": "网址",
+                                        "value": "{\"type\":\"url\", \"message\":\"请输入正确的网址\", \"trigger\":\"blur\"}"
+                                      },
+                                      {
+                                        "label": "Email地址",
+                                        "value": "{\"type\":\"email\", \"message\":\"请输入正确的邮箱\", \"trigger\":\"blur\"}"
+                                      },
+                                      {
+                                        "label": "岗位编码",
+                                        "value": "{\"message\":\"只能输入数字英文\", \"pattern\":\"^[A-Za-z0-9]+$\"}"
+                                      },
+                                      {
+                                        "label": "营业执照",
+                                        "value": "{\"message\":\"请输入正确的营业执照\", \"pattern\":\"^[A-Z0-9]{8}-[A-Z0-9]$|^[A-Z0-9]{8}-[A-Z0-9]-[0-9]{2}$\"}"
+                                      },
+                                      {
+                                        "label": "身份证号码",
+                                        "value": "{\"message\":\"请正确输入您的身份证号码\", \"pattern\":\"^[1-9]\\\\d{5}[1-9]\\\\d{3}((0\\\\d)|(1[0-2]))(([0|1|2]\\\\d)|3[0-1])\\\\d{3}([0-9]|X|x)$\"}"
+                                      }
+                                    ],
+                                    "value": "",
+                                    "customValue": "",
+                                    "hintText": "注：请先填写参数key，再次选择校验规则，当前选择校验没有生效"
+                                  },
+                                  "customWrongMessage": {
+                                    "label": "校验错误提示",
+                                    "value": ""
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "c14fd7dcef1842058b346e0237e29813",
+                  "name": "分割线",
+                  "type": "divider",
+                  "category": "widget",
+                  "icon": "split",
+                  "options": {
+                    "basic": {
+                      "name": {
+                        "label": "唯一名称",
+                        "value": "分割线"
+                      },
+                      "label": {
+                        "label": "",
+                        "value": ""
+                      },
+                      "divider-content": {
+                        "label": "内容",
+                        "value": ""
+                      },
+                      "divider-direction": {
+                        "label": "方向",
+                        "options": [
+                          {
+                            "label": "横向分割线",
+                            "value": "horizontal"
+                          },
+                          {
+                            "label": "纵向分割线",
+                            "value": "vertical"
+                          }
+                        ],
+                        "value": "horizontal"
+                      },
+                      "divider-style": {
+                        "label": "样式",
+                        "options": [
+                          {
+                            "label": "实线",
+                            "value": "solid"
+                          },
+                          {
+                            "label": "方格虚线",
+                            "value": "dashed"
+                          },
+                          {
+                            "label": "圆点虚线",
+                            "value": "dotted"
+                          }
+                        ],
+                        "value": "solid"
+                      },
+                      "divider-position": {
+                        "label": "内容位置",
+                        "options": [
+                          {
+                            "label": "居左",
+                            "value": "left"
+                          },
+                          {
+                            "label": "居中",
+                            "value": "center"
+                          },
+                          {
+                            "label": "居右",
+                            "value": "right"
+                          }
+                        ],
+                        "value": "center"
+                      },
+                      "isMoveDivider": {
+                        "label": "是否上下移动",
+                        "value": true
+                      },
+                      "moveDistance": {
+                        "label": "移动距离",
+                        "value": -44
+                      }
+                    },
+                    "advanced": {}
+                  }
+                },
+                {
+                  "id": "4184120d201a47c2b4c6ccae933f376e",
+                  "name": "栅格",
+                  "type": "grid",
+                  "category": "container",
+                  "icon": "lattice",
+                  "value": null,
+                  "options": {
+                    "basic": {
+                      "name": {
+                        "label": "唯一名称",
+                        "value": "栅格1"
+                      },
+                      "colHeight": {
+                        "label": "统一高度",
+                        "value": 36
+                      },
+                      "rowBackground": {
+                        "label": "背景颜色",
+                        "value": "#FFFFFF"
+                      },
+                      "ruleFormKey": {
+                        "label": "参数key",
+                        "value": ""
+                      },
+                      "isMoveDivider": {
+                        "label": "是否上下移动",
+                        "value": true
+                      },
+                      "moveDistance": {
+                        "label": "移动距离",
+                        "value": -57
+                      }
+                    },
+                    "advanced": {
+                      "cols": [
+                        {
+                          "id": 1,
+                          "gutter": 4,
+                          "widgetList": [
+                            {
+                              "id": "563ae08cdd494206bd80d3d9b1a0b405",
+                              "name": "复选框",
+                              "type": "checkbox",
+                              "category": "widget",
+                              "icon": "check",
+                              "value": [],
+                              "options": {
+                                "basic": {
+                                  "name": {
+                                    "label": "唯一名称",
+                                    "value": "复选框1"
+                                  },
+                                  "label": {
+                                    "label": "标签",
+                                    "value": ""
+                                  },
+                                  "hint": {
+                                    "label": "提示语",
+                                    "value": ""
+                                  },
+                                  "checkSize": {
+                                    "label": "复选框尺寸",
+                                    "options": [
+                                      {
+                                        "label": "大",
+                                        "value": "large"
+                                      },
+                                      {
+                                        "label": "中",
+                                        "value": "default"
+                                      },
+                                      {
+                                        "label": "小",
+                                        "value": "small"
+                                      }
+                                    ],
+                                    "value": "default"
+                                  },
+                                  "ruleFormKey": {
+                                    "label": "参数key",
+                                    "value": ""
+                                  },
+                                  "required": {
+                                    "label": "是否必填",
+                                    "value": false,
+                                    "message": ""
+                                  },
+                                  "margin-left-right": {
+                                    "label": "左右移动",
+                                    "value": 30
+                                  },
+                                  "attribute": {
+                                    "label": "操作属性",
+                                    "options": [
+                                      {
+                                        "label": "提示语隐藏",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "标签是否隐藏",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "是否有边框",
+                                        "value": false
+                                      }
+                                    ]
+                                  }
+                                },
+                                "advanced": {
+                                  "optionItems": [
+                                    {
+                                      "label": "",
+                                      "value": "value值1",
+                                      "disabled": false,
+                                      "text": "是否禁用",
+                                      "isSelect": true
+                                    }
+                                  ],
+                                  "dataSource": {
+                                    "address": "",
+                                    "type": "post",
+                                    "parameter": {},
+                                    "data": {}
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": 2,
+                          "gutter": 4,
+                          "widgetList": [
+                            {
+                              "id": "d90ea6d0297e4abdb9a637b819ade241",
+                              "name": "静态文本",
+                              "type": "staticText",
+                              "category": "widget",
+                              "icon": "staticText",
+                              "options": {
+                                "basic": {
+                                  "name": {
+                                    "label": "唯一名称",
+                                    "value": "静态文本"
+                                  },
+                                  "label": {
+                                    "label": "",
+                                    "value": ""
+                                  },
+                                  "textareaDefaultValue": {
+                                    "label": "默认文本",
+                                    "value": "3"
+                                  },
+                                  "static-text-line-height": {
+                                    "label": "行高",
+                                    "value": 3
+                                  },
+                                  "font-size": {
+                                    "label": "字体大小",
+                                    "value": 12
+                                  },
+                                  "font-color": {
+                                    "label": "字体颜色",
+                                    "value": "#000000"
+                                  },
+                                  "font-style": {
+                                    "label": "字体样式",
+                                    "options": [
+                                      {
+                                        "label": "加粗",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "斜体",
+                                        "value": false
+                                      },
+                                      {
+                                        "label": "下划线",
+                                        "value": false
+                                      }
+                                    ]
+                                  },
+                                  "alignment": {
+                                    "value": "center",
+                                    "label": "对齐方式",
+                                    "options": [
+                                      {
+                                        "label": "左对齐",
+                                        "value": "left"
+                                      },
+                                      {
+                                        "label": "居中对齐",
+                                        "value": "center"
+                                      },
+                                      {
+                                        "label": "右对齐",
+                                        "value": "right"
+                                      }
+                                    ]
+                                  },
+                                  "addRequired": {
+                                    "label": "添加必填符号",
+                                    "value": false
+                                  }
+                                },
+                                "advanced": {}
+                              }
+                            }
+                          ]
+                        },
+                        {
+                          "id": 2,
+                          "gutter": 16,
+                          "widgetList": [
+                            {
+                              "id": "88e78cf603264f828aadc18724df05d8",
+                              "name": "输入框",
+                              "type": "input",
+                              "category": "widget",
+                              "icon": "input",
+                              "value": null,
+                              "options": {
+                                "basic": {
+                                  "name": {
+                                    "label": "唯一名称",
+                                    "value": "输入框"
+                                  },
+                                  "label": {
+                                    "label": "标签",
+                                    "value": ""
+                                  },
+                                  "defaultValue": {
+                                    "label": "默认文本",
+                                    "value": "请输入输入框内容"
+                                  },
+                                  "hint": {
+                                    "label": "输入内容提示",
+                                    "value": ""
+                                  },
+                                  "inputType": {
+                                    "label": "输入框类型",
+                                    "value": "text",
+                                    "options": [
+                                      {
+                                        "label": "文本框",
+                                        "value": "text"
+                                      },
+                                      {
+                                        "label": "密码框",
+                                        "value": "password"
+                                      }
+                                    ]
+                                  },
+                                  "ruleFormKey": {
+                                    "label": "参数key",
+                                    "value": ""
+                                  },
+                                  "required": {
+                                    "label": "是否必填",
+                                    "value": false,
+                                    "message": ""
+                                  },
+                                  "readonly": {
+                                    "label": "是否只读",
+                                    "value": false
+                                  },
+                                  "disabled": {
+                                    "label": "是否禁用",
+                                    "value": false
+                                  }
+                                },
+                                "advanced": {
+                                  "validation": {
+                                    "label": "校验规则",
+                                    "options": [
+                                      {
+                                        "label": "无校验",
+                                        "value": ""
+                                      },
+                                      {
+                                        "label": "网址",
+                                        "value": "{\"type\":\"url\", \"message\":\"请输入正确的网址\", \"trigger\":\"blur\"}"
+                                      },
+                                      {
+                                        "label": "Email地址",
+                                        "value": "{\"type\":\"email\", \"message\":\"请输入正确的邮箱\", \"trigger\":\"blur\"}"
+                                      },
+                                      {
+                                        "label": "岗位编码",
+                                        "value": "{\"message\":\"只能输入数字英文\", \"pattern\":\"^[A-Za-z0-9]+$\"}"
+                                      },
+                                      {
+                                        "label": "营业执照",
+                                        "value": "{\"message\":\"请输入正确的营业执照\", \"pattern\":\"^[A-Z0-9]{8}-[A-Z0-9]$|^[A-Z0-9]{8}-[A-Z0-9]-[0-9]{2}$\"}"
+                                      },
+                                      {
+                                        "label": "身份证号码",
+                                        "value": "{\"message\":\"请正确输入您的身份证号码\", \"pattern\":\"^[1-9]\\\\d{5}[1-9]\\\\d{3}((0\\\\d)|(1[0-2]))(([0|1|2]\\\\d)|3[0-1])\\\\d{3}([0-9]|X|x)$\"}"
+                                      }
+                                    ],
+                                    "value": "",
+                                    "customValue": "",
+                                    "hintText": "注：请先填写参数key，再次选择校验规则，当前选择校验没有生效"
+                                  },
+                                  "customWrongMessage": {
+                                    "label": "校验错误提示",
+                                    "value": ""
+                                  }
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                },
+                {
+                  "id": "df15c8e2ab5640eaa634afcdf2a874a9",
+                  "name": "分割线",
+                  "type": "divider",
+                  "category": "widget",
+                  "icon": "split",
+                  "options": {
+                    "basic": {
+                      "name": {
+                        "label": "唯一名称",
+                        "value": "分割线"
+                      },
+                      "label": {
+                        "label": "",
+                        "value": ""
+                      },
+                      "divider-content": {
+                        "label": "内容",
+                        "value": ""
+                      },
+                      "divider-direction": {
+                        "label": "方向",
+                        "options": [
+                          {
+                            "label": "横向分割线",
+                            "value": "horizontal"
+                          },
+                          {
+                            "label": "纵向分割线",
+                            "value": "vertical"
+                          }
+                        ],
+                        "value": "horizontal"
+                      },
+                      "divider-style": {
+                        "label": "样式",
+                        "options": [
+                          {
+                            "label": "实线",
+                            "value": "solid"
+                          },
+                          {
+                            "label": "方格虚线",
+                            "value": "dashed"
+                          },
+                          {
+                            "label": "圆点虚线",
+                            "value": "dotted"
+                          }
+                        ],
+                        "value": "solid"
+                      },
+                      "divider-position": {
+                        "label": "内容位置",
+                        "options": [
+                          {
+                            "label": "居左",
+                            "value": "left"
+                          },
+                          {
+                            "label": "居中",
+                            "value": "center"
+                          },
+                          {
+                            "label": "居右",
+                            "value": "right"
+                          }
+                        ],
+                        "value": "center"
+                      },
+                      "isMoveDivider": {
+                        "label": "是否上下移动",
+                        "value": true
+                      },
+                      "moveDistance": {
+                        "label": "移动距离",
+                        "value": -57
+                      }
+                    },
+                    "advanced": {}
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
