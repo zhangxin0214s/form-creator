@@ -8,6 +8,7 @@ export const widgetStore = defineStore('widget', {
         return {
             formConfig: formConfig,
             widgetList: [], // 舞台组件列表
+            unWatch:null,// 侦听器返回值
             selectedWidget:null, // 当前选中组件
             cloneWidget:null,// 克隆的组件
             isEditor:true,

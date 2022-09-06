@@ -16,6 +16,7 @@ import required from './required.vue'
 import radioButtonBasic from './radioButtonBasic.vue'
 import repeatButtonItems from './repeatButtonItems.vue'
 import onlyButtonItems from  './onlyButtonItems.vue'
+import selectLinkage from './selectLinkage.vue'
 export {
 	inputBasic,
 	switchBasic,
@@ -34,5 +35,6 @@ export {
 	required,
 	radioButtonBasic,
 	repeatButtonItems,
-	onlyButtonItems
+	onlyButtonItems,
+	selectLinkage
 }
