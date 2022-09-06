@@ -16,7 +16,6 @@
 				<el-main>
 					<div class="setting-main">
             <div class="hint" v-if="!selectedWidget">选择要配置的组件</div>
-						{{ selectedWidget?.options.events1 }}
 						<component
 							:is="componentMap[selectedWidget?.type]"
 							:key="selectedWidget?.id"

@@ -33,6 +33,8 @@ export const containers = [
 		category: "container",
 		icon: "lattice",
 		value: null,
+		ruleFormKey: null,
+		ruleFormKeyType: 'object',
 		options: {
 			basic: {
 				name: {
@@ -51,7 +53,21 @@ export const containers = [
 					label: "参数key",
 					value: ''
 				},
-				"isMoveDivider": {
+				ruleFormKeyType: {
+					label: '参数类型',
+					value: 'object',
+					options: [
+						{
+							label: '对象',
+							value: 'object'
+						},
+						{
+							label: '数组',
+							value: 'array'
+						}
+					]
+				},
+				"isMoveDivider":{
 					label: "是否上下移动",
 					value: false,
 				},
@@ -85,12 +101,14 @@ export const containers = [
 		addable: true,
 		closable: true,
 		maxCount: 10,
+		ruleFormKey: null,
+		ruleFormKeyType: 'object',
 		options: {
 			basic: {
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
-				},
+				}
 			},
 			advanced: {
 				cols: [
@@ -123,17 +141,19 @@ export const containers = [
 		category: "container",
 		icon: "card ",
 		title: '卡片名称',
+		ruleFormKey: null,
+		ruleFormKeyType: 'object',
 		options: {
 			hidden: false,
 			basic: {
-				label: {
-					label: "卡片名称",
-					value: "卡片1"
-				},
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
 				},
+				label: {
+					label: "标签",
+					value: "卡片"
+				}, // 标签
 			},
 			advanced: {
 				cols: [
@@ -152,7 +172,9 @@ export const basicWidgets = [
 		type: "input",
 		category: "widget",
 		icon: "input",
-		value: '',
+		value: null,
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				name: {
@@ -261,6 +283,8 @@ export const basicWidgets = [
 		category: "widget",
 		icon: "switch",
 		value: false,
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				name: {
@@ -307,6 +331,8 @@ export const basicWidgets = [
 		category: "widget",
 		icon: "check",
 		value: [],
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				name: {
@@ -562,7 +588,9 @@ export const basicWidgets = [
 		type: "select",
 		category: "widget",
 		icon: "select",
-		value: '',
+		value:null,
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				name: {
@@ -629,6 +657,8 @@ export const basicWidgets = [
 		category: "widget",
 		icon: "Radio",
 		value: '',
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				name: {
@@ -718,6 +748,8 @@ export const basicWidgets = [
 		category: "widget",
 		icon: "textField",
 		value: null,
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				name: {
@@ -901,7 +933,9 @@ export const basicWidgets = [
 		type: "cellPhone",
 		category: "widget",
 		icon: "cellPhone",
-		value: null,
+		value:null,
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				name: {
@@ -1037,6 +1071,9 @@ export const basicWidgets = [
 		type: "date",
 		category: "widget",
 		icon: "time",
+		value:null,
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				value: "",
@@ -1135,6 +1172,9 @@ export const basicWidgets = [
 		type: "datetimerange",
 		category: "widget",
 		icon: "date",
+		value:null,
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				value: "",

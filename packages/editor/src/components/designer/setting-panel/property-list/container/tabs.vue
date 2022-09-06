@@ -21,6 +21,15 @@
                 <div>
                     <div class="title">标签最多数量</div><el-input style="display:inline-block;width: 100px;" v-model="selectedWidget.maxCount"/>
                 </div>
+                <div v-for="(item,key,index) in basicProp" :key="index" style="margin-top:10px;">
+                    <component  
+                        :is="componentMap[getPropCompName(key)]"
+                        :basic-prop="basicProp"
+                        :advanced-prop="advancedProp"
+                        :value = "item"
+                        :key1 = "key"
+                    ></component>
+                </div>
                 <el-divider content-position="center">标签设置</el-divider>
                 <tabs-items
                     :advanced-prop="advancedProp"
@@ -46,10 +55,8 @@ const componentMap = {
 }
 const activeNames = ref(['1'])
 const getPropCompName = (key) =>{
-    console.log(key,"===key===")
     return BASCI_COMPONENTS[BASIC_PROPERTIES[key]]
 }
-
 </script>
 
 <style lang="scss" scoped>

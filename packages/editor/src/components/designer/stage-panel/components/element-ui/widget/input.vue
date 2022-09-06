@@ -4,6 +4,9 @@
 		:basic-prop="widget.options.basic"
 		:advanced-prop="widget.options.advanced"
 		:parent-widget="parentWidget"
+		:prop-key="propKey"
+		:rule-form="ruleForm"
+		:parent="parent"
 	>
 		<el-input
 			:disabled="widget.options.basic.disabled.value"
@@ -11,9 +14,9 @@
 			:type="widget.options.basic.inputType.value"
 			v-model="widget.value"
 			show-word-limit
-			@input="changeInput"
+			@change="handleChangeEvent(props,ElMessage)"
 		/>
-		<div class="hint">{{widget.options.basic.hint.value}}</div>
+		<div class="hint">{{ widget.options.basic.hint.value }}</div>
 	</widget-mask>
 </template>
 
@@ -21,14 +24,16 @@
 import widgetMask from '../common/widgetMask.vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
-import { watch } from 'vue';
+import { ElMessage } from 'element-plus'
+import { watch} from 'vue';
+import { handleChangeEvent } from '../hooks/handleChangeEvent'
+import { watchEvent } from '../hooks/watchEvent'
 const _widgetStore = widgetStore();
-const { formConfig, widgetList } = storeToRefs(_widgetStore);
-const props = defineProps(['widget', 'parent', 'parentWidget']);
-const changeInput = (val) => {
-	formConfig.value.ruleForm[props.widget.options.basic.ruleFormKey.value] =
-		val;
-};
+const { formConfig } = storeToRefs(_widgetStore);
+const props = defineProps(['widget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
+
+watchEvent(props,watch)
+
 </script>
 <style scoped>
 .hint {

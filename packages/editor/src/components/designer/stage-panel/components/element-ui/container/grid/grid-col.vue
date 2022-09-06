@@ -8,16 +8,18 @@
                 tag="transition-group" :component-data="{name: 'fade'}"
                 @end="onEnd"
                 :sort="isEditor">
-                <template #item="{ element }">
+                <template #item="{ element,index }">
                     <div class="transition-group-el">
-                        <component 
-                            :is="componentMap[element.type]" 
-                            :key="element.id"
+                        <component
+                            :is= "componentMap[element.type]" 
+                            :key= "element.id"
                             :widget = element
-                            :parent-widget=colWidget.widgetList
-                            :rule-form-ref="ruleFormRef"
-                            :parent = widget
-                            @submitForm="submitForm">
+                            :prop-key = "getPropKey(element,index)"
+                            :parent-widget= colWidget.widgetList
+                            :rule-form-ref= "ruleFormRef"
+                            :rule-form= "ruleForm"
+                            :parent = "widget"
+                            @submitForm= "submitForm">
                         </component>
                     </div>
                 </template>
@@ -34,6 +36,8 @@
     const props = defineProps([
         'colWidget',
         'widget',
+        'propKey',
+        'ruleForm',
         'ruleFormRef'
     ])
     const componentMap = {
@@ -59,6 +63,18 @@
             console.log('error submit!', fields)
             }
         })
+    }
+    const getPropKey = (element,index) =>{
+        if(props.propKey) {
+            if(props.widget.ruleFormKeyType === 'object'){
+                return `${props.propKey}.${element.ruleFormKey}`
+            }
+            if(props.widget.ruleFormKeyType === 'array'){
+                return `${props.propKey}.${index}.${element.ruleFormKey}`
+            }
+        }else{
+            return `${element.ruleFormKey}`
+        }
     }
 </script>
  <style lang="scss" scoped>

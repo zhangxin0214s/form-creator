@@ -27,7 +27,9 @@
     import { storeToRefs } from 'pinia';
     const props = defineProps([
         'widget',
-        'parentWidget'
+        'ruleForm',
+        'parentWidget',
+        'parent'
     ]);
     const _widgetStore = widgetStore();
     const { widgetList,selectedWidget,isEditor} = storeToRefs(_widgetStore);
@@ -38,6 +40,16 @@
 
     const delete1 = () =>{
       _widgetStore.removeWidget(selectedWidget.value,props.parentWidget);
+      props.widget.ruleFormKey && delete props.ruleForm[props.widget.ruleFormKey]
+      if(props.parent?.ruleFormKeyType === 'array'){
+            props.ruleForm.forEach((rule,index) =>{
+                if(Object.keys(rule).indexOf(props.widget.ruleFormKey)>-1){
+                    props.ruleForm.splice(index,1)
+                }
+            })
+        }else{
+            props.widget.ruleFormKey && delete props.ruleForm[props.widget.ruleFormKey]
+        }
     }
 
     const selected = (widgetData) => {

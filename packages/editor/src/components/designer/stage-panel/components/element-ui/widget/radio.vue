@@ -3,7 +3,11 @@
       :widget="widget"
       :basicProp="widget.options.basic"
       :advancedProp="widget.options.advanced"
-      :parent-widget="parentWidget">
+      :parent-widget="parentWidget"
+      :prop-key="propKey"
+		  :rule-form="ruleForm"
+		  :parent="parent"
+  >
     <el-radio-group v-model="widget.value">
       <el-radio
           v-for="(item,index) in widget.options.advanced.optionItems"
@@ -12,6 +16,7 @@
           :disabled="item.disabled"
           :size="widget.options.basic.radioSize.value"
           :border="widget.options.basic.attribute.options[2].value"
+          @change="handleChangeEvent(props,ElMessage)"
       >
         {{ item.label }}
       </el-radio>
@@ -22,17 +27,18 @@
 import widgetMask from '../common/widgetMask.vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
-import { onMounted, ref } from 'vue'
+import { ElMessage } from 'element-plus'
+import { watch} from 'vue';
+import { handleChangeEvent } from '../hooks/handleChangeEvent'
+import { watchEvent } from '../hooks/watchEvent'
 
 
 const _widgetStore = widgetStore();
 const {formConfig} = storeToRefs(_widgetStore);
-// const radio = ref("value值1")
-let props = defineProps([
-  'widget',
-  'parentWidget',
-  'advancedProp'
-])
+
+const props = defineProps(['widget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
+
+watchEvent(props,watch)
 </script>
 <style lang="scss" scoped>
 </style>
