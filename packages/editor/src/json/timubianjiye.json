@@ -384,7 +384,7 @@
                                     ]
                                   },
                                   "alignment": {
-                                    "value": "left",
+                                    "value": "center",
                                     "label": "对齐方式",
                                     "options": [
                                       {
@@ -465,7 +465,7 @@
                                     ]
                                   },
                                   "alignment": {
-                                    "value": "left",
+                                    "value": "center",
                                     "label": "对齐方式",
                                     "options": [
                                       {
@@ -749,7 +749,7 @@
                                   },
                                   "margin-left-right": {
                                     "label": "左右移动",
-                                    "value": 0
+                                    "value": 30
                                   },
                                   "attribute": {
                                     "label": "操作属性",
@@ -844,7 +844,7 @@
                                     ]
                                   },
                                   "alignment": {
-                                    "value": "left",
+                                    "value": "center",
                                     "label": "对齐方式",
                                     "options": [
                                       {
@@ -1150,7 +1150,7 @@
                                   },
                                   "margin-left-right": {
                                     "label": "左右移动",
-                                    "value": 0
+                                    "value": 30
                                   },
                                   "attribute": {
                                     "label": "操作属性",
@@ -1245,7 +1245,7 @@
                                     ]
                                   },
                                   "alignment": {
-                                    "value": "left",
+                                    "value": "center",
                                     "label": "对齐方式",
                                     "options": [
                                       {
@@ -1551,7 +1551,7 @@
                                   },
                                   "margin-left-right": {
                                     "label": "左右移动",
-                                    "value": 0
+                                    "value": 30
                                   },
                                   "attribute": {
                                     "label": "操作属性",
@@ -1646,7 +1646,7 @@
                                     ]
                                   },
                                   "alignment": {
-                                    "value": "left",
+                                    "value": "center",
                                     "label": "对齐方式",
                                     "options": [
                                       {
