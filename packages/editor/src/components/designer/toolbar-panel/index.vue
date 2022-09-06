@@ -119,7 +119,7 @@ const exportCode = () => {
     // 提交的数据
     console.log(data);
   }
-  // dialogCodeVisible.value = true;
+  dialogCodeVisible.value = true;
 }
 
 const uploadFile = (file, files) => {

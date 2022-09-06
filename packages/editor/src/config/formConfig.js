@@ -149,11 +149,7 @@ export const containers = [
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
-				},
-				label: {
-					label: "标签",
-					value: "卡片"
-				}, // 标签
+				}
 			},
 			advanced: {
 				cols: [
