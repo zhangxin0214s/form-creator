@@ -36,6 +36,7 @@
 import { widgetStore } from '@/store/index';
 import { storeToRefs } from 'pinia';
 import { onMounted,watch } from 'vue';
+import { ElMessage } from 'element-plus'
 import containerMask from '../../common/containerMask.vue';
 import Col from './grid-col.vue';
 const _widgetStore = widgetStore();
@@ -46,13 +47,33 @@ watch(
 	() => props.propKey,
 	(value) => {
 		const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+		const parentRuleFormKeyType = props.parent?.ruleFormKeyType;
+		const ruleFormKeyType = props.widget.ruleFormKeyType;
+
 		if(ruleFormKey && !props.ruleForm[ruleFormKey]){
 			console.log("监听到数据变化",ruleFormKey)
-			if(props.widget.ruleFormKeyType === 'object'){
-				props.ruleForm[ruleFormKey] = {}
+			if(parentRuleFormKeyType === 'object' || !parentRuleFormKeyType){
+				if(ruleFormKeyType === 'array'){
+					props.ruleForm[ruleFormKey] = []
+				}else{
+					props.ruleForm[ruleFormKey] = {}
+				}
 			}
-			if(props.widget.ruleFormKeyType === 'array'){
-				props.ruleForm[ruleFormKey] = []
+			if(parentRuleFormKeyType === 'array'){
+				if(ruleFormKeyType === 'array'){
+					ElMessage({
+							message: '父级容器是数组结构，该元素只支持设置对象结构',
+							type: 'error',
+							duration:1500
+					})
+				}else{
+					const isExist = props.ruleForm.some(rule =>{Object.keys(rule).indexOf(ruleFormKey)>-1})
+					if(!isExist){
+						props.ruleForm.push({
+							[ruleFormKey]:null
+						})
+					}
+				}
 			}
 		}
 	},

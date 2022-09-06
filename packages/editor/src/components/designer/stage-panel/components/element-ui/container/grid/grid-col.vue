@@ -18,7 +18,7 @@
                             :parent-widget= colWidget.widgetList
                             :rule-form-ref= "ruleFormRef"
                             :rule-form= "ruleForm"
-                            :parent = widget
+                            :parent = "widget"
                             @submitForm= "submitForm">
                         </component>
                     </div>

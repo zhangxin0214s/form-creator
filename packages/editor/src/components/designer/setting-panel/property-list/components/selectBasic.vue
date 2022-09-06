@@ -37,8 +37,11 @@ const props = defineProps(['basicProp', 'key1', 'value']);
 const setRuleFormKeyType = () =>{
   if(props.key1 === 'ruleFormKeyType'){
     _widgetStore.selectedWidget.ruleFormKeyType = props.basicProp[props.key1].value
+    _widgetStore.selectedWidget.ruleFormKey = null;
+    _widgetStore.selectedWidget.options.basic.ruleFormKey.value = null;
   }
-  if(props.basicProp[props.key1].value==='array' &&_widgetStore.selectedWidget.type === 'grid' && _widgetStore.selectedWidget.options.advanced.cols.length>1){
+
+  if(props.basicProp[props.key1].value === 'array' &&_widgetStore.selectedWidget.type === 'grid' && _widgetStore.selectedWidget.options.advanced.cols.length>1){
     ElMessage({
         message: '请将栅格调整为1列(目前数组结构下仅支持1列)',
         type: 'error',
