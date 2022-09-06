@@ -562,11 +562,7 @@ export const basicWidgets = [
 		type: "select",
 		category: "widget",
 		icon: "select",
-<<<<<<< HEAD
 		value: '',
-=======
-		value: [],
->>>>>>> dev
 		options: {
 			basic: {
 				name: {

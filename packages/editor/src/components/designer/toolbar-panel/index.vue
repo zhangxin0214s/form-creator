@@ -43,13 +43,13 @@
 
 </template>
 <script setup>
-import { ref, reactive } from 'vue';
+import { ref } from 'vue';
 import { widgetStore } from '@/store/index';
 import { storeToRefs } from 'pinia';
 import formRenderer from '../../renderer/index.vue'
 import { ElMessage } from 'element-plus'
 import UploadInstance from 'element-plus'
-import { deepClone } from '@/utils/util'
+import { deepClone, handleData, } from '@/utils/util'
 import { toRaw } from '@vue/reactivity'
 import codeEditor from '../code-editor/index.vue'
 import tempLibrary from '../../tempLibrary/index.vue'
@@ -108,71 +108,17 @@ const closePreview = () => {
   dialogFormVisible.value = false;
 }
 
-const judgeSameKey = (lists, keyArray = []) => {
-  // 同级key不可相同
-  let same = false;
-  lists.some(list => {
-    const key = list.options.basic.ruleFormKey.value;
-    if (keyArray.indexOf(key) > - 1) {
-      ElMessage({
-        showClose:true,
-        message:`参数${key}有多个`,
-        center:true,
-      })
-      same = true;
-      _widgetStore.selectedWidget = list;
-      return true;
-    } else {
-      keyArray.push(key);
-    }
-  })
-  return same;
-}
-
-const linkAgeDeep = (widget, linkAge) => {
-  const {category} = widget;
-  const key = widget.options.basic.ruleFormKey.value;
-  // key不可为空
-  if (key.trim() === "") {
-    // key为空
-    ElMessage({
-      showClose:true,
-      message:'该组件参数key为空',
-      center:true,
-    })
-    _widgetStore.selectedWidget = widget;
-  } else {
-    if (category === 'container') {
-      linkAge[key] = {};
-      widget.options.advanced.cols.forEach(list => {
-        if (list.ruleFormKey) {
-          // 针对标签页面
-          linkAge[key][list.ruleFormKey.value] = {};
-        }
-        if (list.widgetList.length > 0) {
-          let sameKey = judgeSameKey(list.widgetList);
-          !sameKey && list.widgetList.forEach(item => {
-            linkAgeDeep(item, list.ruleFormKey ? linkAge[key][list.ruleFormKey.value] : linkAge[key]);
-          })
-        } else {
-          // 空容器列表
-        }
-      })
-    } else {
-      linkAge[key] = widget.value;
-    }
-  }
-}
-
 /**
  * 代码编辑器
  */
 const exportCode = () => {
-  let sameKey = judgeSameKey(widgetList.value);
-  !sameKey && widgetList.value.forEach(widget => {
-    linkAgeDeep(widget, data.value);
-  })
-  console.log(data);
+  let cb = handleData(widgetList, data);
+  if (cb) {
+    _widgetStore.selectedWidget = cb;
+  } else {
+    // 提交的数据
+    console.log(data);
+  }
   // dialogCodeVisible.value = true;
 }
 
