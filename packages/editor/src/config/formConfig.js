@@ -101,7 +101,15 @@ export const containers = [
 		addable: true,
 		closable: true,
 		maxCount: 10,
+		ruleFormKey: null,
+		ruleFormKeyType: 'array',
 		options: {
+			basic: {
+				ruleFormKey: {
+					label: "参数key",
+					value: ''
+				}
+			},
 			advanced: {
 				cols: [
 					{

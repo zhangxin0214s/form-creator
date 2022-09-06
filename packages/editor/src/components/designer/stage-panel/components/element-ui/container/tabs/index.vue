@@ -4,6 +4,9 @@
       <el-tab-pane :label="colWidget.name" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
         <tabs-content 
           :colWidget="colWidget"
+          :rule-form="ruleForm[widget.ruleFormKey]"
+          :widget="widget"
+          :prop-key="propKey"
         ></tabs-content>
       </el-tab-pane>
     </el-tabs>
@@ -14,11 +17,27 @@
   import { storeToRefs } from 'pinia';
   import containerMask from "../../common/containerMask.vue"
   import tabsContent from "./content.vue"
+  import { watch } from "vue"
   const _widgetStore = widgetStore();
   const { selectedWidget,isEditor} = storeToRefs(_widgetStore);
   const props=defineProps([
-      'widget'
+      'widget',
+      'parent',
+      'propKey',
+      'ruleForm',
+      'ruleFormRef'
   ])
+
+  watch(
+    () => props.propKey,
+    (value) => {
+      const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+      const parentRuleFormKeyType = props.parent?.ruleFormKeyType;
+      const ruleFormKeyType = props.widget.ruleFormKeyType;
+      if(ruleFormKey && !props.ruleForm[ruleFormKey]){
+        props.ruleForm[ruleFormKey] = [{}]
+      }
+  })
   let activeName=props.widget.options.advanced.cols[0].id
   const addTabsHandler=()=>{
     let maxCount=props.widget.maxCount
@@ -28,10 +47,13 @@
           name:"名称",
           widgetList:[]
         })
+        const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+        props.ruleForm[ruleFormKey].push({})
     }
   }
   const removeTabsHandler1=(name)=>{
     console.log(name)
+    const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
     let cols=props.widget.options.advanced.cols
     if(cols.length===1){
       return 
@@ -39,10 +61,12 @@
     for(let i=0;i<cols.length;i++){
       if(cols[i].id===name){
         cols.splice(i,1)
+        props.ruleForm[ruleFormKey].splice(i,1)
         return 
       }
     }
   }
+
   const guid=()=>{
       return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
           var r = Math.random() * 16 | 0,

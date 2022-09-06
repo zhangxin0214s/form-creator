@@ -14,7 +14,7 @@
                             :is= "componentMap[element.type]" 
                             :key= "element.id"
                             :widget = element
-                            :propKey = "getPropKey(element,index)"
+                            :prop-key = "getPropKey(element,index)"
                             :parent-widget= colWidget.widgetList
                             :rule-form-ref= "ruleFormRef"
                             :rule-form= "ruleForm"
