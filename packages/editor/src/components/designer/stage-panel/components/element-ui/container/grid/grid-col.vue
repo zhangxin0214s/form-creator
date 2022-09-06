@@ -11,15 +11,15 @@
                 <template #item="{ element,index }">
                     <div class="transition-group-el">
                         <component
-                            :is="componentMap[element.type]" 
-                            :key="element.id"
+                            :is= "componentMap[element.type]" 
+                            :key= "element.id"
                             :widget = element
                             :propKey = "getPropKey(element,index)"
-                            :parent-widget=colWidget.widgetList
-                            :rule-form-ref="ruleFormRef"
-                            :rule-form="ruleForm"
+                            :parent-widget= colWidget.widgetList
+                            :rule-form-ref= "ruleFormRef"
+                            :rule-form= "ruleForm"
                             :parent = widget
-                            @submitForm="submitForm">
+                            @submitForm= "submitForm">
                         </component>
                     </div>
                 </template>
@@ -64,13 +64,13 @@
             }
         })
     }
-    const getPropKey = (element) =>{
+    const getPropKey = (element,index) =>{
         if(props.propKey) {
             if(props.widget.ruleFormKeyType === 'object'){
                 return `${props.propKey}.${element.ruleFormKey}`
             }
             if(props.widget.ruleFormKeyType === 'array'){
-                return `${props.propKey}${index}.${element.ruleFormKey}`
+                return `${props.propKey}.${index}.${element.ruleFormKey}`
             }
         }else{
             return `${element.ruleFormKey}`

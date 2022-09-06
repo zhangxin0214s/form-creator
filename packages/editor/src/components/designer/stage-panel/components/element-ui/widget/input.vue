@@ -38,9 +38,12 @@ watch(
 			if(props.parent?.ruleFormKeyType === 'object'){
 				props.ruleForm[ruleFormKey] = null
 			}else if(props.parent?.ruleFormKeyType === 'array'){
-				props.ruleForm.push({
-					[ruleFormKey]: null
-				})
+				const isExist = props.ruleForm.some(rule =>Object.keys(rule).indexOf(ruleFormKey)>-1);
+				if(!isExist){
+					props.ruleForm.push({
+						[ruleFormKey]: null
+					})
+				}
 			}else{
 				props.ruleForm[ruleFormKey] = null
 			}
@@ -66,8 +69,10 @@ const handleChangeEvent = () =>{
 	if(props.paren?.ruleFormKeyType === 'object'){
 		props.ruleForm[ruleFormKey] = props.widget.value;
 	}else if(props.parent?.ruleFormKeyType === 'array'){
-		props.ruleForm.push({
-			[ruleFormKey] : props.widget.value
+		props.ruleForm.map(rule =>{
+			if(Object.keys(rule).indexOf(ruleFormKey)>-1){
+				rule[ruleFormKey] = props.widget.value
+			}
 		})
 	}else{
 		props.ruleForm[ruleFormKey] = props.widget.value;

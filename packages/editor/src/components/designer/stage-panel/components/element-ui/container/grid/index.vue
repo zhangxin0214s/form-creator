@@ -40,7 +40,7 @@ import containerMask from '../../common/containerMask.vue';
 import Col from './grid-col.vue';
 const _widgetStore = widgetStore();
 const { selectedWidget, isEditor } = storeToRefs(_widgetStore);
-const props = defineProps(['widget', 'propKey', 'ruleForm', 'ruleFormRef']);
+const props = defineProps(['widget', 'parent', 'propKey', 'ruleForm', 'ruleFormRef']);
 
 watch(
 	() => props.propKey,
@@ -54,7 +54,6 @@ watch(
 			if(props.widget.ruleFormKeyType === 'array'){
 				props.ruleForm[ruleFormKey] = []
 			}
-			
 		}
 	},
 	{
