@@ -297,6 +297,8 @@ export const basicWidgets = [
 		category: "widget",
 		icon: "check",
 		value: [],
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				name: {

@@ -14,7 +14,7 @@
 			:type="widget.options.basic.inputType.value"
 			v-model="widget.value"
 			show-word-limit
-			@change="handleChangeEvent(props)"
+			@change="handleChangeEvent(props,ElMessage)"
 		/>
 		<div class="hint">{{ widget.options.basic.hint.value }}</div>
 	</widget-mask>
