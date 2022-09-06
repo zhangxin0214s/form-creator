@@ -112,7 +112,7 @@ const linkAgeDeep = (widget, obj) => {
       }
       if (list.widgetList.length>0) {
         list.widgetList.forEach(item => {
-          getDeepMsg(item, list.ruleFormKey?obj[key][list.ruleFormKey.value]:obj[key]);
+          linkAgeDeep(item, list.ruleFormKey?obj[key][list.ruleFormKey.value]:obj[key]);
         })
       } else {
         // 空容器列表
