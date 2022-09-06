@@ -100,9 +100,30 @@ const closePreview = () => {
   dialogFormVisible.value = false;
 }
 
-const linkAgeDeep = (widget, obj) => {
+const judgeSameKey = (lists, keyArray=[]) => {
+  // 同级key不可相同
+  let same = false;
+  lists.some(list => {
+    const key = list.options.basic.ruleFormKey.value;
+    if (keyArray.indexOf(key) > -1) {
+      ElMessage({
+        showClose: true,
+        message: `参数${key}有多个`,
+        center: true,
+      })
+      same = true;
+      _widgetStore.selectedWidget = list;
+      return true;
+    } else {
+      keyArray.push(key);
+    }
+  })
+  return same;
+}
+
+const linkAgeDeep = (widget, linkAge) => {
   const {category} = widget;
-  let key = widget.options.basic.ruleFormKey.value;
+  const key = widget.options.basic.ruleFormKey.value;
   // key不可为空
   if (key.trim() === "") {
     // key为空
@@ -114,22 +135,23 @@ const linkAgeDeep = (widget, obj) => {
     _widgetStore.selectedWidget = widget;
   } else {
     if (category === 'container') {
-      obj[key] = {};
+      linkAge[key] = {};
       widget.options.advanced.cols.forEach(list => {
         if (list.ruleFormKey) {
           // 针对标签页面
-          obj[key][list.ruleFormKey.value] = {};
+          linkAge[key][list.ruleFormKey.value] = {};
         }
         if (list.widgetList.length>0) {
-          list.widgetList.forEach(item => {
-            linkAgeDeep(item, list.ruleFormKey?obj[key][list.ruleFormKey.value]:obj[key]);
+          let sameKey = judgeSameKey(list.widgetList);
+          !sameKey && list.widgetList.forEach(item => {
+            linkAgeDeep(item, list.ruleFormKey?linkAge[key][list.ruleFormKey.value]:linkAge[key]);
           })
         } else {
           // 空容器列表
         }
       })
     } else {
-      obj[key] = widget.value;
+      linkAge[key] = widget.value;
     }
   }
 }
@@ -138,7 +160,8 @@ const linkAgeDeep = (widget, obj) => {
  * 代码编辑器
  */
 const exportCode = () => {
-  widgetList.value.forEach(widget => {
+  let sameKey = judgeSameKey(widgetList.value);
+  !sameKey && widgetList.value.forEach(widget => {
     linkAgeDeep(widget, data.value);
   })
   console.log(data);
