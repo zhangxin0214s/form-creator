@@ -18,7 +18,7 @@ import templateData from '../../../public/json/templateData.json'
 import { storeToRefs } from 'pinia'
 import { widgetStore } from '@/store/index';
 import axios from 'axios'
-import { defineProps,defineEmits } from 'vue'
+import { defineProps, defineEmits } from 'vue'
 
 const emit = defineEmits(['triggerDialog'])
 const _widgetStore = widgetStore();
@@ -27,8 +27,9 @@ const insert = (item) => {
   axios.get(item.path).then(res => {
     _widgetStore.widgetList.push(...res.data.widgetList)
     //关闭遮罩
-    emit('triggerDialog',false)
+    emit('triggerDialog', false)
   })
+  _widgetStore.clearWidget();
 }
 </script>
 
