@@ -120,6 +120,7 @@ export const containers = [
 		id: 4,
 		name: "卡片",
 		type: "card",
+		category: "container",
 		icon: "card ",
 		title: '卡片名称',
 		options: {
