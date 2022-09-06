@@ -4,6 +4,9 @@
 		:basic-prop="widget.options.basic"
 		:advanced-prop="widget.options.advanced"
 		:parent-widget="parentWidget"
+		:prop-key="propKey"
+		:rule-form="ruleForm"
+		:parent="parent"
 	>
 		<div class="phone-content">
 			<el-select
@@ -35,6 +38,7 @@
 				:placeholder="widget.options.basic.defaultValue.value"
 				v-model="tempVal"
 				@blur="setRules()"
+				@change="handleChangeEvent(props,ElMessage)"
 			/>
 		</div>
 	</widget-mask>
@@ -42,13 +46,17 @@
 
 <script setup>
 import widgetMask from '../common/widgetMask.vue';
-import { ref } from 'vue';
+import { ref,watch } from 'vue';
 import { ElMessage } from 'element-plus';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
+import { handleChangeEvent } from '../hooks/handleChangeEvent'
+import { watchEvent } from '../hooks/watchEvent'
 const _widgetStore = widgetStore();
 const { formConfig } = storeToRefs(_widgetStore);
-const props = defineProps(['widget', 'parentWidget']);
+const props = defineProps(['widget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
+
+watchEvent(props,watch)
 const tempVal = ref('');
 const setRules = () => {
 	const _ruleFormKey = props.widget.options.basic.ruleFormKey.value;
