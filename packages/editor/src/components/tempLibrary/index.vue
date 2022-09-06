@@ -1,10 +1,10 @@
 <template>
   <div class="from">
-    <el-card class="box-card">
+    <el-card class="box-card" shadow="never">
       <div v-for="(item, index) in templateData">
         <ul>
           <li>
-            <img :src="item.image" style="width: 120px; height: 120px">
+            <img :src="item.image" style="width: 160px; height: 120px" @click="insert(item)">
           </li>
           <div style="margin-top: 15px">{{ item.name }}</div>
         </ul>
@@ -17,10 +17,19 @@
 import templateData from '../../../public/json/templateData.json'
 import { storeToRefs } from 'pinia'
 import { widgetStore } from '@/store/index';
+import axios from 'axios'
+import { defineProps,defineEmits } from 'vue'
 
+const emit = defineEmits(['triggerDialog'])
 const _widgetStore = widgetStore();
 const {widgetList, formConfig} = storeToRefs(_widgetStore);
-
+const insert = (item) => {
+  axios.get(item.path).then(res => {
+    _widgetStore.widgetList.push(...res.data.widgetList)
+    //关闭遮罩
+    emit('triggerDialog',false)
+  })
+}
 </script>
 
 <style scoped>
@@ -40,13 +49,13 @@ ul {
   height: 190px;
   width: 170px;
   margin-right: 30px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 1px solid #d8dce5;
   padding: 0px;
 }
 li {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 15px;
   list-style: none;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border: 1px solid #d8dce5;
 }
 </style>

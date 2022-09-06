@@ -12,6 +12,7 @@
           :disabled="item.disabled"
           :size="widget.options.basic.checkSize.value"
           :border="widget.options.basic.attribute.options[2].value"
+          :style="`margin-left:${widget.options.basic['margin-left-right'].value}px`"
       >
         {{ item.label }}
       </el-checkbox>
