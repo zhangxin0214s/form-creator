@@ -693,6 +693,8 @@ export const basicWidgets = [
 		category: "widget",
 		icon: "textField",
 		value: null,
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				name: {
