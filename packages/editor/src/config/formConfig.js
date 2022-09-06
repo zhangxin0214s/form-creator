@@ -51,6 +51,20 @@ export const containers = [
 					label: "参数key",
 					value: ''
 				},
+				ruleFormKeyType: {
+					label: '参数类型',
+					value: 'object',
+					options: [
+						{
+							label: '对象',
+							value: 'object'
+						},
+						{
+							label: '数组',
+							value: 'array'
+						}
+					]
+				},
 				"isMoveDivider":{
 					label: "是否上下移动",
 					value: false,
@@ -166,6 +180,20 @@ export const basicWidgets = [
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
+				},
+				ruleFormKeyType: {
+					label: '参数类型',
+					value: 'object',
+					options: [
+						{
+							label: '对象',
+							value: 'object'
+						},
+						{
+							label: '数组',
+							value: 'array'
+						}
+					]
 				},
 				required: {
 					label: "是否必填",
