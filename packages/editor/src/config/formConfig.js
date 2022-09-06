@@ -533,6 +533,9 @@ export const basicWidgets = [
 		type: "select",
 		category: "widget",
 		icon: "select",
+		value:null,
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				name: {
@@ -599,6 +602,8 @@ export const basicWidgets = [
 		category: "widget",
 		icon: "Radio",
 		value: '',
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				name: {
@@ -871,6 +876,9 @@ export const basicWidgets = [
 		type: "cellPhone",
 		category: "widget",
 		icon: "cellPhone",
+		value:null,
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				name: {
@@ -1006,6 +1014,9 @@ export const basicWidgets = [
 		type: "date",
 		category: "widget",
 		icon: "time",
+		value:null,
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				value: "",
@@ -1104,6 +1115,9 @@ export const basicWidgets = [
 		type: "datetimerange",
 		category: "widget",
 		icon: "date",
+		value:null,
+		ruleFormKey: null,
+		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
 				value: "",

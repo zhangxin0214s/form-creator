@@ -25,7 +25,7 @@ import widgetMask from '../common/widgetMask.vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 import { ElMessage } from 'element-plus'
-import { onMounted ,watch} from 'vue';
+import { watch} from 'vue';
 import { handleChangeEvent } from '../hooks/handleChangeEvent'
 import { watchEvent } from '../hooks/watchEvent'
 const _widgetStore = widgetStore();
