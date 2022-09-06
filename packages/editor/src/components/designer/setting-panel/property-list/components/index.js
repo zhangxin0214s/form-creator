@@ -11,6 +11,7 @@ import buttonGroup from './buttonGroup.vue'
 import inputNumberBasic from './inputNumberBasic.vue'
 import colorBasic from './colorBasic.vue'
 import checkboxBasic1 from './checkboxBasic1.vue'
+import checkboxItems from './checkboxItems.vue'
 import eventBasic from './eventBasic.vue'
 import required from './required.vue'
 import radioButtonBasic from './radioButtonBasic.vue'
@@ -31,6 +32,7 @@ export {
 	inputNumberBasic,
 	colorBasic,
 	checkboxBasic1,
+	checkboxItems,
 	eventBasic,
 	required,
 	radioButtonBasic,

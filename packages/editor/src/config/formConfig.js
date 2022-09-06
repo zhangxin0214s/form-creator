@@ -357,14 +357,31 @@ export const basicWidgets = [
 				}
 			},
 			advanced: {
+				linkage: {
+					label: '联动对象',
+					options: [],
+					value: '请选择'
+				},
 				optionItems: [  // 选项设置
-					{ label: "label值1", value: "value值1", disabled: false, text: '是否禁用', isSelect: true }
+					{
+						label: "label值1",
+						value: "value值1",
+						disabled: false,
+						text: '是否禁用',
+						isSelect: true,
+					}
 				],
 				dataSource: {
 					address: '', // 请求地址
 					type: 'post',// 请求方式
 					parameter: {},// 请求参数
 					data: {}// 发送数据
+				}
+			},
+			events: {
+				linkageCode: {
+					label: '联动代码',
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\n*/ \n//#endregion "
 				}
 			}
 		},
@@ -522,7 +539,7 @@ export const basicWidgets = [
 		type: "select",
 		category: "widget",
 		icon: "select",
-		value:'',
+		value: '',
 		options: {
 			basic: {
 				name: {
