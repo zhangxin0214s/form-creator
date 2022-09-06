@@ -326,7 +326,7 @@ export const basicWidgets = [
 					message: ""
 				},// 是否必填
 				"margin-left-right": {
-					label: "左右内边距",
+					label: "左右移动",
 					value: 0
 				},
 

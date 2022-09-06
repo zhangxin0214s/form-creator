@@ -37,8 +37,8 @@
   </el-dialog>
 
   <!-- 模板库 -->
-  <el-dialog v-model="dialogTemplateVisible" title="模板库" width="1070px" destroy-on-close draggable>
-    <temp-Library/>
+  <el-dialog v-model="dialogTemplateVisible" title="模板库" width="1080px" destroy-on-close draggable>
+    <temp-Library @triggerDialog="triggerDialog"/>
   </el-dialog>
 
 </template>
@@ -70,6 +70,14 @@ const formData = ref({
  */
 const library = () => {
   dialogTemplateVisible.value = true
+}
+
+/**
+ * 关闭或打开的方法
+ * isShow {Boolean} 是否显示弹窗
+ */
+const triggerDialog = (isShow) => {
+  dialogTemplateVisible.value = isShow
 }
 
 /**
@@ -116,6 +124,7 @@ const uploadFile = (file, files) => {
     readText = JSON.parse(e.currentTarget.result);
     // _widgetStore.clearWidget();
     _widgetStore.widgetList.push(...readText.widgetList);
+    console.log(...readText.widgetList)
   }
 }
 

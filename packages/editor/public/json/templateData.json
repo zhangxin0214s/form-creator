@@ -1,42 +1,12 @@
 [
   {
     "name": "题目编辑页",
-    "path": "",
+    "path": "../src/json/timubianjiye.json",
     "image": "../src/image/timubianjiye.jpeg"
   },
   {
     "name": "表单数据",
-    "path": "",
-    "image": "../src/image/biaodan.jpeg"
-  },
-  {
-    "name": "表单数据",
-    "path": "",
-    "image": "../src/image/biaodan.jpeg"
-  },
-  {
-    "name": "表单数据",
-    "path": "",
-    "image": "../src/image/biaodan.jpeg"
-  },
-  {
-    "name": "表单数据",
-    "path": "",
-    "image": "../src/image/biaodan.jpeg"
-  },
-  {
-    "name": "表单数据",
-    "path": "",
-    "image": "../src/image/biaodan.jpeg"
-  },
-  {
-    "name": "表单数据",
-    "path": "",
-    "image": "../src/image/biaodan.jpeg"
-  },
-  {
-    "name": "表单数据",
-    "path": "",
+    "path": "../src/json/biaodan.json",
     "image": "../src/image/biaodan.jpeg"
   }
 ]
