@@ -21,7 +21,7 @@
 					:widget="widget"
 					:prop-key="propKey"
 					:rule-form-ref="ruleFormRef"
-					:rule-form="ruleForm[widget.options.basic.ruleFormKey.value] || ruleForm"
+					:rule-form="ruleForm[widget.ruleFormKey] || ruleForm"
 					:style="`height:${widget.options.basic.colHeight.value}px;`"
 				>
 				</Col>

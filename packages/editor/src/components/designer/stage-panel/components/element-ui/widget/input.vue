@@ -22,18 +22,29 @@
 import widgetMask from '../common/widgetMask.vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
-import { onMounted } from 'vue';
+import { onMounted ,watch} from 'vue';
 const _widgetStore = widgetStore();
 const { formConfig } = storeToRefs(_widgetStore);
 const props = defineProps(['widget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
 
-onMounted(()=>{
-	if(!props.ruleForm){
-		props.ruleForm = {}
+watch(
+	() => props.propKey,
+	(value) => {
+		const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+		if(ruleFormKey && !props.ruleForm[ruleFormKey]){
+			console.log("监听到数据变化",ruleFormKey)
+			props.ruleForm[ruleFormKey] = null
+		}
+	},
+	{
+		deep: true,
+		immediate: true
 	}
-})
+)
+
 const handleChangeEvent = () =>{
 	const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+	console.log()
 	props.ruleForm[ruleFormKey] = props.widget.value;
 	// // if(props.widgetType === 'widget'){
 	// 	const propKeys = props.propKey.split(".");

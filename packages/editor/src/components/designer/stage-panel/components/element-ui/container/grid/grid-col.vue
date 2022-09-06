@@ -66,9 +66,9 @@
     }
     const getPropKey = (element) =>{
         if(props.propKey) {
-            return `${props.propKey}.${element.options.basic.ruleFormKey.value}`
+            return `${props.propKey}.${element.ruleFormKey}`
         }else{
-            return `${element.options.basic.ruleFormKey.value}`
+            return `${element.ruleFormKey}`
         }
     }
 </script>
