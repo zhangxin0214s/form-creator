@@ -7,7 +7,7 @@
       <el-tab-pane :label="colWidget.name" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
         <tabs-content 
           :colWidget="colWidget"
-          :rule-form="ruleForm[widget.ruleFormKey]"
+          :rule-form="ruleForm[widget.ruleFormKey] || [{}]"
           :widget="widget"
           :prop-key="propKey"
           :colIdx="colIdx"
@@ -36,8 +36,6 @@
     () => props.propKey,
     (value) => {
       const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
-      const parentRuleFormKeyType = props.parent?.ruleFormKeyType;
-      const ruleFormKeyType = props.widget.ruleFormKeyType;
       if(ruleFormKey && !props.ruleForm[ruleFormKey]){
         props.ruleForm[ruleFormKey] = [{}]
       }
