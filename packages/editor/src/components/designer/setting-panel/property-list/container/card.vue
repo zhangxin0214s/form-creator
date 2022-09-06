@@ -5,12 +5,21 @@
               <div>
                 <div class="title">卡片名称</div><el-input style="display:inline-block;width: 100px;" v-model="selectedWidget.title"/>
               </div>
+              <div v-for="(item,key,index) in basicProp" :key="index" style="margin-top:10px;">
+                <component  
+                    :is="componentMap[getPropCompName(key)]"
+                    :basic-prop="basicProp"
+                    :advanced-prop="advancedProp"
+                    :value = "item"
+                    :key1 = "key"
+                ></component>
+              </div>
             </el-collapse-item>
         </el-collapse>
     </div>
 </template>
 <script setup>
-import { ref,defineProps } from "vue"
+import { ref } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES} from '../propertyRegister'
 import * as basicComponents from '../components/index';
 
@@ -24,6 +33,9 @@ const componentMap = {
   ...basicComponents
 }
 const activeNames = ref(['1'])
+const getPropCompName = (key) =>{
+    return BASCI_COMPONENTS[BASIC_PROPERTIES[key]]
+}
 </script>
 <style lang="scss" scoped>
 .title{

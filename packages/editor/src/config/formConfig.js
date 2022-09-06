@@ -136,8 +136,16 @@ export const containers = [
 		type: "card",
 		icon: "card ",
 		title: '卡片名称',
+		ruleFormKey: null,
+		ruleFormKeyType: 'object',
 		options: {
 			hidden: false,
+			basic: {
+				ruleFormKey: {
+					label: "参数key",
+					value: ''
+				}
+			},
 			advanced: {
 				widgetList: []
 			}
