@@ -8,13 +8,13 @@
                 tag="transition-group" :component-data="{name: 'fade'}"
                 @end="onEnd"
                 :sort="isEditor">
-                <template #item="{ element }">
+                <template #item="{ element,index }">
                     <div class="transition-group-el">
-                        <component 
+                        <component
                             :is="componentMap[element.type]" 
                             :key="element.id"
                             :widget = element
-                            :propKey = "getPropKey(element)"
+                            :propKey = "getPropKey(element,index)"
                             :parent-widget=colWidget.widgetList
                             :rule-form-ref="ruleFormRef"
                             :rule-form="ruleForm"
@@ -66,7 +66,12 @@
     }
     const getPropKey = (element) =>{
         if(props.propKey) {
-            return `${props.propKey}.${element.ruleFormKey}`
+            if(props.widget.ruleFormKeyType === 'object'){
+                return `${props.propKey}.${element.ruleFormKey}`
+            }
+            if(props.widget.ruleFormKeyType === 'array'){
+                return `${props.propKey}${index}.${element.ruleFormKey}`
+            }
         }else{
             return `${element.ruleFormKey}`
         }

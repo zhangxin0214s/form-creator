@@ -5,6 +5,7 @@
 		:advanced-prop="widget.options.advanced"
 		:parent-widget="parentWidget"
 		:prop-key="propKey"
+		:rule-form="ruleForm"
 	>
 		<el-input
 			:disabled="widget.options.basic.disabled.value"
@@ -22,6 +23,7 @@
 import widgetMask from '../common/widgetMask.vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
+import { ElMessage } from 'element-plus'
 import { onMounted ,watch} from 'vue';
 const _widgetStore = widgetStore();
 const { formConfig } = storeToRefs(_widgetStore);
@@ -33,7 +35,16 @@ watch(
 		const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
 		if(ruleFormKey && !props.ruleForm[ruleFormKey]){
 			console.log("监听到数据变化",ruleFormKey)
-			props.ruleForm[ruleFormKey] = null
+			if(props.parent?.ruleFormKeyType === 'object'){
+				props.ruleForm[ruleFormKey] = null
+			}else if(props.parent?.ruleFormKeyType === 'array'){
+				props.ruleForm.push({
+					[ruleFormKey]: null
+				})
+			}else{
+				props.ruleForm[ruleFormKey] = null
+			}
+			
 		}
 	},
 	{
@@ -44,46 +55,26 @@ watch(
 
 const handleChangeEvent = () =>{
 	const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
-	console.log()
-	props.ruleForm[ruleFormKey] = props.widget.value;
-	// // if(props.widgetType === 'widget'){
-	// 	const propKeys = props.propKey.split(".");
-	// 	console.log(_widgetStore.formConfig.ruleForm,"===propKey===",propKeys)
-	// 	let temp = _widgetStore.formConfig.ruleForm;
-	// 	for(let i = 0; i < propKeys.length; i++) {
-	// 		if(!propKeys[i]){
-	// 			continue
-	// 		};
-	// 		if(i == propKeys.length-1){
-	// 			temp[propKeys[i]] = props.widget.value
-	// 		}
-	// 		if(!temp[propKeys[i]]){
-	// 			temp = temp[propKeys[i]] = {};
-	// 		}else{
-	// 			temp = temp[propKeys[i]]
-	// 		}
-	// 	}
-		
-	// // }
+	if(!ruleFormKey){
+		ElMessage({
+            message: '请先绑定参数key',
+            type: 'error',
+            duration:1000
+        })
+		return;
+	}
+	if(props.paren?.ruleFormKeyType === 'object'){
+		props.ruleForm[ruleFormKey] = props.widget.value;
+	}else if(props.parent?.ruleFormKeyType === 'array'){
+		props.ruleForm.push({
+			[ruleFormKey] : props.widget.value
+		})
+	}else{
+		props.ruleForm[ruleFormKey] = props.widget.value;
+	}
+	
 }
 
-const setRuleForm = (index) =>{
-	const propKeys = props.propKey.split('.')
-	if(index > propKeys.length-1){
-		return
-	}
-	console.log(!_widgetStore.formConfig.ruleForm[propKeys[index]])
-	if(!_widgetStore.formConfig.ruleForm[propKeys[index]]){
-		
-		_widgetStore.formConfig.ruleForm[propKeys[index]] = {}
-	}
-	_widgetStore.formConfig.ruleForm = _widgetStore.formConfig.ruleForm[propKeys[index]]
-	if(index === propKeys.length-1){
-		_widgetStore.formConfig.ruleForm[propKeys[index]] = '123'
-	}
-	console.log(_widgetStore.formConfig.ruleForm,"======")
-	setRuleForm(index+1)
-}
 </script>
 <style scoped>
 	.hint {

@@ -147,7 +147,6 @@ export const basicWidgets = [
 		icon: "input",
 		value: null,
 		ruleFormKey: null,
-		ruleFormKeyType: 'object',
 		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
 		options: {
 			basic: {
@@ -184,20 +183,6 @@ export const basicWidgets = [
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
-				},
-				ruleFormKeyType: {
-					label: '参数类型',
-					value: 'object',
-					options: [
-						{
-							label: '对象',
-							value: 'object'
-						},
-						{
-							label: '数组',
-							value: 'array'
-						}
-					]
 				},
 				required: {
 					label: "是否必填",

@@ -27,6 +27,7 @@
     import { storeToRefs } from 'pinia';
     const props = defineProps([
         'widget',
+        'ruleForm',
         'parentWidget'
     ]);
     const _widgetStore = widgetStore();
@@ -38,6 +39,7 @@
 
     const delete1 = () =>{
       _widgetStore.removeWidget(selectedWidget.value,props.parentWidget);
+      props.widget.ruleFormKey && delete props.ruleForm[props.widget.ruleFormKey]
     }
 
     const selected = (widgetData) => {

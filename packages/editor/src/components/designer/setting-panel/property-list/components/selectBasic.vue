@@ -13,6 +13,7 @@
           placeholder="请选择"
           v-model="basicProp[key1].value"
           class="m-2"
+          @change="setRuleFormKeyType"
       >
         <el-option
             v-for="item in basicProp[key1].options"
@@ -26,8 +27,17 @@
 </template>
 <script setup>
 import { defineProps } from 'vue';
+import { widgetStore } from '@/store/index';
+import { storeToRefs } from 'pinia';
+const _widgetStore = widgetStore();
+const { selectedWidget } = storeToRefs(_widgetStore);
+const props = defineProps(['basicProp', 'key1', 'value']);
 
-defineProps(['basicProp', 'key1', 'value']);
+const setRuleFormKeyType = () =>{
+  if(props.key1 === 'ruleFormKeyType'){
+    _widgetStore.selectedWidget.ruleFormKeyType = props.basicProp[props.key1].value
+  }
+}
 </script>
 <style lang="scss" scoped>
 </style>

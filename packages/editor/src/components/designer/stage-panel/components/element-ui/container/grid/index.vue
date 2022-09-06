@@ -2,12 +2,13 @@
 	<container-mask
 		:widget="widget"
 		:style="`${widget.options.basic.isMoveDivider.value ? `top:${widget.options.basic.moveDistance.value}px`:''}`"
+		:rule-form="ruleForm"
 	>
 		<el-row
 			class="grid-container"
 			:class="[
-        selectedWidget?.id === widget?.id && isEditor?'select':'',
-    ]"
+				selectedWidget?.id === widget?.id && isEditor?'select':'',
+			]"
 			:style="
 		`background-color:${widget.options.basic.rowBackground.value}`
 		"
@@ -22,6 +23,7 @@
 					:prop-key="propKey"
 					:rule-form-ref="ruleFormRef"
 					:rule-form="ruleForm[widget.ruleFormKey] || ruleForm"
+					:rule-form-key-type="widget.ruleFormKeyType"
 					:style="`height:${widget.options.basic.colHeight.value}px;`"
 				>
 				</Col>
@@ -46,7 +48,13 @@ watch(
 		const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
 		if(ruleFormKey && !props.ruleForm[ruleFormKey]){
 			console.log("监听到数据变化",ruleFormKey)
-			props.ruleForm[ruleFormKey] = {}
+			if(props.widget.ruleFormKeyType === 'object'){
+				props.ruleForm[ruleFormKey] = {}
+			}
+			if(props.widget.ruleFormKeyType === 'array'){
+				props.ruleForm[ruleFormKey] = []
+			}
+			
 		}
 	},
 	{

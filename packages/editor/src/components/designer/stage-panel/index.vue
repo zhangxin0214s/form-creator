@@ -40,6 +40,7 @@
 								:widget-type="`widget`"
 								:prop-key="widget.ruleFormKey"
 								:rule-form="formConfig.ruleForm"
+								:rule-form-key-type="widget.ruleFormKeyType"
 								:rule-form-ref="ruleFormRef"
 								@click.stop="selected(widget)"
 								@submitForm="submitForm"
