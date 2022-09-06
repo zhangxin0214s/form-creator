@@ -6,6 +6,7 @@
 		:parent-widget="parentWidget"
 		:prop-key="propKey"
 		:rule-form="ruleForm"
+		:parent="parent"
 	>
 		<el-input
 			:disabled="widget.options.basic.disabled.value"

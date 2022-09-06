@@ -40,7 +40,7 @@
 import { widgetStore } from '@/store/index';
 import { storeToRefs } from 'pinia';
 import { generateId, deepClone } from '@/utils/util';
-const props = defineProps(['widget', 'basicProp', 'ruleForm','propKey','parentWidget']);
+const props = defineProps(['widget', 'basicProp', 'parent', 'ruleForm','propKey','parentWidget']);
 const _widgetStore = widgetStore();
 const { widgetList, selectedWidget,isEditor } = storeToRefs(_widgetStore);
 
@@ -55,7 +55,15 @@ const copy = () => {
 
 const delete1 = () => {
 	_widgetStore.removeWidget(props.widget, props.parentWidget);
-	props.widget.ruleFormKey && delete props.ruleForm[props.widget.ruleFormKey]
+	if(props.parent.ruleFormKeyType === 'array'){
+		props.ruleForm.forEach((rule,index) =>{
+			if(Object.keys(rule).indexOf(props.widget.ruleFormKey)>-1){
+				props.ruleForm.splice(index,1)
+			}
+		})
+	}else{
+		props.widget.ruleFormKey && delete props.ruleForm[props.widget.ruleFormKey]
+	}
 };
 
 const getPropName = () => {

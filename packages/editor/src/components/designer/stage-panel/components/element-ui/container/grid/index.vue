@@ -3,6 +3,7 @@
 		:widget="widget"
 		:style="`${widget.options.basic.isMoveDivider.value ? `top:${widget.options.basic.moveDistance.value}px`:''}`"
 		:rule-form="ruleForm"
+		:parent="parent"
 	>
 		<el-row
 			class="grid-container"
