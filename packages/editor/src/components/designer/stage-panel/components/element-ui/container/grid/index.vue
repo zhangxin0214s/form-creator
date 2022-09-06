@@ -71,7 +71,7 @@ watch(
 					const isExist = props.ruleForm.some(rule =>{Object.keys(rule).indexOf(ruleFormKey)>-1})
 					if(!isExist){
 						props.ruleForm.push({
-							[ruleFormKey]:null
+							[ruleFormKey]: props.widget.value
 						})
 					}
 				}

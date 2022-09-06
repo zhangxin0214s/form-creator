@@ -55,7 +55,7 @@ const copy = () => {
 
 const delete1 = () => {
 	_widgetStore.removeWidget(props.widget, props.parentWidget);
-	if(props.parent.ruleFormKeyType === 'array'){
+	if(props.parent?.ruleFormKeyType === 'array'){
 		props.ruleForm.forEach((rule,index) =>{
 			if(Object.keys(rule).indexOf(props.widget.ruleFormKey)>-1){
 				props.ruleForm.splice(index,1)

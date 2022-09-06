@@ -14,7 +14,7 @@
 			:type="widget.options.basic.inputType.value"
 			v-model="widget.value"
 			show-word-limit
-			@change="handleChangeEvent"
+			@change="handleChangeEvent(props)"
 		/>
 		<div class="hint">{{ widget.options.basic.hint.value }}</div>
 	</widget-mask>
@@ -26,60 +26,13 @@ import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 import { ElMessage } from 'element-plus'
 import { onMounted ,watch} from 'vue';
+import { handleChangeEvent } from '../hooks/handleChangeEvent'
+import { watchEvent } from '../hooks/watchEvent'
 const _widgetStore = widgetStore();
 const { formConfig } = storeToRefs(_widgetStore);
 const props = defineProps(['widget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
 
-watch(
-	() => props.propKey,
-	(value) => {
-		const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
-		if(ruleFormKey && !props.ruleForm[ruleFormKey]){
-			console.log("监听到数据变化",ruleFormKey)
-			if(props.parent?.ruleFormKeyType === 'object'){
-				props.ruleForm[ruleFormKey] = null
-			}else if(props.parent?.ruleFormKeyType === 'array'){
-				const isExist = props.ruleForm.some(rule =>Object.keys(rule).indexOf(ruleFormKey)>-1);
-				if(!isExist){
-					props.ruleForm.push({
-						[ruleFormKey]: null
-					})
-				}
-			}else{
-				props.ruleForm[ruleFormKey] = null
-			}
-			
-		}
-	},
-	{
-		deep: true,
-		immediate: true
-	}
-)
-
-const handleChangeEvent = () =>{
-	const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
-	if(!ruleFormKey){
-		ElMessage({
-            message: '请先绑定参数key',
-            type: 'error',
-            duration:1000
-        })
-		return;
-	}
-	if(props.paren?.ruleFormKeyType === 'object'){
-		props.ruleForm[ruleFormKey] = props.widget.value;
-	}else if(props.parent?.ruleFormKeyType === 'array'){
-		props.ruleForm.map(rule =>{
-			if(Object.keys(rule).indexOf(ruleFormKey)>-1){
-				rule[ruleFormKey] = props.widget.value
-			}
-		})
-	}else{
-		props.ruleForm[ruleFormKey] = props.widget.value;
-	}
-	
-}
+watchEvent(props,watch)
 
 </script>
 <style scoped>
