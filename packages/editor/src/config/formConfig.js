@@ -226,7 +226,7 @@ export const basicWidgets = [
 			events: {
 				linkageCode: {
 					label: '联动代码',
-					value: "//编辑输入框，请在高级配置中设置联动对象"
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\n*/ \n//#endregion "
 				}
 			}
 		},
@@ -272,7 +272,7 @@ export const basicWidgets = [
 			events: {
 				linkageCode: {
 					label: '联动代码',
-					value: "//编辑开关组件，请在高级配置中设置联动对象"
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\n*/ \n//#endregion "
 				}
 			}
 		},
@@ -522,6 +522,7 @@ export const basicWidgets = [
 		type: "select",
 		category: "widget",
 		icon: "select",
+		value:'',
 		options: {
 			basic: {
 				name: {

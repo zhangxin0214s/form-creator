@@ -1,7 +1,7 @@
 <template>
   <el-tree :data="PROPS.data" default-expand-all :expand-on-click-node="false">
     <template #default="{ node, data }">
-      <el-input class="custom-tree-node" v-model="data.label" :placeholder="data.label">
+      <el-input class="custom-tree-node" v-model="data.value" :placeholder="data.label">
         <template #prepend>
           <el-button :icon="Plus" @click.native="append(data)" />
         </template>
@@ -23,7 +23,9 @@
   const append = (data) => {
     const newChild = {
       id: `${data.id}-${data.data.length}`,
-      label: '选项',
+      label: '请输入选项值',
+      data:[],
+      value:'',
       // label: `新选项${data.id}-${data.children.length}`,
       children: []
     }

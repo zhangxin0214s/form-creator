@@ -36,7 +36,8 @@
   const addList = () => {
     data.push({
       id: data.length,
-      label: '选项',
+      label: '请输入选项值',
+      value:'',
       // label: `新选项${data.length}`,
       data: []
     })
