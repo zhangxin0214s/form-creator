@@ -168,7 +168,7 @@ export const basicWidgets = [
 		icon: "input",
 		value: null,
 		ruleFormKey: null,
-		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
+		rules:[],
 		options: {
 			basic: {
 				name: {
@@ -278,7 +278,7 @@ export const basicWidgets = [
 		icon: "switch",
 		value: false,
 		ruleFormKey: null,
-		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
+		rules:[],
 		options: {
 			basic: {
 				name: {
@@ -326,7 +326,7 @@ export const basicWidgets = [
 		icon: "check",
 		value: [],
 		ruleFormKey: null,
-		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
+		rules:[],
 		options: {
 			basic: {
 				name: {
@@ -584,7 +584,7 @@ export const basicWidgets = [
 		icon: "select",
 		value:null,
 		ruleFormKey: null,
-		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
+		rules:[],
 		options: {
 			basic: {
 				name: {
@@ -652,7 +652,7 @@ export const basicWidgets = [
 		icon: "Radio",
 		value: '',
 		ruleFormKey: null,
-		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
+		rules:[],
 		options: {
 			basic: {
 				name: {
@@ -743,7 +743,7 @@ export const basicWidgets = [
 		icon: "textField",
 		value: null,
 		ruleFormKey: null,
-		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
+		rules:[],
 		options: {
 			basic: {
 				name: {
