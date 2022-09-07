@@ -7,7 +7,7 @@
       :prop-key="propKey"
       :rule-form="ruleForm"
       :parent="parent">
-    <el-checkbox-group 
+    <el-checkbox-group
       v-model="widget.value"
       @change="handleChangeEvent(props,ElMessage)">
       <el-checkbox
@@ -17,6 +17,7 @@
           :disabled="item.disabled"
           :size="widget.options.basic.checkSize.value"
           :border="widget.options.basic.attribute.options[2].value"
+          :style="`margin-left:${widget.options.basic['margin-left-right'].value}px`"
       >
         {{ item.label }}
       </el-checkbox>

@@ -1,10 +1,12 @@
 <template>
   <el-tree :data="PROPS.data" default-expand-all :expand-on-click-node="false">
     <template #default="{ node, data }">
-      <el-input class="custom-tree-node" v-model="data.value" :placeholder="data.label">
+      <el-input class="custom-tree-node" v-model="data.value" placeholder="value">
         <template #prepend>
           <el-button :icon="Plus" @click.native="append(data)" />
         </template>
+      </el-input>
+      <el-input class="custom-tree-node" v-model="data.label" placeholder="label">
         <template #append>
           <el-button :icon="Delete" @click.native="remove(node, data)" />
         </template>
@@ -19,14 +21,13 @@
   import selectNode from './selectNode.vue';
 
   const PROPS = defineProps(['data']);
-  console.log(PROPS.data);
+
   const append = (data) => {
     const newChild = {
       id: `${data.id}-${data.data.length}`,
-      label: '请输入选项值',
       data:[],
       value:'',
-      // label: `新选项${data.id}-${data.children.length}`,
+      label: '',
       children: []
     }
     if (!data.children) data.children = [];
@@ -50,5 +51,17 @@
   }
   .el-tree-node__content {
     height: auto;
+  }
+  .el-input-group__prepend {
+    padding: 0px 16px;
+    >button {
+      padding: 6px 8px;
+    }
+  }
+  .el-input-group__append {
+    padding: 0px 16px;
+    >button {
+      padding: 6px 8px;
+    }
   }
 </style>

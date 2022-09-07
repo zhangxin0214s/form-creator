@@ -1,7 +1,7 @@
 <template>
-  <widget-mask 
-    :widget="widget" 
-    :basic-prop="basic" 
+  <widget-mask
+    :widget="widget"
+    :basic-prop="basic"
     :advanced-prop="advanced"
     :parent-widget="parentWidget"
 		:prop-key="propKey"
@@ -13,7 +13,7 @@
         :disabled="basic.disabled.value"
         :placeholder="basic.defaultValue.value"
         @change="handleChangeEvent(props,ElMessage)"
-    />       
+    />
   </widget-mask>
 
 </template>
@@ -27,7 +27,7 @@
   const props = defineProps(['widget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
   const {basic, advanced} = props.widget.options;
   watchEvent(props,watch)
-  
+
 </script>
 
 <style scoped>
