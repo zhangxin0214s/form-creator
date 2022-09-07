@@ -6,7 +6,6 @@
 		style="max-width: 360px"
 	>
 		<el-form-item
-			v-if="basicProp[key1]?.label && basicProp.ruleFormKey.value"
 			:label="`${basicProp[key1]?.label}:`"
 		>
 			<el-switch
@@ -42,36 +41,23 @@ const props = defineProps(['basicProp', 'key1', 'value']);
  * 是否必填
  */
 const changeRequired = () =>{
-	const _ruleFormKey = props.basicProp.ruleFormKey.value;
-	const _rules = _widgetStore.formConfig.rules;
-
-	if(!_ruleFormKey){
-		ElMessage({
-            message: '请填写参数key值',
-            type: 'error',
-            duration:1000
-        })
-		return
-	}
-	if(!_rules[_ruleFormKey]){
-		_rules[_ruleFormKey] = []
-	}
-	const isExist = _rules[_ruleFormKey].some(rule =>{
+	const _rules = _widgetStore.selectedWidget.rules;
+	const isExist = _rules.some(rule =>{
 		if(Object.keys(rule).indexOf('required')>-1){
 			return true;
 		}
 	})
 	if(isExist){
-		_rules[_ruleFormKey].forEach(rule =>{
+		_rules.forEach(rule =>{
 			if(Object.keys(rule).indexOf('required')>-1){
 				rule.required = props.basicProp[props.key1].value
 			}
 		})
 	}else {
-		_rules[_ruleFormKey].push({
+		_rules.push({
 			required: props.basicProp[props.key1].value,
 			message:props.basicProp[props.key1].message,
-			trigger:'change'
+			trigger:'blur'
 		})
 	}
 }
@@ -80,9 +66,8 @@ const changeRequired = () =>{
  * 提示语
  */
 const changeHint = () =>{
-	const _ruleFormKey = props.basicProp.ruleFormKey.value;
-	const _rules = _widgetStore.formConfig.rules;
-	_rules[_ruleFormKey].forEach(rule =>{
+	const _rules = _widgetStore.selectedWidget.rules;
+	_rules.forEach(rule =>{
 		if(Object.keys(rule).indexOf('required')>-1){
 			rule.message = props.basicProp[props.key1].message
 		}

@@ -59,38 +59,30 @@ const _widgetStore = widgetStore();
 const props = defineProps(['advancedProp', 'basicProp', 'key1', 'value']);
 const isHint = ref(false);
 const setRules = (type) => {
+	isHint.value = !type;
 	const _ruleFormKey = props.basicProp.ruleFormKey.value;
-	const _rules = _widgetStore.formConfig.rules;
-	console.log('切换', _ruleFormKey, type);
-	isHint.value = !_ruleFormKey;
-	if (!_ruleFormKey) {
-		ElMessage({
-			message: '请先设置参数key',
-			type: 'error',
-			duration: 1000,
-		});
-	} else {
-		// 查找出必填的rule
-		const requireRule = _rules[_ruleFormKey]?.filter((rule) => {
-			return Object.keys(rule).indexOf('required') > -1;
-		})[0];
-		// 每次切换清空_rules[_ruleFormKey] & customValue
-		_rules[_ruleFormKey] = [];
-		if (type !== 'custom') props.advancedProp[props.key1].customValue = '';
-		requireRule && _rules[_ruleFormKey].push(requireRule);
+	const _rules = _widgetStore.selectedWidget.rules;
+	console.log('切换', _rules);
+	// 查找出必填的rule
+	const requireRule = _rules.filter((rule) => {
+		return Object.keys(rule).indexOf('required') > -1;
+	})[0];
+	// 每次切换清空_rules[_ruleFormKey] & customValue
+	_rules[_ruleFormKey] = [];
+	if (type !== 'custom') props.advancedProp[props.key1].customValue = '';
+	requireRule && _rules.push(requireRule);
 
-		let val = props.advancedProp[props.key1].value;
-		if (val) {
-			let objVal = JSON.parse(val);
-			_rules[_ruleFormKey].push(objVal);
-		}
-		let customVal = props.advancedProp[props.key1].customValue;
-		if(customVal){
-			_rules[_ruleFormKey].push({
-				message: props.advancedProp[props.key1].customWrongMessage,
-				pattern: customVal,
-			});
-		}
+	let val = props.advancedProp[props.key1].value;
+	if (val) {
+		let objVal = JSON.parse(val);
+		_rules.push(objVal);
+	}
+	let customVal = props.advancedProp[props.key1].customValue;
+	if (customVal) {
+		_rules.push({
+			message: props.advancedProp[props.key1].customWrongMessage,
+			pattern: customVal,
+		});
 	}
 };
 </script>
