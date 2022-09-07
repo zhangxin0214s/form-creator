@@ -37,7 +37,7 @@
   </el-dialog>
 
   <!-- 模板库 -->
-  <el-dialog v-model="dialogTemplateVisible" title="模板库" width="1080px" destroy-on-close draggable>
+  <el-dialog v-model="dialogTemplateVisible" title="模板库" width="1080px" center destroy-on-close draggable>
     <temp-Library @triggerDialog="triggerDialog"/>
   </el-dialog>
 
