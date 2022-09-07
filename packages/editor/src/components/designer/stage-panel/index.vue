@@ -14,7 +14,6 @@
 		<div class="stage-toolbar">
 			<tool-bar/>
 		</div>
-
 		<div class="stage-form">
 			<el-form
 				class="widget-form"
