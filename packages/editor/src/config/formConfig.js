@@ -1063,7 +1063,7 @@ export const basicWidgets = [
 	},
 	{
 		id: 11,
-		name: "时间选择器",
+		name: "时间选择",
 		type: "date",
 		category: "widget",
 		icon: "time",
@@ -1164,7 +1164,7 @@ export const basicWidgets = [
 	},
 	{
 		id: 12,
-		name: "日期选择器",
+		name: "日期选择",
 		type: "datetimerange",
 		category: "widget",
 		icon: "date",
@@ -1301,7 +1301,7 @@ export const basicWidgets = [
 export const advancedWidgets = [
 	{
 		id: 1,
-		name: "复选框按钮组",
+		name: "复按钮组",
 		type: "repeatButton",
 		category: "widget",
 		icon: "repeatButton",
@@ -1371,7 +1371,7 @@ export const advancedWidgets = [
 	},
 	{
 		id: 2,
-		name: "单选框按钮组",
+		name: "单按钮组",
 		type: "onlyButton",
 		category: "widget",
 		icon: "onlyButton",

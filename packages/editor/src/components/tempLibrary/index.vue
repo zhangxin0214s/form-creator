@@ -19,15 +19,15 @@ import { storeToRefs } from 'pinia'
 import { widgetStore } from '@/store/index';
 import axios from 'axios'
 import { defineProps, defineEmits } from 'vue'
-
-const emit = defineEmits(['triggerDialog'])
+// 通过 emit 方法监听父组件的自定义事件
+const emit = defineEmits(['library'])
 const _widgetStore = widgetStore();
 const {widgetList, formConfig} = storeToRefs(_widgetStore);
 const insert = (item) => {
   axios.get(item.path).then(res => {
     _widgetStore.widgetList.push(...res.data.widgetList)
-    //关闭遮罩
-    emit('triggerDialog', false)
+    //关闭遮罩 event 自定义事件名  args 需要传的值
+    emit('library', false)
   })
   _widgetStore.clearWidget();
 }

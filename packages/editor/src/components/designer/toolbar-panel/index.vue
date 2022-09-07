@@ -38,7 +38,7 @@
 
   <!-- 模板库 -->
   <el-dialog v-model="dialogTemplateVisible" title="模板库" width="1080px" destroy-on-close draggable>
-    <temp-Library @triggerDialog="triggerDialog"/>
+    <temp-Library @library="library"/>
   </el-dialog>
 
 </template>
@@ -68,18 +68,12 @@ const data = ref({});
 /**
  * 模板库
  */
-const library = () => {
+const library = (isShow) => {
   dialogTemplateVisible.value = true
+  if (isShow === false) {
+    dialogTemplateVisible.value = isShow
+  }
 }
-
-/**
- * 关闭或打开的方法
- * isShow {Boolean} 是否显示弹窗
- */
-const triggerDialog = (isShow) => {
-  dialogTemplateVisible.value = isShow
-}
-
 /**
  * 清空
  */
