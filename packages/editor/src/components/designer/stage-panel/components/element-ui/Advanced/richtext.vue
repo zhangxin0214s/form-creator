@@ -78,7 +78,7 @@ Quill.register(Font, true)
 
 </style>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .local-quill-editor {
     .ql-snow {
         .ql-picker.ql-size {

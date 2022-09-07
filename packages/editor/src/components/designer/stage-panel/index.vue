@@ -121,7 +121,6 @@ const submitForm = async () =>{
 	}
 	&-toolbar {
 		height: 50px;
-		text-align: center;
 		background: #fff;
 	}
 	&-form {
