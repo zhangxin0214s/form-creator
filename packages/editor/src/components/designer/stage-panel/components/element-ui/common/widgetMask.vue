@@ -8,7 +8,7 @@
 			:label="basicProp.label.value"
 			:rules="widget.rules"
 			:prop="propKey"
-			:key="basicProp?.ruleFormKey?.value"
+			:key="propKey"
 		>
 			<slot></slot>
 		</el-form-item>

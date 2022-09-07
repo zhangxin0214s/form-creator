@@ -30,7 +30,7 @@
     const componentMap = {
         ...eleComponents
     };
-    defineProps(['widgetList', 'formConfig']);
+    const props = defineProps(['widgetList', 'formConfig']);
     const ruleFormRef = ref(null);
     const submitForm = async () =>{
         if (!ruleFormRef) return
