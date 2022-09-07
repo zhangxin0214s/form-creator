@@ -60,15 +60,13 @@ const props = defineProps(['advancedProp', 'basicProp', 'key1', 'value']);
 const isHint = ref(false);
 const setRules = (type) => {
 	isHint.value = !type;
-	const _ruleFormKey = props.basicProp.ruleFormKey.value;
 	const _rules = _widgetStore.selectedWidget.rules;
 	console.log('切换', _rules);
 	// 查找出必填的rule
 	const requireRule = _rules.filter((rule) => {
 		return Object.keys(rule).indexOf('required') > -1;
 	})[0];
-	// 每次切换清空_rules[_ruleFormKey] & customValue
-	_rules[_ruleFormKey] = [];
+	_rules.splice(0);
 	if (type !== 'custom') props.advancedProp[props.key1].customValue = '';
 	requireRule && _rules.push(requireRule);
 
