@@ -20,7 +20,7 @@
   </ul>
 
   <!-- 预览面板 -->
-  <el-dialog v-model="dialogFormVisible"  title="表单预览" @close="closePreview" center destroy-on-close draggable>
+  <el-dialog v-model="dialogFormVisible" title="表单预览" @close="closePreview" destroy-on-close draggable>
     <form-renderer
         :widgetList="widgetList"
         :formConfig="formConfig"
@@ -37,8 +37,8 @@
   </el-dialog>
 
   <!-- 模板库 -->
-  <el-dialog v-model="dialogTemplateVisible" title="模板库" width="1080px" center destroy-on-close draggable>
-    <temp-Library @triggerDialog="triggerDialog"/>
+  <el-dialog v-model="dialogTemplateVisible" title="模板库" width="1080px" destroy-on-close draggable>
+    <temp-Library @library="library"/>
   </el-dialog>
 
 </template>
@@ -68,16 +68,11 @@ const data = ref({});
 /**
  * 模板库
  */
-const library = () => {
+const library = (isShow) => {
   dialogTemplateVisible.value = true
-}
-
-/**
- * 关闭或打开的方法
- * isShow {Boolean} 是否显示弹窗
- */
-const triggerDialog = (isShow) => {
-  dialogTemplateVisible.value = isShow
+  if (isShow === false) {
+    dialogTemplateVisible.value = isShow
+  }
 }
 
 /**

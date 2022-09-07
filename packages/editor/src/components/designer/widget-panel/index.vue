@@ -24,9 +24,9 @@
                   :list="state.containers"
                   :group="{name: 'dragGroup', pull: 'clone', put: false}"
                   class="list-group"
-                  sort="false"
+                  :sort="false"
                   item-key="key"
-				  :clone="onClone"
+                  :clone="onClone"
               >
                 <template #item="{ element }">
                   <li class="gild-container">
@@ -45,7 +45,7 @@
                   :sort="false"
                   item-key="key"
                   :group="{name: 'dragGroup', pull: 'clone', put: false}"
-				  :clone="onClone"
+                  :clone="onClone"
               >
                 <template #item="{ element }">
                   <li class="gild-container">
@@ -64,8 +64,8 @@
                   :sort="false"
                   item-key="key"
                   :group="{name: 'dragGroup', pull: 'clone', put: false}"
-				  :clone="onClone"
-				  @end="onDragEnd"
+                  :clone="onClone"
+                  @end="onDragEnd"
               >
                 <template #item="{ element }">
                   <li class="gild-container">
@@ -85,126 +85,140 @@ import { containers, basicWidgets, advancedWidgets } from '@/config/formConfig.j
 import { ref, reactive } from 'vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
-import { generateId,deepClone } from '@/utils/util'
+import { generateId, deepClone } from '@/utils/util'
+
 const _widgetStore = widgetStore();
-const { widgetList,cloneWidget,recordHistory } = storeToRefs(_widgetStore);
+const {widgetList, cloneWidget, recordHistory} = storeToRefs(_widgetStore);
 const activeNames = ref(['1', '2', '3', '4']);
 const state = reactive({
-	containers: containers,
-	basicWidgets: basicWidgets,
-	advancedWidgets: advancedWidgets,
+  containers:containers,
+  basicWidgets:basicWidgets,
+  advancedWidgets:advancedWidgets,
 });
 
 /**
  * 克隆
  */
-const onClone = (origin) =>{
-	let newOrigin = deepClone(origin);
-	newOrigin.id = generateId();
-	_widgetStore.cloneWidget = newOrigin;
-	return newOrigin
+const onClone = (origin) => {
+  let newOrigin = deepClone(origin);
+  newOrigin.id = generateId();
+  _widgetStore.cloneWidget = newOrigin;
+  return newOrigin
 }
 
-const onDragEnd = () =>{
-	console.log("结束")
+const onDragEnd = () => {
+  console.log("结束")
 }
 </script>
 <style lang="scss" scoped>
 @import '../../../styles/global.scss';
 
 .el-header {
-	--el-header-padding: 0 0px;
+  --el-header-padding: 0 0px;
 }
 
 .el-main {
-	--el-main-padding: 0 0px;
+  --el-main-padding: 0 0px;
 }
 
 .widget {
-	&-header {
-		width: 100%;
-		height: 50px;
-		line-height: 50px;
-		text-align: center;
-		border-bottom: 1px solid #000;
+  &-header {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid #000;
 
-		&-title {
-			font-weight: bold;
-		}
-	}
+    &-title {
+      font-weight: bold;
+    }
+  }
 }
 
 .widget-collapse {
-	border-top-width: 0;
+  border-top-width: 0;
 
-	:deep(.el-collapse-item__header) {
-		margin-left: 8px;
-		font-style: italic;
-		font-weight: bold;
-	}
+  :deep(.el-collapse-item__header) {
+    margin-left: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    text-shadow: 1px 1px rgba(197, 223, 248,0.8),2px 2px rgba(197, 223, 248,0.8),3px 3px rgba(197, 223, 248,0.8),4px 4px rgba(197, 223, 248,0.8),5px 5px rgba(197, 223, 248,0.8),6px 6px rgba(197, 223, 248,0.8);
+  }
 
-	:deep(.el-collapse-item__content) {
-		padding-bottom: 6px;
+  :deep(.el-collapse-item__content) {
+    padding-bottom: 6px;
+    ul {
+      padding-left: 10px; /* 重置IE11默认样式 */
+      margin: 0; /* 重置IE11默认样式 */
+      margin-block-start: 0;
+      margin-block-end: 0.25em;
+      padding-inline-start: 10px;
 
-		ul {
-			padding-left: 10px; /* 重置IE11默认样式 */
-			margin: 0; /* 重置IE11默认样式 */
-			margin-block-start: 0;
-			margin-block-end: 0.25em;
-			padding-inline-start: 10px;
+      &:after {
+        content: '';
+        display: block;
+        clear: both;
+      }
 
-			&:after {
-				content: '';
-				display: block;
-				clear: both;
-			}
+      .container-widget-item,
+      .field-widget-item {
+        display: inline-block;
+        height: 38px;
+        line-height: 38px;
+        width: 115px;
+        float: left;
+        margin: 2px 6px 6px 0;
+        cursor: move;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        background: #f1f2f3;
+      }
 
-			.container-widget-item,
-			.field-widget-item {
-				display: inline-block;
-				height: 28px;
-				line-height: 28px;
-				width: 115px;
-				float: left;
-				margin: 2px 6px 6px 0;
-				cursor: move;
-				white-space: nowrap;
-				text-overflow: ellipsis;
-				overflow: hidden;
-				background: #f1f2f3;
-			}
+      .container-widget-item:hover,
+      .field-widget-item:hover {
+        background: #ebeef5;
+        outline: 1px solid $--color-primary;
+      }
 
-			.container-widget-item:hover,
-			.field-widget-item:hover {
-				background: #ebeef5;
-				outline: 1px solid $--color-primary;
-			}
-
-			.drag-handler {
-				position: absolute;
-				top: 0;
-				left: 160px;
-				background-color: #dddddd;
-				border-radius: 5px;
-				padding-right: 5px;
-				font-size: 11px;
-				color: #666666;
-			}
-		}
-	}
+      .drag-handler {
+        position: absolute;
+        top: 0;
+        left: 160px;
+        background-color: #dddddd;
+        border-radius: 5px;
+        padding-right: 5px;
+        font-size: 11px;
+        color: #666666;
+      }
+    }
+  }
 }
 
 .gild-container {
-	display: inline-block;
-	height: 28px;
-	line-height: 28px;
-	width: 115px;
-	float: left;
-	margin: 2px 6px 6px 0;
-	cursor: move;
-	white-space: nowrap;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	background: #f1f2f3;
+  display: inline-block;
+  height: 38px;
+  line-height: 38px;
+  width: 110px;
+  float: left;
+  margin: 2px 6px 12px 0;
+  cursor: move;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  border: 2px solid white;
+  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  border-radius: 25px;
+  color: #1196db;
+
+  .svg-icon {
+    margin-left: 20px;
+    margin-right: 10px;
+  }
+}
+
+.gild-container:hover {
+  box-shadow: 0 3px 5px rgba(32,160,255,.5);
+  font-size: 15px;
 }
 </style>
