@@ -11,7 +11,7 @@
 		<el-switch
 			v-model="widget.value"
 			:disabled="widget.options.basic.disabled.value"
-			@change="handleChangeEvent(props)"
+			@change="handleChangeEvent(props,ElMessage)"
 		/>
 	</widget-mask>
 </template>
@@ -20,6 +20,7 @@ import widgetMask from '../common/widgetMask.vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 import { watch } from 'vue'
+import { ElMessage } from 'element-plus'
 const _widgetStore = widgetStore();
 const { formConfig } = storeToRefs(_widgetStore);
 const props = defineProps(['widget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
