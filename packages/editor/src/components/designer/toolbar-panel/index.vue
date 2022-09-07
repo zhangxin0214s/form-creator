@@ -112,13 +112,13 @@ const closePreview = () => {
  * 代码编辑器
  */
 const exportCode = () => {
-  let cb = handleData(widgetList, data);
-  if (cb) {
-    _widgetStore.selectedWidget = cb;
-  } else {
-    // 提交的数据
-    console.log(data);
-  }
+  // let cb = handleData(widgetList, data);
+  // if (cb) {
+  //   _widgetStore.selectedWidget = cb;
+  // } else {
+  //   // 提交的数据
+  //   console.log(data);
+  // }
   dialogCodeVisible.value = true;
 }
 
