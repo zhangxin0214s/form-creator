@@ -34,16 +34,18 @@
 							<component
 								:is="componentMap[widget.type]"
 								:key="widget.id"
-								:widget=widget
+								:widget="widget"
 								:parent-widget="widgetList"
-								:widget-type="`widget`"
 								:prop-key="widget.ruleFormKey"
 								:rule-form="formConfig.ruleForm"
 								:rule-form-key-type="widget.ruleFormKeyType"
 								:rule-form-ref="ruleFormRef"
+								:selected-widget="selectedWidget"
+								:is-editor="isEditor"
+								@copyWidget="copyWidget"
+								@removeWidget="removeWidget"
 								@click.stop="selected(widget)"
-								@submitForm="submitForm"
-								>
+								@submitForm="submitForm">
 							</component>
 						</div>
 					</template>
@@ -73,20 +75,42 @@ const rules = ref({
 	]
 })
 const _widgetStore = widgetStore();
-const { widgetList,formConfig } = storeToRefs(_widgetStore);
+const { widgetList,formConfig,isEditor,selectedWidget } = storeToRefs(_widgetStore);
 
 const ruleFormRef = ref(null);
 
+/**
+ * 点击选中
+ */
 const selected = (widgetData) => {
 	console.log('选中:', widgetData);
 	_widgetStore.selectedWidget = widgetData;
 };
 
-const onEnd = (origin)=>{
+/**
+ * 拖拽结束
+ */
+const onEnd = (origin) => {
   _widgetStore.selectedWidget = _widgetStore.cloneWidget;
   _widgetStore.recordHistory();
 }
 
+/**
+ * 复制组件
+ */
+const copyWidget = (widget) => {
+	_widgetStore.copyWidget(widget);
+}
+
+/**
+ * 删除组件
+ */
+const removeWidget = (widget,parentWidget) => {
+	_widgetStore.removeWidget(widget, parentWidget);
+}
+/**
+ * 提交
+ */
 const submitForm = async () =>{
   if (!ruleFormRef) return
   await ruleFormRef.value.validate((valid, fields) => {

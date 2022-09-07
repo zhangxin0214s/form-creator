@@ -7,6 +7,9 @@
 		:prop-key="propKey"
 		:rule-form="ruleForm"
 		:parent="parent"
+		:is-editor="isEditor"
+		:selected-widget="selectedWidget"
+		:copy-widget="copyWidget"
 	>
 		<el-input
 			:disabled="widget.options.basic.disabled.value"
@@ -22,15 +25,12 @@
 
 <script setup>
 import widgetMask from '../common/widgetMask.vue';
-import { storeToRefs } from 'pinia';
-import { widgetStore } from '@/store/index';
 import { ElMessage } from 'element-plus'
 import { watch} from 'vue';
 import { handleChangeEvent } from '../hooks/handleChangeEvent'
 import { watchEvent } from '../hooks/watchEvent'
-const _widgetStore = widgetStore();
-const { formConfig } = storeToRefs(_widgetStore);
-const props = defineProps(['widget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
+
+const props = defineProps(['widget', 'copyWidget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
 
 watchEvent(props,watch)
 

@@ -1,7 +1,6 @@
 <template>
 	<div
 		class="container-mask"
-		@click.stop="selected(widget)"
 	>
 		<el-form-item
 			:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
@@ -37,24 +36,15 @@
 	</div>
 </template>
 <script setup>
-import { widgetStore } from '@/store/index';
-import { storeToRefs } from 'pinia';
-import { generateId, deepClone } from '@/utils/util';
-const props = defineProps(['widget', 'basicProp', 'parent', 'ruleForm','propKey','parentWidget']);
-const _widgetStore = widgetStore();
-const { widgetList, selectedWidget,isEditor } = storeToRefs(_widgetStore);
-
-const selected = (widgetData) => {
-	console.log('选中:', widgetData);
-	_widgetStore.selectedWidget = widgetData;
-};
+const props = defineProps(['widget', 'copyWidget','isEditor', 'selectedWidget', 'basicProp', 'parent', 'ruleForm','propKey','parentWidget']);
+const emit = defineEmits(['copyWidget','removeWidget']);
 
 const copy = () => {
-	_widgetStore.copyWidget(props.widget);
+	emit('copyWidget',props.widget)
 };
 
 const delete1 = () => {
-	_widgetStore.removeWidget(props.widget, props.parentWidget);
+	emit('removeWidget',props.widget, props.parentWidget)
 	if(props.parent?.ruleFormKeyType === 'array'){
 		props.ruleForm.forEach((rule,index) =>{
 			if(Object.keys(rule).indexOf(props.widget.ruleFormKey)>-1){
