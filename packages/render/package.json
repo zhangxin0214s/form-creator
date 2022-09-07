@@ -1,0 +1,11 @@
+{
+  "name": "render",
+  "version": "1.0.0",
+  "description": "this is a renderer for form-creator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zhangxin0214",
+  "license": "ISC"
+}

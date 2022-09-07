@@ -1,0 +1,11 @@
+{
+  "name": "@form-creator/render/element-plus",
+  "version": "1.0.0",
+  "description": "this is a element-plus lib for form-creator ",
+  "main": "lib/element-plus.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "zhangxin0214",
+  "license": "ISC"
+}
