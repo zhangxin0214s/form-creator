@@ -28,22 +28,23 @@
   import { ref } from 'vue';
   import dataSource from '../dataSource.vue'
   import selectNode from './selectNode.vue';
+  import { widgetStore } from '@/store/index';
 
+  const _widgetStore = widgetStore();
   const PROPS = defineProps(['advancedProp']);
   const dataListType = ['dataSource', 'cityData', 'staticData'];
   const {data} = PROPS.advancedProp;
-
   const addList = () => {
     data.push({
       id: data.length,
-      label: '请输入选项值',
+      label: '',
       value:'',
-      // label: `新选项${data.length}`,
       data: []
     })
   };
   const changeDataType = (key) => {
     data.length=0;
+    _widgetStore.selectedWidget.value = null;
     dataListType.forEach(item => {
       if (item === key) {
         if (PROPS.advancedProp[item].check) {
