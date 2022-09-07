@@ -14,6 +14,10 @@
                     :key1="widget.id"
                     :widget=widget
                     :parent-widget="widgetList"
+                    :widget-type="`widget`"
+                    :prop-key="widget.ruleFormKey"
+                    :rule-form="formConfig.ruleForm"
+                    :rule-form-key-type="widget.ruleFormKeyType"
                     :rule-form-ref="ruleFormRef"
                     @submitForm="submitForm">
                 </component>
