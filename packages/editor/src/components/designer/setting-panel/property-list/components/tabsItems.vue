@@ -3,8 +3,6 @@
     <div v-for="(col,index) in advancedProp?.cols" :key="index">
         <div class="name">名称:</div>
         <el-input style="display:inline-block;width: 60px;" v-model="col.name"/>
-        <div class="name">参数key:</div>
-        <el-input style="display:inline-block;width: 60px;" v-model="col.ruleFormKey.value"/>
         <el-icon v-if="advancedProp.cols.length>1" class="deleteBtn" :size="21" color="var(--el-text-color-secondary)" @click="deleteTab(index)">
             <RemoveFilled />
         </el-icon>

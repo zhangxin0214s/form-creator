@@ -29,26 +29,20 @@
 </template>
 <script setup>
     import eleComponents from '../../index.js';
-    import { widgetStore } from '@/store/index';
-    import { storeToRefs } from 'pinia';
-    import { ref } from 'vue'
 
     const props = defineProps([
         'colWidget',
         'widget',
         'propKey',
         'ruleForm',
-        'ruleFormRef'
+        'ruleFormRef',
+        'selectedWidget',
+        'isEditor'
     ])
     const componentMap = {
         ...eleComponents
     }
-    const _widgetStore = widgetStore();
-    const { selectedWidget,widgetList,isEditor} = storeToRefs(_widgetStore);
-    const selected = (widgetData) => {
-        console.log('选中:', widgetData);
-        _widgetStore.selectedWidget = widgetData;
-    };
+
     const onEnd = () =>{
         console.log("结束")
     }

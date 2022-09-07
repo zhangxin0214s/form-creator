@@ -2,7 +2,9 @@
   <container-mask 
     :widget="widget"
     :rule-form="ruleForm"
-		:parent="parent">
+		:parent="parent"
+    :is-editor="isEditor"
+		:selected-widget="selectedWidget">
     <el-card type="border-card" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" >
       <template #header>
       <div class="card-header">
@@ -20,20 +22,18 @@
   </container-mask>
 </template>
 <script setup>
-  import { widgetStore } from '@/store/index';
-  import { storeToRefs } from 'pinia';
   import containerMask from "../../common/containerMask.vue"
-  import tabsContent from "./content.vue"
   import cardContent from "./content.vue"
   import { watch } from 'vue'
-  const _widgetStore = widgetStore();
-  const { selectedWidget,isEditor} = storeToRefs(_widgetStore);
+
   const props=defineProps([
     'widget',
     'ruleForm',
     'propKey',
     'parent',
-    'ruleFormRef'
+    'ruleFormRef',
+    'selectedWidget',
+    'isEditor'
   ])
   watch(
     () => props.propKey,

@@ -2,7 +2,9 @@
   <container-mask 
     :widget="widget"
     :rule-form="ruleForm"
-		:parent="parent">
+		:parent="parent"
+    :is-editor="isEditor"
+		:selected-widget="selectedWidget">
     <el-tabs type="border-card" v-model="activeName" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
       <el-tab-pane :label="colWidget.name" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
         <tabs-content 
@@ -17,19 +19,17 @@
   </container-mask>
 </template>
 <script setup>
-  import { widgetStore } from '@/store/index';
-  import { storeToRefs } from 'pinia';
   import containerMask from "../../common/containerMask.vue"
   import tabsContent from "./content.vue"
   import { watch } from "vue"
-  const _widgetStore = widgetStore();
-  const { selectedWidget,isEditor} = storeToRefs(_widgetStore);
   const props=defineProps([
-      'widget',
-      'parent',
-      'propKey',
-      'ruleForm',
-      'ruleFormRef'
+    'widget',
+    'parent',
+    'propKey',
+    'ruleForm',
+    'ruleFormRef',
+    'selectedWidget',
+    'isEditor'
   ])
 
   watch(

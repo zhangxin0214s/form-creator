@@ -4,6 +4,8 @@
 		:style="`${widget.options.basic.isMoveDivider.value ? `top:${widget.options.basic.moveDistance.value}px`:''}`"
 		:rule-form="ruleForm"
 		:parent="parent"
+		:is-editor="isEditor"
+		:selected-widget="selectedWidget"
 	>
 		<el-row
 			class="grid-container"
@@ -23,6 +25,8 @@
 					:widget="widget"
 					:prop-key="propKey"
 					:rule-form-ref="ruleFormRef"
+					:is-editor="isEditor"
+					:selected-widget="selectedWidget"
 					:rule-form="ruleForm[widget.ruleFormKey] || ruleForm"
 					:rule-form-key-type="widget.ruleFormKeyType"
 					:style="`height:${widget.options.basic.colHeight.value}px;`"
@@ -34,15 +38,11 @@
 
 </template>
 <script setup>
-import { widgetStore } from '@/store/index';
-import { storeToRefs } from 'pinia';
-import { onMounted,watch } from 'vue';
+import { watch } from 'vue';
 import { ElMessage } from 'element-plus'
 import containerMask from '../../common/containerMask.vue';
 import Col from './grid-col.vue';
-const _widgetStore = widgetStore();
-const { selectedWidget, isEditor } = storeToRefs(_widgetStore);
-const props = defineProps(['widget', 'parent', 'propKey', 'ruleForm', 'ruleFormRef']);
+const props = defineProps(['widget', 'selectedWidget', 'isEditor', 'parent', 'propKey', 'ruleForm', 'ruleFormRef']);
 
 watch(
 	() => props.propKey,
