@@ -152,9 +152,7 @@ export const containers = [
 				}
 			},
 			advanced: {
-				cols: [
-					{widgetList: []}
-				]
+					widgetList: []
 			}
 		},
 	},

@@ -6,7 +6,7 @@
     <el-card type="border-card" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" >
       <template #header>
       <div class="card-header">
-        <span>{{widget.options.basic.label.value}}</span>
+        <span>{{widget.title}}</span>
       </div>
     </template>
     <card-content 
