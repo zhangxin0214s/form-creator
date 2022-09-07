@@ -4,6 +4,8 @@
 		:basic-prop="widget.options.basic"
 		:advanced-prop="widget.options.advanced"
 		:parent-widget="parentWidget"
+		:is-editor="isEditor"
+		:selected-widget="selectedWidget"
 	>
 		<pre :style="{
 			'width':'100%',
@@ -23,7 +25,7 @@
 <script setup>
 // 这个文件不要格式化代码，上面的pre标签和内容必须在一行，谢谢
 import widgetMask from '../common/widgetMask.vue';
-defineProps(['widget', 'parentWidget']);
+defineProps(['widget','isEditor', 'selectedWidget', 'parentWidget']);
 </script>
 <style scoped>
 

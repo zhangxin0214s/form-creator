@@ -7,6 +7,8 @@
 		:prop-key="propKey"
 		:rule-form="ruleForm"
 		:parent="parent"
+		:is-editor="isEditor"
+		:selected-widget="selectedWidget"
 	>
 		<el-switch
 			v-model="widget.value"
@@ -17,16 +19,20 @@
 </template>
 <script setup>
 import widgetMask from '../common/widgetMask.vue';
-import { storeToRefs } from 'pinia';
-import { widgetStore } from '@/store/index';
 import { watch } from 'vue'
 import { ElMessage } from 'element-plus'
-const _widgetStore = widgetStore();
-const { formConfig } = storeToRefs(_widgetStore);
-const props = defineProps(['widget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
-
 import { handleChangeEvent } from '../hooks/handleChangeEvent'
 import { watchEvent } from '../hooks/watchEvent'
+
+const props = defineProps([
+	'widget',
+	'ruleForm', 
+	'propKey',
+	'parent', 
+	'parentWidget',
+	'isEditor',
+	'selectedWidget'
+])
 
 watchEvent(props,watch)
 </script>

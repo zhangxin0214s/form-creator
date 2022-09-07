@@ -7,6 +7,8 @@
 		:prop-key="propKey"
 		:rule-form="ruleForm"
 		:parent="parent"
+		:is-editor="isEditor"
+		:selected-widget="selectedWidget"
 	>
 		<div class="phone-content">
 			<el-select
@@ -61,6 +63,8 @@ const props = defineProps([
 	'propKey',
 	'parent',
 	'parentWidget',
+	'isEditor',
+	'selectedWidget'
 ]);
 
 watchEvent(props, watch);

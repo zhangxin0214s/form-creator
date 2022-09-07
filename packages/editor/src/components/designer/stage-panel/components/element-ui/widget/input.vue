@@ -9,7 +9,6 @@
 		:parent="parent"
 		:is-editor="isEditor"
 		:selected-widget="selectedWidget"
-		:copy-widget="copyWidget"
 	>
 		<el-input
 			:disabled="widget.options.basic.disabled.value"
@@ -30,7 +29,7 @@ import { watch} from 'vue';
 import { handleChangeEvent } from '../hooks/handleChangeEvent'
 import { watchEvent } from '../hooks/watchEvent'
 
-const props = defineProps(['widget', 'copyWidget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
+const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
 
 watchEvent(props,watch)
 

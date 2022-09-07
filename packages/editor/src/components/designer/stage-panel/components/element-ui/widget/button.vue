@@ -3,7 +3,9 @@
       :widget="widget"
       :basicProp="widget.options.basic"
       :advancedProp="widget.options.advanced"
-      :parent-widget="parentWidget">
+      :parent-widget="parentWidget"
+      :is-editor="isEditor"
+		  :selected-widget="selectedWidget">
       <el-button
           :icon="widget.options.advanced.value"
           :type="widget.options.basic.btnType.value"
@@ -20,16 +22,16 @@
 </template>
 
 <script setup>
-import FormInstance  from 'element-plus';
 import {onMounted,onBeforeMount } from 'vue'
 import widgetMask from '../common/widgetMask.vue'
 import useRegisterEvent from '../hooks/useRegisterEvent'
-import { defineProps,defineEmits } from 'vue';
-import { ref } from 'vue'
+
 let props = defineProps([
   'widget',
   'parentWidget',
-  'ruleFormRef'
+  'ruleFormRef',
+  'isEditor',
+  'selectedWidget'
 ]);
 const { handleOnClick,handleOnBeforeMount,handleOnMounted} = useRegisterEvent();
 

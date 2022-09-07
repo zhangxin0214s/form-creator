@@ -4,6 +4,8 @@
 		:basic-prop="widget.options.basic"
 		:advanced-prop="widget.options.advanced"
 		:parent-widget="parentWidget"
+		:is-editor="isEditor"
+		:selected-widget="selectedWidget"
 		:style="`top:${widget.options.basic.moveDistance.value}px`"
 	>
 		<el-divider
@@ -21,7 +23,7 @@
 
 <script setup>
 import widgetMask from '../common/widgetMask.vue';
-defineProps(['widget', 'parentWidget']);
+defineProps(['widget', 'isEditor', 'selectedWidget','parentWidget']);
 </script>
 
 <style scoped>

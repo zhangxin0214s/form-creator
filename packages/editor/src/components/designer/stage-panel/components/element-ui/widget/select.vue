@@ -6,7 +6,9 @@
     :parent-widget="parentWidget"
 		:prop-key="propKey"
 		:rule-form="ruleForm"
-		:parent="parent">
+		:parent="parent"
+    :is-editor="isEditor"
+		:selected-widget="selectedWidget">
     <el-cascader
         v-model="widget.value"
         :options="advanced.data"
@@ -24,7 +26,7 @@
   import { watch} from 'vue';
   import { handleChangeEvent } from '../hooks/handleChangeEvent'
   import { watchEvent } from '../hooks/watchEvent'
-  const props = defineProps(['widget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
+  const props = defineProps(['widget', 'isEditor', 'selectedWidget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
   const {basic, advanced} = props.widget.options;
   watchEvent(props,watch)
 
