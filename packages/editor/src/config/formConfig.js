@@ -929,7 +929,7 @@ export const basicWidgets = [
 		icon: "cellPhone",
 		value:null,
 		ruleFormKey: null,
-		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
+		rules:[],
 		options: {
 			basic: {
 				name: {
