@@ -52,6 +52,7 @@ ul {
   margin-right: 30px;
   border: 1px solid #d8dce5;
   padding: 0px;
+  text-align: center;
 }
 li {
   display: inline-block;
