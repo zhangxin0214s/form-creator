@@ -5,7 +5,6 @@
             :label-width="formConfig['label-width'].value"
             :label-position="formConfig['label-position'].value"
             ref="ruleFormRef"
-            :rules="formConfig.rules"
             :model="formConfig.ruleForm"
             >
             <template v-for="(widget, index) in widgetList" :key="index">
