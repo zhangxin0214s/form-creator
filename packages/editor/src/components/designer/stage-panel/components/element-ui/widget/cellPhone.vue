@@ -64,28 +64,16 @@ const props = defineProps([
 	'parent',
 	'parentWidget',
 	'isEditor',
-	'selectedWidget'
+	'selectedWidget',
 ]);
 
 watchEvent(props, watch);
 const setRules = () => {
 	const _ruleFormKey = props.widget.options.basic.ruleFormKey.value;
-	const _rules = _widgetStore.selectedWidget.rules;
 	const _ruleForm = formConfig.value.ruleForm;
 	_ruleForm[
 		_ruleFormKey
 	] = `${props.widget.options.basic.prefix.value}-${props.widget.value}`;
-	// 查找出必填的rule
-	const requireRule = _rules.filter((rule) => {
-		return Object.keys(rule).indexOf('required') > -1;
-	})[0];
-	// 每次切换清空_rules[_ruleFormKey] & customValue
-	_rules.splice(0);
-	requireRule && _rules.push(requireRule);
-	_rules.push({
-		message: '请填写正确的手机号',
-		pattern: '^(86|852|853)-1[3456789]\\d{9}$',
-	});
 };
 </script>
 <style scoped>
