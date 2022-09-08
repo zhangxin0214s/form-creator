@@ -13,6 +13,12 @@
           :widget="widget"
           :prop-key="propKey"
           :colIdx="colIdx"
+          :selected-widget="selectedWidget"
+          :is-editor="isEditor"
+          @onEnd="onEnd1"
+          @selected="selected1"
+					@copyWidget="copyWidget1"
+          @removeWidget="removeWidget1"
         ></tabs-content>
       </el-tab-pane>
     </el-tabs>
@@ -76,7 +82,21 @@
           return v.toString(16);
       });
   }
+  const emit = defineEmits(['selected1','copyWidget1','removeWidget1','onEnd1']);
+  const selected1 = (element) =>{
+    emit('selected1',element)
+  }
+  const copyWidget1 = (element) =>{
+      emit('copyWidget1',element)
+  }
 
+  const removeWidget1 = (widget, parentWidget) =>{
+    emit('removeWidget1',widget, parentWidget)
+  }
+
+  const onEnd1 = () =>{
+    emit('onEnd1')
+  }
 </script>
  <style lang="scss" scoped>
   .select {

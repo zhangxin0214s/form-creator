@@ -53,6 +53,10 @@ export const containers = [
 					label: "参数key",
 					value: ''
 				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
+				},
 				ruleFormKeyType: {
 					label: '参数类型',
 					value: 'object',
@@ -67,7 +71,7 @@ export const containers = [
 						}
 					]
 				},
-				"isMoveDivider":{
+				"isMoveDivider": {
 					label: "是否上下移动",
 					value: false,
 				},
@@ -90,7 +94,7 @@ export const containers = [
 					}
 				]
 			}
-		},
+		}
 	},
 	{
 		id: 2,
@@ -105,9 +109,17 @@ export const containers = [
 		ruleFormKeyType: 'object',
 		options: {
 			basic: {
+				name: {
+					label: "唯一名称",
+					value: "标签页"
+				}, // 唯一名称
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
+				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
 				}
 			},
 			advanced: {
@@ -131,7 +143,13 @@ export const containers = [
 		type: "Table",
 		icon: "table ",
 		options: {
-			hidden: false,
+			basic: {
+				isHidden: {
+					label: "隐藏组件",
+					value: false
+				},
+			},
+			advanced: {}
 		},
 	},
 	{
@@ -144,15 +162,22 @@ export const containers = [
 		ruleFormKey: null,
 		ruleFormKeyType: 'object',
 		options: {
-			hidden: false,
 			basic: {
+				name: {
+					label: "唯一名称",
+					value: "卡片"
+				}, // 唯一名称
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
-				}
+				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
+				},
 			},
 			advanced: {
-					widgetList: []
+				widgetList: []
 			}
 		},
 	},
@@ -168,7 +193,7 @@ export const basicWidgets = [
 		icon: "input",
 		value: null,
 		ruleFormKey: null,
-		rules:[],
+		rules: [],
 		options: {
 			basic: {
 				name: {
@@ -204,6 +229,10 @@ export const basicWidgets = [
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
+				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
 				},
 				required: {
 					label: "是否必填",
@@ -259,10 +288,8 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: '请选择'
+					value: []
 				},
-			},
-			events: {
 				linkageCode: {
 					label: '联动代码',
 					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\n*/ \n//#endregion "
@@ -278,7 +305,7 @@ export const basicWidgets = [
 		icon: "switch",
 		value: false,
 		ruleFormKey: null,
-		rules:[],
+		rules: [],
 		options: {
 			basic: {
 				name: {
@@ -292,6 +319,10 @@ export const basicWidgets = [
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
+				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
 				},
 				required: {
 					label: "是否必填",
@@ -307,10 +338,8 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: '请选择'
+					value: []
 				},
-			},
-			events: {
 				linkageCode: {
 					label: '联动代码',
 					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\n*/ \n//#endregion "
@@ -326,7 +355,7 @@ export const basicWidgets = [
 		icon: "check",
 		value: [],
 		ruleFormKey: null,
-		rules:[],
+		rules: [],
 		options: {
 			basic: {
 				name: {
@@ -362,6 +391,10 @@ export const basicWidgets = [
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
+				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
 				},
 				required: {
 					label: "是否必填",
@@ -497,6 +530,10 @@ export const basicWidgets = [
 					],
 					value: 'default'
 				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
+				},
 				disabled: {
 					label: "是否禁用",
 					value: false
@@ -582,9 +619,9 @@ export const basicWidgets = [
 		type: "select",
 		category: "widget",
 		icon: "select",
-		value:null,
+		value: null,
 		ruleFormKey: null,
-		rules:[],
+		rules: [],
 		options: {
 			basic: {
 				name: {
@@ -602,6 +639,10 @@ export const basicWidgets = [
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
+				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
 				},
 				required: {
 					label: "是否必填",
@@ -652,7 +693,7 @@ export const basicWidgets = [
 		icon: "Radio",
 		value: '',
 		ruleFormKey: null,
-		rules:[],
+		rules: [],
 		options: {
 			basic: {
 				name: {
@@ -688,6 +729,10 @@ export const basicWidgets = [
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
+				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
 				},
 				required: {
 					label: "是否必填",
@@ -743,7 +788,7 @@ export const basicWidgets = [
 		icon: "textField",
 		value: null,
 		ruleFormKey: null,
-		rules:[],
+		rules: [],
 		options: {
 			basic: {
 				name: {
@@ -784,6 +829,10 @@ export const basicWidgets = [
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
+				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
 				},
 				required: {
 					label: "是否必填",
@@ -859,6 +908,10 @@ export const basicWidgets = [
 					label: "内容",
 					value: "",
 				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
+				},
 				"divider-direction": {
 					label: "方向",
 					options: [
@@ -927,9 +980,12 @@ export const basicWidgets = [
 		type: "cellPhone",
 		category: "widget",
 		icon: "cellPhone",
-		value:null,
+		value: null,
 		ruleFormKey: null,
-		rules:[],
+		rules: [{
+			message: '请填写正确的手机号',
+			pattern: '^(86|852|853)-1[3456789]\\d{9}$',
+		}],
 		options: {
 			basic: {
 				name: {
@@ -969,6 +1025,10 @@ export const basicWidgets = [
 					label: "参数key",
 					value: ''
 				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
+				},
 				required: {
 					label: "是否必填",
 					value: false,
@@ -1002,6 +1062,11 @@ export const basicWidgets = [
 					label: "",
 					value: ""
 				}, // 标签
+
+				isHidden: {
+					label: "隐藏组件",
+					value: false
+				},
 				textareaDefaultValue: {
 					label: '默认文本',
 					value: '这是一段静态文本',
@@ -1065,9 +1130,9 @@ export const basicWidgets = [
 		type: "date",
 		category: "widget",
 		icon: "time",
-		value:null,
+		value: null,
 		ruleFormKey: null,
-		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
+		rules: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
 		options: {
 			basic: {
 				value: "",
@@ -1108,6 +1173,10 @@ export const basicWidgets = [
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
+				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
 				},
 				required: {
 					label: "是否必填",
@@ -1166,9 +1235,9 @@ export const basicWidgets = [
 		type: "datetimerange",
 		category: "widget",
 		icon: "date",
-		value:null,
+		value: null,
 		ruleFormKey: null,
-		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
+		rules: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
 		options: {
 			basic: {
 				value: "",
@@ -1209,6 +1278,10 @@ export const basicWidgets = [
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
+				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
 				},
 				required: {
 					label: "是否必填",
@@ -1340,6 +1413,10 @@ export const advancedWidgets = [
 					label: "参数key",
 					value: ''
 				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
+				},
 				required: {
 					label: "是否必填",
 					value: false,
@@ -1409,6 +1486,11 @@ export const advancedWidgets = [
 					label: "参数key",
 					value: ''
 				},
+
+					isHidden: {
+						label: "隐藏组件",
+						value: false
+					},
 				required: {
 					label: "是否必填",
 					value: false,
@@ -1492,6 +1574,10 @@ export const advancedWidgets = [
 					],
 					value: 'text'
 				},// 文件列表类型
+				isHidden: {
+					label: "隐藏组件",
+					value: false
+				},
 				multiple: {
 					label: "是否批量选择",
 					value: false
@@ -1537,6 +1623,11 @@ export const advancedWidgets = [
 					label: '标签是否隐藏',
 					value: false
 				}, // 标签是否隐藏
+
+				isHidden: {
+					label: "隐藏组件",
+					value: false
+				},
 				required: {
 					label: '是否必填',
 					value: false

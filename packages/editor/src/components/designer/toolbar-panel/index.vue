@@ -123,9 +123,9 @@ const uploadFile = (file, files) => {
   reader.readAsText(files.raw);
   reader.onload = e => {
     readText = JSON.parse(e.currentTarget.result);
-    // _widgetStore.clearWidget();
+    _widgetStore.clearWidget();
     _widgetStore.widgetList.push(...readText.widgetList);
-    console.log(...readText.widgetList)
+    // console.log(...readText.widgetList)
   }
   _widgetStore.clearWidget();
 }
