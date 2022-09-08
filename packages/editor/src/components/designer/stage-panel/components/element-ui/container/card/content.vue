@@ -14,6 +14,8 @@
                         :parent="widget"
                         :rule-form= "ruleForm"
                         :prop-key = "getPropKey(element,index)"
+                        :selected-widget="selectedWidget"
+                        :is-editor="isEditor"
                         @copyWidget="copyWidget(element)"
                         @removeWidget="removeWidget(element,widgetList)"
                         @click.stop="selected(element)"                         
@@ -31,7 +33,9 @@
         'widgetList',
         'widget',
         'propKey',
-        'ruleForm'
+        'ruleForm',
+        'selectedWidget',
+        'isEditor'
     ])
     const componentMap = {
         ...eleComponents

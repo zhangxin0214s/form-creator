@@ -109,6 +109,10 @@ export const containers = [
 		ruleFormKeyType: 'object',
 		options: {
 			basic: {
+				name: {
+					label: "唯一名称",
+					value: "标签页"
+				}, // 唯一名称
 				ruleFormKey: {
 					label: "参数key",
 					value: ''
@@ -159,6 +163,10 @@ export const containers = [
 		ruleFormKeyType: 'object',
 		options: {
 			basic: {
+				name: {
+					label: "唯一名称",
+					value: "卡片"
+				}, // 唯一名称
 				ruleFormKey: {
 					label: "参数key",
 					value: ''

@@ -16,6 +16,8 @@
         :prop-key="propKey"
         :widget="widget"
         :rule-form="ruleForm[widget.ruleFormKey] || ruleForm"
+        :is-editor="isEditor"
+				:selected-widget="selectedWidget"
         @onEnd="onEnd1"
         @selected="selected1"
         @copyWidget="copyWidget1"

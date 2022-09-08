@@ -15,6 +15,7 @@
           :colIdx="colIdx"
           :selected-widget="selectedWidget"
           :is-editor="isEditor"
+          @onEnd="onEnd1"
           @selected="selected1"
 					@copyWidget="copyWidget1"
           @removeWidget="removeWidget1"
