@@ -39,24 +39,6 @@
 					></component>
 				</div>
 			</el-collapse-item>
-			<!--事件属性-->
-			<el-collapse-item
-				name="3"
-				title="事件属性"
-			>
-				<el-divider content-position="center">事件设置</el-divider>
-				<div
-					v-for="(item,key,index) in eventsProp"
-					:key="index"
-				>
-					<component
-						:is="componentMap[getEventCompName(EVENTS_PROPERTIES,key)]"
-						:events-prop="eventsProp"
-						:value="item"
-						:key1="key"
-					></component>
-				</div>
-			</el-collapse-item>
 		</el-collapse>
 	</div>
 </template>
