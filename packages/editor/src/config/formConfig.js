@@ -67,7 +67,7 @@ export const containers = [
 						}
 					]
 				},
-				"isMoveDivider":{
+				"isMoveDivider": {
 					label: "是否上下移动",
 					value: false,
 				},
@@ -152,7 +152,7 @@ export const containers = [
 				}
 			},
 			advanced: {
-					widgetList: []
+				widgetList: []
 			}
 		},
 	},
@@ -168,7 +168,7 @@ export const basicWidgets = [
 		icon: "input",
 		value: null,
 		ruleFormKey: null,
-		rules:[],
+		rules: [],
 		options: {
 			basic: {
 				name: {
@@ -259,10 +259,8 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: '请选择'
+					value: []
 				},
-			},
-			events: {
 				linkageCode: {
 					label: '联动代码',
 					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\n*/ \n//#endregion "
@@ -278,7 +276,7 @@ export const basicWidgets = [
 		icon: "switch",
 		value: false,
 		ruleFormKey: null,
-		rules:[],
+		rules: [],
 		options: {
 			basic: {
 				name: {
@@ -307,10 +305,8 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: '请选择'
+					value: []
 				},
-			},
-			events: {
 				linkageCode: {
 					label: '联动代码',
 					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\n*/ \n//#endregion "
@@ -326,7 +322,7 @@ export const basicWidgets = [
 		icon: "check",
 		value: [],
 		ruleFormKey: null,
-		rules:[],
+		rules: [],
 		options: {
 			basic: {
 				name: {
@@ -582,9 +578,9 @@ export const basicWidgets = [
 		type: "select",
 		category: "widget",
 		icon: "select",
-		value:null,
+		value: null,
 		ruleFormKey: null,
-		rules:[],
+		rules: [],
 		options: {
 			basic: {
 				name: {
@@ -652,7 +648,7 @@ export const basicWidgets = [
 		icon: "Radio",
 		value: '',
 		ruleFormKey: null,
-		rules:[],
+		rules: [],
 		options: {
 			basic: {
 				name: {
@@ -743,7 +739,7 @@ export const basicWidgets = [
 		icon: "textField",
 		value: null,
 		ruleFormKey: null,
-		rules:[],
+		rules: [],
 		options: {
 			basic: {
 				name: {
@@ -927,9 +923,12 @@ export const basicWidgets = [
 		type: "cellPhone",
 		category: "widget",
 		icon: "cellPhone",
-		value:null,
+		value: null,
 		ruleFormKey: null,
-		rules:[],
+		rules: [{
+			message: '请填写正确的手机号',
+			pattern: '^(86|852|853)-1[3456789]\\d{9}$',
+		}],
 		options: {
 			basic: {
 				name: {
@@ -1065,9 +1064,9 @@ export const basicWidgets = [
 		type: "date",
 		category: "widget",
 		icon: "time",
-		value:null,
+		value: null,
 		ruleFormKey: null,
-		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
+		rules: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
 		options: {
 			basic: {
 				value: "",
@@ -1166,9 +1165,9 @@ export const basicWidgets = [
 		type: "datetimerange",
 		category: "widget",
 		icon: "date",
-		value:null,
+		value: null,
 		ruleFormKey: null,
-		rules:[{required:true,message:'请输入用户名',trigger:'blur'}],
+		rules: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
 		options: {
 			basic: {
 				value: "",
