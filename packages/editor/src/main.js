@@ -1,5 +1,6 @@
 import { createApp } from "vue"
 import ElementPlus from "element-plus"
+import fcElementPlus from 'fc-element-plus'
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { createPinia } from 'pinia'
 import "element-plus/dist/index.css"
@@ -22,5 +23,6 @@ const pinia = createPinia();
 
 seApp.use(pinia)
 seApp.use(ElementPlus)
+seApp.use(fcElementPlus)
 seApp.mount("#app")
 documentEventBind();
