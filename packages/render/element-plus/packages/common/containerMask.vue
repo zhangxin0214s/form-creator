@@ -1,7 +1,6 @@
 <template>
     <div 
-        class="container-mask"
-        @click.stop="selected(widget)">
+        class="container-mask">
         <slot></slot>
         <!-- <div class="container-mask-title" v-if="selectedWidget?.id === widget?.id">
             <span class="text">
@@ -23,23 +22,22 @@
     </div>
 </template>
 <script setup>
-    import { widgetStore } from '@/store/index';
-    import { storeToRefs } from 'pinia';
     const props = defineProps([
         'widget',
         'ruleForm',
         'parentWidget',
-        'parent'
+        'parent',
+        'selectedWidget',
+        'isEditor'
     ]);
-    const _widgetStore = widgetStore();
-    const { widgetList,selectedWidget,isEditor} = storeToRefs(_widgetStore);
-
+    const emit = defineEmits(['copyWidget','removeWidget']);
+    
     const copy = () =>{
-        _widgetStore.copyWidget(props.widget)
+        emit('copyWidget',props.widget)
     }
 
     const delete1 = () =>{
-      _widgetStore.removeWidget(selectedWidget.value,props.parentWidget);
+      emit('removeWidget',props.widget, props.parentWidget)
       props.widget.ruleFormKey && delete props.ruleForm[props.widget.ruleFormKey]
       if(props.parent?.ruleFormKeyType === 'array'){
             props.ruleForm.forEach((rule,index) =>{
