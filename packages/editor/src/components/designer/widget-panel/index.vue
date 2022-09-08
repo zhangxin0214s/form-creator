@@ -142,11 +142,12 @@ const onDragEnd = () => {
     margin-left: 20px;
     font-weight: bold;
     font-size: 15px;
-    text-shadow: 1px 1px rgba(197, 223, 248,0.8),2px 2px rgba(197, 223, 248,0.8),3px 3px rgba(197, 223, 248,0.8),4px 4px rgba(197, 223, 248,0.8),5px 5px rgba(197, 223, 248,0.8),6px 6px rgba(197, 223, 248,0.8);
+    text-shadow: 1px 1px rgba(197, 223, 248, 0.8), 2px 2px rgba(197, 223, 248, 0.8), 3px 3px rgba(197, 223, 248, 0.8), 4px 4px rgba(197, 223, 248, 0.8), 5px 5px rgba(197, 223, 248, 0.8), 6px 6px rgba(197, 223, 248, 0.8);
   }
 
   :deep(.el-collapse-item__content) {
     padding-bottom: 6px;
+
     ul {
       padding-left: 10px; /* 重置IE11默认样式 */
       margin: 0; /* 重置IE11默认样式 */
@@ -195,6 +196,17 @@ const onDragEnd = () => {
   }
 }
 
+.el-main {
+  --el-main-padding: 0 0px;
+  overflow: auto;
+  height: calc(100vh - 170px);
+}
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+  display: none;
+}
+
 .gild-container {
   display: inline-block;
   height: 38px;
@@ -218,7 +230,7 @@ const onDragEnd = () => {
 }
 
 .gild-container:hover {
-  box-shadow: 0 3px 5px rgba(32,160,255,.5);
+  box-shadow: 0 3px 5px rgba(32, 160, 255, .5);
   font-size: 15px;
 }
 </style>
