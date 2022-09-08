@@ -42,6 +42,7 @@
                   :rule-form-ref="ruleFormRef"
                   :selected-widget="selectedWidget"
                   :is-editor="isEditor"
+                  :hidden="!isEditor && widget.options.basic.isHidden.value"
                   @copyWidget="copyWidget"
                   @removeWidget="removeWidget"
                   @click.stop="selected(widget)"

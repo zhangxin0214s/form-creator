@@ -9,7 +9,6 @@
 			v-if="basicProp[key1]?.label"
 			:label="`${basicProp[key1]?.label}:`"
 		>
-
 			<el-switch
 				active-color="#13ce66"
 				inactive-color="#ff4949"

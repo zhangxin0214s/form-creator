@@ -1,5 +1,5 @@
 <template>
-    <div 
+    <div
         class="container-mask">
         <slot></slot>
         <!-- <div class="container-mask-title" v-if="selectedWidget?.id === widget?.id">
@@ -7,6 +7,9 @@
                 {{ widget.options.basic.name.value }}
 			</span>
         </div> -->
+        <div class="container-mask-hidden"  v-if="isEditor && widget.options.basic.isHidden.value">
+          <svg-icon icon-class="hidden" />
+        </div>
         <div class="container-mask-action" v-if="selectedWidget?.id === widget?.id && isEditor">
             <svg-icon
                 icon-class="copy"
@@ -31,7 +34,7 @@
         'isEditor'
     ]);
     const emit = defineEmits(['copyWidget','removeWidget']);
-    
+
     const copy = () =>{
         emit('copyWidget',props.widget)
     }
@@ -78,7 +81,7 @@
             }
         }
 
-        &-action{
+        &-action,&-hidden{
             position: absolute;
             bottom: 0;
             right: -2px;
@@ -86,6 +89,15 @@
             line-height: 28px;
             background: $--color-primary;
             z-index: 999;
+        }
+        &-hidden {
+          top: -2px;
+          left: 0px;
+          width: 20px;
+          line-height: 25px;
+          svg {
+            margin-left: 0;
+          }
         }
 
     }
