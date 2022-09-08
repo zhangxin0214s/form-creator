@@ -20,7 +20,7 @@
   </ul>
 
   <!-- 预览面板 -->
-  <el-dialog v-model="dialogFormVisible" title="表单预览" @close="closePreview" destroy-on-close draggable>
+  <el-dialog v-model="dialogFormVisible" title="表单预览" @close="closePreview" center destroy-on-close draggable>
     <form-renderer
         :widgetList="widgetList"
         :formConfig="formConfig"
@@ -37,7 +37,7 @@
   </el-dialog>
 
   <!-- 模板库 -->
-  <el-dialog v-model="dialogTemplateVisible" title="模板库" width="1080px" destroy-on-close draggable>
+  <el-dialog v-model="dialogTemplateVisible" title="模板库" width="1080px" center destroy-on-close draggable>
     <temp-Library @library="library"/>
   </el-dialog>
 

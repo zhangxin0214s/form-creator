@@ -21,7 +21,6 @@
 		<div class="hint">{{ widget.options.basic.hint.value }}</div>
 	</widget-mask>
 </template>
-
 <script setup>
 import widgetMask from '../common/widgetMask.vue';
 import { ElMessage } from 'element-plus'
