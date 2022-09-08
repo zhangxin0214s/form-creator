@@ -1,5 +1,5 @@
-import { resolveComponent, openBlock, createElementBlock, renderSlot, createVNode, withModifiers, createCommentVNode, createBlock, withCtx, mergeProps, createElementVNode, resolveDynamicComponent, watch, normalizeClass, toDisplayString, getCurrentScope, onScopeDispose, ref, unref, warn, getCurrentInstance, provide, computed, inject, defineComponent, Transition, withDirectives, vShow, shallowReactive, onMounted, normalizeStyle, Fragment, isVNode, render, renderList } from "vue";
-var containerMask_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-28db24c4]{color:#409eff}.background-opacity[data-v-28db24c4]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-28db24c4]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-28db24c4]{margin-top:8px}.el-form-item--medium .el-radio[data-v-28db24c4]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-28db24c4]{margin-top:8px}.el-form-item--small .el-radio[data-v-28db24c4]{line-height:32px!important}.el-form-item--small .el-rate[data-v-28db24c4]{margin-top:6px}.el-form-item--mini .el-radio[data-v-28db24c4]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-28db24c4]{margin-top:4px}.el-card[data-v-28db24c4]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-28db24c4]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-28db24c4],.auto-full-width.el-date-editor.el-input__inner[data-v-28db24c4]{width:100%!important}[data-v-28db24c4]::-webkit-scrollbar{width:8px;height:8px}[data-v-28db24c4]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-28db24c4]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-28db24c4]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-28db24c4]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.container-mask[data-v-28db24c4]{position:relative;margin-bottom:2px}.container-mask-title[data-v-28db24c4]{position:absolute;top:-2px;left:-2px;height:22px;line-height:22px;background:#409EFF;z-index:9}.container-mask-title .text[data-v-28db24c4]{font-size:14px;font-style:normal;color:#fff;margin:4px;cursor:move}.container-mask-action[data-v-28db24c4]{position:absolute;bottom:0;right:-2px;height:23px;line-height:28px;background:#409EFF;z-index:999}.copyIcon[data-v-28db24c4]:hover,.deleteIcon[data-v-28db24c4]:hover{cursor:pointer}\n')();
+import { resolveComponent, openBlock, createElementBlock, renderSlot, createVNode, withModifiers, createCommentVNode, createBlock, withCtx, mergeProps, createElementVNode, resolveDynamicComponent, createTextVNode, watch, normalizeClass, toDisplayString, getCurrentScope, onScopeDispose, ref, unref, warn, getCurrentInstance, provide, computed, inject, defineComponent, Transition, withDirectives, vShow, shallowReactive, onMounted, normalizeStyle, Fragment, isVNode, render, renderList } from "vue";
+var containerMask_vue_vue_type_style_index_0_scoped_true_lang = "";
 var _export_sfc$1 = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -7,7 +7,7 @@ var _export_sfc$1 = (sfc, props) => {
   }
   return target;
 };
-const _hoisted_1$4 = { class: "container-mask" };
+const _hoisted_1$5 = { class: "container-mask" };
 const _hoisted_2$1 = {
   key: 0,
   class: "container-mask-action"
@@ -45,7 +45,7 @@ const _sfc_main$7 = {
     return (_ctx, _cache) => {
       var _a2, _b;
       const _component_svg_icon = resolveComponent("svg-icon");
-      return openBlock(), createElementBlock("div", _hoisted_1$4, [
+      return openBlock(), createElementBlock("div", _hoisted_1$5, [
         renderSlot(_ctx.$slots, "default", {}, void 0, true),
         ((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? (openBlock(), createElementBlock("div", _hoisted_2$1, [
           createVNode(_component_svg_icon, {
@@ -64,19 +64,47 @@ const _sfc_main$7 = {
   }
 };
 var containerMask = /* @__PURE__ */ _export_sfc$1(_sfc_main$7, [["__scopeId", "data-v-28db24c4"]]);
-var content_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-05f595ee]{color:#409eff}.background-opacity[data-v-05f595ee]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-05f595ee]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-05f595ee]{margin-top:8px}.el-form-item--medium .el-radio[data-v-05f595ee]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-05f595ee]{margin-top:8px}.el-form-item--small .el-radio[data-v-05f595ee]{line-height:32px!important}.el-form-item--small .el-rate[data-v-05f595ee]{margin-top:6px}.el-form-item--mini .el-radio[data-v-05f595ee]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-05f595ee]{margin-top:4px}.el-card[data-v-05f595ee]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-05f595ee]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-05f595ee],.auto-full-width.el-date-editor.el-input__inner[data-v-05f595ee]{width:100%!important}[data-v-05f595ee]::-webkit-scrollbar{width:8px;height:8px}[data-v-05f595ee]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-05f595ee]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-05f595ee]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-05f595ee]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-content1[data-v-05f595ee]{min-height:34px}\n')();
+var content_vue_vue_type_style_index_0_scoped_true_lang = "";
+const _hoisted_1$4 = /* @__PURE__ */ createTextVNode(" > ");
 const _sfc_main$6 = {
   __name: "content",
   props: [
     "widgetList",
     "widget",
     "propKey",
-    "ruleForm"
+    "ruleForm",
+    "selectedWidget",
+    "isEditor"
   ],
-  setup(__props) {
+  emits: ["selected", "copyWidget", "removeWidget", "onEnd"],
+  setup(__props, { emit }) {
     const props = __props;
     const componentMap = {
       ...eleComponents
+    };
+    const onEnd = () => {
+      emit("onEnd");
+    };
+    const selected = (element) => {
+      emit("selected", element);
+    };
+    const copyWidget = (element) => {
+      emit("copyWidget", element);
+    };
+    const removeWidget = (widget, parentWidget) => {
+      emit("removeWidget", widget, parentWidget);
+    };
+    const submitForm = async () => {
+      if (!props.ruleFormRef)
+        return;
+      await props.ruleFormRef.validate((valid, fields) => {
+        console.log(valid, "===valid===");
+        if (valid) {
+          console.log("submit!");
+        } else {
+          console.log("error submit!", fields);
+        }
+      });
     };
     const getPropKey = (element, index) => {
       if (props.propKey) {
@@ -97,12 +125,13 @@ const _sfc_main$6 = {
             "item-key": "id"
           }, { group: "dragGroup", ghostClass: "ghost", animation: 300 }, {
             tag: "transition-group",
-            "component-data": { name: "fade" }
+            "component-data": { name: "fade" },
+            onAdd: onEnd
           }), {
             item: withCtx(({ element, index }) => [
               createElementVNode("div", {
                 class: "transition-group-el",
-                onClick: _cache[0] || (_cache[0] = ($event) => _ctx.selected(__props.widget))
+                onClick: _cache[0] || (_cache[0] = ($event) => selected(__props.widget))
               }, [
                 (openBlock(), createBlock(resolveDynamicComponent(componentMap[element.type]), {
                   key: element.id,
@@ -110,8 +139,19 @@ const _sfc_main$6 = {
                   "parent-widget": __props.widgetList,
                   parent: __props.widget,
                   "rule-form": __props.ruleForm,
-                  "prop-key": getPropKey(element)
-                }, null, 8, ["widget", "parent-widget", "parent", "rule-form", "prop-key"]))
+                  "prop-key": getPropKey(element),
+                  "selected-widget": __props.selectedWidget,
+                  "is-editor": __props.isEditor,
+                  onCopyWidget: ($event) => copyWidget(element),
+                  onRemoveWidget: ($event) => removeWidget(element, __props.widgetList),
+                  onClick: withModifiers(($event) => selected(element), ["stop"]),
+                  onSubmitForm: submitForm
+                }, {
+                  default: withCtx(() => [
+                    _hoisted_1$4
+                  ]),
+                  _: 2
+                }, 1064, ["widget", "parent-widget", "parent", "rule-form", "prop-key", "selected-widget", "is-editor", "onCopyWidget", "onRemoveWidget", "onClick"]))
               ])
             ]),
             _: 1
@@ -122,11 +162,11 @@ const _sfc_main$6 = {
     };
   }
 };
-var cardContent = /* @__PURE__ */ _export_sfc$1(_sfc_main$6, [["__scopeId", "data-v-05f595ee"]]);
-var index_vue_vue_type_style_index_0_scoped_true_lang$1 = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-62239f8a]{color:#409eff}.background-opacity[data-v-62239f8a]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-62239f8a]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-62239f8a]{margin-top:8px}.el-form-item--medium .el-radio[data-v-62239f8a]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-62239f8a]{margin-top:8px}.el-form-item--small .el-radio[data-v-62239f8a]{line-height:32px!important}.el-form-item--small .el-rate[data-v-62239f8a]{margin-top:6px}.el-form-item--mini .el-radio[data-v-62239f8a]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-62239f8a]{margin-top:4px}.el-card[data-v-62239f8a]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-62239f8a]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-62239f8a],.auto-full-width.el-date-editor.el-input__inner[data-v-62239f8a]{width:100%!important}[data-v-62239f8a]::-webkit-scrollbar{width:8px;height:8px}[data-v-62239f8a]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-62239f8a]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-62239f8a]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-62239f8a]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.select[data-v-62239f8a]{outline:1px solid #409EFF}\n')();
+var cardContent = /* @__PURE__ */ _export_sfc$1(_sfc_main$6, [["__scopeId", "data-v-2f96beb3"]]);
+var card_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _hoisted_1$3 = { class: "card-header" };
 const _sfc_main$5 = {
-  __name: "index",
+  __name: "card",
   props: [
     "widget",
     "ruleForm",
@@ -136,15 +176,31 @@ const _sfc_main$5 = {
     "selectedWidget",
     "isEditor"
   ],
-  setup(__props) {
+  emits: ["selected1", "copyWidget1", "removeWidget1", "onEnd1"],
+  setup(__props, { emit }) {
     const props = __props;
-    watch(() => props.propKey, (value) => {
-      const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
-      console.log("\u76D1\u542C\u5230\u6570\u636E\u53D8\u5316", ruleFormKey);
-      if (ruleFormKey && !props.ruleForm[ruleFormKey]) {
-        props.ruleForm[ruleFormKey] = {};
+    const selected1 = (element) => {
+      emit("selected1", element);
+    };
+    const copyWidget1 = (element) => {
+      emit("copyWidget1", element);
+    };
+    const removeWidget1 = (widget, parentWidget) => {
+      emit("removeWidget1", widget, parentWidget);
+    };
+    const onEnd1 = () => {
+      emit("onEnd1");
+    };
+    watch(
+      () => props.propKey,
+      (value) => {
+        const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+        console.log("\u76D1\u542C\u5230\u6570\u636E\u53D8\u5316", ruleFormKey);
+        if (ruleFormKey && !props.ruleForm[ruleFormKey]) {
+          props.ruleForm[ruleFormKey] = {};
+        }
       }
-    });
+    );
     return (_ctx, _cache) => {
       const _component_el_card = resolveComponent("el-card");
       return openBlock(), createBlock(containerMask, {
@@ -171,8 +227,14 @@ const _sfc_main$5 = {
                   widgetList: __props.widget.options.advanced.widgetList,
                   "prop-key": __props.propKey,
                   widget: __props.widget,
-                  "rule-form": __props.ruleForm[__props.widget.ruleFormKey] || __props.ruleForm
-                }, null, 8, ["widgetList", "prop-key", "widget", "rule-form"])
+                  "rule-form": __props.ruleForm[__props.widget.ruleFormKey] || __props.ruleForm,
+                  "is-editor": __props.isEditor,
+                  "selected-widget": __props.selectedWidget,
+                  onOnEnd: onEnd1,
+                  onSelected: selected1,
+                  onCopyWidget: copyWidget1,
+                  onRemoveWidget: removeWidget1
+                }, null, 8, ["widgetList", "prop-key", "widget", "rule-form", "is-editor", "selected-widget"])
               ]),
               _: 1
             }, 8, ["class"])
@@ -183,7 +245,7 @@ const _sfc_main$5 = {
     };
   }
 };
-var card$1 = /* @__PURE__ */ _export_sfc$1(_sfc_main$5, [["__scopeId", "data-v-62239f8a"]]);
+var card$1 = /* @__PURE__ */ _export_sfc$1(_sfc_main$5, [["__scopeId", "data-v-f99d0e5c"]]);
 card$1.install = (App) => {
   App.component(card$1.__name, card$1);
 };
@@ -1151,7 +1213,7 @@ function closeAll(type) {
 message.closeAll = closeAll;
 message._context = null;
 const ElMessage = withInstallFunction(message, "$message");
-var gridCol_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-04c4a982]{color:#409eff}.background-opacity[data-v-04c4a982]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-04c4a982]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-04c4a982]{margin-top:8px}.el-form-item--medium .el-radio[data-v-04c4a982]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-04c4a982]{margin-top:8px}.el-form-item--small .el-radio[data-v-04c4a982]{line-height:32px!important}.el-form-item--small .el-rate[data-v-04c4a982]{margin-top:6px}.el-form-item--mini .el-radio[data-v-04c4a982]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-04c4a982]{margin-top:4px}.el-card[data-v-04c4a982]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-04c4a982]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-04c4a982],.auto-full-width.el-date-editor.el-input__inner[data-v-04c4a982]{width:100%!important}[data-v-04c4a982]::-webkit-scrollbar{width:8px;height:8px}[data-v-04c4a982]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-04c4a982]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-04c4a982]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-04c4a982]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-content1[data-v-04c4a982]{border-radius:4px;min-height:36px}.gird-line[data-v-04c4a982]{border:1px dashed #000}\n')();
+var gridCol_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _hoisted_1 = { class: "transition-group-el" };
 const _sfc_main$1 = {
   __name: "grid-col",
@@ -1164,13 +1226,23 @@ const _sfc_main$1 = {
     "selectedWidget",
     "isEditor"
   ],
-  setup(__props) {
+  emits: ["selected", "copyWidget", "removeWidget", "onEnd"],
+  setup(__props, { emit }) {
     const props = __props;
     const componentMap = {
       ...eleComponents
     };
     const onEnd = () => {
-      console.log("\u7ED3\u675F");
+      emit("onEnd");
+    };
+    const selected = (element) => {
+      emit("selected", element);
+    };
+    const copyWidget = (element) => {
+      emit("copyWidget", element);
+    };
+    const removeWidget = (widget, parentWidget) => {
+      emit("removeWidget", widget, parentWidget);
     };
     const submitForm = async () => {
       if (!props.ruleFormRef)
@@ -1210,8 +1282,7 @@ const _sfc_main$1 = {
           }, { group: "dragGroup", ghostClass: "ghost", animation: 300 }, {
             tag: "transition-group",
             "component-data": { name: "fade" },
-            onEnd,
-            sort: __props.isEditor
+            onAdd: onEnd
           }), {
             item: withCtx(({ element, index }) => [
               createElementVNode("div", _hoisted_1, [
@@ -1223,62 +1294,85 @@ const _sfc_main$1 = {
                   "rule-form-ref": __props.ruleFormRef,
                   "rule-form": __props.ruleForm,
                   parent: __props.widget,
+                  "selected-widget": __props.selectedWidget,
+                  "is-editor": __props.isEditor,
+                  hidden: !__props.isEditor && __props.widget.options.basic.isHidden.value,
+                  onCopyWidget: ($event) => copyWidget(element),
+                  onRemoveWidget: ($event) => removeWidget(element, __props.colWidget.widgetList),
+                  onClick: withModifiers(($event) => selected(element), ["stop"]),
                   onSubmitForm: submitForm
-                }, null, 40, ["widget", "prop-key", "parent-widget", "rule-form-ref", "rule-form", "parent"]))
+                }, null, 40, ["widget", "prop-key", "parent-widget", "rule-form-ref", "rule-form", "parent", "selected-widget", "is-editor", "hidden", "onCopyWidget", "onRemoveWidget", "onClick"]))
               ])
             ]),
             _: 1
-          }, 16, ["list", "sort"])
+          }, 16, ["list"])
         ]),
         _: 1
       }, 8, ["span", "class"]);
     };
   }
 };
-var Col = /* @__PURE__ */ _export_sfc$1(_sfc_main$1, [["__scopeId", "data-v-04c4a982"]]);
-var index_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-7b856c50]{color:#409eff}.background-opacity[data-v-7b856c50]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-7b856c50]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-7b856c50]{margin-top:8px}.el-form-item--medium .el-radio[data-v-7b856c50]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-7b856c50]{margin-top:8px}.el-form-item--small .el-radio[data-v-7b856c50]{line-height:32px!important}.el-form-item--small .el-rate[data-v-7b856c50]{margin-top:6px}.el-form-item--mini .el-radio[data-v-7b856c50]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-7b856c50]{margin-top:4px}.el-card[data-v-7b856c50]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-7b856c50]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-7b856c50],.auto-full-width.el-date-editor.el-input__inner[data-v-7b856c50]{width:100%!important}[data-v-7b856c50]::-webkit-scrollbar{width:8px;height:8px}[data-v-7b856c50]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-7b856c50]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-7b856c50]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-7b856c50]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-container[data-v-7b856c50]{padding:1px}.grid-line[data-v-7b856c50]{outline:1px dashed #444}.select[data-v-7b856c50]{outline:1px solid #409EFF}.el-row[data-v-7b856c50]:last-child{margin-bottom:0}.el-col[data-v-7b856c50]{border-radius:4px}.grid-content[data-v-7b856c50]{border-radius:4px;min-height:36px;border:1px dashed #444}\n')();
+var Col = /* @__PURE__ */ _export_sfc$1(_sfc_main$1, [["__scopeId", "data-v-2b70fd09"]]);
+var grid_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main = {
-  __name: "index",
+  __name: "grid",
   props: ["widget", "selectedWidget", "isEditor", "parent", "propKey", "ruleForm", "ruleFormRef"],
-  setup(__props) {
+  emits: ["selected1", "copyWidget1", "removeWidget1", "onEnd1"],
+  setup(__props, { emit }) {
     const props = __props;
-    watch(() => props.propKey, (value) => {
-      var _a2;
-      const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
-      const parentRuleFormKeyType = (_a2 = props.parent) == null ? void 0 : _a2.ruleFormKeyType;
-      const ruleFormKeyType = props.widget.ruleFormKeyType;
-      if (ruleFormKey && !props.ruleForm[ruleFormKey]) {
-        console.log("\u76D1\u542C\u5230\u6570\u636E\u53D8\u5316", ruleFormKey);
-        if (parentRuleFormKeyType === "object" || !parentRuleFormKeyType) {
-          if (ruleFormKeyType === "array") {
-            props.ruleForm[ruleFormKey] = [];
-          } else {
-            props.ruleForm[ruleFormKey] = {};
+    watch(
+      () => props.propKey,
+      (value) => {
+        var _a2;
+        const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+        const parentRuleFormKeyType = (_a2 = props.parent) == null ? void 0 : _a2.ruleFormKeyType;
+        const ruleFormKeyType = props.widget.ruleFormKeyType;
+        if (ruleFormKey && !props.ruleForm[ruleFormKey]) {
+          console.log("\u76D1\u542C\u5230\u6570\u636E\u53D8\u5316", ruleFormKey);
+          if (parentRuleFormKeyType === "object" || !parentRuleFormKeyType) {
+            if (ruleFormKeyType === "array") {
+              props.ruleForm[ruleFormKey] = [];
+            } else {
+              props.ruleForm[ruleFormKey] = {};
+            }
           }
-        }
-        if (parentRuleFormKeyType === "array") {
-          if (ruleFormKeyType === "array") {
-            ElMessage({
-              message: "\u7236\u7EA7\u5BB9\u5668\u662F\u6570\u7EC4\u7ED3\u6784\uFF0C\u8BE5\u5143\u7D20\u53EA\u652F\u6301\u8BBE\u7F6E\u5BF9\u8C61\u7ED3\u6784",
-              type: "error",
-              duration: 1500
-            });
-          } else {
-            const isExist = props.ruleForm.some((rule) => {
-              Object.keys(rule).indexOf(ruleFormKey) > -1;
-            });
-            if (!isExist) {
-              props.ruleForm.push({
-                [ruleFormKey]: props.widget.value
+          if (parentRuleFormKeyType === "array") {
+            if (ruleFormKeyType === "array") {
+              ElMessage({
+                message: "\u7236\u7EA7\u5BB9\u5668\u662F\u6570\u7EC4\u7ED3\u6784\uFF0C\u8BE5\u5143\u7D20\u53EA\u652F\u6301\u8BBE\u7F6E\u5BF9\u8C61\u7ED3\u6784",
+                type: "error",
+                duration: 1500
               });
+            } else {
+              const isExist = props.ruleForm.some((rule) => {
+                Object.keys(rule).indexOf(ruleFormKey) > -1;
+              });
+              if (!isExist) {
+                props.ruleForm.push({
+                  [ruleFormKey]: props.widget.value
+                });
+              }
             }
           }
         }
+      },
+      {
+        deep: true,
+        immediate: true
       }
-    }, {
-      deep: true,
-      immediate: true
-    });
+    );
+    const selected1 = (element) => {
+      emit("selected1", element);
+    };
+    const copyWidget1 = (element) => {
+      emit("copyWidget1", element);
+    };
+    const removeWidget1 = (widget, parentWidget) => {
+      emit("removeWidget1", widget, parentWidget);
+    };
+    const onEnd1 = () => {
+      emit("onEnd1");
+    };
     return (_ctx, _cache) => {
       const _component_el_row = resolveComponent("el-row");
       return openBlock(), createBlock(containerMask, {
@@ -1296,7 +1390,9 @@ const _sfc_main = {
               class: normalizeClass(["grid-container", [
                 ((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""
               ]]),
-              style: normalizeStyle(`background-color:${__props.widget.options.basic.rowBackground.value}`)
+              style: normalizeStyle(
+                `background-color:${__props.widget.options.basic.rowBackground.value}`
+              )
             }, {
               default: withCtx(() => [
                 (openBlock(true), createElementBlock(Fragment, null, renderList(__props.widget.options.advanced.cols, (colWidget, colIdx) => {
@@ -1310,6 +1406,10 @@ const _sfc_main = {
                     "selected-widget": __props.selectedWidget,
                     "rule-form": __props.ruleForm[__props.widget.ruleFormKey] || __props.ruleForm,
                     "rule-form-key-type": __props.widget.ruleFormKeyType,
+                    onOnEnd: onEnd1,
+                    onSelected: selected1,
+                    onCopyWidget: copyWidget1,
+                    onRemoveWidget: removeWidget1,
                     style: normalizeStyle(`height:${__props.widget.options.basic.colHeight.value}px;`)
                   }, null, 8, ["colWidget", "widget", "prop-key", "rule-form-ref", "is-editor", "selected-widget", "rule-form", "rule-form-key-type", "style"]);
                 }), 128))
@@ -1323,12 +1423,18 @@ const _sfc_main = {
     };
   }
 };
-var grid = /* @__PURE__ */ _export_sfc$1(_sfc_main, [["__scopeId", "data-v-7b856c50"]]);
+var grid = /* @__PURE__ */ _export_sfc$1(_sfc_main, [["__scopeId", "data-v-4425d943"]]);
 grid.install = (App) => {
   App.component(card.__name, grid);
 };
-var eleComponents = {
-  card: card$1,
+const components = [
+  card$1,
   grid
+];
+const install = (App) => {
+  components.forEach((item) => {
+    App.component(item.__name, item);
+  });
 };
-export { eleComponents as default };
+var eleComponents = { install };
+export { card$1 as card, eleComponents as default, grid };

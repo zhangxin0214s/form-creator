@@ -1,9 +1,11 @@
 import { createApp } from "vue"
 import ElementPlus from "element-plus"
-import fcElementPlus from 'fc-element-plus'
+import fcElementPlus from '../../render/element-plus/lib/fc-element-plus.es'
+import "../../render/element-plus/lib/style.css"
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { createPinia } from 'pinia'
 import "element-plus/dist/index.css"
+
 import {documentEventBind} from '@/config/keyEvent/keyEventBind.js';
 import  Draggable  from "@/../lib/vuedraggable/dist/vuedraggable.umd.js"
 import SvgIcon from "@/components/svg-icon"

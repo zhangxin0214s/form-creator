@@ -32,7 +32,7 @@
           <template #item="{ element: widget }">
             <div class="transition-group-el">
               <component
-                  :is="componentMap[widget.type]"
+                  :is="widget.type"
                   :key="widget.id"
                   :widget="widget"
                   :parent-widget="widgetList"
@@ -68,10 +68,6 @@ import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 import FormInstance from 'element-plus';
 import { reactive, ref } from 'vue'
-import fcElmentPlus from '../../../../../render/element-plus/packages'
-const componentMap = {
-	...fcElmentPlus
-};
 
 const _widgetStore = widgetStore();
 const {widgetList, formConfig, isEditor, selectedWidget} = storeToRefs(_widgetStore);

@@ -1,4 +1,4 @@
-import grid from './src/index.vue';
+import grid from './src/grid.vue';
 
 grid.install = (App) => {
 	App.component(card.__name, grid);

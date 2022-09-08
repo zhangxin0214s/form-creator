@@ -1,10 +1,13 @@
 import card from './card';
 import grid from './grid'
 
-const components = [card];
+const components = [
+	card,
+	grid
+];
 
 //按需引入
-export default { 
+export  { 
 	card,
 	grid
  };
@@ -16,4 +19,4 @@ const install = (App) => {
 	});
 };
 
-// export default { install };
+export default { install };

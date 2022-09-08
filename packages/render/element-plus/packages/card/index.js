@@ -1,4 +1,5 @@
-import card from './src/index.vue';
+import card from './src/card.vue';
+
 
 card.install = (App) => {
 	App.component(card.__name, card);

@@ -29,6 +29,10 @@
 					:selected-widget="selectedWidget"
 					:rule-form="ruleForm[widget.ruleFormKey] || ruleForm"
 					:rule-form-key-type="widget.ruleFormKeyType"
+					@onEnd="onEnd1"
+					@selected="selected1"
+					@copyWidget="copyWidget1"
+                  	@removeWidget="removeWidget1"
 					:style="`height:${widget.options.basic.colHeight.value}px;`"
 				>
 				</Col>
@@ -84,6 +88,21 @@ watch(
 	}
 )
 
+const emit = defineEmits(['selected1','copyWidget1','removeWidget1','onEnd1']);
+const selected1 = (element) =>{
+	emit('selected1',element)
+}
+const copyWidget1 = (element) =>{
+    emit('copyWidget1',element)
+}
+
+const removeWidget1 = (widget, parentWidget) =>{
+	emit('removeWidget1',widget, parentWidget)
+}
+
+const onEnd1 = () =>{
+	emit('onEnd1')
+}
 </script>
  <style lang="scss" scoped>
 .grid-container {

@@ -6,8 +6,7 @@
         >
             <draggable :list="colWidget.widgetList" item-key="id" v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300}"
                 tag="transition-group" :component-data="{name: 'fade'}"
-                @end="onEnd"
-                :sort="isEditor">
+                @add="onEnd">
                 <template #item="{ element,index }">
                     <div class="transition-group-el">
                         <component
@@ -19,6 +18,12 @@
                             :rule-form-ref= "ruleFormRef"
                             :rule-form= "ruleForm"
                             :parent = "widget"
+                            :selected-widget="selectedWidget"
+                            :is-editor="isEditor"
+                            :hidden="!isEditor && widget.options.basic.isHidden.value"
+                            @copyWidget="copyWidget(element)"
+                            @removeWidget="removeWidget(element,colWidget.widgetList)"
+                            @click.stop="selected(element)"                         
                             @submitForm= "submitForm">
                         </component>
                     </div>
@@ -43,10 +48,24 @@
         ...eleComponents
     }
 
+    
+    const emit = defineEmits(['selected','copyWidget','removeWidget','onEnd']);
+
     const onEnd = () =>{
-        console.log("结束")
+        emit('onEnd')
+    }
+    
+    const selected = (element) =>{
+        emit('selected',element)
     }
 
+    const copyWidget = (element) =>{
+        emit('copyWidget',element)
+    }
+
+    const removeWidget = (widget, parentWidget) =>{
+        emit('removeWidget',widget, parentWidget)
+    }
     const submitForm = async () =>{
         if (!props.ruleFormRef) return
         await props.ruleFormRef.validate((valid, fields) => {
