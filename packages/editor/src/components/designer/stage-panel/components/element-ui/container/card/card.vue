@@ -16,6 +16,10 @@
         :prop-key="propKey"
         :widget="widget"
         :rule-form="ruleForm[widget.ruleFormKey] || ruleForm"
+        @onEnd="onEnd1"
+        @selected="selected1"
+        @copyWidget="copyWidget1"
+        @removeWidget="removeWidget1"
       >
     </card-content>
     </el-card>
@@ -35,6 +39,21 @@
     'selectedWidget',
     'isEditor'
   ])
+  const emit = defineEmits(['selected1','copyWidget1','removeWidget1','onEnd1']);
+  const selected1 = (element) =>{
+    emit('selected1',element)
+  }
+  const copyWidget1 = (element) =>{
+      emit('copyWidget1',element)
+  }
+
+  const removeWidget1 = (widget, parentWidget) =>{
+    emit('removeWidget1',widget, parentWidget)
+  }
+
+  const onEnd1 = () =>{
+    emit('onEnd1')
+  }
   watch(
     () => props.propKey,
     (value) => {

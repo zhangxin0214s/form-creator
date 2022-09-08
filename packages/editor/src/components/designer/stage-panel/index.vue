@@ -45,6 +45,11 @@
                   :hidden="!isEditor && widget.options.basic.isHidden.value"
                   @copyWidget="copyWidget"
                   @removeWidget="removeWidget"
+                  
+                  @onEnd1="onEnd"
+                  @copyWidget1="copyWidget"
+                  @removeWidget1="removeWidget"
+                  @selected1="selected"
                   @click.stop="selected(widget)"
                   @submitForm="submitForm">
               </component>
@@ -92,7 +97,8 @@ const selected = (widgetData) => {
 /**
  * 拖拽结束
  */
-const onEnd = (origin) => {
+const onEnd = () => {
+  console.log("结束")
   _widgetStore.selectedWidget = _widgetStore.cloneWidget;
   _widgetStore.recordHistory();
 }

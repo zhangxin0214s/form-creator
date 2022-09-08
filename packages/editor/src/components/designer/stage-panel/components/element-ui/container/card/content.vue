@@ -1,7 +1,9 @@
 <template>
     <el-col class="grid-content1 ep-bg-purple">
         <draggable :list="widgetList" item-key="id" v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300}"
-            tag="transition-group" :component-data="{name: 'fade'}">
+            tag="transition-group" 
+            :component-data="{name: 'fade'}"
+            @add="onEnd">
             <template #item="{ element,index }">
                 <div class="transition-group-el" @click="selected(widget)">
                     <component 
@@ -12,6 +14,10 @@
                         :parent="widget"
                         :rule-form= "ruleForm"
                         :prop-key = "getPropKey(element,index)"
+                        @copyWidget="copyWidget(element)"
+                        @removeWidget="removeWidget(element,widgetList)"
+                        @click.stop="selected(element)"                         
+                        @submitForm= "submitForm">
                     >
                     </component>
                 </div>
@@ -29,6 +35,35 @@
     ])
     const componentMap = {
         ...eleComponents
+    }
+
+    const emit = defineEmits(['selected','copyWidget','removeWidget','onEnd']);
+
+    const onEnd = () =>{
+        emit('onEnd')
+    }
+    
+    const selected = (element) =>{
+        emit('selected',element)
+    }
+
+    const copyWidget = (element) =>{
+        emit('copyWidget',element)
+    }
+
+    const removeWidget = (widget, parentWidget) =>{
+        emit('removeWidget',widget, parentWidget)
+    }
+    const submitForm = async () =>{
+        if (!props.ruleFormRef) return
+        await props.ruleFormRef.validate((valid, fields) => {
+            console.log(valid,"===valid===")
+            if (valid) {
+            console.log('submit!')
+            } else {
+            console.log('error submit!', fields)
+            }
+        })
     }
     const getPropKey = (element,index) =>{
         if(props.propKey) {

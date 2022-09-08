@@ -1,8 +1,8 @@
 <template>
     <el-col class="grid-content1 ep-bg-purple">
         <draggable :list="colWidget.widgetList" item-key="id" v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300}"
-            tag="transition-group" :component-data="{name: 'fade'}">
-            <template #item="{ element,index }">
+            tag="transition-group" :component-data="{name: 'fade'}" @add="onEnd">
+            <template #item="{ element }">
                 <div class="transition-group-el">
                     <component 
                         :is="componentMap[element.type]" 
@@ -12,7 +12,12 @@
                         :parent="widget"
                         :prop-key = "getPropKey(element,colIdx)"
                         :rule-form = "ruleForm[colIdx]"
-                    >
+                        :selected-widget="selectedWidget"
+                        :is-editor="isEditor"
+                        @copyWidget="copyWidget(element)"
+                        @removeWidget="removeWidget(element,colWidget.widgetList)"
+                        @click.stop="selected(element)" 
+                >
                     </component>
                 </div>
             </template>
@@ -26,7 +31,9 @@
         'ruleForm',
         'widget',
         'propKey',
-        'colIdx'
+        'colIdx',
+        'isEditor',
+        'selectedWidget'
     ])
     const componentMap = {
         ...eleComponents
@@ -38,6 +45,23 @@
         }else{
             return `${element.ruleFormKey}`
         }
+    }
+    const emit = defineEmits(['selected','copyWidget','removeWidget','onEnd']);
+
+    const onEnd = () =>{
+        emit('onEnd')
+    }
+
+    const selected = (element) =>{
+        emit('selected',element)
+    }
+
+    const copyWidget = (element) =>{
+        emit('copyWidget',element)
+    }
+
+    const removeWidget = (widget, parentWidget) =>{
+        emit('removeWidget',widget, parentWidget)
     }
 </script>
  <style lang="scss" scoped>
