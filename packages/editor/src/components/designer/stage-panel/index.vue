@@ -51,7 +51,6 @@
 					</template>
 				</draggable>
 			</el-form>
-
 		</div>
   </div>
 </template>
@@ -62,18 +61,11 @@ import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 import FormInstance  from 'element-plus';
 import { reactive, ref } from 'vue'
+import fcElmentPlus from '../../../../../render/element-plus/packages'
 const componentMap = {
-	...eleComponents
+	...fcElmentPlus
 };
-const testdata = reactive({
-	name:''
-})
 
-const rules = ref({
-	name: [
-		 { required: true, message: 'Please input Activity name', trigger: 'blur' }
-	]
-})
 const _widgetStore = widgetStore();
 const { widgetList,formConfig,isEditor,selectedWidget } = storeToRefs(_widgetStore);
 

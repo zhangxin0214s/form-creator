@@ -21,7 +21,7 @@
       </el-card>
     </container-mask>
   </template>
-  <script setup>
+  <script setup name="card">
     import containerMask from "../../common/containerMask.vue"
     import cardContent from "./content.vue"
     import { watch } from 'vue'
