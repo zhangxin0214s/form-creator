@@ -22,72 +22,440 @@
       "label": "标签宽度",
       "value": ""
     },
-    "rules": {
-      "name": [
-        {
-          "required": true,
-          "message": "请输入机构名称",
-          "trigger": "change"
-        }
-      ],
-      "location": [
-        {
-          "required": true,
-          "message": "请选择注册地址",
-          "trigger": "change"
-        }
-      ],
-      "teamType": [
-        {
-          "required": true,
-          "message": "请选择合作类型",
-          "trigger": "change"
-        }
-      ],
-      "originType": [
-        {
-          "required": true,
-          "message": "请选择机构类型",
-          "trigger": "change"
-        }
-      ],
-      "code": [
-        {
-          "required": true,
-          "message": " 请输入内容 请输入统一社会信用代码",
-          "trigger": "change"
-        }
-      ],
-      "person": [
-        {
-          "required": true,
-          "message": "请输入联系人",
-          "trigger": "change"
-        }
-      ],
-      "phoneNumber": [
-        {
-          "required": true,
-          "message": "请输入联系人电话",
-          "trigger": "change"
-        }
-      ]
-    },
+    "rules": {},
     "ruleForm": {
-      "name": null,
-      "detail": null,
-      "code": null,
-      "person": null
+      "titleGrid": {},
+      "name": "BlueSky",
+      "location": [
+        "110000",
+        "110100",
+        "110101"
+      ],
+      "detail": "1-2-3-4",
+      "teamType": [
+        "1"
+      ],
+      "groupType": [
+        "2"
+      ],
+      "code": "ancdeftghff",
+      "linkman": "Jam",
+      "phoneNumber": "86-18611748482",
+      "teamGroup": [
+        "2"
+      ],
+      "teamGroupID": "222"
     }
   },
   "widgetList": [
     {
-      "id": "90bddbaca7e2434888ea0920782b8173",
+      "id": "33d2f38e0a2d44819c7b8182921f6195",
+      "name": "栅格",
+      "type": "grid",
+      "category": "container",
+      "icon": "lattice",
+      "value": null,
+      "ruleFormKey": "titleGrid",
+      "ruleFormKeyType": "object",
+      "options": {
+        "basic": {
+          "name": {
+            "label": "唯一名称",
+            "value": "栅格1"
+          },
+          "colHeight": {
+            "label": "统一高度",
+            "value": 36
+          },
+          "rowBackground": {
+            "label": "背景颜色",
+            "value": "#FFFFFF"
+          },
+          "ruleFormKey": {
+            "label": "参数key",
+            "value": "titleGrid"
+          },
+          "isHidden": {
+            "label": "隐藏组件",
+            "value": false
+          },
+          "ruleFormKeyType": {
+            "label": "参数类型",
+            "value": "object",
+            "options": [
+              {
+                "label": "对象",
+                "value": "object"
+              },
+              {
+                "label": "数组",
+                "value": "array"
+              }
+            ]
+          },
+          "isMoveDivider": {
+            "label": "是否上下移动",
+            "value": false
+          },
+          "moveDistance": {
+            "label": "移动距离",
+            "value": 0
+          }
+        },
+        "advanced": {
+          "cols": [
+            {
+              "id": 1,
+              "gutter": 12,
+              "widgetList": [
+                {
+                  "id": "3c7216447f8547009c57f3f7e992df06",
+                  "name": "静态文本",
+                  "type": "staticText",
+                  "category": "widget",
+                  "icon": "staticText",
+                  "options": {
+                    "basic": {
+                      "name": {
+                        "label": "唯一名称",
+                        "value": "静态文本"
+                      },
+                      "label": {
+                        "label": "",
+                        "value": ""
+                      },
+                      "textareaDefaultValue": {
+                        "label": "默认文本",
+                        "value": "机构信息"
+                      },
+                      "static-text-line-height": {
+                        "label": "行高",
+                        "value": 3
+                      },
+                      "isHidden": {
+                        "label": "隐藏组件",
+                        "value": false
+                      },
+                      "font-size": {
+                        "label": "字体大小",
+                        "value": 12
+                      },
+                      "font-color": {
+                        "label": "字体颜色",
+                        "value": "#000000"
+                      },
+                      "font-style": {
+                        "label": "字体样式",
+                        "options": [
+                          {
+                            "label": "加粗",
+                            "value": true
+                          },
+                          {
+                            "label": "斜体",
+                            "value": false
+                          },
+                          {
+                            "label": "下划线",
+                            "value": false
+                          }
+                        ]
+                      },
+                      "alignment": {
+                        "value": "left",
+                        "label": "对齐方式",
+                        "options": [
+                          {
+                            "label": "左对齐",
+                            "value": "left"
+                          },
+                          {
+                            "label": "居中对齐",
+                            "value": "center"
+                          },
+                          {
+                            "label": "右对齐",
+                            "value": "right"
+                          }
+                        ]
+                      },
+                      "addRequired": {
+                        "label": "添加必填符号",
+                        "value": false
+                      }
+                    },
+                    "advanced": {}
+                  }
+                }
+              ]
+            },
+            {
+              "id": 2,
+              "gutter": 8,
+              "widgetList": []
+            },
+            {
+              "id": 2,
+              "gutter": 4,
+              "widgetList": [
+                {
+                  "id": "446c760659894ef6bf64c632713a59c8",
+                  "name": "按钮",
+                  "type": "button",
+                  "category": "widget",
+                  "icon": "button",
+                  "options": {
+                    "basic": {
+                      "name": {
+                        "label": "唯一名称",
+                        "value": "按钮1"
+                      },
+                      "label": {
+                        "label": "标签",
+                        "value": ""
+                      },
+                      "text": {
+                        "label": "按钮名称",
+                        "value": "保存"
+                      },
+                      "btnType": {
+                        "label": "按钮类型",
+                        "options": [
+                          {
+                            "label": "主要按钮",
+                            "value": "primary"
+                          },
+                          {
+                            "label": "成功按钮",
+                            "value": "success"
+                          },
+                          {
+                            "label": "信息按钮",
+                            "value": "info"
+                          },
+                          {
+                            "label": "警告按钮",
+                            "value": "warning"
+                          },
+                          {
+                            "label": "危险按钮",
+                            "value": "danger"
+                          },
+                          {
+                            "label": "文字按钮",
+                            "value": "text"
+                          }
+                        ],
+                        "value": "primary"
+                      },
+                      "btnSize": {
+                        "label": "按钮尺寸",
+                        "options": [
+                          {
+                            "label": "大",
+                            "value": "large"
+                          },
+                          {
+                            "label": "中",
+                            "value": "default"
+                          },
+                          {
+                            "label": "小",
+                            "value": "small"
+                          }
+                        ],
+                        "value": "default"
+                      },
+                      "isHidden": {
+                        "label": "隐藏组件",
+                        "value": false
+                      },
+                      "disabled": {
+                        "label": "是否禁用",
+                        "value": false
+                      },
+                      "plain": {
+                        "label": "是否朴素按钮",
+                        "value": false
+                      },
+                      "space": {
+                        "label": "是否插入空格",
+                        "value": false
+                      }
+                    },
+                    "advanced": {
+                      "value": "Check",
+                      "label": "按钮图标",
+                      "btnIcon": [
+                        {
+                          "label": "确定",
+                          "value": "Check"
+                        },
+                        {
+                          "label": "删除",
+                          "value": "Delete"
+                        },
+                        {
+                          "label": "搜索",
+                          "value": "Search"
+                        },
+                        {
+                          "label": "上传",
+                          "value": "Upload"
+                        },
+                        {
+                          "label": "下载",
+                          "value": "Download"
+                        },
+                        {
+                          "label": "编辑",
+                          "value": "Edit"
+                        },
+                        {
+                          "label": "分享",
+                          "value": "Share"
+                        },
+                        {
+                          "label": "加号",
+                          "value": "Plus"
+                        },
+                        {
+                          "label": "减号",
+                          "value": "Minus"
+                        }
+                      ],
+                      "btnRound": {
+                        "label": "是否为圆角按钮",
+                        "value": false
+                      },
+                      "btnCircle": {
+                        "label": "是否为圆形按钮",
+                        "value": false
+                      }
+                    },
+                    "events": {
+                      "onBeforeMount": {
+                        "label": "渲染前",
+                        "value": ""
+                      },
+                      "onMounted": {
+                        "label": "渲染完成",
+                        "value": ""
+                      },
+                      "onClick": {
+                        "label": "点击事件",
+                        "value": "if (!props.ruleFormRef) return\nprops.ruleFormRef.validate((valid, fields) => {\n  console.log(valid, \"===valid===\")\n  if (valid) {\n    console.log('submit!')\n    ElMessage({\n      message: '提交成功',\n      type: 'success',\n      duration: 1000\n    })\n  } else {\n    console.log('error submit!', fields)\n    ElMessage({\n      message: '有必填项未填写，或填写错误，请检查',\n      type: 'error',\n      duration: 1000\n    })\n  }\n})"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "a0b75cc1e297449989cf49a6c85695a4",
+      "name": "分割线",
+      "type": "divider",
+      "category": "widget",
+      "icon": "split",
+      "options": {
+        "basic": {
+          "name": {
+            "label": "唯一名称",
+            "value": "分割线"
+          },
+          "label": {
+            "label": "",
+            "value": ""
+          },
+          "divider-content": {
+            "label": "内容",
+            "value": ""
+          },
+          "divider-direction": {
+            "label": "方向",
+            "options": [
+              {
+                "label": "横向分割线",
+                "value": "horizontal"
+              },
+              {
+                "label": "纵向分割线",
+                "value": "vertical"
+              }
+            ],
+            "value": "horizontal"
+          },
+          "divider-style": {
+            "label": "样式",
+            "options": [
+              {
+                "label": "实线",
+                "value": "solid"
+              },
+              {
+                "label": "方格虚线",
+                "value": "dashed"
+              },
+              {
+                "label": "圆点虚线",
+                "value": "dotted"
+              }
+            ],
+            "value": "solid"
+          },
+          "divider-position": {
+            "label": "内容位置",
+            "options": [
+              {
+                "label": "居左",
+                "value": "left"
+              },
+              {
+                "label": "居中",
+                "value": "center"
+              },
+              {
+                "label": "居右",
+                "value": "right"
+              }
+            ],
+            "value": "center"
+          },
+          "isHidden": {
+            "label": "隐藏组件",
+            "value": false
+          },
+          "isMoveDivider": {
+            "label": "是否上下移动",
+            "value": false
+          },
+          "moveDistance": {
+            "label": "移动距离",
+            "value": 0
+          }
+        },
+        "advanced": {}
+      }
+    },
+    {
+      "id": "6d8964c6dd6e4484a4f132f880e774b9",
       "name": "输入框",
       "type": "input",
       "category": "widget",
       "icon": "input",
-      "value": null,
+      "value": "BlueSky",
+      "ruleFormKey": "name",
+      "rules": [
+        {
+          "required": true,
+          "message": "请输入机构名称",
+          "trigger": "blur"
+        }
+      ],
       "options": {
         "basic": {
           "name": {
@@ -123,6 +491,10 @@
           "ruleFormKey": {
             "label": "参数key",
             "value": "name"
+          },
+          "isHidden": {
+            "label": "隐藏组件",
+            "value": false
           },
           "required": {
             "label": "是否必填",
@@ -174,16 +546,85 @@
           "customWrongMessage": {
             "label": "校验错误提示",
             "value": ""
+          },
+          "linkage": {
+            "label": "联动对象",
+            "options": [
+              {
+                "label": "栅格-33d2f38e0a2d44819c7b8182921f6195",
+                "value": "33d2f38e0a2d44819c7b8182921f6195"
+              },
+              {
+                "label": "分割线-a0b75cc1e297449989cf49a6c85695a4",
+                "value": "a0b75cc1e297449989cf49a6c85695a4"
+              },
+              {
+                "label": "下拉框-896b4e17ed20483aa68712ca29685841",
+                "value": "896b4e17ed20483aa68712ca29685841"
+              },
+              {
+                "label": "文本域-efd18388f8f2491f8073e1ad2f0f1da0",
+                "value": "efd18388f8f2491f8073e1ad2f0f1da0"
+              },
+              {
+                "label": "下拉框-8cfe3f53f33a48b8be42adbc03b2a5e5",
+                "value": "8cfe3f53f33a48b8be42adbc03b2a5e5"
+              },
+              {
+                "label": "下拉框-f3d6a1d373a7485bbea8b61b729d488f",
+                "value": "f3d6a1d373a7485bbea8b61b729d488f"
+              },
+              {
+                "label": "输入框-b92632c7a15f40d39da77c169c1de08d",
+                "value": "b92632c7a15f40d39da77c169c1de08d"
+              },
+              {
+                "label": "输入框-3839a7f1a5974957ba69fcb2495a045e",
+                "value": "3839a7f1a5974957ba69fcb2495a045e"
+              },
+              {
+                "label": "手机号-a27b5fdffa664d2ba9eecefb786ecf58",
+                "value": "a27b5fdffa664d2ba9eecefb786ecf58"
+              },
+              {
+                "label": "下拉框-46f4471cd38e45488eb14053e4431797",
+                "value": "46f4471cd38e45488eb14053e4431797"
+              },
+              {
+                "label": "输入框-27f8e5de65b8423a996172826467292e",
+                "value": "27f8e5de65b8423a996172826467292e"
+              }
+            ],
+            "value": "请选择"
+          }
+        },
+        "events": {
+          "linkageCode": {
+            "label": "联动代码",
+            "value": "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\n*/ \n//#endregion "
           }
         }
       }
     },
     {
-      "id": "6b35199afc264d09a8f2efc358d7e008",
+      "id": "896b4e17ed20483aa68712ca29685841",
       "name": "下拉框",
       "type": "select",
       "category": "widget",
       "icon": "select",
+      "value": [
+        "110000",
+        "110100",
+        "110101"
+      ],
+      "ruleFormKey": "location",
+      "rules": [
+        {
+          "required": true,
+          "message": "请选择注册地址",
+          "trigger": "blur"
+        }
+      ],
       "options": {
         "basic": {
           "name": {
@@ -192,7 +633,7 @@
           },
           "label": {
             "label": "标签",
-            "value": "注册地址："
+            "value": "注册地址:"
           },
           "defaultValue": {
             "label": "选择提示",
@@ -201,6 +642,10 @@
           "ruleFormKey": {
             "label": "参数key",
             "value": "location"
+          },
+          "isHidden": {
+            "label": "隐藏组件",
+            "value": false
           },
           "required": {
             "label": "是否必填",
@@ -32226,12 +32671,20 @@
       }
     },
     {
-      "id": "788cc0472afb49a3836ee50f49c75440",
+      "id": "efd18388f8f2491f8073e1ad2f0f1da0",
       "name": "文本域",
       "type": "textarea",
       "category": "widget",
       "icon": "textField",
-      "value": null,
+      "value": "1-2-3-4",
+      "ruleFormKey": "detail",
+      "rules": [
+        {
+          "required": true,
+          "message": "请输入详细注册地址",
+          "trigger": "blur"
+        }
+      ],
       "options": {
         "basic": {
           "name": {
@@ -32245,7 +32698,7 @@
           "type": "textarea",
           "defaultValue": {
             "label": "默认文本",
-            "value": "请输入详细注册地址"
+            "value": "请输入文本域内容"
           },
           "maxlength": {
             "label": "最大输入长度",
@@ -32273,10 +32726,14 @@
             "label": "参数key",
             "value": "detail"
           },
+          "isHidden": {
+            "label": "隐藏组件",
+            "value": false
+          },
           "required": {
             "label": "是否必填",
-            "value": false,
-            "message": ""
+            "value": true,
+            "message": "请输入详细注册地址"
           },
           "readonly": {
             "label": "是否只读",
@@ -32328,11 +32785,22 @@
       }
     },
     {
-      "id": "93687b27c46a440e9c926034f6087233",
+      "id": "8cfe3f53f33a48b8be42adbc03b2a5e5",
       "name": "下拉框",
       "type": "select",
       "category": "widget",
       "icon": "select",
+      "value": [
+        "1"
+      ],
+      "ruleFormKey": "teamType",
+      "rules": [
+        {
+          "required": true,
+          "message": "请选择合作类型",
+          "trigger": "blur"
+        }
+      ],
       "options": {
         "basic": {
           "name": {
@@ -32341,7 +32809,7 @@
           },
           "label": {
             "label": "标签",
-            "value": "合作类型："
+            "value": "合作类型:"
           },
           "defaultValue": {
             "label": "选择提示",
@@ -32350,6 +32818,10 @@
           "ruleFormKey": {
             "label": "参数key",
             "value": "teamType"
+          },
+          "isHidden": {
+            "label": "隐藏组件",
+            "value": false
           },
           "required": {
             "label": "是否必填",
@@ -32390,11 +32862,13 @@
               {
                 "id": 0,
                 "label": "sass合作",
+                "value": "1",
                 "data": []
               },
               {
                 "id": 1,
-                "label": "开放平台合作",
+                "label": "开发合作平台",
+                "value": "2",
                 "data": []
               }
             ]
@@ -32403,11 +32877,13 @@
             {
               "id": 0,
               "label": "sass合作",
+              "value": "1",
               "data": []
             },
             {
               "id": 1,
-              "label": "开放平台合作",
+              "label": "开发合作平台",
+              "value": "2",
               "data": []
             }
           ]
@@ -32415,11 +32891,22 @@
       }
     },
     {
-      "id": "7c5615e768be44ad886b7c075b1c42f5",
+      "id": "f3d6a1d373a7485bbea8b61b729d488f",
       "name": "下拉框",
       "type": "select",
       "category": "widget",
       "icon": "select",
+      "value": [
+        "2"
+      ],
+      "ruleFormKey": "groupType",
+      "rules": [
+        {
+          "required": true,
+          "message": "请选择机构类型",
+          "trigger": "blur"
+        }
+      ],
       "options": {
         "basic": {
           "name": {
@@ -32428,7 +32915,7 @@
           },
           "label": {
             "label": "标签",
-            "value": "机构类型："
+            "value": "机构类型:"
           },
           "defaultValue": {
             "label": "选择提示",
@@ -32436,7 +32923,11 @@
           },
           "ruleFormKey": {
             "label": "参数key",
-            "value": "originType"
+            "value": "groupType"
+          },
+          "isHidden": {
+            "label": "隐藏组件",
+            "value": false
           },
           "required": {
             "label": "是否必填",
@@ -32476,17 +32967,14 @@
             "data": [
               {
                 "id": 0,
-                "label": "公立校",
+                "label": "sass合作",
+                "value": "1",
                 "data": []
               },
               {
                 "id": 1,
-                "label": "培训机构",
-                "data": []
-              },
-              {
-                "id": 2,
-                "label": "私立/民办",
+                "label": "开发合作平台",
+                "value": "2",
                 "data": []
               }
             ]
@@ -32495,16 +32983,19 @@
             {
               "id": 0,
               "label": "公立校",
+              "value": "1",
               "data": []
             },
             {
               "id": 1,
               "label": "培训机构",
+              "value": "2",
               "data": []
             },
             {
               "id": 2,
               "label": "私立/民办",
+              "value": "3",
               "data": []
             }
           ]
@@ -32512,12 +33003,20 @@
       }
     },
     {
-      "id": "105ee01c50554534a615491ad0fc381b",
+      "id": "b92632c7a15f40d39da77c169c1de08d",
       "name": "输入框",
       "type": "input",
       "category": "widget",
       "icon": "input",
-      "value": null,
+      "value": "ancdeftghff",
+      "ruleFormKey": "code",
+      "rules": [
+        {
+          "required": true,
+          "message": "请输入统一社会信用代码",
+          "trigger": "blur"
+        }
+      ],
       "options": {
         "basic": {
           "name": {
@@ -32554,10 +33053,14 @@
             "label": "参数key",
             "value": "code"
           },
+          "isHidden": {
+            "label": "隐藏组件",
+            "value": false
+          },
           "required": {
             "label": "是否必填",
             "value": true,
-            "message": " 请输入内容 请输入统一社会信用代码"
+            "message": "请输入统一社会信用代码"
           },
           "readonly": {
             "label": "是否只读",
@@ -32599,22 +33102,87 @@
             ],
             "value": "",
             "customValue": "",
-            "hintText": "注：请先填写参数key，再次选择校验规则，当前选择校验没有生效"
+            "hintText": "注：请先填写参数key，再次选择校验规则，当前选择校验没有生效",
+            "customWrongMessage": "请输入统一社会信用代码"
           },
           "customWrongMessage": {
             "label": "校验错误提示",
             "value": ""
+          },
+          "linkage": {
+            "label": "联动对象",
+            "options": [
+              {
+                "label": "栅格-33d2f38e0a2d44819c7b8182921f6195",
+                "value": "33d2f38e0a2d44819c7b8182921f6195"
+              },
+              {
+                "label": "分割线-a0b75cc1e297449989cf49a6c85695a4",
+                "value": "a0b75cc1e297449989cf49a6c85695a4"
+              },
+              {
+                "label": "输入框-6d8964c6dd6e4484a4f132f880e774b9",
+                "value": "6d8964c6dd6e4484a4f132f880e774b9"
+              },
+              {
+                "label": "下拉框-896b4e17ed20483aa68712ca29685841",
+                "value": "896b4e17ed20483aa68712ca29685841"
+              },
+              {
+                "label": "文本域-efd18388f8f2491f8073e1ad2f0f1da0",
+                "value": "efd18388f8f2491f8073e1ad2f0f1da0"
+              },
+              {
+                "label": "下拉框-8cfe3f53f33a48b8be42adbc03b2a5e5",
+                "value": "8cfe3f53f33a48b8be42adbc03b2a5e5"
+              },
+              {
+                "label": "下拉框-f3d6a1d373a7485bbea8b61b729d488f",
+                "value": "f3d6a1d373a7485bbea8b61b729d488f"
+              },
+              {
+                "label": "输入框-3839a7f1a5974957ba69fcb2495a045e",
+                "value": "3839a7f1a5974957ba69fcb2495a045e"
+              },
+              {
+                "label": "手机号-a27b5fdffa664d2ba9eecefb786ecf58",
+                "value": "a27b5fdffa664d2ba9eecefb786ecf58"
+              },
+              {
+                "label": "下拉框-46f4471cd38e45488eb14053e4431797",
+                "value": "46f4471cd38e45488eb14053e4431797"
+              },
+              {
+                "label": "输入框-27f8e5de65b8423a996172826467292e",
+                "value": "27f8e5de65b8423a996172826467292e"
+              }
+            ],
+            "value": "3839a7f1a5974957ba69fcb2495a045e"
+          }
+        },
+        "events": {
+          "linkageCode": {
+            "label": "联动代码",
+            "value": "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\n*/\n//#endregion \n// if (linkageObject.length !== 15) {\n//     alert(linkageObject);\n// }"
           }
         }
       }
     },
     {
-      "id": "ebc3618fd4c94be98d8ab23c877ea60c",
+      "id": "3839a7f1a5974957ba69fcb2495a045e",
       "name": "输入框",
       "type": "input",
       "category": "widget",
       "icon": "input",
-      "value": null,
+      "value": "Jam",
+      "ruleFormKey": "linkman",
+      "rules": [
+        {
+          "required": true,
+          "message": "请输入联系人",
+          "trigger": "blur"
+        }
+      ],
       "options": {
         "basic": {
           "name": {
@@ -32627,7 +33195,7 @@
           },
           "defaultValue": {
             "label": "默认文本",
-            "value": "请输入输入框内容"
+            "value": "请输入内容"
           },
           "hint": {
             "label": "输入内容提示",
@@ -32649,7 +33217,11 @@
           },
           "ruleFormKey": {
             "label": "参数key",
-            "value": "person"
+            "value": "linkman"
+          },
+          "isHidden": {
+            "label": "隐藏组件",
+            "value": false
           },
           "required": {
             "label": "是否必填",
@@ -32701,16 +33273,85 @@
           "customWrongMessage": {
             "label": "校验错误提示",
             "value": ""
+          },
+          "linkage": {
+            "label": "联动对象",
+            "options": [
+              {
+                "label": "栅格-33d2f38e0a2d44819c7b8182921f6195",
+                "value": "33d2f38e0a2d44819c7b8182921f6195"
+              },
+              {
+                "label": "分割线-a0b75cc1e297449989cf49a6c85695a4",
+                "value": "a0b75cc1e297449989cf49a6c85695a4"
+              },
+              {
+                "label": "输入框-6d8964c6dd6e4484a4f132f880e774b9",
+                "value": "6d8964c6dd6e4484a4f132f880e774b9"
+              },
+              {
+                "label": "下拉框-896b4e17ed20483aa68712ca29685841",
+                "value": "896b4e17ed20483aa68712ca29685841"
+              },
+              {
+                "label": "文本域-efd18388f8f2491f8073e1ad2f0f1da0",
+                "value": "efd18388f8f2491f8073e1ad2f0f1da0"
+              },
+              {
+                "label": "下拉框-8cfe3f53f33a48b8be42adbc03b2a5e5",
+                "value": "8cfe3f53f33a48b8be42adbc03b2a5e5"
+              },
+              {
+                "label": "下拉框-f3d6a1d373a7485bbea8b61b729d488f",
+                "value": "f3d6a1d373a7485bbea8b61b729d488f"
+              },
+              {
+                "label": "输入框-b92632c7a15f40d39da77c169c1de08d",
+                "value": "b92632c7a15f40d39da77c169c1de08d"
+              },
+              {
+                "label": "手机号-a27b5fdffa664d2ba9eecefb786ecf58",
+                "value": "a27b5fdffa664d2ba9eecefb786ecf58"
+              },
+              {
+                "label": "下拉框-46f4471cd38e45488eb14053e4431797",
+                "value": "46f4471cd38e45488eb14053e4431797"
+              },
+              {
+                "label": "输入框-27f8e5de65b8423a996172826467292e",
+                "value": "27f8e5de65b8423a996172826467292e"
+              }
+            ],
+            "value": "请选择"
+          }
+        },
+        "events": {
+          "linkageCode": {
+            "label": "联动代码",
+            "value": "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\n*/\n//#endregion "
           }
         }
       }
     },
     {
-      "id": "536f07814b1c49569e94ef728ca45dc8",
+      "id": "a27b5fdffa664d2ba9eecefb786ecf58",
       "name": "手机号",
       "type": "cellPhone",
       "category": "widget",
       "icon": "cellPhone",
+      "value": "18611748482",
+      "ruleFormKey": "phoneNumber",
+      "rules": [
+        {
+          "required": true,
+          "message": "请输入联系人电话",
+          "trigger": "blur"
+        },
+        {
+          "message": "请填写正确的手机号",
+          "pattern": "^(86|852|853)-1[3456789]\\d{9}$"
+        }
+      ],
       "options": {
         "basic": {
           "name": {
@@ -32750,6 +33391,10 @@
             "label": "参数key",
             "value": "phoneNumber"
           },
+          "isHidden": {
+            "label": "隐藏组件",
+            "value": false
+          },
           "required": {
             "label": "是否必填",
             "value": true,
@@ -32768,11 +33413,16 @@
       }
     },
     {
-      "id": "ce91cefd55164a89a38309378a34444e",
+      "id": "46f4471cd38e45488eb14053e4431797",
       "name": "下拉框",
       "type": "select",
       "category": "widget",
       "icon": "select",
+      "value": [
+        "2"
+      ],
+      "ruleFormKey": "teamGroup",
+      "rules": [],
       "options": {
         "basic": {
           "name": {
@@ -32781,7 +33431,7 @@
           },
           "label": {
             "label": "标签",
-            "value": "合作机构："
+            "value": "合作机构:"
           },
           "defaultValue": {
             "label": "选择提示",
@@ -32789,7 +33439,11 @@
           },
           "ruleFormKey": {
             "label": "参数key",
-            "value": "teamOrigin"
+            "value": "teamGroup"
+          },
+          "isHidden": {
+            "label": "隐藏组件",
+            "value": false
           },
           "required": {
             "label": "是否必填",
@@ -32830,11 +33484,13 @@
               {
                 "id": 0,
                 "label": "默认",
+                "value": "1",
                 "data": []
               },
               {
                 "id": 1,
                 "label": "学习云",
+                "value": "2",
                 "data": []
               }
             ]
@@ -32843,11 +33499,13 @@
             {
               "id": 0,
               "label": "默认",
+              "value": "1",
               "data": []
             },
             {
               "id": 1,
               "label": "学习云",
+              "value": "2",
               "data": []
             }
           ]
@@ -32855,12 +33513,14 @@
       }
     },
     {
-      "id": "3c565c48a2144a7492e9db1ed556bf12",
+      "id": "27f8e5de65b8423a996172826467292e",
       "name": "输入框",
       "type": "input",
       "category": "widget",
       "icon": "input",
-      "value": null,
+      "value": "222",
+      "ruleFormKey": "teamGroupID",
+      "rules": [],
       "options": {
         "basic": {
           "name": {
@@ -32873,7 +33533,7 @@
           },
           "defaultValue": {
             "label": "默认文本",
-            "value": "请输入内容"
+            "value": "请输入输入框内容"
           },
           "hint": {
             "label": "输入内容提示",
@@ -32895,7 +33555,11 @@
           },
           "ruleFormKey": {
             "label": "参数key",
-            "value": ""
+            "value": "teamGroupID"
+          },
+          "isHidden": {
+            "label": "隐藏组件",
+            "value": false
           },
           "required": {
             "label": "是否必填",
@@ -32947,6 +33611,62 @@
           "customWrongMessage": {
             "label": "校验错误提示",
             "value": ""
+          },
+          "linkage": {
+            "label": "联动对象",
+            "options": [
+              {
+                "label": "栅格-33d2f38e0a2d44819c7b8182921f6195",
+                "value": "33d2f38e0a2d44819c7b8182921f6195"
+              },
+              {
+                "label": "分割线-a0b75cc1e297449989cf49a6c85695a4",
+                "value": "a0b75cc1e297449989cf49a6c85695a4"
+              },
+              {
+                "label": "输入框-6d8964c6dd6e4484a4f132f880e774b9",
+                "value": "6d8964c6dd6e4484a4f132f880e774b9"
+              },
+              {
+                "label": "下拉框-896b4e17ed20483aa68712ca29685841",
+                "value": "896b4e17ed20483aa68712ca29685841"
+              },
+              {
+                "label": "文本域-efd18388f8f2491f8073e1ad2f0f1da0",
+                "value": "efd18388f8f2491f8073e1ad2f0f1da0"
+              },
+              {
+                "label": "下拉框-8cfe3f53f33a48b8be42adbc03b2a5e5",
+                "value": "8cfe3f53f33a48b8be42adbc03b2a5e5"
+              },
+              {
+                "label": "下拉框-f3d6a1d373a7485bbea8b61b729d488f",
+                "value": "f3d6a1d373a7485bbea8b61b729d488f"
+              },
+              {
+                "label": "输入框-b92632c7a15f40d39da77c169c1de08d",
+                "value": "b92632c7a15f40d39da77c169c1de08d"
+              },
+              {
+                "label": "输入框-3839a7f1a5974957ba69fcb2495a045e",
+                "value": "3839a7f1a5974957ba69fcb2495a045e"
+              },
+              {
+                "label": "手机号-a27b5fdffa664d2ba9eecefb786ecf58",
+                "value": "a27b5fdffa664d2ba9eecefb786ecf58"
+              },
+              {
+                "label": "下拉框-46f4471cd38e45488eb14053e4431797",
+                "value": "46f4471cd38e45488eb14053e4431797"
+              }
+            ],
+            "value": "请选择"
+          }
+        },
+        "events": {
+          "linkageCode": {
+            "label": "联动代码",
+            "value": "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\n*/ \n//#endregion "
           }
         }
       }
