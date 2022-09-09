@@ -43,7 +43,7 @@ let getOptions = (widget) => {
 		value: widget.id,
 		children: [],
 	};
-	if (widget.name === '栅格') {
+	if (widget.name === '栅格' || widget.name === '标签页') {
 		let temp = getChildren(widget.options.advanced.cols);
 		obj.children.push(...temp);
 	}
@@ -58,7 +58,10 @@ let getChildren = (cols, newChild) => {
 				value: cols[i].widgetList[k].id,
 				children: [],
 			};
-			if (cols[i].widgetList[k].name === '栅格') {
+			if (
+				cols[i].widgetList[k].name === '栅格' ||
+				cols[i].widgetList[k].name === '标签页'
+			) {
 				let temp = getChildren(
 					cols[i].widgetList[k].options.advanced.cols
 				);
@@ -83,18 +86,19 @@ const setLinkageObject = (val) => {
 		unWatch.value = null;
 	}
 	// 获取联动对象
-	let linkageObject = getLinkageObject(val);
-	console.log(linkageObject, 'linkageObject');
+	let { linkageObject, parent } = getLinkageObject(val);
+	console.log(linkageObject, parent, 'linkageObject');
 	// 挂侦听器
 	unWatch.value = watch(linkageObject, () => {
-		changeElement(props.selectedWidget, linkageObject, copyWidget);
+		changeElement(props, linkageObject, copyWidget,parent);
 	});
 };
 let getLinkageObject = (val) => {
 	let findValue = widgetList.value.find((widget) => widget.id === val[0]);
 	if (val.length === 1) {
-		return findValue;
+		return  { linkageObject: findValue, parent: widgetList.value };
 	} else {
+		let parent = findValue;
 		let fun = (cols, val, valIndex) => {
 			let linkageVal = val[valIndex];
 			let tempVal = null;
@@ -105,7 +109,9 @@ let getLinkageObject = (val) => {
 					);
 				}
 			}
-			if (valIndex === val.length - 1) return tempVal;
+			if (valIndex === val.length - 1)
+				return { linkageObject: tempVal, parent: parent };
+			parent = tempVal;
 			return fun(tempVal.options.advanced.cols, val, ++valIndex);
 		};
 		return fun(findValue.options.advanced.cols, val, 1);
@@ -114,8 +120,8 @@ let getLinkageObject = (val) => {
 /**
  * 复制组件
  */
- const copyWidget = (widget) => {
-	_widgetStore.copyWidget(widget);
+const copyWidget = (widget, parent = null,index = parent?.length-1) => {
+	_widgetStore.copyWidget(widget, parent,index);
 };
 </script>
 <style lang="scss" scoped>

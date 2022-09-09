@@ -30,13 +30,13 @@ const props = defineProps(['basicProp', 'key1']);
 const initRuleForm = () =>{
 	if(props.key1 !== 'ruleFormKey') return
 	_widgetStore.selectedWidget.ruleFormKey = props.basicProp[props.key1].value;
-	if(props.basicProp[props.key1].value){
-		// _widgetStore.formConfig.ruleForm[props.basicProp[props.key1].value] = _widgetStore.selectedWidget.value
-	} else {
-    _widgetStore.selectedWidget.options.basic.required.value = false
-    _widgetStore.selectedWidget.options.basic.required.message = ''
+	// if(props.basicProp[props.key1].value){
+	// 	// _widgetStore.formConfig.ruleForm[props.basicProp[props.key1].value] = _widgetStore.selectedWidget.value
+	// } else {
+  //   _widgetStore.selectedWidget.options.basic.required.value = false
+  //   _widgetStore.selectedWidget.options.basic.required.message = ''
 
-  }
+  // }
 }
 </script>
 <style lang="scss" scoped>
