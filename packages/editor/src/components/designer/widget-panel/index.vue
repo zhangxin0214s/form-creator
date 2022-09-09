@@ -107,7 +107,7 @@ const onClone = (origin) => {
 }
 
 const onDragEnd = () => {
-  console.log("结束")
+
 }
 </script>
 <style lang="scss" scoped>

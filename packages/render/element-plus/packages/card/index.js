@@ -1,3 +1,8 @@
-import card from './src/card.vue'
+import card from './src/card.vue';
 
-export default card
+
+card.install = (App) => {
+	App.component(card.__name, card);
+};
+
+export default card;

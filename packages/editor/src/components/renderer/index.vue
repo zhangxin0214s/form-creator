@@ -9,7 +9,7 @@
             >
             <template v-for="(widget, index) in widgetList" :key="index">
                 <component
-                    :is="componentMap[widget.type]"
+                    :is="widget.type"
                     :key1="widget.id"
                     :widget=widget
                     :parent-widget="widgetList"
@@ -25,11 +25,8 @@
     </div>
 </template>
 <script setup>
-    import eleComponents from '@/components/designer/stage-panel/components/element-ui';
     import { ref } from 'vue'
-    const componentMap = {
-        ...eleComponents
-    };
+
     const props = defineProps(['widgetList', 'formConfig']);
     const ruleFormRef = ref(null);
     const submitForm = async () =>{
