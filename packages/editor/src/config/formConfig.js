@@ -1,7 +1,7 @@
 // 表单设置
 export const formConfig = {
 	"label-position": {
-		'value': 'left',
+		'value': 'right',
 		'label': '标签对齐方式:',
 		"options": [
 			{
@@ -20,7 +20,6 @@ export const formConfig = {
 		label: '标签宽度',
 		value: ""
 	},// 标签宽度
-	"rules": {},// 校验规则
 	"ruleForm": {} // 提交数据
 }
 
@@ -309,7 +308,7 @@ export const basicWidgets = [
 	{
 		id: 2,
 		name: "开关",
-		type: "switch",
+		type: "switch1",
 		category: "widget",
 		icon: "switch",
 		value: false,

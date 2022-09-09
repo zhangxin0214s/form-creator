@@ -22,8 +22,7 @@
                 :selected-widget="selectedWidget"
                 :basic-prop="selectedWidget?.options.basic"
                 :advanced-prop="selectedWidget?.options.advanced"
-                :events-prop="selectedWidget?.options.events"
-            >
+                :events-prop="selectedWidget?.options.events">
             </component>
           </div>
         </el-main>
@@ -41,7 +40,6 @@ import * as widget from './property-list/widget/index';
 import * as container from './property-list/container/index';
 import { widgetStore } from '@/store/index';
 import { storeToRefs } from 'pinia';
-import { ref } from 'vue';
 
 const _widgetStore = widgetStore();
 const {selectedWidget, dialogCodeVisible} = storeToRefs(_widgetStore);

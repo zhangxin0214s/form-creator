@@ -1,5 +1,5 @@
-import { resolveComponent, openBlock, createElementBlock, renderSlot, createVNode, withModifiers, createCommentVNode, createBlock, withCtx, mergeProps, createElementVNode, resolveDynamicComponent, createTextVNode, watch, normalizeClass, toDisplayString, getCurrentScope, onScopeDispose, ref, unref, warn, getCurrentInstance, provide, computed, inject, defineComponent, Transition, withDirectives, vShow, shallowReactive, onMounted, normalizeStyle, Fragment, isVNode, render, renderList, isRef, onBeforeMount, pushScopeId, popScopeId } from "vue";
-var containerMask_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-28db24c4]{color:#409eff}.background-opacity[data-v-28db24c4]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-28db24c4]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-28db24c4]{margin-top:8px}.el-form-item--medium .el-radio[data-v-28db24c4]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-28db24c4]{margin-top:8px}.el-form-item--small .el-radio[data-v-28db24c4]{line-height:32px!important}.el-form-item--small .el-rate[data-v-28db24c4]{margin-top:6px}.el-form-item--mini .el-radio[data-v-28db24c4]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-28db24c4]{margin-top:4px}.el-card[data-v-28db24c4]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-28db24c4]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-28db24c4],.auto-full-width.el-date-editor.el-input__inner[data-v-28db24c4]{width:100%!important}[data-v-28db24c4]::-webkit-scrollbar{width:8px;height:8px}[data-v-28db24c4]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-28db24c4]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-28db24c4]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-28db24c4]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.container-mask[data-v-28db24c4]{position:relative;margin-bottom:2px}.container-mask-title[data-v-28db24c4]{position:absolute;top:-2px;left:-2px;height:22px;line-height:22px;background:#409EFF;z-index:9}.container-mask-title .text[data-v-28db24c4]{font-size:14px;font-style:normal;color:#fff;margin:4px;cursor:move}.container-mask-action[data-v-28db24c4]{position:absolute;bottom:0;right:-2px;height:23px;line-height:28px;background:#409EFF;z-index:999}.copyIcon[data-v-28db24c4]:hover,.deleteIcon[data-v-28db24c4]:hover{cursor:pointer}\n')();
+import { inject, resolveComponent, openBlock, createElementBlock, renderSlot, createVNode, withModifiers, createCommentVNode, createBlock, withCtx, mergeProps, createElementVNode, unref, resolveDynamicComponent, watch, normalizeClass, toDisplayString, getCurrentScope, onScopeDispose, ref, warn, getCurrentInstance, provide, computed, defineComponent, Transition, withDirectives, vShow, shallowReactive, onMounted, normalizeStyle, Fragment, isVNode, render, renderList, isRef, createTextVNode, onBeforeMount, pushScopeId, popScopeId } from "vue";
+var containerMask_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-968c24ba]{color:#409eff}.background-opacity[data-v-968c24ba]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-968c24ba]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-968c24ba]{margin-top:8px}.el-form-item--medium .el-radio[data-v-968c24ba]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-968c24ba]{margin-top:8px}.el-form-item--small .el-radio[data-v-968c24ba]{line-height:32px!important}.el-form-item--small .el-rate[data-v-968c24ba]{margin-top:6px}.el-form-item--mini .el-radio[data-v-968c24ba]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-968c24ba]{margin-top:4px}.el-card[data-v-968c24ba]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-968c24ba]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-968c24ba],.auto-full-width.el-date-editor.el-input__inner[data-v-968c24ba]{width:100%!important}[data-v-968c24ba]::-webkit-scrollbar{width:8px;height:8px}[data-v-968c24ba]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-968c24ba]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-968c24ba]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-968c24ba]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.container-mask[data-v-968c24ba]{position:relative;margin-bottom:2px}.container-mask-title[data-v-968c24ba]{position:absolute;top:-2px;left:-2px;height:22px;line-height:22px;background:#409EFF;z-index:9}.container-mask-title .text[data-v-968c24ba]{font-size:14px;font-style:normal;color:#fff;margin:4px;cursor:move}.container-mask-action[data-v-968c24ba]{position:absolute;bottom:0;right:-2px;height:23px;line-height:28px;background:#409EFF;z-index:999}.copyIcon[data-v-968c24ba]:hover,.deleteIcon[data-v-968c24ba]:hover{cursor:pointer}\n')();
 var _export_sfc$1 = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -7,7 +7,7 @@ var _export_sfc$1 = (sfc, props) => {
   }
   return target;
 };
-const _hoisted_1$d = { class: "container-mask" };
+const _hoisted_1$c = { class: "container-mask" };
 const _hoisted_2$4 = {
   key: 0,
   class: "container-mask-action"
@@ -25,12 +25,14 @@ const _sfc_main$r = {
   emits: ["copyWidget", "removeWidget"],
   setup(__props, { emit }) {
     const props = __props;
+    const copyWidget = inject("copyWidget");
     const copy = () => {
-      emit("copyWidget", props.widget);
+      copyWidget(props.widget);
     };
+    const removeWidget = inject("removeWidget");
     const delete1 = () => {
       var _a2;
-      emit("removeWidget", props.widget, props.parentWidget);
+      removeWidget(props.widget, props.parentWidget);
       props.widget.ruleFormKey && delete props.ruleForm[props.widget.ruleFormKey];
       if (((_a2 = props.parent) == null ? void 0 : _a2.ruleFormKeyType) === "array") {
         props.ruleForm.forEach((rule, index2) => {
@@ -45,7 +47,7 @@ const _sfc_main$r = {
     return (_ctx, _cache) => {
       var _a2, _b;
       const _component_svg_icon = resolveComponent("svg-icon");
-      return openBlock(), createElementBlock("div", _hoisted_1$d, [
+      return openBlock(), createElementBlock("div", _hoisted_1$c, [
         renderSlot(_ctx.$slots, "default", {}, void 0, true),
         ((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? (openBlock(), createElementBlock("div", _hoisted_2$4, [
           createVNode(_component_svg_icon, {
@@ -63,9 +65,8 @@ const _sfc_main$r = {
     };
   }
 };
-var containerMask = /* @__PURE__ */ _export_sfc$1(_sfc_main$r, [["__scopeId", "data-v-28db24c4"]]);
-var content_vue_vue_type_style_index_0_scoped_true_lang$1 = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-720e2004]{color:#409eff}.background-opacity[data-v-720e2004]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-720e2004]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-720e2004]{margin-top:8px}.el-form-item--medium .el-radio[data-v-720e2004]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-720e2004]{margin-top:8px}.el-form-item--small .el-radio[data-v-720e2004]{line-height:32px!important}.el-form-item--small .el-rate[data-v-720e2004]{margin-top:6px}.el-form-item--mini .el-radio[data-v-720e2004]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-720e2004]{margin-top:4px}.el-card[data-v-720e2004]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-720e2004]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-720e2004],.auto-full-width.el-date-editor.el-input__inner[data-v-720e2004]{width:100%!important}[data-v-720e2004]::-webkit-scrollbar{width:8px;height:8px}[data-v-720e2004]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-720e2004]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-720e2004]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-720e2004]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-content1[data-v-720e2004]{min-height:34px}\n')();
-const _hoisted_1$c = /* @__PURE__ */ createTextVNode(" > ");
+var containerMask = /* @__PURE__ */ _export_sfc$1(_sfc_main$r, [["__scopeId", "data-v-968c24ba"]]);
+var content_vue_vue_type_style_index_0_scoped_true_lang$1 = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-0edd1f4e]{color:#409eff}.background-opacity[data-v-0edd1f4e]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-0edd1f4e]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-0edd1f4e]{margin-top:8px}.el-form-item--medium .el-radio[data-v-0edd1f4e]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-0edd1f4e]{margin-top:8px}.el-form-item--small .el-radio[data-v-0edd1f4e]{line-height:32px!important}.el-form-item--small .el-rate[data-v-0edd1f4e]{margin-top:6px}.el-form-item--mini .el-radio[data-v-0edd1f4e]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-0edd1f4e]{margin-top:4px}.el-card[data-v-0edd1f4e]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-0edd1f4e]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-0edd1f4e],.auto-full-width.el-date-editor.el-input__inner[data-v-0edd1f4e]{width:100%!important}[data-v-0edd1f4e]::-webkit-scrollbar{width:8px;height:8px}[data-v-0edd1f4e]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-0edd1f4e]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-0edd1f4e]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-0edd1f4e]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-content1[data-v-0edd1f4e]{min-height:34px}\n')();
 const _sfc_main$q = {
   __name: "content",
   props: [
@@ -76,32 +77,15 @@ const _sfc_main$q = {
     "selectedWidget",
     "isEditor"
   ],
-  emits: ["selected", "copyWidget", "removeWidget", "onEnd"],
-  setup(__props, { emit }) {
+  setup(__props) {
     const props = __props;
-    const onEnd = () => {
-      emit("onEnd");
+    const onEnd = inject("onEnd");
+    const onEnd1 = () => {
+      onEnd();
     };
-    const selected = (element) => {
-      emit("selected", element);
-    };
-    const copyWidget = (element) => {
-      emit("copyWidget", element);
-    };
-    const removeWidget = (widget, parentWidget) => {
-      emit("removeWidget", widget, parentWidget);
-    };
-    const submitForm = async () => {
-      if (!props.ruleFormRef)
-        return;
-      await props.ruleFormRef.validate((valid, fields) => {
-        console.log(valid, "===valid===");
-        if (valid) {
-          console.log("submit!");
-        } else {
-          console.log("error submit!", fields);
-        }
-      });
+    const selected = inject("selected");
+    const selected1 = (element) => {
+      selected(element);
     };
     const getPropKey = (element, index2) => {
       if (props.propKey) {
@@ -123,12 +107,12 @@ const _sfc_main$q = {
           }, { group: "dragGroup", ghostClass: "ghost", animation: 300 }, {
             tag: "transition-group",
             "component-data": { name: "fade" },
-            onAdd: onEnd
+            onAdd: onEnd1
           }), {
             item: withCtx(({ element, index: index2 }) => [
               createElementVNode("div", {
                 class: "transition-group-el",
-                onClick: _cache[0] || (_cache[0] = ($event) => selected(__props.widget))
+                onClick: _cache[0] || (_cache[0] = ($event) => unref(selected)(__props.widget))
               }, [
                 (openBlock(), createBlock(resolveDynamicComponent(element.type), {
                   key: element.id,
@@ -139,16 +123,8 @@ const _sfc_main$q = {
                   "prop-key": getPropKey(element),
                   "selected-widget": __props.selectedWidget,
                   "is-editor": __props.isEditor,
-                  onCopyWidget: ($event) => copyWidget(element),
-                  onRemoveWidget: ($event) => removeWidget(element, __props.widgetList),
-                  onClick: withModifiers(($event) => selected(element), ["stop"]),
-                  onSubmitForm: submitForm
-                }, {
-                  default: withCtx(() => [
-                    _hoisted_1$c
-                  ]),
-                  _: 2
-                }, 1064, ["widget", "parent-widget", "parent", "rule-form", "prop-key", "selected-widget", "is-editor", "onCopyWidget", "onRemoveWidget", "onClick"]))
+                  onClick: withModifiers(($event) => selected1(element), ["stop"])
+                }, null, 8, ["widget", "parent-widget", "parent", "rule-form", "prop-key", "selected-widget", "is-editor", "onClick"]))
               ])
             ]),
             _: 1
@@ -159,8 +135,8 @@ const _sfc_main$q = {
     };
   }
 };
-var cardContent = /* @__PURE__ */ _export_sfc$1(_sfc_main$q, [["__scopeId", "data-v-720e2004"]]);
-var card_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-f99d0e5c]{color:#409eff}.background-opacity[data-v-f99d0e5c]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-f99d0e5c]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-f99d0e5c]{margin-top:8px}.el-form-item--medium .el-radio[data-v-f99d0e5c]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-f99d0e5c]{margin-top:8px}.el-form-item--small .el-radio[data-v-f99d0e5c]{line-height:32px!important}.el-form-item--small .el-rate[data-v-f99d0e5c]{margin-top:6px}.el-form-item--mini .el-radio[data-v-f99d0e5c]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-f99d0e5c]{margin-top:4px}.el-card[data-v-f99d0e5c]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-f99d0e5c]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-f99d0e5c],.auto-full-width.el-date-editor.el-input__inner[data-v-f99d0e5c]{width:100%!important}[data-v-f99d0e5c]::-webkit-scrollbar{width:8px;height:8px}[data-v-f99d0e5c]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-f99d0e5c]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-f99d0e5c]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-f99d0e5c]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.select[data-v-f99d0e5c]{outline:1px solid #409EFF}\n')();
+var cardContent = /* @__PURE__ */ _export_sfc$1(_sfc_main$q, [["__scopeId", "data-v-0edd1f4e"]]);
+var card_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-8f1c519c]{color:#409eff}.background-opacity[data-v-8f1c519c]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-8f1c519c]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-8f1c519c]{margin-top:8px}.el-form-item--medium .el-radio[data-v-8f1c519c]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-8f1c519c]{margin-top:8px}.el-form-item--small .el-radio[data-v-8f1c519c]{line-height:32px!important}.el-form-item--small .el-rate[data-v-8f1c519c]{margin-top:6px}.el-form-item--mini .el-radio[data-v-8f1c519c]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-8f1c519c]{margin-top:4px}.el-card[data-v-8f1c519c]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-8f1c519c]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-8f1c519c],.auto-full-width.el-date-editor.el-input__inner[data-v-8f1c519c]{width:100%!important}[data-v-8f1c519c]::-webkit-scrollbar{width:8px;height:8px}[data-v-8f1c519c]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-8f1c519c]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-8f1c519c]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-8f1c519c]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.select[data-v-8f1c519c]{outline:1px solid #409EFF}\n')();
 const _hoisted_1$b = { class: "card-header" };
 const _sfc_main$p = {
   __name: "card",
@@ -173,21 +149,8 @@ const _sfc_main$p = {
     "selectedWidget",
     "isEditor"
   ],
-  emits: ["selected1", "copyWidget1", "removeWidget1", "onEnd1"],
-  setup(__props, { emit }) {
+  setup(__props) {
     const props = __props;
-    const selected1 = (element) => {
-      emit("selected1", element);
-    };
-    const copyWidget1 = (element) => {
-      emit("copyWidget1", element);
-    };
-    const removeWidget1 = (widget, parentWidget) => {
-      emit("removeWidget1", widget, parentWidget);
-    };
-    const onEnd1 = () => {
-      emit("onEnd1");
-    };
     watch(() => props.propKey, (value) => {
       const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
       console.log("\u76D1\u542C\u5230\u6570\u636E\u53D8\u5316", ruleFormKey);
@@ -223,11 +186,7 @@ const _sfc_main$p = {
                   widget: __props.widget,
                   "rule-form": __props.ruleForm[__props.widget.ruleFormKey] || __props.ruleForm,
                   "is-editor": __props.isEditor,
-                  "selected-widget": __props.selectedWidget,
-                  onOnEnd: onEnd1,
-                  onSelected: selected1,
-                  onCopyWidget: copyWidget1,
-                  onRemoveWidget: removeWidget1
+                  "selected-widget": __props.selectedWidget
                 }, null, 8, ["widgetList", "prop-key", "widget", "rule-form", "is-editor", "selected-widget"])
               ]),
               _: 1
@@ -239,7 +198,7 @@ const _sfc_main$p = {
     };
   }
 };
-var card = /* @__PURE__ */ _export_sfc$1(_sfc_main$p, [["__scopeId", "data-v-f99d0e5c"]]);
+var card = /* @__PURE__ */ _export_sfc$1(_sfc_main$p, [["__scopeId", "data-v-8f1c519c"]]);
 card.install = (App) => {
   App.component(card.__name, card);
 };
@@ -1210,7 +1169,7 @@ function closeAll(type) {
 message.closeAll = closeAll;
 message._context = null;
 const ElMessage = withInstallFunction(message, "$message");
-var gridCol_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-fc3f0380]{color:#409eff}.background-opacity[data-v-fc3f0380]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-fc3f0380]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-fc3f0380]{margin-top:8px}.el-form-item--medium .el-radio[data-v-fc3f0380]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-fc3f0380]{margin-top:8px}.el-form-item--small .el-radio[data-v-fc3f0380]{line-height:32px!important}.el-form-item--small .el-rate[data-v-fc3f0380]{margin-top:6px}.el-form-item--mini .el-radio[data-v-fc3f0380]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-fc3f0380]{margin-top:4px}.el-card[data-v-fc3f0380]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-fc3f0380]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-fc3f0380],.auto-full-width.el-date-editor.el-input__inner[data-v-fc3f0380]{width:100%!important}[data-v-fc3f0380]::-webkit-scrollbar{width:8px;height:8px}[data-v-fc3f0380]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-fc3f0380]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-fc3f0380]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-fc3f0380]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-content1[data-v-fc3f0380]{border-radius:4px;min-height:36px}.gird-line[data-v-fc3f0380]{border:1px dashed #000}\n')();
+var gridCol_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-c643f646]{color:#409eff}.background-opacity[data-v-c643f646]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-c643f646]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-c643f646]{margin-top:8px}.el-form-item--medium .el-radio[data-v-c643f646]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-c643f646]{margin-top:8px}.el-form-item--small .el-radio[data-v-c643f646]{line-height:32px!important}.el-form-item--small .el-rate[data-v-c643f646]{margin-top:6px}.el-form-item--mini .el-radio[data-v-c643f646]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-c643f646]{margin-top:4px}.el-card[data-v-c643f646]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-c643f646]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-c643f646],.auto-full-width.el-date-editor.el-input__inner[data-v-c643f646]{width:100%!important}[data-v-c643f646]::-webkit-scrollbar{width:8px;height:8px}[data-v-c643f646]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-c643f646]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-c643f646]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-c643f646]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-content1[data-v-c643f646]{border-radius:4px;min-height:36px}.gird-line[data-v-c643f646]{border:1px dashed #000}\n')();
 const _hoisted_1$8 = { class: "transition-group-el" };
 const _sfc_main$l = {
   __name: "grid-col",
@@ -1223,32 +1182,15 @@ const _sfc_main$l = {
     "selectedWidget",
     "isEditor"
   ],
-  emits: ["selected", "copyWidget", "removeWidget", "onEnd"],
-  setup(__props, { emit }) {
+  setup(__props) {
     const props = __props;
-    const onEnd = () => {
-      emit("onEnd");
+    const selected = inject("selected");
+    const selected1 = (element) => {
+      selected(element);
     };
-    const selected = (element) => {
-      emit("selected", element);
-    };
-    const copyWidget = (element) => {
-      emit("copyWidget", element);
-    };
-    const removeWidget = (widget, parentWidget) => {
-      emit("removeWidget", widget, parentWidget);
-    };
-    const submitForm = async () => {
-      if (!props.ruleFormRef)
-        return;
-      await props.ruleFormRef.validate((valid, fields) => {
-        console.log(valid, "===valid===");
-        if (valid) {
-          console.log("submit!");
-        } else {
-          console.log("error submit!", fields);
-        }
-      });
+    const onEnd = inject("onEnd");
+    const onEnd1 = (element) => {
+      onEnd(element);
     };
     const getPropKey = (element, index2) => {
       if (props.propKey) {
@@ -1276,7 +1218,7 @@ const _sfc_main$l = {
           }, { group: "dragGroup", ghostClass: "ghost", animation: 300 }, {
             tag: "transition-group",
             "component-data": { name: "fade" },
-            onAdd: onEnd
+            onAdd: onEnd1
           }), {
             item: withCtx(({ element, index: index2 }) => [
               createElementVNode("div", _hoisted_1$8, [
@@ -1291,11 +1233,8 @@ const _sfc_main$l = {
                   "selected-widget": __props.selectedWidget,
                   "is-editor": __props.isEditor,
                   hidden: !__props.isEditor && __props.widget.options.basic.isHidden.value,
-                  onCopyWidget: ($event) => copyWidget(element),
-                  onRemoveWidget: ($event) => removeWidget(element, __props.colWidget.widgetList),
-                  onClick: withModifiers(($event) => selected(element), ["stop"]),
-                  onSubmitForm: submitForm
-                }, null, 40, ["widget", "prop-key", "parent-widget", "rule-form-ref", "rule-form", "parent", "selected-widget", "is-editor", "hidden", "onCopyWidget", "onRemoveWidget", "onClick"]))
+                  onClick: withModifiers(($event) => selected1(element), ["stop"])
+                }, null, 8, ["widget", "prop-key", "parent-widget", "rule-form-ref", "rule-form", "parent", "selected-widget", "is-editor", "hidden", "onClick"]))
               ])
             ]),
             _: 1
@@ -1306,8 +1245,8 @@ const _sfc_main$l = {
     };
   }
 };
-var Col = /* @__PURE__ */ _export_sfc$1(_sfc_main$l, [["__scopeId", "data-v-fc3f0380"]]);
-var grid_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-4425d943]{color:#409eff}.background-opacity[data-v-4425d943]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-4425d943]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-4425d943]{margin-top:8px}.el-form-item--medium .el-radio[data-v-4425d943]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-4425d943]{margin-top:8px}.el-form-item--small .el-radio[data-v-4425d943]{line-height:32px!important}.el-form-item--small .el-rate[data-v-4425d943]{margin-top:6px}.el-form-item--mini .el-radio[data-v-4425d943]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-4425d943]{margin-top:4px}.el-card[data-v-4425d943]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-4425d943]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-4425d943],.auto-full-width.el-date-editor.el-input__inner[data-v-4425d943]{width:100%!important}[data-v-4425d943]::-webkit-scrollbar{width:8px;height:8px}[data-v-4425d943]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-4425d943]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-4425d943]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-4425d943]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-container[data-v-4425d943]{padding:1px}.grid-line[data-v-4425d943]{outline:1px dashed #444}.select[data-v-4425d943]{outline:1px solid #409EFF}.el-row[data-v-4425d943]:last-child{margin-bottom:0}.el-col[data-v-4425d943]{border-radius:4px}.grid-content[data-v-4425d943]{border-radius:4px;min-height:36px;border:1px dashed #444}\n')();
+var Col = /* @__PURE__ */ _export_sfc$1(_sfc_main$l, [["__scopeId", "data-v-c643f646"]]);
+var grid_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-324ab778]{color:#409eff}.background-opacity[data-v-324ab778]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-324ab778]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-324ab778]{margin-top:8px}.el-form-item--medium .el-radio[data-v-324ab778]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-324ab778]{margin-top:8px}.el-form-item--small .el-radio[data-v-324ab778]{line-height:32px!important}.el-form-item--small .el-rate[data-v-324ab778]{margin-top:6px}.el-form-item--mini .el-radio[data-v-324ab778]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-324ab778]{margin-top:4px}.el-card[data-v-324ab778]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-324ab778]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-324ab778],.auto-full-width.el-date-editor.el-input__inner[data-v-324ab778]{width:100%!important}[data-v-324ab778]::-webkit-scrollbar{width:8px;height:8px}[data-v-324ab778]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-324ab778]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-324ab778]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-324ab778]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-container[data-v-324ab778]{padding:1px}.grid-line[data-v-324ab778]{outline:1px dashed #444}.select[data-v-324ab778]{outline:1px solid #409EFF}.el-row[data-v-324ab778]:last-child{margin-bottom:0}.el-col[data-v-324ab778]{border-radius:4px}.grid-content[data-v-324ab778]{border-radius:4px;min-height:36px;border:1px dashed #444}\n')();
 const _sfc_main$k = {
   __name: "grid",
   props: ["widget", "selectedWidget", "isEditor", "parent", "propKey", "ruleForm", "ruleFormRef"],
@@ -1351,18 +1290,6 @@ const _sfc_main$k = {
       deep: true,
       immediate: true
     });
-    const selected1 = (element) => {
-      emit("selected1", element);
-    };
-    const copyWidget1 = (element) => {
-      emit("copyWidget1", element);
-    };
-    const removeWidget1 = (widget, parentWidget) => {
-      emit("removeWidget1", widget, parentWidget);
-    };
-    const onEnd1 = () => {
-      emit("onEnd1");
-    };
     return (_ctx, _cache) => {
       const _component_el_row = resolveComponent("el-row");
       return openBlock(), createBlock(containerMask, {
@@ -1394,10 +1321,6 @@ const _sfc_main$k = {
                     "selected-widget": __props.selectedWidget,
                     "rule-form": __props.ruleForm[__props.widget.ruleFormKey] || __props.ruleForm,
                     "rule-form-key-type": __props.widget.ruleFormKeyType,
-                    onOnEnd: onEnd1,
-                    onSelected: selected1,
-                    onCopyWidget: copyWidget1,
-                    onRemoveWidget: removeWidget1,
                     style: normalizeStyle(`height:${__props.widget.options.basic.colHeight.value}px;`)
                   }, null, 8, ["colWidget", "widget", "prop-key", "rule-form-ref", "is-editor", "selected-widget", "rule-form", "rule-form-key-type", "style"]);
                 }), 128))
@@ -1411,11 +1334,11 @@ const _sfc_main$k = {
     };
   }
 };
-var grid = /* @__PURE__ */ _export_sfc$1(_sfc_main$k, [["__scopeId", "data-v-4425d943"]]);
+var grid = /* @__PURE__ */ _export_sfc$1(_sfc_main$k, [["__scopeId", "data-v-324ab778"]]);
 grid.install = (App) => {
   App.component(grid.__name, grid);
 };
-var content_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-7e902883]{color:#409eff}.background-opacity[data-v-7e902883]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-7e902883]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-7e902883]{margin-top:8px}.el-form-item--medium .el-radio[data-v-7e902883]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-7e902883]{margin-top:8px}.el-form-item--small .el-radio[data-v-7e902883]{line-height:32px!important}.el-form-item--small .el-rate[data-v-7e902883]{margin-top:6px}.el-form-item--mini .el-radio[data-v-7e902883]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-7e902883]{margin-top:4px}.el-card[data-v-7e902883]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-7e902883]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-7e902883],.auto-full-width.el-date-editor.el-input__inner[data-v-7e902883]{width:100%!important}[data-v-7e902883]::-webkit-scrollbar{width:8px;height:8px}[data-v-7e902883]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-7e902883]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-7e902883]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-7e902883]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-content1[data-v-7e902883]{min-height:34px;padding-bottom:20px}\n')();
+var content_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-2fba2c8e]{color:#409eff}.background-opacity[data-v-2fba2c8e]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-2fba2c8e]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-2fba2c8e]{margin-top:8px}.el-form-item--medium .el-radio[data-v-2fba2c8e]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-2fba2c8e]{margin-top:8px}.el-form-item--small .el-radio[data-v-2fba2c8e]{line-height:32px!important}.el-form-item--small .el-rate[data-v-2fba2c8e]{margin-top:6px}.el-form-item--mini .el-radio[data-v-2fba2c8e]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-2fba2c8e]{margin-top:4px}.el-card[data-v-2fba2c8e]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-2fba2c8e]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-2fba2c8e],.auto-full-width.el-date-editor.el-input__inner[data-v-2fba2c8e]{width:100%!important}[data-v-2fba2c8e]::-webkit-scrollbar{width:8px;height:8px}[data-v-2fba2c8e]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-2fba2c8e]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-2fba2c8e]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-2fba2c8e]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-content1[data-v-2fba2c8e]{min-height:34px;padding-bottom:20px}\n')();
 const _hoisted_1$7 = { class: "transition-group-el" };
 const _sfc_main$j = {
   __name: "content",
@@ -1428,8 +1351,7 @@ const _sfc_main$j = {
     "isEditor",
     "selectedWidget"
   ],
-  emits: ["selected", "copyWidget", "removeWidget", "onEnd"],
-  setup(__props, { emit }) {
+  setup(__props) {
     const props = __props;
     const getPropKey = (element, index2) => {
       if (props.propKey) {
@@ -1438,17 +1360,13 @@ const _sfc_main$j = {
         return `${element.ruleFormKey}`;
       }
     };
-    const onEnd = () => {
-      emit("onEnd");
+    const onEnd = inject("onEnd");
+    const onEnd1 = () => {
+      onEnd();
     };
-    const selected = (element) => {
-      emit("selected", element);
-    };
-    const copyWidget = (element) => {
-      emit("copyWidget", element);
-    };
-    const removeWidget = (widget, parentWidget) => {
-      emit("removeWidget", widget, parentWidget);
+    const selected = inject("selected");
+    const selected1 = (element) => {
+      selected(element);
     };
     return (_ctx, _cache) => {
       const _component_draggable = resolveComponent("draggable");
@@ -1461,7 +1379,7 @@ const _sfc_main$j = {
           }, { group: "dragGroup", ghostClass: "ghost", animation: 300 }, {
             tag: "transition-group",
             "component-data": { name: "fade" },
-            onAdd: onEnd
+            onAdd: onEnd1
           }), {
             item: withCtx(({ element }) => [
               createElementVNode("div", _hoisted_1$7, [
@@ -1474,10 +1392,8 @@ const _sfc_main$j = {
                   "rule-form": __props.ruleForm[__props.colIdx],
                   "selected-widget": __props.selectedWidget,
                   "is-editor": __props.isEditor,
-                  onCopyWidget: ($event) => copyWidget(element),
-                  onRemoveWidget: ($event) => removeWidget(element, __props.colWidget.widgetList),
-                  onClick: withModifiers(($event) => selected(element), ["stop"])
-                }, null, 40, ["parent-widget", "widget", "parent", "prop-key", "rule-form", "selected-widget", "is-editor", "onCopyWidget", "onRemoveWidget", "onClick"]))
+                  onClick: withModifiers(($event) => selected1(element), ["stop"])
+                }, null, 8, ["parent-widget", "widget", "parent", "prop-key", "rule-form", "selected-widget", "is-editor", "onClick"]))
               ])
             ]),
             _: 1
@@ -1488,8 +1404,8 @@ const _sfc_main$j = {
     };
   }
 };
-var tabsContent = /* @__PURE__ */ _export_sfc$1(_sfc_main$j, [["__scopeId", "data-v-7e902883"]]);
-var tabs_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-3b922a8a]{color:#409eff}.background-opacity[data-v-3b922a8a]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-3b922a8a]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-3b922a8a]{margin-top:8px}.el-form-item--medium .el-radio[data-v-3b922a8a]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-3b922a8a]{margin-top:8px}.el-form-item--small .el-radio[data-v-3b922a8a]{line-height:32px!important}.el-form-item--small .el-rate[data-v-3b922a8a]{margin-top:6px}.el-form-item--mini .el-radio[data-v-3b922a8a]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-3b922a8a]{margin-top:4px}.el-card[data-v-3b922a8a]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-3b922a8a]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-3b922a8a],.auto-full-width.el-date-editor.el-input__inner[data-v-3b922a8a]{width:100%!important}[data-v-3b922a8a]::-webkit-scrollbar{width:8px;height:8px}[data-v-3b922a8a]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-3b922a8a]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-3b922a8a]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-3b922a8a]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-container[data-v-3b922a8a]{padding:1px}.select[data-v-3b922a8a]{outline:1px solid #409EFF}.el-row[data-v-3b922a8a]{margin-bottom:20px}.el-row[data-v-3b922a8a]:last-child{margin-bottom:0}.el-col[data-v-3b922a8a]{border-radius:4px}.grid-content[data-v-3b922a8a]{border-radius:4px;min-height:36px;border:1px dashed #444}\n')();
+var tabsContent = /* @__PURE__ */ _export_sfc$1(_sfc_main$j, [["__scopeId", "data-v-2fba2c8e"]]);
+var tabs_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-4c87357a]{color:#409eff}.background-opacity[data-v-4c87357a]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-4c87357a]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-4c87357a]{margin-top:8px}.el-form-item--medium .el-radio[data-v-4c87357a]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-4c87357a]{margin-top:8px}.el-form-item--small .el-radio[data-v-4c87357a]{line-height:32px!important}.el-form-item--small .el-rate[data-v-4c87357a]{margin-top:6px}.el-form-item--mini .el-radio[data-v-4c87357a]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-4c87357a]{margin-top:4px}.el-card[data-v-4c87357a]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-4c87357a]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-4c87357a],.auto-full-width.el-date-editor.el-input__inner[data-v-4c87357a]{width:100%!important}[data-v-4c87357a]::-webkit-scrollbar{width:8px;height:8px}[data-v-4c87357a]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-4c87357a]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-4c87357a]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-4c87357a]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-container[data-v-4c87357a]{padding:1px}.select[data-v-4c87357a]{outline:1px solid #409EFF}.el-row[data-v-4c87357a]{margin-bottom:20px}.el-row[data-v-4c87357a]:last-child{margin-bottom:0}.el-col[data-v-4c87357a]{border-radius:4px}.grid-content[data-v-4c87357a]{border-radius:4px;min-height:36px;border:1px dashed #444}\n')();
 const _sfc_main$i = {
   __name: "tabs",
   props: [
@@ -1501,8 +1417,7 @@ const _sfc_main$i = {
     "selectedWidget",
     "isEditor"
   ],
-  emits: ["selected1", "copyWidget1", "removeWidget1", "onEnd1"],
-  setup(__props, { emit }) {
+  setup(__props) {
     const props = __props;
     watch(() => props.propKey, (value) => {
       const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
@@ -1544,18 +1459,6 @@ const _sfc_main$i = {
         return v.toString(16);
       });
     };
-    const selected1 = (element) => {
-      emit("selected1", element);
-    };
-    const copyWidget1 = (element) => {
-      emit("copyWidget1", element);
-    };
-    const removeWidget1 = (widget, parentWidget) => {
-      emit("removeWidget1", widget, parentWidget);
-    };
-    const onEnd1 = () => {
-      emit("onEnd1");
-    };
     return (_ctx, _cache) => {
       const _component_el_tab_pane = resolveComponent("el-tab-pane");
       const _component_el_tabs = resolveComponent("el-tabs");
@@ -1594,11 +1497,7 @@ const _sfc_main$i = {
                         "prop-key": __props.propKey,
                         colIdx,
                         "selected-widget": __props.selectedWidget,
-                        "is-editor": __props.isEditor,
-                        onOnEnd: onEnd1,
-                        onSelected: selected1,
-                        onCopyWidget: copyWidget1,
-                        onRemoveWidget: removeWidget1
+                        "is-editor": __props.isEditor
                       }, null, 8, ["colWidget", "rule-form", "widget", "prop-key", "colIdx", "selected-widget", "is-editor"])
                     ]),
                     _: 2
@@ -1614,7 +1513,7 @@ const _sfc_main$i = {
     };
   }
 };
-var tabs = /* @__PURE__ */ _export_sfc$1(_sfc_main$i, [["__scopeId", "data-v-3b922a8a"]]);
+var tabs = /* @__PURE__ */ _export_sfc$1(_sfc_main$i, [["__scopeId", "data-v-4c87357a"]]);
 tabs.install = (App) => {
   App.component(tabs.__name, tabs);
 };
@@ -1626,7 +1525,7 @@ var table = /* @__PURE__ */ _export_sfc$1(_sfc_main$h, [["render", _sfc_render$1
 table.install = (App) => {
   App.component(table.__name, table);
 };
-var widgetMask_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-dd6246fc]{color:#409eff}.background-opacity[data-v-dd6246fc]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-dd6246fc]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-dd6246fc]{margin-top:8px}.el-form-item--medium .el-radio[data-v-dd6246fc]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-dd6246fc]{margin-top:8px}.el-form-item--small .el-radio[data-v-dd6246fc]{line-height:32px!important}.el-form-item--small .el-rate[data-v-dd6246fc]{margin-top:6px}.el-form-item--mini .el-radio[data-v-dd6246fc]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-dd6246fc]{margin-top:4px}.el-card[data-v-dd6246fc]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-dd6246fc]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-dd6246fc],.auto-full-width.el-date-editor.el-input__inner[data-v-dd6246fc]{width:100%!important}[data-v-dd6246fc]::-webkit-scrollbar{width:8px;height:8px}[data-v-dd6246fc]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-dd6246fc]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-dd6246fc]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-dd6246fc]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.select[data-v-dd6246fc]{outline:1px solid #409EFF}.container-mask[data-v-dd6246fc]{position:relative;margin-bottom:2px}.container-mask-title[data-v-dd6246fc]{position:absolute;top:-2px;left:-2px;height:22px;line-height:22px;background:#409EFF;z-index:9}.container-mask-title .text[data-v-dd6246fc]{font-size:14px;font-style:normal;color:#fff;margin:4px;cursor:move}.container-mask-action[data-v-dd6246fc]{position:absolute;bottom:0;right:-2px;height:23px;line-height:28px;background:#409EFF;z-index:999}.copyIcon[data-v-dd6246fc]:hover,.deleteIcon[data-v-dd6246fc]:hover{cursor:pointer}\n')();
+var widgetMask_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-2029513a]{color:#409eff}.background-opacity[data-v-2029513a]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-2029513a]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-2029513a]{margin-top:8px}.el-form-item--medium .el-radio[data-v-2029513a]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-2029513a]{margin-top:8px}.el-form-item--small .el-radio[data-v-2029513a]{line-height:32px!important}.el-form-item--small .el-rate[data-v-2029513a]{margin-top:6px}.el-form-item--mini .el-radio[data-v-2029513a]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-2029513a]{margin-top:4px}.el-card[data-v-2029513a]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-2029513a]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-2029513a],.auto-full-width.el-date-editor.el-input__inner[data-v-2029513a]{width:100%!important}[data-v-2029513a]::-webkit-scrollbar{width:8px;height:8px}[data-v-2029513a]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-2029513a]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-2029513a]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-2029513a]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.select[data-v-2029513a]{outline:1px solid #409EFF}.container-mask[data-v-2029513a]{position:relative;margin-bottom:2px}.container-mask-title[data-v-2029513a]{position:absolute;top:-2px;left:-2px;height:22px;line-height:22px;background:#409EFF;z-index:9}.container-mask-title .text[data-v-2029513a]{font-size:14px;font-style:normal;color:#fff;margin:4px;cursor:move}.container-mask-action[data-v-2029513a]{position:absolute;bottom:0;right:-2px;height:23px;line-height:28px;background:#409EFF;z-index:999}.copyIcon[data-v-2029513a]:hover,.deleteIcon[data-v-2029513a]:hover{cursor:pointer}\n')();
 const _hoisted_1$6 = { class: "container-mask" };
 const _hoisted_2$2 = {
   key: 0,
@@ -1635,15 +1534,16 @@ const _hoisted_2$2 = {
 const _sfc_main$g = {
   __name: "widgetMask",
   props: ["widget", "copyWidget", "isEditor", "selectedWidget", "basicProp", "parent", "ruleForm", "propKey", "parentWidget"],
-  emits: ["copyWidget", "removeWidget"],
-  setup(__props, { emit }) {
+  setup(__props) {
     const props = __props;
+    const copyWidget = inject("copyWidget");
     const copy = () => {
-      emit("copyWidget", props.widget);
+      copyWidget(props.widget);
     };
+    const removeWidget = inject("removeWidget");
     const delete1 = () => {
       var _a2;
-      emit("removeWidget", props.widget, props.parentWidget);
+      removeWidget(props.widget, props.parentWidget);
       if (((_a2 = props.parent) == null ? void 0 : _a2.ruleFormKeyType) === "array") {
         props.ruleForm.forEach((rule, index2) => {
           if (Object.keys(rule).indexOf(props.widget.ruleFormKey) > -1) {
@@ -1687,7 +1587,7 @@ const _sfc_main$g = {
     };
   }
 };
-var widgetMask = /* @__PURE__ */ _export_sfc$1(_sfc_main$g, [["__scopeId", "data-v-dd6246fc"]]);
+var widgetMask = /* @__PURE__ */ _export_sfc$1(_sfc_main$g, [["__scopeId", "data-v-2029513a"]]);
 const handleChangeEvent = (props, ElMessage2) => {
   var _a2, _b;
   const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
@@ -1735,7 +1635,7 @@ const watchEvent = (props, watch2) => {
     immediate: true
   });
 };
-var input_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => ".hint[data-v-62352cca]{font-size:12px;color:#9b9b9b}\n")();
+var input_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => ".hint[data-v-4d123a45]{font-size:12px;color:#9b9b9b}\n")();
 const _hoisted_1$5 = { class: "hint" };
 const _sfc_main$f = {
   __name: "input",
@@ -1773,12 +1673,12 @@ const _sfc_main$f = {
     };
   }
 };
-var input = /* @__PURE__ */ _export_sfc$1(_sfc_main$f, [["__scopeId", "data-v-62352cca"]]);
+var input = /* @__PURE__ */ _export_sfc$1(_sfc_main$f, [["__scopeId", "data-v-4d123a45"]]);
 input.install = (App) => {
   App.component(input.__name, input);
 };
 const _sfc_main$e = {
-  __name: "switch",
+  __name: "switch1",
   props: [
     "widget",
     "ruleForm",
@@ -1875,11 +1775,11 @@ _sfc_main$d.install = (App) => {
   App.component(_sfc_main$d.__name, _sfc_main$d);
 };
 const useRegisterEvent = () => {
-  const handleOnClick = (props, emit) => {
+  const handleOnClick = (props, inject2) => {
     const EVENTS = props.widget.options.events;
     if (!(EVENTS == null ? void 0 : EVENTS.onClick))
       return;
-    new Function("props", "emit", "ElMessage", EVENTS == null ? void 0 : EVENTS.onClick.value)(props, emit, ElMessage);
+    new Function("props", "inject", "ElMessage", EVENTS == null ? void 0 : EVENTS.onClick.value)(props, inject2, ElMessage);
   };
   const handleOnBeforeMount = (widget) => {
     const EVENTS = widget.options.events;
@@ -1910,8 +1810,7 @@ const _sfc_main$c = {
     "isEditor",
     "selectedWidget"
   ],
-  emits: ["submitForm"],
-  setup(__props, { emit }) {
+  setup(__props) {
     const props = __props;
     const { handleOnClick, handleOnBeforeMount, handleOnMounted } = useRegisterEvent();
     onBeforeMount(() => {
@@ -1940,7 +1839,7 @@ const _sfc_main$c = {
             circle: __props.widget.options.advanced.btnCircle.value,
             plain: __props.widget.options.basic.plain.value,
             "auto-insert-space": __props.widget.options.basic.space.value,
-            onClick: _cache[0] || (_cache[0] = ($event) => unref(handleOnClick)(unref(props), emit))
+            onClick: _cache[0] || (_cache[0] = ($event) => unref(handleOnClick)(unref(props), inject))
           }, {
             default: withCtx(() => [
               createTextVNode(toDisplayString(__props.widget.options.basic.text.value), 1)
@@ -2429,7 +2328,7 @@ _sfc_main$5.install = (App) => {
   App.component(_sfc_main$5.__name, _sfc_main$5);
 };
 const _sfc_main$4 = {
-  __name: "dateTimeRange",
+  __name: "date",
   props: [
     "widget",
     "parentWidget"
@@ -2694,4 +2593,4 @@ const install = (App) => {
   });
 };
 var index = { install };
-export { _sfc_main$c as button, card, cellPhone, _sfc_main$d as checkbox, _sfc_main$4 as dateTimeRange, index as default, _sfc_main$8 as divider, grid, input, _sfc_main$2 as onlyButton, _sfc_main$a as radio, _sfc_main$3 as repeatButton, richText, _sfc_main$b as select, _sfc_main$6 as staticText, _sfc_main$e as switch1, table, tabs, _sfc_main$9 as textarea, _sfc_main$5 as time, _sfc_main$1 as upload };
+export { _sfc_main$c as button, card, cellPhone, _sfc_main$d as checkbox, _sfc_main$4 as date, index as default, _sfc_main$8 as divider, grid, input, _sfc_main$2 as onlyButton, _sfc_main$a as radio, _sfc_main$3 as repeatButton, richText, _sfc_main$b as select, _sfc_main$6 as staticText, _sfc_main$e as switch1, table, tabs, _sfc_main$9 as textarea, _sfc_main$5 as time, _sfc_main$1 as upload };

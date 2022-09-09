@@ -35,7 +35,6 @@
     ])
     const getPropKey = (element,index) =>{
         if(props.propKey) {
-   
             return `${props.propKey}.${index}.${element.ruleFormKey}`
         }else{
             return `${element.ruleFormKey}`
