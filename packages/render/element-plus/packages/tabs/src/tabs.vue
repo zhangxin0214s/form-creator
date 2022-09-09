@@ -2,9 +2,9 @@
     <container-mask 
       :widget="widget"
       :rule-form="ruleForm"
-          :parent="parent"
+      :parent="parent"
       :is-editor="isEditor"
-          :selected-widget="selectedWidget">
+      :selected-widget="selectedWidget">
       <el-tabs type="border-card" v-model="activeName" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
         <el-tab-pane :label="colWidget.name" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
           <tabs-content 
@@ -14,12 +14,8 @@
             :prop-key="propKey"
             :colIdx="colIdx"
             :selected-widget="selectedWidget"
-            :is-editor="isEditor"
-            @onEnd="onEnd1"
-            @selected="selected1"
-                      @copyWidget="copyWidget1"
-            @removeWidget="removeWidget1"
-          ></tabs-content>
+            :is-editor="isEditor">
+          </tabs-content>
         </el-tab-pane>
       </el-tabs>
     </container-mask>
@@ -81,21 +77,6 @@
                 v = c == 'x' ? r : (r & 0x3 | 0x8);
             return v.toString(16);
         });
-    }
-    const emit = defineEmits(['selected1','copyWidget1','removeWidget1','onEnd1']);
-    const selected1 = (element) =>{
-      emit('selected1',element)
-    }
-    const copyWidget1 = (element) =>{
-        emit('copyWidget1',element)
-    }
-  
-    const removeWidget1 = (widget, parentWidget) =>{
-      emit('removeWidget1',widget, parentWidget)
-    }
-  
-    const onEnd1 = () =>{
-      emit('onEnd1')
     }
   </script>
    <style lang="scss" scoped>

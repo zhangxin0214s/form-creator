@@ -43,21 +43,12 @@
                   :selected-widget="selectedWidget"
                   :is-editor="isEditor"
                   :hidden="!isEditor && widget.options.basic.isHidden.value"
-                  @copyWidget="copyWidget"
-                  @removeWidget="removeWidget"
-                  
-                  @onEnd1="onEnd"
-                  @copyWidget1="copyWidget"
-                  @removeWidget1="removeWidget"
-                  @selected1="selected"
-                  @click.stop="selected(widget)"
-                  @submitForm="submitForm">
+                  @click.stop="selected(widget)">
               </component>
             </div>
           </template>
         </draggable>
       </el-form>
-
     </div>
   </div>
 </template>
@@ -66,7 +57,7 @@ import toolBar from '../toolbar-panel/index.vue'
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 import FormInstance from 'element-plus';
-import { ref } from 'vue'
+import { ref,provide } from 'vue'
 
 const _widgetStore = widgetStore();
 const {widgetList, formConfig, isEditor, selectedWidget} = storeToRefs(_widgetStore);
@@ -80,6 +71,7 @@ const selected = (widgetData) => {
   console.log('选中:', widgetData);
   _widgetStore.selectedWidget = widgetData;
 };
+provide('selected', selected)
 
 /**
  * 拖拽结束
@@ -88,6 +80,7 @@ const onEnd = () => {
   _widgetStore.selectedWidget = _widgetStore.cloneWidget;
   _widgetStore.recordHistory();
 }
+provide('onEnd', onEnd)
 
 /**
  * 复制组件
@@ -95,6 +88,7 @@ const onEnd = () => {
 const copyWidget = (widget) => {
   _widgetStore.copyWidget(widget);
 }
+provide('copyWidget', copyWidget)
 
 /**
  * 删除组件
@@ -102,6 +96,8 @@ const copyWidget = (widget) => {
 const removeWidget = (widget, parentWidget) => {
   _widgetStore.removeWidget(widget, parentWidget);
 }
+provide('removeWidget', removeWidget)
+
 /**
  * 提交
  */
@@ -116,6 +112,7 @@ const submitForm = async () => {
     }
   })
 }
+provide('submitForm', submitForm)
 </script>
 <style lang="scss" scoped>
 .stage {

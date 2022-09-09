@@ -29,10 +29,7 @@
 					:selected-widget="selectedWidget"
 					:rule-form="ruleForm[widget.ruleFormKey] || ruleForm"
 					:rule-form-key-type="widget.ruleFormKeyType"
-					@onEnd="onEnd1"
-					@selected="selected1"
-					@copyWidget="copyWidget1"
-                  	@removeWidget="removeWidget1"
+					
 					:style="`height:${widget.options.basic.colHeight.value}px;`"
 				>
 				</Col>

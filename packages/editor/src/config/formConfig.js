@@ -1315,7 +1315,7 @@ export const basicWidgets = [
 	{
 		id: 12,
 		name: "日期选择",
-		type: "dateTimeRange",
+		type: "date",
 		category: "widget",
 		icon: "date",
 		value: null,

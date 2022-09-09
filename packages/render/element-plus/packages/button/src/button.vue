@@ -15,14 +15,14 @@
             :circle="widget.options.advanced.btnCircle.value"
             :plain="widget.options.basic.plain.value"
             :auto-insert-space="widget.options.basic.space.value"
-            @click="handleOnClick(props,emit)"
+            @click="handleOnClick(props,inject)"
         >{{ widget.options.basic.text.value }}
         </el-button>
     </widget-mask>
   </template>
   
   <script setup name="button">
-  import {onMounted,onBeforeMount } from 'vue'
+  import {onMounted,onBeforeMount,inject } from 'vue'
   import widgetMask from '../../common/widgetMask.vue'
   import useRegisterEvent from '../../hooks/useRegisterEvent'
   
@@ -35,7 +35,6 @@
   ]);
   const { handleOnClick,handleOnBeforeMount,handleOnMounted} = useRegisterEvent();
   
-  const emit = defineEmits(['submitForm'])
   
   /**
    * 渲染前

@@ -1,32 +1,32 @@
 import input from './input.vue';
-import button from './button'
+import button from './button';
 import checkbox from './checkbox.vue';
-import Switch from './switch.vue';
-import select from './select.vue'
+import swicth from './switch.vue';
+import select1 from './select.vue';
 import textarea from './textarea.vue';
 import divider from './divider.vue';
 import cellPhone from './cellPhone.vue';
-import Radio from './radio.vue'
+import radio from './radio.vue';
 import staticText from './staticText.vue';
-import date from './time.vue'
-import datetimerange from './date.vue'
+import time from './time.vue';
+import date from './date.vue';
 import upload from './upload.vue';
-import repeatButton from  './repeatButton.vue'
-import onlyButton from './onlyButton.vue'
+import repeatButton from  './repeatButton.vue';
+import onlyButton from './onlyButton.vue';
 export {
     input,
     button,
-    Switch,
     checkbox,
-    select,
+    select1,
     textarea,
     divider,
     cellPhone,
-    Radio,
+    radio,
     staticText,
+    time,
     date,
-    datetimerange,
     upload,
     repeatButton,
-    onlyButton
+    onlyButton,
+    swicth
 }

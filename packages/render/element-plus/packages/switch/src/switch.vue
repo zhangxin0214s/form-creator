@@ -16,7 +16,7 @@
 			@change="handleChangeEvent(props,ElMessage)"/>
 	</widget-mask>
 </template>
-<script setup name="switch">
+<script setup name="switch1">
 import widgetMask from '../../common/widgetMask.vue';
 import { watch } from 'vue'
 import { ElMessage } from 'element-plus'
@@ -25,9 +25,9 @@ import { watchEvent } from '../../hooks/watchEvent'
 
 const props = defineProps([
 	'widget',
-	'ruleForm', 
+	'ruleForm',
 	'propKey',
-	'parent', 
+	'parent',
 	'parentWidget',
 	'isEditor',
 	'selectedWidget'
