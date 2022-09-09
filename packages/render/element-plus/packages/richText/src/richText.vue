@@ -1,17 +1,17 @@
 <template>
     <div class="local-quill-editor">
-      <QuillEditor theme="snow" :options="editorOption"/>
+      <!-- <QuillEditor theme="snow" :options="editorOption"/> -->
     </div>
   </template>
   <script setup name="richText">
   </script>
-  <script>
+  <!-- <script>
    import {QuillEditor,Quill} from '@vueup/vue-quill'
   import '@vueup/vue-quill/dist/vue-quill.snow.css';
   
   // 设置字体大小
   const fontSize = ['12px', '14px', '16px', '20px', '24px', '36px']
-  Quill.imports['attributors/style/size'].whitelist = fontSize
+  // Quill.imports['attributors/style/size']?.whitelist = fontSize
   Quill.register(Quill.imports['attributors/style/size'])
   
   // 设置字体样式
@@ -73,7 +73,7 @@
       created(){
       }
     }
-  </script>
+  </script> -->
   
   <style lang="scss" scoped>
   .local-quill-editor {

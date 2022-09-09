@@ -19,7 +19,7 @@
     "axios": "^0.27.2",
     "element-china-area-data": "^5.0.2",
     "esbuild": "0.14.54 -w\npnpm install esbuild@0.14.54",
-    "fc-element-plus": "workspace:^1.0.5",
+    "fc-element-plus": "workspace:^1.0.7",
     "pinia": "^2.0.17",
     "sortablejs": "1.14.0",
     "vitepress": "1.0.0-alpha.4",
