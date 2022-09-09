@@ -8,7 +8,7 @@
         :rule-form="ruleForm"
         :parent="parent"
         :is-editor="isEditor"
-            :selected-widget="selectedWidget">
+        :selected-widget="selectedWidget">
       <el-checkbox-group
         v-model="widget.value"
         @change="handleChangeEvent(props,ElMessage)">
@@ -32,11 +32,10 @@
   import { watch} from 'vue';
   import { handleChangeEvent } from '../../hooks/handleChangeEvent'
   import { watchEvent } from '../../hooks/watchEvent'
-  
+
   const props = defineProps(['widget', 'isEditor', 'selectedWidget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
-  
+
   watchEvent(props,watch)
   </script>
   <style lang="scss" scoped>
   </style>
-  

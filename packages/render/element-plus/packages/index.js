@@ -16,7 +16,7 @@ import divider from './divider'
 import cellPhone from './cellPhone'
 import staticText from './staticText'
 import time from './time'
-import dateTimeRange from './dateTimeRange'
+import date from './date'
 
 // 高级组件
 import repeatButton from './repeatButton'
@@ -39,7 +39,7 @@ const components = [
 	cellPhone,
 	staticText,
 	time,
-	dateTimeRange,
+	date,
 	repeatButton,
 	onlyButton,
 	upload,
@@ -48,7 +48,7 @@ const components = [
 ];
 
 //按需引入
-export  { 
+export  {
 	card,
 	grid,
 	tabs,
@@ -63,7 +63,7 @@ export  {
 	cellPhone,
 	staticText,
 	time,
-	dateTimeRange,
+	date,
 	repeatButton,
 	onlyButton,
 	upload,
