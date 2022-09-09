@@ -26,13 +26,14 @@ import { defineProps, watch } from 'vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 import eventBasic from './eventBasic.vue';
-import editLinkageEvent from '@/components/designer/stage-panel/components/element-ui/hooks/editLinkageEvent.js';
+import editLinkageEvent from '../../hooks/editLinkageEvent.js';
+
 const { changeElement } = editLinkageEvent();
 const _widgetStore = widgetStore();
 const { widgetList, unWatch } = storeToRefs(_widgetStore);
 const props = defineProps(['selectedWidget', 'advancedProp', 'key1', 'value']);
 let currentEleData = props.advancedProp[props.key1];
-console.log('1111111',currentEleData)
+
 const options = currentEleData.options;
 options.splice(0);
 // 从组件列表中选中除了自身的组件push到选择栏中
