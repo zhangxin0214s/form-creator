@@ -6,7 +6,7 @@
         :parent-widget="parentWidget">
       <el-checkbox-group
           :size="widget.options.basic.checkSize.value"
-          v-model="formConfig.ruleForm[widget.options.basic.ruleFormKey.value]"
+          v-model="widget.value"
       >
         <el-checkbox-button
             v-for="(item,index) in widget.options.advanced.optionItems"
@@ -21,11 +21,6 @@
   </template>
   <script setup name="repeatButton">
   import widgetMask from '../../common/widgetMask.vue';
-  import { storeToRefs } from 'pinia';
-  import { widgetStore } from '@/store/index';
-  
-  const _widgetStore = widgetStore();
-  const {formConfig} = storeToRefs(_widgetStore);
   
   let props = defineProps([
     'widget',
