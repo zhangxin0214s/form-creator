@@ -300,7 +300,7 @@ export const basicWidgets = [
 	{
 		id: 2,
 		name: "开关",
-		type: "switch",
+		type: "switch1",
 		category: "widget",
 		icon: "switch",
 		value: false,
