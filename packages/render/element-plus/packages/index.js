@@ -6,7 +6,7 @@ import table from './table'
 
 // 基础组件
 import input from './input'
-import switch from './switch'
+import switch1 from './switch'
 import checkbox from './checkbox'
 import button from './button'
 import select from './select'
@@ -44,7 +44,7 @@ const components = [
 	onlyButton,
 	upload,
 	richText,
-	switch
+	switch1
 ];
 
 //按需引入
@@ -68,7 +68,7 @@ export  {
 	onlyButton,
 	upload,
 	richText,
-	switch
+	switch1
  };
 
 

@@ -8,13 +8,12 @@
 		:rule-form="ruleForm"
 		:parent="parent"
 		:is-editor="isEditor"
-		:selected-widget="selectedWidget"
-	>
+		:selected-widget="selectedWidget">
+
 		<el-switch
 			v-model="widget.value"
 			:disabled="widget.options.basic.disabled.value"
-			@change="handleChangeEvent(props,ElMessage)"
-		/>
+			@change="handleChangeEvent(props,ElMessage)"/>
 	</widget-mask>
 </template>
 <script setup name="switch">

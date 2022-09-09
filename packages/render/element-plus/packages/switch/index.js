@@ -1,7 +1,7 @@
-import switch from './src/switch.vue';
+import switch1 from './src/switch.vue';
 
-switch.install = (App) => {
-	App.component(switch.__name, switch);
+switch1.install = (App) => {
+	App.component(switch1.__name, switch1);
 };
 
-export default switch;
+export default switch1
