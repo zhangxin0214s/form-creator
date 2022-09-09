@@ -85,7 +85,6 @@ const selected = (widgetData) => {
  * 拖拽结束
  */
 const onEnd = () => {
-  console.log("结束")
   _widgetStore.selectedWidget = _widgetStore.cloneWidget;
   _widgetStore.recordHistory();
 }
