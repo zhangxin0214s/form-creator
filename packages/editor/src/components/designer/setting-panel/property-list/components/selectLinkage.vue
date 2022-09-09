@@ -74,7 +74,7 @@ widgetList.value.forEach((widget) => {
 		options.push(getOptions(widget));
 	}
 });
-console.log('00000000', options);
+
 // 切换联动对象
 const setLinkageObject = (val) => {
 	// 清除侦听器
