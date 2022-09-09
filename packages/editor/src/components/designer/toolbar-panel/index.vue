@@ -60,10 +60,12 @@ const dialogFormVisible = ref(false);
 const dialogCodeVisible = ref(false);
 const dialogTemplateVisible = ref(false);
 const formData = ref({
-  formConfig:toRaw(_widgetStore.formConfig),
-  widgetList:toRaw(_widgetStore.widgetList),
+  formConfig: formConfig,
+  widgetList: widgetList,
 })
-const data = ref({});
+
+
+
 
 /**
  * 模板库
@@ -121,13 +123,15 @@ const uploadFile = (file, files) => {
   let reader = new FileReader(),
       readText;
   reader.readAsText(files.raw);
+  _widgetStore.clearWidget();
   reader.onload = e => {
     readText = JSON.parse(e.currentTarget.result);
-    _widgetStore.clearWidget();
     _widgetStore.widgetList.push(...readText.widgetList);
-    // console.log(...readText.widgetList)
+    _widgetStore.formConfig = readText.formConfig;
+
+    console.log(readText.formConfig)
   }
-  _widgetStore.clearWidget();
+
 }
 
 /**

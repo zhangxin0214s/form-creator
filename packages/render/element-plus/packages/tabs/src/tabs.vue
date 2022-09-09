@@ -37,6 +37,7 @@
     watch(
       () => props.propKey,
       (value) => {
+        console.log("监听到数据变化")
         const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
         if(ruleFormKey && !props.ruleForm[ruleFormKey]){
           props.ruleForm[ruleFormKey] = [{}]

@@ -18,12 +18,12 @@ import "./styles/index.scss"
 import App from "./App.vue"
 const seApp = createApp(App)
 
-seApp.component("svg-icon", SvgIcon)
+seApp.component("SvgIcon", SvgIcon)
 seApp.component("draggable", Draggable)
 
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
     seApp.component(key, component)
-  }
+}
 
 const pinia = createPinia();
 
