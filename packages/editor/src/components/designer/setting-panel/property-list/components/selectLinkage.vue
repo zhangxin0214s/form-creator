@@ -87,7 +87,7 @@ const setLinkageObject = (val) => {
 	console.log(linkageObject, 'linkageObject');
 	// 挂侦听器
 	unWatch.value = watch(linkageObject, () => {
-		changeElement(props.selectedWidget, linkageObject);
+		changeElement(props.selectedWidget, linkageObject, copyWidget);
 	});
 };
 let getLinkageObject = (val) => {
@@ -110,6 +110,12 @@ let getLinkageObject = (val) => {
 		};
 		return fun(findValue.options.advanced.cols, val, 1);
 	}
+};
+/**
+ * 复制组件
+ */
+ const copyWidget = (widget) => {
+	_widgetStore.copyWidget(widget);
 };
 </script>
 <style lang="scss" scoped>

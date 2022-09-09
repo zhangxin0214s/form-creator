@@ -92,7 +92,16 @@ export const containers = [
 						gutter: 12,
 						widgetList: []
 					}
-				]
+				],
+				linkage: {
+					label: '联动对象',
+					options: [],
+					value: []
+				},
+				linkageCode: {
+					label: '联动代码',
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\n*/ \n//#endregion "
+				}
 			}
 		}
 	},
