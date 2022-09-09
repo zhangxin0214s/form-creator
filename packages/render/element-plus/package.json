@@ -1,11 +1,38 @@
 {
-  "name": "@form-creator/render/element-plus",
-  "version": "1.0.0",
-  "description": "this is a element-plus lib for form-creator ",
-  "main": "lib/element-plus.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "name": "fc-element-plus",
+  "private": false,
+  "version": "1.0.8",
   "author": "zhangxin0214",
-  "license": "ISC"
+  "keywords": [
+    "form-creator",
+    "element-plus"
+  ],
+  "scripts": {
+    "dev": "vite --force --host",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "files": [
+    "lib"
+  ],
+  "main": "lib/fc-element-plus.umd.js",
+  "module": "lib/fc-element-plus.es.js",
+  "exports": {
+    "./lib/style.css": "./lib/style.css",
+    ".": {
+      "import": "./lib/fc-element-plus.es.js",
+      "require": "./lib/fc-element-plus.umd.js"
+    }
+  },
+  "dependencies": {
+    "@vueup/vue-quill": "1.0.0-alpha.1",
+    "element-plus": "2.2.12",
+    "sass": "1.54.0",
+    "sass-loader": "10.0.1",
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.3.3",
+    "vite": "^2.9.9"
+  }
 }

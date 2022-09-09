@@ -32,7 +32,7 @@
           <template #item="{ element: widget }">
             <div class="transition-group-el">
               <component
-                  :is="componentMap[widget.type]"
+                  :is="widget.type"
                   :key="widget.id"
                   :widget="widget"
                   :parent-widget="widgetList"
@@ -62,25 +62,12 @@
   </div>
 </template>
 <script setup>
-import eleComponents from './components/element-ui';
 import toolBar from '../toolbar-panel/index.vue'
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 import FormInstance from 'element-plus';
-import { reactive, ref } from 'vue'
+import { ref } from 'vue'
 
-const componentMap = {
-  ...eleComponents
-};
-const testdata = reactive({
-  name:''
-})
-
-const rules = ref({
-  name:[
-    {required:true, message:'Please input Activity name', trigger:'blur'}
-  ]
-})
 const _widgetStore = widgetStore();
 const {widgetList, formConfig, isEditor, selectedWidget} = storeToRefs(_widgetStore);
 
@@ -98,7 +85,6 @@ const selected = (widgetData) => {
  * 拖拽结束
  */
 const onEnd = () => {
-  console.log("结束")
   _widgetStore.selectedWidget = _widgetStore.cloneWidget;
   _widgetStore.recordHistory();
 }
