@@ -9,7 +9,7 @@
             >
             <template v-for="(widget, index) in widgetList" :key="index">
                 <component
-                    :is="componentMap[widget.type]"
+                    :is="widget.type"
                     :key1="widget.id"
                     :widget=widget
                     :parent-widget="widgetList"
