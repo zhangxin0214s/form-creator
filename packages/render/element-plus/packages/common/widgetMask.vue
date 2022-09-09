@@ -36,15 +36,17 @@
 	</div>
 </template>
 <script setup>
+import { inject } from 'vue';
 const props = defineProps(['widget', 'copyWidget','isEditor', 'selectedWidget', 'basicProp', 'parent', 'ruleForm','propKey','parentWidget']);
-const emit = defineEmits(['copyWidget','removeWidget']);
 
+const copyWidget = inject("copyWidget")
 const copy = () => {
-	emit('copyWidget',props.widget)
+	copyWidget(props.widget)
 };
 
+const removeWidget = inject("removeWidget")
 const delete1 = () => {
-	emit('removeWidget',props.widget, props.parentWidget)
+	removeWidget(props.widget, props.parentWidget)
 	if(props.parent?.ruleFormKeyType === 'array'){
 		props.ruleForm.forEach((rule,index) =>{
 			if(Object.keys(rule).indexOf(props.widget.ruleFormKey)>-1){

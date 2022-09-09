@@ -1,7 +1,8 @@
 <template>
     <el-col class="grid-content1 ep-bg-purple">
         <draggable :list="colWidget.widgetList" item-key="id" v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300}"
-            tag="transition-group" :component-data="{name: 'fade'}" @add="onEnd">
+            tag="transition-group" :component-data="{name: 'fade'}"
+            @add="onEnd1">
             <template #item="{ element }">
                 <div class="transition-group-el">
                     <component 
@@ -14,10 +15,7 @@
                         :rule-form = "ruleForm[colIdx]"
                         :selected-widget="selectedWidget"
                         :is-editor="isEditor"
-                        @copyWidget="copyWidget(element)"
-                        @removeWidget="removeWidget(element,colWidget.widgetList)"
-                        @click.stop="selected(element)" 
-                >
+                        @click.stop="selected1(element)">
                     </component>
                 </div>
             </template>
@@ -25,6 +23,7 @@
     </el-col>
 </template>
 <script setup>
+    import { inject } from 'vue'
     const props = defineProps([
         'colWidget',
         'ruleForm',
@@ -42,23 +41,17 @@
             return `${element.ruleFormKey}`
         }
     }
-    const emit = defineEmits(['selected','copyWidget','removeWidget','onEnd']);
 
-    const onEnd = () =>{
-        emit('onEnd')
+    const onEnd = inject('onEnd')
+    const onEnd1 = () =>{
+        onEnd()
+    }
+    
+    const selected = inject('selected')
+    const selected1 = (element) =>{
+        selected(element)
     }
 
-    const selected = (element) =>{
-        emit('selected',element)
-    }
-
-    const copyWidget = (element) =>{
-        emit('copyWidget',element)
-    }
-
-    const removeWidget = (widget, parentWidget) =>{
-        emit('removeWidget',widget, parentWidget)
-    }
 </script>
  <style lang="scss" scoped>
  .grid-content1{

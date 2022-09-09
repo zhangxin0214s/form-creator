@@ -7,16 +7,16 @@ const useRegisterEvent = () =>{
      * @param {*} widget 
      * @returns 
      */
-    const handleOnClick = (props,emit) =>{
+    const handleOnClick = (props,inject) =>{
         const EVENTS = props.widget.options.events;
         if(!EVENTS?.onClick) return;
         new Function(
             'props',
-            'emit',
+            'inject',
             'ElMessage',
             EVENTS?.onClick.value)
             (props,
-             emit,
+             inject,
              ElMessage)
     }
 

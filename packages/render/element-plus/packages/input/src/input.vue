@@ -24,14 +24,13 @@
 <script setup name="input">
 import widgetMask from '../../common/widgetMask.vue';
 import { ElMessage } from 'element-plus'
-import { watch} from 'vue';
+import { watch,inject } from 'vue';
 import { handleChangeEvent } from '../../hooks/handleChangeEvent'
 import { watchEvent } from '../../hooks/watchEvent'
 
 const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
 
 watchEvent(props,watch)
-
 </script>
 <style scoped>
 .hint {

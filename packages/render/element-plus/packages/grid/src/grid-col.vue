@@ -6,7 +6,7 @@
         >
             <draggable :list="colWidget.widgetList" item-key="id" v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300}"
                 tag="transition-group" :component-data="{name: 'fade'}"
-                @add="onEnd">
+                @add="onEnd1">
                 <template #item="{ element,index }">
                     <div class="transition-group-el">
                         <component
@@ -21,10 +21,7 @@
                             :selected-widget="selectedWidget"
                             :is-editor="isEditor"
                             :hidden="!isEditor && widget.options.basic.isHidden.value"
-                            @copyWidget="copyWidget(element)"
-                            @removeWidget="removeWidget(element,colWidget.widgetList)"
-                            @click.stop="selected(element)"                         
-                            @submitForm= "submitForm">
+                            @click.stop="selected1(element)">
                         </component>
                     </div>
                 </template>
@@ -33,6 +30,7 @@
     </el-col>
 </template>
 <script setup>
+    import { inject } from 'vue';
     const props = defineProps([
         'colWidget',
         'widget',
@@ -42,34 +40,17 @@
         'selectedWidget',
         'isEditor'
     ])    
-    const emit = defineEmits(['selected','copyWidget','removeWidget','onEnd']);
 
-    const onEnd = () =>{
-        emit('onEnd')
-    }
-    
-    const selected = (element) =>{
-        emit('selected',element)
+    const selected = inject('selected')
+    const selected1 = (element) =>{
+        selected(element)
     }
 
-    const copyWidget = (element) =>{
-        emit('copyWidget',element)
+    const onEnd = inject('onEnd')
+    const onEnd1 = (element) =>{
+        onEnd(element)
     }
 
-    const removeWidget = (widget, parentWidget) =>{
-        emit('removeWidget',widget, parentWidget)
-    }
-    const submitForm = async () =>{
-        if (!props.ruleFormRef) return
-        await props.ruleFormRef.validate((valid, fields) => {
-            console.log(valid,"===valid===")
-            if (valid) {
-            console.log('submit!')
-            } else {
-            console.log('error submit!', fields)
-            }
-        })
-    }
     const getPropKey = (element,index) =>{
         if(props.propKey) {
             if(props.widget.ruleFormKeyType === 'object'){

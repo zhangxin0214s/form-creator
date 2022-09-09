@@ -22,6 +22,7 @@
     </div>
 </template>
 <script setup>
+    import { inject } from 'vue';
     const props = defineProps([
         'widget',
         'ruleForm',
@@ -32,12 +33,14 @@
     ]);
     const emit = defineEmits(['copyWidget','removeWidget']);
     
+    const copyWidget = inject("copyWidget")
     const copy = () =>{
-        emit('copyWidget',props.widget)
+        copyWidget(props.widget)
     }
 
+    const removeWidget = inject("removeWidget")
     const delete1 = () =>{
-      emit('removeWidget',props.widget, props.parentWidget)
+      removeWidget(props.widget, props.parentWidget)
       props.widget.ruleFormKey && delete props.ruleForm[props.widget.ruleFormKey]
       if(props.parent?.ruleFormKeyType === 'array'){
             props.ruleForm.forEach((rule,index) =>{
@@ -49,11 +52,6 @@
             props.widget.ruleFormKey && delete props.ruleForm[props.widget.ruleFormKey]
         }
     }
-
-    const selected = (widgetData) => {
-        console.log('选中:', widgetData);
-        _widgetStore.selectedWidget = widgetData;
-    };
 
 </script>
 <style lang="scss" scoped>
