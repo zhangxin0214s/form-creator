@@ -1,9 +1,9 @@
 <script setup>
-// import { StarrySky } from '../packages/index';
+// import { card } from '../packages/index';
 </script>
 
 <template>
-	<!-- <starry-sky :stars-count="1000" :distance="1000" /> -->
+	<!-- <card /> -->
 </template>
 
 <style></style>

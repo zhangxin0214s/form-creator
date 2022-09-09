@@ -62,12 +62,11 @@
   </div>
 </template>
 <script setup>
-import eleComponents from './components/element-ui';
 import toolBar from '../toolbar-panel/index.vue'
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 import FormInstance from 'element-plus';
-import { reactive, ref } from 'vue'
+import { ref } from 'vue'
 
 const _widgetStore = widgetStore();
 const {widgetList, formConfig, isEditor, selectedWidget} = storeToRefs(_widgetStore);

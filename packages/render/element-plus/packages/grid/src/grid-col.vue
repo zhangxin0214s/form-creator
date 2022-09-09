@@ -10,7 +10,7 @@
                 <template #item="{ element,index }">
                     <div class="transition-group-el">
                         <component
-                            :is= "componentMap[element.type]" 
+                            :is= "element.type" 
                             :key= "element.id"
                             :widget = element
                             :prop-key = "getPropKey(element,index)"
@@ -33,8 +33,6 @@
     </el-col>
 </template>
 <script setup>
-    import eleComponents from '../../index.js';
-
     const props = defineProps([
         'colWidget',
         'widget',
@@ -43,12 +41,7 @@
         'ruleFormRef',
         'selectedWidget',
         'isEditor'
-    ])
-    const componentMap = {
-        ...eleComponents
-    }
-
-    
+    ])    
     const emit = defineEmits(['selected','copyWidget','removeWidget','onEnd']);
 
     const onEnd = () =>{

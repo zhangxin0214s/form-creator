@@ -4,6 +4,13 @@ const { resolve } = require('path');
 
 export default defineConfig({
 	plugins: [vue()],
+	pages: {
+        index: {
+            entry: 'examples/main.js',
+            template: 'public/index.html',
+            filename: 'index.html'
+        }
+    },
 	css: {
 		preprocessorOptions: {
 		  scss: {

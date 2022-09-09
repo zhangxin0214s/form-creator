@@ -1,7 +1,7 @@
 import { createApp } from "vue"
 import ElementPlus from "element-plus"
-import fcElementPlus from '../../render/element-plus/lib/fc-element-plus.es'
-import "../../render/element-plus/lib/style.css"
+import fcElementPlus from '../../render/element-plus/packages/index.js'
+import "../../render/element-plus/styles/global.scss"
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { createPinia } from 'pinia'
 import "element-plus/dist/index.css"

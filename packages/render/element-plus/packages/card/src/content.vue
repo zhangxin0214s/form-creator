@@ -7,7 +7,7 @@
             <template #item="{ element,index }">
                 <div class="transition-group-el" @click="selected(widget)">
                     <component 
-                        :is="componentMap[element.type]" 
+                        :is="element.type" 
                         :key="element.id"
                         :widget = "element"
                         :parent-widget= "widgetList"
@@ -28,7 +28,6 @@
     </el-col>
 </template>
 <script setup>
-    import eleComponents from '../../index.js';
     const props = defineProps([
         'widgetList',
         'widget',
@@ -37,9 +36,6 @@
         'selectedWidget',
         'isEditor'
     ])
-    const componentMap = {
-        ...eleComponents
-    }
 
     const emit = defineEmits(['selected','copyWidget','removeWidget','onEnd']);
 

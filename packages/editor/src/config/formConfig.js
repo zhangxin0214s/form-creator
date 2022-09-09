@@ -688,7 +688,7 @@ export const basicWidgets = [
 	{
 		id: 6,
 		name: "单选框",
-		type: "Radio",
+		type: "radio",
 		category: "widget",
 		icon: "Radio",
 		value: '',
@@ -1127,7 +1127,7 @@ export const basicWidgets = [
 	{
 		id: 11,
 		name: "时间选择",
-		type: "date",
+		type: "time",
 		category: "widget",
 		icon: "time",
 		value: null,
@@ -1232,7 +1232,7 @@ export const basicWidgets = [
 	{
 		id: 12,
 		name: "日期选择",
-		type: "datetimerange",
+		type: "dateTimeRange",
 		category: "widget",
 		icon: "date",
 		value: null,
@@ -1598,7 +1598,7 @@ export const advancedWidgets = [
 	{
 		id: 4,
 		name: "富文本",
-		type: "richtext",
+		type: "richText",
 		category: "widget",
 		icon: "richtext",
 		options: {

@@ -2,6 +2,7 @@
   "name": "fc-element-plus",
   "private": false,
   "version": "1.0.5",
+  "author": "zhangxin0214",
   "keywords": [
     "form-creator",
     "element-plus"
@@ -24,6 +25,7 @@
     }
   },
   "dependencies": {
+    "@vueup/vue-quill": "1.0.0-alpha.1",
     "element-plus": "2.2.12",
     "sass": "1.54.0",
     "sass-loader": "10.0.1",
