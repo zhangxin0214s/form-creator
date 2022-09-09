@@ -12,12 +12,12 @@
 				@change="setLinkageObject"
 				:options="advancedProp[key1].options"
 			></el-cascader>
-			<eventBasic
+			<event-basic
 				v-if="advancedProp[key1].value.length !== 0"
 				:events-prop="advancedProp"
 				:key1="'linkageCode'"
 				:style="`margin-left: -100px;margin-top: 10px;`"
-			></eventBasic>
+			></event-basic>
 		</el-form-item>
 	</el-form>
 </template>
@@ -32,7 +32,6 @@ const _widgetStore = widgetStore();
 const { widgetList, unWatch } = storeToRefs(_widgetStore);
 const props = defineProps(['selectedWidget', 'advancedProp', 'key1', 'value']);
 let currentEleData = props.advancedProp[props.key1];
-console.log('1111111',currentEleData)
 const options = currentEleData.options;
 options.splice(0);
 // 从组件列表中选中除了自身的组件push到选择栏中
@@ -73,7 +72,6 @@ widgetList.value.forEach((widget) => {
 		options.push(getOptions(widget));
 	}
 });
-console.log('00000000', options);
 // 切换联动对象
 const setLinkageObject = (val) => {
 	// 清除侦听器
