@@ -1,12 +1,4 @@
 <template>
-	<container-mask
-		:widget="widget"
-		:style="`${widget.options.basic.isMoveDivider.value ? `top:${widget.options.basic.moveDistance.value}px`:''}`"
-		:rule-form="ruleForm"
-		:parent="parent"
-		:is-editor="isEditor"
-		:selected-widget="selectedWidget"
-	>
 		<el-row
 			class="grid-container"
 			:class="[
@@ -32,18 +24,18 @@
 					
 					:style="`height:${widget.options.basic.colHeight.value}px;`"
 				>
+					<slot name="widgetChild" v-bind="{colWidget, propKey:getPropKey(widget,colIdx)}"></slot>
 				</Col>
 			</template>
 		</el-row>
-	</container-mask>
-
 </template>
 <script setup name="grid">
 import { watch } from 'vue';
 import { ElMessage } from 'element-plus'
-import containerMask from '../../common/containerMask.vue';
 import Col from './grid-col.vue';
+
 const props = defineProps(['widget', 'selectedWidget', 'isEditor', 'parent', 'propKey', 'ruleForm', 'ruleFormRef']);
+
 
 watch(
 	() => props.propKey,
@@ -99,6 +91,19 @@ const removeWidget1 = (widget, parentWidget) =>{
 
 const onEnd1 = () =>{
 	emit('onEnd1')
+}
+
+const getPropKey = (element,index) =>{
+	if(props.propKey) {
+		if(props.widget.ruleFormKeyType === 'object'){
+			return `${props.propKey}.${element.ruleFormKey}`
+		}
+		if(props.widget.ruleFormKeyType === 'array'){
+			return `${props.propKey}.${index}.${element.ruleFormKey}`
+		}
+	}else{
+		return `${element.ruleFormKey}`
+	}
 }
 </script>
  <style lang="scss" scoped>

@@ -70,24 +70,6 @@ const getPropName = () => {
 .container-mask {
 	position: relative;
 	margin-bottom: 2px;
-	&-title {
-		position: absolute;
-		top: -2px;
-		//bottom: -24px;  /* 拖拽手柄位于组件下方，有时无法正常拖动，原因未明？？ */
-		left: -2px;
-		height: 22px;
-		line-height: 22px;
-		background: $--color-primary;
-		z-index: 9;
-		.text {
-			font-size: 14px;
-			font-style: normal;
-			color: #fff;
-			margin: 4px;
-			cursor: move;
-		}
-	}
-
 	&-action {
 		position: absolute;
 		bottom: 0;

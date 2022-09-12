@@ -31,89 +31,32 @@
             @add="onEnd">
           <template #item="{ element: widget }">
             <div class="transition-group-el">
-              <div class="container-mask">
-
+              
                 <!-- 非容器组件 -->
                 <template v-if="widget.category === 'widget'">
-                  <el-form-item
-                    :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
-                    :label="basicProp.label.value"
-                    :rules="widget.rules"
-                    :prop="propKey"
-                    :key="propKey">
-                      <component
-                        :is="widget.type"
-                        :key="widget.id"
-                        :widget="widget"
-                        :parent-widget="widgetList"
-                        :prop-key="widget.ruleFormKey"
-                        :rule-form="formConfig.ruleForm"
-                        :rule-form-key-type="widget.ruleFormKeyType"
-                        :rule-form-ref="ruleFormRef"
-                        :selected-widget="selectedWidget"
-                        :is-editor="isEditor"
-                        :hidden="!isEditor && widget.options.basic.isHidden.value"
-                        @click.stop="selected(widget)">
-                      </component>
-                  </el-form-item>
+                  <widget-mask
+                    :widget="widget"
+                    :widget-list="widgetList"
+                    :selected-widget="selectedWidget"
+                    :is-editor="isEditor"
+                    :form-config="formConfig"
+                    :prop-key="widget.ruleFormKey"
+                    :rule-form="formConfig.ruleForm"
+                  />
                 </template>
                 
                 <!-- 容器类组件 -->
-                <template v-else>
-                  <component
-                      :is="widget.type"
-                      :key="widget.id"
-                      :widget="widget"
-                      :parent-widget="widgetList"
-                      :prop-key="widget.ruleFormKey"
-                      :rule-form="formConfig.ruleForm"
-                      :rule-form-key-type="widget.ruleFormKeyType"
-                      :rule-form-ref="ruleFormRef"
-                      :selected-widget="selectedWidget"
-                      :is-editor="isEditor"
-                      :hidden="!isEditor && widget.options.basic.isHidden.value"
-                      @click.stop="selected(widget)">
-                        <draggable :list="colWidget.widgetList" item-key="id" v-bind="{group:'dragGroup', ghostClass: 'ghost',animation: 300}"
-                          tag="transition-group" :component-data="{name: 'fade'}"
-                          @add="onEnd1">
-                          <template #item="{ element,index }">
-                             <div class="transition-group-el">
-                                <component
-                                    :is= "element.type" 
-                                    :key= "element.id"
-                                    :widget = element
-                                    :prop-key = "getPropKey(element,index)"
-                                    :parent-widget= colWidget.widgetList
-                                    :rule-form-ref= "ruleFormRef"
-                                    :rule-form= "ruleForm"
-                                    :parent = "widget"
-                                    :selected-widget="selectedWidget"
-                                    :is-editor="isEditor"
-                                    :hidden="!isEditor && widget.options.basic.isHidden.value"
-                                    @click.stop="selected1(element)">
-                                </component>
-                              </div>
-                          </template>
-                        </draggable>
-                    </component>
+                <template v-if="widget.category === 'container'">
+                  <container-mask
+                    :widget="widget"
+                    :widget-list="widgetList"
+                    :selected-widget="selectedWidget"
+                    :is-editor="isEditor"
+                    :form-config="formConfig"
+                    :prop-key="widget.ruleFormKey"
+                    :rule-form="formConfig.ruleForm"
+                  />
                 </template>
-
-                <!-- 操作项 -->
-                <div
-                  class="container-mask-action"
-                  v-if="selectedWidget?.id === widget?.id && isEditor">
-                    <svg-icon
-                      icon-class="copy"
-                      class="copyIcon"
-                      @click.stop="copy"
-                    />
-                    <svg-icon
-                      icon-class="delete"
-                      class="deleteIcon"
-                      @click.stop="delete1"
-                    />
-                </div>
-              </div>
             </div>
           </template>
         </draggable>
@@ -122,11 +65,13 @@
   </div>
 </template>
 <script setup>
-import toolBar from '../toolbar-panel/index.vue'
+import FormInstance from 'element-plus';
+import { ref,provide } from 'vue';
+import toolBar from '../toolbar-panel/index.vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
-import FormInstance from 'element-plus';
-import { ref,provide } from 'vue'
+import widgetMask from './widgetMask.vue'
+import containerMask from './containerMask.vue'
 
 const _widgetStore = widgetStore();
 const {widgetList, formConfig, isEditor, selectedWidget} = storeToRefs(_widgetStore);
@@ -154,7 +99,7 @@ provide('onEnd', onEnd)
 /**
  * 复制组件
  */
-const copyWidget = (widget) => {
+const copyWidget = ({widget}) => {
   _widgetStore.copyWidget(widget);
 }
 provide('copyWidget', copyWidget)
@@ -162,8 +107,18 @@ provide('copyWidget', copyWidget)
 /**
  * 删除组件
  */
-const removeWidget = (widget, parentWidget) => {
+const removeWidget = ({widget, parentWidget, parent,ruleForm}) => {
   _widgetStore.removeWidget(widget, parentWidget);
+
+  if(parent?.ruleFormKeyType === 'array'){
+		ruleForm.forEach((rule,index) =>{
+			if(Object.keys(rule).indexOf(widget.ruleFormKey)>-1){
+				ruleForm.splice(index,1)
+			}
+		})
+	}else{
+		widget.ruleFormKey && delete ruleForm[widget.ruleFormKey]
+	}
 }
 provide('removeWidget', removeWidget)
 
@@ -242,4 +197,28 @@ provide('submitForm', submitForm)
 ::-webkit-scrollbar {
   display: none;
 }
+
+// 选中样式
+.select {
+	border: 1px solid $--color-primary;
+}
+
+// 遮罩样式
+.container-mask {
+	position: relative;
+	margin-bottom: 2px;
+	&-action {
+		position: absolute;
+		bottom: 0;
+		right: -2px;
+		height: 23px;
+		line-height: 28px;
+		background: $--color-primary;
+		z-index: 999;
+	}
+}
+.copyIcon:hover,.deleteIcon:hover {
+	cursor: pointer;
+}
+
 </style>
