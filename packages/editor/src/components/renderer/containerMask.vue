@@ -8,8 +8,7 @@
         :parent="parent"
         :rule-form="ruleForm"
         :selected-widget="selectedWidget"
-        :is-editor="isEditor"
-        @click.stop="select1(widget)">
+        :is-editor="isEditor">
 
         <template v-slot:widgetChild="scope">
             <template v-for="(element, index) in scope.colWidget.widgetList" :key="index">
