@@ -14,7 +14,7 @@
           v-bind="{
             colWidget, 
             propKey,
-            ruleForm: ruleForm[widget.ruleFormKey] || ruleForm,
+            ruleForm: ruleForm[widget.ruleFormKey][colIdx] || ruleForm,
             index:colIdx
           }">
         </slot>
