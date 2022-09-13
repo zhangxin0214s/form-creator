@@ -1,6 +1,7 @@
 <template>
     <div 
-        class="container-mask">
+        class="container-mask"
+        :style="`${widget.options.basic.isMoveDivider.value ? `top:${widget.options.basic.moveDistance.value}px`:''}`">
         <component
             :is="widget.type"
             :key="widget.id"
