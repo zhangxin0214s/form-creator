@@ -41,13 +41,20 @@ import { watch } from 'vue';
 import { ElMessage } from 'element-plus'
 import Col from './grid-col.vue';
 
-const props = defineProps(['widget', 'selectedWidget', 'isEditor', 'parent', 'propKey', 'ruleForm', 'ruleFormRef']);
+const props = defineProps([
+	'widget',
+	'selectedWidget', 
+	'isEditor', 
+	'parent', 
+	'propKey', 
+	'ruleForm', 
+	'ruleFormRef'
+]);
 
 
 watch(
 	() => props.propKey,
 	(value) => {
-		console.log(122)
 		const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
 		const parentRuleFormKeyType = props.parent?.ruleFormKeyType;
 		const ruleFormKeyType = props.widget.ruleFormKeyType;

@@ -11,25 +11,8 @@
     import { inject } from 'vue';
     const props = defineProps([
         'colWidget',
-        'widget',
-        'propKey',
-        'ruleForm',
-        'ruleFormRef',
-        'selectedWidget',
         'isEditor'
     ])    
-
-    const selected = inject('selected')
-    const selected1 = (element) =>{
-        selected(element)
-    }
-
-    const onEnd = inject('onEnd')
-    const onEnd1 = (element) =>{
-        onEnd(element)
-    }
-
-    
 </script>
  <style lang="scss" scoped>
     .grid-content1{
