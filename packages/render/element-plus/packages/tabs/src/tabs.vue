@@ -1,27 +1,28 @@
 <template>
-    <container-mask 
-      :widget="widget"
-      :rule-form="ruleForm"
-      :parent="parent"
-      :is-editor="isEditor"
-      :selected-widget="selectedWidget">
-      <el-tabs type="border-card" v-model="activeName" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
-        <el-tab-pane :label="colWidget.name" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
-          <tabs-content 
-            :colWidget="colWidget"
-            :rule-form="ruleForm[widget.ruleFormKey] || [{}]"
-            :widget="widget"
-            :prop-key="propKey"
-            :colIdx="colIdx"
-            :selected-widget="selectedWidget"
-            :is-editor="isEditor">
-          </tabs-content>
-        </el-tab-pane>
-      </el-tabs>
-    </container-mask>
-  </template>
+  <el-tabs type="border-card" v-model="activeName" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
+    <el-tab-pane :label="colWidget.name" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
+      <tabs-content 
+        :colWidget="colWidget"
+        :rule-form="ruleForm[widget.ruleFormKey] || [{}]"
+        :widget="widget"
+        :prop-key="propKey"
+        :colIdx="colIdx"
+        :selected-widget="selectedWidget"
+        :is-editor="isEditor">
+        <slot 
+          name="widgetChild"
+          v-bind="{
+            colWidget, 
+            propKey,
+            ruleForm: ruleForm[widget.ruleFormKey] || ruleForm,
+            index:colIdx
+          }">
+        </slot>
+      </tabs-content>
+    </el-tab-pane>
+  </el-tabs>
+</template>
   <script setup name="tabs">
-    import containerMask from "../../common/containerMask.vue"
     import tabsContent from "./content.vue"
     import { watch } from "vue"
     const props=defineProps([
