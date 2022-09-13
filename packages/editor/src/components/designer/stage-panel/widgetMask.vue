@@ -25,7 +25,7 @@
             <svg-icon
                 icon-class="delete"
                 class="deleteIcon"
-                @click.stop="removeWidget1({widget, parentWidget: widgetList, ruleForm: formConfig.ruleForm })"
+                @click.stop="removeWidget1({widget, parentWidget: widgetList, ruleForm })"
             />
         </div>
     </div>
