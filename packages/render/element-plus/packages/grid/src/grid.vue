@@ -27,8 +27,9 @@
 					 name="widgetChild"
 					 v-bind="{
 							colWidget, 
-							propKey: getPropKey(colWidget,colIdx),
-							ruleForm: ruleForm[widget.ruleFormKey] || ruleForm
+							propKey,
+							ruleForm: ruleForm[widget.ruleFormKey] || ruleForm,
+							index:colIdx
 						}">
 					</slot>
 				</Col>
@@ -100,18 +101,6 @@ const onEnd1 = () =>{
 	emit('onEnd1')
 }
 
-const getPropKey = (element,index) =>{
-	if(props.propKey) {
-		if(props.widget.ruleFormKeyType === 'object'){
-			return `${props.propKey}.${element.ruleFormKey}`
-		}
-		if(props.widget.ruleFormKeyType === 'array'){
-			return `${props.propKey}.${index}.${element.ruleFormKey}`
-		}
-	}else{
-		return `${element.ruleFormKey}`
-	}
-}
 </script>
  <style lang="scss" scoped>
 .grid-container {

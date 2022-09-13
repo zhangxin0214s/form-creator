@@ -12,7 +12,6 @@
 		v-model="widget.value"
 		show-word-limit
 		@change="handleChangeEvent(props,ElMessage)"/>
-		
 		<div class="hint">{{ widget.options.basic.hint.value }}</div>
 	</el-form-item>
 	

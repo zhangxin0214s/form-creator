@@ -27,7 +27,7 @@
                                     :is-editor="isEditor"
                                     :form-config="formConfig"
                                     :parent="widget"
-                                    :prop-key="scope.propKey"
+                                    :prop-key="getPropKey({parent: widget,element, propKey: scope.propKey, index: scope.index})"
                                     :rule-form="scope.ruleForm"
                                 />
                             </template>
@@ -83,6 +83,18 @@
         'parent'
     ]);
     
+    const getPropKey = ({parent,element,propKey,index}) =>{
+        if(propKey) {
+            if(parent.ruleFormKeyType === 'object'){
+                return `${propKey}.${element.ruleFormKey}`
+            }
+            if(parent.ruleFormKeyType === 'array'){
+                return `${propKey}.${index}.${element.ruleFormKey}`
+            }
+        }else{
+            return `${element.ruleFormKey}`
+        }
+    }
     /**
      * End
      */
