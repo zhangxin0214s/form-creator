@@ -12,9 +12,9 @@
         <slot 
           name="widgetChild"
           v-bind="{
-            colWidget, 
+            colWidget: colWidget, 
             propKey,
-            ruleForm: ruleForm[widget.ruleFormKey][colIdx] || ruleForm,
+            ruleForm: ruleForm[widget.ruleFormKey] && ruleForm[widget.ruleFormKey][colIdx],
             index:colIdx
           }">
         </slot>
