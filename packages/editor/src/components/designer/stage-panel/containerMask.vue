@@ -21,12 +21,13 @@
                             <template v-if="element.category === 'widget'">
                                 <widget-mask
                                     :widget="element"
-                                    :widgetList="scope.colWidget.widgetList"
-                                    :selectedWidget="selectedWidget"
-                                    :isEditor="isEditor"
-                                    :formConfig="formConfig"
-                                    :prop-key="porpKey"
-                                    :rule-form="ruleForm"
+                                    :widget-list="scope.colWidget.widgetList"
+                                    :selected-widget="selectedWidget"
+                                    :is-editor="isEditor"
+                                    :form-config="formConfig"
+                                    :parent="widget"
+                                    :prop-key="scope.porpKey"
+                                    :rule-form="scope.ruleForm"
                                 />
                             </template>
 
@@ -37,6 +38,9 @@
                                     :selectedWidget="selectedWidget"
                                     :isEditor="isEditor"
                                     :formConfig="formConfig"
+                                    :parent="widget"
+                                    :prop-key="scope.porpKey"
+                                    :rule-form="scope.ruleForm"
                                 />
                             </template>
 
@@ -76,7 +80,7 @@
         'porpKey',
         'ruleForm'
     ]);
-
+    
     /**
      * End
      */

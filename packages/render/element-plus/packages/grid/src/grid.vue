@@ -24,7 +24,14 @@
 					
 					:style="`height:${widget.options.basic.colHeight.value}px;`"
 				>
-					<slot name="widgetChild" v-bind="{colWidget, propKey:getPropKey(widget,colIdx)}"></slot>
+					<slot 
+					 name="widgetChild"
+					 v-bind="{
+							colWidget, 
+							propKey: getPropKey(widget,colIdx),
+							ruleForm: ruleForm[widget.ruleFormKey] || ruleForm
+						}">
+					</slot>
 				</Col>
 			</template>
 		</el-row>
