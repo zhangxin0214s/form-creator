@@ -16,11 +16,49 @@
       </el-collapse-item>
 
       <!--高级属性-->
-      <el-collapse-item name="2" title="高级属性">
+      <el-collapse-item
+          name="2"
+          title="高级属性"
+      >
+        <!-- 联动对象设置 -->
+        <div
+            v-for="(item,key,index) in advancedProp"
+            :key="index"
+        >
+          <component
+              :is="componentMap[getAdvancedCompName(key)]"
+              :basic-prop="basicProp"
+              :advanced-prop="advancedProp"
+              :selected-widget="selectedWidget"
+              :value="item"
+              :key1="key"
+          />
+        </div>
+
+        <!-- 高级属性设置 -->
         <el-divider content-position="center">单选框设置</el-divider>
         <radio-basic
             :advanced-prop="advancedProp"
         />
+      </el-collapse-item>
+
+      <!--事件属性-->
+      <el-collapse-item
+          name="3"
+          title="事件属性"
+      >
+        <el-divider content-position="center">事件设置</el-divider>
+        <div
+            v-for="(item,key,index) in eventsProp"
+            :key="index"
+        >
+          <component
+              :is="componentMap[getEventCompName(EVENTS_PROPERTIES,key)]"
+              :events-prop="eventsProp"
+              :value="item"
+              :key1="key"
+          ></component>
+        </div>
       </el-collapse-item>
     </el-collapse>
   </div>
@@ -28,21 +66,23 @@
 
 <script setup>
 import { ref, defineProps } from "vue"
-import { BASCI_COMPONENTS, BASIC_PROPERTIES } from '../propertyRegister'
+import { ADVANCED_PROPERTIES, BASCI_COMPONENTS, BASIC_PROPERTIES, EVENTS_PROPERTIES } from '../propertyRegister'
 import * as basicComponents from '../components/index';
 import RadioBasic from '../components/radioItems.vue'
 
-defineProps([
-  'selectedWidget',
-  'basicProp',
-  'advancedProp'
-])
+defineProps(['selectedWidget', 'basicProp', 'advancedProp', 'eventsProp'])
 const componentMap = {
   ...basicComponents
 }
 const activeNames = ref(['1', '2', '3'])
 const getPropCompName = (key) => {
   return BASCI_COMPONENTS[BASIC_PROPERTIES[key]]
+}
+const getAdvancedCompName = (key) => {
+  return BASCI_COMPONENTS[ADVANCED_PROPERTIES[key]];
+};
+const getEventCompName = (properties, key) => {
+  return BASCI_COMPONENTS[properties[key]]
 }
 </script>
 
