@@ -1,10 +1,10 @@
 <template>
-	<widget-mask
-		:widget="widget"
-		:basic-prop="widget.options.basic"
-		:advanced-prop="widget.options.advanced"
-		:parent-widget="parentWidget"
-	>
+	<el-form-item
+		:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
+		:label="widget.options.basic.label.value"
+		:rules="widget.rules"
+		:prop="propKey"
+		:key="propKey">
 		<el-upload
 			v-model:file-list="widget.options.basic.maxUpLoadNumber.upLoadList"
 			class="upload-demo"
@@ -38,14 +38,13 @@
 				/>
 			</el-dialog>
 		</el-upload>
-	</widget-mask>
+	</el-form-item>
 </template>
 
 <script setup name="upload">
-import widgetMask from '../../common/widgetMask.vue';
 import { ref } from 'vue';
 
-let props = defineProps(['widget', 'parentWidget']);
+const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
 const dialogImageUrl = ref('');
 const dialogVisible = ref(false);
 const handlePictureCardPreview = (uploadFile) => {
@@ -53,5 +52,14 @@ const handlePictureCardPreview = (uploadFile) => {
 	dialogVisible.value = true;
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
+.hint {
+	font-size: 12px;
+	color: #9b9b9b;
+}
+// 选中样式
+.select {
+	outline: 1px solid $--color-primary;
+}
+
 </style>

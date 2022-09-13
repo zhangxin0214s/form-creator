@@ -1,10 +1,18 @@
 <template>
+  <el-form-item
+		:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
+		:label="widget.options.basic.label.value"
+		:rules="widget.rules"
+		:prop="propKey"
+		:key="propKey">
     <div class="local-quill-editor">
       <!-- <QuillEditor theme="snow" :options="editorOption"/> -->
     </div>
-  </template>
-  <script setup name="richText">
-  </script>
+  </el-form-item>
+</template>
+<script setup name="richText">
+  const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
+</script>
   <!-- <script>
    import {QuillEditor,Quill} from '@vueup/vue-quill'
   import '@vueup/vue-quill/dist/vue-quill.snow.css';
@@ -184,5 +192,13 @@
         text-align: left;
       }
     }
-  </style>
+    .hint {
+      font-size: 12px;
+      color: #9b9b9b;
+    }
+    // 选中样式
+    .select {
+      outline: 1px solid $--color-primary;
+    }
+</style>
   

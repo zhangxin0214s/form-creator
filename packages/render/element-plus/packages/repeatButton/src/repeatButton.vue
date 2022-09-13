@@ -1,33 +1,37 @@
 <template>
-    <widget-mask
-        :widget="widget"
-        :basicProp="widget.options.basic"
-        :advancedProp="widget.options.advanced"
-        :parent-widget="parentWidget">
-      <el-checkbox-group
-          :size="widget.options.basic.checkSize.value"
-          v-model="widget.value"
+  <el-form-item
+		:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
+		:label="widget.options.basic.label.value"
+		:rules="widget.rules"
+		:prop="propKey"
+		:key="propKey">
+    <el-checkbox-group
+        :size="widget.options.basic.checkSize.value"
+        v-model="widget.value"
+    >
+      <el-checkbox-button
+          v-for="(item,index) in widget.options.advanced.optionItems"
+          :key="index"
+          :label="item.label"
+          :disabled="item.disabled"
       >
-        <el-checkbox-button
-            v-for="(item,index) in widget.options.advanced.optionItems"
-            :key="index"
-            :label="item.label"
-            :disabled="item.disabled"
-        >
-          {{ item.label }}
-        </el-checkbox-button>
-      </el-checkbox-group>
-    </widget-mask>
-  </template>
-  <script setup name="repeatButton">
-  import widgetMask from '../../common/widgetMask.vue';
-  
-  let props = defineProps([
-    'widget',
-    'parentWidget',
-    'advancedProp'
-  ])
-  </script>
-  <style lang="scss" scoped>
-  </style>
+        {{ item.label }}
+      </el-checkbox-button>
+    </el-checkbox-group>
+  </el-form-item>
+</template>
+<script setup name="repeatButton">
+
+const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
+</script>
+<style lang="scss" scoped>
+.hint {
+	font-size: 12px;
+	color: #9b9b9b;
+}
+// 选中样式
+.select {
+	outline: 1px solid $--color-primary;
+}
+</style>
   

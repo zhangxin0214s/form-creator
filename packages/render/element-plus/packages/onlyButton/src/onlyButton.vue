@@ -1,34 +1,37 @@
 <template>
-    <widget-mask
-        :widget="widget"
-        :basicProp="widget.options.basic"
-        :advancedProp="widget.options.advanced"
-        :parent-widget="parentWidget">
-      <el-radio-group
-          :size="widget.options.basic.radioSize.value"
-          v-model="widget.value"
+  <el-form-item
+		:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
+		:label="widget.options.basic.label.value"
+		:rules="widget.rules"
+		:prop="propKey"
+		:key="propKey">
+    <el-radio-group
+        :size="widget.options.basic.radioSize.value"
+        v-model="widget.value"
+    >
+      <el-radio-button
+          v-for="(item,index) in widget.options.advanced.optionItems"
+          :key="index"
+          :label="item.label"
+          :value="item.value"
+          :disabled="item.disabled"
       >
-        <el-radio-button
-            v-for="(item,index) in widget.options.advanced.optionItems"
-            :key="index"
-            :label="item.label"
-            :value="item.value"
-            :disabled="item.disabled"
-        >
-          {{ item.label }}
-        </el-radio-button>
-      </el-radio-group>
-    </widget-mask>
-  </template>
-  <script setup name="onlyButton">
-  import widgetMask from '../../common/widgetMask.vue';
-  
-  let props = defineProps([
-    'widget',
-    'parentWidget',
-    'advancedProp'
-  ])
-  </script>
-  <style lang="scss" scoped>
-  </style>
+        {{ item.label }}
+      </el-radio-button>
+    </el-radio-group>
+  </el-form-item>
+</template>
+<script setup name="onlyButton">
+const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
+</script>
+<style lang="scss" scoped>
+.hint {
+	font-size: 12px;
+	color: #9b9b9b;
+}
+// 选中样式
+.select {
+	outline: 1px solid $--color-primary;
+}
+</style>
   
