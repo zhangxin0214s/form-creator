@@ -1,15 +1,10 @@
 <template>
-	<widget-mask
-		:widget="widget"
-		:basic-prop="widget.options.basic"
-		:advanced-prop="widget.options.advanced"
-		:parent-widget="parentWidget"
-		:prop-key="propKey"
-		:rule-form="ruleForm"
-		:parent="parent"
-		:is-editor="isEditor"
-		:selected-widget="selectedWidget"
-	>
+	<el-form-item
+		:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
+		:label="widget.options.basic.label.value"
+		:rules="widget.rules"
+		:prop="propKey"
+		:key="propKey">
 		<div class="phone-content">
 			<el-select
 				v-model="widget.options.basic.prefix.value"
@@ -43,11 +38,10 @@
 				@change="handleChangeEvent(props,ElMessage)"
 			/>
 		</div>
-	</widget-mask>
+	</el-form-item>
 </template>
 
 <script setup name="cellPhone">
-import widgetMask from '../../common/widgetMask.vue';
 import { watch } from 'vue';
 import { ElMessage } from 'element-plus'
 import { handleChangeEvent } from '../../hooks/handleChangeEvent';
@@ -72,12 +66,20 @@ const setRules = () => {
 	// ] = `${props.widget.options.basic.prefix.value}-${props.widget.value}`;
 };
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .phone-content {
 	width: 100%;
 	display: flex;
 }
 .prefix-select {
 	margin-right: 10px;
+}
+.hint {
+	font-size: 12px;
+	color: #9b9b9b;
+}
+// 选中样式
+.select {
+	outline: 1px solid $--color-primary;
 }
 </style>

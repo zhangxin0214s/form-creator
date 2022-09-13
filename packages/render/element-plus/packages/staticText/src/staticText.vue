@@ -1,12 +1,8 @@
 <template>
-	<widget-mask
-		:widget="widget"
-		:basic-prop="widget.options.basic"
-		:advanced-prop="widget.options.advanced"
-		:parent-widget="parentWidget"
-		:is-editor="isEditor"
-		:selected-widget="selectedWidget"
-	>
+	<el-form-item
+		:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
+		:label="widget.options.basic.label.value"
+		:rules="widget.rules">
 		<pre :style="{
 			'width':'100%',
 			'margin':'inherit',
@@ -19,14 +15,21 @@
 			'text-decoration':`${widget.options.basic['font-style'].options[2].value ? 'underline' : 'none'}`,
 		}
 		"><span v-show="widget.options.basic.addRequired.value" style="color:red">*</span><span>{{widget.options.basic.textareaDefaultValue.value}}</span></pre>
-	</widget-mask>
+	</el-form-item>
 </template>
 
 <script setup name="staticText">
 // 这个文件不要格式化代码，上面的pre标签和内容必须在一行，谢谢
-import widgetMask from '../../common/widgetMask.vue';
 defineProps(['widget','isEditor', 'selectedWidget', 'parentWidget']);
 </script>
-<style scoped>
-
+<style lang="scss" scoped>
+	.hint {
+		font-size: 12px;
+		color: #9b9b9b;
+	}
+	// 选中样式
+	.select {
+		outline: 1px solid $--color-primary;
+	}
+	
 </style>

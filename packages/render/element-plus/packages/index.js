@@ -15,14 +15,14 @@ import textarea from './textarea'
 import divider from './divider'
 import cellPhone from './cellPhone'
 import staticText from './staticText'
-import time from './time'
-import date from './date'
+// import time from './time'
+// import date from './date'
 
 // 高级组件
-import repeatButton from './repeatButton'
-import onlyButton from './onlyButton'
-import upload from './upload'
-import richText from './richText'
+// import repeatButton from './repeatButton'
+// import onlyButton from './onlyButton'
+// import upload from './upload'
+// import richText from './richText'
 
 const components = [
 	card,
@@ -38,12 +38,12 @@ const components = [
 	divider,
 	cellPhone,
 	staticText,
-	time,
-	date,
-	repeatButton,
-	onlyButton,
-	upload,
-	richText,
+	// time,
+	// date,
+	// repeatButton,
+	// onlyButton,
+	// upload,
+	// richText,
 	switch1
 ];
 
@@ -62,12 +62,12 @@ export  {
 	divider,
 	cellPhone,
 	staticText,
-	time,
-	date,
-	repeatButton,
-	onlyButton,
-	upload,
-	richText,
+	// time,
+	// date,
+	// repeatButton,
+	// onlyButton,
+	// upload,
+	// richText,
 	switch1
  };
 
