@@ -53,7 +53,6 @@
                     :selected-widget="selectedWidget"
                     :is-editor="isEditor"
                     :form-config="formConfig"
-                    :parent-rule-form-key-type="111"
                     :prop-key="widget.ruleFormKey"
                     :rule-form="formConfig.ruleForm"
                   />
