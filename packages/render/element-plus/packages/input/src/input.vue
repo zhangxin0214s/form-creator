@@ -5,7 +5,6 @@
 		:rules="widget.rules"
 		:prop="propKey"
 		:key="propKey">
-
 		<el-input
 		:disabled="widget.options.basic.disabled.value"
 		:placeholder="widget.options.basic.defaultValue.value"

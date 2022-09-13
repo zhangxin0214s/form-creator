@@ -7,6 +7,7 @@
             :parent-widget="widgetList"
             :prop-key="propKey"
             :rule-form="ruleForm"
+            :parent="parent"
             :selected-widget="selectedWidget"
             :is-editor="isEditor"
             @click.stop="select1(widget)">
@@ -33,6 +34,7 @@
     import { inject } from 'vue'
     const props = defineProps([
         'widget',
+        'parent',
         'selectedWidget',
         'formConfig',
         'widgetList',

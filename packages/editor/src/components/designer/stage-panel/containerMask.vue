@@ -6,7 +6,8 @@
             :key="widget.id"
             :widget="widget"
             :parent-widget="widgetList"
-            :prop-key="porpKey"
+            :prop-key="propKey"
+            :parent="parent"
             :rule-form="ruleForm"
             :selected-widget="selectedWidget"
             :is-editor="isEditor"
@@ -26,7 +27,7 @@
                                     :is-editor="isEditor"
                                     :form-config="formConfig"
                                     :parent="widget"
-                                    :prop-key="scope.porpKey"
+                                    :prop-key="scope.propKey"
                                     :rule-form="scope.ruleForm"
                                 />
                             </template>
@@ -39,7 +40,7 @@
                                     :isEditor="isEditor"
                                     :formConfig="formConfig"
                                     :parent="widget"
-                                    :prop-key="scope.porpKey"
+                                    :prop-key="scope.propKey"
                                     :rule-form="scope.ruleForm"
                                 />
                             </template>
@@ -77,8 +78,9 @@
         'formConfig',
         'widgetList',
         'isEditor',
-        'porpKey',
-        'ruleForm'
+        'propKey',
+        'ruleForm',
+        'parent'
     ]);
     
     /**

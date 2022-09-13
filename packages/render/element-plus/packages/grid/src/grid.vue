@@ -21,14 +21,13 @@
 					:selected-widget="selectedWidget"
 					:rule-form="ruleForm[widget.ruleFormKey] || ruleForm"
 					:rule-form-key-type="widget.ruleFormKeyType"
-					
 					:style="`height:${widget.options.basic.colHeight.value}px;`"
 				>
 					<slot 
 					 name="widgetChild"
 					 v-bind="{
 							colWidget, 
-							propKey: getPropKey(widget,colIdx),
+							propKey: getPropKey(colWidget,colIdx),
 							ruleForm: ruleForm[widget.ruleFormKey] || ruleForm
 						}">
 					</slot>
@@ -47,6 +46,7 @@ const props = defineProps(['widget', 'selectedWidget', 'isEditor', 'parent', 'pr
 watch(
 	() => props.propKey,
 	(value) => {
+		console.log(122)
 		const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
 		const parentRuleFormKeyType = props.parent?.ruleFormKeyType;
 		const ruleFormKeyType = props.widget.ruleFormKeyType;
