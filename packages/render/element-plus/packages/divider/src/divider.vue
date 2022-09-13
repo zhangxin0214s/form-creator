@@ -2,9 +2,7 @@
 	<el-form-item
 		:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
 		:label="widget.options.basic.label.value"
-		:rules="widget.rules"
-		:prop="propKey"
-		:key="propKey">
+		:rules="widget.rules">
 		<el-divider
 			:direction="widget.options.basic['divider-direction'].value"
 			:border-style="widget.options.basic['divider-style'].value"

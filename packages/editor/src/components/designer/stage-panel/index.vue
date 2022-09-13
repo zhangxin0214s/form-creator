@@ -40,6 +40,7 @@
                     :selected-widget="selectedWidget"
                     :is-editor="isEditor"
                     :form-config="formConfig"
+                    :rule-form-ref="ruleFormRef"
                     :prop-key="widget.ruleFormKey"
                     :rule-form="formConfig.ruleForm"
                   />
@@ -53,6 +54,7 @@
                     :selected-widget="selectedWidget"
                     :is-editor="isEditor"
                     :form-config="formConfig"
+                    :rule-form-ref="ruleFormRef"
                     :prop-key="widget.ruleFormKey"
                     :rule-form="formConfig.ruleForm"
                   />

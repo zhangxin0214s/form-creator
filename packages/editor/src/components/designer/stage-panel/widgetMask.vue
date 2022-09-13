@@ -4,6 +4,7 @@
             :is="widget.type"
             :key="widget.id"
             :widget="widget"
+            :rule-form-ref="ruleFormRef"
             :parent-widget="widgetList"
             :prop-key="propKey"
             :rule-form="ruleForm"
@@ -40,7 +41,8 @@
         'widgetList',
         'isEditor',
         'ruleForm',
-        'propKey'
+        'propKey',
+        'ruleFormRef'
     ]);
 
     /**

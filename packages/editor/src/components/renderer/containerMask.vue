@@ -6,6 +6,7 @@
         :parent-widget="widgetList"
         :prop-key="propKey"
         :parent="parent"
+        :rule-form-ref="ruleFormRef"
         :rule-form="ruleForm"
         :selected-widget="selectedWidget"
         :is-editor="isEditor">
@@ -18,6 +19,7 @@
                         :widget-list="scope.colWidget.widgetList"
                         :selected-widget="selectedWidget"
                         :is-editor="isEditor"
+                        :rule-form-ref="ruleFormRef"
                         :form-config="formConfig"
                         :parent="widget"
                         :prop-key="getPropKey({parent: widget,element, propKey: scope.propKey, index: scope.index})"
@@ -31,6 +33,7 @@
                         :widgetList="scope.colWidget.widgetList"
                         :selectedWidget="selectedWidget"
                         :isEditor="isEditor"
+                        :rule-form-ref="ruleFormRef"
                         :formConfig="formConfig"
                         :parent="widget"
                         :prop-key="getPropKey({parent: widget,element, propKey: scope.propKey, index: scope.index})"
@@ -52,7 +55,8 @@
         'isEditor',
         'propKey',
         'ruleForm',
-        'parent'
+        'parent',
+        'ruleFormRef'
     ]);
     
     const getPropKey = ({parent,element,propKey,index}) =>{

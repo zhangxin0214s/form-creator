@@ -4,6 +4,7 @@
         :key="widget.id"
         :widget="widget"
         :parent-widget="widgetList"
+        :rule-form-ref="ruleFormRef"
         :prop-key="propKey"
         :rule-form="ruleForm"
         :parent="parent"
@@ -20,7 +21,8 @@
         'widgetList',
         'isEditor',
         'ruleForm',
-        'propKey'
+        'propKey',
+        'ruleFormRef'
     ]);
 </script>
 <style lang="scss" scoped>

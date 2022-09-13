@@ -14,6 +14,7 @@
                     :widget="widget"
                     :widget-list="widgetList"
                     :form-config="formConfig"
+                    :rule-form-ref="ruleFormRef"
                     :prop-key="widget.ruleFormKey"
                     :rule-form="formConfig.ruleForm"
                   />
@@ -25,6 +26,7 @@
                     :widget="widget"
                     :widget-list="widgetList"
                     :form-config="formConfig"
+                    :rule-form-ref="ruleFormRef"
                     :prop-key="widget.ruleFormKey"
                     :rule-form="formConfig.ruleForm"
                   />
