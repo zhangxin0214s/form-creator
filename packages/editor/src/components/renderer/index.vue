@@ -8,25 +8,35 @@
             :model="formConfig.ruleForm"
             >
             <template v-for="(widget, index) in widgetList" :key="index">
-                <component
-                    :is="widget.type"
-                    :key1="widget.id"
-                    :widget=widget
-                    :parent-widget="widgetList"
-                    :widget-type="`widget`"
+                <!-- 非容器组件 -->
+                <template v-if="widget.category === 'widget'">
+                  <widget-mask
+                    :widget="widget"
+                    :widget-list="widgetList"
+                    :form-config="formConfig"
                     :prop-key="widget.ruleFormKey"
                     :rule-form="formConfig.ruleForm"
-                    :rule-form-key-type="widget.ruleFormKeyType"
-                    :rule-form-ref="ruleFormRef"
-                    @submitForm="submitForm">
-                </component>
+                  />
+                </template>
+
+                <!-- 容器类组件 -->
+                <template v-if="widget.category === 'container'">
+                  <container-mask
+                    :widget="widget"
+                    :widget-list="widgetList"
+                    :form-config="formConfig"
+                    :prop-key="widget.ruleFormKey"
+                    :rule-form="formConfig.ruleForm"
+                  />
+                </template>
             </template>
         </el-form>
     </div>
 </template>
 <script setup>
     import { ref } from 'vue'
-
+    import widgetMask from './widgetMask.vue'
+    import containerMask from './containerMask.vue'
     const props = defineProps(['widgetList', 'formConfig']);
     const ruleFormRef = ref(null);
     const submitForm = async () =>{
