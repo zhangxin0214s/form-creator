@@ -40,7 +40,7 @@
                                     :isEditor="isEditor"
                                     :formConfig="formConfig"
                                     :parent="widget"
-                                    :prop-key="scope.propKey"
+                                    :prop-key="getPropKey({parent: widget,element, propKey: scope.propKey, index: scope.index})"
                                     :rule-form="scope.ruleForm"
                                 />
                             </template>
