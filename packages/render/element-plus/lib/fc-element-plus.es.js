@@ -1,5 +1,5 @@
-import { inject, resolveComponent, openBlock, createElementBlock, renderSlot, createVNode, withModifiers, createCommentVNode, createBlock, withCtx, mergeProps, createElementVNode, unref, resolveDynamicComponent, watch, normalizeClass, toDisplayString, getCurrentScope, onScopeDispose, ref, warn, getCurrentInstance, provide, computed, defineComponent, Transition, withDirectives, vShow, shallowReactive, onMounted, normalizeStyle, Fragment, isVNode, render, renderList, isRef, createTextVNode, onBeforeMount, pushScopeId, popScopeId } from "vue";
-var containerMask_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-968c24ba]{color:#409eff}.background-opacity[data-v-968c24ba]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-968c24ba]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-968c24ba]{margin-top:8px}.el-form-item--medium .el-radio[data-v-968c24ba]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-968c24ba]{margin-top:8px}.el-form-item--small .el-radio[data-v-968c24ba]{line-height:32px!important}.el-form-item--small .el-rate[data-v-968c24ba]{margin-top:6px}.el-form-item--mini .el-radio[data-v-968c24ba]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-968c24ba]{margin-top:4px}.el-card[data-v-968c24ba]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-968c24ba]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-968c24ba],.auto-full-width.el-date-editor.el-input__inner[data-v-968c24ba]{width:100%!important}[data-v-968c24ba]::-webkit-scrollbar{width:8px;height:8px}[data-v-968c24ba]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-968c24ba]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-968c24ba]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-968c24ba]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.container-mask[data-v-968c24ba]{position:relative;margin-bottom:2px}.container-mask-title[data-v-968c24ba]{position:absolute;top:-2px;left:-2px;height:22px;line-height:22px;background:#409EFF;z-index:9}.container-mask-title .text[data-v-968c24ba]{font-size:14px;font-style:normal;color:#fff;margin:4px;cursor:move}.container-mask-action[data-v-968c24ba]{position:absolute;bottom:0;right:-2px;height:23px;line-height:28px;background:#409EFF;z-index:999}.copyIcon[data-v-968c24ba]:hover,.deleteIcon[data-v-968c24ba]:hover{cursor:pointer}\n')();
+import { resolveComponent, openBlock, createBlock, withCtx, renderSlot, watch, normalizeClass, createElementVNode, toDisplayString, createVNode, normalizeProps, guardReactiveProps, getCurrentScope, onScopeDispose, ref, unref, createElementBlock, warn, getCurrentInstance, provide, computed, inject, defineComponent, mergeProps, Transition, withDirectives, vShow, shallowReactive, onMounted, normalizeStyle, createCommentVNode, resolveDynamicComponent, Fragment, withModifiers, isVNode, render, renderList, isRef, createTextVNode, onBeforeMount, pushScopeId, popScopeId } from "vue";
+var containerMask_vue_vue_type_style_index_0_scoped_true_lang = "";
 var _export_sfc$1 = (sfc, props) => {
   const target = sfc.__vccOpts || sfc;
   for (const [key, val] of props) {
@@ -7,138 +7,21 @@ var _export_sfc$1 = (sfc, props) => {
   }
   return target;
 };
-const _hoisted_1$c = { class: "container-mask" };
-const _hoisted_2$4 = {
-  key: 0,
-  class: "container-mask-action"
-};
-const _sfc_main$r = {
-  __name: "containerMask",
-  props: [
-    "widget",
-    "ruleForm",
-    "parentWidget",
-    "parent",
-    "selectedWidget",
-    "isEditor"
-  ],
-  emits: ["copyWidget", "removeWidget"],
-  setup(__props, { emit }) {
-    const props = __props;
-    const copyWidget = inject("copyWidget");
-    const copy = () => {
-      copyWidget(props.widget);
-    };
-    const removeWidget = inject("removeWidget");
-    const delete1 = () => {
-      var _a2;
-      removeWidget(props.widget, props.parentWidget);
-      props.widget.ruleFormKey && delete props.ruleForm[props.widget.ruleFormKey];
-      if (((_a2 = props.parent) == null ? void 0 : _a2.ruleFormKeyType) === "array") {
-        props.ruleForm.forEach((rule, index2) => {
-          if (Object.keys(rule).indexOf(props.widget.ruleFormKey) > -1) {
-            props.ruleForm.splice(index2, 1);
-          }
-        });
-      } else {
-        props.widget.ruleFormKey && delete props.ruleForm[props.widget.ruleFormKey];
-      }
-    };
-    return (_ctx, _cache) => {
-      var _a2, _b;
-      const _component_svg_icon = resolveComponent("svg-icon");
-      return openBlock(), createElementBlock("div", _hoisted_1$c, [
-        renderSlot(_ctx.$slots, "default", {}, void 0, true),
-        ((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? (openBlock(), createElementBlock("div", _hoisted_2$4, [
-          createVNode(_component_svg_icon, {
-            "icon-class": "copy",
-            class: "copyIcon",
-            onClick: withModifiers(copy, ["stop"])
-          }, null, 8, ["onClick"]),
-          createVNode(_component_svg_icon, {
-            "icon-class": "delete",
-            class: "deleteIcon",
-            onClick: withModifiers(delete1, ["stop"])
-          }, null, 8, ["onClick"])
-        ])) : createCommentVNode("", true)
-      ]);
-    };
-  }
-};
-var containerMask = /* @__PURE__ */ _export_sfc$1(_sfc_main$r, [["__scopeId", "data-v-968c24ba"]]);
-var content_vue_vue_type_style_index_0_scoped_true_lang$1 = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-0edd1f4e]{color:#409eff}.background-opacity[data-v-0edd1f4e]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-0edd1f4e]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-0edd1f4e]{margin-top:8px}.el-form-item--medium .el-radio[data-v-0edd1f4e]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-0edd1f4e]{margin-top:8px}.el-form-item--small .el-radio[data-v-0edd1f4e]{line-height:32px!important}.el-form-item--small .el-rate[data-v-0edd1f4e]{margin-top:6px}.el-form-item--mini .el-radio[data-v-0edd1f4e]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-0edd1f4e]{margin-top:4px}.el-card[data-v-0edd1f4e]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-0edd1f4e]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-0edd1f4e],.auto-full-width.el-date-editor.el-input__inner[data-v-0edd1f4e]{width:100%!important}[data-v-0edd1f4e]::-webkit-scrollbar{width:8px;height:8px}[data-v-0edd1f4e]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-0edd1f4e]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-0edd1f4e]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-0edd1f4e]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-content1[data-v-0edd1f4e]{min-height:34px}\n')();
-const _sfc_main$q = {
-  __name: "content",
-  props: [
-    "widgetList",
-    "widget",
-    "propKey",
-    "ruleForm",
-    "selectedWidget",
-    "isEditor"
-  ],
-  setup(__props) {
-    const props = __props;
-    const onEnd = inject("onEnd");
-    const onEnd1 = () => {
-      onEnd();
-    };
-    const selected = inject("selected");
-    const selected1 = (element) => {
-      selected(element);
-    };
-    const getPropKey = (element, index2) => {
-      if (props.propKey) {
-        if (props.widget.ruleFormKeyType === "object") {
-          return `${props.propKey}.${element.ruleFormKey}`;
-        }
-      } else {
-        return `${element.ruleFormKey}`;
-      }
-    };
-    return (_ctx, _cache) => {
-      const _component_draggable = resolveComponent("draggable");
-      const _component_el_col = resolveComponent("el-col");
-      return openBlock(), createBlock(_component_el_col, { class: "grid-content1 ep-bg-purple" }, {
-        default: withCtx(() => [
-          createVNode(_component_draggable, mergeProps({
-            list: __props.widgetList,
-            "item-key": "id"
-          }, { group: "dragGroup", ghostClass: "ghost", animation: 300 }, {
-            tag: "transition-group",
-            "component-data": { name: "fade" },
-            onAdd: onEnd1
-          }), {
-            item: withCtx(({ element, index: index2 }) => [
-              createElementVNode("div", {
-                class: "transition-group-el",
-                onClick: _cache[0] || (_cache[0] = ($event) => unref(selected)(__props.widget))
-              }, [
-                (openBlock(), createBlock(resolveDynamicComponent(element.type), {
-                  key: element.id,
-                  widget: element,
-                  "parent-widget": __props.widgetList,
-                  parent: __props.widget,
-                  "rule-form": __props.ruleForm,
-                  "prop-key": getPropKey(element),
-                  "selected-widget": __props.selectedWidget,
-                  "is-editor": __props.isEditor,
-                  onClick: withModifiers(($event) => selected1(element), ["stop"])
-                }, null, 8, ["widget", "parent-widget", "parent", "rule-form", "prop-key", "selected-widget", "is-editor", "onClick"]))
-              ])
-            ]),
-            _: 1
-          }, 16, ["list"])
-        ]),
-        _: 1
-      });
-    };
-  }
-};
-var cardContent = /* @__PURE__ */ _export_sfc$1(_sfc_main$q, [["__scopeId", "data-v-0edd1f4e"]]);
-var card_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-8f1c519c]{color:#409eff}.background-opacity[data-v-8f1c519c]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-8f1c519c]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-8f1c519c]{margin-top:8px}.el-form-item--medium .el-radio[data-v-8f1c519c]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-8f1c519c]{margin-top:8px}.el-form-item--small .el-radio[data-v-8f1c519c]{line-height:32px!important}.el-form-item--small .el-rate[data-v-8f1c519c]{margin-top:6px}.el-form-item--mini .el-radio[data-v-8f1c519c]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-8f1c519c]{margin-top:4px}.el-card[data-v-8f1c519c]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-8f1c519c]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-8f1c519c],.auto-full-width.el-date-editor.el-input__inner[data-v-8f1c519c]{width:100%!important}[data-v-8f1c519c]::-webkit-scrollbar{width:8px;height:8px}[data-v-8f1c519c]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-8f1c519c]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-8f1c519c]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-8f1c519c]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.select[data-v-8f1c519c]{outline:1px solid #409EFF}\n')();
-const _hoisted_1$b = { class: "card-header" };
-const _sfc_main$p = {
+var content_vue_vue_type_style_index_0_scoped_true_lang$1 = "";
+const _sfc_main$p = {};
+function _sfc_render$2(_ctx, _cache) {
+  const _component_el_col = resolveComponent("el-col");
+  return openBlock(), createBlock(_component_el_col, { class: "grid-content1 ep-bg-purple" }, {
+    default: withCtx(() => [
+      renderSlot(_ctx.$slots, "default", {}, void 0, true)
+    ]),
+    _: 3
+  });
+}
+var cardContent = /* @__PURE__ */ _export_sfc$1(_sfc_main$p, [["render", _sfc_render$2], ["__scopeId", "data-v-570f7dab"]]);
+var card_vue_vue_type_style_index_0_scoped_true_lang = "";
+const _hoisted_1$8 = { class: "card-header" };
+const _sfc_main$o = {
   __name: "card",
   props: [
     "widget",
@@ -151,54 +34,54 @@ const _sfc_main$p = {
   ],
   setup(__props) {
     const props = __props;
-    watch(() => props.propKey, (value) => {
-      const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
-      console.log("\u76D1\u542C\u5230\u6570\u636E\u53D8\u5316", ruleFormKey);
-      if (ruleFormKey && !props.ruleForm[ruleFormKey]) {
-        props.ruleForm[ruleFormKey] = {};
+    watch(
+      () => props.propKey,
+      (value) => {
+        const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+        console.log("\u76D1\u542C\u5230\u6570\u636E\u53D8\u5316", ruleFormKey);
+        if (ruleFormKey && !props.ruleForm[ruleFormKey]) {
+          props.ruleForm[ruleFormKey] = {};
+        }
       }
-    });
+    );
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_card = resolveComponent("el-card");
-      return openBlock(), createBlock(containerMask, {
-        widget: __props.widget,
-        "rule-form": __props.ruleForm,
-        parent: __props.parent,
-        "is-editor": __props.isEditor,
-        "selected-widget": __props.selectedWidget
+      return openBlock(), createBlock(_component_el_card, {
+        type: "border-card",
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""])
       }, {
-        default: withCtx(() => {
-          var _a2, _b;
-          return [
-            createVNode(_component_el_card, {
-              type: "border-card",
-              class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""])
-            }, {
-              header: withCtx(() => [
-                createElementVNode("div", _hoisted_1$b, [
-                  createElementVNode("span", null, toDisplayString(__props.widget.title), 1)
-                ])
-              ]),
-              default: withCtx(() => [
-                createVNode(cardContent, {
-                  widgetList: __props.widget.options.advanced.widgetList,
-                  "prop-key": __props.propKey,
-                  widget: __props.widget,
-                  "rule-form": __props.ruleForm[__props.widget.ruleFormKey] || __props.ruleForm,
-                  "is-editor": __props.isEditor,
-                  "selected-widget": __props.selectedWidget
-                }, null, 8, ["widgetList", "prop-key", "widget", "rule-form", "is-editor", "selected-widget"])
-              ]),
-              _: 1
-            }, 8, ["class"])
-          ];
-        }),
-        _: 1
-      }, 8, ["widget", "rule-form", "parent", "is-editor", "selected-widget"]);
+        header: withCtx(() => [
+          createElementVNode("div", _hoisted_1$8, [
+            createElementVNode("span", null, toDisplayString(__props.widget.title), 1)
+          ])
+        ]),
+        default: withCtx(() => [
+          createVNode(cardContent, {
+            widgetList: __props.widget.options.advanced.widgetList,
+            "prop-key": __props.propKey,
+            widget: __props.widget,
+            "rule-form": __props.ruleForm[__props.widget.ruleFormKey] || __props.ruleForm,
+            "is-editor": __props.isEditor,
+            "selected-widget": __props.selectedWidget
+          }, {
+            default: withCtx(() => [
+              renderSlot(_ctx.$slots, "widgetChild", normalizeProps(guardReactiveProps({
+                colWidget: __props.widget.options.advanced,
+                propKey: __props.propKey,
+                ruleForm: __props.ruleForm[__props.widget.ruleFormKey] || __props.ruleForm,
+                index: null
+              })), void 0, true)
+            ]),
+            _: 3
+          }, 8, ["widgetList", "prop-key", "widget", "rule-form", "is-editor", "selected-widget"])
+        ]),
+        _: 3
+      }, 8, ["class"]);
     };
   }
 };
-var card = /* @__PURE__ */ _export_sfc$1(_sfc_main$p, [["__scopeId", "data-v-8f1c519c"]]);
+var card = /* @__PURE__ */ _export_sfc$1(_sfc_main$o, [["__scopeId", "data-v-88a70f46"]]);
 card.install = (App) => {
   App.component(card.__name, card);
 };
@@ -696,7 +579,7 @@ const __default__$2 = {
   name: "ElIcon",
   inheritAttrs: false
 };
-const _sfc_main$o = /* @__PURE__ */ defineComponent({
+const _sfc_main$n = /* @__PURE__ */ defineComponent({
   ...__default__$2,
   props: iconProps,
   setup(__props) {
@@ -720,7 +603,7 @@ const _sfc_main$o = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Icon = /* @__PURE__ */ _export_sfc(_sfc_main$o, [["__file", "/home/runner/work/element-plus/element-plus/packages/components/icon/src/icon.vue"]]);
+var Icon = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["__file", "/home/runner/work/element-plus/element-plus/packages/components/icon/src/icon.vue"]]);
 const ElIcon = withInstall(Icon);
 const badgeProps = buildProps({
   value: {
@@ -739,11 +622,11 @@ const badgeProps = buildProps({
     default: "danger"
   }
 });
-const _hoisted_1$a = ["textContent"];
+const _hoisted_1$7 = ["textContent"];
 const __default__$1 = {
   name: "ElBadge"
 };
-const _sfc_main$n = /* @__PURE__ */ defineComponent({
+const _sfc_main$m = /* @__PURE__ */ defineComponent({
   ...__default__$1,
   props: badgeProps,
   setup(__props, { expose }) {
@@ -778,7 +661,7 @@ const _sfc_main$n = /* @__PURE__ */ defineComponent({
                 unref(ns).is("dot", _ctx.isDot)
               ]),
               textContent: toDisplayString(unref(content))
-            }, null, 10, _hoisted_1$a), [
+            }, null, 10, _hoisted_1$7), [
               [vShow, !_ctx.hidden && (unref(content) || _ctx.isDot)]
             ])
           ]),
@@ -788,7 +671,7 @@ const _sfc_main$n = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var Badge = /* @__PURE__ */ _export_sfc(_sfc_main$n, [["__file", "/home/runner/work/element-plus/element-plus/packages/components/badge/src/badge.vue"]]);
+var Badge = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["__file", "/home/runner/work/element-plus/element-plus/packages/components/badge/src/badge.vue"]]);
 const ElBadge = withInstall(Badge);
 function getDefaultExportFromCjs(x) {
   return x && x.__esModule && Object.prototype.hasOwnProperty.call(x, "default") ? x["default"] : x;
@@ -933,12 +816,12 @@ const getLastOffset = (id) => {
     return 0;
   return prev.vm.exposeProxy.bottom;
 };
-const _hoisted_1$9 = ["id"];
-const _hoisted_2$3 = ["innerHTML"];
+const _hoisted_1$6 = ["id"];
+const _hoisted_2$2 = ["innerHTML"];
 const __default__ = {
   name: "ElMessage"
 };
-const _sfc_main$m = /* @__PURE__ */ defineComponent({
+const _sfc_main$l = /* @__PURE__ */ defineComponent({
   ...__default__,
   props: messageProps,
   emits: messageEmits,
@@ -1046,7 +929,7 @@ const _sfc_main$m = /* @__PURE__ */ defineComponent({
                 createElementVNode("p", {
                   class: normalizeClass(unref(ns).e("content")),
                   innerHTML: _ctx.message
-                }, null, 10, _hoisted_2$3)
+                }, null, 10, _hoisted_2$2)
               ], 2112))
             ]),
             _ctx.showClose ? (openBlock(), createBlock(unref(ElIcon), {
@@ -1059,7 +942,7 @@ const _sfc_main$m = /* @__PURE__ */ defineComponent({
               ]),
               _: 1
             }, 8, ["class", "onClick"])) : createCommentVNode("v-if", true)
-          ], 46, _hoisted_1$9), [
+          ], 46, _hoisted_1$6), [
             [vShow, visible.value]
           ])
         ]),
@@ -1068,7 +951,7 @@ const _sfc_main$m = /* @__PURE__ */ defineComponent({
     };
   }
 });
-var MessageConstructor = /* @__PURE__ */ _export_sfc(_sfc_main$m, [["__file", "/home/runner/work/element-plus/element-plus/packages/components/message/src/message.vue"]]);
+var MessageConstructor = /* @__PURE__ */ _export_sfc(_sfc_main$l, [["__file", "/home/runner/work/element-plus/element-plus/packages/components/message/src/message.vue"]]);
 let seed = 1;
 const normalizeOptions = (params) => {
   const options = !params || isString(params) || isVNode(params) || isFunction(params) ? { message: params } : params;
@@ -1169,244 +1052,145 @@ function closeAll(type) {
 message.closeAll = closeAll;
 message._context = null;
 const ElMessage = withInstallFunction(message, "$message");
-var gridCol_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-c643f646]{color:#409eff}.background-opacity[data-v-c643f646]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-c643f646]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-c643f646]{margin-top:8px}.el-form-item--medium .el-radio[data-v-c643f646]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-c643f646]{margin-top:8px}.el-form-item--small .el-radio[data-v-c643f646]{line-height:32px!important}.el-form-item--small .el-rate[data-v-c643f646]{margin-top:6px}.el-form-item--mini .el-radio[data-v-c643f646]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-c643f646]{margin-top:4px}.el-card[data-v-c643f646]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-c643f646]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-c643f646],.auto-full-width.el-date-editor.el-input__inner[data-v-c643f646]{width:100%!important}[data-v-c643f646]::-webkit-scrollbar{width:8px;height:8px}[data-v-c643f646]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-c643f646]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-c643f646]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-c643f646]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-content1[data-v-c643f646]{border-radius:4px;min-height:36px}.gird-line[data-v-c643f646]{border:1px dashed #000}\n')();
-const _hoisted_1$8 = { class: "transition-group-el" };
-const _sfc_main$l = {
+var gridCol_vue_vue_type_style_index_0_scoped_true_lang = "";
+const _sfc_main$k = {
   __name: "grid-col",
   props: [
     "colWidget",
-    "widget",
-    "propKey",
-    "ruleForm",
-    "ruleFormRef",
-    "selectedWidget",
     "isEditor"
   ],
   setup(__props) {
-    const props = __props;
-    const selected = inject("selected");
-    const selected1 = (element) => {
-      selected(element);
-    };
-    const onEnd = inject("onEnd");
-    const onEnd1 = (element) => {
-      onEnd(element);
-    };
-    const getPropKey = (element, index2) => {
-      if (props.propKey) {
-        if (props.widget.ruleFormKeyType === "object") {
-          return `${props.propKey}.${element.ruleFormKey}`;
-        }
-        if (props.widget.ruleFormKeyType === "array") {
-          return `${props.propKey}.${index2}.${element.ruleFormKey}`;
-        }
-      } else {
-        return `${element.ruleFormKey}`;
-      }
-    };
     return (_ctx, _cache) => {
-      const _component_draggable = resolveComponent("draggable");
       const _component_el_col = resolveComponent("el-col");
       return openBlock(), createBlock(_component_el_col, {
         span: __props.colWidget.gutter,
         class: normalizeClass(["grid-content1 ep-bg-purple", [__props.isEditor ? "gird-line" : ""]])
       }, {
         default: withCtx(() => [
-          createVNode(_component_draggable, mergeProps({
-            list: __props.colWidget.widgetList,
-            "item-key": "id"
-          }, { group: "dragGroup", ghostClass: "ghost", animation: 300 }, {
-            tag: "transition-group",
-            "component-data": { name: "fade" },
-            onAdd: onEnd1
-          }), {
-            item: withCtx(({ element, index: index2 }) => [
-              createElementVNode("div", _hoisted_1$8, [
-                (openBlock(), createBlock(resolveDynamicComponent(element.type), {
-                  key: element.id,
-                  widget: element,
-                  "prop-key": getPropKey(element, index2),
-                  "parent-widget": __props.colWidget.widgetList,
-                  "rule-form-ref": __props.ruleFormRef,
-                  "rule-form": __props.ruleForm,
-                  parent: __props.widget,
-                  "selected-widget": __props.selectedWidget,
-                  "is-editor": __props.isEditor,
-                  hidden: !__props.isEditor && __props.widget.options.basic.isHidden.value,
-                  onClick: withModifiers(($event) => selected1(element), ["stop"])
-                }, null, 8, ["widget", "prop-key", "parent-widget", "rule-form-ref", "rule-form", "parent", "selected-widget", "is-editor", "hidden", "onClick"]))
-              ])
-            ]),
-            _: 1
-          }, 16, ["list"])
+          renderSlot(_ctx.$slots, "default", {}, void 0, true)
         ]),
-        _: 1
+        _: 3
       }, 8, ["span", "class"]);
     };
   }
 };
-var Col = /* @__PURE__ */ _export_sfc$1(_sfc_main$l, [["__scopeId", "data-v-c643f646"]]);
-var grid_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-324ab778]{color:#409eff}.background-opacity[data-v-324ab778]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-324ab778]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-324ab778]{margin-top:8px}.el-form-item--medium .el-radio[data-v-324ab778]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-324ab778]{margin-top:8px}.el-form-item--small .el-radio[data-v-324ab778]{line-height:32px!important}.el-form-item--small .el-rate[data-v-324ab778]{margin-top:6px}.el-form-item--mini .el-radio[data-v-324ab778]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-324ab778]{margin-top:4px}.el-card[data-v-324ab778]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-324ab778]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-324ab778],.auto-full-width.el-date-editor.el-input__inner[data-v-324ab778]{width:100%!important}[data-v-324ab778]::-webkit-scrollbar{width:8px;height:8px}[data-v-324ab778]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-324ab778]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-324ab778]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-324ab778]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-container[data-v-324ab778]{padding:1px}.grid-line[data-v-324ab778]{outline:1px dashed #444}.select[data-v-324ab778]{outline:1px solid #409EFF}.el-row[data-v-324ab778]:last-child{margin-bottom:0}.el-col[data-v-324ab778]{border-radius:4px}.grid-content[data-v-324ab778]{border-radius:4px;min-height:36px;border:1px dashed #444}\n')();
-const _sfc_main$k = {
+var Col = /* @__PURE__ */ _export_sfc$1(_sfc_main$k, [["__scopeId", "data-v-dd691f5c"]]);
+var grid_vue_vue_type_style_index_0_scoped_true_lang = "";
+const _sfc_main$j = {
   __name: "grid",
-  props: ["widget", "selectedWidget", "isEditor", "parent", "propKey", "ruleForm", "ruleFormRef"],
+  props: [
+    "widget",
+    "selectedWidget",
+    "isEditor",
+    "parent",
+    "propKey",
+    "ruleForm",
+    "ruleFormRef"
+  ],
   emits: ["selected1", "copyWidget1", "removeWidget1", "onEnd1"],
   setup(__props, { emit }) {
     const props = __props;
-    watch(() => props.propKey, (value) => {
-      var _a2;
-      const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
-      const parentRuleFormKeyType = (_a2 = props.parent) == null ? void 0 : _a2.ruleFormKeyType;
-      const ruleFormKeyType = props.widget.ruleFormKeyType;
-      if (ruleFormKey && !props.ruleForm[ruleFormKey]) {
-        console.log("\u76D1\u542C\u5230\u6570\u636E\u53D8\u5316", ruleFormKey);
-        if (parentRuleFormKeyType === "object" || !parentRuleFormKeyType) {
-          if (ruleFormKeyType === "array") {
-            props.ruleForm[ruleFormKey] = [];
-          } else {
-            props.ruleForm[ruleFormKey] = {};
+    watch(
+      () => props.propKey,
+      (value) => {
+        var _a2;
+        const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+        const parentRuleFormKeyType = (_a2 = props.parent) == null ? void 0 : _a2.ruleFormKeyType;
+        const ruleFormKeyType = props.widget.ruleFormKeyType;
+        if (ruleFormKey && !props.ruleForm[ruleFormKey]) {
+          console.log("\u76D1\u542C\u5230\u6570\u636E\u53D8\u5316", ruleFormKey);
+          if (parentRuleFormKeyType === "object" || !parentRuleFormKeyType) {
+            if (ruleFormKeyType === "array") {
+              props.ruleForm[ruleFormKey] = [];
+            } else {
+              props.ruleForm[ruleFormKey] = {};
+            }
           }
-        }
-        if (parentRuleFormKeyType === "array") {
-          if (ruleFormKeyType === "array") {
-            ElMessage({
-              message: "\u7236\u7EA7\u5BB9\u5668\u662F\u6570\u7EC4\u7ED3\u6784\uFF0C\u8BE5\u5143\u7D20\u53EA\u652F\u6301\u8BBE\u7F6E\u5BF9\u8C61\u7ED3\u6784",
-              type: "error",
-              duration: 1500
-            });
-          } else {
-            const isExist = props.ruleForm.some((rule) => {
-              Object.keys(rule).indexOf(ruleFormKey) > -1;
-            });
-            if (!isExist) {
-              props.ruleForm.push({
-                [ruleFormKey]: props.widget.value
+          if (parentRuleFormKeyType === "array") {
+            if (ruleFormKeyType === "array") {
+              ElMessage({
+                message: "\u7236\u7EA7\u5BB9\u5668\u662F\u6570\u7EC4\u7ED3\u6784\uFF0C\u8BE5\u5143\u7D20\u53EA\u652F\u6301\u8BBE\u7F6E\u5BF9\u8C61\u7ED3\u6784",
+                type: "error",
+                duration: 1500
               });
+            } else {
+              const isExist = props.ruleForm.some((rule) => {
+                Object.keys(rule).indexOf(ruleFormKey) > -1;
+              });
+              if (!isExist) {
+                props.ruleForm.push({
+                  [ruleFormKey]: props.widget.value
+                });
+              }
             }
           }
         }
+      },
+      {
+        deep: true,
+        immediate: true
       }
-    }, {
-      deep: true,
-      immediate: true
-    });
+    );
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_row = resolveComponent("el-row");
-      return openBlock(), createBlock(containerMask, {
-        widget: __props.widget,
-        style: normalizeStyle(`${__props.widget.options.basic.isMoveDivider.value ? `top:${__props.widget.options.basic.moveDistance.value}px` : ""}`),
-        "rule-form": __props.ruleForm,
-        parent: __props.parent,
-        "is-editor": __props.isEditor,
-        "selected-widget": __props.selectedWidget
+      return openBlock(), createBlock(_component_el_row, {
+        class: normalizeClass(["grid-container", [
+          ((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""
+        ]]),
+        style: normalizeStyle(
+          `background-color:${__props.widget.options.basic.rowBackground.value}`
+        )
       }, {
-        default: withCtx(() => {
-          var _a2, _b;
-          return [
-            createVNode(_component_el_row, {
-              class: normalizeClass(["grid-container", [
-                ((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""
-              ]]),
-              style: normalizeStyle(`background-color:${__props.widget.options.basic.rowBackground.value}`)
+        default: withCtx(() => [
+          (openBlock(true), createElementBlock(Fragment, null, renderList(__props.widget.options.advanced.cols, (colWidget, colIdx) => {
+            return openBlock(), createBlock(Col, {
+              key: colIdx,
+              colWidget,
+              widget: __props.widget,
+              "prop-key": __props.propKey,
+              "rule-form-ref": __props.ruleFormRef,
+              "is-editor": __props.isEditor,
+              "selected-widget": __props.selectedWidget,
+              "rule-form": __props.ruleForm[__props.widget.ruleFormKey] || __props.ruleForm,
+              "rule-form-key-type": __props.widget.ruleFormKeyType,
+              style: normalizeStyle(`height:${__props.widget.options.basic.colHeight.value}px;`)
             }, {
               default: withCtx(() => [
-                (openBlock(true), createElementBlock(Fragment, null, renderList(__props.widget.options.advanced.cols, (colWidget, colIdx) => {
-                  return openBlock(), createBlock(Col, {
-                    key: colIdx,
-                    colWidget,
-                    widget: __props.widget,
-                    "prop-key": __props.propKey,
-                    "rule-form-ref": __props.ruleFormRef,
-                    "is-editor": __props.isEditor,
-                    "selected-widget": __props.selectedWidget,
-                    "rule-form": __props.ruleForm[__props.widget.ruleFormKey] || __props.ruleForm,
-                    "rule-form-key-type": __props.widget.ruleFormKeyType,
-                    style: normalizeStyle(`height:${__props.widget.options.basic.colHeight.value}px;`)
-                  }, null, 8, ["colWidget", "widget", "prop-key", "rule-form-ref", "is-editor", "selected-widget", "rule-form", "rule-form-key-type", "style"]);
-                }), 128))
+                renderSlot(_ctx.$slots, "widgetChild", normalizeProps(guardReactiveProps({
+                  colWidget,
+                  propKey: __props.propKey,
+                  ruleForm: __props.ruleForm[__props.widget.ruleFormKey] || __props.ruleForm,
+                  index: colIdx
+                })), void 0, true)
               ]),
-              _: 1
-            }, 8, ["class", "style"])
-          ];
-        }),
-        _: 1
-      }, 8, ["widget", "style", "rule-form", "parent", "is-editor", "selected-widget"]);
+              _: 2
+            }, 1032, ["colWidget", "widget", "prop-key", "rule-form-ref", "is-editor", "selected-widget", "rule-form", "rule-form-key-type", "style"]);
+          }), 128))
+        ]),
+        _: 3
+      }, 8, ["class", "style"]);
     };
   }
 };
-var grid = /* @__PURE__ */ _export_sfc$1(_sfc_main$k, [["__scopeId", "data-v-324ab778"]]);
+var grid = /* @__PURE__ */ _export_sfc$1(_sfc_main$j, [["__scopeId", "data-v-2d6471c0"]]);
 grid.install = (App) => {
   App.component(grid.__name, grid);
 };
-var content_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-2fba2c8e]{color:#409eff}.background-opacity[data-v-2fba2c8e]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-2fba2c8e]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-2fba2c8e]{margin-top:8px}.el-form-item--medium .el-radio[data-v-2fba2c8e]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-2fba2c8e]{margin-top:8px}.el-form-item--small .el-radio[data-v-2fba2c8e]{line-height:32px!important}.el-form-item--small .el-rate[data-v-2fba2c8e]{margin-top:6px}.el-form-item--mini .el-radio[data-v-2fba2c8e]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-2fba2c8e]{margin-top:4px}.el-card[data-v-2fba2c8e]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-2fba2c8e]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-2fba2c8e],.auto-full-width.el-date-editor.el-input__inner[data-v-2fba2c8e]{width:100%!important}[data-v-2fba2c8e]::-webkit-scrollbar{width:8px;height:8px}[data-v-2fba2c8e]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-2fba2c8e]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-2fba2c8e]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-2fba2c8e]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-content1[data-v-2fba2c8e]{min-height:34px;padding-bottom:20px}\n')();
-const _hoisted_1$7 = { class: "transition-group-el" };
-const _sfc_main$j = {
-  __name: "content",
-  props: [
-    "colWidget",
-    "ruleForm",
-    "widget",
-    "propKey",
-    "colIdx",
-    "isEditor",
-    "selectedWidget"
-  ],
-  setup(__props) {
-    const props = __props;
-    const getPropKey = (element, index2) => {
-      if (props.propKey) {
-        return `${props.propKey}.${index2}.${element.ruleFormKey}`;
-      } else {
-        return `${element.ruleFormKey}`;
-      }
-    };
-    const onEnd = inject("onEnd");
-    const onEnd1 = () => {
-      onEnd();
-    };
-    const selected = inject("selected");
-    const selected1 = (element) => {
-      selected(element);
-    };
-    return (_ctx, _cache) => {
-      const _component_draggable = resolveComponent("draggable");
-      const _component_el_col = resolveComponent("el-col");
-      return openBlock(), createBlock(_component_el_col, { class: "grid-content1 ep-bg-purple" }, {
-        default: withCtx(() => [
-          createVNode(_component_draggable, mergeProps({
-            list: __props.colWidget.widgetList,
-            "item-key": "id"
-          }, { group: "dragGroup", ghostClass: "ghost", animation: 300 }, {
-            tag: "transition-group",
-            "component-data": { name: "fade" },
-            onAdd: onEnd1
-          }), {
-            item: withCtx(({ element }) => [
-              createElementVNode("div", _hoisted_1$7, [
-                (openBlock(), createBlock(resolveDynamicComponent(element.type), {
-                  key: element.id,
-                  "parent-widget": __props.colWidget.widgetList,
-                  widget: element,
-                  parent: __props.widget,
-                  "prop-key": getPropKey(element, __props.colIdx),
-                  "rule-form": __props.ruleForm[__props.colIdx],
-                  "selected-widget": __props.selectedWidget,
-                  "is-editor": __props.isEditor,
-                  onClick: withModifiers(($event) => selected1(element), ["stop"])
-                }, null, 8, ["parent-widget", "widget", "parent", "prop-key", "rule-form", "selected-widget", "is-editor", "onClick"]))
-              ])
-            ]),
-            _: 1
-          }, 16, ["list"])
-        ]),
-        _: 1
-      });
-    };
-  }
-};
-var tabsContent = /* @__PURE__ */ _export_sfc$1(_sfc_main$j, [["__scopeId", "data-v-2fba2c8e"]]);
-var tabs_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-4c87357a]{color:#409eff}.background-opacity[data-v-4c87357a]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-4c87357a]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-4c87357a]{margin-top:8px}.el-form-item--medium .el-radio[data-v-4c87357a]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-4c87357a]{margin-top:8px}.el-form-item--small .el-radio[data-v-4c87357a]{line-height:32px!important}.el-form-item--small .el-rate[data-v-4c87357a]{margin-top:6px}.el-form-item--mini .el-radio[data-v-4c87357a]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-4c87357a]{margin-top:4px}.el-card[data-v-4c87357a]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-4c87357a]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-4c87357a],.auto-full-width.el-date-editor.el-input__inner[data-v-4c87357a]{width:100%!important}[data-v-4c87357a]::-webkit-scrollbar{width:8px;height:8px}[data-v-4c87357a]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-4c87357a]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-4c87357a]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-4c87357a]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-container[data-v-4c87357a]{padding:1px}.select[data-v-4c87357a]{outline:1px solid #409EFF}.el-row[data-v-4c87357a]{margin-bottom:20px}.el-row[data-v-4c87357a]:last-child{margin-bottom:0}.el-col[data-v-4c87357a]{border-radius:4px}.grid-content[data-v-4c87357a]{border-radius:4px;min-height:36px;border:1px dashed #444}\n')();
-const _sfc_main$i = {
+var content_vue_vue_type_style_index_0_scoped_true_lang = "";
+const _sfc_main$i = {};
+function _sfc_render$1(_ctx, _cache) {
+  const _component_el_col = resolveComponent("el-col");
+  return openBlock(), createBlock(_component_el_col, { class: "grid-content1 ep-bg-purple" }, {
+    default: withCtx(() => [
+      renderSlot(_ctx.$slots, "default", {}, void 0, true)
+    ]),
+    _: 3
+  });
+}
+var tabsContent = /* @__PURE__ */ _export_sfc$1(_sfc_main$i, [["render", _sfc_render$1], ["__scopeId", "data-v-5c105d9b"]]);
+var tabs_vue_vue_type_style_index_0_scoped_true_lang = "";
+const _sfc_main$h = {
   __name: "tabs",
   props: [
     "widget",
@@ -1419,12 +1203,16 @@ const _sfc_main$i = {
   ],
   setup(__props) {
     const props = __props;
-    watch(() => props.propKey, (value) => {
-      const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
-      if (ruleFormKey && !props.ruleForm[ruleFormKey]) {
-        props.ruleForm[ruleFormKey] = [{}];
+    watch(
+      () => props.propKey,
+      (value) => {
+        console.log("\u76D1\u542C\u5230\u6570\u636E\u53D8\u5316");
+        const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+        if (ruleFormKey && !props.ruleForm[ruleFormKey]) {
+          props.ruleForm[ruleFormKey] = [{}];
+        }
       }
-    });
+    );
     let activeName = props.widget.options.advanced.cols[0].id;
     const addTabsHandler = () => {
       let maxCount = props.widget.maxCount;
@@ -1460,134 +1248,68 @@ const _sfc_main$i = {
       });
     };
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_tab_pane = resolveComponent("el-tab-pane");
       const _component_el_tabs = resolveComponent("el-tabs");
-      return openBlock(), createBlock(containerMask, {
-        widget: __props.widget,
-        "rule-form": __props.ruleForm,
-        parent: __props.parent,
-        "is-editor": __props.isEditor,
-        "selected-widget": __props.selectedWidget
+      return openBlock(), createBlock(_component_el_tabs, {
+        type: "border-card",
+        modelValue: unref(activeName),
+        "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => isRef(activeName) ? activeName.value = $event : activeName = $event),
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        addable: __props.widget.addable,
+        closable: __props.widget.closable,
+        onTabAdd: addTabsHandler,
+        onTabRemove: _cache[1] || (_cache[1] = ($event) => removeTabsHandler1($event))
       }, {
-        default: withCtx(() => {
-          var _a2, _b;
-          return [
-            createVNode(_component_el_tabs, {
-              type: "border-card",
-              modelValue: unref(activeName),
-              "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => isRef(activeName) ? activeName.value = $event : activeName = $event),
-              class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
-              addable: __props.widget.addable,
-              closable: __props.widget.closable,
-              onTabAdd: addTabsHandler,
-              onTabRemove: _cache[1] || (_cache[1] = ($event) => removeTabsHandler1($event))
+        default: withCtx(() => [
+          (openBlock(true), createElementBlock(Fragment, null, renderList(__props.widget.options.advanced.cols, (colWidget, colIdx) => {
+            return openBlock(), createBlock(_component_el_tab_pane, {
+              label: colWidget.name,
+              name: colWidget.id,
+              key: colIdx
             }, {
               default: withCtx(() => [
-                (openBlock(true), createElementBlock(Fragment, null, renderList(__props.widget.options.advanced.cols, (colWidget, colIdx) => {
-                  return openBlock(), createBlock(_component_el_tab_pane, {
-                    label: colWidget.name,
-                    name: colWidget.id,
-                    key: colIdx
-                  }, {
-                    default: withCtx(() => [
-                      createVNode(tabsContent, {
-                        colWidget,
-                        "rule-form": __props.ruleForm[__props.widget.ruleFormKey] || [{}],
-                        widget: __props.widget,
-                        "prop-key": __props.propKey,
-                        colIdx,
-                        "selected-widget": __props.selectedWidget,
-                        "is-editor": __props.isEditor
-                      }, null, 8, ["colWidget", "rule-form", "widget", "prop-key", "colIdx", "selected-widget", "is-editor"])
-                    ]),
-                    _: 2
-                  }, 1032, ["label", "name"]);
-                }), 128))
+                createVNode(tabsContent, {
+                  colWidget,
+                  "rule-form": __props.ruleForm[__props.widget.ruleFormKey] || [{}],
+                  widget: __props.widget,
+                  "prop-key": __props.propKey,
+                  colIdx,
+                  "selected-widget": __props.selectedWidget,
+                  "is-editor": __props.isEditor
+                }, {
+                  default: withCtx(() => [
+                    renderSlot(_ctx.$slots, "widgetChild", normalizeProps(guardReactiveProps({
+                      colWidget,
+                      propKey: __props.propKey,
+                      ruleForm: __props.ruleForm[__props.widget.ruleFormKey] && __props.ruleForm[__props.widget.ruleFormKey][colIdx],
+                      index: colIdx
+                    })), void 0, true)
+                  ]),
+                  _: 2
+                }, 1032, ["colWidget", "rule-form", "widget", "prop-key", "colIdx", "selected-widget", "is-editor"])
               ]),
-              _: 1
-            }, 8, ["modelValue", "class", "addable", "closable"])
-          ];
-        }),
-        _: 1
-      }, 8, ["widget", "rule-form", "parent", "is-editor", "selected-widget"]);
+              _: 2
+            }, 1032, ["label", "name"]);
+          }), 128))
+        ]),
+        _: 3
+      }, 8, ["modelValue", "class", "addable", "closable"]);
     };
   }
 };
-var tabs = /* @__PURE__ */ _export_sfc$1(_sfc_main$i, [["__scopeId", "data-v-4c87357a"]]);
+var tabs = /* @__PURE__ */ _export_sfc$1(_sfc_main$h, [["__scopeId", "data-v-72c05951"]]);
 tabs.install = (App) => {
   App.component(tabs.__name, tabs);
 };
-const _sfc_main$h = {};
-function _sfc_render$1(_ctx, _cache) {
+const _sfc_main$g = {};
+function _sfc_render(_ctx, _cache) {
   return " \u6682\u672A\u652F\u6301 ";
 }
-var table = /* @__PURE__ */ _export_sfc$1(_sfc_main$h, [["render", _sfc_render$1]]);
+var table = /* @__PURE__ */ _export_sfc$1(_sfc_main$g, [["render", _sfc_render]]);
 table.install = (App) => {
   App.component(table.__name, table);
 };
-var widgetMask_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-2029513a]{color:#409eff}.background-opacity[data-v-2029513a]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-2029513a]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-2029513a]{margin-top:8px}.el-form-item--medium .el-radio[data-v-2029513a]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-2029513a]{margin-top:8px}.el-form-item--small .el-radio[data-v-2029513a]{line-height:32px!important}.el-form-item--small .el-rate[data-v-2029513a]{margin-top:6px}.el-form-item--mini .el-radio[data-v-2029513a]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-2029513a]{margin-top:4px}.el-card[data-v-2029513a]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-2029513a]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-2029513a],.auto-full-width.el-date-editor.el-input__inner[data-v-2029513a]{width:100%!important}[data-v-2029513a]::-webkit-scrollbar{width:8px;height:8px}[data-v-2029513a]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-2029513a]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-2029513a]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-2029513a]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.select[data-v-2029513a]{outline:1px solid #409EFF}.container-mask[data-v-2029513a]{position:relative;margin-bottom:2px}.container-mask-title[data-v-2029513a]{position:absolute;top:-2px;left:-2px;height:22px;line-height:22px;background:#409EFF;z-index:9}.container-mask-title .text[data-v-2029513a]{font-size:14px;font-style:normal;color:#fff;margin:4px;cursor:move}.container-mask-action[data-v-2029513a]{position:absolute;bottom:0;right:-2px;height:23px;line-height:28px;background:#409EFF;z-index:999}.copyIcon[data-v-2029513a]:hover,.deleteIcon[data-v-2029513a]:hover{cursor:pointer}\n')();
-const _hoisted_1$6 = { class: "container-mask" };
-const _hoisted_2$2 = {
-  key: 0,
-  class: "container-mask-action"
-};
-const _sfc_main$g = {
-  __name: "widgetMask",
-  props: ["widget", "copyWidget", "isEditor", "selectedWidget", "basicProp", "parent", "ruleForm", "propKey", "parentWidget"],
-  setup(__props) {
-    const props = __props;
-    const copyWidget = inject("copyWidget");
-    const copy = () => {
-      copyWidget(props.widget);
-    };
-    const removeWidget = inject("removeWidget");
-    const delete1 = () => {
-      var _a2;
-      removeWidget(props.widget, props.parentWidget);
-      if (((_a2 = props.parent) == null ? void 0 : _a2.ruleFormKeyType) === "array") {
-        props.ruleForm.forEach((rule, index2) => {
-          if (Object.keys(rule).indexOf(props.widget.ruleFormKey) > -1) {
-            props.ruleForm.splice(index2, 1);
-          }
-        });
-      } else {
-        props.widget.ruleFormKey && delete props.ruleForm[props.widget.ruleFormKey];
-      }
-    };
-    return (_ctx, _cache) => {
-      var _a2, _b, _c, _d;
-      const _component_el_form_item = resolveComponent("el-form-item");
-      const _component_svg_icon = resolveComponent("svg-icon");
-      return openBlock(), createElementBlock("div", _hoisted_1$6, [
-        (openBlock(), createBlock(_component_el_form_item, {
-          class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
-          label: __props.basicProp.label.value,
-          rules: __props.widget.rules,
-          prop: __props.propKey,
-          key: __props.propKey
-        }, {
-          default: withCtx(() => [
-            renderSlot(_ctx.$slots, "default", {}, void 0, true)
-          ]),
-          _: 3
-        }, 8, ["class", "label", "rules", "prop"])),
-        ((_c = __props.selectedWidget) == null ? void 0 : _c.id) === ((_d = __props.widget) == null ? void 0 : _d.id) && __props.isEditor ? (openBlock(), createElementBlock("div", _hoisted_2$2, [
-          createVNode(_component_svg_icon, {
-            "icon-class": "copy",
-            class: "copyIcon",
-            onClick: withModifiers(copy, ["stop"])
-          }, null, 8, ["onClick"]),
-          createVNode(_component_svg_icon, {
-            "icon-class": "delete",
-            class: "deleteIcon",
-            onClick: withModifiers(delete1, ["stop"])
-          }, null, 8, ["onClick"])
-        ])) : createCommentVNode("", true)
-      ]);
-    };
-  }
-};
-var widgetMask = /* @__PURE__ */ _export_sfc$1(_sfc_main$g, [["__scopeId", "data-v-2029513a"]]);
 const handleChangeEvent = (props, ElMessage2) => {
   var _a2, _b;
   const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
@@ -1612,30 +1334,34 @@ const handleChangeEvent = (props, ElMessage2) => {
   }
 };
 const watchEvent = (props, watch2) => {
-  watch2(() => props.propKey, (value) => {
-    var _a2, _b;
-    const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
-    if (ruleFormKey && !props.ruleForm[ruleFormKey]) {
-      console.log("\u76D1\u542C\u5230\u6570\u636E\u53D8\u5316", ruleFormKey);
-      if (((_a2 = props.parent) == null ? void 0 : _a2.ruleFormKeyType) === "object") {
-        props.ruleForm[ruleFormKey] = props.widget.value;
-      } else if (((_b = props.parent) == null ? void 0 : _b.ruleFormKeyType) === "array") {
-        const isExist = props.ruleForm.some((rule) => Object.keys(rule).indexOf(ruleFormKey) > -1);
-        if (!isExist) {
-          props.ruleForm.push({
-            [ruleFormKey]: props.widget.value
-          });
+  watch2(
+    () => props.propKey,
+    (value) => {
+      var _a2, _b;
+      const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+      if (ruleFormKey && !props.ruleForm[ruleFormKey]) {
+        console.log("\u76D1\u542C\u5230\u6570\u636E\u53D8\u5316", ruleFormKey);
+        if (((_a2 = props.parent) == null ? void 0 : _a2.ruleFormKeyType) === "object") {
+          props.ruleForm[ruleFormKey] = props.widget.value;
+        } else if (((_b = props.parent) == null ? void 0 : _b.ruleFormKeyType) === "array") {
+          const isExist = props.ruleForm.some((rule) => Object.keys(rule).indexOf(ruleFormKey) > -1);
+          if (!isExist) {
+            props.ruleForm.push({
+              [ruleFormKey]: props.widget.value
+            });
+          }
+        } else {
+          props.ruleForm[ruleFormKey] = props.widget.value;
         }
-      } else {
-        props.ruleForm[ruleFormKey] = props.widget.value;
       }
+    },
+    {
+      deep: true,
+      immediate: true
     }
-  }, {
-    deep: true,
-    immediate: true
-  });
+  );
 };
-var input_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => ".hint[data-v-4d123a45]{font-size:12px;color:#9b9b9b}\n")();
+var input_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _hoisted_1$5 = { class: "hint" };
 const _sfc_main$f = {
   __name: "input",
@@ -1644,17 +1370,15 @@ const _sfc_main$f = {
     const props = __props;
     watchEvent(props, watch);
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_input = resolveComponent("el-input");
-      return openBlock(), createBlock(widgetMask, {
-        widget: __props.widget,
-        "basic-prop": __props.widget.options.basic,
-        "advanced-prop": __props.widget.options.advanced,
-        "parent-widget": __props.parentWidget,
-        "prop-key": __props.propKey,
-        "rule-form": __props.ruleForm,
-        parent: __props.parent,
-        "is-editor": __props.isEditor,
-        "selected-widget": __props.selectedWidget
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules,
+        prop: __props.propKey,
+        key: __props.propKey
       }, {
         default: withCtx(() => [
           createVNode(_component_el_input, {
@@ -1669,14 +1393,15 @@ const _sfc_main$f = {
           createElementVNode("div", _hoisted_1$5, toDisplayString(__props.widget.options.basic.hint.value), 1)
         ]),
         _: 1
-      }, 8, ["widget", "basic-prop", "advanced-prop", "parent-widget", "prop-key", "rule-form", "parent", "is-editor", "selected-widget"]);
+      }, 8, ["class", "label", "rules", "prop"]);
     };
   }
 };
-var input = /* @__PURE__ */ _export_sfc$1(_sfc_main$f, [["__scopeId", "data-v-4d123a45"]]);
+var input = /* @__PURE__ */ _export_sfc$1(_sfc_main$f, [["__scopeId", "data-v-a13cfe82"]]);
 input.install = (App) => {
   App.component(input.__name, input);
 };
+var switch1_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$e = {
   __name: "switch1",
   props: [
@@ -1692,17 +1417,15 @@ const _sfc_main$e = {
     const props = __props;
     watchEvent(props, watch);
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_switch = resolveComponent("el-switch");
-      return openBlock(), createBlock(widgetMask, {
-        widget: __props.widget,
-        basicProp: __props.widget.options.basic,
-        advancedProp: __props.widget.options.advanced,
-        "parent-widget": __props.parentWidget,
-        "prop-key": __props.propKey,
-        "rule-form": __props.ruleForm,
-        parent: __props.parent,
-        "is-editor": __props.isEditor,
-        "selected-widget": __props.selectedWidget
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules,
+        prop: __props.propKey,
+        key: __props.propKey
       }, {
         default: withCtx(() => [
           createVNode(_component_el_switch, {
@@ -1713,13 +1436,15 @@ const _sfc_main$e = {
           }, null, 8, ["modelValue", "disabled"])
         ]),
         _: 1
-      }, 8, ["widget", "basicProp", "advancedProp", "parent-widget", "prop-key", "rule-form", "parent", "is-editor", "selected-widget"]);
+      }, 8, ["class", "label", "rules", "prop"]);
     };
   }
 };
-_sfc_main$e.install = (App) => {
-  App.component(_sfc_main$e.__name, _sfc_main$e);
+var switch1 = /* @__PURE__ */ _export_sfc$1(_sfc_main$e, [["__scopeId", "data-v-e826edc4"]]);
+switch1.install = (App) => {
+  App.component(switch1.__name, switch1);
 };
+var checkbox_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$d = {
   __name: "checkbox",
   props: ["widget", "isEditor", "selectedWidget", "widgetType", "ruleForm", "propKey", "parent", "parentWidget"],
@@ -1727,18 +1452,16 @@ const _sfc_main$d = {
     const props = __props;
     watchEvent(props, watch);
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_checkbox = resolveComponent("el-checkbox");
       const _component_el_checkbox_group = resolveComponent("el-checkbox-group");
-      return openBlock(), createBlock(widgetMask, {
-        widget: __props.widget,
-        basicProp: __props.widget.options.basic,
-        advancedProp: __props.widget.options.advanced,
-        "parent-widget": __props.parentWidget,
-        "prop-key": __props.propKey,
-        "rule-form": __props.ruleForm,
-        parent: __props.parent,
-        "is-editor": __props.isEditor,
-        "selected-widget": __props.selectedWidget
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules,
+        prop: __props.propKey,
+        key: __props.propKey
       }, {
         default: withCtx(() => [
           createVNode(_component_el_checkbox_group, {
@@ -1767,19 +1490,29 @@ const _sfc_main$d = {
           }, 8, ["modelValue"])
         ]),
         _: 1
-      }, 8, ["widget", "basicProp", "advancedProp", "parent-widget", "prop-key", "rule-form", "parent", "is-editor", "selected-widget"]);
+      }, 8, ["class", "label", "rules", "prop"]);
     };
   }
 };
-_sfc_main$d.install = (App) => {
-  App.component(_sfc_main$d.__name, _sfc_main$d);
+var checkbox = /* @__PURE__ */ _export_sfc$1(_sfc_main$d, [["__scopeId", "data-v-6923c2ac"]]);
+checkbox.install = (App) => {
+  App.component(checkbox.__name, checkbox);
 };
 const useRegisterEvent = () => {
   const handleOnClick = (props, inject2) => {
     const EVENTS = props.widget.options.events;
     if (!(EVENTS == null ? void 0 : EVENTS.onClick))
       return;
-    new Function("props", "inject", "ElMessage", EVENTS == null ? void 0 : EVENTS.onClick.value)(props, inject2, ElMessage);
+    new Function(
+      "props",
+      "inject",
+      "ElMessage",
+      EVENTS == null ? void 0 : EVENTS.onClick.value
+    )(
+      props,
+      inject2,
+      ElMessage
+    );
   };
   const handleOnBeforeMount = (widget) => {
     const EVENTS = widget.options.events;
@@ -1801,6 +1534,7 @@ const useRegisterEvent = () => {
     handleOnMounted
   };
 };
+var button_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$c = {
   __name: "button",
   props: [
@@ -1820,14 +1554,13 @@ const _sfc_main$c = {
       handleOnMounted(props.widget);
     });
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_button = resolveComponent("el-button");
-      return openBlock(), createBlock(widgetMask, {
-        widget: __props.widget,
-        basicProp: __props.widget.options.basic,
-        advancedProp: __props.widget.options.advanced,
-        "parent-widget": __props.parentWidget,
-        "is-editor": __props.isEditor,
-        "selected-widget": __props.selectedWidget
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules
       }, {
         default: withCtx(() => [
           createVNode(_component_el_button, {
@@ -1848,13 +1581,15 @@ const _sfc_main$c = {
           }, 8, ["icon", "type", "disabled", "size", "round", "circle", "plain", "auto-insert-space"])
         ]),
         _: 1
-      }, 8, ["widget", "basicProp", "advancedProp", "parent-widget", "is-editor", "selected-widget"]);
+      }, 8, ["class", "label", "rules"]);
     };
   }
 };
-_sfc_main$c.install = (App) => {
-  App.component(_sfc_main$c.__name, _sfc_main$c);
+var button = /* @__PURE__ */ _export_sfc$1(_sfc_main$c, [["__scopeId", "data-v-7d2950c7"]]);
+button.install = (App) => {
+  App.component(button.__name, button);
 };
+var select_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$b = {
   __name: "select",
   props: ["widget", "isEditor", "selectedWidget", "widgetType", "ruleForm", "propKey", "parent", "parentWidget"],
@@ -1863,17 +1598,15 @@ const _sfc_main$b = {
     const { basic, advanced } = props.widget.options;
     watchEvent(props, watch);
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_cascader = resolveComponent("el-cascader");
-      return openBlock(), createBlock(widgetMask, {
-        widget: __props.widget,
-        "basic-prop": unref(basic),
-        "advanced-prop": unref(advanced),
-        "parent-widget": __props.parentWidget,
-        "prop-key": __props.propKey,
-        "rule-form": __props.ruleForm,
-        parent: __props.parent,
-        "is-editor": __props.isEditor,
-        "selected-widget": __props.selectedWidget
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules,
+        prop: __props.propKey,
+        key: __props.propKey
       }, {
         default: withCtx(() => [
           createVNode(_component_el_cascader, {
@@ -1886,13 +1619,15 @@ const _sfc_main$b = {
           }, null, 8, ["modelValue", "options", "disabled", "placeholder"])
         ]),
         _: 1
-      }, 8, ["widget", "basic-prop", "advanced-prop", "parent-widget", "prop-key", "rule-form", "parent", "is-editor", "selected-widget"]);
+      }, 8, ["class", "label", "rules", "prop"]);
     };
   }
 };
-_sfc_main$b.install = (App) => {
-  App.component(_sfc_main$b.__name, _sfc_main$b);
+var select = /* @__PURE__ */ _export_sfc$1(_sfc_main$b, [["__scopeId", "data-v-3bc12360"]]);
+select.install = (App) => {
+  App.component(select.__name, select);
 };
+var radio_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$a = {
   __name: "radio",
   props: ["widget", "isEditor", "selectedWidget", "widgetType", "ruleForm", "propKey", "parent", "parentWidget"],
@@ -1900,18 +1635,16 @@ const _sfc_main$a = {
     const props = __props;
     watchEvent(props, watch);
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_radio = resolveComponent("el-radio");
       const _component_el_radio_group = resolveComponent("el-radio-group");
-      return openBlock(), createBlock(widgetMask, {
-        widget: __props.widget,
-        basicProp: __props.widget.options.basic,
-        advancedProp: __props.widget.options.advanced,
-        "parent-widget": __props.parentWidget,
-        "prop-key": __props.propKey,
-        "rule-form": __props.ruleForm,
-        parent: __props.parent,
-        "is-editor": __props.isEditor,
-        "selected-widget": __props.selectedWidget
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules,
+        prop: __props.propKey,
+        key: __props.propKey
       }, {
         default: withCtx(() => [
           createVNode(_component_el_radio_group, {
@@ -1939,13 +1672,15 @@ const _sfc_main$a = {
           }, 8, ["modelValue"])
         ]),
         _: 1
-      }, 8, ["widget", "basicProp", "advancedProp", "parent-widget", "prop-key", "rule-form", "parent", "is-editor", "selected-widget"]);
+      }, 8, ["class", "label", "rules", "prop"]);
     };
   }
 };
-_sfc_main$a.install = (App) => {
-  App.component(_sfc_main$a.__name, _sfc_main$a);
+var radio = /* @__PURE__ */ _export_sfc$1(_sfc_main$a, [["__scopeId", "data-v-00386b07"]]);
+radio.install = (App) => {
+  App.component(radio.__name, radio);
 };
+var textarea_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$9 = {
   __name: "textarea",
   props: ["widget", "isEditor", "selectedWidget", "widgetType", "ruleForm", "propKey", "parent", "parentWidget"],
@@ -1953,17 +1688,15 @@ const _sfc_main$9 = {
     const props = __props;
     watchEvent(props, watch);
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_input = resolveComponent("el-input");
-      return openBlock(), createBlock(widgetMask, {
-        widget: __props.widget,
-        "basic-prop": __props.widget.options.basic,
-        "advanced-prop": __props.widget.options.advanced,
-        "parent-widget": __props.parentWidget,
-        "prop-key": __props.propKey,
-        "rule-form": __props.ruleForm,
-        parent: __props.parent,
-        "is-editor": __props.isEditor,
-        "selected-widget": __props.selectedWidget
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules,
+        prop: __props.propKey,
+        key: __props.propKey
       }, {
         default: withCtx(() => [
           createVNode(_component_el_input, {
@@ -1979,28 +1712,28 @@ const _sfc_main$9 = {
           }, null, 8, ["disabled", "placeholder", "maxlength", "resize", "modelValue"])
         ]),
         _: 1
-      }, 8, ["widget", "basic-prop", "advanced-prop", "parent-widget", "prop-key", "rule-form", "parent", "is-editor", "selected-widget"]);
+      }, 8, ["class", "label", "rules", "prop"]);
     };
   }
 };
-_sfc_main$9.install = (App) => {
-  App.component(_sfc_main$9.__name, _sfc_main$9);
+var textarea = /* @__PURE__ */ _export_sfc$1(_sfc_main$9, [["__scopeId", "data-v-4c1632aa"]]);
+textarea.install = (App) => {
+  App.component(textarea.__name, textarea);
 };
+var divider_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _hoisted_1$4 = { key: 0 };
 const _sfc_main$8 = {
   __name: "divider",
   props: ["widget", "isEditor", "selectedWidget", "parentWidget"],
   setup(__props) {
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_divider = resolveComponent("el-divider");
-      return openBlock(), createBlock(widgetMask, {
-        widget: __props.widget,
-        "basic-prop": __props.widget.options.basic,
-        "advanced-prop": __props.widget.options.advanced,
-        "parent-widget": __props.parentWidget,
-        "is-editor": __props.isEditor,
-        "selected-widget": __props.selectedWidget,
-        style: normalizeStyle(`top:${__props.widget.options.basic.moveDistance.value}px`)
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules
       }, {
         default: withCtx(() => [
           createVNode(_component_el_divider, {
@@ -2016,17 +1749,18 @@ const _sfc_main$8 = {
           }, 8, ["direction", "border-style", "content-position", "style"])
         ]),
         _: 1
-      }, 8, ["widget", "basic-prop", "advanced-prop", "parent-widget", "is-editor", "selected-widget", "style"]);
+      }, 8, ["class", "label", "rules"]);
     };
   }
 };
-_sfc_main$8.install = (App) => {
-  App.component(_sfc_main$8.__name, _sfc_main$8);
+var divider = /* @__PURE__ */ _export_sfc$1(_sfc_main$8, [["__scopeId", "data-v-65794498"]]);
+divider.install = (App) => {
+  App.component(divider.__name, divider);
 };
-var cellPhone_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => ".phone-content[data-v-716845ec]{width:100%;display:flex}.prefix-select[data-v-716845ec]{margin-right:10px}\n")();
-const _withScopeId = (n) => (pushScopeId("data-v-716845ec"), n = n(), popScopeId(), n);
+var cellPhone_vue_vue_type_style_index_0_scoped_true_lang = "";
+const _withScopeId$1 = (n) => (pushScopeId("data-v-00e8f4e4"), n = n(), popScopeId(), n);
 const _hoisted_1$3 = { class: "phone-content" };
-const _hoisted_2$1 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createElementVNode("span", null, "+", -1));
+const _hoisted_2$1 = /* @__PURE__ */ _withScopeId$1(() => /* @__PURE__ */ createElementVNode("span", null, "+", -1));
 const _hoisted_3$1 = { style: { "float": "left" } };
 const _hoisted_4$1 = { style: { "float": "right", "color": "var(--el-text-color-secondary)", "font-size": "13px" } };
 const _sfc_main$7 = {
@@ -2047,19 +1781,17 @@ const _sfc_main$7 = {
     const setRules = () => {
     };
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_option = resolveComponent("el-option");
       const _component_el_select = resolveComponent("el-select");
       const _component_el_input = resolveComponent("el-input");
-      return openBlock(), createBlock(widgetMask, {
-        widget: __props.widget,
-        "basic-prop": __props.widget.options.basic,
-        "advanced-prop": __props.widget.options.advanced,
-        "parent-widget": __props.parentWidget,
-        "prop-key": __props.propKey,
-        "rule-form": __props.ruleForm,
-        parent: __props.parent,
-        "is-editor": __props.isEditor,
-        "selected-widget": __props.selectedWidget
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules,
+        prop: __props.propKey,
+        key: __props.propKey
       }, {
         default: withCtx(() => [
           createElementVNode("div", _hoisted_1$3, [
@@ -2103,41 +1835,43 @@ const _sfc_main$7 = {
           ])
         ]),
         _: 1
-      }, 8, ["widget", "basic-prop", "advanced-prop", "parent-widget", "prop-key", "rule-form", "parent", "is-editor", "selected-widget"]);
+      }, 8, ["class", "label", "rules", "prop"]);
     };
   }
 };
-var cellPhone = /* @__PURE__ */ _export_sfc$1(_sfc_main$7, [["__scopeId", "data-v-716845ec"]]);
+var cellPhone = /* @__PURE__ */ _export_sfc$1(_sfc_main$7, [["__scopeId", "data-v-00e8f4e4"]]);
 cellPhone.install = (App) => {
   App.component(cellPhone.__name, cellPhone);
 };
+var staticText_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _hoisted_1$2 = { style: { "color": "red" } };
 const _sfc_main$6 = {
   __name: "staticText",
   props: ["widget", "isEditor", "selectedWidget", "parentWidget"],
   setup(__props) {
     return (_ctx, _cache) => {
-      return openBlock(), createBlock(widgetMask, {
-        widget: __props.widget,
-        "basic-prop": __props.widget.options.basic,
-        "advanced-prop": __props.widget.options.advanced,
-        "parent-widget": __props.parentWidget,
-        "is-editor": __props.isEditor,
-        "selected-widget": __props.selectedWidget
+      var _a2, _b;
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules
       }, {
         default: withCtx(() => [
           createElementVNode("pre", {
-            style: normalizeStyle({
-              "width": "100%",
-              "margin": "inherit",
-              "line-height": `${__props.widget.options.basic["static-text-line-height"].value}`,
-              "text-align": `${__props.widget.options.basic.alignment.value}`,
-              "font-size": `${__props.widget.options.basic["font-size"].value}px`,
-              "color": `${__props.widget.options.basic["font-color"].value}`,
-              "font-style": `${__props.widget.options.basic["font-style"].options[1].value ? "italic" : "normal"}`,
-              "font-weight": `${__props.widget.options.basic["font-style"].options[0].value ? "bold" : "normal"}`,
-              "text-decoration": `${__props.widget.options.basic["font-style"].options[2].value ? "underline" : "none"}`
-            })
+            style: normalizeStyle(
+              {
+                "width": "100%",
+                "margin": "inherit",
+                "line-height": `${__props.widget.options.basic["static-text-line-height"].value}`,
+                "text-align": `${__props.widget.options.basic.alignment.value}`,
+                "font-size": `${__props.widget.options.basic["font-size"].value}px`,
+                "color": `${__props.widget.options.basic["font-color"].value}`,
+                "font-style": `${__props.widget.options.basic["font-style"].options[1].value ? "italic" : "normal"}`,
+                "font-weight": `${__props.widget.options.basic["font-style"].options[0].value ? "bold" : "normal"}`,
+                "text-decoration": `${__props.widget.options.basic["font-style"].options[2].value ? "underline" : "none"}`
+              }
+            )
           }, [
             withDirectives(createElementVNode("span", _hoisted_1$2, "*", 512), [
               [vShow, __props.widget.options.basic.addRequired.value]
@@ -2146,12 +1880,13 @@ const _sfc_main$6 = {
           ], 4)
         ]),
         _: 1
-      }, 8, ["widget", "basic-prop", "advanced-prop", "parent-widget", "is-editor", "selected-widget"]);
+      }, 8, ["class", "label", "rules"]);
     };
   }
 };
-_sfc_main$6.install = (App) => {
-  App.component(_sfc_main$6.__name, _sfc_main$6);
+var staticText = /* @__PURE__ */ _export_sfc$1(_sfc_main$6, [["__scopeId", "data-v-3216d8dd"]]);
+staticText.install = (App) => {
+  App.component(staticText.__name, staticText);
 };
 var zhCn$1 = {};
 (function(exports) {
@@ -2280,22 +2015,23 @@ var zhCn$1 = {};
   exports["default"] = zhCn2;
 })(zhCn$1);
 var zhCn = /* @__PURE__ */ getDefaultExportFromCjs(zhCn$1);
+var time_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$5 = {
   __name: "time",
-  props: [
-    "widget",
-    "parentWidget"
-  ],
+  props: ["widget", "isEditor", "selectedWidget", "widgetType", "ruleForm", "propKey", "parent", "parentWidget"],
   setup(__props) {
     const locale = zhCn;
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_time_picker = resolveComponent("el-time-picker");
       const _component_el_config_provider = resolveComponent("el-config-provider");
-      return openBlock(), createBlock(widgetMask, {
-        widget: __props.widget,
-        basicProp: __props.widget.options.basic,
-        advancedProp: __props.widget.options.advanced,
-        "parent-widget": __props.parentWidget
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules,
+        prop: __props.propKey,
+        key: __props.propKey
       }, {
         default: withCtx(() => [
           createVNode(_component_el_config_provider, { locale: unref(locale) }, {
@@ -2320,29 +2056,31 @@ const _sfc_main$5 = {
           }, 8, ["locale"])
         ]),
         _: 1
-      }, 8, ["widget", "basicProp", "advancedProp", "parent-widget"]);
+      }, 8, ["class", "label", "rules", "prop"]);
     };
   }
 };
-_sfc_main$5.install = (App) => {
-  App.component(_sfc_main$5.__name, _sfc_main$5);
+var time = /* @__PURE__ */ _export_sfc$1(_sfc_main$5, [["__scopeId", "data-v-79d2c68e"]]);
+time.install = (App) => {
+  App.component(time.__name, time);
 };
+var date_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$4 = {
   __name: "date",
-  props: [
-    "widget",
-    "parentWidget"
-  ],
+  props: ["widget", "isEditor", "selectedWidget", "widgetType", "ruleForm", "propKey", "parent", "parentWidget"],
   setup(__props) {
     const locale = zhCn;
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_date_picker = resolveComponent("el-date-picker");
       const _component_el_config_provider = resolveComponent("el-config-provider");
-      return openBlock(), createBlock(widgetMask, {
-        widget: __props.widget,
-        basicProp: __props.widget.options.basic,
-        advancedProp: __props.widget.options.advanced,
-        "parent-widget": __props.parentWidget
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules,
+        prop: __props.propKey,
+        key: __props.propKey
       }, {
         default: withCtx(() => [
           createVNode(_component_el_config_provider, { locale: unref(locale) }, {
@@ -2367,29 +2105,30 @@ const _sfc_main$4 = {
           createElementVNode("span", null, toDisplayString(__props.widget.value), 1)
         ]),
         _: 1
-      }, 8, ["widget", "basicProp", "advancedProp", "parent-widget"]);
+      }, 8, ["class", "label", "rules", "prop"]);
     };
   }
 };
-_sfc_main$4.install = (App) => {
-  App.component(_sfc_main$4.__name, _sfc_main$4);
+var date = /* @__PURE__ */ _export_sfc$1(_sfc_main$4, [["__scopeId", "data-v-36ee7c81"]]);
+date.install = (App) => {
+  App.component(date.__name, date);
 };
+var repeatButton_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$3 = {
   __name: "repeatButton",
-  props: [
-    "widget",
-    "parentWidget",
-    "advancedProp"
-  ],
+  props: ["widget", "isEditor", "selectedWidget", "widgetType", "ruleForm", "propKey", "parent", "parentWidget"],
   setup(__props) {
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_checkbox_button = resolveComponent("el-checkbox-button");
       const _component_el_checkbox_group = resolveComponent("el-checkbox-group");
-      return openBlock(), createBlock(widgetMask, {
-        widget: __props.widget,
-        basicProp: __props.widget.options.basic,
-        advancedProp: __props.widget.options.advanced,
-        "parent-widget": __props.parentWidget
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules,
+        prop: __props.propKey,
+        key: __props.propKey
       }, {
         default: withCtx(() => [
           createVNode(_component_el_checkbox_group, {
@@ -2415,29 +2154,30 @@ const _sfc_main$3 = {
           }, 8, ["size", "modelValue"])
         ]),
         _: 1
-      }, 8, ["widget", "basicProp", "advancedProp", "parent-widget"]);
+      }, 8, ["class", "label", "rules", "prop"]);
     };
   }
 };
-_sfc_main$3.install = (App) => {
-  App.component(_sfc_main$3.__name, _sfc_main$3);
+var repeatButton = /* @__PURE__ */ _export_sfc$1(_sfc_main$3, [["__scopeId", "data-v-7c843d44"]]);
+repeatButton.install = (App) => {
+  App.component(repeatButton.__name, repeatButton);
 };
+var onlyButton_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _sfc_main$2 = {
   __name: "onlyButton",
-  props: [
-    "widget",
-    "parentWidget",
-    "advancedProp"
-  ],
+  props: ["widget", "isEditor", "selectedWidget", "widgetType", "ruleForm", "propKey", "parent", "parentWidget"],
   setup(__props) {
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_el_radio_button = resolveComponent("el-radio-button");
       const _component_el_radio_group = resolveComponent("el-radio-group");
-      return openBlock(), createBlock(widgetMask, {
-        widget: __props.widget,
-        basicProp: __props.widget.options.basic,
-        advancedProp: __props.widget.options.advanced,
-        "parent-widget": __props.parentWidget
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules,
+        prop: __props.propKey,
+        key: __props.propKey
       }, {
         default: withCtx(() => [
           createVNode(_component_el_radio_group, {
@@ -2464,13 +2204,15 @@ const _sfc_main$2 = {
           }, 8, ["size", "modelValue"])
         ]),
         _: 1
-      }, 8, ["widget", "basicProp", "advancedProp", "parent-widget"]);
+      }, 8, ["class", "label", "rules", "prop"]);
     };
   }
 };
-_sfc_main$2.install = (App) => {
-  App.component(_sfc_main$2.__name, _sfc_main$2);
+var onlyButton = /* @__PURE__ */ _export_sfc$1(_sfc_main$2, [["__scopeId", "data-v-9fabf014"]]);
+onlyButton.install = (App) => {
+  App.component(onlyButton.__name, onlyButton);
 };
+var upload_vue_vue_type_style_index_0_scoped_true_lang = "";
 const _hoisted_1$1 = { key: 0 };
 const _hoisted_2 = { key: 0 };
 const _hoisted_3 = /* @__PURE__ */ createTextVNode(" \u8BF7\u62D6\u62FD\u6587\u4EF6\u5230\u6B64\u5904\uFF0C\u6216\u8005 ");
@@ -2479,7 +2221,7 @@ const _hoisted_5 = { key: 1 };
 const _hoisted_6 = ["src"];
 const _sfc_main$1 = {
   __name: "upload",
-  props: ["widget", "parentWidget"],
+  props: ["widget", "isEditor", "selectedWidget", "widgetType", "ruleForm", "propKey", "parent", "parentWidget"],
   setup(__props) {
     const dialogImageUrl = ref("");
     const dialogVisible = ref(false);
@@ -2488,15 +2230,18 @@ const _sfc_main$1 = {
       dialogVisible.value = true;
     };
     return (_ctx, _cache) => {
+      var _a2, _b;
       const _component_svg_icon = resolveComponent("svg-icon");
       const _component_el_link = resolveComponent("el-link");
       const _component_el_dialog = resolveComponent("el-dialog");
       const _component_el_upload = resolveComponent("el-upload");
-      return openBlock(), createBlock(widgetMask, {
-        widget: __props.widget,
-        "basic-prop": __props.widget.options.basic,
-        "advanced-prop": __props.widget.options.advanced,
-        "parent-widget": __props.parentWidget
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules,
+        prop: __props.propKey,
+        key: __props.propKey
       }, {
         default: withCtx(() => [
           createVNode(_component_el_upload, {
@@ -2548,20 +2293,40 @@ const _sfc_main$1 = {
           }, 8, ["file-list", "action", "multiple", "limit", "list-type", "drag", "disabled"])
         ]),
         _: 1
-      }, 8, ["widget", "basic-prop", "advanced-prop", "parent-widget"]);
+      }, 8, ["class", "label", "rules", "prop"]);
     };
   }
 };
-_sfc_main$1.install = (App) => {
-  App.component(_sfc_main$1.__name, _sfc_main$1);
+var upload = /* @__PURE__ */ _export_sfc$1(_sfc_main$1, [["__scopeId", "data-v-656e4752"]]);
+upload.install = (App) => {
+  App.component(upload.__name, upload);
 };
-var richText_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '@charset "UTF-8";.primary-color[data-v-405a3d5f]{color:#409eff}.background-opacity[data-v-405a3d5f]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-405a3d5f]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-405a3d5f]{margin-top:8px}.el-form-item--medium .el-radio[data-v-405a3d5f]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-405a3d5f]{margin-top:8px}.el-form-item--small .el-radio[data-v-405a3d5f]{line-height:32px!important}.el-form-item--small .el-rate[data-v-405a3d5f]{margin-top:6px}.el-form-item--mini .el-radio[data-v-405a3d5f]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-405a3d5f]{margin-top:4px}.el-card[data-v-405a3d5f]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-405a3d5f]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-405a3d5f],.auto-full-width.el-date-editor.el-input__inner[data-v-405a3d5f]{width:100%!important}[data-v-405a3d5f]::-webkit-scrollbar{width:8px;height:8px}[data-v-405a3d5f]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-405a3d5f]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-405a3d5f]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-405a3d5f]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="12px"][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="12px"][data-v-405a3d5f]:before{content:"12px"}.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="14px"][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="14px"][data-v-405a3d5f]:before{content:"14px"}.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="16px"][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="16px"][data-v-405a3d5f]:before{content:"16px"}.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="18px"][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="18px"][data-v-405a3d5f]:before{content:"18px"}.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="20px"][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="20px"][data-v-405a3d5f]:before{content:"20px"}.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="24px"][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="24px"][data-v-405a3d5f]:before{content:"24px"}.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="28px"][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="28px"][data-v-405a3d5f]:before{content:"28px"}.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="32px"][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="32px"][data-v-405a3d5f]:before{content:"32px"}.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-label[data-value="36px"][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-size .ql-picker-item[data-value="36px"][data-v-405a3d5f]:before{content:"36px"}.local-quill-editor .ql-snow .ql-picker.ql-header .ql-picker-label[data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-header .ql-picker-item[data-v-405a3d5f]:before{content:"\\6587\\672c"}.local-quill-editor .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="1"][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="1"][data-v-405a3d5f]:before{content:"\\6807\\9898 1"}.local-quill-editor .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="2"][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="2"][data-v-405a3d5f]:before{content:"\\6807\\9898 2"}.local-quill-editor .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="3"][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="3"][data-v-405a3d5f]:before{content:"\\6807\\9898 3"}.local-quill-editor .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="4"][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="4"][data-v-405a3d5f]:before{content:"\\6807\\9898 4"}.local-quill-editor .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="5"][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="5"][data-v-405a3d5f]:before{content:"\\6807\\9898 5"}.local-quill-editor .ql-snow .ql-picker.ql-header .ql-picker-label[data-value="6"][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-header .ql-picker-item[data-value="6"][data-v-405a3d5f]:before{content:"\\6807\\9898 6"}.local-quill-editor .ql-snow .ql-picker.ql-font .ql-picker-label[data-value=SimSun][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-font .ql-picker-item[data-value=SimSun][data-v-405a3d5f]:before{content:"\\5b8b\\4f53";font-family:SimSun!important}.local-quill-editor .ql-snow .ql-picker.ql-font .ql-picker-label[data-value=SimHei][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-font .ql-picker-item[data-value=SimHei][data-v-405a3d5f]:before{content:"\\9ed1\\4f53";font-family:SimHei}.local-quill-editor .ql-snow .ql-picker.ql-font .ql-picker-label[data-value=Microsoft-YaHei][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-font .ql-picker-item[data-value=Microsoft-YaHei][data-v-405a3d5f]:before{content:"\\5fae\\8f6f\\96c5\\9ed1";font-family:Microsoft YaHei}.local-quill-editor .ql-snow .ql-picker.ql-font .ql-picker-label[data-value=KaiTi][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-font .ql-picker-item[data-value=KaiTi][data-v-405a3d5f]:before{content:"\\6977\\4f53";font-family:KaiTi!important}.local-quill-editor .ql-snow .ql-picker.ql-font .ql-picker-label[data-value=FangSong][data-v-405a3d5f]:before,.local-quill-editor .ql-snow .ql-picker.ql-font .ql-picker-item[data-value=FangSong][data-v-405a3d5f]:before{content:"\\4eff\\5b8b";font-family:"FangSong"}.local-quill-editor .ql-align-center[data-v-405a3d5f]{text-align:center}.local-quill-editor .ql-align-right[data-v-405a3d5f]{text-align:right}.local-quill-editor .ql-align-left[data-v-405a3d5f]{text-align:left}\n')();
-const _sfc_main = {};
-const _hoisted_1 = { class: "local-quill-editor" };
-function _sfc_render(_ctx, _cache) {
-  return openBlock(), createElementBlock("div", _hoisted_1);
-}
-var richText = /* @__PURE__ */ _export_sfc$1(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-405a3d5f"]]);
+var richText_vue_vue_type_style_index_0_scoped_true_lang = "";
+const _withScopeId = (n) => (pushScopeId("data-v-4a31cb2c"), n = n(), popScopeId(), n);
+const _hoisted_1 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createElementVNode("div", { class: "local-quill-editor" }, null, -1));
+const _sfc_main = {
+  __name: "richText",
+  props: ["widget", "isEditor", "selectedWidget", "widgetType", "ruleForm", "propKey", "parent", "parentWidget"],
+  setup(__props) {
+    return (_ctx, _cache) => {
+      var _a2, _b;
+      const _component_el_form_item = resolveComponent("el-form-item");
+      return openBlock(), createBlock(_component_el_form_item, {
+        class: normalizeClass([((_a2 = __props.selectedWidget) == null ? void 0 : _a2.id) === ((_b = __props.widget) == null ? void 0 : _b.id) && __props.isEditor ? "select" : ""]),
+        label: __props.widget.options.basic.label.value,
+        rules: __props.widget.rules,
+        prop: __props.propKey,
+        key: __props.propKey
+      }, {
+        default: withCtx(() => [
+          _hoisted_1
+        ]),
+        _: 1
+      }, 8, ["class", "label", "rules", "prop"]);
+    };
+  }
+};
+var richText = /* @__PURE__ */ _export_sfc$1(_sfc_main, [["__scopeId", "data-v-4a31cb2c"]]);
 richText.install = (App) => {
   App.component(richText.__name, richText);
 };
@@ -2571,21 +2336,21 @@ const components = [
   tabs,
   table,
   input,
-  _sfc_main$d,
-  _sfc_main$c,
-  _sfc_main$b,
-  _sfc_main$a,
-  _sfc_main$9,
-  _sfc_main$8,
+  checkbox,
+  button,
+  select,
+  radio,
+  textarea,
+  divider,
   cellPhone,
-  _sfc_main$6,
-  _sfc_main$5,
-  _sfc_main$4,
-  _sfc_main$3,
-  _sfc_main$2,
-  _sfc_main$1,
+  staticText,
+  time,
+  date,
+  repeatButton,
+  onlyButton,
+  upload,
   richText,
-  _sfc_main$e
+  switch1
 ];
 const install = (App) => {
   components.forEach((item) => {
@@ -2593,4 +2358,4 @@ const install = (App) => {
   });
 };
 var index = { install };
-export { _sfc_main$c as button, card, cellPhone, _sfc_main$d as checkbox, _sfc_main$4 as date, index as default, _sfc_main$8 as divider, grid, input, _sfc_main$2 as onlyButton, _sfc_main$a as radio, _sfc_main$3 as repeatButton, richText, _sfc_main$b as select, _sfc_main$6 as staticText, _sfc_main$e as switch1, table, tabs, _sfc_main$9 as textarea, _sfc_main$5 as time, _sfc_main$1 as upload };
+export { button, card, cellPhone, checkbox, date, index as default, divider, grid, input, onlyButton, radio, repeatButton, richText, select, staticText, switch1, table, tabs, textarea, time, upload };
