@@ -135,10 +135,6 @@ export const containers = [
 					{
 						id: 1,
 						name: '名称',
-						ruleFormKey: {
-							label: "参数key",
-							value: ''
-						},
 						widgetList: []
 					}
 				]

@@ -119,7 +119,7 @@ const removeWidget = ({widget, parentWidget, parent,ruleForm}) => {
 			}
 		})
 	}else{
-		widget.ruleFormKey && delete ruleForm[widget.ruleFormKey]
+		widget.ruleFormKey && ruleForm && delete ruleForm[widget.ruleFormKey]
 	}
 }
 provide('removeWidget', removeWidget)

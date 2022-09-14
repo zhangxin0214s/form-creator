@@ -28,7 +28,7 @@
   
   const props = defineProps(['widget','isEditor', 'selectedWidget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
   
-  watchEvent(props,watch)
+  watchEvent(props,watch,ElMessage)
   </script>
  <style lang="scss" scoped>
   .hint {

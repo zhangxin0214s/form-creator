@@ -22,7 +22,7 @@
     import { watchEvent } from '../../hooks/watchEvent'
     const props = defineProps(['widget', 'isEditor', 'selectedWidget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
     const {basic, advanced} = props.widget.options;
-    watchEvent(props,watch)
+    watchEvent(props,watch,ElMessage)
   
   </script>
   

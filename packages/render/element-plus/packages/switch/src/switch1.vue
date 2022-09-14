@@ -27,7 +27,7 @@ const props = defineProps([
 	'selectedWidget'
 ])
 
-watchEvent(props,watch)
+watchEvent(props,watch,ElMessage)
 </script>
 <style lang="scss" scoped>
 .hint {

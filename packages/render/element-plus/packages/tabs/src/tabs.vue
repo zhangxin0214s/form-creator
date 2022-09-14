@@ -23,6 +23,7 @@
   </el-tabs>
 </template>
   <script setup name="tabs">
+    import { ElMessage } from 'element-plus'
     import tabsContent from "./content.vue"
     import { watch } from "vue"
     const props=defineProps([
@@ -48,17 +49,24 @@
     const addTabsHandler=()=>{
       let maxCount=props.widget.maxCount
       if(maxCount<=0 || props.widget.options.advanced.cols.length<maxCount){
+          const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+          if(!ruleFormKey){
+            ElMessage({
+							message: '请先设置参数key',
+							type: 'error',
+							duration:1500
+					  })
+            return
+          }
           props.widget.options.advanced.cols.push({
             id:guid(),
             name:"名称",
             widgetList:[]
           })
-          const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
           ruleFormKey && props.ruleForm[ruleFormKey].push({})
       }
     }
     const removeTabsHandler1=(name)=>{
-      console.log(name)
       const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
       let cols=props.widget.options.advanced.cols
       if(cols.length===1){
@@ -67,7 +75,7 @@
       for(let i=0;i<cols.length;i++){
         if(cols[i].id===name){
           cols.splice(i,1)
-          props.ruleForm[ruleFormKey].splice(i,1)
+          props.ruleForm[ruleFormKey]?.splice(i,1)
           return 
         }
       }

@@ -126,6 +126,7 @@ const uploadFile = (file, files) => {
   _widgetStore.clearWidget();
   reader.onload = e => {
     readText = JSON.parse(e.currentTarget.result);
+    console.log(readText.formConfig,"===123===")
     _widgetStore.widgetList.push(...readText.widgetList);
     _widgetStore.formConfig = readText.formConfig;
 

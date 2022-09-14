@@ -57,7 +57,7 @@ const props = defineProps([
 	'selectedWidget',
 ]);
 
-watchEvent(props, watch);
+watchEvent(props, watch,ElMessage);
 const setRules = () => {
 	// const _ruleFormKey = props.widget.options.basic.ruleFormKey.value;
 	// const _ruleForm = formConfig.value.ruleForm;

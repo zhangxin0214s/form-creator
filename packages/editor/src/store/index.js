@@ -25,7 +25,6 @@ export const widgetStore = defineStore('widget', {
         clearWidget() {
             this.widgetList = [];
             this.selectedWidget = null
-            // this.formConfig.ruleForm = {}
         },
         /**
          * 复制组件
