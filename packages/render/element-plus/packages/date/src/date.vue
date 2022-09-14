@@ -5,7 +5,7 @@
 		:rules="widget.rules"
 		:prop="propKey"
 		:key="propKey">
-    <el-config-provider :locale="locale">
+    <el-config-provider>
       <el-date-picker
           clearable
           :placeholder="widget.options.basic.placeholder.value"
@@ -26,8 +26,8 @@
   
 <script setup name="dateTimeRange">
 // 将时间控件修改为中文
-import zhCn from 'element-plus/lib/locale/lang/zh-cn'
-const locale = zhCn
+// import zhCn from 'element-plus/lib/locale/lang/zh-cn'
+// const locale = zhCn
 const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
 
 </script>
