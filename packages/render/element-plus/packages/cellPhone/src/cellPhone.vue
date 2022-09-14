@@ -34,7 +34,6 @@
 				:disabled="widget.options.basic.disabled.value"
 				:placeholder="widget.options.basic.defaultValue.value"
 				v-model="widget.value"
-				@blur="setRules()"
 				@change="handleChangeEvent(props,ElMessage)"
 			/>
 		</div>
@@ -57,14 +56,8 @@ const props = defineProps([
 	'selectedWidget',
 ]);
 
-watchEvent(props, watch,ElMessage);
-const setRules = () => {
-	// const _ruleFormKey = props.widget.options.basic.ruleFormKey.value;
-	// const _ruleForm = formConfig.value.ruleForm;
-	// _ruleForm[
-	// 	_ruleFormKey
-	// ] = `${props.widget.options.basic.prefix.value}-${props.widget.value}`;
-};
+watchEvent(props, watch,ElMessage,"cellPhone");
+
 </script>
 <style lang="scss" scoped>
 .phone-content {
