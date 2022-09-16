@@ -292,11 +292,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[],
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		},
@@ -342,11 +343,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		},
@@ -456,11 +458,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		},
@@ -602,11 +605,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			},
 			events: {
@@ -697,11 +701,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		}
@@ -801,11 +806,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		},
@@ -918,11 +924,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		},
@@ -1011,15 +1018,6 @@ export const basicWidgets = [
 				}
 			},
 			advanced: {
-				linkage: {
-					label: '联动对象',
-					options: [],
-					value: []
-				},
-				linkageCode: {
-					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
-				}
 			}
 		}
 	},
@@ -1096,11 +1094,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		},
@@ -1184,11 +1183,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		}
@@ -1298,11 +1298,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		}
@@ -1444,11 +1445,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		}

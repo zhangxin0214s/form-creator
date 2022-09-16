@@ -18,13 +18,16 @@
 </template>
 <script setup name="input">
 import { ElMessage } from 'element-plus'
-import { watch } from 'vue';
+import { watch,reactive } from 'vue';
 import { handleChangeEvent } from '../../hooks/handleChangeEvent'
 import { watchEvent } from '../../hooks/watchEvent'
+import {linkageWatchEvent} from '../../hooks/linkageWatchEvent'
 
 const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
 
-watchEvent(props,watch,ElMessage)
+watchEvent(props,watch,ElMessage);
+
+linkageWatchEvent(props,watch,ElMessage);
 </script>
 <style lang="scss" scoped>
 .hint {

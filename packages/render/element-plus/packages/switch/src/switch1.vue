@@ -16,7 +16,7 @@ import { watch } from 'vue'
 import { ElMessage } from 'element-plus'
 import { handleChangeEvent } from '../../hooks/handleChangeEvent'
 import { watchEvent } from '../../hooks/watchEvent'
-
+import { linkageWatchEvent } from '../../hooks/linkageWatchEvent';
 const props = defineProps([
 	'widget',
 	'ruleForm',
@@ -28,6 +28,7 @@ const props = defineProps([
 ])
 
 watchEvent(props,watch,ElMessage)
+linkageWatchEvent(props, watch, ElMessage);
 </script>
 <style lang="scss" scoped>
 .hint {

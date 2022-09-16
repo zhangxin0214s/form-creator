@@ -29,8 +29,11 @@
 // import zhCn from 'element-plus/lib/locale/lang/zh-cn'
 
 // const locale = zhCn
+import { watch } from 'vue'
+	import { ElMessage } from 'element-plus'
+	import {linkageWatchEvent} from '../../hooks/linkageWatchEvent'
 const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
-
+linkageWatchEvent(props,watch,ElMessage);
 </script>
   
 <style lang="scss" scoped>

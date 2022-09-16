@@ -29,9 +29,8 @@ export const widgetStore = defineStore('widget', {
         /**
          * 复制组件
          * @param {*} target
-         * @param {*} parent
          */
-        copyWidget(target, parent = null, index = parent?.length - 1) {
+        copyWidget(target) {
             let newOrigin = deepClone(target);
             newOrigin.id = generateId();
 
@@ -46,14 +45,7 @@ export const widgetStore = defineStore('widget', {
                     })
                 })
             }
-            if (parent !== null) {
-                parent.splice(index, 0, newOrigin);
-                newOrigin.options.advanced.linkage.options = [];
-                newOrigin.options.advanced.linkage.value = [];
-
-            } else {
-                this.widgetList.push(newOrigin);
-            }
+            this.widgetList.push(newOrigin);
         },
         /**
          * 删除组件

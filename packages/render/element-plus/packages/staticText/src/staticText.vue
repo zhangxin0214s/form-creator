@@ -19,8 +19,13 @@
 </template>
 
 <script setup name="staticText">
+	import { watch } from 'vue'
+	import { ElMessage } from 'element-plus'
+	import {linkageWatchEvent} from '../../hooks/linkageWatchEvent'
 // 这个文件不要格式化代码，上面的pre标签和内容必须在一行，谢谢
 defineProps(['widget','isEditor', 'selectedWidget', 'parentWidget']);
+
+linkageWatchEvent(props,watch,ElMessage);
 </script>
 <style lang="scss" scoped>
 	.hint {
