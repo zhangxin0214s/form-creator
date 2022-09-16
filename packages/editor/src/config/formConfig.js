@@ -351,7 +351,7 @@ export const basicWidgets = [
 					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
-		},
+		}
 	},
 	{
 		id: 3,

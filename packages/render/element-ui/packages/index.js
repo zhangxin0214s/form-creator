@@ -1,7 +1,8 @@
 import input from "./input"
-
+import switch1 from "./switch"
 const components = [
-    input
+    input,
+    switch1
 ]
 
 const install = Vue => {
@@ -17,5 +18,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
     install,
-    input
+    input,
+    switch1
 }
