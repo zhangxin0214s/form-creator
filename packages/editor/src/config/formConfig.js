@@ -349,7 +349,7 @@ export const basicWidgets = [
 					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
 				}
 			}
-		},
+		}
 	},
 	{
 		id: 3,
