@@ -16,6 +16,19 @@
       <el-collapse-item name="2" title="高级属性" class="selectAdvance">
         <el-divider class="title" content-position="center">选项设置</el-divider>
         <add-select-list :advanced-prop="advancedProp"></add-select-list>
+        <div
+					v-for="(item,key,index) in advancedProp"
+					:key="index"
+				>
+					<component
+						:is="componentMap[getAdvancedCompName(key)]"
+						:basic-prop="basicProp"
+						:advanced-prop="advancedProp"
+						:selected-widget="selectedWidget"
+						:value="item"
+						:key1="key"
+					></component>
+				</div>
       </el-collapse-item>
     </el-collapse>
   </div>
@@ -27,7 +40,7 @@
   import addSelectList from '../components/private/addSelectList.vue';
 
   const props = defineProps([
-    'basicProp', 'advancedProp'
+    'basicProp', 'advancedProp','selectedWidget'
   ])
   const componentMap = {
     ...components
