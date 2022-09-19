@@ -1,6 +1,6 @@
 <template>
     <div class="form">
-        <el-form 
+        <el-form
             class="form-renderer"
             :label-width="formConfig['label-width'].value"
             :label-position="formConfig['label-position'].value"
@@ -9,7 +9,7 @@
             >
             <template v-for="(widget, index) in widgetList" :key="index">
                 <!-- 非容器组件 -->
-                <template v-if="widget.category === 'widget'">
+                <template v-if="widget.category === 'widget' && !widget.options.basic.isHidden.value">
                   <widget-mask
                     :widget="widget"
                     :widget-list="widgetList"
@@ -21,7 +21,7 @@
                 </template>
 
                 <!-- 容器类组件 -->
-                <template v-if="widget.category === 'container'">
+                <template v-if="widget.category === 'container' && !widget.options.basic.isHidden.value">
                   <container-mask
                     :widget="widget"
                     :widget-list="widgetList"
@@ -39,7 +39,7 @@
     import { ref } from 'vue'
     import widgetMask from './widgetMask.vue'
     import containerMask from './containerMask.vue'
-    const props = defineProps(['widgetList', 'formConfig']);
+    const props = defineProps(['widgetList', 'formConfig', 'isEditor']);
     const ruleFormRef = ref(null);
     const submitForm = async () =>{
         if (!ruleFormRef) return
@@ -57,6 +57,6 @@
     .form{
        &-renderer{
          height:100%;
-       } 
+       }
     }
 </style>
