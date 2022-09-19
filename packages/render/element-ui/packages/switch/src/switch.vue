@@ -23,15 +23,6 @@
       widget: Object,
       isEditor: Boolean,
       propKey: String
-    },
-    data() {
-      return {};
-    },
-    mounted() {
-
-    },
-    methods:{
-
     }
   };
   </script>
