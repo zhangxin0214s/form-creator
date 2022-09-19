@@ -100,8 +100,8 @@ provide('onEnd', onEnd)
 /**
  * 复制组件
  */
-const copyWidget = ({widget}) => {
-  _widgetStore.copyWidget(widget);
+const copyWidget = ({widget,parentWidget}) => {
+  _widgetStore.copyWidget(widget,parentWidget);
 }
 provide('copyWidget', copyWidget)
 

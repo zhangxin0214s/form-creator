@@ -30,7 +30,7 @@ export const widgetStore = defineStore('widget', {
          * 复制组件
          * @param {*} target
          */
-        copyWidget(target) {
+        copyWidget(target,parentWidget) {
             let newOrigin = deepClone(target);
             newOrigin.id = generateId();
 
@@ -45,7 +45,7 @@ export const widgetStore = defineStore('widget', {
                     })
                 })
             }
-            this.widgetList.push(newOrigin);
+            parentWidget.push(newOrigin);
         },
         /**
          * 删除组件
