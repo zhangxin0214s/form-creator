@@ -19,7 +19,7 @@
 <script>
   import mixins from '../../mixins/index.js'
   export default {
-    name: "fc-input",
+    name: "input",
     mixins:[mixins],
     props: {
       widget: Object,
@@ -31,8 +31,8 @@
   
   <style scoped>
   .hint {
-	font-size: 12px;
-	color: #9b9b9b;
+    font-size: 12px;
+    color: #9b9b9b;
 }
 
   </style>

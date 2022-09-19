@@ -79,7 +79,7 @@
                         {
                             id: 1,
                             name: "输入框",
-                            type: "fc-input",
+                            type: "input",
                             category: "widget",
                             icon: "input",
                             value: null,

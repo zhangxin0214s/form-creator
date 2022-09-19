@@ -1,5 +1,6 @@
 <template>
     <div class="container-mask">
+        {{ widget.type }}
         <component
             :is="widget.type"
             :key="widget.id"

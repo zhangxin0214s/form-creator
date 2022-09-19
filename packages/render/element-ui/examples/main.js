@@ -7,8 +7,8 @@ Vue.config.productionTip = false
 
 import fcElementUI from "../packages/index"
 
-Vue.use(fcElementUI);
 Vue.use(ElementUI)
+Vue.use(fcElementUI);
 
 new Vue({
   render: h => h(App),
