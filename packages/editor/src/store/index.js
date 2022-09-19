@@ -33,9 +33,8 @@ export const widgetStore = defineStore('widget', {
         copyWidget(target,parentWidget) {
             let newOrigin = deepClone(target);
             newOrigin.id = generateId();
-
             // 处理栅格 && 标签页内组件
-            if (newOrigin.type === 'grid' || newOrigin.type === 'tabs') {
+            if (newOrigin.type === 'fcGrid' || newOrigin.type === 'fcTabs') {
                 const cols = newOrigin.options.advanced.cols;
                 cols.forEach(col => {
                     col.widgetList.forEach(widget => {
