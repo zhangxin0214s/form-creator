@@ -31,7 +31,6 @@
             @add="onEnd">
           <template #item="{ element: widget }">
             <div class="transition-group-el">
-              
                 <!-- 非容器组件 -->
                 <template v-if="widget.category === 'widget'">
                   <widget-mask
@@ -45,7 +44,7 @@
                     :rule-form="formConfig.ruleForm"
                   />
                 </template>
-                
+
                 <!-- 容器类组件 -->
                 <template v-if="widget.category === 'container'">
                   <container-mask

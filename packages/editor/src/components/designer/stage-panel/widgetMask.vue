@@ -16,6 +16,11 @@
 
         <!-- 操作项 -->
         <div
+            class="container-mask-production"
+            v-if="widget.options.basic.isHidden.value && isEditor">
+            <svg-icon icon-class="hidden" class="hiddenIcon" />
+        </div>
+        <div
             class="container-mask-action"
             v-if="selectedWidget?.id === widget?.id && isEditor">
             <svg-icon
@@ -79,6 +84,15 @@
 .container-mask {
 	position: relative;
 	margin-bottom: 2px;
+  &-production {
+    position: absolute;
+		top: 0;
+    left: 0;
+		height: 23px;
+    line-height: 28px;
+		background: $--color-primary;
+		z-index: 999;
+  }
 	&-action {
 		position: absolute;
 		bottom: 0;
