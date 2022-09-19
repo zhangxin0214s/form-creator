@@ -44,6 +44,15 @@ export const widgetStore = defineStore('widget', {
                     })
                 })
             }
+            // 处理卡片
+            if(newOrigin.type === 'fcCard') {
+                const widgetList = newOrigin.options.advanced.widgetList;
+                widgetList.forEach(widget => {
+                        if (widget) {
+                            widget.id = generateId();
+                        }
+                })
+            }
             parentWidget.push(newOrigin);
         },
         /**
