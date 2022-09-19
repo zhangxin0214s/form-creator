@@ -8,7 +8,6 @@
         :prop-key="propKey"
         :rule-form="ruleForm"
         :parent="parent"
-        :selected-widget="selectedWidget"
         :is-editor="isEditor">
     </component>
 </template>
@@ -22,7 +21,6 @@
             propKey: String,
             ruleForm: Object,
             parent: Object,
-            selectedWidget: Object,
             isEditor: Boolean
         },
     };

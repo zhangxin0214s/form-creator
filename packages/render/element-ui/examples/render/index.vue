@@ -116,7 +116,8 @@
                                     linkage: {
                                         label: '联动对象',
                                         options: [],
-                                        value: []
+                                        value: [],
+                                        targets:[]
                                     },
                                     linkageCode: {
                                         label: '联动代码',
