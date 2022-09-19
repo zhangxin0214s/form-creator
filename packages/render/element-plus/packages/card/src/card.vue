@@ -24,7 +24,12 @@
   </card-content>
   </el-card>
 </template>
-<script setup name="card">
+<script>
+  export default {
+    name: 'fcCard'
+  }
+</script>
+<script setup>
   import containerMask from "../../common/containerMask.vue"
   import cardContent from "./content.vue"
   import { watch } from 'vue'

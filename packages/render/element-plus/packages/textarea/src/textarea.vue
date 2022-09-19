@@ -17,7 +17,11 @@
 		/>
 	</el-form-item>
 </template>
-
+<script>
+export default {
+	name: 'fcTextarea'
+}
+</script>
 <script setup name="textarea">
 import { ElMessage } from 'element-plus'
 import { watch} from 'vue';

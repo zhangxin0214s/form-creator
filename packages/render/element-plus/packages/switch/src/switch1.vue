@@ -11,7 +11,12 @@
 			@change="handleChangeEvent(props,ElMessage)"/>
 	</el-form-item>
 </template>
-<script setup name="switch1">
+<script>
+export default {
+	name: 'fcSwitch'
+}
+</script>
+<script setup>
 import { watch } from 'vue'
 import { ElMessage } from 'element-plus'
 import { handleChangeEvent } from '../../hooks/handleChangeEvent'

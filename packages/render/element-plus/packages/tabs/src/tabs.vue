@@ -22,6 +22,11 @@
     </el-tab-pane>
   </el-tabs>
 </template>
+<script>
+export default {
+	name: 'fcTabs'
+}
+</script>
   <script setup name="tabs">
     import { ElMessage } from 'element-plus'
     import tabsContent from "./content.vue"

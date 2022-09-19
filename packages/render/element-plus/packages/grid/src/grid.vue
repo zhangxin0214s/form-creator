@@ -36,6 +36,11 @@
 			</template>
 		</el-row>
 </template>
+<script>
+export default {
+	name: 'fcGrid'
+}
+</script>
 <script setup name="grid">
 import { watch } from 'vue';
 import { ElMessage } from 'element-plus'

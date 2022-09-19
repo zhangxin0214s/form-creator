@@ -23,7 +23,11 @@
     <span>{{widget.value}}</span>
   </el-form-item>
   </template>
-  
+  <script>
+    export default {
+      name: 'fcDate'
+    }
+  </script>
 <script setup name="dateTimeRange">
 // 将时间控件修改为中文
 // import zhCn from 'element-plus/lib/locale/lang/zh-cn'

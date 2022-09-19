@@ -20,6 +20,11 @@
     </el-checkbox-group>
   </el-form-item>
 </template>
+<script>
+export default {
+	name: 'fcRepeatButton'
+}
+</script>
 <script setup name="repeatButton">
 
 const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);

@@ -40,7 +40,11 @@
 		</el-upload>
 	</el-form-item>
 </template>
-
+<script>
+export default {
+	name: 'fcUpload'
+}
+</script>
 <script setup name="upload">
 import { ref } from 'vue';
 

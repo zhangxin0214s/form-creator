@@ -79,7 +79,7 @@
                         {
                             id: 1,
                             name: "输入框",
-                            type: "input",
+                            type: "fcInput",
                             category: "widget",
                             icon: "input",
                             value: null,
@@ -191,7 +191,7 @@
                         },{
 		id: 2,
 		name: "开关",
-		type: "switch1",
+		type: "fcSwitch",
 		category: "widget",
 		icon: "switch",
 		value: false,

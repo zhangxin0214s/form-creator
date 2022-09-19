@@ -20,6 +20,11 @@
     </el-radio-group>
   </el-form-item>
   </template>
+<script>
+export default {
+	name: 'fcRadio'
+}
+</script>
   <script setup name="radio">
   import { ElMessage } from 'element-plus'
   import { watch} from 'vue';

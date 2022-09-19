@@ -17,7 +17,7 @@
   <script>
   import mixins from '../../mixins/index.js'
   export default {
-    name: "switch1",
+    name: "fcSwitch",
     mixins:[mixins],
     props: {
       widget: Object,

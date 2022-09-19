@@ -1,32 +1,32 @@
-import input from './input.vue';
-import button from './button';
-import checkbox from './checkbox.vue';
-import switch1 from './switch.vue';
-import select from './select.vue';
-import textarea from './textarea.vue';
-import divider from './divider.vue';
-import cellPhone from './cellPhone.vue';
-import radio from './radio.vue';
-import staticText from './staticText.vue';
-import time from './time.vue';
-import date from './date.vue';
-import upload from './upload.vue';
-import repeatButton from  './repeatButton.vue';
-import onlyButton from './onlyButton.vue';
+import fcInput from './input.vue';
+import fcButton from './button';
+import fcCheckbox from './checkbox.vue';
+import fcSwitch from './switch.vue';
+import fcSelect from './select.vue';
+import fcTextarea from './textarea.vue';
+import fcDivider from './divider.vue';
+import fcCellPhone from './cellPhone.vue';
+import fcRadio from './radio.vue';
+import fcStaticText from './staticText.vue';
+import fcTime from './time.vue';
+import fcDate from './date.vue';
+import fcUpload from './upload.vue';
+import fcRepeatButton from  './repeatButton.vue';
+import fcOnlyButton from './onlyButton.vue';
 export {
-    input,
-    button,
-    checkbox,
-    select,
-    textarea,
-    divider,
-    cellPhone,
-    radio,
-    staticText,
-    time,
-    date,
-    upload,
-    repeatButton,
-    onlyButton,
-    switch1
+    fcInput,
+    fcButton,
+    fcCheckbox,
+    fcSelect,
+    fcTextarea,
+    fcDivider,
+    fcCellPhone,
+    fcRadio,
+    fcStaticText,
+    fcTime,
+    fcDate,
+    fcUpload,
+    fcRepeatButton,
+    fcOnlyButton,
+    fcSwitch
 }

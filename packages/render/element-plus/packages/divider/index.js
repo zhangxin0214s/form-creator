@@ -2,7 +2,7 @@ import divider from './src/divider.vue';
 
 
 divider.install = (App) => {
-	App.component(divider.__name, divider);
+	App.component(divider.name, divider);
 };
 
 export default divider;

@@ -39,8 +39,12 @@
 		</div>
 	</el-form-item>
 </template>
-
-<script setup name="cellPhone">
+<script>
+    export default {
+      name: 'fcCellPhone'
+    }
+  </script>
+<script setup>
 import { watch } from 'vue';
 import { ElMessage } from 'element-plus'
 import { handleChangeEvent } from '../../hooks/handleChangeEvent';

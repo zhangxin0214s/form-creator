@@ -15,7 +15,11 @@
 		</el-divider>
 	</el-form-item>
 </template>
-
+<script>
+export default {
+	name: 'fcDivider'
+}
+</script>
 <script setup name="divider">
 defineProps(['widget', 'isEditor', 'selectedWidget','parentWidget']);
 </script>

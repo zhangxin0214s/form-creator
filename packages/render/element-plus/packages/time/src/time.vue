@@ -23,7 +23,11 @@
     </el-config-provider>
   </el-form-item>
 </template>
-  
+<script>
+export default {
+	name: 'fcTime'
+}
+</script>
 <script setup name="time">
 // 将时间控件修改为中文
 // import zhCn from 'element-plus/lib/locale/lang/zh-cn'

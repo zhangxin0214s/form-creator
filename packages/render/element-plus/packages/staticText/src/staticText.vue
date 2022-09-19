@@ -18,6 +18,11 @@
 	</el-form-item>
 </template>
 
+<script>
+export default {
+	name: 'fcStaticText'
+}
+</script>
 <script setup name="staticText">
 	import { watch } from 'vue'
 	import { ElMessage } from 'element-plus'

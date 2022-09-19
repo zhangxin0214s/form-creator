@@ -16,6 +16,11 @@
 	</el-form-item>
 	
 </template>
+<script>
+export default {
+	name: 'fcInput'
+}
+</script>
 <script setup name="input">
 import { ElMessage } from 'element-plus'
 import { watch,reactive } from 'vue';

@@ -1,9 +1,9 @@
-import grid from './grid.vue'
-import tabs from './tabs.vue'
-import card from './card.vue'
+import fcGrid from './grid.vue'
+import fcTabs from './tabs.vue'
+import fcCard from './card.vue'
 
 export {
-    grid,
-    tabs,
-    card
+    fcGrid,
+    fcTabs,
+    fcCard
 }

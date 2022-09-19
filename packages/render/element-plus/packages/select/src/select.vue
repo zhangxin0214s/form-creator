@@ -15,8 +15,12 @@
 		/>
 	</el-form-item>
 </template>
-  
-  <script setup name="select">
+<script>
+export default {
+	name: 'fcSelect'
+}
+</script>
+<script setup name="select">
 import { ElMessage } from 'element-plus';
 import { watch } from 'vue';
 import { handleChangeEvent } from '../../hooks/handleChangeEvent';

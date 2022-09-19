@@ -10,6 +10,11 @@
     </div>
   </el-form-item>
 </template>
+<script>
+export default {
+	name: 'fcRichText'
+}
+</script>
 <script setup name="richText">
   const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
 </script>

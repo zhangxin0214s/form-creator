@@ -21,6 +21,11 @@
     </el-radio-group>
   </el-form-item>
 </template>
+<script>
+export default {
+	name: 'fcOnlyButton'
+}
+</script>
 <script setup name="onlyButton">
 const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
 </script>

@@ -18,7 +18,12 @@
   </el-form-item>
   </template>
   
-  <script setup name="fc-button">
+  <script>
+    export default {
+      name: 'fcButton'
+    }
+  </script>
+  <script setup>
   import {onMounted,onBeforeMount,inject } from 'vue'
   import useRegisterEvent from '../../hooks/useRegisterEvent'
   

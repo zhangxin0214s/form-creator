@@ -22,7 +22,12 @@
     </el-checkbox-group>
   </el-form-item>
   </template>
-  <script setup name="checkbox">
+  <script>
+    export default {
+      name: 'fcCheckbox'
+    }
+  </script>
+  <script setup>
   import { ElMessage } from 'element-plus'
   import { watch} from 'vue';
   import { handleChangeEvent } from '../../hooks/handleChangeEvent'
