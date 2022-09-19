@@ -17,7 +17,7 @@
     <div class="stage-form">
       <el-form
           class="widget-form"
-          :label-width="formConfig['label-width'].value+'px'"
+          :label-width="`${formConfig['label-width'].value}px`"
           :label-position="formConfig['label-position'].value"
           ref="ruleFormRef"
           :model="formConfig.ruleForm"

@@ -1,5 +1,10 @@
 import { Message } from "element-ui"
 export default {
+    props: {
+        widget: Object,
+        isEditor: Boolean,
+        propKey: String
+    },
     watch: {
         'widget.value': {
             // 执行方法

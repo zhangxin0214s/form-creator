@@ -1,12 +1,11 @@
 <template>
-    <div class="form">
+
         <el-form 
             class="form-renderer"
-            :label-width="formJson.formConfig['label-width'].value"
+            :label-width="`${formJson.formConfig['label-width'].value}px`"
             :label-position="formJson.formConfig['label-position'].value"
             ref="ruleFormRef"
             :model="formJson.formConfig.ruleForm"
-            style="max-width: 460px"
         >
         <div v-for="(widget, index) in formJson.widgetList" :key="index">
             <!-- 非容器组件 -->
@@ -34,7 +33,7 @@
             </div>
         </div>
         </el-form>
-    </div>
+
 </template>
 <script>
     import WidgetMask from './widgetMask.vue'
@@ -245,6 +244,8 @@
         }
     };
 </script>
-<style lang="scss" scoped>
-    
+<style scoped>
+    .form-renderer {
+        padding:10px;
+    }
 </style>
