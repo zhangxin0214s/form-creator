@@ -21,6 +21,19 @@
         <radio-basic
             :advanced-prop="advancedProp"
         />
+        <div
+					v-for="(item,key,index) in advancedProp"
+					:key="index"
+				>
+					<component
+						:is="componentMap[getAdvancedCompName(key)]"
+						:basic-prop="basicProp"
+						:advanced-prop="advancedProp"
+						:selected-widget="selectedWidget"
+						:value="item"
+						:key1="key"
+					></component>
+				</div>
       </el-collapse-item>
     </el-collapse>
   </div>
@@ -28,7 +41,7 @@
 
 <script setup>
 import { ref, defineProps } from "vue"
-import { BASCI_COMPONENTS, BASIC_PROPERTIES } from '../propertyRegister'
+import { BASCI_COMPONENTS, BASIC_PROPERTIES ,ADVANCED_PROPERTIES} from '../propertyRegister'
 import * as basicComponents from '../components/index';
 import RadioBasic from '../components/radioItems.vue'
 
@@ -43,6 +56,9 @@ const componentMap = {
 const activeNames = ref(['1', '2', '3'])
 const getPropCompName = (key) => {
   return BASCI_COMPONENTS[BASIC_PROPERTIES[key]]
+}
+const getAdvancedCompName = (key) => {
+  return BASCI_COMPONENTS[ADVANCED_PROPERTIES[key]]
 }
 </script>
 

@@ -95,11 +95,12 @@ export const containers = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		}
@@ -1018,6 +1019,16 @@ export const basicWidgets = [
 				}
 			},
 			advanced: {
+				linkage: {
+					label: '联动对象',
+					options: [],
+					value: [],
+					targets:[]
+				},
+				linkageCode: {
+					label: '联动代码',
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
+				}
 			}
 		}
 	},
@@ -1529,6 +1540,16 @@ export const advancedWidgets = [
 					type: 'post',// 请求方式
 					parameter: {},// 请求参数
 					data: {}// 发送数据
+				},
+				linkage: {
+					label: '联动对象',
+					options: [],
+					value: [],
+					targets:[]
+				},
+				linkageCode: {
+					label: '联动代码',
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		},
@@ -1609,6 +1630,16 @@ export const advancedWidgets = [
 					type: 'post',// 请求方式
 					parameter: {},// 请求参数
 					data: {}// 发送数据
+				},
+				linkage: {
+					label: '联动对象',
+					options: [],
+					value: [],
+					targets:[]
+				},
+				linkageCode: {
+					label: '联动代码',
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		},
@@ -1680,7 +1711,18 @@ export const advancedWidgets = [
 					value: false
 				}, // 是否必填
 			},
-			advanced: {}
+			advanced: {
+				linkage: {
+					label: '联动对象',
+					options: [],
+					value: [],
+					targets:[]
+				},
+				linkageCode: {
+					label: '联动代码',
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
+				}
+			}
 		},
 
 	},
@@ -1722,7 +1764,18 @@ export const advancedWidgets = [
 					value: false
 				}, // 是否必填
 			},
-			advanced: {}
+			advanced: {
+				linkage: {
+					label: '联动对象',
+					options: [],
+					value: [],
+					targets:[]
+				},
+				linkageCode: {
+					label: '联动代码',
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
+				}
+			}
 		}
 	},
 ]
