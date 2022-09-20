@@ -1,40 +1,47 @@
 <template>
-	<widget-mask
-		:widget="widget"
-		:basic-prop="widget.options.basic"
-		:advanced-prop="widget.options.advanced"
-		:parent-widget="parentWidget"
-		:prop-key="propKey"
-		:rule-form="ruleForm"
-		:parent="parent"
-		:is-editor="isEditor"
-		:selected-widget="selectedWidget"
-	>
+	<el-form-item
+		:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
+		:label="widget.options.basic.label.value"
+		:rules="widget.rules"
+		:prop="propKey"
+		:key="propKey">
 		<el-input
-			:disabled="widget.options.basic.disabled.value"
-			:placeholder="widget.options.basic.defaultValue.value"
-			:type="widget.options.basic.inputType.value"
-			v-model="widget.value"
-			show-word-limit
-			@change="handleChangeEvent(props,ElMessage)"
-		/>
+		:disabled="widget.options.basic.disabled.value"
+		:placeholder="widget.options.basic.defaultValue.value"
+		:type="widget.options.basic.inputType.value"
+		v-model="widget.value"
+		show-word-limit
+		@change="handleChangeEvent(props,ElMessage)"/>
 		<div class="hint">{{ widget.options.basic.hint.value }}</div>
-	</widget-mask>
+	</el-form-item>
+	
 </template>
+<script>
+export default {
+	name: 'fcInput'
+}
+</script>
 <script setup name="input">
-import widgetMask from '../../common/widgetMask.vue';
 import { ElMessage } from 'element-plus'
-import { watch,inject } from 'vue';
+import { watch,reactive } from 'vue';
 import { handleChangeEvent } from '../../hooks/handleChangeEvent'
 import { watchEvent } from '../../hooks/watchEvent'
+import {linkageWatchEvent} from '../../hooks/linkageWatchEvent'
 
 const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
 
-watchEvent(props,watch)
+watchEvent(props,watch,ElMessage);
+
+linkageWatchEvent(props,watch,ElMessage);
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .hint {
 	font-size: 12px;
 	color: #9b9b9b;
 }
+// 选中样式
+.select {
+	outline: 1px solid $--color-primary;
+}
+
 </style>

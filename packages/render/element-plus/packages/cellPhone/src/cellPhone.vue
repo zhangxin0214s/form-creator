@@ -1,15 +1,10 @@
 <template>
-	<widget-mask
-		:widget="widget"
-		:basic-prop="widget.options.basic"
-		:advanced-prop="widget.options.advanced"
-		:parent-widget="parentWidget"
-		:prop-key="propKey"
-		:rule-form="ruleForm"
-		:parent="parent"
-		:is-editor="isEditor"
-		:selected-widget="selectedWidget"
-	>
+	<el-form-item
+		:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
+		:label="widget.options.basic.label.value"
+		:rules="widget.rules"
+		:prop="propKey"
+		:key="propKey">
 		<div class="phone-content">
 			<el-select
 				v-model="widget.options.basic.prefix.value"
@@ -39,19 +34,22 @@
 				:disabled="widget.options.basic.disabled.value"
 				:placeholder="widget.options.basic.defaultValue.value"
 				v-model="widget.value"
-				@blur="setRules()"
 				@change="handleChangeEvent(props,ElMessage)"
 			/>
 		</div>
-	</widget-mask>
+	</el-form-item>
 </template>
-
-<script setup name="cellPhone">
-import widgetMask from '../../common/widgetMask.vue';
+<script>
+    export default {
+      name: 'fcCellPhone'
+    }
+  </script>
+<script setup>
 import { watch } from 'vue';
 import { ElMessage } from 'element-plus'
 import { handleChangeEvent } from '../../hooks/handleChangeEvent';
 import { watchEvent } from '../../hooks/watchEvent';
+import {linkageWatchEvent} from '../../hooks/linkageWatchEvent'
 const props = defineProps([
 	'widget',
 	'widgetType',
@@ -63,21 +61,23 @@ const props = defineProps([
 	'selectedWidget',
 ]);
 
-watchEvent(props, watch);
-const setRules = () => {
-	// const _ruleFormKey = props.widget.options.basic.ruleFormKey.value;
-	// const _ruleForm = formConfig.value.ruleForm;
-	// _ruleForm[
-	// 	_ruleFormKey
-	// ] = `${props.widget.options.basic.prefix.value}-${props.widget.value}`;
-};
+watchEvent(props, watch,ElMessage,"cellPhone");
+linkageWatchEvent(props,watch,ElMessage)
 </script>
-<style scoped>
+<style lang="scss" scoped>
 .phone-content {
 	width: 100%;
 	display: flex;
 }
 .prefix-select {
 	margin-right: 10px;
+}
+.hint {
+	font-size: 12px;
+	color: #9b9b9b;
+}
+// 选中样式
+.select {
+	outline: 1px solid $--color-primary;
 }
 </style>

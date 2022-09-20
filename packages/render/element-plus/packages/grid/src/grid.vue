@@ -1,12 +1,4 @@
 <template>
-	<container-mask
-		:widget="widget"
-		:style="`${widget.options.basic.isMoveDivider.value ? `top:${widget.options.basic.moveDistance.value}px`:''}`"
-		:rule-form="ruleForm"
-		:parent="parent"
-		:is-editor="isEditor"
-		:selected-widget="selectedWidget"
-	>
 		<el-row
 			class="grid-container"
 			:class="[
@@ -29,21 +21,41 @@
 					:selected-widget="selectedWidget"
 					:rule-form="ruleForm[widget.ruleFormKey] || ruleForm"
 					:rule-form-key-type="widget.ruleFormKeyType"
-					
 					:style="`height:${widget.options.basic.colHeight.value}px;`"
 				>
+					<slot 
+					 name="widgetChild"
+					 v-bind="{
+							colWidget, 
+							propKey,
+							ruleForm: ruleForm[widget.ruleFormKey] || ruleForm,
+							index:colIdx
+						}">
+					</slot>
 				</Col>
 			</template>
 		</el-row>
-	</container-mask>
-
 </template>
+<script>
+export default {
+	name: 'fcGrid'
+}
+</script>
 <script setup name="grid">
 import { watch } from 'vue';
 import { ElMessage } from 'element-plus'
-import containerMask from '../../common/containerMask.vue';
 import Col from './grid-col.vue';
-const props = defineProps(['widget', 'selectedWidget', 'isEditor', 'parent', 'propKey', 'ruleForm', 'ruleFormRef']);
+
+const props = defineProps([
+	'widget',
+	'selectedWidget', 
+	'isEditor', 
+	'parent', 
+	'propKey', 
+	'ruleForm', 
+	'ruleFormRef'
+]);
+
 
 watch(
 	() => props.propKey,
@@ -100,6 +112,7 @@ const removeWidget1 = (widget, parentWidget) =>{
 const onEnd1 = () =>{
 	emit('onEnd1')
 }
+
 </script>
  <style lang="scss" scoped>
 .grid-container {

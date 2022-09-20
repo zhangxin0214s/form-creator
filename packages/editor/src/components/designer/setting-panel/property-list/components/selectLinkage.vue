@@ -11,6 +11,7 @@
 				v-model="advancedProp[key1].value"
 				@change="setLinkageObject"
 				:options="advancedProp[key1].options"
+				:props="cascaderProps"
 			></el-cascader>
 			<event-basic
 				v-if="advancedProp[key1].value.length !== 0"
@@ -22,18 +23,23 @@
 	</el-form>
 </template>
 <script setup>
-import { defineProps, watch } from 'vue';
+import { defineProps, watch, ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 import eventBasic from './eventBasic.vue';
 import editLinkageEvent from '../../hooks/editLinkageEvent.js';
-
+const cascaderProps = ref({ multiple: true });
 const { changeElement } = editLinkageEvent();
 const _widgetStore = widgetStore();
-const { widgetList, unWatch } = storeToRefs(_widgetStore);
-const props = defineProps(['selectedWidget', 'advancedProp', 'key1', 'value']);
+const { widgetList } = storeToRefs(_widgetStore);
+const props = defineProps([
+	'selectedWidget',
+	'advancedProp',
+	'basicProp',
+	'key1',
+	'value',
+]);
 let currentEleData = props.advancedProp[props.key1];
-
 const options = currentEleData.options;
 options.splice(0);
 // 从组件列表中选中除了自身的组件push到选择栏中
@@ -53,21 +59,26 @@ let getChildren = (cols, newChild) => {
 	newChild = [];
 	for (let i = 0; i < cols.length; i++) {
 		for (let k = 0; k < cols[i].widgetList.length; k++) {
-			let obj = {
-				label: cols[i].widgetList[k].options.basic.name.value,
-				value: cols[i].widgetList[k].id,
-				children: [],
-			};
 			if (
-				cols[i].widgetList[k].name === '栅格' ||
-				cols[i].widgetList[k].name === '标签页'
+				props.selectedWidget &&
+				cols[i].widgetList[k].id !== props.selectedWidget.id
 			) {
-				let temp = getChildren(
-					cols[i].widgetList[k].options.advanced.cols
-				);
-				obj.children.push(...temp);
+				let obj = {
+					label: cols[i].widgetList[k].options.basic.name.value,
+					value: cols[i].widgetList[k].id,
+					children: [],
+				};
+				if (
+					cols[i].widgetList[k].name === '栅格' ||
+					cols[i].widgetList[k].name === '标签页'
+				) {
+					let temp = getChildren(
+						cols[i].widgetList[k].options.advanced.cols
+					);
+					obj.children.push(...temp);
+				}
+				newChild.push(obj);
 			}
-			newChild.push(obj);
 		}
 	}
 	return newChild;
@@ -80,49 +91,44 @@ widgetList.value.forEach((widget) => {
 
 // 切换联动对象
 const setLinkageObject = (val) => {
-	// 清除侦听器
-	if (unWatch.value !== null) {
-		unWatch.value();
-		unWatch.value = null;
-	}
 	// 获取联动对象
-	let { linkageObject, parent } = getLinkageObject(val);
-	console.log(linkageObject, parent, 'linkageObject');
-	// 挂侦听器
-	unWatch.value = watch(linkageObject, () => {
-		changeElement(props, linkageObject, copyWidget,parent);
-	});
+	let linkageObject = getLinkageObject(val);
+	currentEleData.targets = linkageObject;
+	console.log(linkageObject, 'linkageObject');
 };
-let getLinkageObject = (val) => {
-	let findValue = widgetList.value.find((widget) => widget.id === val[0]);
-	if (val.length === 1) {
-		return  { linkageObject: findValue, parent: widgetList.value };
-	} else {
-		let parent = findValue;
-		let fun = (cols, val, valIndex) => {
-			let linkageVal = val[valIndex];
-			let tempVal = null;
-			for (let i = 0; i < cols.length; i++) {
-				if (!tempVal) {
-					tempVal = cols[i].widgetList.find(
-						(list) => list.id === linkageVal
-					);
+let getLinkageObject = (vals) => {
+	let tempArr = [];
+	for (let i = 0; i < vals.length; i++) {
+		let findValue = widgetList.value.find(
+			(widget) => widget.id === vals[i][0]
+		);
+		if (vals[i].length === 1) {
+			tempArr.push(findValue);
+		} else {
+			let fun = (cols, val, valIndex) => {
+				let linkageVal = val[valIndex];
+				let tempVal = null;
+				for (let i = 0; i < cols.length; i++) {
+					if (!tempVal) {
+						tempVal = cols[i].widgetList.find(
+							(list) => list.id === linkageVal
+						);
+					}
 				}
-			}
-			if (valIndex === val.length - 1)
-				return { linkageObject: tempVal, parent: parent };
-			parent = tempVal;
-			return fun(tempVal.options.advanced.cols, val, ++valIndex);
-		};
-		return fun(findValue.options.advanced.cols, val, 1);
+				if (valIndex === val.length - 1) return tempVal;
+				return fun(tempVal.options.advanced.cols, val, ++valIndex);
+			};
+			tempArr.push(fun(findValue.options.advanced.cols, vals[i], 1));
+		}
 	}
+	return tempArr;
 };
 /**
  * 复制组件
  */
-const copyWidget = (widget, parent = null,index = parent?.length-1) => {
-	_widgetStore.copyWidget(widget, parent,index);
-};
+// const copyWidget = (widget) => {
+// 	_widgetStore.copyWidget(widget);
+// };
 </script>
 <style lang="scss" scoped>
 </style>

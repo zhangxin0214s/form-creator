@@ -28,7 +28,7 @@ export const containers = [
 	{
 		id: 1,
 		name: "栅格",
-		type: "grid",
+		type: "fcGrid",
 		category: "container",
 		icon: "lattice",
 		value: null,
@@ -95,11 +95,12 @@ export const containers = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		}
@@ -107,7 +108,7 @@ export const containers = [
 	{
 		id: 2,
 		name: "标签页",
-		type: "tabs",
+		type: "fcTabs",
 		category: "container",
 		icon: "tag",
 		addable: true,
@@ -135,10 +136,6 @@ export const containers = [
 					{
 						id: 1,
 						name: '名称',
-						ruleFormKey: {
-							label: "参数key",
-							value: ''
-						},
 						widgetList: []
 					}
 				]
@@ -148,7 +145,7 @@ export const containers = [
 	{
 		id: 3,
 		name: "表格",
-		type: "Table",
+		type: "fcTable",
 		icon: "table ",
 		options: {
 			basic: {
@@ -163,7 +160,7 @@ export const containers = [
 	{
 		id: 4,
 		name: "卡片",
-		type: "card",
+		type: "fcCard",
 		category: "container",
 		icon: "card ",
 		title: '卡片名称',
@@ -196,7 +193,7 @@ export const basicWidgets = [
 	{
 		id: 1,
 		name: "输入框",
-		type: "input",
+		type: "fcInput",
 		category: "widget",
 		icon: "input",
 		value: null,
@@ -296,11 +293,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[],
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		},
@@ -308,7 +306,7 @@ export const basicWidgets = [
 	{
 		id: 2,
 		name: "开关",
-		type: "switch1",
+		type: "fcSwitch",
 		category: "widget",
 		icon: "switch",
 		value: false,
@@ -346,19 +344,20 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
-		},
+		}
 	},
 	{
 		id: 3,
 		name: "复选框",
-		type: "checkbox",
+		type: "fcCheckbox",
 		category: "widget",
 		icon: "check",
 		value: [],
@@ -460,11 +459,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		},
@@ -472,7 +472,7 @@ export const basicWidgets = [
 	{
 		id: 4,
 		name: "按钮",
-		type: "button",
+		type: "fcButton",
 		category: "widget",
 		icon: "button",
 		options: {
@@ -606,11 +606,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			},
 			events: {
@@ -632,7 +633,7 @@ export const basicWidgets = [
 	{
 		id: 5,
 		name: "下拉框",
-		type: "select",
+		type: "fcSelect",
 		category: "widget",
 		icon: "select",
 		value: null,
@@ -701,11 +702,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		}
@@ -713,7 +715,7 @@ export const basicWidgets = [
 	{
 		id: 6,
 		name: "单选框",
-		type: "radio",
+		type: "fcRadio",
 		category: "widget",
 		icon: "Radio",
 		value: '',
@@ -805,11 +807,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		},
@@ -817,7 +820,7 @@ export const basicWidgets = [
 	{
 		id: 7,
 		name: "文本域",
-		type: "textarea",
+		type: "fcTextarea",
 		category: "widget",
 		icon: "textField",
 		value: null,
@@ -922,11 +925,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		},
@@ -934,7 +938,7 @@ export const basicWidgets = [
 	{
 		id: 8,
 		name: "分割线",
-		type: "divider",
+		type: "fcDivider",
 		category: "widget",
 		icon: "split",
 		options: {
@@ -1018,11 +1022,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		}
@@ -1030,7 +1035,7 @@ export const basicWidgets = [
 	{
 		id: 9,
 		name: "手机号",
-		type: "cellPhone",
+		type: "fcCellPhone",
 		category: "widget",
 		icon: "cellPhone",
 		value: null,
@@ -1100,11 +1105,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		},
@@ -1112,7 +1118,7 @@ export const basicWidgets = [
 	{
 		id: 10,
 		name: "静态文本",
-		type: "staticText",
+		type: "fcStaticText",
 		category: "widget",
 		icon: "staticText",
 		options: {
@@ -1188,11 +1194,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		}
@@ -1200,7 +1207,7 @@ export const basicWidgets = [
 	{
 		id: 11,
 		name: "时间选择",
-		type: "time",
+		type: "fcTime",
 		category: "widget",
 		icon: "time",
 		value: null,
@@ -1302,11 +1309,12 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		}
@@ -1314,7 +1322,7 @@ export const basicWidgets = [
 	{
 		id: 12,
 		name: "日期选择",
-		type: "date",
+		type: "fcDate",
 		category: "widget",
 		icon: "date",
 		value: null,
@@ -1448,15 +1456,16 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		}
-	},
+	}
 ]
 
 // 高级组件
@@ -1464,7 +1473,7 @@ export const advancedWidgets = [
 	{
 		id: 1,
 		name: "复按钮组",
-		type: "repeatButton",
+		type: "fcRepeatButton",
 		category: "widget",
 		icon: "repeatButton",
 		value: [],
@@ -1535,11 +1544,12 @@ export const advancedWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		},
@@ -1547,7 +1557,7 @@ export const advancedWidgets = [
 	{
 		id: 2,
 		name: "单按钮组",
-		type: "onlyButton",
+		type: "fcOnlyButton",
 		category: "widget",
 		icon: "onlyButton",
 		options: {
@@ -1624,11 +1634,12 @@ export const advancedWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: []
+					value: [],
+					targets:[]
 				},
 				linkageCode: {
 					label: '联动代码',
-					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nprops:当前元素数据;\nlinkageObject:联动对象数据\ncopyWidget:复制对象*/ \n//#endregion "
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
 				}
 			}
 		},
@@ -1636,7 +1647,7 @@ export const advancedWidgets = [
 	{
 		id: 3,
 		name: "上传",
-		type: "upload",
+		type: "fcUpload",
 		category: "widget",
 		icon: "upload",
 		options: {
@@ -1700,14 +1711,25 @@ export const advancedWidgets = [
 					value: false
 				}, // 是否必填
 			},
-			advanced: {}
+			advanced: {
+				linkage: {
+					label: '联动对象',
+					options: [],
+					value: [],
+					targets:[]
+				},
+				linkageCode: {
+					label: '联动代码',
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
+				}
+			}
 		},
 
 	},
 	{
 		id: 4,
 		name: "富文本",
-		type: "richText",
+		type: "fcRichText",
 		category: "widget",
 		icon: "richtext",
 		options: {
@@ -1742,7 +1764,18 @@ export const advancedWidgets = [
 					value: false
 				}, // 是否必填
 			},
-			advanced: {}
+			advanced: {
+				linkage: {
+					label: '联动对象',
+					options: [],
+					value: [],
+					targets:[]
+				},
+				linkageCode: {
+					label: '联动代码',
+					value: "//#region\n/*\n注:请在高级配置中设置联动对象\nwidget:当前改变元素数据;\nlinkageObj:联动对象，是个数组*/ \n//#endregion "
+				}
+			}
 		}
-	},
+	}
 ]

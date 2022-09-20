@@ -25,19 +25,16 @@ export const widgetStore = defineStore('widget', {
         clearWidget() {
             this.widgetList = [];
             this.selectedWidget = null
-            // this.formConfig.ruleForm = {}
         },
         /**
          * 复制组件
          * @param {*} target
-         * @param {*} parent
          */
-        copyWidget(target, parent = null, index = parent?.length - 1) {
+        copyWidget(target,parentWidget) {
             let newOrigin = deepClone(target);
             newOrigin.id = generateId();
-
             // 处理栅格 && 标签页内组件
-            if (newOrigin.type === 'grid' || newOrigin.type === 'tabs') {
+            if (newOrigin.type === 'fcGrid' || newOrigin.type === 'fcTabs') {
                 const cols = newOrigin.options.advanced.cols;
                 cols.forEach(col => {
                     col.widgetList.forEach(widget => {
@@ -47,14 +44,16 @@ export const widgetStore = defineStore('widget', {
                     })
                 })
             }
-            if (parent !== null) {
-                parent.splice(index, 0, newOrigin);
-                newOrigin.options.advanced.linkage.options = [];
-                newOrigin.options.advanced.linkage.value = [];
-
-            } else {
-                this.widgetList.push(newOrigin);
+            // 处理卡片
+            if(newOrigin.type === 'fcCard') {
+                const widgetList = newOrigin.options.advanced.widgetList;
+                widgetList.forEach(widget => {
+                        if (widget) {
+                            widget.id = generateId();
+                        }
+                })
             }
+            parentWidget.push(newOrigin);
         },
         /**
          * 删除组件

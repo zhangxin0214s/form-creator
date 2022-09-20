@@ -17,7 +17,7 @@
     <div class="stage-form">
       <el-form
           class="widget-form"
-          :label-width="formConfig['label-width'].value+'px'"
+          :label-width="`${formConfig['label-width'].value}px`"
           :label-position="formConfig['label-position'].value"
           ref="ruleFormRef"
           :model="formConfig.ruleForm"
@@ -31,20 +31,33 @@
             @add="onEnd">
           <template #item="{ element: widget }">
             <div class="transition-group-el">
-              <component
-                  :is="widget.type"
-                  :key="widget.id"
-                  :widget="widget"
-                  :parent-widget="widgetList"
-                  :prop-key="widget.ruleFormKey"
-                  :rule-form="formConfig.ruleForm"
-                  :rule-form-key-type="widget.ruleFormKeyType"
-                  :rule-form-ref="ruleFormRef"
-                  :selected-widget="selectedWidget"
-                  :is-editor="isEditor"
-                  :hidden="!isEditor && widget.options.basic.isHidden.value"
-                  @click.stop="selected(widget)">
-              </component>
+                <!-- 非容器组件 -->
+                <template v-if="widget.category === 'widget'">
+                  <widget-mask
+                    :widget="widget"
+                    :widget-list="widgetList"
+                    :selected-widget="selectedWidget"
+                    :is-editor="isEditor"
+                    :form-config="formConfig"
+                    :rule-form-ref="ruleFormRef"
+                    :prop-key="widget.ruleFormKey"
+                    :rule-form="formConfig.ruleForm"
+                  />
+                </template>
+
+                <!-- 容器类组件 -->
+                <template v-if="widget.category === 'container'">
+                  <container-mask
+                    :widget="widget"
+                    :widget-list="widgetList"
+                    :selected-widget="selectedWidget"
+                    :is-editor="isEditor"
+                    :form-config="formConfig"
+                    :rule-form-ref="ruleFormRef"
+                    :prop-key="widget.ruleFormKey"
+                    :rule-form="formConfig.ruleForm"
+                  />
+                </template>
             </div>
           </template>
         </draggable>
@@ -53,11 +66,13 @@
   </div>
 </template>
 <script setup>
-import toolBar from '../toolbar-panel/index.vue'
+import FormInstance from 'element-plus';
+import { ref,provide } from 'vue';
+import toolBar from '../toolbar-panel/index.vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
-import FormInstance from 'element-plus';
-import { ref,provide } from 'vue'
+import widgetMask from './widgetMask.vue'
+import containerMask from './containerMask.vue'
 
 const _widgetStore = widgetStore();
 const {widgetList, formConfig, isEditor, selectedWidget} = storeToRefs(_widgetStore);
@@ -85,16 +100,26 @@ provide('onEnd', onEnd)
 /**
  * 复制组件
  */
-const copyWidget = (widget) => {
-  _widgetStore.copyWidget(widget);
+const copyWidget = ({widget,parentWidget}) => {
+  _widgetStore.copyWidget(widget,parentWidget);
 }
 provide('copyWidget', copyWidget)
 
 /**
  * 删除组件
  */
-const removeWidget = (widget, parentWidget) => {
+const removeWidget = ({widget, parentWidget, parent,ruleForm}) => {
   _widgetStore.removeWidget(widget, parentWidget);
+
+  if(parent?.ruleFormKeyType === 'array'){
+		ruleForm.forEach((rule,index) =>{
+			if(Object.keys(rule).indexOf(widget.ruleFormKey)>-1){
+				ruleForm.splice(index,1)
+			}
+		})
+	}else{
+		widget.ruleFormKey && ruleForm && delete ruleForm[widget.ruleFormKey]
+	}
 }
 provide('removeWidget', removeWidget)
 
@@ -173,4 +198,28 @@ provide('submitForm', submitForm)
 ::-webkit-scrollbar {
   display: none;
 }
+
+// 选中样式
+.select {
+	border: 1px solid $--color-primary;
+}
+
+// 遮罩样式
+.container-mask {
+	position: relative;
+	margin-bottom: 2px;
+	&-action {
+		position: absolute;
+		bottom: 0;
+		right: -2px;
+		height: 23px;
+		line-height: 28px;
+		background: $--color-primary;
+		z-index: 999;
+	}
+}
+.copyIcon:hover,.deleteIcon:hover {
+	cursor: pointer;
+}
+
 </style>

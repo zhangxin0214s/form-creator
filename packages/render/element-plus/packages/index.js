@@ -74,7 +74,7 @@ export  {
 
 const install = (App) => {
 	components.forEach((item) => {
-		App.component(item.__name, item);
+		App.component(item.name, item);
 	});
 };
 

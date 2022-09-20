@@ -26,6 +26,7 @@ const {widgetList, formConfig} = storeToRefs(_widgetStore);
 const insert = (item) => {
   axios.get(item.path).then(res => {
     _widgetStore.widgetList.push(...res.data.widgetList)
+    _widgetStore.formConfig = res.data.formConfig
     //关闭遮罩 event 自定义事件名  args 需要传的值
     emit('library', false)
   })

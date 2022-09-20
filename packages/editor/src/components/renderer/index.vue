@@ -1,33 +1,45 @@
 <template>
     <div class="form">
-        <el-form 
+        <el-form
             class="form-renderer"
-            :label-width="formConfig['label-width'].value"
+            :label-width="`${formConfig['label-width'].value}px`"
             :label-position="formConfig['label-position'].value"
             ref="ruleFormRef"
             :model="formConfig.ruleForm"
             >
             <template v-for="(widget, index) in widgetList" :key="index">
-                <component
-                    :is="widget.type"
-                    :key1="widget.id"
-                    :widget=widget
-                    :parent-widget="widgetList"
-                    :widget-type="`widget`"
+                <!-- 非容器组件 -->
+                <template v-if="widget.category === 'widget' && !widget.options.basic.isHidden.value">
+                  <widget-mask
+                    :widget="widget"
+                    :widget-list="widgetList"
+                    :form-config="formConfig"
+                    :rule-form-ref="ruleFormRef"
                     :prop-key="widget.ruleFormKey"
                     :rule-form="formConfig.ruleForm"
-                    :rule-form-key-type="widget.ruleFormKeyType"
+                  />
+                </template>
+
+                <!-- 容器类组件 -->
+                <template v-if="widget.category === 'container' && !widget.options.basic.isHidden.value">
+                  <container-mask
+                    :widget="widget"
+                    :widget-list="widgetList"
+                    :form-config="formConfig"
                     :rule-form-ref="ruleFormRef"
-                    @submitForm="submitForm">
-                </component>
+                    :prop-key="widget.ruleFormKey"
+                    :rule-form="formConfig.ruleForm"
+                  />
+                </template>
             </template>
         </el-form>
     </div>
 </template>
 <script setup>
     import { ref } from 'vue'
-
-    const props = defineProps(['widgetList', 'formConfig']);
+    import widgetMask from './widgetMask.vue'
+    import containerMask from './containerMask.vue'
+    const props = defineProps(['widgetList', 'formConfig', 'isEditor']);
     const ruleFormRef = ref(null);
     const submitForm = async () =>{
         if (!ruleFormRef) return
@@ -45,6 +57,6 @@
     .form{
        &-renderer{
          height:100%;
-       } 
+       }
     }
 </style>

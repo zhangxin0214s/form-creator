@@ -1,7 +1,7 @@
 import grid from './src/grid.vue';
 
 grid.install = (App) => {
-	App.component(grid.__name, grid);
+	App.component(grid.name, grid);
 };
 
 export default grid;

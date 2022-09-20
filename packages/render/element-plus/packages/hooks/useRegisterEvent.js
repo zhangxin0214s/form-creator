@@ -14,10 +14,12 @@ const useRegisterEvent = () =>{
             'props',
             'inject',
             'ElMessage',
+            'linkageObj',
             EVENTS?.onClick.value)
             (props,
              inject,
-             ElMessage)
+             ElMessage,
+             props.widget.options.advanced.linkage.targets)
     }
 
     /**

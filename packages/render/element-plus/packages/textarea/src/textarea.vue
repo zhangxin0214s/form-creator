@@ -1,14 +1,10 @@
 <template>
-	<widget-mask
-		:widget="widget"
-		:basic-prop="widget.options.basic"
-		:advanced-prop="widget.options.advanced"
-		:parent-widget="parentWidget"
-		:prop-key="propKey"
-		:rule-form="ruleForm"
-		:parent="parent"
-		:is-editor="isEditor"
-		:selected-widget="selectedWidget">
+	<el-form-item
+		:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
+		:label="widget.options.basic.label.value"
+		:rules="widget.rules"
+		:prop="propKey"
+		:key="propKey">
 		<el-input
 			type="textarea"
 			:disabled="widget.options.basic.disabled.value"
@@ -19,18 +15,32 @@
 			@change="handleChangeEvent(props,ElMessage)"
 			show-word-limit
 		/>
-	</widget-mask>
+	</el-form-item>
 </template>
-
+<script>
+export default {
+	name: 'fcTextarea'
+}
+</script>
 <script setup name="textarea">
-import widgetMask from '../../common/widgetMask.vue';
 import { ElMessage } from 'element-plus'
 import { watch} from 'vue';
 import { handleChangeEvent } from '../../hooks/handleChangeEvent'
 import { watchEvent } from '../../hooks/watchEvent'
-
+import { linkageWatchEvent } from '../../hooks/linkageWatchEvent';
 const props = defineProps(['widget', 'isEditor', 'selectedWidget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
 
-watchEvent(props,watch)
+watchEvent(props,watch,ElMessage);
+linkageWatchEvent(props,watch,ElMessage);
 </script>
-<style scoped></style>
+<style lang="scss" scoped>
+	.hint {
+		font-size: 12px;
+		color: #9b9b9b;
+	}
+	// 选中样式
+	.select {
+		outline: 1px solid $--color-primary;
+	}
+	
+</style>

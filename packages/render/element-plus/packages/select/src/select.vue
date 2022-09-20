@@ -1,37 +1,46 @@
 <template>
-    <widget-mask
-      :widget="widget"
-      :basic-prop="basic"
-      :advanced-prop="advanced"
-      :parent-widget="parentWidget"
-          :prop-key="propKey"
-          :rule-form="ruleForm"
-          :parent="parent"
-      :is-editor="isEditor"
-          :selected-widget="selectedWidget">
-      <el-cascader
-          v-model="widget.value"
-          :options="advanced.data"
-          :disabled="basic.disabled.value"
-          :placeholder="basic.defaultValue.value"
-          @change="handleChangeEvent(props,ElMessage)"
-      />
-    </widget-mask>
+	<el-form-item
+		:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
+		:label="widget.options.basic.label.value"
+		:rules="widget.rules"
+		:prop="propKey"
+		:key="propKey"
+	>
+		<el-cascader
+			v-model="widget.value"
+			:options="advanced.data"
+			:disabled="basic.disabled.value"
+			:placeholder="basic.defaultValue.value"
+			@change="handleChangeEvent(props,ElMessage)"
+		/>
+	</el-form-item>
+</template>
+<script>
+export default {
+	name: 'fcSelect'
+}
+</script>
+<script setup name="select">
+import { ElMessage } from 'element-plus';
+import { watch } from 'vue';
+import { handleChangeEvent } from '../../hooks/handleChangeEvent';
+import { watchEvent } from '../../hooks/watchEvent';
+import { linkageWatchEvent } from '../../hooks/linkageWatchEvent';
+const props = defineProps(['widget', 'isEditor', 'selectedWidget', 'widgetType', 'ruleForm', 'propKey', 'parent', 'parentWidget']);
+const { basic, advanced } = props.widget.options;
+watchEvent(props, watch, ElMessage);
+
+linkageWatchEvent(props, watch, ElMessage);
+</script>
   
-  </template>
-  
-  <script setup name="select">
-    import widgetMask from '../../common/widgetMask.vue';
-    import { ElMessage } from 'element-plus'
-    import { watch} from 'vue';
-    import { handleChangeEvent } from '../../hooks/handleChangeEvent'
-    import { watchEvent } from '../../hooks/watchEvent'
-    const props = defineProps(['widget', 'isEditor', 'selectedWidget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
-    const {basic, advanced} = props.widget.options;
-    watchEvent(props,watch)
-  
-  </script>
-  
-  <style scoped>
-  </style>
+  <style lang="scss" scoped>
+.hint {
+	font-size: 12px;
+	color: #9b9b9b;
+}
+// 选中样式
+.select {
+	outline: 1px solid $--color-primary;
+}
+</style>
   

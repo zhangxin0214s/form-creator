@@ -1,28 +1,35 @@
 <template>
-  <container-mask 
-    :widget="widget"
-    :rule-form="ruleForm"
-		:parent="parent"
-    :is-editor="isEditor"
-		:selected-widget="selectedWidget">
-    <el-card type="border-card" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" >
-      <template #header>
-      <div class="card-header">
-        <span>{{widget.title}}</span>
-      </div>
-    </template>
-    <card-content 
-        :widgetList="widget.options.advanced.widgetList"
-        :prop-key="propKey"
-        :widget="widget"
-        :rule-form="ruleForm[widget.ruleFormKey] || ruleForm"
-        :is-editor="isEditor"
-				:selected-widget="selectedWidget">
-    </card-content>
-    </el-card>
-  </container-mask>
+  <el-card type="border-card" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" >
+    <template #header>
+    <div class="card-header">
+      <span>{{widget.title}}</span>
+    </div>
+  </template>
+  <card-content 
+      :widgetList="widget.options.advanced.widgetList"
+      :prop-key="propKey"
+      :widget="widget"
+      :rule-form="ruleForm[widget.ruleFormKey] || ruleForm"
+      :is-editor="isEditor"
+      :selected-widget="selectedWidget">
+      <slot 
+        name="widgetChild"
+        v-bind="{
+          colWidget:widget.options.advanced, 
+          propKey,
+          ruleForm: ruleForm[widget.ruleFormKey] || ruleForm,
+          index:null
+        }">
+      </slot>
+  </card-content>
+  </el-card>
 </template>
-<script setup name="card">
+<script>
+  export default {
+    name: 'fcCard'
+  }
+</script>
+<script setup>
   import containerMask from "../../common/containerMask.vue"
   import cardContent from "./content.vue"
   import { watch } from 'vue'

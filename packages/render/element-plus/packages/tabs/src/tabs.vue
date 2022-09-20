@@ -1,27 +1,34 @@
 <template>
-    <container-mask 
-      :widget="widget"
-      :rule-form="ruleForm"
-      :parent="parent"
-      :is-editor="isEditor"
-      :selected-widget="selectedWidget">
-      <el-tabs type="border-card" v-model="activeName" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
-        <el-tab-pane :label="colWidget.name" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
-          <tabs-content 
-            :colWidget="colWidget"
-            :rule-form="ruleForm[widget.ruleFormKey] || [{}]"
-            :widget="widget"
-            :prop-key="propKey"
-            :colIdx="colIdx"
-            :selected-widget="selectedWidget"
-            :is-editor="isEditor">
-          </tabs-content>
-        </el-tab-pane>
-      </el-tabs>
-    </container-mask>
-  </template>
+  <el-tabs type="border-card" v-model="activeName" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
+    <el-tab-pane :label="colWidget.name" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
+      <tabs-content 
+        :colWidget="colWidget"
+        :rule-form="ruleForm[widget.ruleFormKey] || [{}]"
+        :widget="widget"
+        :prop-key="propKey"
+        :colIdx="colIdx"
+        :selected-widget="selectedWidget"
+        :is-editor="isEditor">
+        <slot 
+          name="widgetChild"
+          v-bind="{
+            colWidget: colWidget, 
+            propKey,
+            ruleForm: ruleForm[widget.ruleFormKey] && ruleForm[widget.ruleFormKey][colIdx],
+            index:colIdx
+          }">
+        </slot>
+      </tabs-content>
+    </el-tab-pane>
+  </el-tabs>
+</template>
+<script>
+export default {
+	name: 'fcTabs'
+}
+</script>
   <script setup name="tabs">
-    import containerMask from "../../common/containerMask.vue"
+    import { ElMessage } from 'element-plus'
     import tabsContent from "./content.vue"
     import { watch } from "vue"
     const props=defineProps([
@@ -47,17 +54,24 @@
     const addTabsHandler=()=>{
       let maxCount=props.widget.maxCount
       if(maxCount<=0 || props.widget.options.advanced.cols.length<maxCount){
+          const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+          if(!ruleFormKey){
+            ElMessage({
+							message: '请先设置参数key',
+							type: 'error',
+							duration:1500
+					  })
+            return
+          }
           props.widget.options.advanced.cols.push({
             id:guid(),
             name:"名称",
             widgetList:[]
           })
-          const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
           ruleFormKey && props.ruleForm[ruleFormKey].push({})
       }
     }
     const removeTabsHandler1=(name)=>{
-      console.log(name)
       const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
       let cols=props.widget.options.advanced.cols
       if(cols.length===1){
@@ -66,7 +80,7 @@
       for(let i=0;i<cols.length;i++){
         if(cols[i].id===name){
           cols.splice(i,1)
-          props.ruleForm[ruleFormKey].splice(i,1)
+          props.ruleForm[ruleFormKey]?.splice(i,1)
           return 
         }
       }
