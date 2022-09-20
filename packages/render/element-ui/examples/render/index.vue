@@ -77,22 +77,20 @@
                         } // 提交数据
                     },
                     widgetList: [
-                    {
-		id: 2,
-		name: "标签页",
-		type: "fcTabs",
+                        {
+		id: 4,
+		name: "卡片",
+		type: "fcCard",
 		category: "container",
-		icon: "tag",
-		addable: true,
-		closable: true,
-		maxCount: 10,
-		ruleFormKey: '111',
+		icon: "card ",
+		title: '卡片名称',
+		ruleFormKey: null,
 		ruleFormKeyType: 'object',
 		options: {
 			basic: {
 				name: {
 					label: "唯一名称",
-					value: "标签页"
+					value: "卡片"
 				}, // 唯一名称
 				ruleFormKey: {
 					label: "参数key",
@@ -101,16 +99,10 @@
 				isHidden: {
 					label: "隐藏组件",
 					value: false
-				}
+				},
 			},
 			advanced: {
-				cols: [
-					{
-						id: '1',
-						name: '名称',
-						widgetList: []
-					}
-				]
+				widgetList: []
 			}
 		},
 	}
