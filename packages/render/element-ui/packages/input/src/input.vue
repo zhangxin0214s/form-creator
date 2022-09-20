@@ -20,7 +20,7 @@
     name: "fcInput",
     mixins:[mixins]
   };
-  </script>
+</script>
   
   <style scoped>
   .hint {

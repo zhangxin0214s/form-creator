@@ -2,12 +2,7 @@
     <div class="grid">
         <el-row
 			class="grid-container"
-			:class="[
-				selectedWidget?.id === widget?.id && isEditor?'select':'',
-			]"
-			:style="
-		`background-color:${widget.options.basic.rowBackground.value}`
-		"
+			:style="`background-color: ${widget.options.basic.rowBackground.value}`"
 		>
 			<template
 				v-for="(colWidget, colIdx) in widget.options.advanced.cols"
@@ -19,10 +14,9 @@
 					:prop-key="propKey"
 					:rule-form-ref="ruleFormRef"
 					:is-editor="isEditor"
-					:selected-widget="selectedWidget"
 					:rule-form="ruleForm[widget.ruleFormKey] || ruleForm"
 					:rule-form-key-type="widget.ruleFormKeyType"
-					:style="`height:${widget.options.basic.colHeight.value}px;`"
+					:style="`height: ${widget.options.basic.colHeight.value}px;`"
 				>
 					<slot 
 					 name="widgetChild"
@@ -38,3 +32,17 @@
 		</el-row>
     </div>
 </template>
+<script>
+	import mixins from '../../mixins/index.js'
+	import Col from './grid-col.vue'
+	export default {
+	  name: "fcGrid",
+	  mixins:[mixins],
+	  components: [
+	  	Col
+	  ]
+	};
+</script>
+<style scope>
+	
+</style>

@@ -3,13 +3,13 @@ export default {
     props: {
         widget: Object,
         isEditor: Boolean,
-        propKey: String
+        propKey: String,
+        ruleFormRef: Object
     },
     watch: {
         'widget.value': {
             // 执行方法
             handler:function() {
-                 console.log(this.widget.value)
                 if (this.widget.options.advanced.linkage.targets.length !== 0) {
                     const EVENTS = this.widget.options.advanced.linkageCode.value;
                     new Function('widget','linkageObj' ,EVENTS)(this.widget,this.widget.options.advanced.linkage.targets)
