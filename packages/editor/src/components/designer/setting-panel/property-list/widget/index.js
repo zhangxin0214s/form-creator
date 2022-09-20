@@ -1,5 +1,5 @@
 import fcInput from './input.vue';
-import fcButton from './button';
+import fcButton from './button.vue';
 import fcCheckbox from './checkbox.vue';
 import fcSwitch from './switch.vue';
 import fcSelect from './select.vue';

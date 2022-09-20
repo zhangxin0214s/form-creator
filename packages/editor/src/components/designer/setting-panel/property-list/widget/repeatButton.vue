@@ -43,7 +43,7 @@
 import { ref, defineProps } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES,ADVANCED_PROPERTIES } from '../propertyRegister'
 import * as basicComponents from '../components/index';
-import RepeatButtonItems from '../components/repeatButtonItems'
+import RepeatButtonItems from '../components/repeatButtonItems.vue'
 
 defineProps([
   'selectedWidget',
