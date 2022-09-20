@@ -1,7 +1,7 @@
 <template>
     <el-col 
         :span="colWidget.gutter" 
-        class="grid-content1 ep-bg-purple gird-line">
+        class="grid-content1 ep-bg-purple">
         <slot></slot>            
     </el-col>
 </template>
