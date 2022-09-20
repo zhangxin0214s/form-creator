@@ -43,7 +43,7 @@
 import { ref, defineProps } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES,ADVANCED_PROPERTIES } from '../propertyRegister'
 import * as basicComponents from '../components/index';
-import TimeItmes from '../components/timeItmes'
+import TimeItmes from '../components/timeItmes.vue'
 
 defineProps([
   'selectedWidget',

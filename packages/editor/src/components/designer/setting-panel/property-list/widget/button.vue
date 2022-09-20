@@ -78,7 +78,7 @@ import {
 	ADVANCED_PROPERTIES,
 } from '../propertyRegister';
 import * as basicComponents from '../components/index';
-import buttonItems from '../components/buttonItems';
+import buttonItems from '../components/buttonItems.vue';
 
 const props = defineProps([
 	'selectedWidget',
