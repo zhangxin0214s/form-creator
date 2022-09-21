@@ -4,7 +4,6 @@ import grid from "./grid"
 import tabs from "./tabs"
 import card from "./card"
 import select from "./select"
-m
 import textarea from "./textarea"
 import divider from "./divider"
 import cellPhone from "./cellPhone"
