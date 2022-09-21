@@ -24,7 +24,7 @@ const addCol = () =>{
     props.advancedProp.cols.push(
         {
             id:guid(),
-            name:'名称',
+            name:`${props.advancedProp.cols[0].name}`,
             ruleFormKey: {label: "参数key", value: ""},
             widgetList:[]
         }
