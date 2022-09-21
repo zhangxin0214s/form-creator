@@ -6,7 +6,11 @@
         </div>
         <div v-for="(item,index) of selectedWidget.options.advanced.tableTitles" :key="index">
             <el-input class="input" v-model="item.label" ></el-input>
-            <el-input class="input" v-model="item.prop"></el-input>
+            <el-input class="input" v-model="item.prop">
+                <template #append>
+                    <el-button :icon="Delete" @click="remove(index)" />
+                </template>
+            </el-input>
         </div>
         <el-button type="primary" @click="add" style="margin-top:10px;">添加列</el-button>
     </div>
@@ -15,7 +19,7 @@
 import { ref } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES} from '../propertyRegister'
 import * as basicComponents from '../components/index';
-
+import { Delete } from '@element-plus/icons-vue'
 const props=defineProps([
     'selectedWidget',
     'basicProp',
@@ -32,6 +36,9 @@ const getPropCompName = (key) =>{
 const add = () => {
     props.selectedWidget.options.advanced.tableTitles.push({label:"", prop:""})
 };
+const remove =(index) =>{
+    props.selectedWidget.options.advanced.tableTitles.splice(index,1)
+}
 </script>
 <style lang="scss" scoped>
 .title{
