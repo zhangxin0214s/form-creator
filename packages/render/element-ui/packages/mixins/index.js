@@ -4,6 +4,7 @@ export default {
         widget: Object,
         isEditor: Boolean,
         propKey: String,
+        ruleForm: Object,
         ruleFormRef: Object
     },
     watch: {

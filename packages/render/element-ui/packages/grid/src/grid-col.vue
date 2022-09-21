@@ -1,20 +1,17 @@
 <template>
     <el-col 
         :span="colWidget.gutter" 
-        class="grid-content1 ep-bg-purple" 
-        class="gird-line"
-    >
+        class="grid-content1 ep-bg-purple">
         <slot></slot>            
     </el-col>
 </template>
 <script>
-    export default {
-        name: 'Col',
-        porps: {
-            colWidget: Object,
-            isEditor: Boolean
-        }
-    } 
+export default {
+    name: 'GridCol',
+    props: {
+        colWidget: Object
+    }
+} 
 </script>
  <style scoped>
     .grid-content1{

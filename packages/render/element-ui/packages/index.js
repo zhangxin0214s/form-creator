@@ -1,11 +1,15 @@
 import input from "./input"
 import switch1 from "./switch"
 import grid from "./grid"
+import tabs from "./tabs"
+import card from "./card"
 
 const components = [
     input,
     switch1,
-    grid
+    grid,
+    tabs,
+    card
 ]
 
 const install = Vue => {
@@ -23,5 +27,7 @@ export default {
     install,
     input,
     switch1,
-    grid
+    grid,
+    tabs,
+    card
 }

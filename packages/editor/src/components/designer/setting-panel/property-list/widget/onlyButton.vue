@@ -43,7 +43,7 @@
 import { ref, defineProps } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES ,ADVANCED_PROPERTIES} from '../propertyRegister'
 import * as basicComponents from '../components/index';
-import OnlyButtonItems from '../components/onlyButtonItems'
+import OnlyButtonItems from '../components/onlyButtonItems.vue'
 
 
 defineProps([
