@@ -21,9 +21,9 @@
 					 v-bind="{
 							colWidget, 
 							propKey,
-							ruleForm: ruleForm[widget.ruleFormKey],
+							ruleForm: childRuleForm,
 							index: colIdx
-						}">
+					 }">
 					</slot>
 				</Col>
 			</template>
@@ -38,7 +38,7 @@ export default {
 import { watch } from 'vue';
 import { ElMessage } from 'element-plus'
 import Col from './grid-col.vue';
-
+import { ref } from 'vue'
 const props = defineProps([
 	'widget',
 	'selectedWidget', 
@@ -49,6 +49,7 @@ const props = defineProps([
 	'ruleFormRef'
 ]);
 
+const childRuleForm = ref(null)
 
 watch(
 	() => props.propKey,
@@ -65,6 +66,7 @@ watch(
 				}else{
 					props.ruleForm[ruleFormKey] = {}
 				}
+				childRuleForm.value = props.ruleForm[ruleFormKey];
 			}
 			if(parentRuleFormKeyType === 'array'){
 				if(ruleFormKeyType === 'array'){
@@ -76,11 +78,20 @@ watch(
 				}else{
 					const isExist = props.ruleForm.some(rule =>{Object.keys(rule).indexOf(ruleFormKey)>-1})
 					if(!isExist){
-						props.ruleForm.push({
-							[ruleFormKey]: props.widget.value
-						})
+						if(props.widget.category === 'container'){
+							props.ruleForm.push({
+								[ruleFormKey]: {}
+							})
+						}else {
+							props.ruleForm.push({
+								[ruleFormKey]: props.widget.value
+							})
+						}
+						
 					}
 				}
+				console.log(props.ruleForm.filter(rule=>Object.keys(rule).indexOf(ruleFormKey)>-1)[0][ruleFormKey],"===",ruleFormKey)
+				childRuleForm.value = props.ruleForm.filter(rule=>Object.keys(rule).indexOf(ruleFormKey)>-1)[0][ruleFormKey]
 			}
 		}
 	},
