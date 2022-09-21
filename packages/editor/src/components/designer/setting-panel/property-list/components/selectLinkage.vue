@@ -27,9 +27,7 @@ import { defineProps, watch, ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 import eventBasic from './eventBasic.vue';
-import editLinkageEvent from '../../hooks/editLinkageEvent.js';
 const cascaderProps = ref({ multiple: true });
-const { changeElement } = editLinkageEvent();
 const _widgetStore = widgetStore();
 const { widgetList } = storeToRefs(_widgetStore);
 const props = defineProps([
@@ -103,9 +101,11 @@ let getLinkageObject = (vals) => {
 			(widget) => widget.id === vals[i][0]
 		);
 		if (vals[i].length === 1) {
-			tempArr.push(findValue);
+			tempArr.push({parent:null,children:findValue});
 		} else {
-			let fun = (cols, val, valIndex) => {
+			let parents = [];
+			let fun = (item, val, valIndex) => {
+				let cols = item.options.advanced.cols
 				let linkageVal = val[valIndex];
 				let tempVal = null;
 				for (let i = 0; i < cols.length; i++) {
@@ -115,20 +115,43 @@ let getLinkageObject = (vals) => {
 						);
 					}
 				}
-				if (valIndex === val.length - 1) return tempVal;
-				return fun(tempVal.options.advanced.cols, val, ++valIndex);
+				parents.push(item);
+				if (valIndex === val.length - 1) return {parent:parents,children:tempVal};
+				return fun(tempVal, val, ++valIndex);
 			};
-			tempArr.push(fun(findValue.options.advanced.cols, vals[i], 1));
+			tempArr.push(fun(findValue, vals[i], 1));
 		}
 	}
 	return tempArr;
 };
-/**
- * 复制组件
- */
-// const copyWidget = (widget) => {
-// 	_widgetStore.copyWidget(widget);
+// let getLinkageObject = (vals) => {
+// 	let tempArr = [];
+// 	for (let i = 0; i < vals.length; i++) {
+// 		let findValue = widgetList.value.find(
+// 			(widget) => widget.id === vals[i][0]
+// 		);
+// 		if (vals[i].length === 1) {
+// 			tempArr.push(findValue);
+// 		} else {
+// 			let fun = (cols, val, valIndex) => {
+// 				let linkageVal = val[valIndex];
+// 				let tempVal = null;
+// 				for (let i = 0; i < cols.length; i++) {
+// 					if (!tempVal) {
+// 						tempVal = cols[i].widgetList.find(
+// 							(list) => list.id === linkageVal
+// 						);
+// 					}
+// 				}
+// 				if (valIndex === val.length - 1) return tempVal;
+// 				return fun(tempVal.options.advanced.cols, val, ++valIndex);
+// 			};
+// 			tempArr.push(fun(findValue.options.advanced.cols, vals[i], 1));
+// 		}
+// 	}
+// 	return tempArr;
 // };
+
 </script>
 <style lang="scss" scoped>
 </style>

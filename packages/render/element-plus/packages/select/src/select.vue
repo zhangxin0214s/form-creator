@@ -26,11 +26,12 @@ import { watch } from 'vue';
 import { handleChangeEvent } from '../../hooks/handleChangeEvent';
 import { watchEvent } from '../../hooks/watchEvent';
 import { linkageWatchEvent } from '../../hooks/linkageWatchEvent';
+import { inject } from 'vue'
 const props = defineProps(['widget', 'isEditor', 'selectedWidget', 'widgetType', 'ruleForm', 'propKey', 'parent', 'parentWidget']);
 const { basic, advanced } = props.widget.options;
 watchEvent(props, watch, ElMessage);
 
-linkageWatchEvent(props, watch, ElMessage);
+linkageWatchEvent(props, watch, inject('copyWidget'));
 </script>
   
   <style lang="scss" scoped>
