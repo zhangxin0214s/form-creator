@@ -14,22 +14,15 @@
 			>
 				<Col
 					:colWidget="colWidget"
-					:widget="widget"
-					:prop-key="propKey"
-					:rule-form-ref="ruleFormRef"
 					:is-editor="isEditor"
-					:selected-widget="selectedWidget"
-					:rule-form="ruleForm[widget.ruleFormKey] || ruleForm"
-					:rule-form-key-type="widget.ruleFormKeyType"
-					:style="`height:${widget.options.basic.colHeight.value}px;`"
-				>
+					:style="`height:${widget.options.basic.colHeight.value}px;`">
 					<slot 
 					 name="widgetChild"
 					 v-bind="{
 							colWidget, 
 							propKey,
-							ruleForm: ruleForm[widget.ruleFormKey] || ruleForm,
-							index:colIdx
+							ruleForm: ruleForm[widget.ruleFormKey],
+							index: colIdx
 						}">
 					</slot>
 				</Col>
