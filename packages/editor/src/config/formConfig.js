@@ -146,6 +146,7 @@ export const containers = [
 		id: 3,
 		name: "表格",
 		type: "fcTable",
+		category: "container",
 		icon: "table ",
 		options: {
 			basic: {
@@ -154,7 +155,13 @@ export const containers = [
 					value: false
 				},
 			},
-			advanced: {}
+			advanced: {
+				tableTitles:[
+					{label:"日期", prop:"date"},
+					{label:"姓名", prop:"name"},
+					{label:"地址", prop:"address"}
+				]
+			}
 		},
 	},
 	{
