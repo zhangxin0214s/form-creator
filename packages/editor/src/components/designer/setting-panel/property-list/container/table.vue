@@ -1,6 +1,14 @@
 <template>
     <div class="input-container">
-        11111111122222333
+        <div>
+            <div class="title" style="margin-right:80px;">列名</div>
+            <div class="title">键名</div>
+        </div>
+        <div v-for="(item,index) of selectedWidget.options.advanced.tableTitles" :key="index">
+            <el-input class="input" v-model="item.label" ></el-input>
+            <el-input class="input" v-model="item.prop"></el-input>
+        </div>
+        <el-button type="primary" @click="add" style="margin-top:10px;">添加列</el-button>
     </div>
 </template>
 <script setup>
@@ -8,7 +16,7 @@ import { ref } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES} from '../propertyRegister'
 import * as basicComponents from '../components/index';
 
-defineProps([
+const props=defineProps([
     'selectedWidget',
     'basicProp',
     'advancedProp'
@@ -21,11 +29,21 @@ const activeNames = ref(['1'])
 const getPropCompName = (key) =>{
     return BASCI_COMPONENTS[BASIC_PROPERTIES[key]]
 }
+const add = () => {
+    props.selectedWidget.options.advanced.tableTitles.push({label:"", prop:""})
+};
 </script>
 <style lang="scss" scoped>
 .title{
     display: inline-block;
-    margin-right:10px;
-    vertical-align: middle;
+    font-size:16px;
+    margin-bottom:7px;
+    color:#606266;
+}
+.addBtn {
+    height: 50px;
+}
+.input{
+    width:110px;
 }
 </style>
