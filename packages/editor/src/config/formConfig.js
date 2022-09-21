@@ -146,6 +146,7 @@ export const containers = [
 		id: 3,
 		name: "表格",
 		type: "fcTable",
+		category: "container",
 		icon: "table ",
 		options: {
 			basic: {
