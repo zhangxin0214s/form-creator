@@ -108,7 +108,7 @@ provide('copyWidget', copyWidget)
 /**
  * 删除组件
  */
-const removeWidget = ({widget, parentWidget, parent,ruleForm}) => {
+const removeWidget = ({widget, parentWidget, parent, ruleForm}) => {
   _widgetStore.removeWidget(widget, parentWidget);
   if(parent?.ruleFormKeyType === 'array'){
 		ruleForm.forEach((rule,index) =>{
