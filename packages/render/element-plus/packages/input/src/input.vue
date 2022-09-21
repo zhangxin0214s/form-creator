@@ -14,7 +14,6 @@
 		@change="handleChangeEvent(props,ElMessage)"/>
 		<div class="hint">{{ widget.options.basic.hint.value }}</div>
 	</el-form-item>
-	
 </template>
 <script>
 export default {
@@ -23,16 +22,17 @@ export default {
 </script>
 <script setup name="input">
 import { ElMessage } from 'element-plus'
-import { watch,reactive } from 'vue';
+import { watch } from 'vue';
 import { handleChangeEvent } from '../../hooks/handleChangeEvent'
 import { watchEvent } from '../../hooks/watchEvent'
 import {linkageWatchEvent} from '../../hooks/linkageWatchEvent'
+import { inject } from 'vue'
 
 const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
 
 watchEvent(props,watch,ElMessage);
 
-linkageWatchEvent(props,watch,ElMessage);
+linkageWatchEvent(props,watch,inject('copyWidget'));
 </script>
 <style lang="scss" scoped>
 .hint {

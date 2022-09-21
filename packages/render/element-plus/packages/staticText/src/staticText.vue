@@ -25,12 +25,12 @@ export default {
 </script>
 <script setup name="staticText">
 	import { watch } from 'vue'
-	import { ElMessage } from 'element-plus'
 	import {linkageWatchEvent} from '../../hooks/linkageWatchEvent'
+	import { inject } from 'vue'
 // 这个文件不要格式化代码，上面的pre标签和内容必须在一行，谢谢
 const props = defineProps(['widget','isEditor', 'selectedWidget', 'parentWidget']);
 
-linkageWatchEvent(props,watch,ElMessage);
+linkageWatchEvent(props,watch,inject('copyWidget'));
 </script>
 <style lang="scss" scoped>
 	.hint {

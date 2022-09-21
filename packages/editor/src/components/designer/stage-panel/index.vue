@@ -110,7 +110,6 @@ provide('copyWidget', copyWidget)
  */
 const removeWidget = ({widget, parentWidget, parent,ruleForm}) => {
   _widgetStore.removeWidget(widget, parentWidget);
-
   if(parent?.ruleFormKeyType === 'array'){
 		ruleForm.forEach((rule,index) =>{
 			if(Object.keys(rule).indexOf(widget.ruleFormKey)>-1){
