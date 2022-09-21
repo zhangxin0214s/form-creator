@@ -71,7 +71,7 @@
             <svg-icon
                 icon-class="delete"
                 class="deleteIcon"
-                @click.stop="removeWidget1({widget, parentWidget: widgetList, ruleForm: formConfig.ruleForm })"
+                @click.stop="removeWidget1({widget, parentWidget: widgetList, parent, ruleForm })"
             />
         </div>
     </div>
@@ -123,8 +123,8 @@
      * 移除
      */
     const remove = inject('removeWidget')
-    const removeWidget1 = ({widget, parentWidget, ruleForm }) =>{
-        remove({widget, parentWidget, ruleForm })
+    const removeWidget1 = ({widget, parentWidget, parent,ruleForm }) =>{
+        remove({widget, parentWidget,parent, ruleForm })
     }
 
     /**
