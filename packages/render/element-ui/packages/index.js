@@ -4,7 +4,11 @@ import grid from "./grid"
 import tabs from "./tabs"
 import card from "./card"
 import select from "./select"
-
+m
+import textarea from "./textarea"
+import divider from "./divider"
+import cellPhone from "./cellPhone"
+import staticText from "./staticText"
 const components = [
     input,
     switch1,
@@ -12,6 +16,10 @@ const components = [
     tabs,
     card,
     select,
+    textarea,
+    divider,
+    cellPhone,
+    staticText
 ]
 
 const install = Vue => {
@@ -33,4 +41,8 @@ export default {
     tabs,
     card,
     select,
+    textarea,
+    divider,
+    cellPhone,
+    staticText
 }
