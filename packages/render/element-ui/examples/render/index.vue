@@ -53,7 +53,8 @@ export default {
             111: [],
           }, // 提交数据
         },
-        widgetList: [{
+        widgetList: [
+          {
             "id": "1",
             "name": "下拉框",
             "type": "fcSelect",
