@@ -1,7 +1,7 @@
 <template>
     <el-table
       :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
-      :data="tableData"
+      :data="widget.options.advanced.tableValues"
       style="width: 100%">
       <el-table-column
         v-for="(item,index) of widget.options.advanced.tableTitles"
@@ -19,24 +19,6 @@
 <script setup>
   import containerMask from "../../common/containerMask.vue"
   import { watch } from 'vue'
-
-  const tableData=[{
-            date: '2016-05-02',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1518 弄'
-          }, {
-            date: '2016-05-04',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1517 弄'
-          }, {
-            date: '2016-05-01',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1519 弄'
-          }, {
-            date: '2016-05-03',
-            name: '王小虎',
-            address: '上海市普陀区金沙江路 1516 弄'
-          }]
 
   const props=defineProps([
     'widget',
