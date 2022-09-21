@@ -1,18 +1,22 @@
 <template>
     <div class="input-container">
-        <div>
-            <div class="title" style="margin-right:80px;">列名</div>
-            <div class="title">键名</div>
-        </div>
-        <div v-for="(item,index) of selectedWidget.options.advanced.tableTitles" :key="index">
-            <el-input class="input" v-model="item.label" ></el-input>
-            <el-input class="input" v-model="item.prop">
-                <template #append>
-                    <el-button :icon="Delete" @click="remove(index)" />
-                </template>
-            </el-input>
-        </div>
-        <el-button type="primary" @click="add" style="margin-top:10px;">添加列</el-button>
+        <el-collapse v-model="activeNames" class="input-collapse">
+            <el-collapse-item name="1" title="高级属性">
+                <div>
+                    <div class="title" style="margin-right:80px;">列名</div>
+                    <div class="title">键名</div>
+                </div>
+                <div v-for="(item,index) of selectedWidget.options.advanced.tableTitles" :key="index">
+                    <el-input class="input" v-model="item.label" ></el-input>
+                    <el-input class="input" v-model="item.prop">
+                        <template #append>
+                            <el-button :icon="Delete" @click="remove(index)" />
+                        </template>
+                    </el-input>
+                </div>
+                <el-button type="primary" @click="add" style="margin-top:10px;">添加列</el-button>
+            </el-collapse-item>
+        </el-collapse>
     </div>
 </template>
 <script setup>
