@@ -8,7 +8,6 @@
     </el-col>
 </template>
 <script setup>
-    import { inject } from 'vue';
     const props = defineProps([
         'colWidget',
         'isEditor'
