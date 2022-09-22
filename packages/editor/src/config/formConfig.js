@@ -162,7 +162,7 @@ export const containers = [
 			events: {
 				onBeforeMount: {
 					label: "渲染前",
-					value: "props.widget.options.advanced.tableTitles = [\r\n\t{ label: \"日期\", prop: \"date\" },\r\n\t{ label: \"姓名\", prop: \"name\" },\r\n\t{ label: \"地址\", prop: \"address\" }\r\n]\r\nprops.widget.options.advanced.tableValues = [\r\n\t{\r\n\t\tdate: '2016-05-02',\r\n\t\tname: '王小虎',\r\n\t\taddress: '上海市普陀区金沙江路 1518 弄'\r\n\t}, {\r\n\t\tdate: '2016-05-04',\r\n\t\tname: '王小虎',\r\n\t\taddress: '上海市普陀区金沙江路 1517 弄'\r\n\t}, {\r\n\t\tdate: '2016-05-01',\r\n\t\tname: '王小虎',\r\n\t\taddress: '上海市普陀区金沙江路 1519 弄'\r\n\t}, {\r\n\t\tdate: '2016-05-03',\r\n\t\tname: '王小虎',\r\n\t\taddress: '上海市普陀区金沙江路 1516 弄'\r\n\t}\r\n]"
+					value: "props.widget.options.advanced.tableTitles = []\r\nprops.widget.options.advanced.tableValues = []"
 				}
 			}
 		},
