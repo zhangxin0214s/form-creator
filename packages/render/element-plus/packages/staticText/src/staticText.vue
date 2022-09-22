@@ -32,7 +32,7 @@ const props = defineProps(['widget','isEditor', 'selectedWidget', 'parentWidget'
 
 linkageWatchEvent(props,watch,inject('copyWidget'));
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 	.hint {
 		font-size: 12px;
 		color: #9b9b9b;
@@ -40,6 +40,9 @@ linkageWatchEvent(props,watch,inject('copyWidget'));
 	// 选中样式
 	.select {
 		outline: 1px solid $--color-primary;
+	}
+	.el-form-item{
+		margin-bottom:0px;
 	}
 	
 </style>

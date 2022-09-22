@@ -15,7 +15,7 @@
 				<Col
 					:colWidget="colWidget"
 					:is-editor="isEditor"
-					style="height:auto">
+					style="height:auto;padding:0">
 					<slot 
 					 name="widgetChild"
 					 v-bind="{
