@@ -7,7 +7,7 @@ const useRegisterEvent = () => {
      * @param {*} widget 
      * @returns 
      */
-    const handleOnClick = (props, inject, copy) => {
+    const handleOnClick = (props, inject, widgetStore) => {
         const EVENTS = props.widget.options.events;
         if (!EVENTS?.onClick) return;
         new Function(
@@ -15,13 +15,13 @@ const useRegisterEvent = () => {
             'inject',
             'ElMessage',
             'linkageObj',
-            'copyWidget',
+            'widgetStore',
             EVENTS?.onClick.value)
             (   props,
                 inject,
                 ElMessage,
                 props.widget.options.advanced.linkage.targets,
-                copy
+                widgetStore
             )
     }
 
