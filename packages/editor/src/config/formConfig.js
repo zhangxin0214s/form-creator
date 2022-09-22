@@ -1236,7 +1236,7 @@ export const basicWidgets = [
 		icon: "time",
 		value: null,
 		ruleFormKey: null,
-		rules: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+		rules: [{ required: false, message: '请输入用户名', trigger: 'blur' }],
 		options: {
 			basic: {
 				value: "",
@@ -1351,7 +1351,7 @@ export const basicWidgets = [
 		icon: "date",
 		value: null,
 		ruleFormKey: null,
-		rules: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+		rules: [{ required: false, message: '请输入用户名', trigger: 'blur' }],
 		options: {
 			basic: {
 				value: "",
