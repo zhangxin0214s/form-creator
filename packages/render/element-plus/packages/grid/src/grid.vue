@@ -50,10 +50,11 @@ const props = defineProps([
 ]);
 
 const childRuleForm = ref(null)
+const widgetRuleFormKey = props.widget.options.basic.ruleFormKey.value;
 if(props.parent?.ruleFormKeyType === 'object' || !props.parent?.ruleFormKeyType){
-	childRuleForm.value = props.ruleForm[props.widget.options.basic.ruleFormKey.value];
+	childRuleForm.value = props.ruleForm[widgetRuleFormKey];
 }else if(props.parent?.ruleFormKeyType === 'array' && props.widget.ruleFormKey){
-	childRuleForm.value = props.ruleForm?.filter(rule=>Object.keys(rule).indexOf(props.widget.options.basic.ruleFormKey.value)>-1)[0][props.widget.options.basic.ruleFormKey.value]
+	childRuleForm.value = props.ruleForm?.filter(rule=>Object.keys(rule).indexOf(widgetRuleFormKey)>-1)[0][widgetRuleFormKey]
 }
 
 watch(
