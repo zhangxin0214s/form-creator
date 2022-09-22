@@ -162,7 +162,7 @@ export const containers = [
 			events: {
 				onBeforeMount: {
 					label: "渲染前",
-					value: "props.widget.options.advanced.tableTitles = []\r\nprops.widget.options.advanced.tableValues = []"
+					value: "//表头 { label: \"日期\", prop: \"date\" }\r\nprops.widget.options.advanced.tableTitles = []\r\n\r\n//表格数据{date: '2016-05-02', name: '王小虎', address: '上海市普陀区金沙江路}\r\nprops.widget.options.advanced.tableValues = []"
 				}
 			}
 		},
