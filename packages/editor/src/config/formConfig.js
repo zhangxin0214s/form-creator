@@ -156,28 +156,14 @@ export const containers = [
 				},
 			},
 			advanced: {
-				tableTitles:[
-					{label:"日期", prop:"date"},
-					{label:"姓名", prop:"name"},
-					{label:"地址", prop:"address"}
-				],
-				tableValues:[{
-					date: '2016-05-02',
-					name: '王小虎',
-					address: '上海市普陀区金沙江路 1518 弄'
-				  }, {
-					date: '2016-05-04',
-					name: '王小虎',
-					address: '上海市普陀区金沙江路 1517 弄'
-				  }, {
-					date: '2016-05-01',
-					name: '王小虎',
-					address: '上海市普陀区金沙江路 1519 弄'
-				  }, {
-					date: '2016-05-03',
-					name: '王小虎',
-					address: '上海市普陀区金沙江路 1516 弄'
-				  }]
+				tableTitles:[],
+				tableValues:[]
+			},
+			events: {
+				onBeforeMount: {
+					label: "渲染前",
+					value: "props.widget.options.advanced.tableTitles = [\r\n\t{ label: \"日期\", prop: \"date\" },\r\n\t{ label: \"姓名\", prop: \"name\" },\r\n\t{ label: \"地址\", prop: \"address\" }\r\n]\r\nprops.widget.options.advanced.tableValues = [\r\n\t{\r\n\t\tdate: '2016-05-02',\r\n\t\tname: '王小虎',\r\n\t\taddress: '上海市普陀区金沙江路 1518 弄'\r\n\t}, {\r\n\t\tdate: '2016-05-04',\r\n\t\tname: '王小虎',\r\n\t\taddress: '上海市普陀区金沙江路 1517 弄'\r\n\t}, {\r\n\t\tdate: '2016-05-01',\r\n\t\tname: '王小虎',\r\n\t\taddress: '上海市普陀区金沙江路 1519 弄'\r\n\t}, {\r\n\t\tdate: '2016-05-03',\r\n\t\tname: '王小虎',\r\n\t\taddress: '上海市普陀区金沙江路 1516 弄'\r\n\t}\r\n]"
+				}
 			}
 		},
 	},
@@ -464,7 +450,7 @@ export const basicWidgets = [
 				}
 			},
 			advanced: {
-				
+
 				optionItems: [  // 选项设置
 					{
 						label: "label值1",
@@ -1236,7 +1222,7 @@ export const basicWidgets = [
 		icon: "time",
 		value: null,
 		ruleFormKey: null,
-		rules: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+		rules: [{ required: false, message: '请输入用户名', trigger: 'blur' }],
 		options: {
 			basic: {
 				value: "",
@@ -1351,7 +1337,7 @@ export const basicWidgets = [
 		icon: "date",
 		value: null,
 		ruleFormKey: null,
-		rules: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+		rules: [{ required: false, message: '请输入用户名', trigger: 'blur' }],
 		options: {
 			basic: {
 				value: "",

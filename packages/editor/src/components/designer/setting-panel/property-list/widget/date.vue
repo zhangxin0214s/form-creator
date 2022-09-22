@@ -17,37 +17,39 @@
 
       <!--高级属性-->
       <el-collapse-item
-				name="2"
-				title="高级属性"
-			>
-				<div
-					v-for="(item,key,index) in advancedProp"
-					:key="index"
-				>
-					<component
-						:is="componentMap[getAdvancedCompName(key)]"
-						:basic-prop="basicProp"
-						:advanced-prop="advancedProp"
-						:selected-widget="selectedWidget"
-						:value="item"
-						:key1="key"
-					></component>
-				</div>
-			</el-collapse-item>
-      <!-- <el-collapse-item name="2" title="高级属性">
-        
+          name="2"
+          title="高级属性"
+      >
+        <div
+            v-for="(item,key,index) in advancedProp"
+            :key="index"
+        >
+          <component
+              :is="componentMap[getAdvancedCompName(key)]"
+              :basic-prop="basicProp"
+              :advanced-prop="advancedProp"
+              :selected-widget="selectedWidget"
+              :value="item"
+              :key1="key"
+          ></component>
+        </div>
+      </el-collapse-item>
+
+      <el-collapse-item name="2" title="高级属性">
+        <el-divider content-position="center">日期设置</el-divider>
         <date-items
             :advanced-prop="advancedProp"
         />
-      </el-collapse-item> -->
+      </el-collapse-item>
     </el-collapse>
   </div>
 </template>
 
 <script setup>
 import { ref, defineProps } from "vue"
-import { BASCI_COMPONENTS, BASIC_PROPERTIES,ADVANCED_PROPERTIES } from '../propertyRegister'
+import { BASCI_COMPONENTS, BASIC_PROPERTIES, ADVANCED_PROPERTIES } from '../propertyRegister'
 import * as basicComponents from '../components/index';
+import DateItems from '../components/dateItems'
 
 defineProps([
   'selectedWidget',
@@ -62,7 +64,7 @@ const getPropCompName = (key) => {
   return BASCI_COMPONENTS[BASIC_PROPERTIES[key]]
 }
 const getAdvancedCompName = (key) => {
-	return BASCI_COMPONENTS[ADVANCED_PROPERTIES[key]];
+  return BASCI_COMPONENTS[ADVANCED_PROPERTIES[key]];
 };
 </script>
 

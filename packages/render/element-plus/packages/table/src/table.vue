@@ -17,8 +17,10 @@
   }
 </script>
 <script setup>
+  import { onBeforeMount,watch } from 'vue';
+  import useRegisterEvent from '../../hooks/useRegisterEvent';
   import containerMask from "../../common/containerMask.vue"
-  import { watch } from 'vue'
+  const { handleOnBeforeMount } = useRegisterEvent();
 
   const props=defineProps([
     'widget',
@@ -29,6 +31,13 @@
     'selectedWidget',
     'isEditor'
   ])
+
+  /**
+   * 渲染前
+   */
+  onBeforeMount(() => {
+    handleOnBeforeMount(props);
+  });
 
   watch(
     () => props.propKey,

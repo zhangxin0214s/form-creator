@@ -32,6 +32,7 @@
 					<component
 						:is="componentMap[getAdvancedCompName(key)]"
 						:advanced-prop="advancedProp"
+            :selected-widget="selectedWidget"
 						:value="item"
 						:key1="key"
 					></component>

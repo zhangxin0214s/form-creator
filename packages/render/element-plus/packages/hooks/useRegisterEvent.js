@@ -30,11 +30,11 @@ const useRegisterEvent = () => {
      * @param {*} widget 
      * @returns 
      */
-    const handleOnBeforeMount = (widget) => {
-        const EVENTS = widget.options.events;
+    const handleOnBeforeMount = (props) => {
+        const EVENTS = props.widget.options.events;
         if (!EVENTS?.onBeforeMount) return;
-        let onBeforeMountFunc = new Function(EVENTS?.onBeforeMount.value)
-        onBeforeMountFunc.call(widget)
+        new Function('props',EVENTS?.onBeforeMount.value)
+        (props)
     }
 
     /**

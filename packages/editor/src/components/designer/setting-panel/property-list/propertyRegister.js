@@ -16,7 +16,6 @@ const BASCI_COMPONENTS = {
 	'14':'inputBtn',
 	'15':'radioButtonBasic',
 	'16':'selectLinkage',
-	'17':'checkboxItems',
 }
 
 // 基础属性组件映射表
@@ -84,7 +83,6 @@ const ADVANCED_PROPERTIES = {
 	'validationCustom':'5',
 	'selectConfig':'6',
 	'linkage':'16',
-	'optionItems':'17',
 }
 
 
