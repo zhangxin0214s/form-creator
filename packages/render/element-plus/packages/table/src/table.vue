@@ -1,15 +1,15 @@
 <template>
-    <el-table
-      :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
-      :data="widget.options.advanced.tableValues"
-      style="width: 100%">
-      <el-table-column
-        v-for="(item,index) of widget.options.advanced.tableTitles"
-        :key="index"
-        :prop="item.prop"
-        :label="item.label">
-      </el-table-column>
-    </el-table>
+  <el-table
+    :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
+    :data="widget.options.advanced.tableValues"
+    style="width: 100%">
+    <el-table-column
+      v-for="(item,index) of widget.options.advanced.tableTitles"
+      :key="index"
+      :prop="item.prop"
+      :label="item.label">
+    </el-table-column>
+  </el-table>
 </template>
 <script>
   export default {

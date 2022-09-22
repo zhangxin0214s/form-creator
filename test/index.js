@@ -1,12 +1,3 @@
-
-const submitForm = async (formEl) => {
-    if(!formEl) return
-    await formEl.validate(((valid, fields) => {
-        if (valid) {
-            console.log('submit!')
-        } else {
-            console.log('error submit!', fields)
-        }
-    }))
-}
-submitForm(ref('ruleFormRef'))
+var a1 = 1;
+var b2=2
+new Function('a','b','alert(a+b)')(a1,b2)

@@ -24,7 +24,7 @@ export default {
 	name: 'fcButton',
 };
 </script>
-  <script setup>
+<script setup>
 import { onMounted, onBeforeMount, inject } from 'vue';
 import useRegisterEvent from '../../hooks/useRegisterEvent';
 const copy = inject('copyWidget');
