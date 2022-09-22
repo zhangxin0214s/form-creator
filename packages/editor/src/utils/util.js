@@ -122,10 +122,11 @@ export function getWidgetById(id,widgetList){
     if(widget.id === id){
       target = widget
     }else {
-      if(widget.type === 'fcGrid' || widget.type === 'fcTabs' || widget.type === 'fcCard') {
-        if(widget.options.advanced.cols && widget.options.advanced.cols.length > 0){
-          getWidgetById(id,widget.options.advanced.cols)
-        }
+      if(['fcGrid','fcTabs','fcCard'].indexOf(widget.type) > -1) {
+        const cols = widget.options.advanced.cols
+        cols.forEach(col =>{
+          getWidgetById(id,col.widgetList)
+        })
       }
     }
   })
