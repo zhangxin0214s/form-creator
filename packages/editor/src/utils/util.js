@@ -114,3 +114,20 @@ function linkAgeDeep (lists, linkAge) {
 export function handleData (widgetList, linkAge) {
   return linkAgeDeep(widgetList, linkAge);
 }
+
+// 根据id查找widget
+export function getWidgetById(id,widgetList){
+  let target = null;
+  widgetList.forEach(widget =>{
+    if(widget.id === id){
+      target = widget
+    }else {
+      if(widget.type === 'fcGrid' || widget.type === 'fcTabs' || widget.type === 'fcCard') {
+        if(widget.options.advanced.cols && widget.options.advanced.cols.length > 0){
+          getWidgetById(id,widget.options.advanced.cols)
+        }
+      }
+    }
+  })
+  return target
+}

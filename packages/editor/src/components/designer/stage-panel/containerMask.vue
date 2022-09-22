@@ -32,7 +32,6 @@
                                     :rule-form="scope.ruleForm"
                                 />
                             </template>
-
                             <template v-if="element.category === 'container'">
                                 <container-mask
                                     :widget="element"

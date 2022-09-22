@@ -7,13 +7,14 @@
 	>
 		<el-divider content-position="center">联动设置</el-divider>
 		<el-form-item :label="`${advancedProp[key1].label}:`">
+			{{ advancedProp[key1].value }}
 			<el-cascader
 				v-model="advancedProp[key1].value"
 				@change="setLinkageObject"
 				:options="advancedProp[key1].options"
 				:props="cascaderProps"
 				clearable
-				></el-cascader>
+			></el-cascader>
 			<event-basic
 				v-if="advancedProp[key1].value.length !== 0"
 				:events-prop="advancedProp"
@@ -52,7 +53,7 @@ let getOptions = (widget) => {
 		value: widget.id,
 		children: [],
 	};
-	if (widget.name === '栅格' || widget.name === '标签页') {
+	if (widget.type === 'fcGrid' || widget.type === 'fcTabs') {
 		let temp = getChildren(widget.options.advanced.cols);
 		obj.children.push(...temp);
 	}
@@ -72,8 +73,8 @@ let getChildren = (cols, newChild) => {
 					children: [],
 				};
 				if (
-					cols[i].widgetList[k].name === '栅格' ||
-					cols[i].widgetList[k].name === '标签页'
+					cols[i].widgetList[k].type === 'fcGrid' ||
+					cols[i].widgetList[k].type === 'fcTabs'
 				) {
 					let temp = getChildren(
 						cols[i].widgetList[k].options.advanced.cols
@@ -86,6 +87,7 @@ let getChildren = (cols, newChild) => {
 	}
 	return newChild;
 };
+
 widgetList.value.forEach((widget) => {
 	if (props.selectedWidget && widget.id !== props.selectedWidget.id) {
 		options.push(getOptions(widget));
@@ -94,19 +96,23 @@ widgetList.value.forEach((widget) => {
 
 // 切换联动对象
 const setLinkageObject = (val) => {
+	console.log(val,"===val===")
 	// 获取联动对象
 	let linkageObject = getLinkageObject(val);
-	currentEleData.targets = linkageObject;
+	// currentEleData.targets = linkageObject;
 	console.log(linkageObject, 'linkageObject');
 };
+
 let getLinkageObject = (vals) => {
 	let tempArr = [];
 	for (let i = 0; i < vals.length; i++) {
+		console.log(vals[0],"===111===")
 		let findValue = widgetList.value.find(
 			(widget) => widget.id === vals[i][0]
 		);
 		if (vals[i].length === 1) {
-			tempArr.push({parent:null,children:findValue});
+			// 选中最外层容器
+			tempArr.push({parent: null , children:findValue});
 		} else {
 			let parents = [];
 			let fun = (item, val, valIndex) => {
