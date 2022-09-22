@@ -50,6 +50,11 @@ const props = defineProps([
 ]);
 
 const childRuleForm = ref(null)
+if(props.parent?.ruleFormKeyType === 'object' || !props.parent?.ruleFormKeyType){
+	childRuleForm.value = props.ruleForm[props.widget.options.basic.ruleFormKey.value];
+}else if(props.parent?.ruleFormKeyType === 'array' && props.widget.ruleFormKey){
+	childRuleForm.value = props.ruleForm?.filter(rule=>Object.keys(rule).indexOf(props.widget.options.basic.ruleFormKey.value)>-1)[0][props.widget.options.basic.ruleFormKey.value]
+}
 
 watch(
 	() => props.propKey,
@@ -100,6 +105,7 @@ watch(
 		immediate: true
 	}
 )
+
 
 const emit = defineEmits(['selected1','copyWidget1','removeWidget1','onEnd1']);
 const selected1 = (element) =>{

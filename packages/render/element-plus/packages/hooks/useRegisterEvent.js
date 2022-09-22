@@ -17,7 +17,7 @@ const useRegisterEvent = () => {
             'linkageObj',
             'copyWidget',
             EVENTS?.onClick.value)
-            (props,
+            (   props,
                 inject,
                 ElMessage,
                 props.widget.options.advanced.linkage.targets,

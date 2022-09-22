@@ -46,6 +46,7 @@ export default {
       (value) => {
         console.log("监听到数据变化")
         const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+        const widgetCategory = props.widget.category;
         if(ruleFormKey && !props.ruleForm[ruleFormKey]){
           props.ruleForm[ruleFormKey] = [{}]
         }

@@ -29,7 +29,7 @@ export default {
 	name: 'fcCheckbox',
 };
 </script>
-  <script setup>
+<script setup>
 import { ElMessage } from 'element-plus';
 import { watch } from 'vue';
 import { handleChangeEvent } from '../../hooks/handleChangeEvent';
