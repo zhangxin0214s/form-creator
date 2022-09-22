@@ -35,14 +35,14 @@ const { handleOnClick, handleOnBeforeMount, handleOnMounted } = useRegisterEvent
  * 渲染前
  */
 onBeforeMount(() => {
-	handleOnBeforeMount(props.widget);
+	handleOnBeforeMount(props);
 });
 
 /**
  * 渲染后
  */
 onMounted(() => {
-	handleOnMounted(props.widget);
+	handleOnMounted(props);
 });
 </script>
   

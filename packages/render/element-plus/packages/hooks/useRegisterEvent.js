@@ -27,7 +27,7 @@ const useRegisterEvent = () => {
 
     /**
      * 创建前
-     * @param {*} widget 
+     * @param {*} props 
      * @returns 
      */
     const handleOnBeforeMount = (props) => {
@@ -39,14 +39,14 @@ const useRegisterEvent = () => {
 
     /**
      * 页面渲染完成
-     * @param {*} widget 
+     * @param {*} props 
      * @returns 
      */
-    const handleOnMounted = (widget) => {
-        const EVENTS = widget.options.events;
+    const handleOnMounted = (props) => {
+        const EVENTS = props.widget.options.events;
         if (!EVENTS?.onMounted) return;
-        let onMountedFunc = new Function(EVENTS?.onMounted.value)
-        onMountedFunc.call(widget)
+        new Function('props',EVENTS?.onMounted.value)
+        (props)
     }
 
     return {
