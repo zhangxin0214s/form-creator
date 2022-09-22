@@ -1,5 +1,4 @@
 <template>
-	<el-divider content-position="center">复选框设置</el-divider>
 	<div class="setOptions">
 		<span>动态数据:</span>
 		<el-switch
@@ -48,12 +47,7 @@
 				inactive-color="#13ce66"
 				v-model="ite.disabled"
 			/>
-			<!-- <checkbox-select-linkage
-				:advanced-prop="advancedProp.optionItems[index]"
-				:selected-widget="selectedWidget"
-        key1="linkage"
-			>
-			</checkbox-select-linkage> -->
+
 		</div>
 		<el-button
 			circle
