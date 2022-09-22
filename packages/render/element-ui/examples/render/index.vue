@@ -81,6 +81,147 @@ export default {
 				},
 				widgetList: [
           {
+            "id": "1",
+            "name": "下拉框",
+            "type": "fcSelect",
+            "category": "widget",
+            "icon": "select",
+            "value": [
+              "选项1"
+            ],
+            "ruleFormKey": "select",
+            "rules": [],
+            "options": {
+              "basic": {
+                "name": {
+                  "label": "唯一名称",
+                  "value": 1
+                },
+                "label": {
+                  "label": "标签",
+                  "value": "选择框："
+                },
+                "defaultValue": {
+                  "label": "选择提示",
+                  "value": "请选择"
+                },
+                "ruleFormKey": {
+                  "label": "参数key",
+                  "value": "select"
+                },
+                "isHidden": {
+                  "label": "隐藏组件",
+                  "value": false
+                },
+                "required": {
+                  "label": "是否必填",
+                  "value": false,
+                  "message": ""
+                },
+                "labelHidden": {
+                  "label": "标签是否隐藏",
+                  "value": false
+                },
+                "hintHidden": {
+                  "label": "提示语隐藏",
+                  "value": false
+                },
+                "disabled": {
+                  "label": "是否禁用",
+                  "value": false
+                }
+              },
+              "advanced": {
+                "dataSource": {
+                  "label": "动态数据",
+                  "check": false,
+                  "address": "",
+                  "type": "post",
+                  "parameter": {},
+                  "data": []
+                },
+                "cityData": {
+                  "label": "城市数据",
+                  "check": false,
+                  "data": [{
+                    "id": 0,
+                    "label": "label1",
+                    "value": "value1",
+                    "data": [],
+                    "children": [{
+                      "id": "0-0",
+                      "data": [],
+                      "value": "value1_1",
+                      "label": "label1_1",
+                      "children": []
+                    }]
+                  },
+                    {
+                      "id": 1,
+                      "label": "label2",
+                      "value": "value2",
+                      "data": []
+                    }
+                  ]
+                },
+                "staticData": {
+                  "label": "静态数据",
+                  "check": true,
+                  "data": [{
+                    "id": 0,
+                    "label": "label1",
+                    "value": "value1",
+                    "data": [],
+                    "children": [{
+                      "id": "0-0",
+                      "data": [],
+                      "value": "value1_1",
+                      "label": "label1_1",
+                      "children": []
+                    }]
+                  },
+                    {
+                      "id": 1,
+                      "label": "label2",
+                      "value": "value2",
+                      "data": []
+                    }
+                  ]
+                },
+                "data": [{
+                  "id": 0,
+                  "label": "label1",
+                  "value": "value1",
+                  "data": [],
+                  "children": [{
+                    "id": "0-0",
+                    "data": [],
+                    "value": "value1_1",
+                    "label": "label1_1",
+                    "children": []
+                  }]
+                },
+                  {
+                    "id": 1,
+                    "label": "label2",
+                    "value": "value2",
+                    "data": []
+                  }
+                ],
+                "linkage": {
+                  "label": "联动对象",
+                  "options": [],
+                  "value": [],
+                  "targets": []
+                },
+                "linkageCode": {
+                  "label": "联动代码",
+                  "value": "//#region\n/*\nwidget:当前元素;\nlinkageObj:联动对象\ncopyWidget:复制方法\n*/ \n//#endregion "
+                }
+              }
+            }
+          },
+          {
             id: 3,
             name: "复选框",
             type: "fcCheckbox",
@@ -1123,6 +1264,6 @@ export default {
 </script>
 <style scoped>
 .form-renderer {
-	padding: 10px;
+  padding: 10px;
 }
 </style>

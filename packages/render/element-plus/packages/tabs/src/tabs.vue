@@ -1,6 +1,6 @@
 <template>
   <el-tabs type="border-card" v-model="activeName" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
-    <el-tab-pane :label="colWidget.name" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
+    <el-tab-pane :label="`${colWidget.name}${colIdx+1}`" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
       <tabs-content 
         :colWidget="colWidget"
         :rule-form="ruleForm[widget.ruleFormKey] || [{}]"
@@ -65,7 +65,7 @@ export default {
           }
           props.widget.options.advanced.cols.push({
             id:guid(),
-            name:"名称",
+            name:`${props.widget.options.advanced.cols[0].name}`,
             widgetList:[]
           })
           ruleFormKey && props.ruleForm[ruleFormKey].push({})
