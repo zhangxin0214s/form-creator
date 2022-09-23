@@ -7,11 +7,12 @@
 	>
 		<el-divider content-position="center">联动设置</el-divider>
 		<el-form-item :label="`${advancedProp[key1].label}:`">
+			{{ advancedProp[key1].value }}
 			<el-cascader
 				v-model="advancedProp[key1].value"
-				@change="setLinkageObject"
 				:options="advancedProp[key1].options"
 				:props="cascaderProps"
+				clearable
 			></el-cascader>
 			<event-basic
 				v-if="advancedProp[key1].value.length !== 0"
@@ -27,9 +28,13 @@ import { defineProps, watch, ref } from 'vue';
 import { storeToRefs } from 'pinia';
 import { widgetStore } from '@/store/index';
 import eventBasic from './eventBasic.vue';
-const cascaderProps = ref({ multiple: true });
+const cascaderProps = { 
+	multiple: true,
+	checkStrictly: true
+ };
 const _widgetStore = widgetStore();
 const { widgetList } = storeToRefs(_widgetStore);
+
 const props = defineProps([
 	'selectedWidget',
 	'advancedProp',
@@ -47,7 +52,7 @@ let getOptions = (widget) => {
 		value: widget.id,
 		children: [],
 	};
-	if (widget.name === '栅格' || widget.name === '标签页') {
+	if (widget.type === 'fcGrid' || widget.type === 'fcTabs') {
 		let temp = getChildren(widget.options.advanced.cols);
 		obj.children.push(...temp);
 	}
@@ -67,8 +72,8 @@ let getChildren = (cols, newChild) => {
 					children: [],
 				};
 				if (
-					cols[i].widgetList[k].name === '栅格' ||
-					cols[i].widgetList[k].name === '标签页'
+					cols[i].widgetList[k].type === 'fcGrid' ||
+					cols[i].widgetList[k].type === 'fcTabs'
 				) {
 					let temp = getChildren(
 						cols[i].widgetList[k].options.advanced.cols
@@ -81,76 +86,12 @@ let getChildren = (cols, newChild) => {
 	}
 	return newChild;
 };
+
 widgetList.value.forEach((widget) => {
 	if (props.selectedWidget && widget.id !== props.selectedWidget.id) {
 		options.push(getOptions(widget));
 	}
 });
-
-// 切换联动对象
-const setLinkageObject = (val) => {
-	// 获取联动对象
-	let linkageObject = getLinkageObject(val);
-	currentEleData.targets = linkageObject;
-	console.log(linkageObject, 'linkageObject');
-};
-let getLinkageObject = (vals) => {
-	let tempArr = [];
-	for (let i = 0; i < vals.length; i++) {
-		let findValue = widgetList.value.find(
-			(widget) => widget.id === vals[i][0]
-		);
-		if (vals[i].length === 1) {
-			tempArr.push({parent:null,children:findValue});
-		} else {
-			let parents = [];
-			let fun = (item, val, valIndex) => {
-				let cols = item.options.advanced.cols
-				let linkageVal = val[valIndex];
-				let tempVal = null;
-				for (let i = 0; i < cols.length; i++) {
-					if (!tempVal) {
-						tempVal = cols[i].widgetList.find(
-							(list) => list.id === linkageVal
-						);
-					}
-				}
-				parents.push(item);
-				if (valIndex === val.length - 1) return {parent:parents,children:tempVal};
-				return fun(tempVal, val, ++valIndex);
-			};
-			tempArr.push(fun(findValue, vals[i], 1));
-		}
-	}
-	return tempArr;
-};
-// let getLinkageObject = (vals) => {
-// 	let tempArr = [];
-// 	for (let i = 0; i < vals.length; i++) {
-// 		let findValue = widgetList.value.find(
-// 			(widget) => widget.id === vals[i][0]
-// 		);
-// 		if (vals[i].length === 1) {
-// 			tempArr.push(findValue);
-// 		} else {
-// 			let fun = (cols, val, valIndex) => {
-// 				let linkageVal = val[valIndex];
-// 				let tempVal = null;
-// 				for (let i = 0; i < cols.length; i++) {
-// 					if (!tempVal) {
-// 						tempVal = cols[i].widgetList.find(
-// 							(list) => list.id === linkageVal
-// 						);
-// 					}
-// 				}
-// 				if (valIndex === val.length - 1) return tempVal;
-// 				return fun(tempVal.options.advanced.cols, val, ++valIndex);
-// 			};
-// 			tempArr.push(fun(findValue.options.advanced.cols, vals[i], 1));
-// 		}
-// 	}
-// 	return tempArr;
-// };
 
 </script>
 <style lang="scss" scoped>

@@ -70,18 +70,6 @@ export const widgetStore = defineStore('widget', {
             this.recordHistory();
         },
 
-        // removeWidget () {
-        //   if (!this.selectedWidget) return;
-        //   this.widgetList.some((list, index) => {
-        //     if (list.category === this.selectedWidget.category && list.id === this.selectedWidget.id) {
-        //       this.widgetList.splice(index,1)
-        //       this.selectedWidget = null
-        //       this.recordHistory();
-        //       return true;
-        //     }
-        //   })
-        // },
-
         /**
          * 记录用户操作数据
          * @param {String} action 用户指令/动作

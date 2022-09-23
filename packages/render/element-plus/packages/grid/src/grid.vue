@@ -15,7 +15,7 @@
 				<Col
 					:colWidget="colWidget"
 					:is-editor="isEditor"
-					:style="`height:${widget.options.basic.colHeight.value}px;`">
+					style="height:auto;padding:0">
 					<slot 
 					 name="widgetChild"
 					 v-bind="{
@@ -50,11 +50,11 @@ const props = defineProps([
 ]);
 
 const childRuleForm = ref(null)
-const widgetRuleFormKey = props.widget.options.basic.ruleFormKey.value;
+const widgetRuleFormKey = props.widget.ruleFormKey;
 if(props.parent?.ruleFormKeyType === 'object' || !props.parent?.ruleFormKeyType){
-	childRuleForm.value = props.ruleForm[widgetRuleFormKey];
-}else if(props.parent?.ruleFormKeyType === 'array' && props.widget.ruleFormKey){
-	childRuleForm.value = props.ruleForm?.filter(rule=>Object.keys(rule).indexOf(widgetRuleFormKey)>-1)[0][widgetRuleFormKey]
+	childRuleForm.value = widgetRuleFormKey && props.ruleForm[widgetRuleFormKey];
+}else if(props.parent?.ruleFormKeyType === 'array'){
+	childRuleForm.value = widgetRuleFormKey && props.ruleForm?.filter(rule=>Object.keys(rule).indexOf(widgetRuleFormKey)>-1)[0][widgetRuleFormKey]
 }
 
 watch(
