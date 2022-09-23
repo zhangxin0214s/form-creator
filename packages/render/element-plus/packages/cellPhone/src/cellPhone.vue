@@ -63,7 +63,7 @@ const props = defineProps([
 ]);
 
 watchEvent(props, watch,ElMessage,"cellPhone");
-linkageWatchEvent(props,watch,inject('copyWidget'))
+linkageWatchEvent(props,watch,inject)
 </script>
 <style lang="scss" scoped>
 .phone-content {

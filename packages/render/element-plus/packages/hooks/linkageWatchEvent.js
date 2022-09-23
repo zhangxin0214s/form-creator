@@ -8,7 +8,7 @@ const fc = {
   ElMessage,
   utils
 }
-const linkageWatchEvent = (props, inject) => {
+const linkageWatchEvent = (props, watch, inject) => {
   watch(
     () => props.widget.value,
     (value) => {

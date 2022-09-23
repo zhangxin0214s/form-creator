@@ -35,7 +35,7 @@ export default {
   const props = defineProps(['widget','isEditor', 'selectedWidget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
   
   watchEvent(props,watch,ElMessage);
-  linkageWatchEvent(props,watch,inject('copyWidget'));
+  linkageWatchEvent(props,watch,inject);
   </script>
  <style lang="scss" scoped>
   .hint {

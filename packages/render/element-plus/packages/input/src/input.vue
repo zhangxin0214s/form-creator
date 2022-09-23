@@ -32,7 +32,7 @@ const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','
 
 watchEvent(props,watch,ElMessage);
 
-linkageWatchEvent(props,watch,inject('copyWidget'));
+linkageWatchEvent(props,watch,inject);
 </script>
 <style lang="scss" scoped>
 .hint {
