@@ -1475,6 +1475,30 @@ export const basicWidgets = [
 				}
 			}
 		}
+	},
+	{
+		id: 13,
+		name: "分页器",
+		type: "fcPagination",
+		category: "widget",
+		icon: "date",
+		value: null,
+		ruleFormKey: null,
+		rules: [],
+		options: {
+			basic: {
+				isHidden:{
+					label: "隐藏组件",
+					value: false
+				}
+			},
+			advanced: {
+				pageSize:20,
+				total:100,
+				pageCount:5,
+				currentPage:0
+			}
+		}
 	}
 ]
 

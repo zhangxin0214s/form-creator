@@ -13,6 +13,7 @@ import fcDate from './date.vue';
 import fcUpload from './upload.vue';
 import fcRepeatButton from  './repeatButton.vue';
 import fcOnlyButton from './onlyButton.vue';
+import fcPagination from './pagination.vue';
 export {
     fcInput,
     fcButton,
@@ -28,5 +29,6 @@ export {
     fcUpload,
     fcRepeatButton,
     fcOnlyButton,
-    fcSwitch
+    fcSwitch,
+    fcPagination
 }
