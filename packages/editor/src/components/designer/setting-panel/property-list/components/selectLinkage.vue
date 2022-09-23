@@ -10,7 +10,6 @@
 			{{ advancedProp[key1].value }}
 			<el-cascader
 				v-model="advancedProp[key1].value"
-				@change="setLinkageObject"
 				:options="advancedProp[key1].options"
 				:props="cascaderProps"
 				clearable

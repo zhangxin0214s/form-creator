@@ -1,5 +1,12 @@
 
 import { ElMessage } from 'element-plus'
+import * as utils from '../../utils/index.js'
+
+// 对外暴露的空间
+const fc = {
+    ElMessage,
+    utils
+}
 const useRegisterEvent = () => {
 
     /**
@@ -9,20 +16,21 @@ const useRegisterEvent = () => {
      */
     const handleOnClick = (props, inject, widgetStore) => {
         const EVENTS = props.widget.options.events;
+
+        // 将要往沙盒传递的方法或元素写入对外暴露的空间
+        const _fc = {
+            ...fc,
+            target: props.widget,
+            props,
+            widgetStore,
+            inject,
+            linkage: props.widget.options.advanced.linkage
+        }
         if (!EVENTS?.onClick) return;
         new Function(
-            'props',
-            'inject',
-            'ElMessage',
-            'linkageObj',
-            'widgetStore',
-            EVENTS?.onClick.value)
-            (   props,
-                inject,
-                ElMessage,
-                props.widget.options.advanced.linkage.targets,
-                widgetStore
-            )
+            'fc',
+            EVENTS?.onClick.value
+        )(_fc)
     }
 
     /**
