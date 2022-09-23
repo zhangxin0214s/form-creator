@@ -1,20 +1,29 @@
-
+import { ElMessage } from 'element-plus'
+import * as utils from '../../utils/index.js'
 /**
  * watch事件
  * @param {*} props 
  */
-const linkageWatchEvent = (props, watch, copyWidget) => {
+const fc = {
+  ElMessage,
+  utils
+}
+const linkageWatchEvent = (props, inject) => {
   watch(
     () => props.widget.value,
     (value) => {
-      if (props.widget.options.advanced.linkage.targets.length !== 0) {
         const EVENTS = props.widget.options.advanced.linkageCode.value;
-        new Function('widget', 'linkageObj', 'copyWidget',EVENTS)(
-          props.widget,
-          props.widget.options.advanced.linkage.targets,
-          copyWidget,
-        )
+        // 将要往沙盒传递的方法或元素写入对外暴露的空间
+        const _fc = {
+          ...fc,
+          target: props.widget,
+          props,
+          inject
       }
+        new Function(
+          'fc'
+          ,EVENTS
+        )(_fc)
     },
     {
       deep: true,
