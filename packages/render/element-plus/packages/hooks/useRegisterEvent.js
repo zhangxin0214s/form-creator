@@ -7,6 +7,7 @@ const fc = {
     ElMessage,
     utils
 }
+
 const useRegisterEvent = () => {
 
     /**
@@ -24,7 +25,7 @@ const useRegisterEvent = () => {
             props,
             widgetStore,
             inject,
-            linkage: props.widget.options.advanced.linkage
+            linkTarget: props.widget.options.advanced.linkage
         }
         if (!EVENTS?.onClick) return;
         new Function(

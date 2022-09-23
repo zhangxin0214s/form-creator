@@ -95,8 +95,7 @@ export const containers = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -357,8 +356,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -472,8 +470,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -619,8 +616,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -715,8 +711,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -820,8 +815,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -938,8 +932,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1035,8 +1028,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1118,8 +1110,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1207,8 +1198,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1322,8 +1312,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1469,8 +1458,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1557,8 +1545,7 @@ export const advancedWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1647,8 +1634,7 @@ export const advancedWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1728,8 +1714,7 @@ export const advancedWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1781,8 +1766,7 @@ export const advancedWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',

@@ -93,48 +93,6 @@ widgetList.value.forEach((widget) => {
 	}
 });
 
-// 切换联动对象
-const setLinkageObject = (val) => {
-	console.log(val,"===val===")
-	// 获取联动对象
-	let linkageObject = getLinkageObject(val);
-	// currentEleData.targets = linkageObject;
-	console.log(linkageObject, 'linkageObject');
-};
-
-let getLinkageObject = (vals) => {
-	let tempArr = [];
-	for (let i = 0; i < vals.length; i++) {
-		console.log(vals[0],"===111===")
-		let findValue = widgetList.value.find(
-			(widget) => widget.id === vals[i][0]
-		);
-		if (vals[i].length === 1) {
-			// 选中最外层容器
-			tempArr.push({parent: null , children:findValue});
-		} else {
-			let parents = [];
-			let fun = (item, val, valIndex) => {
-				let cols = item.options.advanced.cols
-				let linkageVal = val[valIndex];
-				let tempVal = null;
-				for (let i = 0; i < cols.length; i++) {
-					if (!tempVal) {
-						tempVal = cols[i].widgetList.find(
-							(list) => list.id === linkageVal
-						);
-					}
-				}
-				parents.push(item);
-				if (valIndex === val.length - 1) return {parent:parents,children:tempVal};
-				return fun(tempVal, val, ++valIndex);
-			};
-			tempArr.push(fun(findValue, vals[i], 1));
-		}
-	}
-	return tempArr;
-};
-
 </script>
 <style lang="scss" scoped>
 </style>
