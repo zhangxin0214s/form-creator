@@ -91,7 +91,8 @@ const EVENTS_PROPERTIES = {
 	'onClick':'12',
 	'onMounted':'12',
 	'onBeforeMount': '12',
-	'linkageCode':'12'
+	'linkageCode':'12',
+	'onChange':'12',
 }
 export {
 	BASCI_COMPONENTS,
