@@ -17,6 +17,7 @@ import cellPhone from './cellPhone'
 import staticText from './staticText'
 import time from './time'
 import date from './date'
+import pagination from './pagination'
 
 // 高级组件
 import repeatButton from './repeatButton'
@@ -44,7 +45,8 @@ const components = [
 	onlyButton,
 	upload,
 	richText,
-	switch1
+	switch1,
+	pagination
 ];
 
 //按需引入
@@ -68,7 +70,8 @@ export  {
 	onlyButton,
 	upload,
 	richText,
-	switch1
+	switch1,
+	pagination
  };
 
 
