@@ -33,7 +33,6 @@ const watchEvent = (props,watch,ElMessage,type) =>{
                 }else{
                     props.ruleForm[ruleFormKey] = _value
                 }
-                
             }
         },
         {

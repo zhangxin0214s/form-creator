@@ -10,8 +10,10 @@ if (_linkTarget.length === 1 && _linkTarget[0].length === 1) {
 }
 
 console.log(_linkTargetId, "===_linkTargetId===")
-_widgetStore.copyWidget(
-    fc.utils.getWidgetById(_linkTargetId, _widgetStore.widgetList),
-    _linkTargetParent
-);
+_widgetStore.copyWidget({
+    target: fc.utils.getWidgetById(_linkTargetId, _widgetStore.widgetList),
+    parentWidget: _linkTargetParent,
+    ruleFormKey: 'option2'
+});
+
 
