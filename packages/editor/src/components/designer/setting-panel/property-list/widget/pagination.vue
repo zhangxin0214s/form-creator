@@ -9,7 +9,10 @@
           name="2"
           title="高级属性"
       >
-        <!-- 联动对象设置 -->
+      <div>
+        <div style="display:inline-block;">每页数量</div>
+        <el-input :formatter="toInt" style="width:100px;margin-left:20px;" class="input" v-model="selectedWidget.options.advanced.pageSize" ></el-input>
+      </div>
 
       </el-collapse-item>
     </el-collapse>
@@ -32,6 +35,13 @@ const getPropCompName = (key) => {
 };
 const getAdvancedCompName = (key) => {
   return BASCI_COMPONENTS[ADVANCED_PROPERTIES[key]]
+}
+const toInt=(value)=>{
+  if(value){
+    return parseInt(value)
+  } else {
+    return 1
+  }
 }
 </script>
 <style lang="scss" scoped>

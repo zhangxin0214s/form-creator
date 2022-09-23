@@ -1,7 +1,15 @@
 <template>
-<div>
-  111111
-</div>
+  <div style="text-align:center;">
+    <el-pagination
+      style="display: inline-flex;"
+      background
+      layout="prev, pager, next"
+      :total="widget.options.advanced.total"
+      :page-size="widget.options.advanced.pageSize"
+      v-model:currentPage="widget.options.advanced.currentPage"
+      >
+    </el-pagination>
+  </div>
 </template>
 <script>
   export default {

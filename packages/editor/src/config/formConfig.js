@@ -1484,10 +1484,9 @@ export const basicWidgets = [
 				}
 			},
 			advanced: {
-				pageSize:20,
+				pageSize:1,
 				total:100,
-				pageCount:5,
-				currentPage:0
+				currentPage:1
 			}
 		}
 	}
