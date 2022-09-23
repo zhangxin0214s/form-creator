@@ -1,5 +1,6 @@
-import { getWidgetById } from './util'
+import { getWidgetById, getWidgetByKey } from './util'
 
 export {
-    getWidgetById
+    getWidgetById,
+    getWidgetByKey
 }
