@@ -31,7 +31,7 @@ import useRegisterEvent from '../../hooks/useRegisterEvent';
 const props = defineProps(['widget', 'isEditor', 'selectedWidget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
 
 watchEvent(props,watch,ElMessage);
-const { linkageWatchEvent } = useRegisterEvent({props, inject});
+const { linkageWatchEvent } = useRegisterEvent({props});
 linkageWatchEvent({watch});
 </script>
 <style lang="scss" scoped>
