@@ -20,6 +20,16 @@ export const formConfig = {
 		label: '标签宽度',
 		value: ""
 	},// 标签宽度
+
+	"onBeforeMount": {
+		label: "渲染前",
+		value: ""
+	},
+	"onMounted": {
+		label: "渲染完成",
+		value: ""
+	},
+
 	"ruleForm": {} // 提交数据
 }
 
