@@ -25,6 +25,9 @@ import onlyButton from './onlyButton'
 import upload from './upload'
 import richText from './richText'
 
+// hooks
+import useRegisterEvent from './hooks/useRegisterEvent'
+
 const components = [
 	card,
 	grid,
@@ -71,7 +74,9 @@ export  {
 	upload,
 	richText,
 	switch1,
-	pagination
+	pagination,
+
+	useRegisterEvent
  };
 
 

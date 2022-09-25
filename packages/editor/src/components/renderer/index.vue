@@ -36,9 +36,10 @@
     </div>
 </template>
 <script setup>
-    import { ref } from 'vue'
+    import { onMounted, onBeforeMount, ref } from 'vue';
     import widgetMask from './widgetMask.vue'
     import containerMask from './containerMask.vue'
+    import { useRegisterEvent } from '../../../../render/element-plus/packages/index.js'
     const props = defineProps(['widgetList', 'formConfig', 'isEditor']);
     const ruleFormRef = ref(null);
     const submitForm = async () =>{
@@ -52,6 +53,22 @@
             }
         })
     }
+
+    const { handleOnBeforeMount, handleOnMounted } = useRegisterEvent({props});
+
+    /**
+     * 渲染前
+     */
+    onBeforeMount(() => {
+      handleOnBeforeMount(props.formConfig.onBeforeMount.value);
+    });
+
+    /**
+     * 渲染后
+     */
+    onMounted(() => {
+      handleOnMounted(props.formConfig.onMounted.value);
+    });
 </script>
 <style lang="scss" scoped>
     .form{

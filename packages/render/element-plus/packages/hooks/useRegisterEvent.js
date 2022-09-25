@@ -10,7 +10,7 @@ const fc = {
 }
 
 const useRegisterEvent = ({props, inject}) =>{
-    const EVENTS = props.widget.options.events;
+    const EVENTS = props?.widget?.option?.events;
 
     // 将要往沙盒传递的方法或元素写入对外暴露的空间
     const _fc = {
@@ -18,7 +18,7 @@ const useRegisterEvent = ({props, inject}) =>{
         props,
         inject,
         target: props.widget,
-        linkTarget: props.widget.options.advanced.linkage
+        linkTarget: props?.widget?.options?.advanced?.linkage
     }
 
     /**
@@ -50,11 +50,11 @@ const useRegisterEvent = ({props, inject}) =>{
      * @param {*} props 
      * @returns 
      */
-     const handleOnBeforeMount = () => {
-        if (!EVENTS?.onBeforeMount) return;
+     const handleOnBeforeMount = (event) => {
+        if (!EVENTS?.onBeforeMount && !event) return;
         new Function(
             'fc',
-            EVENTS?.onBeforeMount.value
+            EVENTS?.onBeforeMount.value || event
         )(_fc)
     }
 
@@ -63,11 +63,11 @@ const useRegisterEvent = ({props, inject}) =>{
      * @param {*} props 
      * @returns 
      */
-     const handleOnMounted = () => {
-        if (!EVENTS?.onMounted) return;
+     const handleOnMounted = (event) => {
+        if (!EVENTS?.onMounted && !event) return;
         new Function(
             'fc',
-            EVENTS?.onMounted.value
+            EVENTS?.onMounted.value || event
         )(_fc)
     }
 
