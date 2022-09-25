@@ -20,7 +20,6 @@
   import { onBeforeMount,watch } from 'vue';
   import useRegisterEvent from '../../hooks/useRegisterEvent';
   import containerMask from "../../common/containerMask.vue"
-  const { handleOnBeforeMount } = useRegisterEvent();
 
   const props=defineProps([
     'widget',
@@ -31,6 +30,7 @@
     'selectedWidget',
     'isEditor'
   ])
+    const { handleOnBeforeMount } = useRegisterEvent({props});
 </script>
  <style lang="scss" scoped>
 
