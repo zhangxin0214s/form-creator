@@ -8,7 +8,7 @@
 		<el-switch
 			v-model="widget.value"
 			:disabled="widget.options.basic.disabled.value"
-			@change="handleChangeEvent(props,ElMessage)"/>
+			@change="handleChangeEvent(props,ElMessage,handleOnChange)"/>
 	</el-form-item>
 </template>
 <script>
@@ -21,7 +21,7 @@ import { watch } from 'vue'
 import { ElMessage } from 'element-plus'
 import { handleChangeEvent } from '../../hooks/handleChangeEvent'
 import { watchEvent } from '../../hooks/watchEvent'
-import { linkageWatchEvent } from '../../hooks/linkageWatchEvent';
+import useRegisterEvent from '../../hooks/useRegisterEvent';
 import { inject } from 'vue'
 const props = defineProps([
 	'widget',
@@ -34,7 +34,9 @@ const props = defineProps([
 ])
 
 watchEvent(props,watch,ElMessage)
-linkageWatchEvent(props, watch, inject('copyWidget'));
+
+const { handleOnChange, linkageWatchEvent } = useRegisterEvent({props, inject});
+linkageWatchEvent({watch});
 </script>
 <style lang="scss" scoped>
 .hint {

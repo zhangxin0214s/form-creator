@@ -51,6 +51,7 @@ export default {
           props.ruleForm[ruleFormKey] = [{}]
         }
     })
+    
     let activeName=props.widget.options.advanced.cols[0].id
     const addTabsHandler=()=>{
       let maxCount=props.widget.maxCount

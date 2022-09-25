@@ -7,7 +7,6 @@
 	>
 		<el-divider content-position="center">联动设置</el-divider>
 		<el-form-item :label="`${advancedProp[key1].label}:`">
-			{{ advancedProp[key1].value }}
 			<el-cascader
 				v-model="advancedProp[key1].value"
 				:options="advancedProp[key1].options"
