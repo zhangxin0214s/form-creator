@@ -55,7 +55,7 @@ const widgetRuleFormKey = props.widget.ruleFormKey;
 if(props.parent?.ruleFormKeyType === 'object' || !props.parent?.ruleFormKeyType){
 	childRuleForm.value = widgetRuleFormKey && props.ruleForm[widgetRuleFormKey];
 }else if(props.parent?.ruleFormKeyType === 'array'){
-	childRuleForm.value = widgetRuleFormKey && props.ruleForm?.filter(rule=>Object.keys(rule).indexOf(widgetRuleFormKey)>-1)[0][widgetRuleFormKey]
+	childRuleForm.value = widgetRuleFormKey && props.ruleForm?.filter(rule=>Object.keys(rule).indexOf(widgetRuleFormKey)>-1)[props.ruleForm.length-1][widgetRuleFormKey]
 }
 
 watch(
@@ -83,8 +83,9 @@ watch(
 							duration:1500
 					})
 				}else{
-					const isExist = props.ruleForm.some(rule =>{Object.keys(rule).indexOf(ruleFormKey)>-1})
-					if(!isExist){
+					// const isExist = props.ruleForm.some(rule =>Object.keys(rule).indexOf(ruleFormKey)>-1)
+					// debugger
+					// if(!isExist){
 						if(props.widget.category === 'container'){
 							props.ruleForm.push({
 								[ruleFormKey]: {}
@@ -95,10 +96,9 @@ watch(
 							})
 						}
 						
-					}
+					// }
 				}
-				console.log(props.ruleForm.filter(rule=>Object.keys(rule).indexOf(ruleFormKey)>-1)[0][ruleFormKey],"===",ruleFormKey)
-				childRuleForm.value = props.ruleForm.filter(rule=>Object.keys(rule).indexOf(ruleFormKey)>-1)[0][ruleFormKey]
+				childRuleForm.value = props.ruleForm.filter(rule=>Object.keys(rule).indexOf(ruleFormKey)>-1)[props.ruleForm.length-1][ruleFormKey]
 			}
 		}
 	},
