@@ -27,11 +27,12 @@ import { ElMessage } from 'element-plus'
 import { watch} from 'vue';
 import { handleChangeEvent } from '../../hooks/handleChangeEvent'
 import { watchEvent } from '../../hooks/watchEvent'
-import { linkageWatchEvent } from '../../hooks/linkageWatchEvent';
+import useRegisterEvent from '../../hooks/useRegisterEvent';
 const props = defineProps(['widget', 'isEditor', 'selectedWidget', 'widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
 
 watchEvent(props,watch,ElMessage);
-linkageWatchEvent(props,watch,ElMessage);
+const { linkageWatchEvent } = useRegisterEvent({props});
+linkageWatchEvent({watch});
 </script>
 <style lang="scss" scoped>
 	.hint {

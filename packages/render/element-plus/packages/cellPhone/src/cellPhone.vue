@@ -49,7 +49,7 @@ import { watch } from 'vue';
 import { ElMessage } from 'element-plus'
 import { handleChangeEvent } from '../../hooks/handleChangeEvent';
 import { watchEvent } from '../../hooks/watchEvent';
-import {linkageWatchEvent} from '../../hooks/linkageWatchEvent'
+import useRegisterEvent from '../../hooks/useRegisterEvent';
 import { inject } from 'vue'
 const props = defineProps([
 	'widget',
@@ -63,7 +63,9 @@ const props = defineProps([
 ]);
 
 watchEvent(props, watch,ElMessage,"cellPhone");
-linkageWatchEvent(props,watch,inject('copyWidget'))
+
+const { linkageWatchEvent } = useRegisterEvent({props, inject});
+linkageWatchEvent({watch});
 </script>
 <style lang="scss" scoped>
 .phone-content {

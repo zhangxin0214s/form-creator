@@ -7,7 +7,7 @@
       :total="widget.options.advanced.total"
       :page-size="widget.options.advanced.pageSize"
       v-model:currentPage="widget.options.advanced.currentPage"
-      @current-change="handleOnChange(props,inject,widgetStore)"
+      @current-change="handleOnChange()"
       >
     </el-pagination>
   </div>
@@ -22,8 +22,7 @@
   import { widgetStore } from '@/store/index';
   import useRegisterEvent from '../../hooks/useRegisterEvent';
   import containerMask from "../../common/containerMask.vue"
-  const { handleOnBeforeMount,handleOnChange } = useRegisterEvent();
-
+  const { handleOnBeforeMount,handleOnChange } = useRegisterEvent({props});
   const props=defineProps([
     'widget',
     'ruleForm',

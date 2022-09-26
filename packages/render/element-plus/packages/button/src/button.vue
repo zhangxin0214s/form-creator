@@ -13,7 +13,7 @@
 			:circle="widget.options.advanced.btnCircle.value"
 			:plain="widget.options.basic.plain.value"
 			:auto-insert-space="widget.options.basic.space.value"
-			@click="handleOnClick(props,inject,widgetStore)"
+			@click="handleOnClick"
 		>{{ widget.options.basic.text.value }}
 		</el-button>
 	</el-form-item>
@@ -30,20 +30,21 @@ import useRegisterEvent from '../../hooks/useRegisterEvent';
 import { widgetStore } from '@/store/index';
 const copy = inject('copyWidget');
 let props = defineProps(['widget', 'parentWidget', 'ruleFormRef', 'isEditor', 'selectedWidget']);
-const { handleOnClick, handleOnBeforeMount, handleOnMounted } = useRegisterEvent();
+
+const { handleOnClick, handleOnBeforeMount, handleOnMounted } = useRegisterEvent({props, inject});
 
 /**
  * 渲染前
  */
 onBeforeMount(() => {
-	handleOnBeforeMount(props);
+	handleOnBeforeMount();
 });
 
 /**
  * 渲染后
  */
 onMounted(() => {
-	handleOnMounted(props);
+	handleOnMounted();
 });
 </script>
   

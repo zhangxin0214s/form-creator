@@ -39,6 +39,7 @@ import { watch } from 'vue';
 import { ElMessage } from 'element-plus'
 import Col from './grid-col.vue';
 import { ref } from 'vue'
+
 const props = defineProps([
 	'widget',
 	'selectedWidget', 
@@ -106,23 +107,6 @@ watch(
 		immediate: true
 	}
 )
-
-
-const emit = defineEmits(['selected1','copyWidget1','removeWidget1','onEnd1']);
-const selected1 = (element) =>{
-	emit('selected1',element)
-}
-const copyWidget1 = (element) =>{
-    emit('copyWidget1',element)
-}
-
-const removeWidget1 = (widget, parentWidget) =>{
-	emit('removeWidget1',widget, parentWidget)
-}
-
-const onEnd1 = () =>{
-	emit('onEnd1')
-}
 
 </script>
  <style lang="scss" scoped>

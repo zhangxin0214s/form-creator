@@ -1,31 +1,31 @@
-
 import { ElMessage } from 'element-plus'
 import * as utils from '../../utils/index.js'
+import { widgetStore } from '@/store/index';
 
 // 对外暴露的空间
 const fc = {
     ElMessage,
-    utils
+    utils,
+    widgetStore
 }
 
-const useRegisterEvent = () => {
+const useRegisterEvent = ({props, inject}) =>{
+    const EVENTS = props?.widget?.options?.events;
+
+    // 将要往沙盒传递的方法或元素写入对外暴露的空间
+    const _fc = {
+        ...fc,
+        props,
+        inject,
+        target: props.widget,
+        linkTarget: props?.widget?.options?.advanced?.linkage
+    }
 
     /**
      * 点击事件
-     * @param {*} widget 
      * @returns 
      */
-    const handleOnClick = (props, inject, widgetStore) => {
-        const EVENTS = props.widget.options.events;
-        // 将要往沙盒传递的方法或元素写入对外暴露的空间
-        const _fc = {
-            ...fc,
-            target: props.widget,
-            props,
-            widgetStore,
-            inject,
-            linkTarget: props.widget.options.advanced.linkage
-        }
+    const handleOnClick = () => {
         if (!EVENTS?.onClick) return;
         new Function(
             'fc',
@@ -35,17 +35,15 @@ const useRegisterEvent = () => {
 
     /**
      * change事件
-     * @param {*} widget 
      * @returns 
      */
-     const handleOnChange = (props, inject, widgetStore) => {
-        const EVENTS = props.widget.options.events;
-        // 将要往沙盒传递的方法或元素写入对外暴露的空间
+     const handleOnChange = () => {
         if (!EVENTS?.onChange) return;
+        
         new Function(
-            'props',
+            'fc',
             EVENTS?.onChange.value
-        )(props)
+        )(_fc)
     }
 
     /**
@@ -53,11 +51,12 @@ const useRegisterEvent = () => {
      * @param {*} props 
      * @returns 
      */
-    const handleOnBeforeMount = (props) => {
-        const EVENTS = props.widget.options.events;
-        if (!EVENTS?.onBeforeMount) return;
-        new Function('props',EVENTS?.onBeforeMount.value)
-        (props)
+     const handleOnBeforeMount = (event) => {
+        if (!EVENTS?.onBeforeMount && !event) return;
+        new Function(
+            'fc',
+            EVENTS?.onBeforeMount.value || event
+        )(_fc)
     }
 
     /**
@@ -65,19 +64,40 @@ const useRegisterEvent = () => {
      * @param {*} props 
      * @returns 
      */
-    const handleOnMounted = (props) => {
-        const EVENTS = props.widget.options.events;
-        if (!EVENTS?.onMounted) return;
-        new Function('props',EVENTS?.onMounted.value)
-        (props)
+     const handleOnMounted = (event) => {
+        if (!EVENTS?.onMounted && !event) return;
+        new Function(
+            'fc',
+            EVENTS?.onMounted.value || event
+        )(_fc)
     }
 
+    /**
+     * 监听联动事件
+     */
+    const linkageWatchEvent = ({watch}) => {
+        watch(
+            () => props.widget.value,
+            (value) => {
+                const EVENTS = props.widget.options.advanced.linkageCode.value;
+                new Function(
+                  'fc'
+                  ,EVENTS
+                )(_fc)
+            },
+            {
+              deep: true,
+              immediate: true
+            }
+        )
+    }
     return {
         handleOnClick,
+        handleOnChange,
         handleOnBeforeMount,
         handleOnMounted,
-        handleOnChange
-    }
+        linkageWatchEvent
+    } 
 }
 
 export default useRegisterEvent

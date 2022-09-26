@@ -1,3 +1,6 @@
+// import { widgetStore } from '@/store/index';
+
+// const _widgetStore = widgetStore();
 /**
  * 根据id查找相应元素
  * @param {*} id 

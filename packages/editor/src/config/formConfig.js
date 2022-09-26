@@ -20,6 +20,16 @@ export const formConfig = {
 		label: '标签宽度',
 		value: ""
 	},// 标签宽度
+
+	"onBeforeMount": {
+		label: "渲染前",
+		value: ""
+	},
+	"onMounted": {
+		label: "渲染完成",
+		value: ""
+	},
+
 	"ruleForm": {} // 提交数据
 }
 
@@ -91,16 +101,7 @@ export const containers = [
 						gutter: 12,
 						widgetList: []
 					}
-				],
-				linkage: {
-					label: '联动对象',
-					options: [],
-					value: []
-				},
-				linkageCode: {
-					label: '联动代码',
-					value: "//#region\n/*\nwidget:当前元素;\nlinkageObj:联动对象\ncopyWidget:复制方法\n*/ \n//#endregion "
-				}
+				]
 			}
 		}
 	},
@@ -361,6 +362,20 @@ export const basicWidgets = [
 				linkageCode: {
 					label: '联动代码',
 					value: "//#region\n/*\nwidget:当前元素;\nlinkageObj:联动对象\ncopyWidget:复制方法\n*/ \n//#endregion "
+				}
+			},
+			events: {
+				onBeforeMount: {
+					label: "渲染前",
+					value: ""
+				},
+				onMounted: {
+					label: "渲染完成",
+					value: ""
+				},
+				onChange: {
+					label: "change事件",
+					value: ""
 				}
 			}
 		}
@@ -634,7 +649,7 @@ export const basicWidgets = [
 				},
 				onClick: {
 					label: "点击事件",
-					value: "if (!props.ruleFormRef) return\nprops.ruleFormRef.validate((valid, fields) => {\n  console.log(valid, \"===valid===\")\n  if (valid) {\n    console.log('submit!')\n    ElMessage({\n      message: '提交成功',\n      type: 'success',\n      duration: 1000\n    })\n  } else {\n    console.log('error submit!', fields)\n    ElMessage({\n      message: '有必填项未填写，或填写错误，请检查',\n      type: 'error',\n      duration: 1000\n    })\n  }\n})"
+					value: "if (!fc.props.ruleFormRef) return\nfc.props.ruleFormRef.validate((valid, fields) => {\n  console.log(valid, \"===valid===\")\n  if (valid) {\n    console.log('submit!')\n    fc.ElMessage({\n      message: '提交成功',\n      type: 'success',\n      duration: 1000\n    })\n  } else {\n    console.log('error submit!', fields)\n    fc.ElMessage({\n      message: '有必填项未填写，或填写错误，请检查',\n      type: 'error',\n      duration: 1000\n    })\n  }\n})"
 				}
 			}
 		}
@@ -1195,15 +1210,7 @@ export const basicWidgets = [
 				},
 			},
 			advanced: {
-				linkage: {
-					label: '联动对象',
-					options: [],
-					value: []
-				},
-				linkageCode: {
-					label: '联动代码',
-					value: "//#region\n/*\nwidget:当前元素;\nlinkageObj:联动对象\ncopyWidget:复制方法\n*/ \n//#endregion "
-				}
+				
 			}
 		}
 	},
@@ -1485,13 +1492,13 @@ export const basicWidgets = [
 			},
 			advanced: {
 				pageSize:1,
-				total:1,
+				total:10,
 				currentPage:1
 			},
 			events: {
 				onChange: {
 					label: "翻页事件",
-					value: "console.log('当前页数:', props.widget.options.advanced.currentPage)"
+					value: "console.log('当前页数:', fc.props.widget.options.advanced.currentPage)"
 				}
 			}
 		}
