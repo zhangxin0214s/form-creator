@@ -17,7 +17,6 @@ const useRegisterEvent = () => {
      */
     const handleOnClick = (props, inject, widgetStore) => {
         const EVENTS = props.widget.options.events;
-
         // 将要往沙盒传递的方法或元素写入对外暴露的空间
         const _fc = {
             ...fc,
@@ -32,6 +31,21 @@ const useRegisterEvent = () => {
             'fc',
             EVENTS?.onClick.value
         )(_fc)
+    }
+
+    /**
+     * change事件
+     * @param {*} widget 
+     * @returns 
+     */
+     const handleOnChange = (props, inject, widgetStore) => {
+        const EVENTS = props.widget.options.events;
+        // 将要往沙盒传递的方法或元素写入对外暴露的空间
+        if (!EVENTS?.onChange) return;
+        new Function(
+            'props',
+            EVENTS?.onChange.value
+        )(props)
     }
 
     /**
@@ -61,7 +75,8 @@ const useRegisterEvent = () => {
     return {
         handleOnClick,
         handleOnBeforeMount,
-        handleOnMounted
+        handleOnMounted,
+        handleOnChange
     }
 }
 

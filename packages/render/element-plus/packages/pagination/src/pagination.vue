@@ -7,6 +7,7 @@
       :total="widget.options.advanced.total"
       :page-size="widget.options.advanced.pageSize"
       v-model:currentPage="widget.options.advanced.currentPage"
+      @current-change="handleOnChange(props,inject,widgetStore)"
       >
     </el-pagination>
   </div>
@@ -17,10 +18,11 @@
   }
 </script>
 <script setup>
-  import { onBeforeMount,watch } from 'vue';
+  import { onBeforeMount,watch,inject } from 'vue';
+  import { widgetStore } from '@/store/index';
   import useRegisterEvent from '../../hooks/useRegisterEvent';
   import containerMask from "../../common/containerMask.vue"
-  const { handleOnBeforeMount } = useRegisterEvent();
+  const { handleOnBeforeMount,handleOnChange } = useRegisterEvent();
 
   const props=defineProps([
     'widget',
