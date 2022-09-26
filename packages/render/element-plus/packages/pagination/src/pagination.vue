@@ -1,7 +1,10 @@
 <template>
-  <div style="text-align:center;">
+  <el-form-item
+		:class="[selectedWidget?.id === widget?.id && isEditor?'select layout':'layout']"
+    style="text-align:center;"
+	>
     <el-pagination
-      style="display: inline-flex;"
+      style="display:inline-flex"
       background
       layout="prev, pager, next"
       :total="widget.options.advanced.total"
@@ -10,7 +13,7 @@
       @current-change="handleOnChange()"
       >
     </el-pagination>
-  </div>
+  </el-form-item>
 </template>
 <script>
   export default {
@@ -34,5 +37,17 @@
   ])
 </script>
  <style lang="scss" scoped>
-
+// 选中样式
+.select {
+	outline: 1px solid $--color-primary;
+}
  </style>
+ <style lang="scss">
+  .layout{
+    .el-form-item__content{
+      display: block;
+    }
+  }
+ </style>
+
+ 

@@ -1492,7 +1492,7 @@ export const basicWidgets = [
 			},
 			advanced: {
 				pageSize:1,
-				total:10,
+				total:1,
 				currentPage:1
 			},
 			events: {
