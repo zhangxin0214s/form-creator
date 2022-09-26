@@ -150,6 +150,10 @@ export const containers = [
 		icon: "table ",
 		options: {
 			basic: {
+				name: {
+					label: "唯一名称",
+					value: "表格"
+				}, 
 				isHidden: {
 					label: "隐藏组件",
 					value: false
@@ -1485,6 +1489,10 @@ export const basicWidgets = [
 		rules: [],
 		options: {
 			basic: {
+				name: {
+					label: "唯一名称",
+					value: "分页器"
+				},
 				isHidden:{
 					label: "隐藏组件",
 					value: false
