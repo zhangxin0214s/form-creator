@@ -24,12 +24,12 @@ const watchEvent = (props,watch,ElMessage,type) =>{
                 if(props.parent?.ruleFormKeyType === 'object'){
                     props.ruleForm[ruleFormKey] = _value
                 }else if(props.parent?.ruleFormKeyType === 'array'){
-                    const isExist = props.ruleForm.some(rule =>Object.keys(rule).indexOf(ruleFormKey)>-1);
-                    if(!isExist){
+                    // const isExist = props.ruleForm.some(rule =>Object.keys(rule).indexOf(ruleFormKey)>-1);
+                    // if(!isExist){
                         props.ruleForm.push({
                             [ruleFormKey]: _value
                         })
-                    }
+                    // }
                 }else{
                     props.ruleForm[ruleFormKey] = _value
                 }

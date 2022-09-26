@@ -65,10 +65,15 @@ export default {
 					  })
             return
           }
+          const _cols = props.widget.options.advanced.cols;
+          const _widgetList = []
+          _cols[_cols.length-1].widgetList.forEach(widget=>{
+              _widgetList.push(widget)
+          })
           props.widget.options.advanced.cols.push({
             id:guid(),
             name:`${props.widget.options.advanced.cols[0].name}`,
-            widgetList:[]
+            widgetList: _widgetList
           })
           ruleFormKey && props.ruleForm[ruleFormKey].push({})
       }
