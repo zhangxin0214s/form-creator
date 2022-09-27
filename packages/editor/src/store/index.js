@@ -46,12 +46,6 @@ export const widgetStore = defineStore('widget', {
                 })
             }
             parentWidget.push(newOrigin);
-
-            // 处理参数key
-            if(ruleFormKey){
-                newOrigin.ruleFormKey = ruleFormKey;
-                newOrigin.options.basic.ruleFormKey.value = ruleFormKey;
-            }
         },
         /**
          * 删除组件
