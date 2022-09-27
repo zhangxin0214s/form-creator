@@ -59,9 +59,9 @@ if(props.parent?.ruleFormKeyType === 'object' || !props.parent?.ruleFormKeyType)
 }
 
 watch(
-	() => props.propKey,
+	() => props.widget.ruleFormKey,
 	(value) => {
-		const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+		const ruleFormKey = props.widget.ruleFormKey;
 		const parentRuleFormKeyType = props.parent?.ruleFormKeyType;
 		const ruleFormKeyType = props.widget.ruleFormKeyType;
 
