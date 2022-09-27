@@ -31,20 +31,19 @@ export function getWidgetById(id,widgetList){
  * @param {*} widgetList 
  * @returns 
  */
-export function getWidgetByKey(key,widgetList){
-  let target = null;
+export function getWidgetByKey(key,widgetList,targets=[]){
     widgetList.forEach(widget =>{
       if(widget.ruleFormKey === key){
-        target = widget
+        targets.push(widget)
       }else {
         if(['fcGrid','fcTabs','fcCard'].indexOf(widget.type) > -1) {
           const cols = widget.options.advanced.cols
           cols.forEach(col =>{
-            getWidgetById(key,col.widgetList)
+            getWidgetById(key,col.widgetList,targets)
           })
         }
       }
     })
-  console.log(target,"===查找到的元素===")
-  return target
+  console.log(targets,"===查找到的元素===")
+  return targets
 }
