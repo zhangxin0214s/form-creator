@@ -28,7 +28,7 @@ export default {
 	const props = defineProps(['widget','isEditor', 'selectedWidget', 'parentWidget']);
 
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 	.hint {
 		font-size: 12px;
 		color: #9b9b9b;

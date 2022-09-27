@@ -47,5 +47,4 @@ watchEvent(props,watch,ElMessage);
 .select {
 	outline: 1px solid $--color-primary;
 }
-
 </style>
