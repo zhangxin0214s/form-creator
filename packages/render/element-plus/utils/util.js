@@ -16,8 +16,9 @@ export function getWidgetById(id,widgetList){
         if(['fcGrid','fcTabs','fcCard'].indexOf(widget.type) > -1) {
           const cols = widget.options.advanced.cols
           cols.forEach(col =>{
-            getWidgetById(id,col.widgetList)
+            if(!target) getWidgetById(id,col.widgetList)
           })
+            
         }
       }
     })

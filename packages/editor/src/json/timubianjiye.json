@@ -1676,7 +1676,7 @@
                                                                                             },
                                                                                             "onClick": {
                                                                                                 "label": "点击事件",
-                                                                                                "value": "if (!fc.props.ruleFormRef) return\nfc.props.ruleFormRef.validate((valid, fields) => {\n  console.log(valid, \"===valid===\")\n  if (valid) {\n    console.log('submit!')\n    fc.ElMessage({\n      message: '提交成功',\n      type: 'success',\n      duration: 1000\n    })\n  } else {\n    console.log('error submit!', fields)\n    fc.ElMessage({\n      message: '有必填项未填写，或填写错误，请检查',\n      type: 'error',\n      duration: 1000\n    })\n  }\n})"
+                                                                                                "value": "const _widgetStore = fc.widgetStore();\n\nconst targetId = fc.linkTarget.value[0][fc.linkTarget.value[0].length - 1];\n\nconst widget = fc.utils.getWidgetById(targetId, _widgetStore.widgetList);\n\nconsole.log(widget,\"123\")"
                                                                                             }
                                                                                         }
                                                                                     }
