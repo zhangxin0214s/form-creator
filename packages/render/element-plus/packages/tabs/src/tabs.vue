@@ -70,6 +70,7 @@ export default {
           _cols[_cols.length-1].widgetList.forEach(widget=>{
               _widgetList.push(widget)
           })
+          console.log(_widgetList,"===_widgetList===")
           props.widget.options.advanced.cols.push({
             id:guid(),
             name:`${props.widget.options.advanced.cols[0].name}`,

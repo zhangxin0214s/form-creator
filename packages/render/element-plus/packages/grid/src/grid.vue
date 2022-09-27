@@ -50,14 +50,8 @@ const props = defineProps([
 	'ruleFormRef'
 ]);
 
-const childRuleForm = ref(null)
-const widgetRuleFormKey = props.widget.ruleFormKey;
-if(props.parent?.ruleFormKeyType === 'object' || !props.parent?.ruleFormKeyType){
-	childRuleForm.value = widgetRuleFormKey && props.ruleForm[widgetRuleFormKey];
-}else if(props.parent?.ruleFormKeyType === 'array'){
-	childRuleForm.value = widgetRuleFormKey && props.ruleForm[props.ruleForm.length-1][widgetRuleFormKey]
-}
 
+const childRuleForm = ref(null)
 watch(
 	() => props.propKey,
 	(value) => {
@@ -84,24 +78,18 @@ watch(
 							duration:1500
 					})
 				}else{
-					// const isExist = props.ruleForm.some(rule =>Object.keys(rule).indexOf(ruleFormKey)>-1)
-					// debugger
-					// if(!isExist){
-						const parentWidgetListLen = props.parent.options.advanced.cols[0].widgetList.length;
-						if (props.ruleForm.length < parentWidgetListLen){
-							if(props.widget.category === 'container'){
-								props.ruleForm.push({
-									[ruleFormKey]: {}
-								})
-							}else {
-								props.ruleForm.push({
-									[ruleFormKey]: props.widget.value
-								})
-							}
+					const parentWidgetListLen = props.parent.options.advanced.cols[0].widgetList.length;
+					if (props.ruleForm.length < parentWidgetListLen){
+						if(props.widget.category === 'container'){
+							props.ruleForm.push({
+								[ruleFormKey]: {}
+							})
+						}else {
+							props.ruleForm.push({
+								[ruleFormKey]: props.widget.value
+							})
 						}
-						
-						
-					// }
+					}
 				}
 				childRuleForm.value = props.ruleForm.filter(rule=>Object.keys(rule).indexOf(ruleFormKey)>-1)[props.ruleForm.length-1][ruleFormKey]
 			}
@@ -113,6 +101,12 @@ watch(
 	}
 )
 
+const widgetRuleFormKey = props.widget.ruleFormKey;
+if(props.parent?.ruleFormKeyType === 'object' || !props.parent?.ruleFormKeyType){
+	childRuleForm.value = widgetRuleFormKey && props.ruleForm[widgetRuleFormKey];
+}else if(props.parent?.ruleFormKeyType === 'array'){
+	childRuleForm.value = widgetRuleFormKey && props.ruleForm.filter(rule=>Object.keys(rule).indexOf(widgetRuleFormKey)>-1)[props.ruleForm.length-1][widgetRuleFormKey]
+}
 </script>
  <style lang="scss" scoped>
 .grid-container {
