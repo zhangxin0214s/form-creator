@@ -1,6 +1,6 @@
 <template>
   <el-tabs type="border-card" v-model="activeName" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
-    <el-tab-pane :label="colWidget.name" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
+    <el-tab-pane :label="`${colWidget.name}${colIdx+1}`" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
       <tabs-content 
         :colWidget="colWidget"
         :rule-form="ruleForm[widget.ruleFormKey] || [{}]"
@@ -46,10 +46,12 @@ export default {
       (value) => {
         console.log("监听到数据变化")
         const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+        const widgetCategory = props.widget.category;
         if(ruleFormKey && !props.ruleForm[ruleFormKey]){
           props.ruleForm[ruleFormKey] = [{}]
         }
     })
+    
     let activeName=props.widget.options.advanced.cols[0].id
     const addTabsHandler=()=>{
       let maxCount=props.widget.maxCount
@@ -63,10 +65,16 @@ export default {
 					  })
             return
           }
+          const _cols = props.widget.options.advanced.cols;
+          const _widgetList = []
+          _cols[_cols.length-1].widgetList.forEach(widget=>{
+              _widgetList.push(widget)
+          })
+          console.log(_widgetList,"===_widgetList===")
           props.widget.options.advanced.cols.push({
             id:guid(),
-            name:"名称",
-            widgetList:[]
+            name:`${props.widget.options.advanced.cols[0].name}`,
+            widgetList: _widgetList
           })
           ruleFormKey && props.ruleForm[ruleFormKey].push({})
       }

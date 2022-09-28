@@ -2,7 +2,8 @@
  * 处理数据
  * @returns 
  */
-const handleChangeEvent = (props,ElMessage) =>{
+const handleChangeEvent = (props,ElMessage,cb) =>{
+	cb && cb();
     const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
 	if(!ruleFormKey){
 		ElMessage({

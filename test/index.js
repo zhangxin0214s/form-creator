@@ -1,12 +1,5 @@
+const _widgetStore = fc.widgetStore();
 
-const submitForm = async (formEl) => {
-    if(!formEl) return
-    await formEl.validate(((valid, fields) => {
-        if (valid) {
-            console.log('submit!')
-        } else {
-            console.log('error submit!', fields)
-        }
-    }))
-}
-submitForm(ref('ruleFormRef'))
+const targetId = fc.linkTarget.value[0][fc.linkTarget.value[0].length-1];
+
+fc.utils.getWidgetById(targetId,_widgetStore.widgetList);

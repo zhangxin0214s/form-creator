@@ -8,6 +8,11 @@ import textarea from "./textarea"
 import divider from "./divider"
 import cellPhone from "./cellPhone"
 import staticText from "./staticText"
+import checkbox from './checkbox'
+import button from './button'
+import radio from './radio'
+import time from './time'
+import date from './date'
 const components = [
     input,
     switch1,
@@ -18,7 +23,12 @@ const components = [
     textarea,
     divider,
     cellPhone,
-    staticText
+    staticText,
+    checkbox,
+    button,
+    radio,
+    time,
+    date
 ]
 
 const install = Vue => {
@@ -43,5 +53,10 @@ export default {
     textarea,
     divider,
     cellPhone,
-    staticText
+    staticText,
+    checkbox,
+    button,
+    radio,
+    time,
+    date
 }

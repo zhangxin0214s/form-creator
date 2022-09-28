@@ -16,27 +16,46 @@
                 </div>
                 <el-button type="primary" @click="add" style="margin-top:10px;">添加列</el-button>
             </el-collapse-item>
+
+            <!--事件属性-->
+			<el-collapse-item
+				name="2"
+				title="事件属性"
+			>
+				<el-divider content-position="center">事件设置</el-divider>
+				<div
+					v-for="(item,key,index) in eventsProp"
+					:key="index"
+				>
+					<component
+						:is="componentMap[getPropCompName(EVENTS_PROPERTIES,key)]"
+						:events-prop="eventsProp"
+						:value="item"
+						:key1="key"
+					></component>
+				</div>
+			</el-collapse-item>
         </el-collapse>
     </div>
 </template>
 <script setup>
 import { ref } from "vue"
-import { BASCI_COMPONENTS, BASIC_PROPERTIES} from '../propertyRegister'
+import { BASCI_COMPONENTS, BASIC_PROPERTIES,EVENTS_PROPERTIES,} from '../propertyRegister'
 import * as basicComponents from '../components/index';
 import { Delete } from '@element-plus/icons-vue'
 const props=defineProps([
     'selectedWidget',
     'basicProp',
-    'advancedProp'
+    'advancedProp',
+    'eventsProp',
 ])
-
 const componentMap = {
   ...basicComponents
 }
-const activeNames = ref(['1'])
-const getPropCompName = (key) =>{
-    return BASCI_COMPONENTS[BASIC_PROPERTIES[key]]
-}
+const activeNames = ref(['1','2'])
+const getPropCompName = (properties, key) => {
+	return BASCI_COMPONENTS[properties[key]];
+};
 const add = () => {
     props.selectedWidget.options.advanced.tableTitles.push({label:"", prop:""})
 };

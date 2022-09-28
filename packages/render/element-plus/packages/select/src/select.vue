@@ -5,6 +5,12 @@
 		:rules="widget.rules"
 		:prop="propKey"
 		:key="propKey"
+		:style="`
+			margin-left:${widget.options.basic.marginAdjustment?.options[0].value}px;
+			margin-top:${widget.options.basic.marginAdjustment?.options[1].value}px;
+			margin-right:${widget.options.basic.marginAdjustment?.options[2].value}px;
+			margin-bottom:${widget.options.basic.marginAdjustment?.options[3].value}px
+		`"
 	>
 		<el-cascader
 			v-model="widget.value"
@@ -25,13 +31,14 @@ import { ElMessage } from 'element-plus';
 import { watch } from 'vue';
 import { handleChangeEvent } from '../../hooks/handleChangeEvent';
 import { watchEvent } from '../../hooks/watchEvent';
-import { linkageWatchEvent } from '../../hooks/linkageWatchEvent';
+import useRegisterEvent from '../../hooks/useRegisterEvent';
 import { inject } from 'vue'
 const props = defineProps(['widget', 'isEditor', 'selectedWidget', 'widgetType', 'ruleForm', 'propKey', 'parent', 'parentWidget']);
 const { basic, advanced } = props.widget.options;
 watchEvent(props, watch, ElMessage);
 
-linkageWatchEvent(props, watch, inject('copyWidget'));
+const { linkageWatchEvent } = useRegisterEvent({props, inject});
+linkageWatchEvent({watch});
 </script>
   
   <style lang="scss" scoped>

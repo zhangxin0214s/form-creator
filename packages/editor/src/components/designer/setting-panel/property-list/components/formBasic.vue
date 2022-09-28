@@ -19,6 +19,7 @@
 			<component
 				:is="componentMap[getPropCompName(key1)]"
 				:basic-prop="formConfig"
+				:events-prop="formConfig"
 				:value="key1"
 				:key1="key1"
 			></component>
@@ -32,7 +33,7 @@ import { widgetStore } from '@/store/index';
 import {
 	BASCI_COMPONENTS,
 	BASIC_PROPERTIES,
-	ADVANCED_PROPERTIES,
+	EVENTS_PROPERTIES
 } from '../propertyRegister';
 import * as basicComponents from './index.js';
 
@@ -42,7 +43,7 @@ const componentMap = {
 const _widgetStore = widgetStore();
 const { formConfig } = storeToRefs(_widgetStore);
 const getPropCompName = (key) => {
-	return BASCI_COMPONENTS[BASIC_PROPERTIES[key]];
+	return BASCI_COMPONENTS[BASIC_PROPERTIES[key]] || BASCI_COMPONENTS[EVENTS_PROPERTIES[key]];
 };
 const drawer = ref(false);
 </script>

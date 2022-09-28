@@ -101,7 +101,7 @@ provide('onEnd', onEnd)
  * 复制组件
  */
 const copyWidget = ({widget,parentWidget}) => {
-  _widgetStore.copyWidget(widget,parentWidget);
+  _widgetStore.copyWidget({target: widget,parentWidget});
 }
 provide('copyWidget', copyWidget)
 
@@ -109,13 +109,14 @@ provide('copyWidget', copyWidget)
  * 删除组件
  */
 const removeWidget = ({widget, parentWidget, parent, ruleForm}) => {
-  _widgetStore.removeWidget(widget, parentWidget);
+  _widgetStore.removeWidget({target: widget, parentWidget});
   if(parent?.ruleFormKeyType === 'array'){
-		ruleForm.forEach((rule,index) =>{
-			if(Object.keys(rule).indexOf(widget.ruleFormKey)>-1){
-				ruleForm.splice(index,1)
+    for(let i=0;i<ruleForm.length;i++) {
+      if(Object.keys(ruleForm[i]).indexOf(widget.ruleFormKey)>-1){
+				ruleForm.splice(i,1)
+        break 
 			}
-		})
+    }
 	}else{
 		widget.ruleFormKey && ruleForm && delete ruleForm[widget.ruleFormKey]
 	}

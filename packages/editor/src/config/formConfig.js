@@ -20,6 +20,20 @@ export const formConfig = {
 		label: '标签宽度',
 		value: ""
 	},// 标签宽度
+
+	"onBeforeMount": {
+		label: "渲染前",
+		value: ""
+	},
+	"onMounted": {
+		label: "渲染完成",
+		value: ""
+	},
+
+	"requestHeader":{
+		'x-jyy-token': 'MTN85aea5Zu95binfDA5Njg5OXwxNjY0MzM0MTA4fEp5eVNhYXNZYWNoU3Nv'
+	},
+
 	"ruleForm": {} // 提交数据
 }
 
@@ -77,7 +91,8 @@ export const containers = [
 				"moveDistance": {
 					label: "移动距离",
 					value: 0,
-				}
+				},
+				
 			},
 			advanced: {
 				cols: [
@@ -91,17 +106,7 @@ export const containers = [
 						gutter: 12,
 						widgetList: []
 					}
-				],
-				linkage: {
-					label: '联动对象',
-					options: [],
-					value: [],
-					targets:[]
-				},
-				linkageCode: {
-					label: '联动代码',
-					value: "//#region\n/*\nwidget:当前元素;\nlinkageObj:联动对象\ncopyWidget:复制方法\n*/ \n//#endregion "
-				}
+				]
 			}
 		}
 	},
@@ -150,34 +155,24 @@ export const containers = [
 		icon: "table ",
 		options: {
 			basic: {
+				name: {
+					label: "唯一名称",
+					value: "表格"
+				},
 				isHidden: {
 					label: "隐藏组件",
 					value: false
 				},
 			},
 			advanced: {
-				tableTitles:[
-					{label:"日期", prop:"date"},
-					{label:"姓名", prop:"name"},
-					{label:"地址", prop:"address"}
-				],
-				tableValues:[{
-					date: '2016-05-02',
-					name: '王小虎',
-					address: '上海市普陀区金沙江路 1518 弄'
-				  }, {
-					date: '2016-05-04',
-					name: '王小虎',
-					address: '上海市普陀区金沙江路 1517 弄'
-				  }, {
-					date: '2016-05-01',
-					name: '王小虎',
-					address: '上海市普陀区金沙江路 1519 弄'
-				  }, {
-					date: '2016-05-03',
-					name: '王小虎',
-					address: '上海市普陀区金沙江路 1516 弄'
-				  }]
+				tableTitles: [],
+				tableValues: []
+			},
+			events: {
+				onBeforeMount: {
+					label: "渲染前",
+					value: "//表头 { label: \"日期\", prop: \"date\" }\r\n//props.widget.options.advanced.tableTitles = []\r\n\r\n//表格数据{date: '2016-05-02', name: '王小虎', address: '上海市普陀区金沙江路}\r\n//props.widget.options.advanced.tableValues = []\r\n\r\n/*fc.utils.request({\r\n    url: 'https://app-fzpub.jiaoyanyun.com/admin-fzpub/v1/user/list',\r\n    method: 'get',\r\n    headers: { 'x-jyy-token': 'MTN85aea5Zu95binfDA5Njg5OXwxNjY0MzM0MTA4fEp5eVNhYXNZYWNoU3Nv' }\r\n}).then(response => {\r\n    console.log(response.data.data.list)\r\n})*/"
+				}
 			}
 		},
 	},
@@ -206,7 +201,10 @@ export const containers = [
 				},
 			},
 			advanced: {
-				widgetList: []
+				cols: [{
+					id: 1,
+					widgetList: []
+				}]
 			}
 		},
 	},
@@ -276,6 +274,32 @@ export const basicWidgets = [
 					label: "是否禁用",
 					value: false
 				},// 禁用
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				}
 			},
 			advanced: {
 				validation: {
@@ -318,7 +342,7 @@ export const basicWidgets = [
 					label: '联动对象',
 					options: [],
 					value: [],
-					targets:[],
+					targets: [],
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -363,17 +387,56 @@ export const basicWidgets = [
 					label: '是否禁用',
 					value: false
 				},// 禁用
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				}
 			},
 			advanced: {
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
 					value: "//#region\n/*\nwidget:当前元素;\nlinkageObj:联动对象\ncopyWidget:复制方法\n*/ \n//#endregion "
+				}
+			},
+			events: {
+				onBeforeMount: {
+					label: "渲染前",
+					value: ""
+				},
+				onMounted: {
+					label: "渲染完成",
+					value: ""
+				},
+				onChange: {
+					label: "change事件",
+					value: ""
 				}
 			}
 		}
@@ -436,15 +499,6 @@ export const basicWidgets = [
 					label: "左右移动",
 					value: 0
 				},
-
-				// hintHidden: {
-				// 	label: '提示语隐藏',
-				// 	value: false
-				// },// 提示语是否隐藏
-				// labelHidden: {
-				// 	label: '标签是否隐藏',
-				// 	value: false
-				// }, // 标签是否隐藏
 				attribute: {
 					label: '操作属性',
 					options: [
@@ -461,10 +515,36 @@ export const basicWidgets = [
 							value: false
 						}
 					]
-				}
+				},
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
-				
+
 				optionItems: [  // 选项设置
 					{
 						label: "label值1",
@@ -483,8 +563,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -576,6 +655,32 @@ export const basicWidgets = [
 				space: {
 					label: '是否插入空格',
 					value: false
+				},
+				// 边距调整
+				marginAdjustment:{
+					label:"外边距调整",
+					options:[
+						{
+							label:"左边距",
+							icon:"Back",
+							value:0
+						},
+						{
+							label:"上边距",
+							icon:"Top",
+							value:0
+						},
+						{
+							label:"右边距",
+							icon:"Right",
+							value:0
+						},
+						{
+							label:"下边距",
+							icon:"Bottom",
+							value:0
+						}
+					]
 				}
 			},
 			advanced: {
@@ -630,8 +735,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -649,7 +753,7 @@ export const basicWidgets = [
 				},
 				onClick: {
 					label: "点击事件",
-					value: "if (!props.ruleFormRef) return\nprops.ruleFormRef.validate((valid, fields) => {\n  console.log(valid, \"===valid===\")\n  if (valid) {\n    console.log('submit!')\n    ElMessage({\n      message: '提交成功',\n      type: 'success',\n      duration: 1000\n    })\n  } else {\n    console.log('error submit!', fields)\n    ElMessage({\n      message: '有必填项未填写，或填写错误，请检查',\n      type: 'error',\n      duration: 1000\n    })\n  }\n})"
+					value: "if (!fc.props.ruleFormRef) return\nfc.props.ruleFormRef.validate((valid, fields) => {\n  console.log(valid, \"===valid===\")\n  if (valid) {\n    console.log('submit!')\n    fc.ElMessage({\n      message: '提交成功',\n      type: 'success',\n      duration: 1000\n    })\n  } else {\n    console.log('error submit!', fields)\n    fc.ElMessage({\n      message: '有必填项未填写，或填写错误，请检查',\n      type: 'error',\n      duration: 1000\n    })\n  }\n})"
 				}
 			}
 		}
@@ -702,6 +806,33 @@ export const basicWidgets = [
 					label: "是否禁用",
 					value: false
 				},// 禁用
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
+
 			},
 			advanced: {
 				dataSource: {
@@ -726,8 +857,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -814,7 +944,33 @@ export const basicWidgets = [
 							value: false
 						}
 					]
-				}
+				},
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				// 选项设置
@@ -831,8 +987,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -908,6 +1063,32 @@ export const basicWidgets = [
 					label: "是否禁用",
 					value: false
 				},// 禁用
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				validation: {
@@ -949,8 +1130,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1040,14 +1220,39 @@ export const basicWidgets = [
 				"moveDistance": {
 					label: "移动距离",
 					value: 0,
-				}
+				},
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1124,13 +1329,38 @@ export const basicWidgets = [
 					label: "是否禁用",
 					value: false
 				},// 禁用
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1213,18 +1443,35 @@ export const basicWidgets = [
 					label: "添加必填符号",
 					value: false,
 				},
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
-				linkage: {
-					label: '联动对象',
-					options: [],
-					value: [],
-					targets:[]
-				},
-				linkageCode: {
-					label: '联动代码',
-					value: "//#region\n/*\nwidget:当前元素;\nlinkageObj:联动对象\ncopyWidget:复制方法\n*/ \n//#endregion "
-				}
+
 			}
 		}
 	},
@@ -1236,7 +1483,7 @@ export const basicWidgets = [
 		icon: "time",
 		value: null,
 		ruleFormKey: null,
-		rules: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+		rules: [{ required: false, message: '请输入用户名', trigger: 'blur' }],
 		options: {
 			basic: {
 				value: "",
@@ -1312,6 +1559,32 @@ export const basicWidgets = [
 						},
 					]
 				},
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				isRange: {
@@ -1333,8 +1606,7 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1351,7 +1623,7 @@ export const basicWidgets = [
 		icon: "date",
 		value: null,
 		ruleFormKey: null,
-		rules: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+		rules: [{ required: false, message: '请输入用户名', trigger: 'blur' }],
 		options: {
 			basic: {
 				value: "",
@@ -1426,7 +1698,33 @@ export const basicWidgets = [
 							value: false
 						}
 					]
-				}
+				},
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				value: 'date',
@@ -1480,12 +1778,70 @@ export const basicWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
 					value: "//#region\n/*\nwidget:当前元素;\nlinkageObj:联动对象\ncopyWidget:复制方法\n*/ \n//#endregion "
+				}
+			}
+		}
+	},
+	{
+		id: 13,
+		name: "分页器",
+		type: "fcPagination",
+		category: "widget",
+		icon: "date",
+		value: null,
+		ruleFormKey: null,
+		rules: [],
+		options: {
+			basic: {
+				name: {
+					label: "唯一名称",
+					value: "分页器"
+				},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
+				},
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
+			},
+			advanced: {
+				pageSize: 1,
+				total: 1,
+				currentPage: 1
+			},
+			events: {
+				onChange: {
+					label: "翻页事件",
+					value: "console.log('当前页数:', fc.props.widget.options.advanced.currentPage)"
 				}
 			}
 		}
@@ -1554,6 +1910,32 @@ export const advancedWidgets = [
 					label: '标签是否隐藏',
 					value: false
 				}, // 标签是否隐藏
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				optionItems: [  // 选项设置
@@ -1568,8 +1950,7 @@ export const advancedWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1621,10 +2002,10 @@ export const advancedWidgets = [
 					value: ''
 				},
 
-					isHidden: {
-						label: "隐藏组件",
-						value: false
-					},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
+				},
 				required: {
 					label: "是否必填",
 					value: false,
@@ -1642,6 +2023,32 @@ export const advancedWidgets = [
 				// 	label: "是否禁用",
 				// 	value: false
 				// },// 禁用
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				// 选项设置
@@ -1658,8 +2065,7 @@ export const advancedWidgets = [
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1734,13 +2140,38 @@ export const advancedWidgets = [
 					label: '是否禁止上传',
 					value: false
 				}, // 是否必填
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -1787,13 +2218,38 @@ export const advancedWidgets = [
 					label: '是否必填',
 					value: false
 				}, // 是否必填
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				linkage: {
 					label: '联动对象',
 					options: [],
-					value: [],
-					targets:[]
+					value: []
 				},
 				linkageCode: {
 					label: '联动代码',

@@ -15,15 +15,15 @@
 				<Col
 					:colWidget="colWidget"
 					:is-editor="isEditor"
-					:style="`height:${widget.options.basic.colHeight.value}px;`">
+					style="height:auto;padding:0">
 					<slot 
 					 name="widgetChild"
 					 v-bind="{
 							colWidget, 
 							propKey,
-							ruleForm: ruleForm[widget.ruleFormKey],
+							ruleForm: childRuleForm,
 							index: colIdx
-						}">
+					 }">
 					</slot>
 				</Col>
 			</template>
@@ -38,6 +38,7 @@ export default {
 import { watch } from 'vue';
 import { ElMessage } from 'element-plus'
 import Col from './grid-col.vue';
+import { ref } from 'vue'
 
 const props = defineProps([
 	'widget',
@@ -50,21 +51,24 @@ const props = defineProps([
 ]);
 
 
+const childRuleForm = ref(null)
 watch(
 	() => props.propKey,
 	(value) => {
-		const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
+		console.log(props.ruleForm,"===props.ruleForm1===")
+		const ruleFormKey = props.widget.ruleFormKey;
 		const parentRuleFormKeyType = props.parent?.ruleFormKeyType;
 		const ruleFormKeyType = props.widget.ruleFormKeyType;
 
 		if(ruleFormKey && !props.ruleForm[ruleFormKey]){
-			console.log("监听到数据变化",ruleFormKey)
+			console.log("监听到数据变化",props.parent)
 			if(parentRuleFormKeyType === 'object' || !parentRuleFormKeyType){
 				if(ruleFormKeyType === 'array'){
 					props.ruleForm[ruleFormKey] = []
 				}else{
 					props.ruleForm[ruleFormKey] = {}
 				}
+				childRuleForm.value = props.ruleForm[ruleFormKey];
 			}
 			if(parentRuleFormKeyType === 'array'){
 				if(ruleFormKeyType === 'array'){
@@ -74,13 +78,20 @@ watch(
 							duration:1500
 					})
 				}else{
-					const isExist = props.ruleForm.some(rule =>{Object.keys(rule).indexOf(ruleFormKey)>-1})
-					if(!isExist){
-						props.ruleForm.push({
-							[ruleFormKey]: props.widget.value
-						})
+					const parentWidgetListLen = props.parent.options.advanced.cols[0].widgetList.length;
+					if (props.ruleForm.length < parentWidgetListLen){
+						if(props.widget.category === 'container'){
+							props.ruleForm.push({
+								[ruleFormKey]: {}
+							})
+						}else {
+							props.ruleForm.push({
+								[ruleFormKey]: props.widget.value
+							})
+						}
 					}
 				}
+				childRuleForm.value = props.ruleForm.filter(rule=>Object.keys(rule).indexOf(ruleFormKey)>-1)[props.ruleForm.length-1][ruleFormKey]
 			}
 		}
 	},
@@ -90,22 +101,12 @@ watch(
 	}
 )
 
-const emit = defineEmits(['selected1','copyWidget1','removeWidget1','onEnd1']);
-const selected1 = (element) =>{
-	emit('selected1',element)
+const widgetRuleFormKey = props.widget.ruleFormKey;
+if(props.parent?.ruleFormKeyType === 'object' || !props.parent?.ruleFormKeyType){
+	childRuleForm.value = widgetRuleFormKey && props.ruleForm[widgetRuleFormKey];
+}else if(props.parent?.ruleFormKeyType === 'array'){
+	childRuleForm.value = widgetRuleFormKey && props.ruleForm.filter(rule=>Object.keys(rule).indexOf(widgetRuleFormKey)>-1)[props.ruleForm.length-1][widgetRuleFormKey]
 }
-const copyWidget1 = (element) =>{
-    emit('copyWidget1',element)
-}
-
-const removeWidget1 = (widget, parentWidget) =>{
-	emit('removeWidget1',widget, parentWidget)
-}
-
-const onEnd1 = () =>{
-	emit('onEnd1')
-}
-
 </script>
  <style lang="scss" scoped>
 .grid-container {

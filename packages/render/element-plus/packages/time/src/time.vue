@@ -4,7 +4,14 @@
 		:label="widget.options.basic.label.value"
 		:rules="widget.rules"
 		:prop="propKey"
-		:key="propKey">
+		:key="propKey"
+    :style="`
+			margin-left:${widget.options.basic.marginAdjustment?.options[0].value}px;
+			margin-top:${widget.options.basic.marginAdjustment?.options[1].value}px;
+			margin-right:${widget.options.basic.marginAdjustment?.options[2].value}px;
+			margin-bottom:${widget.options.basic.marginAdjustment?.options[3].value}px
+		`"
+    >
     <el-config-provider>
       <el-time-picker
           clearable
@@ -34,10 +41,8 @@ export default {
 
 // const locale = zhCn
 import { watch } from 'vue'
-	import { ElMessage } from 'element-plus'
-	import {linkageWatchEvent} from '../../hooks/linkageWatchEvent'
+import { ElMessage } from 'element-plus'
 const props = defineProps(['widget', 'isEditor', 'selectedWidget','widgetType','ruleForm', 'propKey','parent', 'parentWidget']);
-linkageWatchEvent(props,watch,ElMessage);
 </script>
   
 <style lang="scss" scoped>

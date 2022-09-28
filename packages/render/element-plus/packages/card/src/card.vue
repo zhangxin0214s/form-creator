@@ -6,7 +6,7 @@
     </div>
   </template>
   <card-content 
-      :widgetList="widget.options.advanced.widgetList"
+      :widgetList="widget.options.advanced.cols[0]"
       :prop-key="propKey"
       :widget="widget"
       :rule-form="ruleForm[widget.ruleFormKey] || ruleForm"
@@ -15,7 +15,7 @@
       <slot 
         name="widgetChild"
         v-bind="{
-          colWidget:widget.options.advanced, 
+          colWidget:widget.options.advanced.cols[0], 
           propKey,
           ruleForm: ruleForm[widget.ruleFormKey] || ruleForm,
           index:null
