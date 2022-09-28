@@ -1,0 +1,302 @@
+{
+    "formConfig": {
+      "label-position": {
+        "value": "right",
+        "label": "标签对齐方式:",
+        "options": [
+          {
+            "label": "左对齐",
+            "value": "left"
+          },
+          {
+            "label": "向上对齐",
+            "value": "top"
+          },
+          {
+            "label": "右对齐",
+            "value": "right"
+          }
+        ]
+      },
+      "label-width": {
+        "label": "标签宽度",
+        "value": ""
+      },
+      "onBeforeMount": {
+        "label": "渲染前",
+        "value": ""
+      },
+      "onMounted": {
+        "label": "渲染完成",
+        "value": "\r\nlet store = fc.widgetStore()\r\nlet table = store.widgetList[0]\r\nlet pagination = store.widgetList[1]\r\npagination.options.advanced.currentPage=1\r\nlet currentPage = pagination.options.advanced.currentPage\r\ntable.options.advanced.tableValues = []\r\nfc.utils.request({\r\n    url: 'https://app-fzpub.jiaoyanyun.com/admin-fzpub/v1/openorg/list',\r\n    method: 'post',\r\n    data: { page: currentPage, page_size: pagination.options.advanced.pageSize }\r\n}).then(response => {\r\n    console.log(fc.widgetStore().widgetList)\r\n    for (let item of response.data.data.list) {\r\n        table.options.advanced.tableValues.push(item)\r\n    }\r\n    pagination.options.advanced.total = response.data.data.total\r\n})"
+      },
+      "requestHeader": {
+        "x-jyy-token": "MTN85aea5Zu95binfDA5Njg5OXwxNjY0MzM0MTA4fEp5eVNhYXNZYWNoU3Nv"
+      },
+      "ruleForm": {}
+    },
+    "widgetList": [
+      {
+        "id": "b55c7733dfc747b9bbb1d0a104a21e43",
+        "name": "表格",
+        "type": "fcTable",
+        "category": "container",
+        "icon": "table ",
+        "options": {
+          "basic": {
+            "name": {
+              "label": "唯一名称",
+              "value": "表格"
+            },
+            "isHidden": {
+              "label": "隐藏组件",
+              "value": false
+            }
+          },
+          "advanced": {
+            "tableTitles": [
+              {
+                "label": "名称",
+                "prop": "name"
+              },
+              {
+                "label": "机构id",
+                "prop": "orgId"
+              }
+            ],
+            "tableValues": [
+              {
+                "address": "事实上2恩爱伟大文案的三个分散",
+                "area": "东城区",
+                "areaCode": 110101,
+                "certificate": "https://file1-fz.jiaoyanyun.com/admin/6a4e87a94ca812b2a3551a3336400b02.png",
+                "city": "市辖区",
+                "cityCode": 110100,
+                "code": "121212121213232433",
+                "creatorName": "李晓波",
+                "hiddenPhone": "yBL6pc9iCRlLu8gQjr/l5g==",
+                "name": "测试世纪",
+                "orgId": 19929968,
+                "principal": "社会人",
+                "principalPhone": "86-199****3866",
+                "prov": "北京市",
+                "provCode": 110000,
+                "status": 1,
+                "type": 1
+              },
+              {
+                "address": "ddd",
+                "area": "河东区",
+                "areaCode": 120102,
+                "certificate": "https://file1-fz.jiaoyanyun.com/admin/1530dc319484321da98852c83edbfb15.png",
+                "city": "市辖区",
+                "cityCode": 120100,
+                "code": "222222222222222",
+                "creatorName": "张新",
+                "hiddenPhone": "b/f07nTgl0rvDA8Gu7ptdw==",
+                "name": "1234",
+                "orgId": 19929967,
+                "principal": "123",
+                "principalPhone": "86-151****2646",
+                "prov": "天津市",
+                "provCode": 120000,
+                "status": 1,
+                "type": 2
+              },
+              {
+                "address": "你好",
+                "area": "延庆区",
+                "areaCode": 110119,
+                "certificate": "https://file1-fz.jiaoyanyun.com/admin/9f77bb6845313e42bbb2869fe4eecabd.jpeg",
+                "city": "市辖区",
+                "cityCode": 110100,
+                "code": "102938475666661",
+                "creatorName": "邢雪1",
+                "hiddenPhone": "u59cbi5ePOQAuMqJEs3DzQ==",
+                "name": "复旦大学",
+                "orgId": 19929966,
+                "principal": "王笑笑",
+                "principalPhone": "86-186****0005",
+                "prov": "北京市",
+                "provCode": 110000,
+                "status": 1,
+                "type": 2
+              },
+              {
+                "address": "你好",
+                "area": "延庆区",
+                "areaCode": 110119,
+                "certificate": "https://file1-fz.jiaoyanyun.com/admin/fbd8fcfe4f0fba8a986d1a965d6c5fc3.jpg",
+                "city": "市辖区",
+                "cityCode": 110100,
+                "code": "102938475600001",
+                "creatorName": "邢雪1",
+                "hiddenPhone": "7lp2Mm6u9m12iqtQ8Vd1CA==",
+                "name": "北京大学-开放平台11111",
+                "orgId": 19929963,
+                "principal": "王笑笑",
+                "principalPhone": "86-186****8577",
+                "prov": "北京市",
+                "provCode": 110000,
+                "status": 1,
+                "type": 1
+              },
+              {
+                "address": "你好",
+                "area": "延庆区",
+                "areaCode": 110119,
+                "certificate": "https://file1-fz.jiaoyanyun.com/admin/43b69918b7ed649ba7fdd9d0f9932bcd.jpeg",
+                "city": "市辖区",
+                "cityCode": 110100,
+                "code": "102938475600000",
+                "creatorName": "邢雪1",
+                "hiddenPhone": "2MpLvx7H7nMy2xhW4PN1TA==",
+                "name": "北京大学-开放平台",
+                "orgId": 19929956,
+                "principal": "王笑笑",
+                "principalPhone": "86-186****8504",
+                "prov": "北京市",
+                "provCode": 110000,
+                "status": 2,
+                "type": 1
+              },
+              {
+                "address": "你好",
+                "area": "和平区",
+                "areaCode": 120101,
+                "certificate": "https://file1-fz.jiaoyanyun.com/admin/c08bb58aa7f147658e96fefc5c2b7e4a.png",
+                "city": "市辖区",
+                "cityCode": 120100,
+                "code": "109234857611111",
+                "creatorName": "邢雪1",
+                "hiddenPhone": "EFNSYGWc/XPzPW9f2MxoEA==",
+                "name": "机构122",
+                "orgId": 19929955,
+                "principal": "怒号",
+                "principalPhone": "86-186****0003",
+                "prov": "天津市",
+                "provCode": 120000,
+                "status": 1,
+                "type": 2
+              },
+              {
+                "address": "你好",
+                "area": "东城区",
+                "areaCode": 110101,
+                "certificate": "https://file1-fz.jiaoyanyun.com/admin/1ca7c5c98afc59cda40268f99a5ca2e1.png",
+                "city": "市辖区",
+                "cityCode": 110100,
+                "code": "109238457609871",
+                "creatorName": "邢雪1",
+                "hiddenPhone": "17cCe02AJmCqcxjI6ceB4Q==",
+                "name": "机构创建",
+                "orgId": 19929954,
+                "principal": "哈哈哈",
+                "principalPhone": "86-186****0002",
+                "prov": "北京市",
+                "provCode": 110000,
+                "status": 1,
+                "type": 3
+              },
+              {
+                "address": "大学2",
+                "area": "延庆区",
+                "areaCode": 110119,
+                "certificate": "https://file1-fz.jiaoyanyun.com/admin/cf48473ddbd1655d84086e27251406f5.png",
+                "city": "市辖区",
+                "cityCode": 110100,
+                "code": "123456789030983",
+                "creatorName": "邢雪1",
+                "hiddenPhone": "nGVzkj9OTI13/RayA7PQNQ==",
+                "name": "生活大学2",
+                "orgId": 19929953,
+                "principal": "王笑笑",
+                "principalPhone": "86-186****8509",
+                "prov": "北京市",
+                "provCode": 110000,
+                "status": 1,
+                "type": 2
+              },
+              {
+                "address": "哈哈哈",
+                "area": "东城区",
+                "areaCode": 110101,
+                "certificate": "https://file1-fz.jiaoyanyun.com/admin/69d46ac5780a781bb3479eb3d5d7c7fb.png",
+                "city": "市辖区",
+                "cityCode": 110100,
+                "code": "102938475633333",
+                "creatorName": "邢雪1",
+                "hiddenPhone": "N6Re4oRqlKlNP1PrWXUygQ==",
+                "name": "苗苗机构",
+                "orgId": 19929952,
+                "principal": "苗苗",
+                "principalPhone": "86-183****0898",
+                "prov": "北京市",
+                "provCode": 110000,
+                "status": 1,
+                "type": 1
+              },
+              {
+                "address": "hhhhhh",
+                "area": "东城区",
+                "areaCode": 110101,
+                "certificate": "https://file1-fz.jiaoyanyun.com/admin/bc71f6bef6a28dccad43ac0a12f93e1a.png",
+                "city": "市辖区",
+                "cityCode": 110100,
+                "code": "192029202920292029",
+                "creatorName": "邢雪1",
+                "hiddenPhone": "C95nysCk/Fn8HpeqBCJqEQ==",
+                "name": "生活大学你好哈哈哈哈生活大学你好哈哈哈哈生活大学你好哈哈哈哈生活大学你好哈哈哈哈",
+                "orgId": 19929951,
+                "principal": "王晓晓",
+                "principalPhone": "86-186****8511",
+                "prov": "北京市",
+                "provCode": 110000,
+                "status": 1,
+                "type": 3
+              }
+            ]
+          },
+          "events": {
+            "onBeforeMount": {
+              "label": "渲染前",
+              "value": "//表头 { label: \"日期\", prop: \"date\" }\r\n//props.widget.options.advanced.tableTitles = []\r\n\r\n//表格数据{date: '2016-05-02', name: '王小虎', address: '上海市普陀区金沙江路}\r\n//props.widget.options.advanced.tableValues = []\r\n\r\n/*fc.utils.request({\r\n    url: 'https://app-fzpub.jiaoyanyun.com/admin-fzpub/v1/user/list',\r\n    method: 'get',\r\n    headers: { 'x-jyy-token': 'MTN85aea5Zu95binfDA5Njg5OXwxNjY0MzM0MTA4fEp5eVNhYXNZYWNoU3Nv' }\r\n}).then(response => {\r\n    console.log(response.data.data.list)\r\n})*/"
+            }
+          }
+        }
+      },
+      {
+        "id": "53fddf9b369444b49e080a2381e0b734",
+        "name": "分页器",
+        "type": "fcPagination",
+        "category": "widget",
+        "icon": "date",
+        "value": null,
+        "ruleFormKey": null,
+        "rules": [],
+        "options": {
+          "basic": {
+            "name": {
+              "label": "唯一名称",
+              "value": "分页器"
+            },
+            "isHidden": {
+              "label": "隐藏组件",
+              "value": false
+            }
+          },
+          "advanced": {
+            "pageSize": 10,
+            "total": 28,
+            "currentPage": 1
+          },
+          "events": {
+            "onChange": {
+              "label": "翻页事件",
+              "value": "console.log('当前页数:', fc.props.widget.options.advanced.currentPage)\r\n\r\nlet currentPage = fc.props.widget.options.advanced.currentPage\r\n\r\nlet store = fc.widgetStore()\r\nlet table = store.widgetList[0]\r\nlet pagination = store.widgetList[1]\r\ntable.options.advanced.tableValues = []\r\nfc.utils.request({\r\n    url: 'https://app-fzpub.jiaoyanyun.com/admin-fzpub/v1/openorg/list',\r\n    method: 'post',\r\n    data: { page: currentPage, page_size: pagination.options.advanced.pageSize }\r\n}).then(response => {\r\n    console.log(fc.widgetStore().widgetList)\r\n    for (let item of response.data.data.list) {\r\n        table.options.advanced.tableValues.push(item)\r\n    }\r\n    pagination.options.advanced.total = response.data.data.total\r\n})"
+            }
+          }
+        }
+      }
+    ]
+  }
