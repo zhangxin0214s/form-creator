@@ -30,6 +30,10 @@ export const formConfig = {
 		value: ""
 	},
 
+	"requestHeader":{
+		
+	},
+
 	"ruleForm": {} // 提交数据
 }
 
