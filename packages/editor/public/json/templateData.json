@@ -8,5 +8,10 @@
     "name": "表单数据",
     "path": "../src/json/biaodan.json",
     "image": "../src/image/biaodan.jpeg"
+  },
+  {
+    "name": "表格数据",
+    "path": "../src/json/biaoge.json",
+    "image": "../src/image/biaoge.png"
   }
 ]

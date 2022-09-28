@@ -30,8 +30,8 @@ export const formConfig = {
 		value: ""
 	},
 
-	"requestHeader": {
-
+	"requestHeader":{
+		'x-jyy-token': 'MTN85aea5Zu95binfDA5Njg5OXwxNjY0MzM0MTA4fEp5eVNhYXNZYWNoU3Nv'
 	},
 
 	"ruleForm": {} // 提交数据
