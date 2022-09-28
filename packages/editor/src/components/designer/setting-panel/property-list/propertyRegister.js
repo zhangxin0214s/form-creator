@@ -16,6 +16,7 @@ const BASCI_COMPONENTS = {
 	'14':'inputBtn',
 	'15':'radioButtonBasic',
 	'16':'selectLinkage',
+	'17':'marginAdjustment',
 }
 
 // 基础属性组件映射表
@@ -74,6 +75,7 @@ const BASIC_PROPERTIES = {
 	'moveDistance':'9',
 	'resizeDirection':'3',
 	'isHidden': '2',
+	'marginAdjustment':'17'
 }
 
 

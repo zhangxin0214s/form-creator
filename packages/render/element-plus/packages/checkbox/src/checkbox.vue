@@ -5,6 +5,12 @@
 		:rules="widget.rules"
 		:prop="propKey"
 		:key="propKey"
+		:style="`
+			margin-left:${widget.options.basic.marginAdjustment?.options[0].value}px;
+			margin-top:${widget.options.basic.marginAdjustment?.options[1].value}px;
+			margin-right:${widget.options.basic.marginAdjustment?.options[2].value}px;
+			margin-bottom:${widget.options.basic.marginAdjustment?.options[3].value}px
+		`"
 	>
 		<el-checkbox-group
 			v-model="widget.value"

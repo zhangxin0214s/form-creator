@@ -18,6 +18,7 @@ import radioButtonBasic from './radioButtonBasic.vue'
 import repeatButtonItems from './repeatButtonItems.vue'
 import onlyButtonItems from  './onlyButtonItems.vue'
 import selectLinkage from './selectLinkage.vue'
+import marginAdjustment from './marginAdjustment.vue'
 export {
 	inputBasic,
 	switchBasic,
@@ -38,5 +39,6 @@ export {
 	radioButtonBasic,
 	repeatButtonItems,
 	onlyButtonItems,
-	selectLinkage
+	selectLinkage,
+	marginAdjustment
 }

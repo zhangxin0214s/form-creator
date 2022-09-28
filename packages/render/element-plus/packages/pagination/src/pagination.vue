@@ -1,7 +1,14 @@
 <template>
   <el-form-item
 		:class="[selectedWidget?.id === widget?.id && isEditor?'select layout':'layout']"
-    style="text-align:center;"
+    :style="`
+      text-align:center;
+			margin-left:${widget.options.basic.marginAdjustment?.options[0].value}px;
+			margin-top:${widget.options.basic.marginAdjustment?.options[1].value}px;
+			margin-right:${widget.options.basic.marginAdjustment?.options[2].value}px;
+			margin-bottom:${widget.options.basic.marginAdjustment?.options[3].value}px
+		`"
+
 	>
     <el-pagination
       style="display:inline-flex"

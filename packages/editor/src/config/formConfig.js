@@ -30,8 +30,8 @@ export const formConfig = {
 		value: ""
 	},
 
-	"requestHeader":{
-		
+	"requestHeader": {
+
 	},
 
 	"ruleForm": {} // 提交数据
@@ -91,7 +91,8 @@ export const containers = [
 				"moveDistance": {
 					label: "移动距离",
 					value: 0,
-				}
+				},
+				
 			},
 			advanced: {
 				cols: [
@@ -157,15 +158,15 @@ export const containers = [
 				name: {
 					label: "唯一名称",
 					value: "表格"
-				}, 
+				},
 				isHidden: {
 					label: "隐藏组件",
 					value: false
 				},
 			},
 			advanced: {
-				tableTitles:[],
-				tableValues:[]
+				tableTitles: [],
+				tableValues: []
 			},
 			events: {
 				onBeforeMount: {
@@ -273,6 +274,32 @@ export const basicWidgets = [
 					label: "是否禁用",
 					value: false
 				},// 禁用
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				}
 			},
 			advanced: {
 				validation: {
@@ -315,7 +342,7 @@ export const basicWidgets = [
 					label: '联动对象',
 					options: [],
 					value: [],
-					targets:[],
+					targets: [],
 				},
 				linkageCode: {
 					label: '联动代码',
@@ -360,6 +387,32 @@ export const basicWidgets = [
 					label: '是否禁用',
 					value: false
 				},// 禁用
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				}
 			},
 			advanced: {
 				linkage: {
@@ -446,15 +499,6 @@ export const basicWidgets = [
 					label: "左右移动",
 					value: 0
 				},
-
-				// hintHidden: {
-				// 	label: '提示语隐藏',
-				// 	value: false
-				// },// 提示语是否隐藏
-				// labelHidden: {
-				// 	label: '标签是否隐藏',
-				// 	value: false
-				// }, // 标签是否隐藏
 				attribute: {
 					label: '操作属性',
 					options: [
@@ -471,7 +515,33 @@ export const basicWidgets = [
 							value: false
 						}
 					]
-				}
+				},
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 
@@ -585,6 +655,32 @@ export const basicWidgets = [
 				space: {
 					label: '是否插入空格',
 					value: false
+				},
+				// 边距调整
+				marginAdjustment:{
+					label:"外边距调整",
+					options:[
+						{
+							label:"左边距",
+							icon:"Back",
+							value:0
+						},
+						{
+							label:"上边距",
+							icon:"Top",
+							value:0
+						},
+						{
+							label:"右边距",
+							icon:"Right",
+							value:0
+						},
+						{
+							label:"下边距",
+							icon:"Bottom",
+							value:0
+						}
+					]
 				}
 			},
 			advanced: {
@@ -710,6 +806,33 @@ export const basicWidgets = [
 					label: "是否禁用",
 					value: false
 				},// 禁用
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
+
 			},
 			advanced: {
 				dataSource: {
@@ -821,7 +944,33 @@ export const basicWidgets = [
 							value: false
 						}
 					]
-				}
+				},
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				// 选项设置
@@ -914,6 +1063,32 @@ export const basicWidgets = [
 					label: "是否禁用",
 					value: false
 				},// 禁用
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				validation: {
@@ -1045,7 +1220,33 @@ export const basicWidgets = [
 				"moveDistance": {
 					label: "移动距离",
 					value: 0,
-				}
+				},
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				linkage: {
@@ -1128,6 +1329,32 @@ export const basicWidgets = [
 					label: "是否禁用",
 					value: false
 				},// 禁用
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				linkage: {
@@ -1216,9 +1443,35 @@ export const basicWidgets = [
 					label: "添加必填符号",
 					value: false,
 				},
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
-				
+
 			}
 		}
 	},
@@ -1304,6 +1557,32 @@ export const basicWidgets = [
 							label: '输入框是否可输入',
 							value: false
 						},
+					]
+				},
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
 					]
 				},
 			},
@@ -1419,7 +1698,33 @@ export const basicWidgets = [
 							value: false
 						}
 					]
-				}
+				},
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				value: 'date',
@@ -1497,15 +1802,41 @@ export const basicWidgets = [
 					label: "唯一名称",
 					value: "分页器"
 				},
-				isHidden:{
+				isHidden: {
 					label: "隐藏组件",
 					value: false
-				}
+				},
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
-				pageSize:1,
-				total:1,
-				currentPage:1
+				pageSize: 1,
+				total: 1,
+				currentPage: 1
 			},
 			events: {
 				onChange: {
@@ -1579,6 +1910,32 @@ export const advancedWidgets = [
 					label: '标签是否隐藏',
 					value: false
 				}, // 标签是否隐藏
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				optionItems: [  // 选项设置
@@ -1645,10 +2002,10 @@ export const advancedWidgets = [
 					value: ''
 				},
 
-					isHidden: {
-						label: "隐藏组件",
-						value: false
-					},
+				isHidden: {
+					label: "隐藏组件",
+					value: false
+				},
 				required: {
 					label: "是否必填",
 					value: false,
@@ -1666,6 +2023,32 @@ export const advancedWidgets = [
 				// 	label: "是否禁用",
 				// 	value: false
 				// },// 禁用
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				// 选项设置
@@ -1757,6 +2140,32 @@ export const advancedWidgets = [
 					label: '是否禁止上传',
 					value: false
 				}, // 是否必填
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				linkage: {
@@ -1809,6 +2218,32 @@ export const advancedWidgets = [
 					label: '是否必填',
 					value: false
 				}, // 是否必填
+				// 边距调整
+				marginAdjustment: {
+					label: "外边距调整",
+					options: [
+						{
+							label: "左边距",
+							icon: "Back",
+							value: 0
+						},
+						{
+							label: "上边距",
+							icon: "Top",
+							value: 0
+						},
+						{
+							label: "右边距",
+							icon: "Right",
+							value: 0
+						},
+						{
+							label: "下边距",
+							icon: "Bottom",
+							value: 0
+						}
+					]
+				},
 			},
 			advanced: {
 				linkage: {

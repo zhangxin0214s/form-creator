@@ -4,7 +4,14 @@
 		:label="widget.options.basic.label.value"
 		:rules="widget.rules"
 		:prop="propKey"
-		:key="propKey">
+		:key="propKey"
+		:style="`
+			margin-left:${widget.options.basic.marginAdjustment?.options[0].value}px;
+			margin-top:${widget.options.basic.marginAdjustment?.options[1].value}px;
+			margin-right:${widget.options.basic.marginAdjustment?.options[2].value}px;
+			margin-bottom:${widget.options.basic.marginAdjustment?.options[3].value}px
+		`"
+		>
 		<el-switch
 			v-model="widget.value"
 			:disabled="widget.options.basic.disabled.value"
