@@ -166,7 +166,7 @@ export const containers = [
 			events: {
 				onBeforeMount: {
 					label: "渲染前",
-					value: "//表头 { label: \"日期\", prop: \"date\" }\r\n//props.widget.options.advanced.tableTitles = []\r\n\r\n//表格数据{date: '2016-05-02', name: '王小虎', address: '上海市普陀区金沙江路}\r\n//props.widget.options.advanced.tableValues = []"
+					value: "//表头 { label: \"日期\", prop: \"date\" }\r\n//props.widget.options.advanced.tableTitles = []\r\n\r\n//表格数据{date: '2016-05-02', name: '王小虎', address: '上海市普陀区金沙江路}\r\n//props.widget.options.advanced.tableValues = []\r\n\r\n/*fc.utils.request({\r\n    url: 'https://app-fzpub.jiaoyanyun.com/admin-fzpub/v1/user/list',\r\n    method: 'get',\r\n    headers: { 'x-jyy-token': 'MTN85aea5Zu95binfDA5Njg5OXwxNjY0MzM0MTA4fEp5eVNhYXNZYWNoU3Nv' }\r\n}).then(response => {\r\n    console.log(response.data.data.list)\r\n})*/"
 				}
 			}
 		},
