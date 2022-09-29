@@ -13,5 +13,10 @@ export const request = (data) => {
     data.headers[key]=publicHeader[key]
   }
 
+  if(data.url.indexOf("http")!=0){
+    let publicApiHost=store.formConfig.apiHost.value
+    data.url=publicApiHost+data.url
+  }
+
   return service(data)
 }

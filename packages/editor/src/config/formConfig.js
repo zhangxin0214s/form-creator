@@ -29,7 +29,10 @@ export const formConfig = {
 		label: "渲染完成",
 		value: ""
 	},
-
+	"apiHost":{
+		label: "apiHost",
+		value: "https://app-fzpub.jiaoyanyun.com/admin-fzpub"
+	},
 	"requestHeader":{
 		'x-jyy-token': 'MTN85aea5Zu95binfDA5Njg5OXwxNjY0MzM0MTA4fEp5eVNhYXNZYWNoU3Nv'
 	},

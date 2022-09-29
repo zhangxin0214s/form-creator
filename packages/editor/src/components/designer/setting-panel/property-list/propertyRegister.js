@@ -34,6 +34,8 @@ const BASIC_PROPERTIES = {
 	'font-style':'11',
 	'attribute':'11',
 	'labelWidth':'1',
+	'requestHeader':'1',
+	'apiHost':'1',
 	'labelAlign':'3',
 	'btnType':'3',
 	'maxlength':'9',
