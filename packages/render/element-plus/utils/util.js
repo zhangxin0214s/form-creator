@@ -8,19 +8,46 @@
  * @returns 
  */
 export function getWidgetById(id, widgetList) {
-  let target = widgetList.find(w=>w.id === id);
-  if (!target) {
-    for (let i = 0; i < widgetList.length; i++) {
-      if (['fcGrid', 'fcTabs', 'fcCard'].indexOf(widgetList[i].type) > -1) {
-        const cols = widgetList[i].options.advanced.cols;
-        for (let k = 0; k < cols.length; k++) {
-          let w = getWidgetById(id, cols[k].widgetList);
-          if(w) return w;
-        }
-      }
+  let stack = [...widgetList];
+  let target = null;
+  while (stack.length) {
+    let node = stack.pop();
+    if (node.id === id) target = node;
+    if (target !== null) stack = [];
+    if (target === null && ['fcGrid', 'fcTabs', 'fcCard'].indexOf(node.type) > -1) {
+      node.options.advanced.cols.forEach((c) => {
+        stack.push(...c.widgetList);
+      });
     }
   }
-  return target
+  return target;
+  // let target = widgetList.find(w=>w.id === id);
+  // if (!target) {
+  //   for (let i = 0; i < widgetList.length; i++) {
+  //     if (['fcGrid', 'fcTabs', 'fcCard'].indexOf(widgetList[i].type) > -1) {
+  //       const cols = widgetList[i].options.advanced.cols;
+  //       for (let k = 0; k < cols.length; k++) {
+  //         let w = getWidgetById(id, cols[k].widgetList);
+  //         if(w) return w;
+  //       }
+  //     }
+  //   }
+  // }
+  // return target
+  // let target = null;
+  // widgetList.forEach(widget => {
+  //   if (widget.id === id) {
+  //     target = widget
+  //   } else {
+  //     if (['fcGrid', 'fcTabs', 'fcCard'].indexOf(widget.type) > -1) {
+  //       const cols = widget.options.advanced.cols
+  //       cols.forEach(col => {
+  //         if (!target) getWidgetById(id, col.widgetList)
+  //       })
+  //     }
+  //   }
+  // })
+  // return target
 }
 
 /**
