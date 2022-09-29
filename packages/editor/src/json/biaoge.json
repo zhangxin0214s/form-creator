@@ -291,7 +291,7 @@
                         },
                         {
                             "id": 2,
-                            "gutter": 8,
+                            "gutter": 10,
                             "widgetList": [
                                 {
                                     "id": "4e6d29f8bd8d423aa22ba8e11dc36580",
@@ -361,7 +361,7 @@
                                                     {
                                                         "label": "左边距",
                                                         "icon": "Back",
-                                                        "value": 0
+                                                        "value": 44
                                                     },
                                                     {
                                                         "label": "上边距",
@@ -438,6 +438,11 @@
                                                         ]
                                                     },
                                                     {
+                                                        "label": "分割线",
+                                                        "value": "245669bf50b149b8bd830b2732a324e3",
+                                                        "children": []
+                                                    },
+                                                    {
                                                         "label": "表格",
                                                         "value": "b55c7733dfc747b9bbb1d0a104a21e43",
                                                         "children": []
@@ -463,7 +468,7 @@
                         },
                         {
                             "id": 2,
-                            "gutter": 4,
+                            "gutter": 6,
                             "widgetList": [
                                 {
                                     "id": "cc5d3843133a47c2b4867ee729c7ecb3",
@@ -555,7 +560,7 @@
                                                     {
                                                         "label": "左边距",
                                                         "icon": "Back",
-                                                        "value": 0
+                                                        "value": 60
                                                     },
                                                     {
                                                         "label": "上边距",
@@ -688,6 +693,25 @@
                     ],
                     "tableValues": [
                         {
+                            "address": "事实上2恩爱伟大文案的三个分散",
+                            "area": "东城区",
+                            "areaCode": 110101,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/6a4e87a94ca812b2a3551a3336400b02.png",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "121212121213232433",
+                            "creatorName": "李晓波",
+                            "hiddenPhone": "yBL6pc9iCRlLu8gQjr/l5g==",
+                            "name": "测试世纪",
+                            "orgId": 19929968,
+                            "principal": "社会人",
+                            "principalPhone": "86-199****3866",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 1,
+                            "type": 1
+                        },
+                        {
                             "address": "ddd",
                             "area": "河东区",
                             "areaCode": 120102,
@@ -705,6 +729,348 @@
                             "provCode": 120000,
                             "status": 1,
                             "type": 2
+                        },
+                        {
+                            "address": "你好",
+                            "area": "延庆区",
+                            "areaCode": 110119,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/9f77bb6845313e42bbb2869fe4eecabd.jpeg",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "102938475666661",
+                            "creatorName": "邢雪1",
+                            "hiddenPhone": "u59cbi5ePOQAuMqJEs3DzQ==",
+                            "name": "复旦大学",
+                            "orgId": 19929966,
+                            "principal": "王笑笑",
+                            "principalPhone": "86-186****0005",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 1,
+                            "type": 2
+                        },
+                        {
+                            "address": "你好",
+                            "area": "延庆区",
+                            "areaCode": 110119,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/fbd8fcfe4f0fba8a986d1a965d6c5fc3.jpg",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "102938475600001",
+                            "creatorName": "邢雪1",
+                            "hiddenPhone": "7lp2Mm6u9m12iqtQ8Vd1CA==",
+                            "name": "北京大学-开放平台11111",
+                            "orgId": 19929963,
+                            "principal": "王笑笑",
+                            "principalPhone": "86-186****8577",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 1,
+                            "type": 1
+                        },
+                        {
+                            "address": "你好",
+                            "area": "延庆区",
+                            "areaCode": 110119,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/43b69918b7ed649ba7fdd9d0f9932bcd.jpeg",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "102938475600000",
+                            "creatorName": "邢雪1",
+                            "hiddenPhone": "2MpLvx7H7nMy2xhW4PN1TA==",
+                            "name": "北京大学-开放平台",
+                            "orgId": 19929956,
+                            "principal": "王笑笑",
+                            "principalPhone": "86-186****8504",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 2,
+                            "type": 1
+                        },
+                        {
+                            "address": "你好",
+                            "area": "和平区",
+                            "areaCode": 120101,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/c08bb58aa7f147658e96fefc5c2b7e4a.png",
+                            "city": "市辖区",
+                            "cityCode": 120100,
+                            "code": "109234857611111",
+                            "creatorName": "邢雪1",
+                            "hiddenPhone": "EFNSYGWc/XPzPW9f2MxoEA==",
+                            "name": "机构122",
+                            "orgId": 19929955,
+                            "principal": "怒号",
+                            "principalPhone": "86-186****0003",
+                            "prov": "天津市",
+                            "provCode": 120000,
+                            "status": 1,
+                            "type": 2
+                        },
+                        {
+                            "address": "你好",
+                            "area": "东城区",
+                            "areaCode": 110101,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/1ca7c5c98afc59cda40268f99a5ca2e1.png",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "109238457609871",
+                            "creatorName": "邢雪1",
+                            "hiddenPhone": "17cCe02AJmCqcxjI6ceB4Q==",
+                            "name": "机构创建",
+                            "orgId": 19929954,
+                            "principal": "哈哈哈",
+                            "principalPhone": "86-186****0002",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 1,
+                            "type": 3
+                        },
+                        {
+                            "address": "大学2",
+                            "area": "延庆区",
+                            "areaCode": 110119,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/cf48473ddbd1655d84086e27251406f5.png",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "123456789030983",
+                            "creatorName": "邢雪1",
+                            "hiddenPhone": "nGVzkj9OTI13/RayA7PQNQ==",
+                            "name": "生活大学2",
+                            "orgId": 19929953,
+                            "principal": "王笑笑",
+                            "principalPhone": "86-186****8509",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 1,
+                            "type": 2
+                        },
+                        {
+                            "address": "哈哈哈",
+                            "area": "东城区",
+                            "areaCode": 110101,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/69d46ac5780a781bb3479eb3d5d7c7fb.png",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "102938475633333",
+                            "creatorName": "邢雪1",
+                            "hiddenPhone": "N6Re4oRqlKlNP1PrWXUygQ==",
+                            "name": "苗苗机构",
+                            "orgId": 19929952,
+                            "principal": "苗苗",
+                            "principalPhone": "86-183****0898",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 1,
+                            "type": 1
+                        },
+                        {
+                            "address": "hhhhhh",
+                            "area": "东城区",
+                            "areaCode": 110101,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/bc71f6bef6a28dccad43ac0a12f93e1a.png",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "192029202920292029",
+                            "creatorName": "邢雪1",
+                            "hiddenPhone": "C95nysCk/Fn8HpeqBCJqEQ==",
+                            "name": "生活大学你好哈哈哈哈生活大学你好哈哈哈哈生活大学你好哈哈哈哈生活大学你好哈哈哈哈",
+                            "orgId": 19929951,
+                            "principal": "王晓晓",
+                            "principalPhone": "86-186****8511",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 1,
+                            "type": 3
+                        },
+                        {
+                            "address": "鸟鸟",
+                            "area": "东城区",
+                            "areaCode": 110101,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/4d3cbad3924040baa6e8c61cdc84c5a6.png",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "102938475611111111",
+                            "creatorName": "邢雪1",
+                            "hiddenPhone": "aI28c0U0Jsmd8jtNnPb5SA==",
+                            "name": "北京大学-开放平台8",
+                            "orgId": 19929950,
+                            "principal": "王笑笑",
+                            "principalPhone": "86-186****8508",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 1,
+                            "type": 2
+                        },
+                        {
+                            "address": "你好",
+                            "area": "和平区",
+                            "areaCode": 120101,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/def924136fc01bc2ac31497abe8840f1.png",
+                            "city": "市辖区",
+                            "cityCode": 120100,
+                            "code": "102938475654839",
+                            "creatorName": "邢雪1",
+                            "hiddenPhone": "KidNjXHP1oWKEwcC1+eeZA==",
+                            "name": "北京大学-开放平台7",
+                            "orgId": 19929949,
+                            "principal": "王笑笑",
+                            "principalPhone": "86-186****8507",
+                            "prov": "天津市",
+                            "provCode": 120000,
+                            "status": 1,
+                            "type": 1
+                        },
+                        {
+                            "address": "你好",
+                            "area": "东城区",
+                            "areaCode": 110101,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/ee15c39e329c0f6497215ce24b843030.png",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "102938475483920",
+                            "creatorName": "邢雪1",
+                            "hiddenPhone": "0mz1aNkDToG5qXLxCuEAtA==",
+                            "name": "北京大学-开放平台60000",
+                            "orgId": 19929948,
+                            "principal": "王笑笑",
+                            "principalPhone": "86-186****8506",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 2,
+                            "type": 1
+                        },
+                        {
+                            "address": "快看看",
+                            "area": "东城区",
+                            "areaCode": 110101,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/1f017d5bbb88011f96ed032e5f1a2d5e.png",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "101928392019283920",
+                            "creatorName": "邢雪1",
+                            "hiddenPhone": "dk7suAryVTYOt+r6EfCnag==",
+                            "name": "北京大学-开放平台56",
+                            "orgId": 19929947,
+                            "principal": "王笑笑",
+                            "principalPhone": "86-186****8505",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 1,
+                            "type": 2
+                        },
+                        {
+                            "address": "0714号街道",
+                            "area": "西城区",
+                            "areaCode": 110102,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/f3774fbe94d2e444b5bf8f6ff2522c73.png",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "114119120999113",
+                            "creatorName": "孙德彪",
+                            "hiddenPhone": "GD4La6G+xNmpgrtQhsnezA==",
+                            "name": "0714开放机构-5",
+                            "orgId": 19929946,
+                            "principal": "0714",
+                            "principalPhone": "86-153****0714",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 1,
+                            "type": 2
+                        },
+                        {
+                            "address": "哈哈哈",
+                            "area": "东城区",
+                            "areaCode": 110101,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/ef25d9149336d58196f191f51cd372dc.png",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "102938475678903",
+                            "creatorName": "邢雪1",
+                            "hiddenPhone": "3msEOnWdyD/0qiPL7KyRqg==",
+                            "name": "北京大学-开放平台3",
+                            "orgId": 19929942,
+                            "principal": "王笑笑",
+                            "principalPhone": "86-186****8503",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 2,
+                            "type": 1
+                        },
+                        {
+                            "address": "wwww",
+                            "area": "东城区",
+                            "areaCode": 110101,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/1c7e5b195da66b7d86d41d192c06c4a8.png",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "123212321232124",
+                            "creatorName": "姚国帧",
+                            "hiddenPhone": "sArpfBaYYkQJvL8aJ2/sCw==",
+                            "name": "wwwww",
+                            "orgId": 19929936,
+                            "principal": "34343434",
+                            "principalPhone": "86-158****4521",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 1,
+                            "type": 1
+                        },
+                        {
+                            "address": "你好",
+                            "area": "东城区",
+                            "areaCode": 110101,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/ed1fea8aa617c1abb1f0ddd7eb6dc8d4.png",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "109238475655555",
+                            "creatorName": "邢雪1",
+                            "hiddenPhone": "JYitPDbhxA3jBSMv2UCJGw==",
+                            "name": "北京大学-开放平台2",
+                            "orgId": 19929935,
+                            "principal": "王笑笑",
+                            "principalPhone": "86-186****8502",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 1,
+                            "type": 1
+                        },
+                        {
+                            "address": "你好",
+                            "area": "东城区",
+                            "areaCode": 110101,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/959a704468346a649c11c2db17c42930.png",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "110293847560000",
+                            "creatorName": "邢雪1",
+                            "hiddenPhone": "aT9AAEGSKUJX7KPEZhgYgQ==",
+                            "name": "北京大学-开放平台1",
+                            "orgId": 19929933,
+                            "principal": "王笑笑",
+                            "principalPhone": "86-186****8501",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 1,
+                            "type": 1
+                        },
+                        {
+                            "address": "清河街道和盈中心B座",
+                            "area": "海淀区",
+                            "areaCode": 110108,
+                            "certificate": "https://file1-fz.jiaoyanyun.com/admin/0be648fd732702bba98aa2f8733f6f3f.png",
+                            "city": "市辖区",
+                            "cityCode": 110100,
+                            "code": "999999999999999",
+                            "creatorName": "李兴部",
+                            "hiddenPhone": "ds3ULCB5q8PM4PuZkYTeYA==",
+                            "name": "开放平台-rd-lixingbu",
+                            "orgId": 19929932,
+                            "principal": "向初",
+                            "principalPhone": "86-188****3261",
+                            "prov": "北京市",
+                            "provCode": 110000,
+                            "status": 1,
+                            "type": 1
                         }
                     ]
                 }
@@ -859,7 +1225,8 @@
                     "linkageCode": {
                         "label": "联动代码",
                         "value": "//#region\n/*\nwidget:当前元素;\nlinkageObj:联动对象\ncopyWidget:复制方法\n*/ \n//#endregion "
-                    }
+                    },
+                    "total": 28
                 }
             }
         },
@@ -883,12 +1250,28 @@
                 "advanced": {
                     "tableTitles": [
                         {
-                            "label": "名称",
+                            "label": "机构名称",
                             "prop": "name"
                         },
                         {
                             "label": "机构id",
                             "prop": "orgId"
+                        },
+                        {
+                            "label": "注册地址",
+                            "prop": "address"
+                        },
+                        {
+                            "label": "联系人",
+                            "prop": "principal"
+                        },
+                        {
+                            "label": "联系电话",
+                            "prop": "principalPhone"
+                        },
+                        {
+                            "label": "统一社会信用代码",
+                            "prop": "code"
                         }
                     ],
                     "tableValues": [
