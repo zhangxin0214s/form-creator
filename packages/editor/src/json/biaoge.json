@@ -28,29 +28,21 @@
         },
         "onMounted": {
             "label": "渲染完成",
-<<<<<<< HEAD
             "value": "let widgetList = fc.widgetStore().widgetList\r\nlet idInput = fc.utils.getWidgetById(\"a073c85ed808458f8eaaecb47dff7075\", widgetList)\r\nlet nameInput = fc.utils.getWidgetById(\"4e6d29f8bd8d423aa22ba8e11dc36580\", widgetList)\r\nlet table = fc.utils.getWidgetById(\"b55c7733dfc747b9bbb1d0a104a21e43\", widgetList)\r\nlet pagination = fc.utils.getWidgetById(\"53fddf9b369444b49e080a2381e0b734\", widgetList)\r\n\r\npagination.options.advanced.currentPage = 1\r\nlet currentPage = pagination.options.advanced.currentPage\r\ntable.options.advanced.tableValues = []\r\nfc.utils.request({\r\n    url: '/v1/openorg/list',\r\n    method: 'post',\r\n    data: { page: currentPage, page_size: pagination.options.advanced.pageSize }\r\n}).then(response => {\r\n    console.log(fc.widgetStore().widgetList)\r\n    for (let item of response.data.data.list) {\r\n        table.options.advanced.tableValues.push(item)\r\n    }\r\n    pagination.options.advanced.total = response.data.data.total\r\n})"
         },
         "apiHost":{
             "label": "apiHost",
             "value": "https://app-fzpub.jiaoyanyun.com/admin-fzpub"
-=======
-            "value": "let widgetList = fc.widgetStore().widgetList\r\nlet idInput = fc.utils.getWidgetById(\"a073c85ed808458f8eaaecb47dff7075\", widgetList)\r\nlet nameInput = fc.utils.getWidgetById(\"4e6d29f8bd8d423aa22ba8e11dc36580\", widgetList)\r\nlet table = fc.utils.getWidgetById(\"b55c7733dfc747b9bbb1d0a104a21e43\", widgetList)\r\nlet pagination = fc.utils.getWidgetById(\"53fddf9b369444b49e080a2381e0b734\", widgetList)\r\n\r\npagination.options.advanced.currentPage = 1\r\nlet currentPage = pagination.options.advanced.currentPage\r\ntable.options.advanced.tableValues = []\r\nfc.utils.request({\r\n    url: 'https://app-fzpub.jiaoyanyun.com/admin-fzpub/v1/openorg/list',\r\n    method: 'post',\r\n    data: { page: currentPage, page_size: pagination.options.advanced.pageSize }\r\n}).then(response => {\r\n    console.log(fc.widgetStore().widgetList)\r\n    for (let item of response.data.data.list) {\r\n        table.options.advanced.tableValues.push(item)\r\n    }\r\n    pagination.options.advanced.total = response.data.data.total\r\n})"
->>>>>>> b4a3f47951aaefb8be926564c039d95b65db877c
         },
         "requestHeader": {
             "x-jyy-token": "MTN85aea5Zu95binfDA5Njg5OXwxNjY0MzM0MTA4fEp5eVNhYXNZYWNoU3Nv"
         },
-<<<<<<< HEAD
-        "ruleForm": {}
-=======
         "ruleForm": {
             "search": {
                 "id": "",
                 "name": ""
             }
         }
->>>>>>> b4a3f47951aaefb8be926564c039d95b65db877c
     },
     "widgetList": [
         {
@@ -60,11 +52,7 @@
             "category": "container",
             "icon": "lattice",
             "value": null,
-<<<<<<< HEAD
-            "ruleFormKey": null,
-=======
             "ruleFormKey": "search",
->>>>>>> b4a3f47951aaefb8be926564c039d95b65db877c
             "ruleFormKeyType": "object",
             "options": {
                 "basic": {
@@ -82,11 +70,7 @@
                     },
                     "ruleFormKey": {
                         "label": "参数key",
-<<<<<<< HEAD
-                        "value": ""
-=======
                         "value": "search"
->>>>>>> b4a3f47951aaefb8be926564c039d95b65db877c
                     },
                     "isHidden": {
                         "label": "隐藏组件",
@@ -311,11 +295,7 @@
                         },
                         {
                             "id": 2,
-<<<<<<< HEAD
-                            "gutter": 8,
-=======
                             "gutter": 10,
->>>>>>> b4a3f47951aaefb8be926564c039d95b65db877c
                             "widgetList": [
                                 {
                                     "id": "4e6d29f8bd8d423aa22ba8e11dc36580",
@@ -385,11 +365,7 @@
                                                     {
                                                         "label": "左边距",
                                                         "icon": "Back",
-<<<<<<< HEAD
-                                                        "value": 0
-=======
                                                         "value": 44
->>>>>>> b4a3f47951aaefb8be926564c039d95b65db877c
                                                     },
                                                     {
                                                         "label": "上边距",
@@ -466,14 +442,11 @@
                                                         ]
                                                     },
                                                     {
-<<<<<<< HEAD
-=======
                                                         "label": "分割线",
                                                         "value": "245669bf50b149b8bd830b2732a324e3",
                                                         "children": []
                                                     },
                                                     {
->>>>>>> b4a3f47951aaefb8be926564c039d95b65db877c
                                                         "label": "表格",
                                                         "value": "b55c7733dfc747b9bbb1d0a104a21e43",
                                                         "children": []
@@ -499,11 +472,7 @@
                         },
                         {
                             "id": 2,
-<<<<<<< HEAD
-                            "gutter": 4,
-=======
                             "gutter": 6,
->>>>>>> b4a3f47951aaefb8be926564c039d95b65db877c
                             "widgetList": [
                                 {
                                     "id": "cc5d3843133a47c2b4867ee729c7ecb3",
@@ -595,11 +564,7 @@
                                                     {
                                                         "label": "左边距",
                                                         "icon": "Back",
-<<<<<<< HEAD
-                                                        "value": 0
-=======
                                                         "value": 60
->>>>>>> b4a3f47951aaefb8be926564c039d95b65db877c
                                                     },
                                                     {
                                                         "label": "上边距",
@@ -688,14 +653,11 @@
                                                         ]
                                                     },
                                                     {
-<<<<<<< HEAD
-=======
                                                         "label": "分割线",
                                                         "value": "245669bf50b149b8bd830b2732a324e3",
                                                         "children": []
                                                     },
                                                     {
->>>>>>> b4a3f47951aaefb8be926564c039d95b65db877c
                                                         "label": "表格",
                                                         "value": "b55c7733dfc747b9bbb1d0a104a21e43",
                                                         "children": []
@@ -735,8 +697,6 @@
                     ],
                     "tableValues": [
                         {
-<<<<<<< HEAD
-=======
                             "address": "事实上2恩爱伟大文案的三个分散",
                             "area": "东城区",
                             "areaCode": 110101,
@@ -756,7 +716,6 @@
                             "type": 1
                         },
                         {
->>>>>>> b4a3f47951aaefb8be926564c039d95b65db877c
                             "address": "ddd",
                             "area": "河东区",
                             "areaCode": 120102,
@@ -774,8 +733,6 @@
                             "provCode": 120000,
                             "status": 1,
                             "type": 2
-<<<<<<< HEAD
-=======
                         },
                         {
                             "address": "你好",
@@ -1118,15 +1075,12 @@
                             "provCode": 110000,
                             "status": 1,
                             "type": 1
->>>>>>> b4a3f47951aaefb8be926564c039d95b65db877c
                         }
                     ]
                 }
             }
         },
         {
-<<<<<<< HEAD
-=======
             "id": "245669bf50b149b8bd830b2732a324e3",
             "name": "分割线",
             "type": "fcDivider",
@@ -1281,7 +1235,6 @@
             }
         },
         {
->>>>>>> b4a3f47951aaefb8be926564c039d95b65db877c
             "id": "b55c7733dfc747b9bbb1d0a104a21e43",
             "name": "表格",
             "type": "fcTable",
@@ -1301,21 +1254,12 @@
                 "advanced": {
                     "tableTitles": [
                         {
-<<<<<<< HEAD
-                            "label": "名称",
-=======
                             "label": "机构名称",
->>>>>>> b4a3f47951aaefb8be926564c039d95b65db877c
                             "prop": "name"
                         },
                         {
                             "label": "机构id",
                             "prop": "orgId"
-<<<<<<< HEAD
-                        }
-                    ],
-                    "tableValues": [],
-=======
                         },
                         {
                             "label": "注册地址",
@@ -1526,7 +1470,6 @@
                             "type": 3
                         }
                     ],
->>>>>>> b4a3f47951aaefb8be926564c039d95b65db877c
                     "currentPage": 1,
                     "total": 1
                 },
