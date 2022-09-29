@@ -21,20 +21,6 @@ export function getWidgetById(id, widgetList) {
     }
   }
   return target
-  // let target = null;
-  // widgetList.forEach(widget => {
-  //   if (widget.id === id) {
-  //     target = widget
-  //   } else {
-  //     if (['fcGrid', 'fcTabs', 'fcCard'].indexOf(widget.type) > -1) {
-  //       const cols = widget.options.advanced.cols
-  //       cols.forEach(col => {
-  //         if (!target) getWidgetById(id, col.widgetList)
-  //       })
-  //     }
-  //   }
-  // })
-  // return target
 }
 
 /**
