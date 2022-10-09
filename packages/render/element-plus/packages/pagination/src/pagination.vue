@@ -29,9 +29,7 @@
 </script>
 <script setup>
   import { onBeforeMount,watch,inject } from 'vue';
-  import { widgetStore } from '@/store/index';
   import useRegisterEvent from '../../hooks/useRegisterEvent';
-  import containerMask from "../../common/containerMask.vue"
   const { handleOnBeforeMount,handleOnChange } = useRegisterEvent({props});
   const props=defineProps([
     'widget',

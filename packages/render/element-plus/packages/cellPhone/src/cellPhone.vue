@@ -69,7 +69,7 @@ const props = defineProps([
 	'selectedWidget',
 ]);
 
-watchEvent(props, watch,ElMessage,"cellPhone");
+watchEvent(props, watch, ElMessage,"cellPhone");
 
 const { linkageWatchEvent } = useRegisterEvent({props, inject});
 linkageWatchEvent({watch});

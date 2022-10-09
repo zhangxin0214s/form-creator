@@ -33,7 +33,6 @@ export default {
 <script setup>
 import { onMounted, onBeforeMount, inject } from 'vue';
 import useRegisterEvent from '../../hooks/useRegisterEvent';
-import { widgetStore } from '@/store/index';
 const copy = inject('copyWidget');
 let props = defineProps(['widget', 'parentWidget', 'ruleFormRef', 'isEditor', 'selectedWidget']);
 

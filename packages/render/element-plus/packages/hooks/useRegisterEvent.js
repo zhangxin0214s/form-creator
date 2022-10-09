@@ -1,12 +1,10 @@
 import { ElMessage } from 'element-plus'
 import * as utils from '../../utils/index.js'
-import { widgetStore } from '@/store/index';
 
 // 对外暴露的空间
 const fc = {
     ElMessage,
-    utils,
-    widgetStore
+    utils
 }
 
 const useRegisterEvent = ({props, inject}) =>{

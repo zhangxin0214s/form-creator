@@ -30,7 +30,6 @@
   }
 </script>
 <script setup>
-  import containerMask from "../../common/containerMask.vue"
   import cardContent from "./content.vue"
   import { watch } from 'vue'
 

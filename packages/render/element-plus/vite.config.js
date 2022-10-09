@@ -17,6 +17,20 @@ export default defineConfig({
 			/* 自动引入全局scss文件 */
 			additionalData: '@import "./styles/global.scss";',
 		  },
+		},
+		postcss: {
+			plugins: [
+				{
+					postcssPlugin: 'internal:charset-removal',
+					AtRule: {
+						charset: (atRule) => {
+							if (atRule.name === 'charset') {
+								atRule.remove();
+							}
+						}
+					}
+				}
+			],
 		}
 	},
 	build: {
