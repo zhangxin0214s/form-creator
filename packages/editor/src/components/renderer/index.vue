@@ -39,6 +39,7 @@
     import { onMounted, onBeforeMount, ref } from 'vue';
     import widgetMask from './widgetMask.vue'
     import containerMask from './containerMask.vue'
+    import { widgetStore } from '@/store/index';
     import { useRegisterEvent } from '../../../../render/element-plus/packages/index.js'
     const props = defineProps(['widgetList', 'formConfig', 'isEditor']);
     const ruleFormRef = ref(null);
@@ -53,6 +54,7 @@
             }
         })
     }
+    provide('widgetStore', widgetStore)
 
     const { handleOnBeforeMount, handleOnMounted } = useRegisterEvent({props});
 

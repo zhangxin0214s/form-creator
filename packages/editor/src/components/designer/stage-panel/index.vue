@@ -79,6 +79,7 @@ const {widgetList, formConfig, isEditor, selectedWidget} = storeToRefs(_widgetSt
 
 const ruleFormRef = ref(null);
 
+provide('widgetStore', widgetStore)
 /**
  * 点击选中
  */
