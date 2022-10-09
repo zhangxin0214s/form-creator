@@ -1,4 +1,5 @@
 module.exports = {
+  base: "/",
   title: "文档", // 标题
   description: "Life is short, Keep it simple.", // 描述信息
   head: [
@@ -7,7 +8,7 @@ module.exports = {
   ],
   themeConfig: {
     logo: "/logo.svg",
-    socialLinks: [{ icon: "github", link: "https://git.100tal.com/wangxiao_neirongchanpinbu_edit/subject-editor" }],
+    socialLinks: [{ icon: "github", link: "https://git.100tal.com/wangxiao_neirongchanpinbu_edit/form-creator" }],
     nav: [
       { text: '指南', link: '/guide/introduction' },
       { text: '示例', link: '/example/form' },
