@@ -8,6 +8,7 @@ import { resolve } from "path"
 const prefix = `monaco-editor/esm/vs`;
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: './',
   plugins: [
     vue(),
     // eslintPlugin({
@@ -30,6 +31,20 @@ export default defineConfig({
         additionalData: '@import "./src/styles/global.scss";',
       },
     },
+		postcss: {
+			plugins: [
+				{
+					postcssPlugin: 'internal:charset-removal',
+					AtRule: {
+						charset: (atRule) => {
+							if (atRule.name === 'charset') {
+								atRule.remove();
+							}
+						}
+					}
+				}
+			],
+		}
   },
   resolve: {
     alias: {
