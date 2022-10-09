@@ -1,5 +1,5 @@
 {
-  "name": "editor",
+  "name": "@form-creator/editor",
   "version": "1.0.0",
   "description": "this is a creator for form",
   "main": "index.js",

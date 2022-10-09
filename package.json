@@ -7,10 +7,10 @@
   "author": "zhangxin0214@tal.com",
   "scripts": {
     "preinstall": "npx only-allow pnpm",
-    "editor:dev": "pnpm recursive run dev --filter=editor",
-    "editor:build": "pnpm recursive run build --filter=editor",
-    "docs:dev": "pnpm recursive run dev --filter=docs",
-    "docs:build": "pnpm recursive run build --filter=docs",
+    "editor:dev": "pnpm -r --filter @form-creator/editor run dev",
+    "editor:build": "pnpm -r --filter @form-creator/editor run build",
+    "docs:dev": "pnpm -r --filter @form-creator/docs run dev",
+    "docs:build": "pnpm -r --filter @form-creator/docs run build",
     "lint": "eslint packages/editor/src/**/*.{js,vue} --fix",
     "lint:create": "eslint --init"
   },
