@@ -1,8 +1,8 @@
 {
-  "name": "subject-editor",
+  "name": "form-creator",
   "private": true,
   "version": "0.0.1",
-  "description": "this is a editor for subject",
+  "description": "this is a creator for form",
   "type": "module",
   "author": "zhangxin0214@tal.com",
   "scripts": {
