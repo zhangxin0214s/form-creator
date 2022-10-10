@@ -14,6 +14,7 @@ const useRegisterEvent = ({props, inject}) =>{
     const _fc = {
         ...fc,
         props,
+        inject,
         widgetStore,
         target: props.widget,
         linkTarget: props?.widget?.options?.advanced?.linkage
