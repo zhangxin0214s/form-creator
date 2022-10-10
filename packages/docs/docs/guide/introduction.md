@@ -34,7 +34,7 @@ import { VPTeamMembers } from 'vitepress/theme'
 
 const members = [
   {
-    avatar: '/1.jpeg',
+    avatar: './assets/1.jpeg',
     name: 'Zhang Xin',
     title: '创造者',
     links: [
@@ -43,7 +43,7 @@ const members = [
     ]
   },
    {
-    avatar: '/4.jpeg',
+    avatar: './assets/4.jpeg',
     name: 'Lin Zi Yang',
     title: '普通贡献者',
     links: [
@@ -52,7 +52,7 @@ const members = [
     ]
   },
     {
-    avatar: '/2.jpeg',
+    avatar: './assets/2.jpeg',
     name: 'Zhang Rui',
     title: '主要贡献者',
     links: [
@@ -61,15 +61,14 @@ const members = [
     ]
   },
     {
-    avatar: '/3.png',
+    avatar: './assets/3.png',
     name: 'Hu Ze Zhou',
     title: '主要贡献者',
     links: [
       { icon: 'github', link: '' },
       { icon: 'twitter', link: '' }
     ]
-  },
-   
+  }
 ]
 </script>
 
