@@ -1,5 +1,6 @@
+const base = process.env.BASE || '/'
 module.exports = {
-  base: "/",
+  base: base,
   title: "文档", // 标题
   description: "Life is short, Keep it simple.", // 描述信息
   head: [
