@@ -31,7 +31,7 @@ import SettingPanel from '@/components/designer/setting-panel/index.vue'
 import { ref } from "vue"
 
 const designer = ref('null');
-const logo = ref('../src/assets/logo.svg');
+const logo = ref('./logo.svg');
 </script>
 <style lang="scss" scoped>
 
