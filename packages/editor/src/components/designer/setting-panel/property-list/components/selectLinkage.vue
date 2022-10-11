@@ -47,8 +47,8 @@ options.splice(0);
 // 从组件列表中选中除了自身的组件push到选择栏中
 let getOptions = (widget) => {
 	let obj = {
-		label: widget.options.basic.name.value,
-		value: widget.id,
+		label: widget?.options?.basic?.name?.value,
+		value: widget?.id,
 		children: [],
 	};
 	if (widget.type === 'fcGrid' || widget.type === 'fcTabs') {

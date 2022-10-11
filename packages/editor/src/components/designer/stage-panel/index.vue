@@ -80,13 +80,23 @@ import {
 } from '../../../../../render/element-plus/packages/hooks/recordLocalStorage';
 
 const _widgetStore = widgetStore();
-const { widgetList, formConfig, isEditor, selectedWidget } =
-	storeToRefs(_widgetStore);
+const {
+	widgetList,
+	formConfig,
+	pointer,
+	historyList,
+	isEditor,
+	selectedWidget,
+} = storeToRefs(_widgetStore);
 
 const ruleFormRef = ref(null);
 
 const widgetList_history = getLocalValue('widgetList_history');
-widgetList_history && (widgetList.value = widgetList_history);
+if (widgetList_history) {
+	widgetList.value = widgetList_history;
+	historyList.value.push([...widgetList.value]);
+	pointer.value = 1;
+}
 const formConfig_history = getLocalValue('formConfig_history');
 formConfig_history && (formConfig.value = formConfig_history);
 keepFormDataLocal(watch, formConfig.value, widgetList.value);

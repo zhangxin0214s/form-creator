@@ -23,7 +23,8 @@ export const widgetStore = defineStore('widget', {
          * 清空舞台
          */
         clearWidget() {
-            this.widgetList = [];
+            // this.widgetList = [];
+            this.widgetList.splice(0);
             this.selectedWidget = null
         },
         
@@ -72,6 +73,7 @@ export const widgetStore = defineStore('widget', {
             if (this.pointer !== this.historyList.length - 1) {
                 this.historyList.splice(this.pointer + 1, this.historyList.length);
             }
+
             this.historyList.push([...this.widgetList]);
             this.pointer++;
             if (this.historyList.length - 1 > this.max) {
@@ -83,14 +85,17 @@ export const widgetStore = defineStore('widget', {
         undo() {
             if (this.pointer - 1 < 0) return;
             this.pointer--;
-            this.widgetList = [...this.historyList[this.pointer]];
+            // this.widgetList = [...this.historyList[this.pointer]];
+            this.widgetList.splice(0,this.widgetList.length,...this.historyList[this.pointer]);
             this.selectedWidget = null
         },
 
         redo() {
             if (this.pointer + 1 >= this.historyList.length) return;
             this.pointer++;
-            this.widgetList = [...this.historyList[this.pointer]];
+            
+            // this.widgetList = [...this.historyList[this.pointer]];
+            this.widgetList.splice(0,this.widgetList.length,...this.historyList[this.pointer]);
             this.selectedWidget = this.widgetList[this.widgetList.length - 1];
         },
     },
