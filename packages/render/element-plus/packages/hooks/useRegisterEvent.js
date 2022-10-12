@@ -9,7 +9,7 @@ const fc = {
 
 const useRegisterEvent = ({props, inject}) =>{
     const EVENTS = props?.widget?.options?.events;
-    const widgetStore = inject('widgetStore');
+    const widgetStore = inject && inject('widgetStore');
     // 将要往沙盒传递的方法或元素写入对外暴露的空间
     const _fc = {
         ...fc,
