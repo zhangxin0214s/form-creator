@@ -1,0 +1,17 @@
+[
+  {
+    "name": "题目编辑页",
+    "path": "/templateLib/form/subject/index.json",
+    "image": "/templateLib/form/subject/index.jpeg"
+  },
+  {
+    "name": "表单数据",
+    "path": "/templateLib/form/biaodan/index.json",
+    "image": "/templateLib/form/biaodan/index.jpeg"
+  },
+  {
+    "name": "表格数据",
+    "path": "/templateLib/form/biaoge/index.json",
+    "image": "/templateLib/form/biaoge/index.png"
+  }
+]

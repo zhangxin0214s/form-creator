@@ -14,11 +14,12 @@
 </template>
 
 <script setup>
-import templateData from '../../../public/json/templateData.json'
+import templateData from '../../../public/templateLib/list.json'
 import { storeToRefs } from 'pinia'
 import { widgetStore } from '@/store/index';
 import axios from 'axios'
 import { defineProps, defineEmits } from 'vue'
+
 // 通过 emit 方法监听父组件的自定义事件
 const emit = defineEmits(['library'])
 const _widgetStore = widgetStore();
