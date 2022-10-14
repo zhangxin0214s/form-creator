@@ -40,7 +40,7 @@
     import widgetMask from './widgetMask.vue'
     import containerMask from './containerMask.vue'
     import { widgetStore } from '@/store/index';
-    import { useRegisterEvent } from '../../../../render/element-plus/packages/index.js'
+    import { useRegisterEvent } from '../../../../libs/element-plus/packages/index.js'
     const props = defineProps(['widgetList', 'formConfig', 'isEditor']);
     const ruleFormRef = ref(null);
     const submitForm = async () =>{
