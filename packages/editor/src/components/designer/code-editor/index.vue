@@ -13,22 +13,23 @@
 <script setup>
 import { onMounted, reactive, ref, toRaw } from 'vue'
 import toolBar from './code-editor-toolbar.vue'
-import { widgetStore } from '@/store/index';
-import { computed } from 'vue';
 import * as monaco from "monaco-editor";
 import { ElMessage,ElMessageBox } from 'element-plus'
 import useClipboard from 'vue-clipboard3';
 import { saveAs } from 'file-saver'
 import { generateId } from '@/utils/util'
-const _widgetStore = widgetStore();
+
 const props = defineProps(['formData','language'])
 const emit = defineEmits(['changeCode'])
 const defaultContent = props.language === 'javascript' ? props.formData:JSON.stringify(props.formData)
 let monacoEditor = null;
+
 /**
  * 初始化monaco editor
  */
 const initEditor = () => {
+      console.log(monaco,"===monaco===")
+      document.getElementById('codeBox').innerHTML = ''
       monacoEditor = monaco.editor.create(document.getElementById('codeBox'), {
         theme: 'vs-dark', //官方自带三种主题vs, hc-black, or vs-dark
         value: defaultContent, //编辑器初始显示文字
@@ -39,8 +40,7 @@ const initEditor = () => {
         roundedSelection: false, // 右侧不显示编辑器预览框
         autoIndent: true, // 自动缩进
         selectOnLineNumbers: true,//显示行号
-        roundedSelection: false, // 右侧不显示编辑器预览框
-        cursorStyle: 'line', //光标样式
+        // cursorStyle: 'line', //光标样式
         automaticLayout: true, //自动布局
         glyphMargin: true, //字形边缘
         useTabStops: false,
