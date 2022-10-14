@@ -77,7 +77,7 @@ import containerMask from './containerMask.vue';
 import {
 	keepFormDataLocal,
 	getLocalValue,
-} from '../../../../../render/element-plus/packages/hooks/recordLocalStorage';
+} from '../../../../../libs/element-plus/packages/hooks/recordLocalStorage';
 
 const _widgetStore = widgetStore();
 const {
