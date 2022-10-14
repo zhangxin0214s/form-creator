@@ -1,5 +1,5 @@
 {
-  "name": "@form-creator/element-ui",
+  "name": "fc-element-ui",
   "version": "1.0.0",
   "description": "this is a fc-element-ui for form-creator",
   "main": "lib/fc-element-ui.umd.min.js",
