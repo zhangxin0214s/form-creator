@@ -1,6 +1,6 @@
 {
-  "name": "fc-element-ui",
-  "version": "1.0.0",
+  "name": "@form-creator1/element-ui",
+  "version": "0.1.1",
   "description": "this is a fc-element-ui for form-creator",
   "main": "lib/fc-element-ui.umd.min.js",
   "private": false,
