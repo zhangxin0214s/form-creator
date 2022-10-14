@@ -28,7 +28,6 @@ let monacoEditor = null;
  * 初始化monaco editor
  */
 const initEditor = () => {
-      console.log(monaco,"===monaco===")
       document.getElementById('codeBox').innerHTML = ''
       monacoEditor = monaco.editor.create(document.getElementById('codeBox'), {
         theme: 'vs-dark', //官方自带三种主题vs, hc-black, or vs-dark
