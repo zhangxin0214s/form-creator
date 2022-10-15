@@ -25,6 +25,9 @@ import onlyButton from './onlyButton'
 import upload from './upload'
 import richText from './richText'
 
+// 渲染器
+import renderer from './renderer'
+
 // hooks
 import useRegisterEvent from './hooks/useRegisterEvent'
 
@@ -49,7 +52,8 @@ const components = [
 	upload,
 	richText,
 	switch1,
-	pagination
+	pagination,
+	renderer
 ];
 
 //按需引入
@@ -75,7 +79,8 @@ export  {
 	richText,
 	switch1,
 	pagination,
-
+	renderer,
+	
 	useRegisterEvent
  };
 

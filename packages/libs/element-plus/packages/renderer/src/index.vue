@@ -35,13 +35,17 @@
         </el-form>
     </div>
 </template>
+<script>
+export default {
+	name: 'fcRenderer'
+}
+</script>
 <script setup>
     import { onMounted, onBeforeMount, ref } from 'vue';
     import widgetMask from './widgetMask.vue'
     import containerMask from './containerMask.vue'
-    import { widgetStore } from '@/store/index';
     import { useRegisterEvent } from '../../../../libs/element-plus/packages/index.js'
-    const props = defineProps(['widgetList', 'formConfig', 'isEditor']);
+    const props = defineProps(['widgetList', 'formConfig', 'isEditor', 'widgetStore']);
     const ruleFormRef = ref(null);
     const submitForm = async () =>{
         if (!ruleFormRef) return
@@ -54,7 +58,7 @@
             }
         })
     }
-    provide('widgetStore', widgetStore)
+    provide('widgetStore', props.widgetStore)
 
     const { handleOnBeforeMount, handleOnMounted } = useRegisterEvent({props});
 
