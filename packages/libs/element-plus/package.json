@@ -15,13 +15,13 @@
   "files": [
     "lib"
   ],
-  "main": "lib/fc-element-plus.umd.js",
-  "module": "lib/fc-element-plus.es.js",
+  "main": "lib/@form-creator/element-plus.umd.js",
+  "module": "lib/@form-creator/element-plus.es.js",
   "exports": {
     "./lib/style.css": "./lib/style.css",
     ".": {
-      "import": "./lib/fc-element-plus.es.js",
-      "require": "./lib/fc-element-plus.umd.js"
+      "import": "./lib/@form-creator/element-plus.es.js",
+      "require": "./lib/@form-creator/element-plus.umd.js"
     }
   },
   "dependencies": {

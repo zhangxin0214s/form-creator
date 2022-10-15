@@ -44,7 +44,7 @@ export default {
     import { onMounted, onBeforeMount, ref } from 'vue';
     import widgetMask from './widgetMask.vue'
     import containerMask from './containerMask.vue'
-    import { useRegisterEvent } from '../../hooks/useRegisterEvent'
+    import useRegisterEvent  from '../../hooks/useRegisterEvent'
     const props = defineProps(['widgetList', 'formConfig', 'isEditor', 'widgetStore']);
     const ruleFormRef = ref(null);
     const submitForm = async () =>{

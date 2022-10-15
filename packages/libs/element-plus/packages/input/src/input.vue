@@ -33,7 +33,7 @@ import { ElMessage } from 'element-plus';
 import { watch } from 'vue';
 import { handleChangeEvent } from '../../hooks/handleChangeEvent';
 import { watchEvent } from '../../hooks/watchEvent';
-import useRegisterEvent from '../../hooks/useRegisterEvent';
+import  useRegisterEvent  from '../../hooks/useRegisterEvent';
 
 import { inject } from 'vue';
 

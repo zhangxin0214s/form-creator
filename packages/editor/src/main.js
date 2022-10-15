@@ -4,8 +4,8 @@ import ElementPlus from "element-plus"
 import fcElementPlus from '../../libs/element-plus/packages/index.js'
 import "../../libs/element-plus/styles/global.scss"
 
-// import fcElementPlus from 'fc-element-plus'
-// import "fc-element-plus/lib/style.css"
+// import fcElementPlus from '@form-creator1/element-plus'
+// import "@form-creator1/element-plus/lib/style.css"
 import * as ElementPlusIconsVue from '@element-plus/icons-vue'
 import { createPinia } from 'pinia'
 import "element-plus/dist/index.css"
