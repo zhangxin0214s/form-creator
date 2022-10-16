@@ -21,10 +21,11 @@
 
   <!-- 预览面板 -->
   <el-dialog v-model="dialogFormVisible" title="表单预览" @close="closePreview" center destroy-on-close draggable>
-    <form-renderer
+    <fc-renderer
+        :widgetStore="widgetStore"
         :widgetList="widgetList"
         :formConfig="formConfig"
-    ></form-renderer>
+    ></fc-renderer>
   </el-dialog>
 
   <!-- 代码编辑器面板 -->
@@ -46,7 +47,6 @@
 import { ref } from 'vue';
 import { widgetStore } from '@/store/index';
 import { storeToRefs } from 'pinia';
-import formRenderer from '../../renderer/index.vue'
 import { ElMessage } from 'element-plus'
 import UploadInstance from 'element-plus'
 import { deepClone, handleData, } from '@/utils/util'

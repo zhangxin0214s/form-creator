@@ -41,7 +41,7 @@ export default {
 }
 </script>
 <script setup>
-    import { onMounted, onBeforeMount, ref } from 'vue';
+    import { onMounted, onBeforeMount, ref, provide } from 'vue';
     import widgetMask from './widgetMask.vue'
     import containerMask from './containerMask.vue'
     import useRegisterEvent  from '../../hooks/useRegisterEvent'
