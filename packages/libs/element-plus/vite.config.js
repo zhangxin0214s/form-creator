@@ -37,8 +37,8 @@ export default defineConfig({
 		outDir: 'lib',
 		lib: {
 			entry: resolve(__dirname, 'packages/index.js'),
-			name: '@form-creator/element-plus',
-			fileName: '@form-creator/element-plus',
+			name: 'index',
+			fileName: 'index',
 		},
 		rollupOptions: {
 			// 确保外部化处理那些你不想打包进库的依赖

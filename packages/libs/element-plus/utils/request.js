@@ -1,7 +1,6 @@
 import axios from 'axios'
-import { widgetStore } from '@/store/index';
 
-export const request = (data) => {
+export const request = (data,widgetStore) => {
   const service = axios.create()
 
   let store=widgetStore()

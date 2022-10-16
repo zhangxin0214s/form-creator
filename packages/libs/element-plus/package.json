@@ -1,7 +1,7 @@
 {
   "name": "@form-creator1/element-plus",
   "private": false,
-  "version": "0.1.1",
+  "version": "0.1.3",
   "author": "zhangxin0214",
   "keywords": [
     "form-creator",
@@ -15,13 +15,13 @@
   "files": [
     "lib"
   ],
-  "main": "lib/@form-creator/element-plus.umd.js",
-  "module": "lib/@form-creator/element-plus.es.js",
+  "main": "lib/index.umd.js",
+  "module": "lib/index.es.js",
   "exports": {
     "./lib/style.css": "./lib/style.css",
     ".": {
-      "import": "./lib/@form-creator/element-plus.es.js",
-      "require": "./lib/@form-creator/element-plus.umd.js"
+      "import": "./lib/index.es.js",
+      "require": "./lib/index.umd.js"
     }
   },
   "dependencies": {
