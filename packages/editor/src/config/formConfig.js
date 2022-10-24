@@ -1378,7 +1378,7 @@ export const basicWidgets = [
 		type: "fcStaticText",
 		category: "widget",
 		icon: "staticText",
-		value: null,
+		value: '静态文本',
 		ruleFormKey: null,
 		options: {
 			basic: {
@@ -1400,7 +1400,7 @@ export const basicWidgets = [
 				},
 				textareaDefaultValue: {
 					label: '默认文本',
-					value: '这是一段静态文本',
+					value: '静态文本',
 				}, // 默认文本
 				"static-text-line-height": {
 					label: '行高',
