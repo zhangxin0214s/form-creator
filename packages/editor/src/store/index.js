@@ -58,16 +58,21 @@ export const widgetStore = defineStore('widget', {
          * 删除组件
          * @param {*} target
          */
-        removeWidget({target, parentWidget}) {
+        removeWidget({currentWidget, parentWidget, parentWidgetCid}) {
             if (!parentWidget) return;
             if(['fcGrid','fcTabs','fcCard'].indexOf(parentWidget.type)>-1){
                 parentWidget.options.advanced.cols[parentWidgetCid].widgetList.forEach((widget, index) => {
-                    if (widget.id === target.id) {
+                    if (widget.id === currentWidget.id) {
+                        parentWidget.options.advanced.cols[parentWidgetCid].widgetList.splice(index, 1)
+                    }
+                })
+            }
+            if(parentWidget instanceof Array) {
+                parentWidget.forEach((widget, index) => {
+                    if (widget.id === currentWidget.id) {
                         parentWidget.splice(index, 1)
                     }
                 })
-            }else {
-                console.warn('父容器检测到不是容器组件')
             }
             this.selectedWidget = null
             this.recordHistory();

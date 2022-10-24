@@ -58,7 +58,7 @@ export function getWidgetById(id, widgetList) {
  */
 export function getParentById(currentWidget, widgetList) {
   let stack = [...widgetList];
-  let target = [];
+  let target = null;
   while (stack.length) {
     let node = stack.pop();
     if (['fcGrid', 'fcTabs', 'fcCard'].indexOf(node.type) > -1) {
@@ -66,8 +66,7 @@ export function getParentById(currentWidget, widgetList) {
         stack.push(...c.widgetList);
         c.widgetList.forEach(widget => {
           if(widget.id === currentWidget.id) {
-            target.push(node)
-            
+            target = node
           }
         })
       });

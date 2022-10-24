@@ -132,7 +132,7 @@ provide('copyWidget', copyWidget);
  * 删除组件
  */
 const removeWidget = ({ widget, parentWidget, parent, ruleForm }) => {
-	_widgetStore.removeWidget({ target: widget, parentWidget });
+	_widgetStore.removeWidget({ currentWidget: widget, parentWidget });
 	if (parent?.ruleFormKeyType === 'array') {
 		for (let i = 0; i < ruleForm.length; i++) {
 			if (Object.keys(ruleForm[i]).indexOf(widget.ruleFormKey) > -1) {

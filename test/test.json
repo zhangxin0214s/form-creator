@@ -13,4 +13,18 @@ const newOrigin = _widgetStore.copyWidget({
 })
 const number = fc.utils.getWidgetsByKey('number', [newOrigin])[0];
 number.value = parentWidget.options.advanced.cols[0].widgetList.length
-console.log(number,"===12==",newOrigin)
+
+
+
+const _widgetStore = fc.widgetStore();
+const parentWidget = fc.utils.getWidgetsByKey('options', _widgetStore.widgetList)[0];
+
+const currentWidget = fc.utils.getParentById(fc.props.widget, _widgetStore.widgetList)
+
+_widgetStore.removeWidget({
+    currentWidget,
+    parentWidget,
+    parentWidgetCid: 0
+})
+
+console.log(currentWidget,"===currentWidget===")
