@@ -1,8 +1,8 @@
-import { getWidgetById, getWidgetByKey } from './util'
+import { getWidgetById, getWidgetsByKey } from './util'
 import { request } from './request'
 
 export {
     getWidgetById,
-    getWidgetByKey,
+    getWidgetsByKey,
     request
 }

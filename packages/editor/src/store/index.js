@@ -32,7 +32,7 @@ export const widgetStore = defineStore('widget', {
          * 复制组件
          * @param {*} target
          */
-        copyWidget({target,parentWidget,ruleFormKey}) {
+        copyWidget({target,parentWidget,parentWidgetCid}) {
             let newOrigin = deepClone(target);
             newOrigin.id = generateId();
             // 处理栅格 && 标签页内组件
@@ -46,7 +46,13 @@ export const widgetStore = defineStore('widget', {
                     })
                 })
             }
-            parentWidget.push(newOrigin);
+            if(['fcGrid','fcTabs','fcCard'].indexOf(parentWidget.type)>-1){
+                parentWidget.options.advanced.cols[parentWidgetCid].widgetList.push(newOrigin);
+                return newOrigin;
+            }else {
+                console.warn('父容器检测到不是容器组件')
+            }
+            
         },
         /**
          * 删除组件
@@ -54,11 +60,15 @@ export const widgetStore = defineStore('widget', {
          */
         removeWidget({target, parentWidget}) {
             if (!parentWidget) return;
-            parentWidget.forEach((widget, index) => {
-                if (widget.id === target.id) {
-                    parentWidget.splice(index, 1)
-                }
-            })
+            if(['fcGrid','fcTabs','fcCard'].indexOf(parentWidget.type)>-1){
+                parentWidget.options.advanced.cols[parentWidgetCid].widgetList.forEach((widget, index) => {
+                    if (widget.id === target.id) {
+                        parentWidget.splice(index, 1)
+                    }
+                })
+            }else {
+                console.warn('父容器检测到不是容器组件')
+            }
             this.selectedWidget = null
             this.recordHistory();
         },

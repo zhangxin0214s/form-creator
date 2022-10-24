@@ -1378,6 +1378,8 @@ export const basicWidgets = [
 		type: "fcStaticText",
 		category: "widget",
 		icon: "staticText",
+		value: null,
+		ruleFormKey: null,
 		options: {
 			basic: {
 				name: {
@@ -1388,10 +1390,13 @@ export const basicWidgets = [
 					label: "",
 					value: ""
 				}, // 标签
-
 				isHidden: {
 					label: "隐藏组件",
 					value: false
+				},
+				ruleFormKey: {
+					label: "参数key",
+					value: ''
 				},
 				textareaDefaultValue: {
 					label: '默认文本',

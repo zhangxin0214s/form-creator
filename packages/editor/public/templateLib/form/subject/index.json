@@ -1100,11 +1100,13 @@
                                                                             "gutter": 4,
                                                                             "widgetList": [
                                                                                 {
-                                                                                    "id": "f3853f8059f1402f9a332990f4c01c8b",
+                                                                                    "id": "03a3c2e92a3546cfba6a888cf8f788e5",
                                                                                     "name": "静态文本",
                                                                                     "type": "fcStaticText",
                                                                                     "category": "widget",
                                                                                     "icon": "staticText",
+                                                                                    "value": "1",
+                                                                                    "ruleFormKey": "number",
                                                                                     "options": {
                                                                                         "basic": {
                                                                                             "name": {
@@ -1118,6 +1120,10 @@
                                                                                             "isHidden": {
                                                                                                 "label": "隐藏组件",
                                                                                                 "value": false
+                                                                                            },
+                                                                                            "ruleFormKey": {
+                                                                                                "label": "参数key",
+                                                                                                "value": "number"
                                                                                             },
                                                                                             "textareaDefaultValue": {
                                                                                                 "label": "默认文本",
@@ -1173,6 +1179,31 @@
                                                                                             "addRequired": {
                                                                                                 "label": "添加必填符号",
                                                                                                 "value": false
+                                                                                            },
+                                                                                            "marginAdjustment": {
+                                                                                                "label": "外边距调整",
+                                                                                                "options": [
+                                                                                                    {
+                                                                                                        "label": "左边距",
+                                                                                                        "icon": "Back",
+                                                                                                        "value": 0
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "label": "上边距",
+                                                                                                        "icon": "Top",
+                                                                                                        "value": 0
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "label": "右边距",
+                                                                                                        "icon": "Right",
+                                                                                                        "value": 0
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "label": "下边距",
+                                                                                                        "icon": "Bottom",
+                                                                                                        "value": 0
+                                                                                                    }
+                                                                                                ]
                                                                                             }
                                                                                         },
                                                                                         "advanced": {}
@@ -1570,7 +1601,7 @@
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "静态文本",
-                                                                                                                                "value": "f3853f8059f1402f9a332990f4c01c8b",
+                                                                                                                                "value": "03a3c2e92a3546cfba6a888cf8f788e5",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
@@ -1587,62 +1618,31 @@
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "label": "栅格1",
-                                                                                                                        "value": "e1eec262825a49fdb7a45067c6157eb8",
+                                                                                                                        "value": "d5feb5930ab94ce4a02c198402e36b62",
                                                                                                                         "children": [
                                                                                                                             {
                                                                                                                                 "label": "复选框1",
-                                                                                                                                "value": "4d99f89c5dbe421ca4fe7b5b9e3dada9",
+                                                                                                                                "value": "e7c77b9277544a1da225c78220aa3777",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "静态文本",
-                                                                                                                                "value": "35738e556a5646338d9ff111d736b19b",
+                                                                                                                                "value": "26983b8bcb574495acf4f9b70ad53389",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "输入框",
-                                                                                                                                "value": "2a0b3e816ae44cd28e884590df5d34f2",
+                                                                                                                                "value": "748ad22b1d784d4d8e4945da3644d09f",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "按钮1",
-                                                                                                                                "value": "7ba2d3c651d3401e888e5b7da62bd6e8",
+                                                                                                                                "value": "6aa2e8d38c1f45579081f7b843feea35",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "按钮1",
-                                                                                                                                "value": "d1276c3e020f4d7a936bfcfe0c2bac8c",
-                                                                                                                                "children": []
-                                                                                                                            }
-                                                                                                                        ]
-                                                                                                                    },
-                                                                                                                    {
-                                                                                                                        "label": "栅格1",
-                                                                                                                        "value": "51780241a9e8462c9fc361d8045644b6",
-                                                                                                                        "children": [
-                                                                                                                            {
-                                                                                                                                "label": "复选框1",
-                                                                                                                                "value": "ceff967d241c4cdea0a523740d5db82d",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "静态文本",
-                                                                                                                                "value": "38e5bee07176465fb648c9691668f02b",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "输入框",
-                                                                                                                                "value": "dad1bf1f6e82422da6354be6e19256df",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "按钮1",
-                                                                                                                                "value": "b7d26f65bf0545028cce84ff6aa434d1",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "按钮1",
-                                                                                                                                "value": "19de6b06412347ca8d4848c712d0e3e2",
+                                                                                                                                "value": "f9ba4b29eef64723ab50c767688a39a9",
                                                                                                                                 "children": []
                                                                                                                             }
                                                                                                                         ]
@@ -1676,7 +1676,7 @@
                                                                                             },
                                                                                             "onClick": {
                                                                                                 "label": "点击事件",
-                                                                                                "value": "const _widgetStore = fc.widgetStore();\n\nconst targetId = fc.linkTarget.value[0][fc.linkTarget.value[0].length - 1];\n\nconst widget = fc.utils.getWidgetById(targetId, _widgetStore.widgetList);\n\nconsole.log(widget,\"123\")"
+                                                                                                "value": "const _widgetStore = fc.widgetStore();\n\nconst targetId = fc.linkTarget.value[0][fc.linkTarget.value[0].length - 1];\n\nconst target = fc.utils.getWidgetById(targetId, _widgetStore.widgetList);\n\nconst parentWidget = fc.utils.getWidgetsByKey('options', _widgetStore.widgetList)[0];\n\n_widgetStore.copyWidget({\n    target,\n    parentWidget,\n    parentWidgetCid: 0\n})\n\nconsole.log(target,\"123\",parentWidget)"
                                                                                             }
                                                                                         }
                                                                                     }
@@ -1934,7 +1934,7 @@
                                                             }
                                                         },
                                                         {
-                                                            "id": "e1eec262825a49fdb7a45067c6157eb8",
+                                                            "id": "d5feb5930ab94ce4a02c198402e36b62",
                                                             "name": "栅格",
                                                             "type": "fcGrid",
                                                             "category": "container",
@@ -1994,7 +1994,7 @@
                                                                             "gutter": 4,
                                                                             "widgetList": [
                                                                                 {
-                                                                                    "id": "4d99f89c5dbe421ca4fe7b5b9e3dada9",
+                                                                                    "id": "e7c77b9277544a1da225c78220aa3777",
                                                                                     "name": "复选框",
                                                                                     "type": "fcCheckbox",
                                                                                     "category": "widget",
@@ -2164,11 +2164,13 @@
                                                                             "gutter": 4,
                                                                             "widgetList": [
                                                                                 {
-                                                                                    "id": "35738e556a5646338d9ff111d736b19b",
+                                                                                    "id": "26983b8bcb574495acf4f9b70ad53389",
                                                                                     "name": "静态文本",
                                                                                     "type": "fcStaticText",
                                                                                     "category": "widget",
                                                                                     "icon": "staticText",
+                                                                                    "value": "2",
+                                                                                    "ruleFormKey": "number",
                                                                                     "options": {
                                                                                         "basic": {
                                                                                             "name": {
@@ -2182,6 +2184,10 @@
                                                                                             "isHidden": {
                                                                                                 "label": "隐藏组件",
                                                                                                 "value": false
+                                                                                            },
+                                                                                            "ruleFormKey": {
+                                                                                                "label": "参数key",
+                                                                                                "value": "number"
                                                                                             },
                                                                                             "textareaDefaultValue": {
                                                                                                 "label": "默认文本",
@@ -2237,6 +2243,31 @@
                                                                                             "addRequired": {
                                                                                                 "label": "添加必填符号",
                                                                                                 "value": false
+                                                                                            },
+                                                                                            "marginAdjustment": {
+                                                                                                "label": "外边距调整",
+                                                                                                "options": [
+                                                                                                    {
+                                                                                                        "label": "左边距",
+                                                                                                        "icon": "Back",
+                                                                                                        "value": 0
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "label": "上边距",
+                                                                                                        "icon": "Top",
+                                                                                                        "value": 0
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "label": "右边距",
+                                                                                                        "icon": "Right",
+                                                                                                        "value": 0
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "label": "下边距",
+                                                                                                        "icon": "Bottom",
+                                                                                                        "value": 0
+                                                                                                    }
+                                                                                                ]
                                                                                             }
                                                                                         },
                                                                                         "advanced": {}
@@ -2249,7 +2280,7 @@
                                                                             "gutter": 12,
                                                                             "widgetList": [
                                                                                 {
-                                                                                    "id": "2a0b3e816ae44cd28e884590df5d34f2",
+                                                                                    "id": "748ad22b1d784d4d8e4945da3644d09f",
                                                                                     "name": "输入框",
                                                                                     "type": "fcInput",
                                                                                     "category": "widget",
@@ -2438,7 +2469,7 @@
                                                                             "gutter": 2,
                                                                             "widgetList": [
                                                                                 {
-                                                                                    "id": "7ba2d3c651d3401e888e5b7da62bd6e8",
+                                                                                    "id": "6aa2e8d38c1f45579081f7b843feea35",
                                                                                     "name": "按钮",
                                                                                     "type": "fcButton",
                                                                                     "category": "widget",
@@ -2634,7 +2665,7 @@
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "静态文本",
-                                                                                                                                "value": "f3853f8059f1402f9a332990f4c01c8b",
+                                                                                                                                "value": "03a3c2e92a3546cfba6a888cf8f788e5",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
@@ -2656,57 +2687,57 @@
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "label": "栅格1",
-                                                                                                                        "value": "e1eec262825a49fdb7a45067c6157eb8",
+                                                                                                                        "value": "d5feb5930ab94ce4a02c198402e36b62",
                                                                                                                         "children": [
                                                                                                                             {
                                                                                                                                 "label": "复选框1",
-                                                                                                                                "value": "4d99f89c5dbe421ca4fe7b5b9e3dada9",
+                                                                                                                                "value": "e7c77b9277544a1da225c78220aa3777",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "静态文本",
-                                                                                                                                "value": "35738e556a5646338d9ff111d736b19b",
+                                                                                                                                "value": "26983b8bcb574495acf4f9b70ad53389",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "输入框",
-                                                                                                                                "value": "2a0b3e816ae44cd28e884590df5d34f2",
+                                                                                                                                "value": "748ad22b1d784d4d8e4945da3644d09f",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "按钮1",
-                                                                                                                                "value": "d1276c3e020f4d7a936bfcfe0c2bac8c",
+                                                                                                                                "value": "f9ba4b29eef64723ab50c767688a39a9",
                                                                                                                                 "children": []
                                                                                                                             }
                                                                                                                         ]
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "label": "栅格1",
-                                                                                                                        "value": "51780241a9e8462c9fc361d8045644b6",
+                                                                                                                        "value": "8b1682c115bf473f8b1a310cf304e5c3",
                                                                                                                         "children": [
                                                                                                                             {
                                                                                                                                 "label": "复选框1",
-                                                                                                                                "value": "ceff967d241c4cdea0a523740d5db82d",
+                                                                                                                                "value": "13c9a5b3456942b68a040f0231cbdbc4",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "静态文本",
-                                                                                                                                "value": "38e5bee07176465fb648c9691668f02b",
+                                                                                                                                "value": "0db67698e0874e3bbef1b004840c57bd",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "输入框",
-                                                                                                                                "value": "dad1bf1f6e82422da6354be6e19256df",
+                                                                                                                                "value": "054a4653c06f413eb58b9d8599753a72",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "按钮1",
-                                                                                                                                "value": "b7d26f65bf0545028cce84ff6aa434d1",
+                                                                                                                                "value": "4ea6117256d449fc8a6f83e0f044d9b7",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "按钮1",
-                                                                                                                                "value": "19de6b06412347ca8d4848c712d0e3e2",
+                                                                                                                                "value": "5990b840a7ff4354887508ead8e23206",
                                                                                                                                 "children": []
                                                                                                                             }
                                                                                                                         ]
@@ -2740,7 +2771,7 @@
                                                                                             },
                                                                                             "onClick": {
                                                                                                 "label": "点击事件",
-                                                                                                "value": "if (!fc.props.ruleFormRef) return\nfc.props.ruleFormRef.validate((valid, fields) => {\n  console.log(valid, \"===valid===\")\n  if (valid) {\n    console.log('submit!')\n    fc.ElMessage({\n      message: '提交成功',\n      type: 'success',\n      duration: 1000\n    })\n  } else {\n    console.log('error submit!', fields)\n    fc.ElMessage({\n      message: '有必填项未填写，或填写错误，请检查',\n      type: 'error',\n      duration: 1000\n    })\n  }\n})"
+                                                                                                "value": "const _widgetStore = fc.widgetStore();\n\nconst targetId = fc.linkTarget.value[0][fc.linkTarget.value[0].length - 1];\n\nconst target = fc.utils.getWidgetById(targetId, _widgetStore.widgetList);\n\nconst parentWidget = fc.utils.getWidgetsByKey('options', _widgetStore.widgetList)[0];\n\n_widgetStore.copyWidget({\n    target,\n    parentWidget,\n    parentWidgetCid: 0\n})\n\nconsole.log(target,\"123\",parentWidget)"
                                                                                             }
                                                                                         }
                                                                                     }
@@ -2752,7 +2783,7 @@
                                                                             "gutter": 2,
                                                                             "widgetList": [
                                                                                 {
-                                                                                    "id": "d1276c3e020f4d7a936bfcfe0c2bac8c",
+                                                                                    "id": "f9ba4b29eef64723ab50c767688a39a9",
                                                                                     "name": "按钮",
                                                                                     "type": "fcButton",
                                                                                     "category": "widget",
@@ -2998,7 +3029,7 @@
                                                             }
                                                         },
                                                         {
-                                                            "id": "51780241a9e8462c9fc361d8045644b6",
+                                                            "id": "8b1682c115bf473f8b1a310cf304e5c3",
                                                             "name": "栅格",
                                                             "type": "fcGrid",
                                                             "category": "container",
@@ -3058,7 +3089,7 @@
                                                                             "gutter": 4,
                                                                             "widgetList": [
                                                                                 {
-                                                                                    "id": "ceff967d241c4cdea0a523740d5db82d",
+                                                                                    "id": "13c9a5b3456942b68a040f0231cbdbc4",
                                                                                     "name": "复选框",
                                                                                     "type": "fcCheckbox",
                                                                                     "category": "widget",
@@ -3228,11 +3259,13 @@
                                                                             "gutter": 4,
                                                                             "widgetList": [
                                                                                 {
-                                                                                    "id": "38e5bee07176465fb648c9691668f02b",
+                                                                                    "id": "0db67698e0874e3bbef1b004840c57bd",
                                                                                     "name": "静态文本",
                                                                                     "type": "fcStaticText",
                                                                                     "category": "widget",
                                                                                     "icon": "staticText",
+                                                                                    "value": "3",
+                                                                                    "ruleFormKey": "number",
                                                                                     "options": {
                                                                                         "basic": {
                                                                                             "name": {
@@ -3246,6 +3279,10 @@
                                                                                             "isHidden": {
                                                                                                 "label": "隐藏组件",
                                                                                                 "value": false
+                                                                                            },
+                                                                                            "ruleFormKey": {
+                                                                                                "label": "参数key",
+                                                                                                "value": "number"
                                                                                             },
                                                                                             "textareaDefaultValue": {
                                                                                                 "label": "默认文本",
@@ -3301,6 +3338,31 @@
                                                                                             "addRequired": {
                                                                                                 "label": "添加必填符号",
                                                                                                 "value": false
+                                                                                            },
+                                                                                            "marginAdjustment": {
+                                                                                                "label": "外边距调整",
+                                                                                                "options": [
+                                                                                                    {
+                                                                                                        "label": "左边距",
+                                                                                                        "icon": "Back",
+                                                                                                        "value": 0
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "label": "上边距",
+                                                                                                        "icon": "Top",
+                                                                                                        "value": 0
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "label": "右边距",
+                                                                                                        "icon": "Right",
+                                                                                                        "value": 0
+                                                                                                    },
+                                                                                                    {
+                                                                                                        "label": "下边距",
+                                                                                                        "icon": "Bottom",
+                                                                                                        "value": 0
+                                                                                                    }
+                                                                                                ]
                                                                                             }
                                                                                         },
                                                                                         "advanced": {}
@@ -3313,7 +3375,7 @@
                                                                             "gutter": 12,
                                                                             "widgetList": [
                                                                                 {
-                                                                                    "id": "dad1bf1f6e82422da6354be6e19256df",
+                                                                                    "id": "054a4653c06f413eb58b9d8599753a72",
                                                                                     "name": "输入框",
                                                                                     "type": "fcInput",
                                                                                     "category": "widget",
@@ -3477,78 +3539,6 @@
                                                                                                                                 "label": "静态文本",
                                                                                                                                 "value": "f3853f8059f1402f9a332990f4c01c8b",
                                                                                                                                 "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "输入框",
-                                                                                                                                "value": "24d959c81232428dba57472247c9be1d",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "按钮1",
-                                                                                                                                "value": "cfd9a30b2fba4efb98db2cb4e1b950a7",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "按钮1",
-                                                                                                                                "value": "bb10f62ad51e40788319cfb5ac7b30ad",
-                                                                                                                                "children": []
-                                                                                                                            }
-                                                                                                                        ]
-                                                                                                                    },
-                                                                                                                    {
-                                                                                                                        "label": "栅格1",
-                                                                                                                        "value": "e1eec262825a49fdb7a45067c6157eb8",
-                                                                                                                        "children": [
-                                                                                                                            {
-                                                                                                                                "label": "复选框1",
-                                                                                                                                "value": "4d99f89c5dbe421ca4fe7b5b9e3dada9",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "静态文本",
-                                                                                                                                "value": "35738e556a5646338d9ff111d736b19b",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "输入框",
-                                                                                                                                "value": "2a0b3e816ae44cd28e884590df5d34f2",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "按钮1",
-                                                                                                                                "value": "7ba2d3c651d3401e888e5b7da62bd6e8",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "按钮1",
-                                                                                                                                "value": "d1276c3e020f4d7a936bfcfe0c2bac8c",
-                                                                                                                                "children": []
-                                                                                                                            }
-                                                                                                                        ]
-                                                                                                                    },
-                                                                                                                    {
-                                                                                                                        "label": "栅格1",
-                                                                                                                        "value": "51780241a9e8462c9fc361d8045644b6",
-                                                                                                                        "children": [
-                                                                                                                            {
-                                                                                                                                "label": "复选框1",
-                                                                                                                                "value": "ceff967d241c4cdea0a523740d5db82d",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "静态文本",
-                                                                                                                                "value": "38e5bee07176465fb648c9691668f02b",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "按钮1",
-                                                                                                                                "value": "b7d26f65bf0545028cce84ff6aa434d1",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "按钮1",
-                                                                                                                                "value": "19de6b06412347ca8d4848c712d0e3e2",
-                                                                                                                                "children": []
                                                                                                                             }
                                                                                                                         ]
                                                                                                                     }
@@ -3574,7 +3564,7 @@
                                                                             "gutter": 2,
                                                                             "widgetList": [
                                                                                 {
-                                                                                    "id": "b7d26f65bf0545028cce84ff6aa434d1",
+                                                                                    "id": "4ea6117256d449fc8a6f83e0f044d9b7",
                                                                                     "name": "按钮",
                                                                                     "type": "fcButton",
                                                                                     "category": "widget",
@@ -3770,17 +3760,12 @@
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "静态文本",
-                                                                                                                                "value": "f3853f8059f1402f9a332990f4c01c8b",
+                                                                                                                                "value": "03a3c2e92a3546cfba6a888cf8f788e5",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "输入框",
                                                                                                                                 "value": "24d959c81232428dba57472247c9be1d",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "按钮1",
-                                                                                                                                "value": "cfd9a30b2fba4efb98db2cb4e1b950a7",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
@@ -3792,57 +3777,31 @@
                                                                                                                     },
                                                                                                                     {
                                                                                                                         "label": "栅格1",
-                                                                                                                        "value": "e1eec262825a49fdb7a45067c6157eb8",
+                                                                                                                        "value": "d5feb5930ab94ce4a02c198402e36b62",
                                                                                                                         "children": [
                                                                                                                             {
                                                                                                                                 "label": "复选框1",
-                                                                                                                                "value": "4d99f89c5dbe421ca4fe7b5b9e3dada9",
+                                                                                                                                "value": "e7c77b9277544a1da225c78220aa3777",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "静态文本",
-                                                                                                                                "value": "35738e556a5646338d9ff111d736b19b",
+                                                                                                                                "value": "26983b8bcb574495acf4f9b70ad53389",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "输入框",
-                                                                                                                                "value": "2a0b3e816ae44cd28e884590df5d34f2",
+                                                                                                                                "value": "748ad22b1d784d4d8e4945da3644d09f",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "按钮1",
-                                                                                                                                "value": "7ba2d3c651d3401e888e5b7da62bd6e8",
+                                                                                                                                "value": "6aa2e8d38c1f45579081f7b843feea35",
                                                                                                                                 "children": []
                                                                                                                             },
                                                                                                                             {
                                                                                                                                 "label": "按钮1",
-                                                                                                                                "value": "d1276c3e020f4d7a936bfcfe0c2bac8c",
-                                                                                                                                "children": []
-                                                                                                                            }
-                                                                                                                        ]
-                                                                                                                    },
-                                                                                                                    {
-                                                                                                                        "label": "栅格1",
-                                                                                                                        "value": "51780241a9e8462c9fc361d8045644b6",
-                                                                                                                        "children": [
-                                                                                                                            {
-                                                                                                                                "label": "复选框1",
-                                                                                                                                "value": "ceff967d241c4cdea0a523740d5db82d",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "静态文本",
-                                                                                                                                "value": "38e5bee07176465fb648c9691668f02b",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "输入框",
-                                                                                                                                "value": "dad1bf1f6e82422da6354be6e19256df",
-                                                                                                                                "children": []
-                                                                                                                            },
-                                                                                                                            {
-                                                                                                                                "label": "按钮1",
-                                                                                                                                "value": "19de6b06412347ca8d4848c712d0e3e2",
+                                                                                                                                "value": "f9ba4b29eef64723ab50c767688a39a9",
                                                                                                                                 "children": []
                                                                                                                             }
                                                                                                                         ]
@@ -3876,7 +3835,7 @@
                                                                                             },
                                                                                             "onClick": {
                                                                                                 "label": "点击事件",
-                                                                                                "value": ""
+                                                                                                "value": "const _widgetStore = fc.widgetStore();\n\nconst targetId = fc.linkTarget.value[0][fc.linkTarget.value[0].length - 1];\n\nconst target = fc.utils.getWidgetById(targetId, _widgetStore.widgetList);\n\nconst parentWidget = fc.utils.getWidgetsByKey('options', _widgetStore.widgetList)[0];\n\n_widgetStore.copyWidget({\n    target,\n    parentWidget,\n    parentWidgetCid: 0\n})\n\nconsole.log(target,\"123\",parentWidget)"
                                                                                             }
                                                                                         }
                                                                                     }
@@ -3888,7 +3847,7 @@
                                                                             "gutter": 2,
                                                                             "widgetList": [
                                                                                 {
-                                                                                    "id": "19de6b06412347ca8d4848c712d0e3e2",
+                                                                                    "id": "5990b840a7ff4354887508ead8e23206",
                                                                                     "name": "按钮",
                                                                                     "type": "fcButton",
                                                                                     "category": "widget",
