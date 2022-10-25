@@ -60,8 +60,8 @@ watch(
 		const parentRuleFormKeyType = props.parent?.ruleFormKeyType;
 		const ruleFormKeyType = props.widget.ruleFormKeyType;
 
-		if(ruleFormKey && !props.ruleForm[ruleFormKey]){
-			console.log("监听到数据变化",props.parent)
+		if(ruleFormKey && props.ruleForm &&!props.ruleForm[ruleFormKey]){
+			console.log(ruleFormKey,"监听到数据变化",props.parent)
 			if(parentRuleFormKeyType === 'object' || !parentRuleFormKeyType){
 				if(ruleFormKeyType === 'array'){
 					props.ruleForm[ruleFormKey] = []
@@ -103,9 +103,9 @@ watch(
 
 const widgetRuleFormKey = props.widget.ruleFormKey;
 if(props.parent?.ruleFormKeyType === 'object' || !props.parent?.ruleFormKeyType){
-	childRuleForm.value = widgetRuleFormKey && props.ruleForm[widgetRuleFormKey];
+	childRuleForm.value = widgetRuleFormKey && props.ruleForm && props.ruleForm[widgetRuleFormKey];
 }else if(props.parent?.ruleFormKeyType === 'array'){
-	childRuleForm.value = widgetRuleFormKey && props.ruleForm.filter(rule=>Object.keys(rule).indexOf(widgetRuleFormKey)>-1)[props.ruleForm.length-1][widgetRuleFormKey]
+	childRuleForm.value = widgetRuleFormKey && props.ruleForm && props.ruleForm.filter(rule=>Object.keys(rule).indexOf(widgetRuleFormKey)>-1)[props.ruleForm.length-1][widgetRuleFormKey]
 }
 </script>
  <style lang="scss" scoped>

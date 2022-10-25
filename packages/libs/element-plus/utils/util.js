@@ -38,16 +38,13 @@ export function getWidgetById(id, widgetList) {
     if (node.ruleFormKey === ruleFormKey) {
       target.push(node);
     }
-    if (target.length !== 0) {
-      stack = [];
-    }
-    if (target.length === 0 && ['fcGrid', 'fcTabs', 'fcCard'].indexOf(node.type) > -1) {
+    if (['fcGrid', 'fcTabs', 'fcCard'].indexOf(node.type) > -1) {
       node.options.advanced.cols.forEach((c) => {
         stack.push(...c.widgetList);
       });
     }
   }
-  return target;
+  return target.reverse();
 }
 
 /**
