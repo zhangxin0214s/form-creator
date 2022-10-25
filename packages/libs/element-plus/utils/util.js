@@ -88,5 +88,5 @@ export function getElementsByAttr(attr, stage) {
     }
     stack.push(...(node.children || []))
   }
-  return target;
+  return target.reverse();
 }
