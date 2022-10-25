@@ -30,7 +30,8 @@ export default {
   <script setup name="tabs">
     import { ElMessage } from 'element-plus'
     import tabsContent from "./content.vue"
-    import { watch } from "vue"
+    import { watch,ref } from "vue"
+    import { deepClone } from '../../../utils/util'
     const props=defineProps([
       'widget',
       'parent',
@@ -52,7 +53,7 @@ export default {
         }
     })
     
-    let activeName=props.widget.options.advanced.cols[0].id
+    let activeName= ref(props.widget.options.advanced.cols.at(-1).id)
     const addTabsHandler=()=>{
       let maxCount=props.widget.maxCount
       if(maxCount<=0 || props.widget.options.advanced.cols.length<maxCount){
@@ -70,13 +71,13 @@ export default {
           _cols[_cols.length-1].widgetList.forEach(widget=>{
               _widgetList.push(widget)
           })
-          console.log(_widgetList,"===_widgetList===")
           props.widget.options.advanced.cols.push({
             id:guid(),
             name:`${props.widget.options.advanced.cols[0].name}`,
-            widgetList: _widgetList
+            widgetList: deepClone(_widgetList)
           })
           ruleFormKey && props.ruleForm[ruleFormKey].push({})
+          activeName.value = props.widget.options.advanced.cols.at(-1).id
       }
     }
     const removeTabsHandler1=(name)=>{
@@ -89,9 +90,11 @@ export default {
         if(cols[i].id===name){
           cols.splice(i,1)
           props.ruleForm[ruleFormKey]?.splice(i,1)
+          activeName.value = props.widget.options.advanced.cols.at(-1).id
           return 
         }
       }
+      
     }
   
     const guid=()=>{
