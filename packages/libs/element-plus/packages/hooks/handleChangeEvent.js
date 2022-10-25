@@ -22,7 +22,7 @@ const handleChangeEvent = (props,ElMessage,cb) =>{
 			}
 		})
 	}else{
-		props.ruleForm[ruleFormKey] = props.widget.value;
+		props.ruleForm ? props.ruleForm[ruleFormKey] = props.widget.value:'';
 	}
 }
 

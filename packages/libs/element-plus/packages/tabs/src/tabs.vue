@@ -76,7 +76,7 @@ export default {
             name:`${props.widget.options.advanced.cols[0].name}`,
             widgetList: deepClone(_widgetList)
           })
-          ruleFormKey && props.ruleForm[ruleFormKey].push({})
+          ruleFormKey && props.ruleForm && props.ruleForm[ruleFormKey]?.push({})
           activeName.value = props.widget.options.advanced.cols.at(-1).id
       }
     }
