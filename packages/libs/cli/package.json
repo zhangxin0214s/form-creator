@@ -1,0 +1,31 @@
+{
+  "name": "@form-creator/cli",
+  "version": "0.1.0",
+  "description": "this is cli for form-creator",
+  "main": "index.js",
+  "bin": {
+    "fccli": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "@form-creator/cli"
+  ],
+  "author": "zhangxin",
+  "license": "",
+  "dependencies": {
+    "chalk": "^2.4.1",
+    "commander": "^2.19.0",
+    "download-git-repo": "^1.1.0",
+    "handlebars": "^4.0.12",
+    "inquirer": "^6.2.0",
+    "log-symbols": "^2.2.0",
+    "ora": "^3.0.0",
+    "node-cmd": "^3.0.0"
+  },
+  "__npminstall_done": "Thu Sep 12 2019 13:47:22 GMT+0800 (中国标准时间)",
+  "_from": "",
+  "_resolved": "",
+  "devDependencies": {}
+}
