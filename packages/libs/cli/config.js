@@ -17,9 +17,6 @@ const prompt =[
         message: 'dir'
     }
 ];
-module.exports.gitUrl = gitUrl;
-module.exports.prompt = prompt;
-module.exports.templateUrl = templateUrl;
-module.exports.resourceUrl = resourceUrl;
 module.exports.templatePrompt = templatePrompt;
+module.exports.gitUrl = gitUrl;
 module.exports.subjectUrl = subjectUrl;

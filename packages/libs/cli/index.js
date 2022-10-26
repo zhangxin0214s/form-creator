@@ -10,7 +10,7 @@ const symbols = require('log-symbols');
 const runCmdTest = require('./cmd');
 const nodeCmd = require('node-cmd');
 const Version = require('./package.json');
-const {gitUrl,prompt,templatePrompt,templateUrl,resourceUrl,subjectUrl} = require('./config');
+const {gitUrl, subjectUrl, templatePrompt} = require('./config');
 program.version(Version.version, '-v, --version')
     .command('init <name>')
     .action((name) => {
@@ -48,7 +48,10 @@ program.version(Version.version, '-v, --version')
                         console.log(symbols.error, chalk.red(err));
                     }else{
                         spinner.succeed();
-                        const myConfig = `public/${name}/json/config.json`;
+                        console.log(chalk.green(`form-creartor:https://formcreator.jiaoyanyun.com`));
+                        console.log(chalk.blue(`$ npm run dev --dir=${name}`));
+                        console.log(symbols.success, chalk.green('项目初始化完成'));
+                        const myConfig = `src/subject/${name}/config.json`;
                         let time = new Date();
                         const configData = {
                                 "version":"1.0.0",

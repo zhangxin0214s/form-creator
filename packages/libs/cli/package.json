@@ -1,6 +1,6 @@
 {
-  "name": "@form-creator/cli",
-  "version": "0.1.0",
+  "name": "@form-creator1/cli",
+  "version": "0.1.4",
   "description": "this is cli for form-creator",
   "main": "index.js",
   "bin": {
