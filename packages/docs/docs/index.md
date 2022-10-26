@@ -16,8 +16,8 @@ hero:
       text: 开始
       link: /guide/introduction
     - theme: alt
-      text: 在 GitLab 上查看
-      link: https://git.100tal.com/wangxiao_neirongchanpinbu_edit/subject-editor
+      text: 在 GitHub 上查看
+      link: https://github.com/zhangxin0214s/form-creator.git
 
 features:
   - icon: 💡
