@@ -41,7 +41,7 @@ export default {
       'selectedWidget',
       'isEditor'
     ])
-  
+    console.log(props.widget,"===123===")
     watch(
       () => props.propKey,
       (value) => {
@@ -53,7 +53,7 @@ export default {
         }
     })
     
-    let activeName= ref(props.widget.options.advanced.cols.at(-1).id)
+    let activeName= ref(props.widget.options.advanced.cols[props.widget.options.advanced.cols.length-1].id)
     const addTabsHandler=()=>{
       let maxCount=props.widget.maxCount
       if(maxCount<=0 || props.widget.options.advanced.cols.length<maxCount){
@@ -77,7 +77,7 @@ export default {
             widgetList: deepClone(_widgetList)
           })
           ruleFormKey && props.ruleForm && props.ruleForm[ruleFormKey]?.push({})
-          activeName.value = props.widget.options.advanced.cols.at(-1).id
+          activeName.value = props.widget.options.advanced.cols[props.widget.options.advanced.cols.length-1].id
       }
     }
     const removeTabsHandler1=(name)=>{
@@ -97,13 +97,6 @@ export default {
       
     }
   
-    // const guid=()=>{
-    //     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-    //         var r = Math.random() * 16 | 0,
-    //             v = c == 'x' ? r : (r & 0x3 | 0x8);
-    //         return v.toString(16);
-    //     });
-    // }
   </script>
    <style lang="scss" scoped>
     .select {

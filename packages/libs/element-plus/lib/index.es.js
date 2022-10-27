@@ -1188,6 +1188,9 @@ function _sfc_render(_ctx, _cache) {
   });
 }
 var tabsContent = /* @__PURE__ */ _export_sfc$1(_sfc_main$m, [["render", _sfc_render], ["__scopeId", "data-v-5c105d9b"]]);
+function generateId() {
+  return uuidv4().replaceAll("-", "");
+}
 function deepClone(obj) {
   let result;
   if (typeof obj === "object") {
@@ -1264,7 +1267,7 @@ function getParentById(currentWidget, widgetList) {
   }
   return target;
 }
-var tabs_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '.primary-color[data-v-404aeae4]{color:#409eff}.background-opacity[data-v-404aeae4]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-404aeae4]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-404aeae4]{margin-top:8px}.el-form-item--medium .el-radio[data-v-404aeae4]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-404aeae4]{margin-top:8px}.el-form-item--small .el-radio[data-v-404aeae4]{line-height:32px!important}.el-form-item--small .el-rate[data-v-404aeae4]{margin-top:6px}.el-form-item--mini .el-radio[data-v-404aeae4]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-404aeae4]{margin-top:4px}.el-card[data-v-404aeae4]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-404aeae4]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-404aeae4],.auto-full-width.el-date-editor.el-input__inner[data-v-404aeae4]{width:100%!important}[data-v-404aeae4]::-webkit-scrollbar{width:8px;height:8px}[data-v-404aeae4]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-404aeae4]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-404aeae4]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-404aeae4]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-container[data-v-404aeae4]{padding:1px}.select[data-v-404aeae4]{outline:1px solid #409EFF}.el-row[data-v-404aeae4]{margin-bottom:20px}.el-row[data-v-404aeae4]:last-child{margin-bottom:0}.el-col[data-v-404aeae4]{border-radius:4px}.grid-content[data-v-404aeae4]{border-radius:4px;min-height:36px;border:1px dashed #444}\n')();
+var tabs_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '.primary-color[data-v-eefb6af6]{color:#409eff}.background-opacity[data-v-eefb6af6]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-eefb6af6]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-eefb6af6]{margin-top:8px}.el-form-item--medium .el-radio[data-v-eefb6af6]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-eefb6af6]{margin-top:8px}.el-form-item--small .el-radio[data-v-eefb6af6]{line-height:32px!important}.el-form-item--small .el-rate[data-v-eefb6af6]{margin-top:6px}.el-form-item--mini .el-radio[data-v-eefb6af6]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-eefb6af6]{margin-top:4px}.el-card[data-v-eefb6af6]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-eefb6af6]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-eefb6af6],.auto-full-width.el-date-editor.el-input__inner[data-v-eefb6af6]{width:100%!important}[data-v-eefb6af6]::-webkit-scrollbar{width:8px;height:8px}[data-v-eefb6af6]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-eefb6af6]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-eefb6af6]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-eefb6af6]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-container[data-v-eefb6af6]{padding:1px}.select[data-v-eefb6af6]{outline:1px solid #409EFF}.el-row[data-v-eefb6af6]{margin-bottom:20px}.el-row[data-v-eefb6af6]:last-child{margin-bottom:0}.el-col[data-v-eefb6af6]{border-radius:4px}.grid-content[data-v-eefb6af6]{border-radius:4px;min-height:36px;border:1px dashed #444}\n')();
 const __default__$j = {
   name: "fcTabs"
 };
@@ -1280,6 +1283,7 @@ const _sfc_main$l = /* @__PURE__ */ Object.assign(__default__$j, {
   ],
   setup(__props) {
     const props = __props;
+    console.log(props.widget, "===123===");
     watch(() => props.propKey, (value) => {
       console.log("\u76D1\u542C\u5230\u6570\u636E\u53D8\u5316");
       const ruleFormKey = props.widget.options.basic.ruleFormKey.value;
@@ -1288,7 +1292,7 @@ const _sfc_main$l = /* @__PURE__ */ Object.assign(__default__$j, {
         props.ruleForm[ruleFormKey] = [{}];
       }
     });
-    let activeName = ref(props.widget.options.advanced.cols.at(-1).id);
+    let activeName = ref(props.widget.options.advanced.cols[props.widget.options.advanced.cols.length - 1].id);
     const addTabsHandler = () => {
       var _a2;
       let maxCount = props.widget.maxCount;
@@ -1308,12 +1312,12 @@ const _sfc_main$l = /* @__PURE__ */ Object.assign(__default__$j, {
           _widgetList.push(widget);
         });
         props.widget.options.advanced.cols.push({
-          id: guid(),
+          id: generateId(),
           name: `${props.widget.options.advanced.cols[0].name}`,
           widgetList: deepClone(_widgetList)
         });
         ruleFormKey && props.ruleForm && ((_a2 = props.ruleForm[ruleFormKey]) == null ? void 0 : _a2.push({}));
-        activeName.value = props.widget.options.advanced.cols.at(-1).id;
+        activeName.value = props.widget.options.advanced.cols[props.widget.options.advanced.cols.length - 1].id;
       }
     };
     const removeTabsHandler1 = (name) => {
@@ -1331,12 +1335,6 @@ const _sfc_main$l = /* @__PURE__ */ Object.assign(__default__$j, {
           return;
         }
       }
-    };
-    const guid = () => {
-      return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function(c) {
-        var r = Math.random() * 16 | 0, v = c == "x" ? r : r & 3 | 8;
-        return v.toString(16);
-      });
     };
     return (_ctx, _cache) => {
       var _a2, _b;
@@ -1389,7 +1387,7 @@ const _sfc_main$l = /* @__PURE__ */ Object.assign(__default__$j, {
     };
   }
 });
-var tabs = /* @__PURE__ */ _export_sfc$1(_sfc_main$l, [["__scopeId", "data-v-404aeae4"]]);
+var tabs = /* @__PURE__ */ _export_sfc$1(_sfc_main$l, [["__scopeId", "data-v-eefb6af6"]]);
 tabs.install = (App) => {
   App.component(tabs.name, tabs);
 };
