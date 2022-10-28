@@ -1306,7 +1306,7 @@ function getParentById(currentWidget, widgetList) {
   }
   return target;
 }
-var tabs_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '.primary-color[data-v-eefb6af6]{color:#409eff}.background-opacity[data-v-eefb6af6]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-eefb6af6]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-eefb6af6]{margin-top:8px}.el-form-item--medium .el-radio[data-v-eefb6af6]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-eefb6af6]{margin-top:8px}.el-form-item--small .el-radio[data-v-eefb6af6]{line-height:32px!important}.el-form-item--small .el-rate[data-v-eefb6af6]{margin-top:6px}.el-form-item--mini .el-radio[data-v-eefb6af6]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-eefb6af6]{margin-top:4px}.el-card[data-v-eefb6af6]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-eefb6af6]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-eefb6af6],.auto-full-width.el-date-editor.el-input__inner[data-v-eefb6af6]{width:100%!important}[data-v-eefb6af6]::-webkit-scrollbar{width:8px;height:8px}[data-v-eefb6af6]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-eefb6af6]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-eefb6af6]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-eefb6af6]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-container[data-v-eefb6af6]{padding:1px}.select[data-v-eefb6af6]{outline:1px solid #409EFF}.el-row[data-v-eefb6af6]{margin-bottom:20px}.el-row[data-v-eefb6af6]:last-child{margin-bottom:0}.el-col[data-v-eefb6af6]{border-radius:4px}.grid-content[data-v-eefb6af6]{border-radius:4px;min-height:36px;border:1px dashed #444}\n')();
+var tabs_vue_vue_type_style_index_0_scoped_true_lang = /* @__PURE__ */ (() => '.primary-color[data-v-e420e36c]{color:#409eff}.background-opacity[data-v-e420e36c]{background:rgba(64,158,255,.6)}.stage-form .ghost[data-v-e420e36c]{width:100%;content:"";font-size:0;height:3px;box-sizing:border-box;background:#409EFF;border:2px solid #409EFF;outline-width:0;padding:0;overflow:hidden}.el-form-item .el-rate[data-v-e420e36c]{margin-top:8px}.el-form-item--medium .el-radio[data-v-e420e36c]{line-height:36px!important}.el-form-item--medium .el-rate[data-v-e420e36c]{margin-top:8px}.el-form-item--small .el-radio[data-v-e420e36c]{line-height:32px!important}.el-form-item--small .el-rate[data-v-e420e36c]{margin-top:6px}.el-form-item--mini .el-radio[data-v-e420e36c]{line-height:28px!important}.el-form-item--mini .el-rate[data-v-e420e36c]{margin-top:4px}.el-card[data-v-e420e36c]{margin-top:3px;margin-bottom:3px}input[type=password][data-v-e420e36c]::-ms-reveal{display:none}.auto-full-width.el-date-editor.el-input[data-v-e420e36c],.auto-full-width.el-date-editor.el-input__inner[data-v-e420e36c]{width:100%!important}[data-v-e420e36c]::-webkit-scrollbar{width:8px;height:8px}[data-v-e420e36c]::-webkit-scrollbar-track{width:8px;background:rgba(16,31,28,.1);-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-e420e36c]::-webkit-scrollbar-thumb{background-color:#101f1c59;background-clip:padding-box;min-height:28px;-webkit-border-radius:2em;-moz-border-radius:2em;border-radius:2em}[data-v-e420e36c]::-webkit-scrollbar-thumb:hover{background-color:#101f1cd9}*[data-v-e420e36c]{scrollbar-color:#e5e5e5 #f7f7f9;scrollbar-width:thin}.grid-container[data-v-e420e36c]{padding:1px}.select[data-v-e420e36c]{outline:1px solid #409EFF}.el-row[data-v-e420e36c]{margin-bottom:20px}.el-row[data-v-e420e36c]:last-child{margin-bottom:0}.el-col[data-v-e420e36c]{border-radius:4px}.grid-content[data-v-e420e36c]{border-radius:4px;min-height:36px;border:1px dashed #444}\n')();
 const __default__$j = {
   name: "fcTabs"
 };
@@ -1370,7 +1370,7 @@ const _sfc_main$l = /* @__PURE__ */ Object.assign(__default__$j, {
         if (cols[i].id === name) {
           cols.splice(i, 1);
           (_a2 = props.ruleForm[ruleFormKey]) == null ? void 0 : _a2.splice(i, 1);
-          activeName.value = props.widget.options.advanced.cols.at(-1).id;
+          activeName.value = props.widget.options.advanced.cols[props.widget.options.advanced.cols.length - 1].id;
           return;
         }
       }
@@ -1426,7 +1426,7 @@ const _sfc_main$l = /* @__PURE__ */ Object.assign(__default__$j, {
     };
   }
 });
-var tabs = /* @__PURE__ */ _export_sfc$1(_sfc_main$l, [["__scopeId", "data-v-eefb6af6"]]);
+var tabs = /* @__PURE__ */ _export_sfc$1(_sfc_main$l, [["__scopeId", "data-v-e420e36c"]]);
 tabs.install = (App) => {
   App.component(tabs.name, tabs);
 };

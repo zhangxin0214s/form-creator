@@ -1,5 +1,5 @@
 <template>
-  <el-tabs type="border-card" v-model="activeName" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
+  <el-tabs type="border-card" v-model="activeId" :class="[selectedWidget?.id === widget?.id && isEditor?'select':'']" :addable="widget.addable" :closable="widget.closable"  @tab-add="addTabsHandler" @tab-remove="removeTabsHandler1($event)">
     <el-tab-pane :label="`${colWidget.name}${colIdx+1}`" :name="colWidget.id" v-for="(colWidget, colIdx) in widget.options.advanced.cols" :key="colIdx">
       <tabs-content 
         :colWidget="colWidget"
@@ -41,7 +41,6 @@ export default {
       'selectedWidget',
       'isEditor'
     ])
-    console.log(props.widget,"===123===")
     watch(
       () => props.propKey,
       (value) => {
@@ -53,7 +52,8 @@ export default {
         }
     })
     
-    let activeName= ref(props.widget.options.advanced.cols[props.widget.options.advanced.cols.length-1].id)
+    let activeId= ref(props.widget.options.advanced.cols[props.widget.options.advanced.cols.length-1].id)
+    props.widget.activeId = activeId;
     const addTabsHandler=()=>{
       let maxCount=props.widget.maxCount
       if(maxCount<=0 || props.widget.options.advanced.cols.length<maxCount){
@@ -77,7 +77,7 @@ export default {
             widgetList: deepClone(_widgetList)
           })
           ruleFormKey && props.ruleForm && props.ruleForm[ruleFormKey]?.push({})
-          activeName.value = props.widget.options.advanced.cols[props.widget.options.advanced.cols.length-1].id
+          activeId.value = props.widget.options.advanced.cols[props.widget.options.advanced.cols.length-1].id
       }
     }
     const removeTabsHandler1=(name)=>{
@@ -90,7 +90,7 @@ export default {
         if(cols[i].id===name){
           cols.splice(i,1)
           props.ruleForm[ruleFormKey]?.splice(i,1)
-          activeName.value = props.widget.options.advanced.cols.at(-1).id
+          activeId.value = props.widget.options.advanced.cols[props.widget.options.advanced.cols.length-1].id
           return 
         }
       }
