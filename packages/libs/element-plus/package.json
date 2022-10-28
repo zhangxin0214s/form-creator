@@ -1,7 +1,7 @@
 {
   "name": "@form-creator1/element-plus",
   "private": false,
-  "version": "0.1.6",
+  "version": "0.1.7",
   "author": "zhangxin0214",
   "keywords": [
     "form-creator",
@@ -29,6 +29,7 @@
     "element-plus": "2.2.12",
     "sass": "1.54.0",
     "sass-loader": "10.0.1",
+    "uuid": "9.0.0",
     "vue": "^3.2.25"
   },
   "devDependencies": {
