@@ -36,7 +36,7 @@ program.version(Version.version, '-v, --version')
     });
 
 program.version(Version.version, '-v, --version')
-    .command('creator <name>')
+    .command('create <name>')
     .action((name) => {
         if(!fs.existsSync('src/subject'+name)){
             inquirer.prompt(templatePrompt).then((e) => {
