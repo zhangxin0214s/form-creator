@@ -133,7 +133,7 @@ provide('copyWidget', copyWidget);
  */
 const removeWidget = ({ widget, parentWidget, parent, ruleForm }) => {
 	_widgetStore.removeWidget({ currentWidget: widget, parentWidget });
-	if (parent?.ruleFormKeyType === 'array') {
+	if (parent?.ruleFormKeyType === 'array' && ruleForm) {
 		for (let i = 0; i < ruleForm.length; i++) {
 			if (Object.keys(ruleForm[i]).indexOf(widget.ruleFormKey) > -1) {
 				ruleForm.splice(i, 1);
