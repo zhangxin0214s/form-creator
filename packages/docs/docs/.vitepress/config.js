@@ -12,6 +12,7 @@ module.exports = {
     socialLinks: [{ icon: "github", link: "https://github.com/zhangxin0214s/form-creator.git" }],
     nav: [
       { text: '指南', link: '/guide/introduction' },
+      { text: 'API', link: '/api/codeEditor' },
       { text: '示例', link: '/example/form' },
     ],
     sidebar: [
@@ -19,7 +20,13 @@ module.exports = {
         text: '指南',
         items: [
           { text: '简介', link: '/guide/introduction' },
+          { text: '快速上手', link: '/guide/quickLearing' },
           { text: '组件配置', link: '/guide/componentConfig' },
+        ],
+      },{
+        text: 'API',
+        items: [
+          { text: '在线代码编辑器', link: '/api/codeEditor' }
         ],
       },
       {

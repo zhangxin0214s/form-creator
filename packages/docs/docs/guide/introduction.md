@@ -19,15 +19,27 @@ Form-Creator由当前前端多种主流框架孕育而出，有vue2，vue3，rea
 
 四个容器（栅格，标签页，表格，卡片）有容乃大，包罗万象，哪里不会拖哪里，妈妈再也不担心你不会布局了
 
+## 全家桶
+> @form-creator1/cli(当前版本已有)
 
-## 版本
-Element-plus + vue3 当前已有版本
+form-creator配套脚手架构建工具
 
-Element-ui + vue2 当前已有版本
+> @form-creator1/element-plus(当前版本已有)
 
-ant-design + react 也在计划当中，不出意外在我有生之年应该可以完成
+基于element-plus+vue3封装的form-creator配套的组件库
 
-vtmp + ???? 这个自己研发的我是真不知道了，毕竟我只是个普通贡献者
+> @form-creator1/element-ui(当前版本已有)
+
+基于element-ui+vue2封装的form-creator配套的组件库
+
+> @form-creator1/ant-design(计划中)
+
+基于ant-design+react的form-creator配套的组件库，计划当中，不出意外在我有生之年应该可以完成
+
+> @form-creator1/vtmp(计划中)
+
+form-creator配套自研组件库，这个我是真不知道了，毕竟我只是个普通贡献者
+
 
 <script setup>
 import { VPTeamMembers } from 'vitepress/theme'
