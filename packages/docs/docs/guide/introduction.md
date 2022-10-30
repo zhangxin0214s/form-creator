@@ -12,7 +12,7 @@ Form-Creator由当前前端多种主流框架孕育而出，有vue2，vue3，rea
 当前设计了12个基础组件，俗话说基础决定上层建筑，透过现象看本质（输入框，开关，复选框，按钮，下拉框，单选框，文本域，分割线，手机号，静态文本，时间选择器，日期选择器）
 > 高级组件
 
-还设计了4个高级组件，一听名字就知道是上层建筑（复按钮组，单按钮组，上传），第四个富文本因为时间有限，人员有限，资金有限的原因，暂代开发，嗯，以后会有的；
+还设计了4个高级组件，一听名字就知道是上层建筑（复按钮组，单按钮组，上传），第四个富文本因为时间有限，人员有限，资金有限的原因，暂停开发，嗯，以后会有的；
 
 
 > 容器
@@ -23,7 +23,7 @@ Form-Creator由当前前端多种主流框架孕育而出，有vue2，vue3，rea
 ## 版本
 Element-plus + vue3 当前已有版本
 
-Element-ui + vue2 目前还在开发迭代中
+Element-ui + vue2 当前已有版本
 
 ant-design + react 也在计划当中，不出意外在我有生之年应该可以完成
 
@@ -45,7 +45,7 @@ const members = [
    {
     avatar: '../4.jpeg',
     name: 'Lin Zi Yang',
-    title: '普通贡献者',
+    title: '主要贡献者',
     links: [
       { icon: 'github', link: '' },
       { icon: 'twitter', link: '' }
@@ -63,6 +63,15 @@ const members = [
     {
     avatar: '../3.png',
     name: 'Hu Ze Zhou',
+    title: '主要贡献者',
+    links: [
+      { icon: 'github', link: '' },
+      { icon: 'twitter', link: '' }
+    ]
+  },
+    {
+    avatar: '../5.png',
+    name: 'Yao Guo Zhen',
     title: '主要贡献者',
     links: [
       { icon: 'github', link: '' },
