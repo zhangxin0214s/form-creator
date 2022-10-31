@@ -8,12 +8,23 @@ export default {
         ruleFormRef: Object
     },
     watch: {
-        'widget.value': {
+        'propKey': {
             // 执行方法
             handler:function() {
-                if (this.widget.options.advanced.linkage.targets.length !== 0) {
-                    const EVENTS = this.widget.options.advanced.linkageCode.value;
-                    new Function('widget','linkageObj' ,EVENTS)(this.widget,this.widget.options.advanced.linkage.targets)
+                const ruleFormKey = this.widget.options.basic.ruleFormKey.value;
+                let _value = null;
+                this.widget.type && this.widget.type === 'fcCellPhone' ? _value = `${this.widget.options.basic.prefix.value}-${this.widget.value}` : _value = this.widget.value;
+                if(ruleFormKey && this.ruleForm && !this.ruleForm[ruleFormKey]){
+                    console.log("监听到数据变化",ruleFormKey)
+                    if(this.parent?.ruleFormKeyType === 'object'){
+                        this.ruleForm[ruleFormKey] = _value
+                    }else if(this.parent?.ruleFormKeyType === 'array'){
+                        this.ruleForm.push({
+                            [ruleFormKey]: _value
+                        })
+                    }else{
+                        this.ruleForm[ruleFormKey] = _value
+                    }
                 }
             },
             deep: true, // 深度监听
@@ -46,6 +57,13 @@ export default {
             }else{
                 props.ruleForm[ruleFormKey] = props.widget.value;
             }
+        },
+
+        /**
+         * 对外暴露的空间
+         */
+        useRegisterEvent() {
+
         }
     }
 }
