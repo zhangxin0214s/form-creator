@@ -1,18 +1,26 @@
-import input from "./input"
-import switch1 from "./switch"
+// 容器组件
 import grid from "./grid"
 import tabs from "./tabs"
 import card from "./card"
-import select from "./select"
-import textarea from "./textarea"
-import divider from "./divider"
-import cellPhone from "./cellPhone"
-import staticText from "./staticText"
+
+// 基础组件
+import input from "./input"
+import switch1 from "./switch"
 import checkbox from './checkbox'
 import button from './button'
+import select from './select'
 import radio from './radio'
+import textarea from './textarea'
+import divider from './divider'
+import cellPhone from './cellPhone'
+import staticText from './staticText'
 import time from './time'
 import date from './date'
+
+
+// 渲染器
+import renderer from './renderer'
+
 const components = [
     input,
     switch1,
@@ -28,7 +36,8 @@ const components = [
     button,
     radio,
     time,
-    date
+    date,
+    renderer
 ]
 
 const install = Vue => {
@@ -58,5 +67,6 @@ export default {
     button,
     radio,
     time,
-    date
+    date,
+    renderer
 }
