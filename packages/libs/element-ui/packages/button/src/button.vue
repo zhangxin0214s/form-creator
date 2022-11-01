@@ -12,6 +12,7 @@
         :circle="widget.options.advanced.btnCircle.value"
         :plain="widget.options.basic.plain.value"
         :auto-insert-space="widget.options.basic.space.value"
+        @click="useRegisterEvent().handleOnClick"
     >{{ widget.options.basic.text.value }}
     </el-button>
   </el-form-item>

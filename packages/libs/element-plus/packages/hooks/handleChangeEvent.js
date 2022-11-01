@@ -13,7 +13,7 @@ const handleChangeEvent = (props,ElMessage,cb) =>{
         })
 		return;
 	}
-	if(props.paren?.ruleFormKeyType === 'object'){
+	if(props.parent?.ruleFormKeyType === 'object'){
 		props.ruleForm[ruleFormKey] = props.widget.value;
 	}else if(props.parent?.ruleFormKeyType === 'array'){
 		props.ruleForm.map(rule =>{
