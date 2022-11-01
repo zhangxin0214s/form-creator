@@ -4,7 +4,6 @@ export default {
     props: {
         widget: Object,
         isEditor: Boolean,
-        inject: Object,
         propKey: String,
         ruleForm: Object,
         ruleFormRef: Object
@@ -19,10 +18,10 @@ export default {
     },
 
     watch: {
-        'propKey': {
+        propKey: {
             // 执行方法
             handler:function() {
-                const ruleFormKey = this.widget.options.basic.ruleFormKey.value;
+                const ruleFormKey = this.widget.options.basic.ruleFormKey?.value;
                 let _value = null;
                 this.widget.type && this.widget.type === 'fcCellPhone' ? _value = `${this.widget.options.basic.prefix.value}-${this.widget.value}` : _value = this.widget.value;
                 if(ruleFormKey && this.ruleForm && !this.ruleForm[ruleFormKey]){
@@ -40,6 +39,23 @@ export default {
             },
             deep: true, // 深度监听
             immediate: true  // 第一次改变就执行
+        },
+        'widget.value': {
+            // 执行联动对象的方法
+            handler:function() {
+                const EVENTS = this.widget.options.advanced.linkageCode.value;
+                if(!EVENTS) return;
+                const _fc = {
+                    ElMessage: Message,
+                    utils,
+                    target: this.widget,
+                    linkTarget: this.widget?.options?.advanced?.linkage
+                }
+                new Function(
+                  'fc'
+                  ,EVENTS
+                )(_fc)
+            }
         }
     },
 
@@ -76,15 +92,12 @@ export default {
          */
         useRegisterEvent() {
             const EVENTS = this?.widget?.options?.events;
-            const widgetStore = this.inject && this.inject('widgetStore');
             // 将要往沙盒传递的方法或元素写入对外暴露的空间
             const _fc = {
                 ElMessage: Message,
                 utils,
-                inject,
-                widgetStore,
-                target: props.widget,
-                linkTarget: props?.widget?.options?.advanced?.linkage
+                target: this.widget,
+                linkTarget: this.widget?.options?.advanced?.linkage
             }
 
             /**
@@ -114,7 +127,6 @@ export default {
 
             /**
              * 创建前
-             * @param {*} props 
              * @returns 
              */
             const handleOnBeforeMount = (event) => {
@@ -127,7 +139,6 @@ export default {
 
             /**
              * 页面渲染完成
-             * @param {*} props 
              * @returns 
              */
             const handleOnMounted = (event) => {
@@ -137,32 +148,11 @@ export default {
                     EVENTS?.onMounted.value || event
                 )(_fc)
             }
-
-            /**
-             * 监听联动事件
-             */
-            const linkageWatchEvent = ({watch}) => {
-                watch(
-                    () => this.widget.value,
-                    (value) => {
-                        const EVENTS = this.widget.options.advanced.linkageCode.value;
-                        new Function(
-                        'fc'
-                        ,EVENTS
-                        )(_fc)
-                    },
-                    {
-                    deep: true,
-                    immediate: true
-                    }
-                )
-            }
             return {
                 handleOnClick,
                 handleOnChange,
                 handleOnBeforeMount,
-                handleOnMounted,
-                linkageWatchEvent
+                handleOnMounted
             }
         }
     }

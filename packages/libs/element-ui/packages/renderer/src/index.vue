@@ -45,9 +45,7 @@ export default {
 	props: {
     widgetList: Array,
     formConfig: Object,
-    isEditor: Boolean,
-    widgetStore: Object,
-    utils: Object
+    isEditor: Boolean
   },
 	components: {
 		WidgetMask,
