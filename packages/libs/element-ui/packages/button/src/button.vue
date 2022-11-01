@@ -12,7 +12,7 @@
         :circle="widget.options.advanced.btnCircle.value"
         :plain="widget.options.basic.plain.value"
         :auto-insert-space="widget.options.basic.space.value"
-        @click="useRegisterEvent().handleOnClick"
+        @click="handleOnClick"
     >{{ widget.options.basic.text.value }}
     </el-button>
   </el-form-item>
@@ -23,6 +23,12 @@ import mixins from '../../mixins/index.js';
 export default {
   name:'fcButton',
   mixins:[mixins],
+  methods: {
+    handleOnClick() {
+      this.useRegisterEvent().handleOnClick();
+    }
+  }
+
 };
 </script>
 

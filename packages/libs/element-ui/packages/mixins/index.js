@@ -47,6 +47,7 @@ export default {
                 if(!EVENTS) return;
                 const _fc = {
                     ElMessage: Message,
+                    props: this._props,
                     utils,
                     target: this.widget,
                     linkTarget: this.widget?.options?.advanced?.linkage
@@ -95,6 +96,7 @@ export default {
             // 将要往沙盒传递的方法或元素写入对外暴露的空间
             const _fc = {
                 ElMessage: Message,
+                props: this._props,
                 utils,
                 target: this.widget,
                 linkTarget: this.widget?.options?.advanced?.linkage
