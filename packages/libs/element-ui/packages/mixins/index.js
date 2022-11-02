@@ -21,9 +21,10 @@ export default {
         propKey: {
             // 执行方法
             handler:function() {
-                const ruleFormKey = this.widget.options.basic.ruleFormKey?.value;
+                if(!this.widget) return;
+                const ruleFormKey = this.widget?.options.basic.ruleFormKey?.value;
                 let _value = null;
-                this.widget.type && this.widget.type === 'fcCellPhone' ? _value = `${this.widget.options.basic.prefix.value}-${this.widget.value}` : _value = this.widget.value;
+                this.widget?.type && this.widget?.type === 'fcCellPhone' ? _value = `${this.widget?.options.basic.prefix.value}-${this.widget.value}` : _value = this.widget.value;
                 if(ruleFormKey && this.ruleForm && !this.ruleForm[ruleFormKey]){
                     console.log("监听到数据变化",ruleFormKey)
                     if(this.parent?.ruleFormKeyType === 'object'){
@@ -48,6 +49,8 @@ export default {
                 const _fc = {
                     ElMessage: Message,
                     props: this._props,
+                    widgetStore: this.$store,
+                    $refs: this.$refs,
                     utils,
                     target: this.widget,
                     linkTarget: this.widget?.options?.advanced?.linkage
@@ -97,6 +100,8 @@ export default {
             const _fc = {
                 ElMessage: Message,
                 props: this._props,
+                widgetStore: this.$store,
+                $refs: this.$refs,
                 utils,
                 target: this.widget,
                 linkTarget: this.widget?.options?.advanced?.linkage

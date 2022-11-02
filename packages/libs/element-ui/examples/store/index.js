@@ -5,7 +5,6 @@ import { generateId, deepClone } from '../../utils/util'
 //使用vuex
 Vue.use(Vuex)
 
-
 const store = new Vuex.Store({
     state: {
         token:'',
@@ -66,6 +65,29 @@ const store = new Vuex.Store({
             }
             this.selectedWidget = null
         },
+
+        /**
+         * 表单提交
+         * @param {*} formName 
+         */
+        submitForm(context,form) {
+            form.validate((valid) => {
+                if (valid) {
+                  alert('submit!');
+                } else {
+                  console.log('error submit!!');
+                  return false;
+                }
+            });
+        },
+
+        /**
+         * 表单重置
+         * @param {*} formName 
+         */
+        resetForm(formName) {
+            this.$refs[formName].resetFields();
+        }
     }
 });
   
