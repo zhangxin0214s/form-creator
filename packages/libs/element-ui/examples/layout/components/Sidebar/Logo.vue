@@ -2,11 +2,11 @@
   <div class="sidebar-logo-container" :class="{'collapse':collapse}">
     <transition name="sidebarLogoFade">
       <router-link v-if="collapse" key="collapse" class="sidebar-logo-link" to="/">
-        <img v-if="logo" :src="logo" class="sidebar-logo">
+        <img v-if="logo1" :src="logo1" class="sidebar-logo1">
         <h1 v-else class="sidebar-title">{{ title }} </h1>
       </router-link>
       <router-link v-else key="expand" class="sidebar-logo-link" to="/">
-        <img v-if="logo" :src="logo" class="sidebar-logo">
+        <img v-if="logo2" :src="logo2" class="sidebar-logo2">
         <h1 class="sidebar-title">{{ title }} </h1>
       </router-link>
     </transition>
@@ -24,8 +24,9 @@ export default {
   },
   data() {
     return {
-      title: 'Vue Element Admin',
-      logo: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png'
+      title: '',
+      logo1: require('@/assets/images/logo1.png'),
+      logo2: require('@/assets/images/logo2.png')
     }
   }
 }
@@ -46,7 +47,6 @@ export default {
   width: 100%;
   height: 50px;
   line-height: 50px;
-  background: #2b2f3a;
   text-align: center;
   overflow: hidden;
 
@@ -54,9 +54,16 @@ export default {
     height: 100%;
     width: 100%;
 
-    & .sidebar-logo {
-      width: 32px;
-      height: 32px;
+    & .sidebar-logo1 {
+      width: 40px;
+      height: 40px;
+      vertical-align: middle;
+      margin-right: 12px;
+    }
+    
+    & .sidebar-logo2 {
+      width: 118px;
+      height: 28px;
       vertical-align: middle;
       margin-right: 12px;
     }
@@ -67,7 +74,7 @@ export default {
       color: #fff;
       font-weight: 600;
       line-height: 50px;
-      font-size: 14px;
+      font-size: 18px;
       font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
       vertical-align: middle;
     }

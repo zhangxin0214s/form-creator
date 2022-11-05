@@ -13,7 +13,7 @@
         <item v-if="item.meta" :icon="item.meta && item.meta.icon" :title="item.meta.title" />
       </template>
       <sidebar-item
-        v-for="child in item.children"
+        v-for="child in childern"
         :key="child.path"
         :is-nest="true"
         :item="child"
@@ -51,10 +51,21 @@ export default {
     }
   },
   data() {
-    // To fix https://github.com/PanJiaChen/vue-admin-template/issues/237
+    // To fix https://github.com/PanJiaChen/saas-inside-admin/issues/237
     // TODO: refactor with render function
     this.onlyOneChild = null
     return {}
+  },
+  computed: {
+    childern() {
+      const arr = []
+      for (const child of this.item.children) {
+        if (child.meta.show !== false) {
+          arr.push(child)
+        }
+      }
+      return arr
+    }
   },
   methods: {
     hasOneShowingChild(children = [], parent) {
@@ -69,9 +80,9 @@ export default {
       })
 
       // When there is only one child router, the child router is displayed by default
-      if (showingChildren.length === 1) {
-        return true
-      }
+      // if (showingChildren.length === 1) {
+      //   return true
+      // }
 
       // Show parent if there are no child router to display
       if (showingChildren.length === 0) {
