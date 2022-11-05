@@ -9,6 +9,18 @@ module.exports = {
             filename: 'index.html' // 输出文件
         }
     },
+    css: {
+        loaderOptions: {
+          sass: {
+            data: ` @import "./examples/styles/variables.scss";
+                    @import "./examples/styles/mixin.scss";
+                     `
+          },
+          scss: {
+            prependData: ` @import "./examples/styles/variables.scss"; `
+          }
+        }
+    },
     // 扩展 webpack 配置
     chainWebpack: config => {
         // @ 默认指向 src 目录，这里要改成 examples

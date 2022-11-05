@@ -1,0 +1,10 @@
+$--color-primary: $primary-color;
+$--color-success: $success-color;
+/// color|1|Functional Color|1
+$--color-warning: $warning-color;
+/// color|1|Functional Color|1
+$--color-danger: $danger-color;
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";

@@ -1,9 +1,6 @@
 <template>
     <div id="app">
-        <fc-renderer
-            :widgetList="widgetList"
-            :formConfig="formConfig"
-        ></fc-renderer>
+      <router-view />
     </div>
 </template>
 <script>
