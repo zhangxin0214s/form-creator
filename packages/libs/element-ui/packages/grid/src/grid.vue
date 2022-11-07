@@ -13,7 +13,7 @@
 					:is-editor="isEditor"
 					:rule-form="ruleForm[widget.ruleFormKey] || ruleForm"
 					:rule-form-key-type="widget.ruleFormKeyType"
-					style="height:auto;padding:0"
+					:style="{height:(widget.options.basic.colHeight.value?`${widget.options.basic.colHeight.value}px`:'auto'),padding:0}"
 				>
 				<slot 
 					name="widgetChild"

@@ -15,7 +15,7 @@
 				<Col
 					:colWidget="colWidget"
 					:is-editor="isEditor"
-					style="height:auto;padding:0">
+					:style="{height:(widget.options.basic.colHeight.value?`${widget.options.basic.colHeight.value}px`:'auto'),padding:0}">
 					<slot 
 					 name="widgetChild"
 					 v-bind="{
@@ -127,7 +127,6 @@ if(props.parent?.ruleFormKeyType === 'object' || !props.parent?.ruleFormKeyType)
 
 .grid-content {
 	border-radius: 4px;
-	min-height: 36px;
 	border: 1px dashed #444;
 }
 </style>

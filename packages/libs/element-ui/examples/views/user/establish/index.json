@@ -57,7 +57,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": 36
+                        "value": 0
                     },
                     "rowBackground": {
                         "label": "背景颜色",
@@ -578,6 +578,54 @@
                                         "children": []
                                     }
                                 ]
+                            },
+                            {
+                                "label": "栅格1",
+                                "value": "939593a907c04eda8dbf03ea5544e026",
+                                "children": []
+                            },
+                            {
+                                "label": "栅格1",
+                                "value": "7d8c59a7dbe4450aaa022040c297cded",
+                                "children": [
+                                    {
+                                        "label": "输入框",
+                                        "value": "f2b8bedab16742abb409b61e8ce25924",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "栅格1",
+                                "value": "59f11c342ca34a1ebbdecfd8c9564575",
+                                "children": []
+                            },
+                            {
+                                "label": "栅格1",
+                                "value": "3feafdb70973412ea36fb2fa70f69d25",
+                                "children": [
+                                    {
+                                        "label": "输入框",
+                                        "value": "a2667ed0fb3d439ba09a2714f0dd2995",
+                                        "children": []
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "栅格1",
+                                "value": "6c2ee638a72b4027a1f05d40e371eeeb",
+                                "children": []
+                            },
+                            {
+                                "label": "栅格1",
+                                "value": "7df6940b4eac442e80c3293fd9fc54b6",
+                                "children": [
+                                    {
+                                        "label": 1,
+                                        "value": "64b67865310b4801b9e0a076103a5f95",
+                                        "children": []
+                                    }
+                                ]
                             }
                         ],
                         "value": []
@@ -606,7 +654,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": 36
+                        "value": 0
                     },
                     "rowBackground": {
                         "label": "背景颜色",
@@ -846,7 +894,7 @@
                                                         "children": [
                                                             {
                                                                 "label": 1,
-                                                                "value": "a640b4a8742742f99968bf69fed514cc",
+                                                                "value": "64b67865310b4801b9e0a076103a5f95",
                                                                 "children": []
                                                             }
                                                         ]
@@ -890,7 +938,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": 36
+                        "value": 29
                     },
                     "rowBackground": {
                         "label": "背景颜色",
@@ -960,7 +1008,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": 36
+                        "value": 0
                     },
                     "rowBackground": {
                         "label": "背景颜色",
@@ -1009,7 +1057,7 @@
                                     "type": "fcInput",
                                     "category": "widget",
                                     "icon": "input",
-                                    "value": null,
+                                    "value": "",
                                     "ruleFormKey": null,
                                     "rules": [],
                                     "options": {
@@ -1059,11 +1107,11 @@
                                             },
                                             "readonly": {
                                                 "label": "是否只读",
-                                                "value": false
+                                                "value": true
                                             },
                                             "disabled": {
                                                 "label": "是否禁用",
-                                                "value": false
+                                                "value": true
                                             },
                                             "marginAdjustment": {
                                                 "label": "外边距调整",
@@ -1165,7 +1213,17 @@
                                                     },
                                                     {
                                                         "label": "栅格1",
+                                                        "value": "939593a907c04eda8dbf03ea5544e026",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
                                                         "value": "7d8c59a7dbe4450aaa022040c297cded",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "59f11c342ca34a1ebbdecfd8c9564575",
                                                         "children": []
                                                     },
                                                     {
@@ -1181,19 +1239,19 @@
                                                     },
                                                     {
                                                         "label": "栅格1",
+                                                        "value": "6c2ee638a72b4027a1f05d40e371eeeb",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
                                                         "value": "7df6940b4eac442e80c3293fd9fc54b6",
                                                         "children": [
                                                             {
                                                                 "label": 1,
-                                                                "value": "a640b4a8742742f99968bf69fed514cc",
+                                                                "value": "64b67865310b4801b9e0a076103a5f95",
                                                                 "children": []
                                                             }
                                                         ]
-                                                    },
-                                                    {
-                                                        "label": "栅格1",
-                                                        "value": "6c2ee638a72b4027a1f05d40e371eeeb",
-                                                        "children": []
                                                     }
                                                 ],
                                                 "value": [],
@@ -1234,7 +1292,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": 36
+                        "value": 0
                     },
                     "rowBackground": {
                         "label": "背景颜色",
@@ -1304,7 +1362,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": 36
+                        "value": 0
                     },
                     "rowBackground": {
                         "label": "背景颜色",
@@ -1355,7 +1413,13 @@
                                     "icon": "input",
                                     "value": null,
                                     "ruleFormKey": null,
-                                    "rules": [],
+                                    "rules": [
+                                        {
+                                            "required": false,
+                                            "message": "",
+                                            "trigger": "blur"
+                                        }
+                                    ],
                                     "options": {
                                         "basic": {
                                             "name": {
@@ -1407,7 +1471,7 @@
                                             },
                                             "disabled": {
                                                 "label": "是否禁用",
-                                                "value": false
+                                                "value": true
                                             },
                                             "marginAdjustment": {
                                                 "label": "外边距调整",
@@ -1509,6 +1573,11 @@
                                                     },
                                                     {
                                                         "label": "栅格1",
+                                                        "value": "939593a907c04eda8dbf03ea5544e026",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
                                                         "value": "7d8c59a7dbe4450aaa022040c297cded",
                                                         "children": [
                                                             {
@@ -1520,7 +1589,17 @@
                                                     },
                                                     {
                                                         "label": "栅格1",
+                                                        "value": "59f11c342ca34a1ebbdecfd8c9564575",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
                                                         "value": "3feafdb70973412ea36fb2fa70f69d25",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "6c2ee638a72b4027a1f05d40e371eeeb",
                                                         "children": []
                                                     },
                                                     {
@@ -1529,15 +1608,10 @@
                                                         "children": [
                                                             {
                                                                 "label": 1,
-                                                                "value": "a640b4a8742742f99968bf69fed514cc",
+                                                                "value": "64b67865310b4801b9e0a076103a5f95",
                                                                 "children": []
                                                             }
                                                         ]
-                                                    },
-                                                    {
-                                                        "label": "栅格1",
-                                                        "value": "6c2ee638a72b4027a1f05d40e371eeeb",
-                                                        "children": []
                                                     }
                                                 ],
                                                 "value": [],
@@ -1578,7 +1652,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": 36
+                        "value": 0
                     },
                     "rowBackground": {
                         "label": "背景颜色",
@@ -1648,7 +1722,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": 36
+                        "value": 0
                     },
                     "rowBackground": {
                         "label": "背景颜色",

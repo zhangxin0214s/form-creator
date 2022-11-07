@@ -16,7 +16,7 @@
  <style lang="scss" scoped>
     .grid-content1{
         border-radius: 4px;
-        min-height: 36px;
+        
     }
     .gird-line{
         border:1px dashed #000;
