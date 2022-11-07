@@ -647,7 +647,7 @@
                     "cols": [
                         {
                             "id": 1,
-                            "gutter": 12,
+                            "gutter": 6,
                             "widgetList": [
                                 {
                                     "id": "3d3db13a5dfe4651a58d8f0018004e10",
@@ -732,7 +732,7 @@
                                                     {
                                                         "label": "下边距",
                                                         "icon": "Bottom",
-                                                        "value": 0
+                                                        "value": 8
                                                     }
                                                 ]
                                             }
@@ -805,11 +805,48 @@
                                                     },
                                                     {
                                                         "label": "栅格1",
+                                                        "value": "939593a907c04eda8dbf03ea5544e026",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
                                                         "value": "7d8c59a7dbe4450aaa022040c297cded",
                                                         "children": [
                                                             {
                                                                 "label": "输入框",
                                                                 "value": "f2b8bedab16742abb409b61e8ce25924",
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "59f11c342ca34a1ebbdecfd8c9564575",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "3feafdb70973412ea36fb2fa70f69d25",
+                                                        "children": [
+                                                            {
+                                                                "label": "输入框",
+                                                                "value": "a2667ed0fb3d439ba09a2714f0dd2995",
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "6c2ee638a72b4027a1f05d40e371eeeb",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "7df6940b4eac442e80c3293fd9fc54b6",
+                                                        "children": [
+                                                            {
+                                                                "label": 1,
+                                                                "value": "a640b4a8742742f99968bf69fed514cc",
                                                                 "children": []
                                                             }
                                                         ]
@@ -894,7 +931,7 @@
                     "cols": [
                         {
                             "id": 1,
-                            "gutter": 12,
+                            "gutter": 6,
                             "widgetList": []
                         },
                         {
@@ -964,7 +1001,7 @@
                     "cols": [
                         {
                             "id": 1,
-                            "gutter": 12,
+                            "gutter": 6,
                             "widgetList": [
                                 {
                                     "id": "f2b8bedab16742abb409b61e8ce25924",
@@ -1308,7 +1345,7 @@
                     "cols": [
                         {
                             "id": 1,
-                            "gutter": 12,
+                            "gutter": 6,
                             "widgetList": [
                                 {
                                     "id": "a2667ed0fb3d439ba09a2714f0dd2995",
@@ -1652,10 +1689,10 @@
                     "cols": [
                         {
                             "id": 1,
-                            "gutter": 12,
+                            "gutter": 6,
                             "widgetList": [
                                 {
-                                    "id": "a640b4a8742742f99968bf69fed514cc",
+                                    "id": "64b67865310b4801b9e0a076103a5f95",
                                     "name": "下拉框",
                                     "type": "fcSelect",
                                     "category": "widget",
@@ -1671,7 +1708,7 @@
                                             },
                                             "label": {
                                                 "label": "标签",
-                                                "value": "身份:"
+                                                "value": "身份："
                                             },
                                             "defaultValue": {
                                                 "label": "选择提示",
@@ -1748,14 +1785,13 @@
                                                 "data": [
                                                     {
                                                         "id": "undefined-0",
-                                                        "label": "教研",
+                                                        "label": "超管",
                                                         "value": "1",
-                                                        "data": [],
-                                                        "children": []
+                                                        "data": []
                                                     },
                                                     {
                                                         "id": "undefined-1",
-                                                        "label": "超管",
+                                                        "label": "教研",
                                                         "value": "2",
                                                         "data": []
                                                     }
@@ -1764,14 +1800,13 @@
                                             "data": [
                                                 {
                                                     "id": "undefined-0",
-                                                    "label": "教研",
+                                                    "label": "超管",
                                                     "value": "1",
-                                                    "data": [],
-                                                    "children": []
+                                                    "data": []
                                                 },
                                                 {
                                                     "id": "undefined-1",
-                                                    "label": "超管",
+                                                    "label": "教研",
                                                     "value": "2",
                                                     "data": []
                                                 }
@@ -1813,6 +1848,11 @@
                                                     },
                                                     {
                                                         "label": "栅格1",
+                                                        "value": "939593a907c04eda8dbf03ea5544e026",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
                                                         "value": "7d8c59a7dbe4450aaa022040c297cded",
                                                         "children": [
                                                             {
@@ -1824,6 +1864,11 @@
                                                     },
                                                     {
                                                         "label": "栅格1",
+                                                        "value": "59f11c342ca34a1ebbdecfd8c9564575",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
                                                         "value": "3feafdb70973412ea36fb2fa70f69d25",
                                                         "children": [
                                                             {
@@ -1832,6 +1877,11 @@
                                                                 "children": []
                                                             }
                                                         ]
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "6c2ee638a72b4027a1f05d40e371eeeb",
+                                                        "children": []
                                                     },
                                                     {
                                                         "label": "栅格1",

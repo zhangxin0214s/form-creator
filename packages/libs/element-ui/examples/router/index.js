@@ -19,7 +19,7 @@ export const constantRoutes = [
         path: 'establish',
         name: 'establish',
         component: () => import('@/views/user/establish'),
-        meta: { title: '用户创建', icon: 'wechat', show: true }
+        meta: { title: '用户创建', icon: 'create', show: true }
       }
     ]
   }
