@@ -5,6 +5,8 @@ import 'element-ui/lib/theme-chalk/index.css';
 import store from './store';
 import router from './router'
 import './icons' // icon
+import '@/permission' // permission control
+
 Vue.config.productionTip = false
 
 import fcElementUI from "../packages/index"
