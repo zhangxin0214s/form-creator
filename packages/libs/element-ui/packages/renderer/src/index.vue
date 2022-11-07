@@ -2,7 +2,7 @@
 	<el-form
 		class="form-renderer"
 		:label-width="`${formConfig['label-width'].value}px`"
-		:label-position="formConfig['label-position'].value"
+		label-position="right"
 		ref="ruleFormRef"
 		:model="formConfig.ruleForm"
 	>
@@ -25,12 +25,12 @@
 			<!-- 容器类组件 -->
 			<div v-if="widget.category === 'container' && !widget.options.basic.isHidden.value">
 				<container-mask
-          :widget="widget"
-          :widget-list="widgetList"
-          :form-config="formConfig"
-          :rule-form-ref="ruleFormRef1"
-          :prop-key="widget.ruleFormKey"
-          :rule-form="formConfig.ruleForm"
+					:widget="widget"
+					:widget-list="widgetList"
+					:form-config="formConfig"
+					:rule-form-ref="ruleFormRef1"
+					:prop-key="widget.ruleFormKey"
+					:rule-form="formConfig.ruleForm"
 				/>
 			</div>
 		</div>
@@ -40,27 +40,24 @@
 <script>
 import WidgetMask from './widgetMask.vue';
 import ContainerMask from './containerMask.vue';
-// import mixins from '../../mixins/index.js'
 export default {
 	name: 'fcRenderer',
 	props: {
-    widgetList: Array,
-    formConfig: Object,
-    isEditor: Boolean
-  },
-  // mixins:[mixins],
+		widgetList: Array,
+		formConfig: Object,
+		isEditor: Boolean
+	},
 	components: {
 		WidgetMask,
 		ContainerMask,
 	},
-  mounted(){
-    console.log(this.$refs.ruleFormRef,"===123===")
-    this.ruleFormRef1 = this.$refs.ruleFormRef;
-  },
+	mounted(){
+		this.ruleFormRef1 = this.$refs.ruleFormRef;
+	},
 	data() {
 		return {
 			ruleFormRef: null,
-      ruleFormRef1:null,
+      		ruleFormRef1:null,
 			formJson: {},
 		};
 	},
