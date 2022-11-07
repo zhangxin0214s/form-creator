@@ -9,7 +9,6 @@
 </template>
 <script>
 import formJson from './index.json';
-console.log(formJson,"===formJson===");
 export default {
   name: "App",
   data() {

@@ -19,7 +19,12 @@ export const constantRoutes = [
         path: 'establish',
         name: 'establish',
         component: () => import('@/views/user/establish'),
-        meta: { title: '用户创建', icon: 'create', show: true }
+        meta: { title: '用户创建', icon: 'user_create', show: true }
+      },{
+        path: 'list',
+        name: 'list',
+        component: () => import('@/views/user/list'),
+        meta: { title: '用户列表', icon: 'user_list', show: true }
       }
     ]
   }
