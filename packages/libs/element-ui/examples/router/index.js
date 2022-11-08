@@ -36,7 +36,7 @@ export const constantRoutes = [
  */
  export const asyncRoutes = [
   {
-    path: '',
+    path: '/',
     component: Layout,
     redirect: '/establish',
     name: '用户',

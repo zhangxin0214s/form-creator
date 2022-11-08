@@ -30,25 +30,26 @@ router.beforeEach(async (to, from, next) => {
             await store
                 .dispatch("login/login", { token: _token, methodType: 1 })
                 .then(() => {
-                    console.log(store.getters.name, "Name");
                 });
             if (!getToken("jyyToken")) {
                 NProgress.done();
                 return;
             }
-            next();
+            next(`/`);
             NProgress.done();
         } else {
             if (!getToken("jyyToken")) {
                 NProgress.done();
                 return;
             }
+            
             // 重写name
             await store.dispatch("login/name", _name);
             next();
             NProgress.done();
         }
     } else {
+        
         window.location.href = store.state.login.loginUrl;
         NProgress.done();
     }
