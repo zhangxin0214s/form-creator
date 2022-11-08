@@ -19,7 +19,7 @@ router.beforeEach(async (to, from, next) => {
 
     // set islogin cookie
     const _token = getParameter("token");
-    setToken("token", _token);
+    _token && setToken("token", _token);
 
     // determine whether the user has logged in
     const hasToken = getToken("token");
@@ -44,12 +44,11 @@ router.beforeEach(async (to, from, next) => {
                 return;
             }
             // 重写name
-            await store.dispatch("login/login", _name);
+            await store.dispatch("login/name", _name);
             next();
             NProgress.done();
         }
     } else {
-        console.log(store.state.login.loginUrl)
         window.location.href = store.state.login.loginUrl;
         NProgress.done();
     }

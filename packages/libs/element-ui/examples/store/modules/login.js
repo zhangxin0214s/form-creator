@@ -1,11 +1,10 @@
 import { login } from '@/api/login/login'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { Message } from 'element-ui'
-
 const getDefaultState = () => {
   return {
-    loginUrl: `https://sso.zhiyinlou.com/portal/login/1442487380`,
-    nologinUrl: `https://sso.zhiyinlou.com/sso/logout?path=https://sso.zhiyinlou.com/portal/login/1442487380`,
+    loginUrl: `https://sso.zhiyinlou.com/portal/login/${process.env.VUE_APP_LOGIN_APPID}`,
+    nologinUrl: `https://sso.zhiyinlou.com/sso/logout?path=https://sso.zhiyinlou.com/portal/login/${process.env.VUE_APP_LOGIN_APPID}`,
     token: getToken(),
     name: '******',
     jyyToken:'',
