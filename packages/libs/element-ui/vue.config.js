@@ -2,9 +2,33 @@
 const path = require('path')
 function resolve(dir) {
     return path.join(__dirname, dir)
-  }
-  
+}
+const port = process.env.port || process.env.npm_config_port || 8080 ; 
 module.exports = {
+    devServer: {
+        port: port,
+        open: true,
+        overlay: {
+          warnings: false,
+          errors: true
+        },
+        // before: require('./mock/mock-server.js'),
+        proxy: {
+          // 上传接口
+          '/v2/upload_param': {
+            target: 'https://upload.xueersi.com/',
+            ws: true,
+            secure: false,
+            changeOrigin: true
+          },
+          '/admin-fzpub': {
+            target: 'https://app-fzpub.jiaoyanyun.com/',
+            ws: true,
+            secure: false,
+            changeOrigin: true
+          }
+        }
+      },
     // 修改 pages 入口
     pages: {
         index: {
@@ -64,6 +88,6 @@ module.exports = {
             .options({
                 symbolId: 'icon-[name]'
             })
-        .end()
+            .end()
     }
 }

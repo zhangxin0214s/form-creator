@@ -20,6 +20,7 @@
     "element-ui": "2.15.10",
     "fuse.js": "6.6.2",
     "js-cookie": "3.0.1",
+    "js-storage": "1.1.0",
     "normalize.css": "7.0.0",
     "nprogress": "0.2.0",
     "screenfull": "5.2.0",
