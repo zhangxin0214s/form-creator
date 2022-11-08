@@ -14,6 +14,7 @@ module.exports = {
       { text: '指南', link: '/guide/introduction' },
       { text: 'API', link: '/api/codeEditor' },
       { text: '示例', link: '/example/form' },
+      { text: '编辑器', link: 'https://formcreator.jiaoyanyun.com/' },
     ],
     sidebar: [
       {
