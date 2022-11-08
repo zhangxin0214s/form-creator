@@ -2,6 +2,7 @@
 td, th {
    border: none!important;
    text-align:left;
+   background-color:white
 }
 table th:nth-of-type(1) {
     width: 30%;
@@ -22,8 +23,7 @@ table th:nth-of-type(3) {
 在这个代码编辑器上编写的代码，都会在这个命名空间下运行，在这个命名空间下为用户暴露了一些常用方法及变量。
 
 ### 变量
-
-| 变量      | 说明                            | 其他               |
+| 属性名      | 说明                            | 其他               |
 | ----     | ------------------------------ | ----------------- |
 | target   | 当前组件对象                     |  -|
 | widgetStore   | 脚手架中定义的pinia store对象 | -|
