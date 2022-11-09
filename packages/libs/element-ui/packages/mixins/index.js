@@ -6,7 +6,9 @@ export default {
         isEditor: Boolean,
         propKey: String,
         ruleForm: Object,
-        ruleFormRef: Object
+        ruleFormRef: Object,
+        widgetStore: Object,
+        request: Object
     },
     
     beforeMount() {
@@ -52,6 +54,7 @@ export default {
                     widgetStore: this.$store,
                     $refs: this.$refs,
                     utils,
+                    request: this.request,
                     target: this.widget,
                     linkTarget: this.widget?.options?.advanced?.linkage
                 }
@@ -103,6 +106,7 @@ export default {
                 widgetStore: this.$store,
                 $refs: this.$refs,
                 utils,
+                request: this.request,
                 target: this.widget,
                 linkTarget: this.widget?.options?.advanced?.linkage
             }

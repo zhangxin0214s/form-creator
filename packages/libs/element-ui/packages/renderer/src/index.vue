@@ -13,12 +13,14 @@
 			<!-- 非容器组件 -->
 			<div v-if="widget.category === 'widget'  && !widget.options.basic.isHidden.value">
 				<widget-mask
-          :widget="widget"
-          :widget-list="widgetList"
-          :form-config="formConfig"
-          :rule-form-ref="ruleFormRef1"
-          :prop-key="widget.ruleFormKey"
-          :rule-form="formConfig.ruleForm"
+					:widget="widget"
+					:widget-list="widgetList"
+					:form-config="formConfig"
+					:rule-form-ref="ruleFormRef1"
+					:prop-key="widget.ruleFormKey"
+					:rule-form="formConfig.ruleForm"
+					:widget-store="widgetStore"
+        			:request="request"
 				/>
 			</div>
 
@@ -31,6 +33,8 @@
 					:rule-form-ref="ruleFormRef1"
 					:prop-key="widget.ruleFormKey"
 					:rule-form="formConfig.ruleForm"
+					:widget-store="widgetStore"
+        			:request="request"
 				/>
 			</div>
 		</div>
@@ -45,7 +49,9 @@ export default {
 	props: {
 		widgetList: Array,
 		formConfig: Object,
-		isEditor: Boolean
+		isEditor: Boolean,
+		widgetStore: Object,
+		request: Object
 	},
 	components: {
 		WidgetMask,

@@ -8,6 +8,8 @@
         :prop-key="propKey"
         :rule-form="ruleForm"
         :parent="parent"
+        :widget-store="widgetStore"
+		:request="request"
         :selected-widget="selectedWidget"
         :is-editor="isEditor">
     </component>
@@ -24,7 +26,9 @@
             isEditor: Boolean,
             ruleForm: Object,
             propKey: String,
-            ruleFormRef: Object
+            ruleFormRef: Object,
+            widgetStore: Object,
+		    request: Object
         },
     };
 </script>
