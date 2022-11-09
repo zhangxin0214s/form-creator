@@ -10,7 +10,7 @@
 </template>
 <script>
 import formJson from './index.json';
-import * as request from '@/api';
+import request from '@/api';
 import store from '@/store';
 export default {
  name: "App",
