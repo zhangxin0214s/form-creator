@@ -1,8 +1,8 @@
 import request from '@/utils/request'
 
-export function login(data) {
+export default function saveUserInfo(data) {
   return request({
-    url: '/v1/yach/login',
+    url: '/v1/user/create',
     method: 'post',
     data
   })

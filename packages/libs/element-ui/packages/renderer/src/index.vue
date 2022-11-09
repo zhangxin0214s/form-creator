@@ -20,6 +20,7 @@
 					:prop-key="widget.ruleFormKey"
 					:rule-form="formConfig.ruleForm"
 					:widget-store="widgetStore"
+        			:request="request"
 				/>
 			</div>
 
@@ -33,6 +34,7 @@
 					:prop-key="widget.ruleFormKey"
 					:rule-form="formConfig.ruleForm"
 					:widget-store="widgetStore"
+        			:request="request"
 				/>
 			</div>
 		</div>
@@ -48,7 +50,8 @@ export default {
 		widgetList: Array,
 		formConfig: Object,
 		isEditor: Boolean,
-		widgetStore: Object
+		widgetStore: Object,
+		request: Object
 	},
 	components: {
 		WidgetMask,
