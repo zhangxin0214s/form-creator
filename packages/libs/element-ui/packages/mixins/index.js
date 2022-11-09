@@ -6,7 +6,8 @@ export default {
         isEditor: Boolean,
         propKey: String,
         ruleForm: Object,
-        ruleFormRef: Object
+        ruleFormRef: Object,
+        widgetStore: Object
     },
     
     beforeMount() {

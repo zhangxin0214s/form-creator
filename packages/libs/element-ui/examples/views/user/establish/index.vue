@@ -9,14 +9,18 @@
 </template>
 <script>
 import formJson from './index.json';
+import store from '@/store';
 export default {
   name: "App",
   data() {
       return {
-        widgetStore: null,
+        widgetStore: store,
         widgetList: formJson.widgetList,
         formConfig: formJson.formConfig
       }
+  },
+  mounted(){
+    
   }
 };
 </script>
