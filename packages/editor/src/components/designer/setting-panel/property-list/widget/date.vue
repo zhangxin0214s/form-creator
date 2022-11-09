@@ -49,7 +49,7 @@
 import { ref, defineProps } from "vue"
 import { BASCI_COMPONENTS, BASIC_PROPERTIES, ADVANCED_PROPERTIES } from '../propertyRegister'
 import * as basicComponents from '../components/index';
-import DateItems from '../components/dateItems'
+import DateItems from '../components/dateItems.vue'
 
 defineProps([
   'selectedWidget',
