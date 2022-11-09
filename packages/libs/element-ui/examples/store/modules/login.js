@@ -1,4 +1,4 @@
-import { login } from '@/api/login/login'
+import  login  from '@/api/request/login/login'
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import { Message } from 'element-ui'
 const getDefaultState = () => {
