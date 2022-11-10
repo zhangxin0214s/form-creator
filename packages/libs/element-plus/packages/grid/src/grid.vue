@@ -55,7 +55,6 @@ const childRuleForm = ref(null)
 watch(
 	() => props.propKey,
 	(value) => {
-		console.log(props.ruleForm,"===props.ruleForm1===")
 		const ruleFormKey = props.widget.ruleFormKey;
 		const parentRuleFormKeyType = props.parent?.ruleFormKeyType;
 		const ruleFormKeyType = props.widget.ruleFormKeyType;
