@@ -13,5 +13,10 @@
     "name": "表格数据",
     "path": "/templateLib/form/biaoge/index.json",
     "image": "/templateLib/form/biaoge/index.png"
+  },
+  {
+    "name": "用户信息",
+    "path": "/templateLib/form/user/index.json",
+    "image": "/templateLib/form/user/index.png"
   }
 ]
