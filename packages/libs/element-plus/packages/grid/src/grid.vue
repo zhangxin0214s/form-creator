@@ -58,7 +58,6 @@ watch(
 		const ruleFormKey = props.widget.ruleFormKey;
 		const parentRuleFormKeyType = props.parent?.ruleFormKeyType;
 		const ruleFormKeyType = props.widget.ruleFormKeyType;
-
 		if(ruleFormKey && props.ruleForm &&!props.ruleForm[ruleFormKey]){
 			console.log(ruleFormKey,"监听到数据变化",props.parent)
 			if(parentRuleFormKeyType === 'object' || !parentRuleFormKeyType){
@@ -69,7 +68,7 @@ watch(
 				}
 				childRuleForm.value = props.ruleForm[ruleFormKey];
 			}
-			if(parentRuleFormKeyType === 'array'){
+			if(parentRuleFormKeyType === 'array' || !parentRuleFormKeyType){
 				if(ruleFormKeyType === 'array'){
 					ElMessage({
 							message: '父级容器是数组结构，该元素只支持设置对象结构',
