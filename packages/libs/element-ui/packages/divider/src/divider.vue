@@ -1,5 +1,5 @@
 <template>
-	<el-form-item
+	<div
 		:label="widget.options.basic.label.value"
 		:rules="widget.rules"
 		:prop="propKey"
@@ -21,7 +21,7 @@
 				{{widget.options.basic['divider-content'].value}}
 			</span>
 		</el-divider>
-	</el-form-item>
+	</div>
 </template>
 <script>
 import mixins from '../../mixins/index.js';

@@ -1,5 +1,5 @@
 <template>
-	<el-form-item
+	<div
 		:label="widget.options.basic.label.value"
 		:rules="widget.rules"
 		:style="`
@@ -21,7 +21,7 @@
 			'text-decoration':`${widget.options.basic['font-style'].options[2].value ? 'underline' : 'none'}`,
 		}
 		"><span v-show="widget.options.basic.addRequired.value" style="color:red">*</span><span>{{widget.options.basic.textareaDefaultValue.value}}</span></pre>
-	</el-form-item>
+	</div>
 </template>
 <script>
 import mixins from '../../mixins/index.js';

@@ -1,5 +1,5 @@
 <template>
-	<el-form-item
+	<div
 		:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
 		:label="widget.options.basic.label.value"
 		:rules="widget.rules"
@@ -20,7 +20,7 @@
 				{{widget.options.basic['divider-content'].value}}
 			</span>
 		</el-divider>
-	</el-form-item>
+	</div>
 </template>
 <script>
 export default {

@@ -1,5 +1,5 @@
 <template>
-	<el-form-item
+	<div
 		:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
 		:label="widget.options.basic.label.value"
 		:rules="widget.rules"
@@ -22,7 +22,7 @@
 			'text-decoration':`${widget.options.basic['font-style'].options[2].value ? 'underline' : 'none'}`,
 		}
 		"><span v-show="widget.options.basic.addRequired.value" style="color:red">*</span><span>{{widget.value}}</span></pre>
-	</el-form-item>
+	</div>
 </template>
 
 <script>

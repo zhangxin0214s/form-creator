@@ -1,5 +1,5 @@
 <template>
-  <el-form-item
+  <div
       :label="widget.options.basic.label.value"
       :rules="widget.rules"
       :style="`
@@ -21,7 +21,7 @@
         @click="handleOnClick"
     >{{ widget.options.basic.text.value }}
     </el-button>
-  </el-form-item>
+  </div>
 </template>
 <script>
 import mixins from '../../mixins/index.js';

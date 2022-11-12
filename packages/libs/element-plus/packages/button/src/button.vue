@@ -1,5 +1,5 @@
 <template>
-	<el-form-item
+	<div
 		:class="[selectedWidget?.id === widget?.id && isEditor?'select':'']"
 		:label="widget.options.basic.label.value"
 		:rules="widget.rules"
@@ -22,7 +22,7 @@
 			@click="handleOnClick"
 		>{{ widget.options.basic.text.value }}
 		</el-button>
-	</el-form-item>
+	</div>
 </template>
   
   <script>

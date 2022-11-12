@@ -2,7 +2,7 @@
 	<el-form
 		class="form-renderer"
 		:label-width="`${formConfig['label-width'].value}px`"
-		label-position="right"
+		label-position="left"
 		ref="ruleFormRef"
 		:model="formConfig.ruleForm"
 	>
