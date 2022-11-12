@@ -38,10 +38,12 @@
             "x-jyy-token": "MTN85aea5Zu95binfDA5Njg5OXwxNjY0MzM0MTA4fEp5eVNhYXNZYWNoU3Nv"
         },
         "ruleForm": {
-            "workcode": null,
-            "name": null,
-            "roleList": null,
-            "email": null
+            "workcode": "3",
+            "name": "34",
+            "roleList": [
+                "超级管理员"
+            ],
+            "email": "4"
         }
     },
     "widgetList": [
@@ -417,11 +419,6 @@
                                                     },
                                                     {
                                                         "label": "栅格1",
-                                                        "value": "f1ac139d3a7a4b3aa6ff254909637495",
-                                                        "children": []
-                                                    },
-                                                    {
-                                                        "label": "栅格1",
                                                         "value": "e4050ab905e84a118edcae514063e678",
                                                         "children": [
                                                             {
@@ -433,11 +430,6 @@
                                                     },
                                                     {
                                                         "label": "栅格1",
-                                                        "value": "f1975d07712d4116b8be0bb994880cc6",
-                                                        "children": []
-                                                    },
-                                                    {
-                                                        "label": "栅格1",
                                                         "value": "fe211a481457403bbcb1ce9fc949beb9",
                                                         "children": [
                                                             {
@@ -446,11 +438,6 @@
                                                                 "children": []
                                                             }
                                                         ]
-                                                    },
-                                                    {
-                                                        "label": "栅格1",
-                                                        "value": "47b459120a474c078cfd643e5558a5c8",
-                                                        "children": []
                                                     },
                                                     {
                                                         "label": "栅格1",
@@ -482,7 +469,7 @@
                                             },
                                             "onClick": {
                                                 "label": "点击事件",
-                                                "value": "console.log(fc.props.ruleForm);if (!fc.props.ruleFormRef) return\nfc.props.ruleFormRef.validate((valid, fields) => {\n  console.log(valid, \"===valid===\")\n  if (valid) {\n    console.log('submit!')\n    fc.ElMessage({\n      message: '提交成功',\n      type: 'success',\n      duration: 1000\n    })\n  } else {\n    console.log('error submit!', fields)\n    fc.ElMessage({\n      message: '有必填项未填写，或填写错误，请检查',\n      type: 'error',\n      duration: 1000\n    })\n  }\n})"
+                                                "value": "if (!fc.props.ruleFormRef) return\nfc.props.ruleFormRef.validate((valid, fields) => {\n  if (valid) {\n    console.log('submit!')\n    console.log(fc.props.ruleForm, \"===ruleForm===\")\n    fc.request['user/saveUserInfo'](fc.props.ruleForm).then(res =>{\n      if(res.code === 200){\n        fc.ElMessage({\n          message: '保存成功',\n          type: 'success',\n          duration: 1000\n        })\n      }else{\n        fc.ElMessage({\n          message: res.msg,\n          type: 'error',\n          duration: 1000\n        })\n      }\n    })\n  } else {\n    console.log('error submit!', fields)\n    fc.ElMessage({\n      message: '有必填项未填写，或填写错误，请检查',\n      type: 'error',\n      duration: 1000\n    })\n  }\n})"
                                             }
                                         }
                                     }
@@ -648,7 +635,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": null
+                        "value": 60
                     },
                     "rowBackground": {
                         "label": "背景颜色",
@@ -697,9 +684,15 @@
                                     "type": "fcInput",
                                     "category": "widget",
                                     "icon": "input",
-                                    "value": null,
+                                    "value": "3",
                                     "ruleFormKey": "workcode",
-                                    "rules": [],
+                                    "rules": [
+                                        {
+                                            "required": true,
+                                            "message": "请输入工号",
+                                            "trigger": "blur"
+                                        }
+                                    ],
                                     "options": {
                                         "basic": {
                                             "name": {
@@ -712,7 +705,7 @@
                                             },
                                             "defaultValue": {
                                                 "label": "默认文本",
-                                                "value": "请输入输入框内容"
+                                                "value": "请输入工号"
                                             },
                                             "hint": {
                                                 "label": "输入内容提示",
@@ -742,8 +735,8 @@
                                             },
                                             "required": {
                                                 "label": "是否必填",
-                                                "value": false,
-                                                "message": ""
+                                                "value": true,
+                                                "message": "请输入工号"
                                             },
                                             "readonly": {
                                                 "label": "是否只读",
@@ -916,83 +909,13 @@
             }
         },
         {
-            "id": "f1ac139d3a7a4b3aa6ff254909637495",
-            "name": "栅格",
-            "type": "fcGrid",
-            "category": "container",
-            "icon": "lattice",
-            "value": null,
-            "ruleFormKey": null,
-            "ruleFormKeyType": "object",
-            "options": {
-                "basic": {
-                    "name": {
-                        "label": "唯一名称",
-                        "value": "栅格1"
-                    },
-                    "colHeight": {
-                        "label": "统一高度",
-                        "value": 20
-                    },
-                    "rowBackground": {
-                        "label": "背景颜色",
-                        "value": "#FFFFFF"
-                    },
-                    "ruleFormKey": {
-                        "label": "参数key",
-                        "value": ""
-                    },
-                    "isHidden": {
-                        "label": "隐藏组件",
-                        "value": false
-                    },
-                    "ruleFormKeyType": {
-                        "label": "参数类型",
-                        "value": "object",
-                        "options": [
-                            {
-                                "label": "对象",
-                                "value": "object"
-                            },
-                            {
-                                "label": "数组",
-                                "value": "array"
-                            }
-                        ]
-                    },
-                    "isMoveDivider": {
-                        "label": "是否上下移动",
-                        "value": false
-                    },
-                    "moveDistance": {
-                        "label": "移动距离",
-                        "value": 0
-                    }
-                },
-                "advanced": {
-                    "cols": [
-                        {
-                            "id": 1,
-                            "gutter": 12,
-                            "widgetList": []
-                        },
-                        {
-                            "id": 2,
-                            "gutter": 12,
-                            "widgetList": []
-                        }
-                    ]
-                }
-            }
-        },
-        {
             "id": "e4050ab905e84a118edcae514063e678",
             "name": "栅格",
             "type": "fcGrid",
             "category": "container",
             "icon": "lattice",
             "value": null,
-            "ruleFormKey": null,
+            "ruleFormKey": "",
             "ruleFormKeyType": "object",
             "options": {
                 "basic": {
@@ -1002,7 +925,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": null
+                        "value": 60
                     },
                     "rowBackground": {
                         "label": "背景颜色",
@@ -1051,9 +974,15 @@
                                     "type": "fcInput",
                                     "category": "widget",
                                     "icon": "input",
-                                    "value": null,
+                                    "value": "34",
                                     "ruleFormKey": "name",
-                                    "rules": [],
+                                    "rules": [
+                                        {
+                                            "required": true,
+                                            "message": "请输入姓名",
+                                            "trigger": "blur"
+                                        }
+                                    ],
                                     "options": {
                                         "basic": {
                                             "name": {
@@ -1066,7 +995,7 @@
                                             },
                                             "defaultValue": {
                                                 "label": "默认文本",
-                                                "value": "请输入输入框内容"
+                                                "value": "请输入姓名"
                                             },
                                             "hint": {
                                                 "label": "输入内容提示",
@@ -1096,8 +1025,8 @@
                                             },
                                             "required": {
                                                 "label": "是否必填",
-                                                "value": false,
-                                                "message": ""
+                                                "value": true,
+                                                "message": "请输入姓名"
                                             },
                                             "readonly": {
                                                 "label": "是否只读",
@@ -1207,13 +1136,35 @@
                                                     },
                                                     {
                                                         "label": "栅格1",
-                                                        "value": "f1ac139d3a7a4b3aa6ff254909637495",
+                                                        "value": "e4050ab905e84a118edcae514063e678",
                                                         "children": []
                                                     },
                                                     {
                                                         "label": "栅格1",
-                                                        "value": "e4050ab905e84a118edcae514063e678",
+                                                        "value": "fe211a481457403bbcb1ce9fc949beb9",
+                                                        "children": [
+                                                            {
+                                                                "label": "输入框",
+                                                                "value": "304d78bb98e84a02bdd9d1e5e8e4e97a",
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "47b459120a474c078cfd643e5558a5c8",
                                                         "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "70748c934e8a47cb9187371c701b05bc",
+                                                        "children": [
+                                                            {
+                                                                "label": 1,
+                                                                "value": "8da7a49132334fefadc41648fbafda4d",
+                                                                "children": []
+                                                            }
+                                                        ]
                                                     }
                                                 ],
                                                 "value": [],
@@ -1227,76 +1178,6 @@
                                     }
                                 }
                             ]
-                        },
-                        {
-                            "id": 2,
-                            "gutter": 12,
-                            "widgetList": []
-                        }
-                    ]
-                }
-            }
-        },
-        {
-            "id": "f1975d07712d4116b8be0bb994880cc6",
-            "name": "栅格",
-            "type": "fcGrid",
-            "category": "container",
-            "icon": "lattice",
-            "value": null,
-            "ruleFormKey": null,
-            "ruleFormKeyType": "object",
-            "options": {
-                "basic": {
-                    "name": {
-                        "label": "唯一名称",
-                        "value": "栅格1"
-                    },
-                    "colHeight": {
-                        "label": "统一高度",
-                        "value": 20
-                    },
-                    "rowBackground": {
-                        "label": "背景颜色",
-                        "value": "#FFFFFF"
-                    },
-                    "ruleFormKey": {
-                        "label": "参数key",
-                        "value": ""
-                    },
-                    "isHidden": {
-                        "label": "隐藏组件",
-                        "value": false
-                    },
-                    "ruleFormKeyType": {
-                        "label": "参数类型",
-                        "value": "object",
-                        "options": [
-                            {
-                                "label": "对象",
-                                "value": "object"
-                            },
-                            {
-                                "label": "数组",
-                                "value": "array"
-                            }
-                        ]
-                    },
-                    "isMoveDivider": {
-                        "label": "是否上下移动",
-                        "value": false
-                    },
-                    "moveDistance": {
-                        "label": "移动距离",
-                        "value": 0
-                    }
-                },
-                "advanced": {
-                    "cols": [
-                        {
-                            "id": 1,
-                            "gutter": 12,
-                            "widgetList": []
                         },
                         {
                             "id": 2,
@@ -1324,7 +1205,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": null
+                        "value": 60
                     },
                     "rowBackground": {
                         "label": "背景颜色",
@@ -1373,9 +1254,15 @@
                                     "type": "fcInput",
                                     "category": "widget",
                                     "icon": "input",
-                                    "value": null,
+                                    "value": "4",
                                     "ruleFormKey": "email",
-                                    "rules": [],
+                                    "rules": [
+                                        {
+                                            "required": true,
+                                            "message": "请输入邮箱",
+                                            "trigger": "blur"
+                                        }
+                                    ],
                                     "options": {
                                         "basic": {
                                             "name": {
@@ -1388,7 +1275,7 @@
                                             },
                                             "defaultValue": {
                                                 "label": "默认文本",
-                                                "value": "请输入输入框内容"
+                                                "value": "请输入邮箱"
                                             },
                                             "hint": {
                                                 "label": "输入内容提示",
@@ -1418,8 +1305,8 @@
                                             },
                                             "required": {
                                                 "label": "是否必填",
-                                                "value": false,
-                                                "message": ""
+                                                "value": true,
+                                                "message": "请输入邮箱"
                                             },
                                             "readonly": {
                                                 "label": "是否只读",
@@ -1529,11 +1416,6 @@
                                                     },
                                                     {
                                                         "label": "栅格1",
-                                                        "value": "f1ac139d3a7a4b3aa6ff254909637495",
-                                                        "children": []
-                                                    },
-                                                    {
-                                                        "label": "栅格1",
                                                         "value": "e4050ab905e84a118edcae514063e678",
                                                         "children": [
                                                             {
@@ -1542,11 +1424,6 @@
                                                                 "children": []
                                                             }
                                                         ]
-                                                    },
-                                                    {
-                                                        "label": "栅格1",
-                                                        "value": "f1975d07712d4116b8be0bb994880cc6",
-                                                        "children": []
                                                     },
                                                     {
                                                         "label": "栅格1",
@@ -1592,76 +1469,6 @@
             }
         },
         {
-            "id": "47b459120a474c078cfd643e5558a5c8",
-            "name": "栅格",
-            "type": "fcGrid",
-            "category": "container",
-            "icon": "lattice",
-            "value": null,
-            "ruleFormKey": null,
-            "ruleFormKeyType": "object",
-            "options": {
-                "basic": {
-                    "name": {
-                        "label": "唯一名称",
-                        "value": "栅格1"
-                    },
-                    "colHeight": {
-                        "label": "统一高度",
-                        "value": 20
-                    },
-                    "rowBackground": {
-                        "label": "背景颜色",
-                        "value": "#FFFFFF"
-                    },
-                    "ruleFormKey": {
-                        "label": "参数key",
-                        "value": ""
-                    },
-                    "isHidden": {
-                        "label": "隐藏组件",
-                        "value": false
-                    },
-                    "ruleFormKeyType": {
-                        "label": "参数类型",
-                        "value": "object",
-                        "options": [
-                            {
-                                "label": "对象",
-                                "value": "object"
-                            },
-                            {
-                                "label": "数组",
-                                "value": "array"
-                            }
-                        ]
-                    },
-                    "isMoveDivider": {
-                        "label": "是否上下移动",
-                        "value": false
-                    },
-                    "moveDistance": {
-                        "label": "移动距离",
-                        "value": 0
-                    }
-                },
-                "advanced": {
-                    "cols": [
-                        {
-                            "id": 1,
-                            "gutter": 12,
-                            "widgetList": []
-                        },
-                        {
-                            "id": 2,
-                            "gutter": 12,
-                            "widgetList": []
-                        }
-                    ]
-                }
-            }
-        },
-        {
             "id": "70748c934e8a47cb9187371c701b05bc",
             "name": "栅格",
             "type": "fcGrid",
@@ -1678,7 +1485,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": null
+                        "value": 60
                     },
                     "rowBackground": {
                         "label": "背景颜色",
@@ -1727,9 +1534,17 @@
                                     "type": "fcSelect",
                                     "category": "widget",
                                     "icon": "select",
-                                    "value": null,
+                                    "value": [
+                                        "超级管理员"
+                                    ],
                                     "ruleFormKey": "roleList",
-                                    "rules": [],
+                                    "rules": [
+                                        {
+                                            "required": true,
+                                            "message": "请选择身份",
+                                            "trigger": "blur"
+                                        }
+                                    ],
                                     "options": {
                                         "basic": {
                                             "name": {
@@ -1738,7 +1553,7 @@
                                             },
                                             "label": {
                                                 "label": "标签",
-                                                "value": "选择框："
+                                                "value": "身份："
                                             },
                                             "defaultValue": {
                                                 "label": "选择提示",
@@ -1754,8 +1569,8 @@
                                             },
                                             "required": {
                                                 "label": "是否必填",
-                                                "value": false,
-                                                "message": ""
+                                                "value": true,
+                                                "message": "请选择身份"
                                             },
                                             "labelHidden": {
                                                 "label": "标签是否隐藏",
@@ -1830,14 +1645,14 @@
                                             "data": [
                                                 {
                                                     "id": 0,
-                                                    "label": "超管",
-                                                    "value": "1",
+                                                    "label": "超级管理员",
+                                                    "value": "超级管理员",
                                                     "data": []
                                                 },
                                                 {
                                                     "id": 1,
                                                     "label": "教研",
-                                                    "value": "2",
+                                                    "value": "教研",
                                                     "data": []
                                                 }
                                             ],
@@ -1878,11 +1693,6 @@
                                                     },
                                                     {
                                                         "label": "栅格1",
-                                                        "value": "f1ac139d3a7a4b3aa6ff254909637495",
-                                                        "children": []
-                                                    },
-                                                    {
-                                                        "label": "栅格1",
                                                         "value": "e4050ab905e84a118edcae514063e678",
                                                         "children": [
                                                             {
@@ -1894,11 +1704,6 @@
                                                     },
                                                     {
                                                         "label": "栅格1",
-                                                        "value": "f1975d07712d4116b8be0bb994880cc6",
-                                                        "children": []
-                                                    },
-                                                    {
-                                                        "label": "栅格1",
                                                         "value": "fe211a481457403bbcb1ce9fc949beb9",
                                                         "children": [
                                                             {
@@ -1907,11 +1712,6 @@
                                                                 "children": []
                                                             }
                                                         ]
-                                                    },
-                                                    {
-                                                        "label": "栅格1",
-                                                        "value": "47b459120a474c078cfd643e5558a5c8",
-                                                        "children": []
                                                     },
                                                     {
                                                         "label": "栅格1",
