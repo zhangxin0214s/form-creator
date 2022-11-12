@@ -10,7 +10,7 @@
 			:options="widget.options.advanced.data"
 			:disabled="widget.options.basic.disabled.value"
 			:placeholder="widget.options.basic.defaultValue.value"
-			@change="handleChangeEvent(props,ElMessage)"
+			@change="handleChangeEvent(_props)"
 		/>
 	</el-form-item>
 </template>
