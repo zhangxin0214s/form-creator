@@ -55,6 +55,7 @@
      */
     const copy = inject('copyWidget');
     const copyWidget1 = ({widget, parentWidget}) =>{
+        console.log(parentWidget,"===parentWidget===")
         copy({widget, parentWidget})
     }
 

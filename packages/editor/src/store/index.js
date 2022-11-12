@@ -33,6 +33,7 @@ export const widgetStore = defineStore('widget', {
          * @param {*} target
          */
         copyWidget({target,parentWidget,parentWidgetCid}) {
+            console.log(parentWidget,";",parentWidgetCid)
             let newOrigin = deepClone(target);
             newOrigin.id = generateId();
             // 处理栅格 && 标签页内组件
@@ -46,13 +47,7 @@ export const widgetStore = defineStore('widget', {
                     })
                 })
             }
-            if(['fcGrid','fcTabs','fcCard'].indexOf(parentWidget.type)>-1){
-                parentWidget.options.advanced.cols[parentWidgetCid].widgetList.push(newOrigin);
-                return newOrigin;
-            }else {
-                console.warn('父容器检测到不是容器组件')
-            }
-            
+            parentWidget.push(newOrigin);
         },
         /**
          * 删除组件
