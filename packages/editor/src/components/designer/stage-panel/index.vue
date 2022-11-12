@@ -50,6 +50,7 @@
 							<template v-if="widget.category === 'container'">
 								<container-mask
 									:widget="widget"
+									:parent="widgetList"
 									:widget-list="widgetList"
 									:selected-widget="selectedWidget"
 									:is-editor="isEditor"

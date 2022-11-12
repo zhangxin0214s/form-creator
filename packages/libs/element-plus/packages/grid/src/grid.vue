@@ -37,8 +37,9 @@ export default {
 <script setup name="grid">
 import { watch } from 'vue';
 import { ElMessage } from 'element-plus'
-import Col from './grid-col.vue';
 import { ref } from 'vue'
+import Col from './grid-col.vue';
+
 
 const props = defineProps([
 	'widget',
@@ -51,13 +52,14 @@ const props = defineProps([
 ]);
 
 
-const childRuleForm = ref(null)
+let childRuleForm = ref(null)
 watch(
 	() => props.propKey,
 	(value) => {
 		const ruleFormKey = props.widget.ruleFormKey;
 		const parentRuleFormKeyType = props.parent?.ruleFormKeyType;
 		const ruleFormKeyType = props.widget.ruleFormKeyType;
+		console.log(ruleFormKey,'监听到变化',props.ruleForm,";",childRuleForm.value)
 		if(ruleFormKey && props.ruleForm &&!props.ruleForm[ruleFormKey]){
 			console.log(ruleFormKey,"监听到数据变化",props.parent)
 			if(parentRuleFormKeyType === 'object' || !parentRuleFormKeyType){
@@ -67,8 +69,9 @@ watch(
 					props.ruleForm[ruleFormKey] = {}
 				}
 				childRuleForm.value = props.ruleForm[ruleFormKey];
+
 			}
-			if(parentRuleFormKeyType === 'array' || !parentRuleFormKeyType){
+			if(parentRuleFormKeyType === 'array'){
 				if(ruleFormKeyType === 'array'){
 					ElMessage({
 							message: '父级容器是数组结构，该元素只支持设置对象结构',
@@ -76,7 +79,7 @@ watch(
 							duration:1500
 					})
 				}else{
-					const parentWidgetListLen = props.parent.options.advanced.cols[0].widgetList.length;
+					const parentWidgetListLen = props.parent?.options.advanced.cols[0].widgetList.length;
 					if (props.ruleForm.length < parentWidgetListLen){
 						if(props.widget.category === 'container'){
 							props.ruleForm.push({
@@ -100,10 +103,13 @@ watch(
 )
 
 const widgetRuleFormKey = props.widget.ruleFormKey;
-if(props.parent?.ruleFormKeyType === 'object' || !props.parent?.ruleFormKeyType){
+console.log(props.parent,"===props.parent===")
+if(props.parent?.ruleFormKeyType === 'object'){
 	childRuleForm.value = widgetRuleFormKey && props.ruleForm && props.ruleForm[widgetRuleFormKey];
 }else if(props.parent?.ruleFormKeyType === 'array'){
 	childRuleForm.value = widgetRuleFormKey && props.ruleForm && props.ruleForm.filter(rule=>Object.keys(rule).indexOf(widgetRuleFormKey)>-1)[props.ruleForm.length-1][widgetRuleFormKey]
+}else {
+	childRuleForm.value = props.ruleForm
 }
 </script>
  <style lang="scss" scoped>
