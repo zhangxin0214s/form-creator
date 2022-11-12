@@ -169,7 +169,8 @@ export const containers = [
 			},
 			advanced: {
 				tableTitles: [],
-				tableValues: []
+				tableValues: [],
+				btns:[]
 			},
 			events: {
 				onBeforeMount: {

@@ -15,6 +15,20 @@
                     </el-input>
                 </div>
                 <el-button type="primary" @click="add" style="margin-top:10px;">添加列</el-button>
+                <br><br>
+                <div>
+                    <div class="title" style="margin-right:80px;">名称</div>
+                    <div class="title">key</div>
+                </div>
+                <div v-for="(item,index) of selectedWidget.options.advanced.btns" :key="index">
+                    <el-input class="input" v-model="item.name" ></el-input>
+                    <el-input class="input" v-model="item.value">
+                        <template #append>
+                            <el-button :icon="Delete" @click="removeBtn(index)" />
+                        </template>
+                    </el-input>
+                </div>
+                <el-button type="primary" @click="addBtn" style="margin-top:10px;display:block;">添加操作按钮</el-button>
             </el-collapse-item>
 
             <!--事件属性-->
@@ -61,6 +75,13 @@ const add = () => {
 };
 const remove =(index) =>{
     props.selectedWidget.options.advanced.tableTitles.splice(index,1)
+}
+
+const addBtn = () =>{
+    props.selectedWidget.options.advanced.btns.push({name:"", value:""})
+}
+const removeBtn = (index) =>{
+    props.selectedWidget.options.advanced.btns.splice(index,1)
 }
 </script>
 <style lang="scss" scoped>

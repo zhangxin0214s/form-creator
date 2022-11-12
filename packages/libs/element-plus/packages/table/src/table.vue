@@ -9,6 +9,19 @@
       :prop="item.prop"
       :label="item.label">
     </el-table-column>
+    <el-table-column
+      v-if="widget.options.advanced.btns && widget.options.advanced.btns.length>0"
+      label="操作"
+      width="100">
+      <template slot-scope="scope">
+        <el-button v-for="(btn,index) of widget.options.advanced.btn"
+                   :key="index"
+                   type="text"
+                   @click="btnClick(btn.value)"
+                   size="small">{{btn.name}}
+        </el-button>
+      </template>
+    </el-table-column>
   </el-table>
 </template>
 <script>
@@ -37,6 +50,10 @@
   onBeforeMount(() => {
     handleOnBeforeMount();
   });
+
+  const btnClick = (value) => {
+    console.log(value)
+  }
 
   watch(
     () => props.propKey,
