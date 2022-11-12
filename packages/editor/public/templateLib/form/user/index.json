@@ -1,7 +1,7 @@
 {
     "formConfig": {
         "label-position": {
-            "value": "right",
+            "value": "left",
             "label": "标签对齐方式:",
             "options": [
                 {
@@ -20,7 +20,7 @@
         },
         "label-width": {
             "label": "标签宽度",
-            "value": ""
+            "value": "70"
         },
         "onBeforeMount": {
             "label": "渲染前",
@@ -37,7 +37,12 @@
         "requestHeader": {
             "x-jyy-token": "MTN85aea5Zu95binfDA5Njg5OXwxNjY0MzM0MTA4fEp5eVNhYXNZYWNoU3Nv"
         },
-        "ruleForm": {}
+        "ruleForm": {
+            "workcode": null,
+            "name": null,
+            "roleList": null,
+            "email": null
+        }
     },
     "widgetList": [
         {
@@ -393,6 +398,70 @@
                                                                 "children": []
                                                             }
                                                         ]
+                                                    },
+                                                    {
+                                                        "label": "分割线",
+                                                        "value": "a402ec7422d644f0afe7c2bed52571e5",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "cddb82facd4c44e49f63875382c9b81d",
+                                                        "children": [
+                                                            {
+                                                                "label": "输入框",
+                                                                "value": "420ced0fb626423592a124d3dd3565b3",
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "f1ac139d3a7a4b3aa6ff254909637495",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "e4050ab905e84a118edcae514063e678",
+                                                        "children": [
+                                                            {
+                                                                "label": "输入框",
+                                                                "value": "25d7081b0acb4612b302c950e3971ca5",
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "f1975d07712d4116b8be0bb994880cc6",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "fe211a481457403bbcb1ce9fc949beb9",
+                                                        "children": [
+                                                            {
+                                                                "label": "输入框",
+                                                                "value": "304d78bb98e84a02bdd9d1e5e8e4e97a",
+                                                                "children": []
+                                                            }
+                                                        ]
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "47b459120a474c078cfd643e5558a5c8",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "70748c934e8a47cb9187371c701b05bc",
+                                                        "children": [
+                                                            {
+                                                                "label": 1,
+                                                                "value": "8da7a49132334fefadc41648fbafda4d",
+                                                                "children": []
+                                                            }
+                                                        ]
                                                     }
                                                 ],
                                                 "value": []
@@ -413,7 +482,7 @@
                                             },
                                             "onClick": {
                                                 "label": "点击事件",
-                                                "value": "if (!fc.props.ruleFormRef) return\nfc.props.ruleFormRef.validate((valid, fields) => {\n  console.log(valid, \"===valid===\")\n  if (valid) {\n    console.log('submit!')\n    fc.ElMessage({\n      message: '提交成功',\n      type: 'success',\n      duration: 1000\n    })\n  } else {\n    console.log('error submit!', fields)\n    fc.ElMessage({\n      message: '有必填项未填写，或填写错误，请检查',\n      type: 'error',\n      duration: 1000\n    })\n  }\n})"
+                                                "value": "console.log(fc.props.ruleForm);if (!fc.props.ruleFormRef) return\nfc.props.ruleFormRef.validate((valid, fields) => {\n  console.log(valid, \"===valid===\")\n  if (valid) {\n    console.log('submit!')\n    fc.ElMessage({\n      message: '提交成功',\n      type: 'success',\n      duration: 1000\n    })\n  } else {\n    console.log('error submit!', fields)\n    fc.ElMessage({\n      message: '有必填项未填写，或填写错误，请检查',\n      type: 'error',\n      duration: 1000\n    })\n  }\n})"
                                             }
                                         }
                                     }
@@ -579,7 +648,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": 36
+                        "value": null
                     },
                     "rowBackground": {
                         "label": "背景颜色",
@@ -933,7 +1002,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": 36
+                        "value": null
                     },
                     "rowBackground": {
                         "label": "背景颜色",
@@ -1255,7 +1324,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": 36
+                        "value": null
                     },
                     "rowBackground": {
                         "label": "背景颜色",
@@ -1305,7 +1374,7 @@
                                     "category": "widget",
                                     "icon": "input",
                                     "value": null,
-                                    "ruleFormKey": null,
+                                    "ruleFormKey": "email",
                                     "rules": [],
                                     "options": {
                                         "basic": {
@@ -1341,7 +1410,7 @@
                                             },
                                             "ruleFormKey": {
                                                 "label": "参数key",
-                                                "value": ""
+                                                "value": "email"
                                             },
                                             "isHidden": {
                                                 "label": "隐藏组件",
@@ -1483,6 +1552,22 @@
                                                         "label": "栅格1",
                                                         "value": "fe211a481457403bbcb1ce9fc949beb9",
                                                         "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "47b459120a474c078cfd643e5558a5c8",
+                                                        "children": []
+                                                    },
+                                                    {
+                                                        "label": "栅格1",
+                                                        "value": "70748c934e8a47cb9187371c701b05bc",
+                                                        "children": [
+                                                            {
+                                                                "label": 1,
+                                                                "value": "8da7a49132334fefadc41648fbafda4d",
+                                                                "children": []
+                                                            }
+                                                        ]
                                                     }
                                                 ],
                                                 "value": [],
@@ -1593,7 +1678,7 @@
                     },
                     "colHeight": {
                         "label": "统一高度",
-                        "value": 36
+                        "value": null
                     },
                     "rowBackground": {
                         "label": "背景颜色",
