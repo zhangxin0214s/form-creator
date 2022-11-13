@@ -9,8 +9,7 @@
     :placeholder="widget.options.basic.defaultValue.value"
     :type="widget.options.basic.inputType.value"
     v-model="widget.value"
-    show-word-limit
-    @change="handleChangeEvent(_props)"/>
+    show-word-limit/>
     <div class="hint">{{ widget.options.basic.hint.value }}</div>
   </el-form-item>
 </template>

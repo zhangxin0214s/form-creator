@@ -38,12 +38,12 @@
             "x-jyy-token": "MTN85aea5Zu95binfDA5Njg5OXwxNjY0MzM0MTA4fEp5eVNhYXNZYWNoU3Nv"
         },
         "ruleForm": {
-            "workcode": "3",
-            "name": "34",
+            "workcode": "",
+            "name": "",
             "roleList": [
                 "超级管理员"
             ],
-            "email": "4"
+            "email": ""
         }
     },
     "widgetList": [
@@ -684,7 +684,7 @@
                                     "type": "fcInput",
                                     "category": "widget",
                                     "icon": "input",
-                                    "value": "3",
+                                    "value": "",
                                     "ruleFormKey": "workcode",
                                     "rules": [
                                         {
@@ -840,11 +840,6 @@
                                                     },
                                                     {
                                                         "label": "栅格1",
-                                                        "value": "f1ac139d3a7a4b3aa6ff254909637495",
-                                                        "children": []
-                                                    },
-                                                    {
-                                                        "label": "栅格1",
                                                         "value": "e4050ab905e84a118edcae514063e678",
                                                         "children": [
                                                             {
@@ -853,11 +848,6 @@
                                                                 "children": []
                                                             }
                                                         ]
-                                                    },
-                                                    {
-                                                        "label": "栅格1",
-                                                        "value": "f1975d07712d4116b8be0bb994880cc6",
-                                                        "children": []
                                                     },
                                                     {
                                                         "label": "栅格1",
@@ -872,11 +862,6 @@
                                                     },
                                                     {
                                                         "label": "栅格1",
-                                                        "value": "47b459120a474c078cfd643e5558a5c8",
-                                                        "children": []
-                                                    },
-                                                    {
-                                                        "label": "栅格1",
                                                         "value": "70748c934e8a47cb9187371c701b05bc",
                                                         "children": [
                                                             {
@@ -887,12 +872,17 @@
                                                         ]
                                                     }
                                                 ],
-                                                "value": [],
+                                                "value": [
+                                                    [
+                                                        "e4050ab905e84a118edcae514063e678",
+                                                        "25d7081b0acb4612b302c950e3971ca5"
+                                                    ]
+                                                ],
                                                 "targets": []
                                             },
                                             "linkageCode": {
                                                 "label": "联动代码",
-                                                "value": "//#region\n/*\nwidget:当前元素;\nlinkageObj:联动对象\ncopyWidget:复制方法\n*/ \n//#endregion "
+                                                "value": "const _widgetStore = fc.widgetStore;\nconsole.log(_widgetStore.state.form.widgetList)\nconsole.log(fc)\nlet user_name = fc.utils.getWidgetsByKey('name', _widgetStore.state.form.widgetList)[0];\nlet user_email = fc.utils.getWidgetsByKey('email', _widgetStore.state.form.widgetList)[0];\n\nfc.request['user/account']({\n    methodType: 1,\n    workcode: fc.target.value\n}).then(res => {\n    if (res.code === 200) {\n        user_name.value = res.data.name;\n        user_email.value = res.data.email;\n    }\n})"
                                             }
                                         }
                                     }
@@ -974,7 +964,7 @@
                                     "type": "fcInput",
                                     "category": "widget",
                                     "icon": "input",
-                                    "value": "34",
+                                    "value": "",
                                     "ruleFormKey": "name",
                                     "rules": [
                                         {
@@ -1030,11 +1020,11 @@
                                             },
                                             "readonly": {
                                                 "label": "是否只读",
-                                                "value": false
+                                                "value": true
                                             },
                                             "disabled": {
                                                 "label": "是否禁用",
-                                                "value": false
+                                                "value": true
                                             },
                                             "marginAdjustment": {
                                                 "label": "外边距调整",
@@ -1149,11 +1139,6 @@
                                                                 "children": []
                                                             }
                                                         ]
-                                                    },
-                                                    {
-                                                        "label": "栅格1",
-                                                        "value": "47b459120a474c078cfd643e5558a5c8",
-                                                        "children": []
                                                     },
                                                     {
                                                         "label": "栅格1",
@@ -1254,7 +1239,7 @@
                                     "type": "fcInput",
                                     "category": "widget",
                                     "icon": "input",
-                                    "value": "4",
+                                    "value": "",
                                     "ruleFormKey": "email",
                                     "rules": [
                                         {
@@ -1310,11 +1295,11 @@
                                             },
                                             "readonly": {
                                                 "label": "是否只读",
-                                                "value": false
+                                                "value": true
                                             },
                                             "disabled": {
                                                 "label": "是否禁用",
-                                                "value": false
+                                                "value": true
                                             },
                                             "marginAdjustment": {
                                                 "label": "外边距调整",
@@ -1428,11 +1413,6 @@
                                                     {
                                                         "label": "栅格1",
                                                         "value": "fe211a481457403bbcb1ce9fc949beb9",
-                                                        "children": []
-                                                    },
-                                                    {
-                                                        "label": "栅格1",
-                                                        "value": "47b459120a474c078cfd643e5558a5c8",
                                                         "children": []
                                                     },
                                                     {
@@ -1534,9 +1514,7 @@
                                     "type": "fcSelect",
                                     "category": "widget",
                                     "icon": "select",
-                                    "value": [
-                                        "超级管理员"
-                                    ],
+                                    "value": [],
                                     "ruleFormKey": "roleList",
                                     "rules": [
                                         {

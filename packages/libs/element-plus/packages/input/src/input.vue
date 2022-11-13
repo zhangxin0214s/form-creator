@@ -18,7 +18,6 @@
 			:type="widget.options.basic.inputType.value"
 			v-model="widget.value"
 			show-word-limit
-			@change="handleChangeEvent(props,ElMessage)"
 		/>
 		<div class="hint">{{ widget.options.basic.hint.value }}</div>
 	</el-form-item>
@@ -43,6 +42,13 @@ const { linkageWatchEvent } = useRegisterEvent({ props, inject });
 linkageWatchEvent({ watch });
 
 watchEvent(props, watch, ElMessage);
+
+watch(
+        () => props.widget.value,
+        (value) => {
+			console.log("变化了")
+			handleChangeEvent(props,ElMessage)
+		})
 </script>
 <style lang="scss" scoped>
 .hint {

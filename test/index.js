@@ -1,21 +1,13 @@
 const _widgetStore = fc.widgetStore();
+let user_name = fc.utils.getWidgetsByKey('name', _widgetStore.widgetList)[0];
+let user_email = fc.utils.getWidgetsByKey('email', _widgetStore.widgetList)[0]; 
 
-const targetId = fc.linkTarget.value[0][fc.linkTarget.value[0].length - 1];
-
-const target = fc.utils.getWidgetById(targetId, _widgetStore.widgetList);
-
-const subjects = fc.utils.getWidgetsByKey('subjects', _widgetStore.widgetList)[0];
-
-const curSubject = subjects.options.advanced.cols.find(item => item.id === subjects.activeId);
-
-console.log(curSubject,"===curSubject===",targetId)
-
-const parentWidget = fc.utils.getWidgetsByKey('options', curSubject.widgetList)[0];
-
-const newOrigin = _widgetStore.copyWidget({
-    target,
-    parentWidget,
-    parentWidgetCid: 0
+fc.request['user/account']({
+    methodType: 1,
+    workcode: fc.target.value
+}).then(res =>{
+    if(res.code === 200){
+        user_name.value = res.data.name;
+        user_email = res.data.email;
+    }
 })
-const number = fc.utils.getWidgetsByKey('number', [newOrigin])[0];
-number.value = parentWidget.options.advanced.cols[0].widgetList.length

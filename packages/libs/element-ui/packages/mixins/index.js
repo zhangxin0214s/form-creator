@@ -46,6 +46,7 @@ export default {
         'widget.value': {
             // 执行联动对象的方法
             handler:function() {
+                console.log(111)
                 const EVENTS = this.widget.options.advanced.linkageCode.value;
                 if(!EVENTS) return;
                 const _fc = {
@@ -62,6 +63,7 @@ export default {
                   'fc'
                   ,EVENTS
                 )(_fc)
+                this.handleChangeEvent()
             }
         }
     },

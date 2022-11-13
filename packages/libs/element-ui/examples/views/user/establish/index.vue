@@ -23,7 +23,8 @@ export default {
       }
   },
   mounted(){
-   
+    store.state.form.formConfig = formJson.formConfig;
+    store.state.form.widgetList = formJson.widgetList;
   }
 };
 </script>
