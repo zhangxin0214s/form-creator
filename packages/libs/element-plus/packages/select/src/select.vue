@@ -14,6 +14,7 @@
 	>
 		<el-cascader
 			v-model="widget.value"
+			:props="multiple"
 			:options="advanced.data"
 			:disabled="basic.disabled.value"
 			:placeholder="basic.defaultValue.value"
@@ -32,9 +33,12 @@ import { watch } from 'vue';
 import { handleChangeEvent } from '../../hooks/handleChangeEvent';
 import { watchEvent } from '../../hooks/watchEvent';
 import useRegisterEvent from '../../hooks/useRegisterEvent';
-import { inject } from 'vue'
+import { inject,ref } from 'vue'
+
 const props = defineProps(['widget', 'isEditor', 'selectedWidget', 'widgetType', 'ruleForm', 'propKey', 'parent', 'parentWidget']);
 const { basic, advanced } = props.widget.options;
+const multiple = ref({multiple: props.widget.options.basic.multiple.value})
+
 watchEvent(props, watch, ElMessage);
 
 const { linkageWatchEvent } = useRegisterEvent({props, inject});

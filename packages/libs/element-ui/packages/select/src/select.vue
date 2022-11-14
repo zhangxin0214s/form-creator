@@ -7,6 +7,7 @@
 	>
 		<el-cascader
 			v-model="widget.value"
+			:props="multiple"
 			:options="widget.options.advanced.data"
 			:disabled="widget.options.basic.disabled.value"
 			:placeholder="widget.options.basic.defaultValue.value"
@@ -18,6 +19,11 @@
 	import mixins from '../../mixins/index.js'
   export default {
     name: "fcSelect",
+	data() {
+		return {
+			multiple: { multiple: this.widget.options.options.basic.multiple.value }
+		}
+	},
     mixins:[mixins]
   };
 </script>

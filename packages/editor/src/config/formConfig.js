@@ -809,7 +809,11 @@ export const basicWidgets = [
 				disabled: {
 					label: "是否禁用",
 					value: false
-				},// 禁用
+				},// 是否支持多选
+				multiple: {
+					label: "是否支持多选",
+					value: false
+				},
 				// 边距调整
 				marginAdjustment: {
 					label: "外边距调整",
