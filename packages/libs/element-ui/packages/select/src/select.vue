@@ -21,7 +21,7 @@
     name: "fcSelect",
 	data() {
 		return {
-			multiple: { multiple: this.widget.options.options.basic.multiple.value }
+			multiple: { multiple: this.widget.options.basic.multiple?.value }
 		}
 	},
     mixins:[mixins]
