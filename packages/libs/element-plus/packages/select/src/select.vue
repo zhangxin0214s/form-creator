@@ -13,6 +13,7 @@
 		`"
 	>
 		<el-cascader
+			class="cascader"
 			v-model="widget.value"
 			:props="multiple"
 			:options="advanced.data"
@@ -45,14 +46,19 @@ const { linkageWatchEvent } = useRegisterEvent({props, inject});
 linkageWatchEvent({watch});
 </script>
   
-  <style lang="scss" scoped>
+<style lang="scss">
 .hint {
 	font-size: 12px;
 	color: #9b9b9b;
 }
+
 // 选中样式
 .select {
 	outline: 1px solid $--color-primary;
+}
+
+.el-cascader {
+	width: 100%;
 }
 </style>
   
