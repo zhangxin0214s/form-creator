@@ -142,7 +142,7 @@ const onDragEnd = () => {
     margin-left: 20px;
     font-weight: bold;
     font-size: 15px;
-    text-shadow: 1px 1px rgba(197, 223, 248, 0.8), 2px 2px rgba(197, 223, 248, 0.8), 3px 3px rgba(197, 223, 248, 0.8), 4px 4px rgba(197, 223, 248, 0.8), 5px 5px rgba(197, 223, 248, 0.8), 6px 6px rgba(197, 223, 248, 0.8);
+    // text-shadow: 1px 1px rgba(197, 223, 248, 0.8), 2px 2px rgba(197, 223, 248, 0.8), 3px 3px rgba(197, 223, 248, 0.8), 4px 4px rgba(197, 223, 248, 0.8), 5px 5px rgba(197, 223, 248, 0.8), 6px 6px rgba(197, 223, 248, 0.8);
   }
 
   :deep(.el-collapse-item__content) {
@@ -214,23 +214,26 @@ const onDragEnd = () => {
   width: 110px;
   float: left;
   margin: 2px 6px 12px 0;
-  cursor: move;
+  cursor: grabbing;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
   border: 2px solid white;
-  background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
-  border-radius: 25px;
-  color: #1196db;
+  background: #409effdb;
+  // background-image: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+  border-radius: 10px;
+  color: #ffffff;
+  font-weight: bold;
 
   .svg-icon {
     margin-left: 20px;
-    margin-right: 10px;
+    margin-right: 7px;
+    font-size: 14px;
   }
 }
 
-.gild-container:hover {
-  box-shadow: 0 3px 5px rgba(32, 160, 255, .5);
-  font-size: 15px;
-}
+// .gild-container:hover {
+//   box-shadow: 0 3px 5px rgba(32, 160, 255, .5);
+//   font-size: 15px;
+// }
 </style>
