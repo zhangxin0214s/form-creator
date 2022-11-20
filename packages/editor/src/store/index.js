@@ -48,6 +48,7 @@ export const widgetStore = defineStore('widget', {
                 })
             }
             parentWidget.push(newOrigin);
+            return newOrigin
         },
         /**
          * 删除组件
